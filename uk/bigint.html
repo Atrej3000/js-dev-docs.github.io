@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="uk" data-theme="dark">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BigInt | UA Dev Docs</title>
+  <meta name="description" content="BigInt у JavaScript — детальний розбір з прикладами, підводними каменями та best practices.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://YOUR_DOMAIN/misc/bigint.html">
+  <meta property="og:type" content="article"><meta property="og:title" content="BigInt — UA Dev Docs"><meta property="og:locale" content="uk_UA">
+  <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600;700;800&family=Literata:ital,opsz,wght@0,7..72,400;0,7..72,500;1,7..72,400&display=swap" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-tomorrow.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="../assets/css/main.css">
+</head>
+<body>
+<header class="site-header" role="banner">
+  <button class="btn-icon" id="sidebar-toggle" aria-label="Відкрити навігацію" aria-expanded="false"><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M2 5h16M2 10h16M2 15h16"/></svg></button>
+  <a href="../index.html" class="logo"><div class="logo-mark" aria-hidden="true">UA</div><span class="logo-text">dev<em>docs</em></span></a>
+  <div class="hdr-search" role="search"><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="9" cy="9" r="6"/><path d="m15 15-3-3"/></svg><input type="search" id="header-search" placeholder="Пошук…" aria-label="Пошук" autocomplete="off"></div>
+  <div class="hdr-actions"><button class="btn-icon" id="theme-btn" aria-label="Змінити тему"><svg id="theme-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg></button><a href="../index.html#support" class="btn-support"><svg viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M8 14.25C8 14.25 1.5 10 1.5 5.5a3.5 3.5 0 0 1 6.5-1.8A3.5 3.5 0 0 1 14.5 5.5C14.5 10 8 14.25 8 14.25z"/></svg><span>Підтримати</span></a></div>
+</header>
+<div id="search-overlay" class="search-overlay" role="dialog" aria-modal="true" aria-label="Пошук"><div class="search-panel" id="search-panel"><input type="search" id="search-input" placeholder="Що шукаємо?" autocomplete="off" style="width:100%;height:52px;background:var(--bg2);border:none;border-bottom:1px solid var(--bd);border-radius:var(--r3) var(--r3) 0 0;padding:0 1.25rem;font-family:var(--mono);font-size:14px;color:var(--tx);outline:none"></div></div>
+<div class="page"><div class="doc-layout">
+<aside class="doc-sidebar" id="sidebar" aria-label="Розділи курсу"></aside>
+<main class="doc-main" id="main-content"><div class="article-inner">
+  <nav class="breadcrumbs"><a href="../index.html">Головна</a><span class="sep">›</span><span>Різне</span><span class="sep">›</span><span aria-current="page">BigInt</span></nav>
+  <h1 class="article-title">BigInt</h1>
+  <div class="article-badges"><span class="badge badge-mid">Середній</span><span class="badge badge-sec">Різне</span><span class="badge badge-time">~ 8 хв</span></div>
+  <article class="prose">
+
+    <p><code>BigInt</code> — числовий тип для цілих чисел довільної точності. Вирішує проблему <code>Number.MAX_SAFE_INTEGER</code>: звичайні числа точні лише до 2⁵³-1. BigInt потрібен для криптографії, ID з бекенду (64-bit), фінансових розрахунків.</p>
+
+    <h2 id="creation">Створення</h2>
+    <div class="code-block"><div class="code-head"><span class="code-lang">JavaScript</span><button class="btn-copy" aria-label="Копіювати"></button></div>
+<pre><code class="language-javascript">// Суфікс n
+const big = 9007199254740993n;  // більше MAX_SAFE_INTEGER
+
+// BigInt()
+BigInt(42);          // 42n
+BigInt('12345678901234567890'); // з рядка
+
+// Порівняння з Number
+Number.MAX_SAFE_INTEGER;        // 9007199254740991
+9007199254740992 === 9007199254740993; // true (!) — Number втрачає точність
+9007199254740992n === 9007199254740993n; // false — BigInt точний
+
+typeof 42n; // 'bigint'</code></pre></div>
+
+    <h2 id="operations">Операції</h2>
+    <div class="code-block"><div class="code-head"><span class="code-lang">JavaScript</span><button class="btn-copy" aria-label="Копіювати"></button></div>
+<pre><code class="language-javascript">// Арифметика — лише між BigInt
+10n + 20n;   // 30n
+10n * 3n;    // 30n
+10n / 3n;    // 3n (цілочисельне ділення, без дробів!)
+10n % 3n;    // 1n
+2n ** 100n;  // величезне число
+
+// Змішувати Number і BigInt — TypeError
+// 10n + 5;  // TypeError: Cannot mix BigInt and other types
+
+// Явне перетворення
+10n + BigInt(5);  // 15n
+Number(10n) + 5;  // 15 (але можлива втрата точності для великих)
+
+// Порівняння — можна між собою (не строга рівність з Number)
+1n == 1;    // true (нестрога — тип ігнорується)
+1n === 1;   // false (строга — різні типи)
+2n > 1;     // true (порівняння — дозволено)</code></pre></div>
+
+    <h2 id="limits">Обмеження</h2>
+    <div class="code-block"><div class="code-head"><span class="code-lang">JavaScript</span><button class="btn-copy" aria-label="Копіювати"></button></div>
+<pre><code class="language-javascript">// НЕ працює з методами Math
+// Math.max(1n, 2n); // TypeError
+
+// НЕ дробові числа
+// 1.5n;  // SyntaxError
+
+// JSON.stringify не підтримує BigInt
+// JSON.stringify(42n); // TypeError
+// Рішення:
+JSON.stringify(42n, (key, val) =>
+  typeof val === 'bigint' ? val.toString() : val
+); // '"42"'
+
+// Серіалізація/десеріалізація
+const id = BigInt('9007199254740993');
+const json = `{"id": "${id}"}`;          // зберігаємо як рядок
+const parsed = BigInt(JSON.parse(json).id); // відновлюємо</code></pre></div>
+
+    <h2 id="usecases">Де реально потрібен</h2>
+    <div class="code-block"><div class="code-head"><span class="code-lang">JavaScript</span><button class="btn-copy" aria-label="Копіювати"></button></div>
+<pre><code class="language-javascript">// 1. Великі ID з бекенду (Twitter Snowflake ID, PostgreSQL int8)
+const tweetId = 1234567890123456789n;
+
+// 2. Криптографія
+function modPow(base, exp, mod) {
+  let result = 1n;
+  base = base % mod;
+  while (exp > 0n) {
+    if (exp % 2n === 1n) result = (result * base) % mod;
+    exp = exp / 2n;
+    base = (base * base) % mod;
+  }
+  return result;
+}
+
+// 3. Точні фінансові обчислення (в копійках/центах)
+const price  = 1999n; // 19.99 грн → зберігаємо у копійках
+const qty    = 3n;
+const total  = price * qty; // 5997n = 59.97 грн</code></pre></div>
+    <div class="callout callout-info"><p>Для роботи з BigInt у JSON-API: домовитесь з бекендом передавати великі числа як рядки. Більшість мов (Go, Java, Python) підтримують 64-bit int, але JSON spec не гарантує точність за межами 2⁵³.</p></div>
+
+    <h2 id="summary">Підсумок</h2>
+    <ul>
+      <li><code>BigInt</code> — цілі числа будь-якої величини без втрати точності</li>
+      <li>Синтаксис: <code>42n</code> або <code>BigInt(42)</code></li>
+      <li>Не змішується з <code>Number</code> в арифметиці (але порівняння нестроге — ОК)</li>
+      <li>Без дробів, без <code>Math.*</code>, без JSON out-of-the-box</li>
+      <li>Кейси: великі ID, криптографія, фінансові суми у копійках</li>
+    </ul>
+
+  </article>
+  <div class="support-block"><p>Якщо матеріал був корисним — підтримай проєкт:</p><a href="../index.html#support" class="btn-support-lg">❤️ Підтримати UA Dev Docs</a></div>
+</div></main>
+</div></div>
+<script>const ARTICLE_META = { secId: 14, artId: 4 };</script>
+<script src="../assets/js/app.js" defer></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" defer></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-javascript.min.js" defer></script>
+</body>
+</html>

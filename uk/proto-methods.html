@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="uk" data-theme="dark">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Методи прототипів | UA Dev Docs</title>
+  <meta name="description" content="Методи прототипів у JavaScript — детальний розбір з прикладами, підводними каменями та best practices.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://YOUR_DOMAIN/prototypes/proto-methods.html">
+  <meta property="og:type" content="article"><meta property="og:title" content="Методи прототипів — UA Dev Docs"><meta property="og:locale" content="uk_UA">
+  <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600;700;800&family=Literata:ital,opsz,wght@0,7..72,400;0,7..72,500;1,7..72,400&display=swap" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-tomorrow.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="../assets/css/main.css">
+</head>
+<body>
+<header class="site-header" role="banner">
+  <button class="btn-icon" id="sidebar-toggle" aria-label="Відкрити навігацію" aria-expanded="false"><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M2 5h16M2 10h16M2 15h16"/></svg></button>
+  <a href="../index.html" class="logo"><div class="logo-mark" aria-hidden="true">UA</div><span class="logo-text">dev<em>docs</em></span></a>
+  <div class="hdr-search" role="search"><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="9" cy="9" r="6"/><path d="m15 15-3-3"/></svg><input type="search" id="header-search" placeholder="Пошук…" aria-label="Пошук" autocomplete="off"></div>
+  <div class="hdr-actions"><button class="btn-icon" id="theme-btn" aria-label="Змінити тему"><svg id="theme-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg></button><a href="../index.html#support" class="btn-support"><svg viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M8 14.25C8 14.25 1.5 10 1.5 5.5a3.5 3.5 0 0 1 6.5-1.8A3.5 3.5 0 0 1 14.5 5.5C14.5 10 8 14.25 8 14.25z"/></svg><span>Підтримати</span></a></div>
+</header>
+<div id="search-overlay" class="search-overlay" role="dialog" aria-modal="true" aria-label="Пошук"><div class="search-panel" id="search-panel"><input type="search" id="search-input" placeholder="Що шукаємо?" autocomplete="off" style="width:100%;height:52px;background:var(--bg2);border:none;border-bottom:1px solid var(--bd);border-radius:var(--r3) var(--r3) 0 0;padding:0 1.25rem;font-family:var(--mono);font-size:14px;color:var(--tx);outline:none"></div></div>
+<div class="page"><div class="doc-layout">
+<aside class="doc-sidebar" id="sidebar" aria-label="Розділи курсу"></aside>
+<main class="doc-main" id="main-content"><div class="article-inner">
+  <nav class="breadcrumbs"><a href="../index.html">Головна</a><span class="sep">›</span><span>Прототипи, наслідування</span><span class="sep">›</span><span aria-current="page">Методи прототипів</span></nav>
+  <h1 class="article-title">Методи прототипів</h1>
+  <div class="article-badges"><span class="badge badge-mid">Середній</span><span class="badge badge-sec">Прототипи, наслідування</span><span class="badge badge-time">~ 10 хв</span></div>
+  <article class="prose">
+
+    <p>Сучасні методи роботи з прототипами: <code>Object.create()</code>, <code>Object.getPrototypeOf()</code>, <code>Object.setPrototypeOf()</code>, <code>Object.getOwnPropertyNames()</code>. Вони замінюють застарілий і проблемний <code>__proto__</code>.</p>
+
+    <h2 id="object-create">Object.create()</h2>
+    <div class="code-block"><div class="code-head"><span class="code-lang">JavaScript</span><button class="btn-copy" aria-label="Копіювати"></button></div>
+<pre><code class="language-javascript">// Створення об'єкта з явним прототипом
+const animal = {
+  speak() { return `${this.name} says ${this.sound}`; }
+};
+
+const dog = Object.create(animal);
+dog.name  = 'Rex';
+dog.sound = 'Woof';
+console.log(dog.speak()); // 'Rex says Woof'
+console.log(Object.getPrototypeOf(dog) === animal); // true
+
+// Клонування об'єкта зі збереженням прототипу
+const clone = Object.create(
+  Object.getPrototypeOf(dog),
+  Object.getOwnPropertyDescriptors(dog)
+);
+
+// Об'єкт без прототипу (чистий словник)
+const dict = Object.create(null);
+dict.key = 'value';
+// Немає toString, hasOwnProperty — ідеальний Map для примітивних ключів</code></pre></div>
+
+    <h2 id="get-set-proto">getPrototypeOf / setPrototypeOf</h2>
+    <div class="code-block"><div class="code-head"><span class="code-lang">JavaScript</span><button class="btn-copy" aria-label="Копіювати"></button></div>
+<pre><code class="language-javascript">class Animal { speak() {} }
+class Dog extends Animal {}
+
+const dog = new Dog();
+Object.getPrototypeOf(dog) === Dog.prototype;           // true
+Object.getPrototypeOf(Dog.prototype) === Animal.prototype; // true
+
+// setPrototypeOf — змінює прототип після створення
+const obj = { greet() { return 'hello'; } };
+const extension = { farewell() { return 'bye'; } };
+
+Object.setPrototypeOf(extension, obj);
+console.log(extension.greet()); // 'hello' — успадковано</code></pre></div>
+    <div class="callout callout-warn"><p><code>Object.setPrototypeOf()</code> після створення об'єкта — повільна операція. Рушій не може оптимізувати «приховані класи» об'єкта. Завжди краще задати прототип під час створення через <code>Object.create()</code>.</p></div>
+
+    <h2 id="own-properties">Власні властивості vs успадковані</h2>
+    <div class="code-block"><div class="code-head"><span class="code-lang">JavaScript</span><button class="btn-copy" aria-label="Копіювати"></button></div>
+<pre><code class="language-javascript">function Animal(name) { this.name = name; }
+Animal.prototype.speak = function() { return this.name; };
+
+const cat = new Animal('Whiskers');
+
+// Власні властивості
+Object.keys(cat);                           // ['name']
+Object.getOwnPropertyNames(cat);            // ['name']
+cat.hasOwnProperty('name');                 // true
+cat.hasOwnProperty('speak');                // false
+
+// Всі перелічувані (включаючи прототип)
+for (const k in cat) console.log(k);       // 'name', 'speak'
+
+// Рекомендований паттерн: перевірка власних
+for (const k in cat) {
+  if (Object.hasOwn(cat, k)) console.log(k); // тільки 'name'
+}
+// Object.hasOwn — ES2022, краще ніж cat.hasOwnProperty(k)</code></pre></div>
+
+    <h2 id="property-descriptors">Дескриптори та копіювання</h2>
+    <div class="code-block"><div class="code-head"><span class="code-lang">JavaScript</span><button class="btn-copy" aria-label="Копіювати"></button></div>
+<pre><code class="language-javascript">const source = { get name() { return 'Alice'; } };
+
+// Звичайний assign НЕ копіює getter — викличе і скопіює значення
+const bad  = Object.assign({}, source);
+// bad.name — звичайна властивість 'Alice', не getter
+
+// Правильне глибоке копіювання зі збереженням дескрипторів
+const good = Object.create(
+  Object.getPrototypeOf(source),
+  Object.getOwnPropertyDescriptors(source)
+);
+// good.name — залишається getter</code></pre></div>
+
+    <h2 id="summary">Підсумок</h2>
+    <ul>
+      <li><code>Object.create(proto)</code> — явне задання прототипу при створенні</li>
+      <li><code>Object.getPrototypeOf(obj)</code> — читання прототипу (замість <code>__proto__</code>)</li>
+      <li><code>Object.setPrototypeOf(obj, proto)</code> — зміна після створення (повільно!)</li>
+      <li><code>Object.create(null)</code> — чистий словник без Object-методів</li>
+      <li><code>Object.hasOwn(obj, key)</code> (ES2022) — безпечна перевірка власних властивостей</li>
+    </ul>
+
+  </article>
+  <div class="support-block"><p>Якщо матеріал був корисним — підтримай проєкт:</p><a href="../index.html#support" class="btn-support-lg">❤️ Підтримати UA Dev Docs</a></div>
+</div></main>
+</div></div>
+<script>const ARTICLE_META = { secId: 8, artId: 4 };</script>
+<script src="../assets/js/app.js" defer></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" defer></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-javascript.min.js" defer></script>
+</body>
+</html>

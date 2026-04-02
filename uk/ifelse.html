@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="uk" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Умовне розгалуження: if, else, тернарний оператор | UA Dev Docs</title>
+  <meta name="description" content="Умовне розгалуження в JavaScript: if/else if/else, тернарний оператор, вкладені умови, кращі практики. Edge cases булевого перетворення.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://YOUR_DOMAIN/basics/ifelse.html">
+  <meta property="og:type" content="article"><meta property="og:title" content="if, else, тернарний оператор — UA Dev Docs"><meta property="og:locale" content="uk_UA">
+  <link rel="alternate" hreflang="uk" href="https://YOUR_DOMAIN/basics/ifelse.html">
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"TechArticle","headline":"Умовне розгалуження: if, ?","inLanguage":"uk","url":"https://YOUR_DOMAIN/basics/ifelse.html","author":{"@type":"Organization","name":"UA Dev Docs"}}</script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600;700;800&family=Literata:ital,opsz,wght@0,7..72,400;0,7..72,500;1,7..72,400&display=swap" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-tomorrow.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="../assets/css/main.css">
+</head>
+<body>
+<header class="site-header" role="banner">
+  <button class="btn-icon" id="sidebar-toggle" aria-label="Відкрити навігацію" aria-expanded="false"><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M2 5h16M2 10h16M2 15h16"/></svg></button>
+  <a href="../index.html" class="logo"><div class="logo-mark" aria-hidden="true">UA</div><span class="logo-text">dev<em>docs</em></span></a>
+  <div class="hdr-search" role="search"><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="9" cy="9" r="6"/><path d="m15 15-3-3"/></svg><input type="search" id="header-search" placeholder="Пошук… (/ або ⌘K)" aria-label="Пошук" autocomplete="off"></div>
+  <div class="hdr-actions"><button class="btn-icon" id="theme-btn" aria-label="Змінити тему"><svg id="theme-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg></button><a href="../index.html#support" class="btn-support"><svg viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M8 14.25C8 14.25 1.5 10 1.5 5.5a3.5 3.5 0 0 1 6.5-1.8A3.5 3.5 0 0 1 14.5 5.5C14.5 10 8 14.25 8 14.25z"/></svg><span>Підтримати</span></a></div>
+</header>
+<div id="search-overlay" class="search-overlay" role="dialog" aria-modal="true" aria-label="Пошук"><div class="search-panel" id="search-panel"><input type="search" id="search-input" placeholder="Що шукаємо?" aria-label="Пошук" autocomplete="off" style="width:100%;height:52px;background:var(--bg2);border:none;border-bottom:1px solid var(--bd);border-radius:var(--r3) var(--r3) 0 0;padding:0 1.25rem;font-family:var(--mono);font-size:14px;color:var(--tx);outline:none"></div></div>
+
+<div class="page">
+  <div class="doc-layout">
+    <aside class="doc-sidebar" id="sidebar" aria-label="Розділи курсу"></aside>
+    <main class="doc-main" id="main-content">
+      <div class="article-inner">
+        <nav class="breadcrumbs" aria-label="Шлях навігації">
+          <a href="../index.html">Головна</a><span class="sep">›</span>
+          <span>Основи JavaScript</span><span class="sep">›</span>
+          <span aria-current="page">Умовне розгалуження: if, ?</span>
+        </nav>
+        <h1 class="article-title">Умовне розгалуження: if, ?</h1>
+        <div class="article-badges">
+          <span class="badge badge-begin">Початковий</span>
+          <span class="badge badge-sec">Основи JavaScript</span>
+          <span class="badge badge-time">~ 11 хв</span>
+        </div>
+        <article class="prose">
+
+          <p>Умовне розгалуження дозволяє виконувати різні блоки коду залежно від значення виразу. JavaScript надає інструкцію <code>if/else</code> для блокового розгалуження і тернарний оператор <code>?</code> для виразів.</p>
+
+          <h2 id="if">Інструкція if</h2>
+          <p>Умова перетворюється на булеве значення (ToBoolean). Якщо <code>true</code> — виконується блок. Фігурні дужки необов'язкові для одного рядка, але рекомендовані завжди.</p>
+
+          <div class="code-block">
+            <div class="code-head"><span class="code-lang">JavaScript</span><button class="btn-copy" aria-label="Копіювати"></button></div>
+<pre><code class="language-javascript">const score = 75;
+
+// Базова форма
+if (score >= 60) {
+  console.log('Зараховано');
+}
+
+// if / else
+if (score >= 60) {
+  console.log('Зараховано');
+} else {
+  console.log('Не зараховано');
+}
+
+// if / else if / else — ланцюг умов
+if (score >= 90) {
+  console.log('Відмінно');
+} else if (score >= 75) {
+  console.log('Добре');
+} else if (score >= 60) {
+  console.log('Задовільно');
+} else {
+  console.log('Незадовільно');
+}</code></pre>
+          </div>
+
+          <div class="callout c-warn">
+            <div class="callout-title">Завжди використовуйте фігурні дужки</div>
+            <p>Код без дужок дозволений, але небезпечний при додаванні рядків. Відсутність дужок — поширена причина помилок. Єдиний виняток — guard clause (ранній вихід) в одному рядку.</p>
+          </div>
+
+          <h2 id="truthy-falsy-umovy">Truthy/falsy в умовах</h2>
+          <div class="code-block">
+            <div class="code-head"><span class="code-lang">JavaScript</span><button class="btn-copy" aria-label="Копіювати"></button></div>
+<pre><code class="language-javascript">const username = '';
+const items = [];
+const config = null;
+
+// Порожній рядок — falsy
+if (username) {
+  console.log('є ім\'я'); // НЕ виконується
+}
+
+// АНТИПАТЕРН: порожній масив — truthy!
+if (items) {
+  console.log('є елементи'); // виконується навіть для []
+}
+// ПРАВИЛЬНО:
+if (items.length > 0) {
+  console.log('є елементи');
+}
+
+// Перевірка на null/undefined
+if (config !== null && config !== undefined) {
+  // явна перевірка
+}
+if (config != null) {
+  // скорочена форма — спрацює для null і undefined
+}</code></pre>
+          </div>
+
+          <h2 id="ternary">Тернарний оператор ?</h2>
+          <p>Єдиний тернарний оператор JavaScript: <code>умова ? значення_якщо_true : значення_якщо_false</code>. Є <em>виразом</em> — повертає значення, тому може використовуватись у присвоєнні, аргументі функції, шаблонному літералі.</p>
+
+          <div class="code-block">
+            <div class="code-head"><span class="code-lang">JavaScript</span><button class="btn-copy" aria-label="Копіювати"></button></div>
+<pre><code class="language-javascript">const age = 20;
+
+// Базове використання
+const status = age >= 18 ? 'повнолітній' : 'неповнолітній';
+console.log(status); // "повнолітній"
+
+// У шаблонному літералі
+console.log(`Статус: ${age >= 18 ? 'OK' : 'відмовлено'}`);
+
+// Як аргумент функції
+fetch(isAdmin ? '/api/admin' : '/api/user');
+
+// Ланцюг тернарних операторів — читабельний при правильному відступі
+const grade =
+  score >= 90 ? 'A' :
+  score >= 75 ? 'B' :
+  score >= 60 ? 'C' :
+  'F';
+
+// Тернарний оператор НЕ замінює if для складної логіки
+// АНТИПАТЕРН: виконання побічних ефектів у тернарному
+isAdmin
+  ? (log('admin action'), performAdminAction()) // погано
+  : performUserAction();
+// Використовуйте if/else для побічних ефектів</code></pre>
+          </div>
+
+          <h2 id="early-return">Ранній вихід (Guard Clause)</h2>
+          <p>Патерн <strong>guard clause</strong> — перевірка передумов на початку функції з раннім поверненням. Зменшує вкладеність і покращує читабельність.</p>
+
+          <div class="code-block">
+            <div class="code-head"><span class="code-lang">JavaScript</span><button class="btn-copy" aria-label="Копіювати"></button></div>
+<pre><code class="language-javascript">// АНТИПАТЕРН: глибока вкладеність
+function processOrder(order) {
+  if (order) {
+    if (order.items) {
+      if (order.items.length > 0) {
+        if (order.payment) {
+          return fulfill(order);
+        }
+      }
+    }
+  }
+  return null;
+}
+
+// КРАЩЕ: guard clauses — ранній вихід
+function processOrder(order) {
+  if (!order) return null;
+  if (!order.items || order.items.length === 0) return null;
+  if (!order.payment) return null;
+
+  return fulfill(order);  // основна логіка без вкладеності
+}</code></pre>
+          </div>
+
+          <h2 id="switch-alt">if/else vs switch</h2>
+          <p>Інструкція <code>if/else</code> перевіряє довільні вирази. <code>switch</code> перевіряє одне значення на рівність (<code>===</code>) кільком варіантам. Вибір між ними — питання читабельності.</p>
+
+          <div class="code-block">
+            <div class="code-head"><span class="code-lang">JavaScript</span><button class="btn-copy" aria-label="Копіювати"></button></div>
+<pre><code class="language-javascript">const method = 'GET';
+
+// if/else — для різних виразів або діапазонів
+if (method === 'GET' || method === 'HEAD') {
+  handleRead();
+} else if (method === 'POST' || method === 'PUT') {
+  handleWrite();
+} else {
+  handleOther();
+}
+
+// switch — для одного значення і конкретних варіантів
+switch (method) {
+  case 'GET':
+  case 'HEAD':
+    handleRead();
+    break;
+  case 'POST':
+  case 'PUT':
+    handleWrite();
+    break;
+  default:
+    handleOther();
+}
+
+// Lookup object — часто краще за switch для простого маппінгу
+const handlers = {
+  GET: handleRead,
+  HEAD: handleRead,
+  POST: handleWrite,
+  PUT: handleWrite,
+};
+const handler = handlers[method] ?? handleOther;
+handler();</code></pre>
+          </div>
+
+          <h2 id="edge-cases">Edge cases</h2>
+          <div class="code-block">
+            <div class="code-head"><span class="code-lang">JavaScript</span><button class="btn-copy" aria-label="Копіювати"></button></div>
+<pre><code class="language-javascript">// Присвоєння в умові — легальне, але небезпечне
+let data;
+if (data = fetchData()) { // присвоєння, а не порівняння!
+  process(data);
+}
+// ESLint попереджає про це. Якщо навмисно — використовуйте подвійні дужки:
+if ((data = fetchData())) { /* явна ознака навмисності */ }
+
+// Пустий else — не потрібен
+if (condition) {
+  doSomething();
+} else {
+  // нічого
+}
+// Просто:
+if (condition) {
+  doSomething();
+}
+
+// Умова-вираз повертає значення
+const x = (1 > 0) ? 'yes' : 'no'; // "yes"</code></pre>
+          </div>
+
+          <h2 id="summary">Підсумок</h2>
+          <ul>
+            <li><code>if (expr)</code> перетворює вираз на Boolean (ToBoolean).</li>
+            <li>Завжди використовуйте фігурні дужки — навіть для одного рядка.</li>
+            <li>Порожній масив <code>[]</code> та об'єкт <code>{}</code> — truthy. Перевіряйте <code>.length</code> або вміст, а не сам контейнер.</li>
+            <li>Тернарний <code>?</code> — вираз, повертає значення. Для побічних ефектів використовуйте <code>if/else</code>.</li>
+            <li>Guard clause (ранній вихід) — зменшує вкладеність і покращує читабельність.</li>
+            <li>Для простого маппінгу значень lookup object часто читабельніший за <code>switch</code>.</li>
+          </ul>
+
+          <div class="article-support"><p><strong>Матеріал корисний?</strong> Підтримай проект.</p><div class="support-btns-inline"><a href="https://send.monobank.ua/jar/YOUR_JAR_ID" class="btn-mono" target="_blank" rel="noopener" style="font-size:12px;height:36px;padding:0 14px">🟢 Monobank</a><a href="https://www.buymeacoffee.com/YOUR_HANDLE" class="btn-coffee" target="_blank" rel="noopener" style="font-size:12px;height:36px;padding:0 14px">☕ Coffee</a></div></div>
+        </article>
+        <nav class="art-nav" aria-label="Між статтями">
+          <a href="comparison.html" class="art-nav-a"><span class="art-nav-dir">← Попередня</span><span class="art-nav-title">Оператори порівняння</span></a>
+          <a href="logical-operators.html" class="art-nav-a is-next"><span class="art-nav-dir">Наступна →</span><span class="art-nav-title">Логічні оператори</span></a>
+        </nav>
+      </div>
+    </main>
+    <aside class="doc-toc" aria-label="Зміст статті">
+      <p class="toc-label">Зміст</p>
+      <ul class="toc-list">
+        <li class="toc-item"><a href="#if"                  class="toc-link h2">Інструкція if</a></li>
+        <li class="toc-item"><a href="#truthy-falsy-umovy"  class="toc-link h2">Truthy/falsy в умовах</a></li>
+        <li class="toc-item"><a href="#ternary"             class="toc-link h2">Тернарний оператор ?</a></li>
+        <li class="toc-item"><a href="#early-return"        class="toc-link h2">Guard clause</a></li>
+        <li class="toc-item"><a href="#switch-alt"          class="toc-link h2">if/else vs switch</a></li>
+        <li class="toc-item"><a href="#edge-cases"          class="toc-link h2">Edge cases</a></li>
+        <li class="toc-item"><a href="#summary"             class="toc-link h2">Підсумок</a></li>
+      </ul>
+      <div class="toc-progress"><div class="toc-prog-meta"><span>Прогрес</span><span id="progress-pct">0%</span></div><div class="prog-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"><div class="prog-fill" id="progress-fill"></div></div></div>
+      <div class="toc-donate"><p>Матеріал корисний? <strong>Підтримай проект</strong></p><a href="https://send.monobank.ua/jar/YOUR_JAR_ID" class="btn-donate-sm" target="_blank" rel="noopener">🟢 Задонатити</a></div>
+    </aside>
+  </div>
+</div>
+<script>const ARTICLE_META = { secId: 'basics', artId: 'ifelse' };</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-javascript.min.js"></script>
+<script src="../assets/js/app.js"></script>
+</body>
+</html>

@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="uk" data-theme="dark">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Вступ до модулів | UA Dev Docs</title>
+  <meta name="description" content="Вступ до модулів у JavaScript — детальний розбір з прикладами, підводними каменями та best practices.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://YOUR_DOMAIN/modules/modules-intro.html">
+  <meta property="og:type" content="article"><meta property="og:title" content="Вступ до модулів — UA Dev Docs"><meta property="og:locale" content="uk_UA">
+  <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600;700;800&family=Literata:ital,opsz,wght@0,7..72,400;0,7..72,500;1,7..72,400&display=swap" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-tomorrow.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="../assets/css/main.css">
+</head>
+<body>
+<header class="site-header" role="banner">
+  <button class="btn-icon" id="sidebar-toggle" aria-label="Відкрити навігацію" aria-expanded="false"><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M2 5h16M2 10h16M2 15h16"/></svg></button>
+  <a href="../index.html" class="logo"><div class="logo-mark" aria-hidden="true">UA</div><span class="logo-text">dev<em>docs</em></span></a>
+  <div class="hdr-search" role="search"><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="9" cy="9" r="6"/><path d="m15 15-3-3"/></svg><input type="search" id="header-search" placeholder="Пошук…" aria-label="Пошук" autocomplete="off"></div>
+  <div class="hdr-actions"><button class="btn-icon" id="theme-btn" aria-label="Змінити тему"><svg id="theme-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg></button><a href="../index.html#support" class="btn-support"><svg viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M8 14.25C8 14.25 1.5 10 1.5 5.5a3.5 3.5 0 0 1 6.5-1.8A3.5 3.5 0 0 1 14.5 5.5C14.5 10 8 14.25 8 14.25z"/></svg><span>Підтримати</span></a></div>
+</header>
+<div id="search-overlay" class="search-overlay" role="dialog" aria-modal="true" aria-label="Пошук"><div class="search-panel" id="search-panel"><input type="search" id="search-input" placeholder="Що шукаємо?" autocomplete="off" style="width:100%;height:52px;background:var(--bg2);border:none;border-bottom:1px solid var(--bd);border-radius:var(--r3) var(--r3) 0 0;padding:0 1.25rem;font-family:var(--mono);font-size:14px;color:var(--tx);outline:none"></div></div>
+<div class="page"><div class="doc-layout">
+<aside class="doc-sidebar" id="sidebar" aria-label="Розділи курсу"></aside>
+<main class="doc-main" id="main-content"><div class="article-inner">
+  <nav class="breadcrumbs"><a href="../index.html">Головна</a><span class="sep">›</span><span>Модулі</span><span class="sep">›</span><span aria-current="page">Вступ до модулів</span></nav>
+  <h1 class="article-title">Вступ до модулів</h1>
+  <div class="article-badges"><span class="badge badge-begin">Початковий</span><span class="badge badge-sec">Модулі</span><span class="badge badge-time">~ 10 хв</span></div>
+  <article class="prose">
+
+    <p>Модулі — файли з власним scope: змінні та функції не потрапляють у глобальний простір автоматично. ESM (<em>ECMAScript Modules</em>) — стандарт: <code>import</code> / <code>export</code>. Це вирішує проблеми конфліктів імен, залежностей і організації коду.</p>
+
+    <h2 id="what-is">Що дає модуль</h2>
+    <div class="code-block"><div class="code-head"><span class="code-lang">JavaScript</span><button class="btn-copy" aria-label="Копіювати"></button></div>
+<pre><code class="language-javascript">// without modules — все у глобальному просторі
+var user = 'Alice';    // window.user у браузері
+var user = 'Bob';      // перезаписує! конфлікт
+
+// З модулями (type="module" або .mjs)
+// Кожен файл — окремий scope
+// user у цьому файлі не видний зовні без export</code></pre></div>
+
+    <h2 id="export">export</h2>
+    <div class="code-block"><div class="code-head"><span class="code-lang">JavaScript</span><button class="btn-copy" aria-label="Копіювати"></button></div>
+<pre><code class="language-javascript">// Named exports — кілька з одного файлу
+export const PI = 3.14159;
+export function add(a, b) { return a + b; }
+export class Vector { constructor(x, y) { this.x = x; this.y = y; } }
+
+// Export в кінці файлу
+const secret = 42;
+const helper = x => x * 2;
+export { secret, helper };
+
+// Перейменування при export
+export { secret as token, helper as double };
+
+// Default export — один на файл
+export default class User {
+  constructor(name) { this.name = name; }
+}</code></pre></div>
+
+    <h2 id="import">import</h2>
+    <div class="code-block"><div class="code-head"><span class="code-lang">JavaScript</span><button class="btn-copy" aria-label="Копіювати"></button></div>
+<pre><code class="language-javascript">// Named import
+import { PI, add } from './math.js';
+console.log(PI);      // 3.14159
+console.log(add(1,2)); // 3
+
+// Перейменування при import
+import { add as sum } from './math.js';
+
+// Namespace import — всі named exports як об'єкт
+import * as Math from './math.js';
+Math.add(1, 2);
+
+// Default import — будь-яке ім'я
+import User from './user.js';
+import MyUser from './user.js'; // теж валідно
+
+// Default + named разом
+import User, { PI, add } from './module.js';</code></pre></div>
+
+    <h2 id="browser">Модулі у браузері</h2>
+    <div class="code-block"><div class="code-head"><span class="code-lang">HTML</span><button class="btn-copy" aria-label="Копіювати"></button></div>
+<pre><code class="language-html"><!-- type="module" — обов'язково -->
+<script type="module" src="main.js"></script>
+
+<!-- Або inline -->
+<script type="module">
+  import { greet } from './greet.js';
+  greet('World');
+</script></code></pre></div>
+    <div class="callout callout-info"><p>Модулі у браузері завжди <code>defer</code> — виконуються після повного завантаження HTML. CORS: файл повинен завантажуватись з сервера (не <code>file://</code>) — локальний <code>open index.html</code> не працює без <code>localhost</code>.</p></div>
+
+    <h2 id="features">Особливості ESM</h2>
+    <div class="code-block"><div class="code-head"><span class="code-lang">JavaScript</span><button class="btn-copy" aria-label="Копіювати"></button></div>
+<pre><code class="language-javascript">// 1. Строгий режим автоматично
+// 'use strict'; — не потрібно, вже є
+
+// 2. Код модуля виконується ОДИН раз (при першому import)
+// Повторні import того самого модуля — кешований результат
+import './init.js'; // init.js виконається один раз
+import './init.js'; // повторно — не виконується
+
+// 3. import hoisting — переміщується на початок файлу
+// (але це статичний аналіз, не eval-time)
+console.log('before import');
+import { x } from './x.js'; // все одно виконається першим
+console.log('after import');
+
+// 4. import.meta — мета-інформація поточного модуля
+console.log(import.meta.url);  // URL файлу
+console.log(import.meta.env);  // у Vite/bundler</code></pre></div>
+
+    <h2 id="summary">Підсумок</h2>
+    <ul>
+      <li>Модуль = файл з власним scope + строгий режим автоматично</li>
+      <li><code>export</code>: named (кілька) та default (один)</li>
+      <li><code>import</code>: named, namespace (<code>* as</code>), default</li>
+      <li>У браузері: <code>&lt;script type="module"&gt;</code> + потрібен HTTP-сервер</li>
+      <li>Код модуля виконується один раз — результат кешується</li>
+    </ul>
+
+  </article>
+  <div class="support-block"><p>Якщо матеріал був корисним — підтримай проєкт:</p><a href="../index.html#support" class="btn-support-lg">❤️ Підтримати UA Dev Docs</a></div>
+</div></main>
+</div></div>
+<script>const ARTICLE_META = { secId: 13, artId: 1 };</script>
+<script src="../assets/js/app.js" defer></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" defer></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-javascript.min.js" defer></script>
+</body>
+</html>

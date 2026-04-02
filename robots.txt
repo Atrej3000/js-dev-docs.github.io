@@ -1,0 +1,6 @@
+User-agent: *
+Allow: /
+Disallow: /assets/
+Disallow: /i18n/
+
+Sitemap: https://YOUR_DOMAIN/sitemap.xml

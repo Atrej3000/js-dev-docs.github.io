@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JS Dev Docs</title>
+  <meta name="robots" content="noindex, nofollow">
+  <link rel="canonical" href="https://YOUR_DOMAIN/uk/">
+  <script>
+  (function () {
+    /* Languages where content exists. Set to true as you add translations. */
+    var AVAILABLE = { uk: true, en: false };
+    var DEFAULT   = 'uk';
+
+    function detect() {
+      try {
+        var stored = localStorage.getItem('devdocs-lang');
+        if (stored && AVAILABLE[stored]) return stored;
+      } catch (e) {}
+      var preferred = navigator.languages || [navigator.language || DEFAULT];
+      for (var i = 0; i < preferred.length; i++) {
+        var tag  = preferred[i].replace('_', '-');
+        if (AVAILABLE[tag] === true) return tag;
+        var base = tag.split('-')[0].toLowerCase();
+        if (AVAILABLE[base] === true) return base;
+      }
+      return DEFAULT;
+    }
+
+    window.location.replace('/' + detect() + '/');
+  }());
+  </script>
+  <noscript><meta http-equiv="refresh" content="0; url=/uk/"></noscript>
+</head>
+<body>
+  <p>Redirecting… <a href="/uk/">Ukrainian</a></p>
+</body>
+</html>

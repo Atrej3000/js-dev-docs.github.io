@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="uk" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Взаємодія: alert, prompt, confirm | UA Dev Docs</title>
+  <meta name="description" content="Браузерні діалоги JavaScript: alert, prompt, confirm — синтаксис, повернуті значення, блокування, обмеження та альтернативи.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://YOUR_DOMAIN/basics/interaction.html">
+  <meta property="og:type" content="article"><meta property="og:title" content="alert, prompt, confirm — UA Dev Docs"><meta property="og:locale" content="uk_UA">
+  <link rel="alternate" hreflang="uk" href="https://YOUR_DOMAIN/basics/interaction.html">
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"TechArticle","headline":"Взаємодія: alert, prompt, confirm","inLanguage":"uk","url":"https://YOUR_DOMAIN/basics/interaction.html","author":{"@type":"Organization","name":"UA Dev Docs"}}</script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600;700;800&family=Literata:ital,opsz,wght@0,7..72,400;0,7..72,500;1,7..72,400&display=swap" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-tomorrow.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="../assets/css/main.css">
+</head>
+<body>
+<header class="site-header" role="banner">
+  <button class="btn-icon" id="sidebar-toggle" aria-label="Відкрити навігацію" aria-expanded="false"><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M2 5h16M2 10h16M2 15h16"/></svg></button>
+  <a href="../index.html" class="logo"><div class="logo-mark" aria-hidden="true">UA</div><span class="logo-text">dev<em>docs</em></span></a>
+  <div class="hdr-search" role="search"><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="9" cy="9" r="6"/><path d="m15 15-3-3"/></svg><input type="search" id="header-search" placeholder="Пошук… (/ або ⌘K)" aria-label="Пошук" autocomplete="off"></div>
+  <div class="hdr-actions"><button class="btn-icon" id="theme-btn" aria-label="Змінити тему"><svg id="theme-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg></button><a href="../index.html#support" class="btn-support"><svg viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M8 14.25C8 14.25 1.5 10 1.5 5.5a3.5 3.5 0 0 1 6.5-1.8A3.5 3.5 0 0 1 14.5 5.5C14.5 10 8 14.25 8 14.25z"/></svg><span>Підтримати</span></a></div>
+</header>
+<div id="search-overlay" class="search-overlay" role="dialog" aria-modal="true" aria-label="Пошук"><div class="search-panel" id="search-panel"><input type="search" id="search-input" placeholder="Що шукаємо?" aria-label="Пошук" autocomplete="off" style="width:100%;height:52px;background:var(--bg2);border:none;border-bottom:1px solid var(--bd);border-radius:var(--r3) var(--r3) 0 0;padding:0 1.25rem;font-family:var(--mono);font-size:14px;color:var(--tx);outline:none"></div></div>
+
+<div class="page">
+  <div class="doc-layout">
+    <aside class="doc-sidebar" id="sidebar" aria-label="Розділи курсу"></aside>
+    <main class="doc-main" id="main-content">
+      <div class="article-inner">
+        <nav class="breadcrumbs" aria-label="Шлях навігації">
+          <a href="../index.html">Головна</a><span class="sep">›</span>
+          <span>Основи JavaScript</span><span class="sep">›</span>
+          <span aria-current="page">Взаємодія: alert, prompt, confirm</span>
+        </nav>
+        <h1 class="article-title">Взаємодія: alert, prompt, confirm</h1>
+        <div class="article-badges">
+          <span class="badge badge-begin">Початковий</span>
+          <span class="badge badge-sec">Основи JavaScript</span>
+          <span class="badge badge-time">~ 7 хв</span>
+        </div>
+        <article class="prose">
+
+          <p>Браузер надає три вбудованих функції для синхронної взаємодії з користувачем через модальні вікна. Всі три є методами глобального об'єкта <code>window</code> і блокують виконання скрипта до закриття діалогу.</p>
+
+          <h2 id="alert">alert</h2>
+          <p>Відображає модальне вікно з повідомленням і кнопкою «OK». Повертає <code>undefined</code>.</p>
+
+          <div class="code-block">
+            <div class="code-head"><span class="code-lang">JavaScript</span><button class="btn-copy" aria-label="Копіювати"></button></div>
+<pre><code class="language-javascript">alert('Операцію завершено успішно');
+
+// Аргумент перетворюється на рядок
+alert(42);      // показує "42"
+alert(null);    // показує "null"
+alert();        // показує порожнє вікно (або "undefined" залежно від браузера)
+
+// Повертає undefined
+const result = alert('test');
+console.log(result); // undefined</code></pre>
+          </div>
+
+          <h2 id="prompt">prompt</h2>
+          <p>Відображає діалог із текстовим полем для введення. Повертає введений рядок або <code>null</code> (якщо користувач натиснув «Скасувати» або закрив вікно).</p>
+
+          <div class="code-block">
+            <div class="code-head"><span class="code-lang">JavaScript</span><button class="btn-copy" aria-label="Копіювати"></button></div>
+<pre><code class="language-javascript">// prompt(message, default)
+const name = prompt('Введіть ваше ім\'я:');
+// Якщо OK → рядок (навіть порожній "")
+// Якщо Cancel → null
+
+const age = prompt('Введіть вік:', '18'); // другий аргумент — значення за замовчуванням
+
+// Обов'язково перевіряйте на null перед використанням
+if (name !== null) {
+  console.log(`Привіт, ${name}!`);
+} else {
+  console.log('Введення скасовано');
+}
+
+// Конвертація: prompt завжди повертає рядок або null
+const ageNum = Number(prompt('Вік:'));
+if (Number.isNaN(ageNum)) {
+  alert('Некоректне значення');
+}</code></pre>
+          </div>
+
+          <div class="callout c-warn">
+            <div class="callout-title">prompt завжди повертає string або null</div>
+            <p>Навіть якщо користувач вводить число, <code>prompt</code> повертає рядок. Завжди виконуйте явне перетворення: <code>Number()</code>, <code>parseInt()</code> або <code>parseFloat()</code>.</p>
+          </div>
+
+          <h2 id="confirm">confirm</h2>
+          <p>Відображає діалог із питанням і кнопками «OK» / «Скасувати». Повертає <code>true</code> (OK) або <code>false</code> (Cancel).</p>
+
+          <div class="code-block">
+            <div class="code-head"><span class="code-lang">JavaScript</span><button class="btn-copy" aria-label="Копіювати"></button></div>
+<pre><code class="language-javascript">const confirmed = confirm('Видалити запис? Цю дію не можна скасувати.');
+
+if (confirmed) {
+  deleteRecord();
+} else {
+  console.log('Видалення скасовано');
+}
+
+// Повертає булеве значення
+console.log(typeof confirm('test')); // "boolean"</code></pre>
+          </div>
+
+          <h2 id="obmezhennya">Обмеження браузерних діалогів</h2>
+          <ul>
+            <li><strong>Блокування виконання.</strong> Всі три функції зупиняють JavaScript і рендеринг до закриття діалогу. Це неприйнятно у продакшені для будь-якої дії, крім критичних попереджень.</li>
+            <li><strong>Зовнішній вигляд.</strong> Стиль діалогів визначає браузер — CSS застосунку на них не діє.</li>
+            <li><strong>Заголовок.</strong> Деякі браузери додають «Сторінка каже:» або адресу сайту, що знижує довіру.</li>
+            <li><strong>Відключення браузером.</strong> Якщо сторінка викликає діалоги занадто часто або всередині iframe, браузер може їх заблокувати.</li>
+            <li><strong>Недоступні в Node.js.</strong> Ці функції — частина Browser API, не ECMAScript.</li>
+          </ul>
+
+          <div class="callout c-info">
+            <div class="callout-title">Де і коли доречні</div>
+            <p>Браузерні діалоги доречні лише для навчальних цілей або швидкого прототипування. У реальних застосунках використовуйте власні UI-компоненти: модальні вікна, тости, форми підтвердження.</p>
+          </div>
+
+          <h2 id="summary">Підсумок</h2>
+          <ul>
+            <li><code>alert(msg)</code> — показує повідомлення, повертає <code>undefined</code>.</li>
+            <li><code>prompt(msg, default)</code> — запитує введення, повертає <code>string</code> або <code>null</code>.</li>
+            <li><code>confirm(msg)</code> — запитує підтвердження, повертає <code>boolean</code>.</li>
+            <li>Всі три блокують виконання. Зовнішній вигляд визначає браузер.</li>
+            <li>У продакшені замінюйте кастомними UI-компонентами.</li>
+          </ul>
+
+          <div class="article-support"><p><strong>Матеріал корисний?</strong> Підтримай проект.</p><div class="support-btns-inline"><a href="https://send.monobank.ua/jar/YOUR_JAR_ID" class="btn-mono" target="_blank" rel="noopener" style="font-size:12px;height:36px;padding:0 14px">🟢 Monobank</a><a href="https://www.buymeacoffee.com/YOUR_HANDLE" class="btn-coffee" target="_blank" rel="noopener" style="font-size:12px;height:36px;padding:0 14px">☕ Coffee</a></div></div>
+        </article>
+        <nav class="art-nav" aria-label="Між статтями">
+          <a href="data-types.html" class="art-nav-a"><span class="art-nav-dir">← Попередня</span><span class="art-nav-title">Типи даних</span></a>
+          <a href="type-conversions.html" class="art-nav-a is-next"><span class="art-nav-dir">Наступна →</span><span class="art-nav-title">Перетворення типів</span></a>
+        </nav>
+      </div>
+    </main>
+    <aside class="doc-toc" aria-label="Зміст статті">
+      <p class="toc-label">Зміст</p>
+      <ul class="toc-list">
+        <li class="toc-item"><a href="#alert"        class="toc-link h2">alert</a></li>
+        <li class="toc-item"><a href="#prompt"       class="toc-link h2">prompt</a></li>
+        <li class="toc-item"><a href="#confirm"      class="toc-link h2">confirm</a></li>
+        <li class="toc-item"><a href="#obmezhennya"  class="toc-link h2">Обмеження</a></li>
+        <li class="toc-item"><a href="#summary"      class="toc-link h2">Підсумок</a></li>
+      </ul>
+      <div class="toc-progress"><div class="toc-prog-meta"><span>Прогрес</span><span id="progress-pct">0%</span></div><div class="prog-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"><div class="prog-fill" id="progress-fill"></div></div></div>
+      <div class="toc-donate"><p>Матеріал корисний? <strong>Підтримай проект</strong></p><a href="https://send.monobank.ua/jar/YOUR_JAR_ID" class="btn-donate-sm" target="_blank" rel="noopener">🟢 Задонатити</a></div>
+    </aside>
+  </div>
+</div>
+<script>const ARTICLE_META = { secId: 'basics', artId: 'interaction' };</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-javascript.min.js"></script>
+<script src="../assets/js/app.js"></script>
+</body>
+</html>

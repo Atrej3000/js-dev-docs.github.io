@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="uk" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Суворий режим "use strict" в JavaScript | UA Dev Docs</title>
+  <meta name="description" content='Директива "use strict" в JavaScript: що вмикає, що забороняє, де застосовувати. Відмінності sloppy mode vs strict mode з прикладами.'>
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://YOUR_DOMAIN/basics/use-strict.html">
+  <meta property="og:type" content="article"><meta property="og:title" content='Суворий режим "use strict" — UA Dev Docs'><meta property="og:locale" content="uk_UA">
+  <link rel="alternate" hreflang="uk" href="https://YOUR_DOMAIN/basics/use-strict.html">
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"TechArticle","headline":"Суворий режим use strict","inLanguage":"uk","url":"https://YOUR_DOMAIN/basics/use-strict.html","author":{"@type":"Organization","name":"UA Dev Docs"}}</script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600;700;800&family=Literata:ital,opsz,wght@0,7..72,400;0,7..72,500;1,7..72,400&display=swap" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-tomorrow.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="../assets/css/main.css">
+</head>
+<body>
+<header class="site-header" role="banner">
+  <button class="btn-icon" id="sidebar-toggle" aria-label="Відкрити навігацію" aria-expanded="false"><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M2 5h16M2 10h16M2 15h16"/></svg></button>
+  <a href="../index.html" class="logo"><div class="logo-mark" aria-hidden="true">UA</div><span class="logo-text">dev<em>docs</em></span></a>
+  <div class="hdr-search" role="search"><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="9" cy="9" r="6"/><path d="m15 15-3-3"/></svg><input type="search" id="header-search" placeholder="Пошук… (/ або ⌘K)" aria-label="Пошук" autocomplete="off"></div>
+  <div class="hdr-actions"><button class="btn-icon" id="theme-btn" aria-label="Змінити тему"><svg id="theme-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg></button><a href="../index.html#support" class="btn-support"><svg viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M8 14.25C8 14.25 1.5 10 1.5 5.5a3.5 3.5 0 0 1 6.5-1.8A3.5 3.5 0 0 1 14.5 5.5C14.5 10 8 14.25 8 14.25z"/></svg><span>Підтримати</span></a></div>
+</header>
+<div id="search-overlay" class="search-overlay" role="dialog" aria-modal="true" aria-label="Пошук"><div class="search-panel" id="search-panel"><input type="search" id="search-input" placeholder="Що шукаємо?" aria-label="Пошук" autocomplete="off" style="width:100%;height:52px;background:var(--bg2);border:none;border-bottom:1px solid var(--bd);border-radius:var(--r3) var(--r3) 0 0;padding:0 1.25rem;font-family:var(--mono);font-size:14px;color:var(--tx);outline:none"></div></div>
+
+<div class="page">
+  <div class="doc-layout">
+    <aside class="doc-sidebar" id="sidebar" aria-label="Розділи курсу"></aside>
+    <main class="doc-main" id="main-content">
+      <div class="article-inner">
+        <nav class="breadcrumbs" aria-label="Шлях навігації">
+          <a href="../index.html">Головна</a><span class="sep" aria-hidden="true">›</span>
+          <span>Основи JavaScript</span><span class="sep" aria-hidden="true">›</span>
+          <span aria-current="page">Суворий режим "use strict"</span>
+        </nav>
+        <h1 class="article-title">Суворий режим "use strict"</h1>
+        <div class="article-badges">
+          <span class="badge badge-begin">Початковий</span>
+          <span class="badge badge-sec">Основи JavaScript</span>
+          <span class="badge badge-time">~ 10 хв</span>
+        </div>
+        <article class="prose">
+
+          <p>Директива <code>"use strict"</code> вмикає суворий режим виконання (strict mode), введений у ES5. Він перетворює мовчазні помилки JavaScript на явні винятки і забороняє деякі небезпечні конструкції.</p>
+
+          <h2 id="chomu-vazhlivo">Чому це важливо</h2>
+          <p>JavaScript до ES5 мав поведінку «мовчати замість помилки»: присвоєння неоголошеній змінній, запис у read-only властивість, видалення невидаляємого — все це відбувалося без помилки. Strict mode перетворює ці тихі збої на <code>TypeError</code> або <code>ReferenceError</code>, що дозволяє знайти їх під час розробки, а не в продакшені.</p>
+
+          <h2 id="aktivatsiya">Активація</h2>
+          <p>Директива — це рядковий літерал <code>"use strict"</code> або <code>'use strict'</code>, що стоїть <strong>першим рядком</strong> скрипта або функції.</p>
+
+          <div class="code-block">
+            <div class="code-head"><span class="code-lang">JavaScript</span><button class="btn-copy" aria-label="Копіювати"></button></div>
+<pre><code class="language-javascript">// Весь файл у strict mode
+"use strict";
+
+function processOrder(order) {
+  // ...
+}
+
+// Тільки функція у strict mode (застарілий підхід для legacy-файлів)
+function validate(data) {
+  "use strict";
+  // ...
+}</code></pre>
+          </div>
+
+          <div class="callout c-warn">
+            <div class="callout-title">Позиція директиви критична</div>
+            <p>Якщо перед <code>"use strict"</code> є будь-який виконуваний код (навіть порожній рядок не є проблемою, але інструкція — так), директива ігнорується. Вона повинна бути першою інструкцією.</p>
+          </div>
+
+          <h2 id="shcho-zminyuye">Що змінює strict mode</h2>
+
+          <h3 id="undeclared">1. Заборона неоголошених змінних</h3>
+          <div class="code-block">
+            <div class="code-head"><span class="code-lang">JavaScript</span><button class="btn-copy" aria-label="Копіювати"></button></div>
+<pre><code class="language-javascript">"use strict";
+
+// sloppy mode: тихо створює глобальну змінну
+// strict mode: ReferenceError
+typoVariable = 42; // ReferenceError: typoVariable is not defined
+
+// Правильно: завжди оголошувати
+let typoVariable = 42;</code></pre>
+          </div>
+
+          <h3 id="readonly">2. Заборона запису у read-only властивості</h3>
+          <div class="code-block">
+            <div class="code-head"><span class="code-head"><span class="code-lang">JavaScript</span><button class="btn-copy" aria-label="Копіювати"></button></span></div>
+<pre><code class="language-javascript">"use strict";
+
+const obj = {};
+Object.defineProperty(obj, 'id', { value: 1, writable: false });
+
+obj.id = 2; // TypeError: Cannot assign to read only property 'id'
+// У sloppy mode це мовчки ігнорується</code></pre>
+          </div>
+
+          <h3 id="delete">3. Заборона видалення невидаляємих властивостей</h3>
+          <div class="code-block">
+            <div class="code-head"><span class="code-lang">JavaScript</span><button class="btn-copy" aria-label="Копіювати"></button></div>
+<pre><code class="language-javascript">"use strict";
+
+delete Object.prototype; // TypeError
+// У sloppy mode повертає false без помилки</code></pre>
+          </div>
+
+          <h3 id="duplicate-params">4. Заборона дублікатів параметрів</h3>
+          <div class="code-block">
+            <div class="code-head"><span class="code-lang">JavaScript</span><button class="btn-copy" aria-label="Копіювати"></button></div>
+<pre><code class="language-javascript">"use strict";
+
+// SyntaxError: Duplicate parameter name not allowed in this context
+function sum(a, a, b) { // ← дублікат параметра
+  return a + b;
+}
+// У sloppy mode другий 'a' мовчки перекриває перший</code></pre>
+          </div>
+
+          <h3 id="this-strict">5. this у функціях без контексту</h3>
+          <div class="code-block">
+            <div class="code-head"><span class="code-lang">JavaScript</span><button class="btn-copy" aria-label="Копіювати"></button></div>
+<pre><code class="language-javascript">"use strict";
+
+function showThis() {
+  console.log(this);
+}
+
+showThis();         // undefined (strict)
+                    // globalThis (sloppy)
+
+showThis.call(null); // null (strict)
+                     // globalThis (sloppy)</code></pre>
+          </div>
+
+          <h3 id="reserved">6. Заборона зарезервованих слів</h3>
+          <p>Strict mode забороняє використовувати як ідентифікатори слова, зарезервовані для майбутніх версій: <code>implements</code>, <code>interface</code>, <code>let</code>, <code>package</code>, <code>private</code>, <code>protected</code>, <code>public</code>, <code>static</code>, <code>yield</code>.</p>
+
+          <h2 id="moduli-ta-klasy">Модулі та класи — завжди strict</h2>
+          <p>ES-модулі (<code>type="module"</code>) та тіла класів виконуються у strict mode автоматично, незалежно від наявності директиви. У сучасному коді на модулях <code>"use strict"</code> надлишковий.</p>
+
+          <div class="code-block">
+            <div class="code-head"><span class="code-lang">JavaScript</span><button class="btn-copy" aria-label="Копіювати"></button></div>
+<pre><code class="language-javascript">// type="module" → автоматично strict mode
+// "use strict" тут надлишковий, але не шкідливий
+export function processData(data) {
+  undeclaredVar = 1; // ReferenceError без директиви
+}
+
+// Тіло класу — також завжди strict
+class Service {
+  process() {
+    undeclaredVar = 1; // ReferenceError
+  }
+}</code></pre>
+          </div>
+
+          <h2 id="transpilery">Транспілери та bundler</h2>
+          <p>Babel, TypeScript (з <code>target: ES5</code>), esbuild та більшість bundler-ів за замовчуванням додають <code>"use strict"</code> до скомпільованого коду. Тому у TypeScript-проектах директива є автоматично.</p>
+
+          <h2 id="summary">Підсумок</h2>
+          <ul>
+            <li><code>"use strict"</code> — директива ES5, що перетворює мовчазні помилки на явні винятки.</li>
+            <li>Повинна бути першою інструкцією файлу або функції.</li>
+            <li>Забороняє: неоголошені змінні, запис у read-only, дублікати параметрів, видалення невидаляємого.</li>
+            <li>Змінює значення <code>this</code> у функціях без контексту: <code>undefined</code> замість <code>globalThis</code>.</li>
+            <li>ES-модулі та тіла класів — завжди strict mode автоматично.</li>
+            <li>Завжди використовуйте strict mode у новому коді. У проектах на ES-модулях або TypeScript він вже активний.</li>
+          </ul>
+
+          <div class="article-support">
+            <p><strong>Матеріал корисний?</strong> Підтримай проект.</p>
+            <div class="support-btns-inline">
+              <a href="https://send.monobank.ua/jar/YOUR_JAR_ID" class="btn-mono" target="_blank" rel="noopener" style="font-size:12px;height:36px;padding:0 14px">🟢 Monobank</a>
+              <a href="https://www.buymeacoffee.com/YOUR_HANDLE" class="btn-coffee" target="_blank" rel="noopener" style="font-size:12px;height:36px;padding:0 14px">☕ Coffee</a>
+            </div>
+          </div>
+        </article>
+        <nav class="art-nav" aria-label="Між статтями">
+          <a href="code-structure.html" class="art-nav-a"><span class="art-nav-dir">← Попередня</span><span class="art-nav-title">Структура коду</span></a>
+          <a href="variables.html" class="art-nav-a is-next"><span class="art-nav-dir">Наступна →</span><span class="art-nav-title">Змінні</span></a>
+        </nav>
+      </div>
+    </main>
+    <aside class="doc-toc" aria-label="Зміст статті">
+      <p class="toc-label">Зміст</p>
+      <ul class="toc-list">
+        <li class="toc-item"><a href="#chomu-vazhlivo"  class="toc-link h2">Чому це важливо</a></li>
+        <li class="toc-item"><a href="#aktivatsiya"     class="toc-link h2">Активація</a></li>
+        <li class="toc-item"><a href="#shcho-zminyuye"  class="toc-link h2">Що змінює</a></li>
+        <li class="toc-item"><a href="#undeclared"      class="toc-link h3">Неоголошені змінні</a></li>
+        <li class="toc-item"><a href="#readonly"        class="toc-link h3">Read-only властивості</a></li>
+        <li class="toc-item"><a href="#delete"          class="toc-link h3">delete</a></li>
+        <li class="toc-item"><a href="#duplicate-params" class="toc-link h3">Дублікати параметрів</a></li>
+        <li class="toc-item"><a href="#this-strict"     class="toc-link h3">this без контексту</a></li>
+        <li class="toc-item"><a href="#reserved"        class="toc-link h3">Зарезервовані слова</a></li>
+        <li class="toc-item"><a href="#moduli-ta-klasy" class="toc-link h2">Модулі та класи</a></li>
+        <li class="toc-item"><a href="#transpilery"     class="toc-link h2">Транспілери</a></li>
+        <li class="toc-item"><a href="#summary"         class="toc-link h2">Підсумок</a></li>
+      </ul>
+      <div class="toc-progress"><div class="toc-prog-meta"><span>Прогрес</span><span id="progress-pct">0%</span></div><div class="prog-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"><div class="prog-fill" id="progress-fill"></div></div></div>
+      <div class="toc-donate"><p>Матеріал корисний? <strong>Підтримай проект</strong></p><a href="https://send.monobank.ua/jar/YOUR_JAR_ID" class="btn-donate-sm" target="_blank" rel="noopener">🟢 Задонатити</a></div>
+    </aside>
+  </div>
+</div>
+<script>const ARTICLE_META = { secId: 'basics', artId: 'use-strict' };</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-javascript.min.js"></script>
+<script src="../assets/js/app.js"></script>
+</body>
+</html>

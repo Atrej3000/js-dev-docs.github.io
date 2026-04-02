@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="uk" data-theme="dark">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Глобальний об'єкт | UA Dev Docs</title>
+  <meta name="description" content="Глобальний об'єкт у JavaScript — детальний розбір з прикладами, підводними каменями та best practices.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://YOUR_DOMAIN/functions-advanced/global-object.html">
+  <meta property="og:type" content="article"><meta property="og:title" content="Глобальний об'єкт — UA Dev Docs"><meta property="og:locale" content="uk_UA">
+  <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600;700;800&family=Literata:ital,opsz,wght@0,7..72,400;0,7..72,500;1,7..72,400&display=swap" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-tomorrow.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="../assets/css/main.css">
+</head>
+<body>
+<header class="site-header" role="banner">
+  <button class="btn-icon" id="sidebar-toggle" aria-label="Відкрити навігацію" aria-expanded="false"><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M2 5h16M2 10h16M2 15h16"/></svg></button>
+  <a href="../index.html" class="logo"><div class="logo-mark" aria-hidden="true">UA</div><span class="logo-text">dev<em>docs</em></span></a>
+  <div class="hdr-search" role="search"><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="9" cy="9" r="6"/><path d="m15 15-3-3"/></svg><input type="search" id="header-search" placeholder="Пошук…" aria-label="Пошук" autocomplete="off"></div>
+  <div class="hdr-actions"><button class="btn-icon" id="theme-btn" aria-label="Змінити тему"><svg id="theme-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg></button><a href="../index.html#support" class="btn-support"><svg viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M8 14.25C8 14.25 1.5 10 1.5 5.5a3.5 3.5 0 0 1 6.5-1.8A3.5 3.5 0 0 1 14.5 5.5C14.5 10 8 14.25 8 14.25z"/></svg><span>Підтримати</span></a></div>
+</header>
+<div id="search-overlay" class="search-overlay" role="dialog" aria-modal="true" aria-label="Пошук"><div class="search-panel" id="search-panel"><input type="search" id="search-input" placeholder="Що шукаємо?" autocomplete="off" style="width:100%;height:52px;background:var(--bg2);border:none;border-bottom:1px solid var(--bd);border-radius:var(--r3) var(--r3) 0 0;padding:0 1.25rem;font-family:var(--mono);font-size:14px;color:var(--tx);outline:none"></div></div>
+<div class="page"><div class="doc-layout">
+<aside class="doc-sidebar" id="sidebar" aria-label="Розділи курсу"></aside>
+<main class="doc-main" id="main-content"><div class="article-inner">
+  <nav class="breadcrumbs"><a href="../index.html">Головна</a><span class="sep">›</span><span>Розширена робота з функціями</span><span class="sep">›</span><span aria-current="page">Глобальний об'єкт</span></nav>
+  <h1 class="article-title">Глобальний об'єкт</h1>
+  <div class="article-badges"><span class="badge badge-begin">Початковий</span><span class="badge badge-sec">Розширена робота з функціями</span><span class="badge badge-time">~ 8 хв</span></div>
+  <article class="prose">
+
+    <p>Глобальний об'єкт надає змінні та функції, доступні всюди. У браузері це <code>window</code>, у Node.js — <code>global</code>, а з ES2020 — стандартизований <code>globalThis</code>, що працює в будь-якому середовищі.</p>
+
+    <h2 id="globalthis">globalThis</h2>
+    <div class="code-block"><div class="code-head"><span class="code-lang">JavaScript</span><button class="btn-copy" aria-label="Копіювати"></button></div>
+<pre><code class="language-javascript">// Єдиний стандартний спосіб (ES2020)
+console.log(globalThis === window);  // true (браузер)
+console.log(globalThis === global);  // true (Node.js)
+
+// До ES2020 — обходи
+const g = (typeof globalThis !== 'undefined') ? globalThis
+        : (typeof window     !== 'undefined') ? window
+        : (typeof global     !== 'undefined') ? global
+        : this;</code></pre></div>
+
+    <h2 id="global-vars">Глобальні змінні</h2>
+    <div class="code-block"><div class="code-head"><span class="code-lang">JavaScript</span><button class="btn-copy" aria-label="Копіювати"></button></div>
+<pre><code class="language-javascript">// var на верхньому рівні стає властивістю globalThis (браузер)
+var x = 10;
+console.log(globalThis.x); // 10
+
+// let/const НЕ стають властивістю globalThis
+let y = 20;
+console.log(globalThis.y); // undefined
+
+// Явна глобальна змінна
+globalThis.appConfig = { debug: false };
+
+// Перевірка існування
+if (!globalThis.Promise) {
+  // поліфіл для старих середовищ
+  globalThis.Promise = PolyfilledPromise;
+}</code></pre></div>
+
+    <h2 id="builtins">Вбудовані глобалі</h2>
+    <div class="code-block"><div class="code-head"><span class="code-lang">JavaScript</span><button class="btn-copy" aria-label="Копіювати"></button></div>
+<pre><code class="language-javascript">// Функції
+parseInt('42px');     // 42
+parseFloat('3.14em'); // 3.14
+isNaN(NaN);           // true
+isFinite(Infinity);   // false
+encodeURI('https://example.com/path?q=привіт');
+decodeURIComponent('%D0%BF%D1%80%D0%B8%D0%B2%D1%96%D1%82');
+
+// Конструктори
+new Array(), new Object(), new Map(), new Set()
+
+// Значення
+undefined, null, NaN, Infinity, -Infinity
+
+// Браузерні глобалі (тільки window)
+// setTimeout, setInterval, fetch, alert, document, location, history</code></pre></div>
+
+    <h2 id="polyfills">Поліфіли через globalThis</h2>
+    <div class="code-block"><div class="code-head"><span class="code-lang">JavaScript</span><button class="btn-copy" aria-label="Копіювати"></button></div>
+<pre><code class="language-javascript">// Перевірка і заповнення відсутньої функціональності
+if (!globalThis.queueMicrotask) {
+  globalThis.queueMicrotask = (fn) => Promise.resolve().then(fn);
+}
+
+// Feature detection без try/catch
+const hasLocalStorage = 'localStorage' in globalThis;
+const hasWebWorker    = 'Worker' in globalThis;</code></pre></div>
+    <div class="callout callout-warn"><p>Уникай засмічення глобального простору. Кожна бібліотека, що додає власні глобалі, збільшує ризик конфліктів. Використовуй модулі (ESM) — вони мають власний scope.</p></div>
+
+    <h2 id="summary">Підсумок</h2>
+    <ul>
+      <li><code>globalThis</code> — стандартний спосіб звертатись до глобального об'єкта в будь-якому середовищі</li>
+      <li><code>var</code> на верхньому рівні = властивість globalThis; <code>let</code>/<code>const</code> — ні</li>
+      <li>Глобальний об'єкт містить вбудовані функції, конструктори та середовищні API</li>
+      <li>Поліфіли розміщуй через <code>globalThis.X = ...</code> після перевірки існування</li>
+    </ul>
+
+  </article>
+  <div class="support-block"><p>Якщо матеріал був корисним — підтримай проєкт:</p><a href="../index.html#support" class="btn-support-lg">❤️ Підтримати UA Dev Docs</a></div>
+</div></main>
+</div></div>
+<script>const ARTICLE_META = { secId: 6, artId: 5 };</script>
+<script src="../assets/js/app.js" defer></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" defer></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-javascript.min.js" defer></script>
+</body>
+</html>

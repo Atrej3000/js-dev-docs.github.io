@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="uk" data-theme="dark">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Кастомні помилки | UA Dev Docs</title>
+  <meta name="description" content="Кастомні помилки у JavaScript — детальний розбір з прикладами, підводними каменями та best practices.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://YOUR_DOMAIN/error-handling/custom-errors.html">
+  <meta property="og:type" content="article"><meta property="og:title" content="Кастомні помилки — UA Dev Docs"><meta property="og:locale" content="uk_UA">
+  <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600;700;800&family=Literata:ital,opsz,wght@0,7..72,400;0,7..72,500;1,7..72,400&display=swap" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-tomorrow.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="../assets/css/main.css">
+</head>
+<body>
+<header class="site-header" role="banner">
+  <button class="btn-icon" id="sidebar-toggle" aria-label="Відкрити навігацію" aria-expanded="false"><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M2 5h16M2 10h16M2 15h16"/></svg></button>
+  <a href="../index.html" class="logo"><div class="logo-mark" aria-hidden="true">UA</div><span class="logo-text">dev<em>docs</em></span></a>
+  <div class="hdr-search" role="search"><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="9" cy="9" r="6"/><path d="m15 15-3-3"/></svg><input type="search" id="header-search" placeholder="Пошук…" aria-label="Пошук" autocomplete="off"></div>
+  <div class="hdr-actions"><button class="btn-icon" id="theme-btn" aria-label="Змінити тему"><svg id="theme-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg></button><a href="../index.html#support" class="btn-support"><svg viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M8 14.25C8 14.25 1.5 10 1.5 5.5a3.5 3.5 0 0 1 6.5-1.8A3.5 3.5 0 0 1 14.5 5.5C14.5 10 8 14.25 8 14.25z"/></svg><span>Підтримати</span></a></div>
+</header>
+<div id="search-overlay" class="search-overlay" role="dialog" aria-modal="true" aria-label="Пошук"><div class="search-panel" id="search-panel"><input type="search" id="search-input" placeholder="Що шукаємо?" autocomplete="off" style="width:100%;height:52px;background:var(--bg2);border:none;border-bottom:1px solid var(--bd);border-radius:var(--r3) var(--r3) 0 0;padding:0 1.25rem;font-family:var(--mono);font-size:14px;color:var(--tx);outline:none"></div></div>
+<div class="page"><div class="doc-layout">
+<aside class="doc-sidebar" id="sidebar" aria-label="Розділи курсу"></aside>
+<main class="doc-main" id="main-content"><div class="article-inner">
+  <nav class="breadcrumbs"><a href="../index.html">Головна</a><span class="sep">›</span><span>Обробка помилок</span><span class="sep">›</span><span aria-current="page">Кастомні помилки</span></nav>
+  <h1 class="article-title">Кастомні помилки</h1>
+  <div class="article-badges"><span class="badge badge-mid">Середній</span><span class="badge badge-sec">Обробка помилок</span><span class="badge badge-time">~ 10 хв</span></div>
+  <article class="prose">
+
+    <p>Кастомні помилки дозволяють точно ідентифікувати тип проблеми в програмі. Стандарт: розширювати <code>Error</code> через <code>class</code>, задавати <code>name</code>, додавати специфічні поля. Це дає <code>instanceof</code>, стек і семантику.</p>
+
+    <h2 id="basic-custom">Базовий кастомний Error</h2>
+    <div class="code-block"><div class="code-head"><span class="code-lang">JavaScript</span><button class="btn-copy" aria-label="Копіювати"></button></div>
+<pre><code class="language-javascript">class ValidationError extends Error {
+  constructor(message, field) {
+    super(message);
+    this.name  = 'ValidationError'; // обов'язково перевизначити
+    this.field = field;
+  }
+}
+
+class HttpError extends Error {
+  constructor(statusCode, message) {
+    super(message);
+    this.name       = 'HttpError';
+    this.statusCode = statusCode;
+  }
+}
+
+// Використання
+function readUser(data) {
+  if (!data.name) throw new ValidationError('Name required', 'name');
+  if (!data.email) throw new ValidationError('Email required', 'email');
+  return data;
+}
+
+try {
+  readUser({ name: 'Alice' });
+} catch (e) {
+  if (e instanceof ValidationError) {
+    console.log(`Поле: ${e.field}, Помилка: ${e.message}`);
+  } else {
+    throw e; // решта — прокидаємо вгору
+  }
+}</code></pre></div>
+
+    <h2 id="hierarchy">Ієрархія помилок</h2>
+    <div class="code-block"><div class="code-head"><span class="code-lang">JavaScript</span><button class="btn-copy" aria-label="Копіювати"></button></div>
+<pre><code class="language-javascript">// Базовий клас для всіх помилок застосунку
+class AppError extends Error {
+  constructor(message, code) {
+    super(message);
+    this.name = 'AppError';
+    this.code = code;
+  }
+}
+
+class DatabaseError extends AppError {
+  constructor(message, query) {
+    super(message, 'DB_ERROR');
+    this.name  = 'DatabaseError';
+    this.query = query;
+  }
+}
+
+class NotFoundError extends AppError {
+  constructor(resource, id) {
+    super(`${resource} with id=${id} not found`, 'NOT_FOUND');
+    this.name     = 'NotFoundError';
+    this.resource = resource;
+    this.id       = id;
+  }
+}
+
+// Обробка по ієрархії
+try {
+  throw new NotFoundError('User', 42);
+} catch (e) {
+  if (e instanceof NotFoundError) {
+    console.log(e.resource, e.id); // 'User' 42
+  } else if (e instanceof AppError) {
+    console.log('App error:', e.code);
+  } else {
+    throw e;
+  }
+}</code></pre></div>
+
+    <h2 id="wrapping">Wrapping errors</h2>
+    <div class="code-block"><div class="code-head"><span class="code-lang">JavaScript</span><button class="btn-copy" aria-label="Копіювати"></button></div>
+<pre><code class="language-javascript">// Обгортання низькорівневих помилок
+class ReadError extends Error {
+  constructor(message, cause) {
+    super(message);
+    this.name  = 'ReadError';
+    this.cause = cause; // оригінальна помилка (ES2022: стандартна опція)
+  }
+}
+
+function readUser(json) {
+  let data;
+  try {
+    data = JSON.parse(json);
+  } catch (e) {
+    throw new ReadError('Parse failed', e);
+  }
+  if (!data.name) throw new ValidationError('Name required', 'name');
+  return data;
+}
+
+try {
+  readUser('{ bad json }');
+} catch (e) {
+  if (e instanceof ReadError) {
+    console.log(e.message);      // 'Parse failed'
+    console.log(e.cause.message); // 'Unexpected token b...'
+  }
+}
+
+// ES2022: вбудований cause
+try {
+  JSON.parse('bad');
+} catch (e) {
+  throw new Error('High-level message', { cause: e });
+}</code></pre></div>
+    <div class="callout callout-info"><p>Патерн wrapping: низькорівнева помилка (JSON, DB, HTTP) загортається у бізнес-помилку з контекстом. Споживач бачить зрозуміле повідомлення, а <code>cause</code> зберігає технічні деталі для логування.</p></div>
+
+    <h2 id="summary">Підсумок</h2>
+    <ul>
+      <li>Завжди задавай <code>this.name</code> у конструкторі — інакше буде <code>'Error'</code></li>
+      <li>Будуй ієрархію: <code>AppError → DomainError → SpecificError</code></li>
+      <li>Додавай специфічні поля (<code>field</code>, <code>statusCode</code>, <code>query</code>) для контексту</li>
+      <li>Wrapping: зберігай <code>cause</code> при перекиданні помилок між шарами</li>
+      <li>Прокидай (<code>throw e</code>) невідомі помилки — не ковтай мовчки</li>
+    </ul>
+
+  </article>
+  <div class="support-block"><p>Якщо матеріал був корисним — підтримай проєкт:</p><a href="../index.html#support" class="btn-support-lg">❤️ Підтримати UA Dev Docs</a></div>
+</div></main>
+</div></div>
+<script>const ARTICLE_META = { secId: 10, artId: 2 };</script>
+<script src="../assets/js/app.js" defer></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" defer></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-javascript.min.js" defer></script>
+</body>
+</html>

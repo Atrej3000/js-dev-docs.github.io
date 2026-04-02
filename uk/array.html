@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="uk" data-theme="dark">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Масиви | UA Dev Docs</title>
+  <meta name="description" content="Масиви JavaScript: створення, методи push/pop/shift/unshift, slice/splice, indexOf, includes, деструктуризація.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://YOUR_DOMAIN/data-types/array.html">
+  <meta property="og:type" content="article"><meta property="og:title" content="Масиви — UA Dev Docs"><meta property="og:locale" content="uk_UA">
+  <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600;700;800&family=Literata:ital,opsz,wght@0,7..72,400;0,7..72,500;1,7..72,400&display=swap" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-tomorrow.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="../assets/css/main.css">
+</head>
+<body>
+<header class="site-header" role="banner">
+  <button class="btn-icon" id="sidebar-toggle" aria-label="Відкрити навігацію" aria-expanded="false"><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M2 5h16M2 10h16M2 15h16"/></svg></button>
+  <a href="../index.html" class="logo"><div class="logo-mark" aria-hidden="true">UA</div><span class="logo-text">dev<em>docs</em></span></a>
+  <div class="hdr-search" role="search"><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="9" cy="9" r="6"/><path d="m15 15-3-3"/></svg><input type="search" id="header-search" placeholder="Пошук…" aria-label="Пошук" autocomplete="off"></div>
+  <div class="hdr-actions"><button class="btn-icon" id="theme-btn" aria-label="Змінити тему"><svg id="theme-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg></button><a href="../index.html#support" class="btn-support"><svg viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M8 14.25C8 14.25 1.5 10 1.5 5.5a3.5 3.5 0 0 1 6.5-1.8A3.5 3.5 0 0 1 14.5 5.5C14.5 10 8 14.25 8 14.25z"/></svg><span>Підтримати</span></a></div>
+</header>
+<div id="search-overlay" class="search-overlay" role="dialog" aria-modal="true" aria-label="Пошук"><div class="search-panel" id="search-panel"><input type="search" id="search-input" placeholder="Що шукаємо?" autocomplete="off" style="width:100%;height:52px;background:var(--bg2);border:none;border-bottom:1px solid var(--bd);border-radius:var(--r3) var(--r3) 0 0;padding:0 1.25rem;font-family:var(--mono);font-size:14px;color:var(--tx);outline:none"></div></div>
+<div class="page"><div class="doc-layout">
+<aside class="doc-sidebar" id="sidebar" aria-label="Розділи курсу"></aside>
+<main class="doc-main" id="main-content"><div class="article-inner">
+  <nav class="breadcrumbs"><a href="../index.html">Головна</a><span class="sep">›</span><span>Типи даних</span><span class="sep">›</span><span aria-current="page">Масиви</span></nav>
+  <h1 class="article-title">Масиви</h1>
+  <div class="article-badges"><span class="badge badge-begin">Початковий</span><span class="badge badge-sec">Типи даних</span><span class="badge badge-time">~ 14 хв</span></div>
+  <article class="prose">
+
+    <p>Масив — впорядкована колекція значень з числовою індексацією. Масиви є об'єктами зі спеціальною числовою індексацією та властивістю <code>length</code>. Вони динамічні: можна додавати та видаляти елементи в будь-який момент.</p>
+
+    <h2 id="stvorennya">Створення масиву</h2>
+    <div class="code-block"><div class="code-head"><span class="code-lang">JavaScript</span><button class="btn-copy" aria-label="Копіювати"></button></div>
+<pre><code class="language-javascript">// Літерал (рекомендований)
+const fruits  = ['apple', 'banana', 'cherry'];
+const mixed   = [1, 'two', true, null, { x: 3 }];
+const empty   = [];
+
+// Array.from — з iterable або array-like
+Array.from('abc');           // ['a', 'b', 'c']
+Array.from({ length: 3 }, (_, i) => i * 2); // [0, 2, 4]
+Array.from(new Set([1, 2, 2, 3])); // [1, 2, 3]
+
+// Array.of — з аргументів
+Array.of(1, 2, 3);   // [1, 2, 3]
+
+// Конструктор (не рекомендовано — неоднозначний)
+new Array(3);        // [empty × 3] — масив з 3 порожніми слотами!</code></pre></div>
+
+    <h2 id="dostup">Доступ і модифікація</h2>
+    <div class="code-block"><div class="code-head"><span class="code-lang">JavaScript</span><button class="btn-copy" aria-label="Копіювати"></button></div>
+<pre><code class="language-javascript">const arr = ['a', 'b', 'c', 'd'];
+
+console.log(arr[0]);      // "a"
+console.log(arr.at(-1));  // "d" — ES2022
+console.log(arr.length);  // 4
+
+// Модифікація
+arr[1] = 'B';             // ['a', 'B', 'c', 'd']
+arr[10] = 'z';            // розріджений масив! arr.length = 11</code></pre></div>
+
+    <h2 id="stack-queue">Стек і черга</h2>
+    <div class="code-block"><div class="code-head"><span class="code-lang">JavaScript</span><button class="btn-copy" aria-label="Копіювати"></button></div>
+<pre><code class="language-javascript">const stack = [];
+
+// СТЕК (LIFO): push/pop
+stack.push(1, 2, 3);     // [1, 2, 3]
+console.log(stack.pop()); // 3 — знімає з кінця
+
+// ЧЕРГА (FIFO): push/shift
+const queue = [];
+queue.push('a');
+queue.push('b');
+console.log(queue.shift()); // "a" — знімає з початку
+// shift/unshift — O(n): зсувають всі елементи. Для великих черг — використовуйте deque або linked list
+
+// unshift — додає на початок
+queue.unshift('first');  // ['first', 'b']</code></pre></div>
+
+    <h2 id="splice-slice">splice і slice</h2>
+    <div class="code-block"><div class="code-head"><span class="code-lang">JavaScript</span><button class="btn-copy" aria-label="Копіювати"></button></div>
+<pre><code class="language-javascript">const arr = [1, 2, 3, 4, 5];
+
+// slice — копія підмасиву (НЕ мутує)
+console.log(arr.slice(1, 3));   // [2, 3]
+console.log(arr.slice(-2));     // [4, 5]
+console.log(arr);               // [1, 2, 3, 4, 5] — незмінний
+
+// splice — видалення/вставка (МУТУЄ масив!)
+const removed = arr.splice(1, 2); // видалити 2 елементи з позиції 1
+console.log(removed); // [2, 3]
+console.log(arr);     // [1, 4, 5]
+
+arr.splice(1, 0, 'a', 'b'); // вставити без видалення
+console.log(arr); // [1, 'a', 'b', 4, 5]</code></pre></div>
+
+    <h2 id="poshuk">Пошук</h2>
+    <div class="code-block"><div class="code-head"><span class="code-lang">JavaScript</span><button class="btn-copy" aria-label="Копіювати"></button></div>
+<pre><code class="language-javascript">const items = [1, 2, 3, 4, 2, 5];
+
+console.log(items.indexOf(2));          // 1 — перше входження
+console.log(items.lastIndexOf(2));      // 4
+console.log(items.indexOf(99));         // -1
+
+console.log(items.includes(3));         // true (ES2016)
+console.log(items.includes(NaN));       // false — indexOf теж не знайде NaN
+
+// Для NaN: використовуйте find
+const withNaN = [1, NaN, 3];
+console.log(withNaN.find(x => Number.isNaN(x))); // NaN</code></pre></div>
+
+    <h2 id="iteratsiya">Ітерація</h2>
+    <div class="code-block"><div class="code-head"><span class="code-lang">JavaScript</span><button class="btn-copy" aria-label="Копіювати"></button></div>
+<pre><code class="language-javascript">const arr = ['a', 'b', 'c'];
+
+// for...of (рекомендований для простої ітерації)
+for (const item of arr) { console.log(item); }
+
+// for...of з індексом
+for (const [index, item] of arr.entries()) {
+  console.log(index, item); // 0 'a', 1 'b', 2 'c'
+}
+
+// forEach (без break, без return значення)
+arr.forEach((item, index) => { console.log(index, item); });</code></pre></div>
+
+    <h2 id="summary">Підсумок</h2>
+    <ul>
+      <li>Масиви — об'єкти. <code>typeof [] === "object"</code>. Перевіряйте через <code>Array.isArray()</code>.</li>
+      <li>Стек: <code>push/pop</code>. Черга: <code>push/shift</code> (shift — O(n)).</li>
+      <li><code>slice</code> не мутує. <code>splice</code> мутує — видаляє та вставляє елементи.</li>
+      <li><code>arr.at(-1)</code> — останній елемент (ES2022).</li>
+      <li>Уникайте <code>new Array(n)</code> — створює розріджений масив.</li>
+    </ul>
+    <div class="article-support"><p><strong>Матеріал корисний?</strong> Підтримай проект.</p><div class="support-btns-inline"><a href="https://send.monobank.ua/jar/YOUR_JAR_ID" class="btn-mono" target="_blank" rel="noopener" style="font-size:12px;height:36px;padding:0 14px">🟢 Monobank</a><a href="https://www.buymeacoffee.com/YOUR_HANDLE" class="btn-coffee" target="_blank" rel="noopener" style="font-size:12px;height:36px;padding:0 14px">☕ Coffee</a></div></div>
+  </article>
+  <nav class="art-nav">
+    <a href="string.html" class="art-nav-a"><span class="art-nav-dir">← Попередня</span><span class="art-nav-title">Рядки</span></a>
+    <a href="array-methods.html" class="art-nav-a is-next"><span class="art-nav-dir">Наступна →</span><span class="art-nav-title">Методи масивів</span></a>
+  </nav>
+</div></main>
+<aside class="doc-toc"><p class="toc-label">Зміст</p><ul class="toc-list">
+  <li><a href="#stvorennya"  class="toc-link h2">Створення</a></li>
+  <li><a href="#dostup"      class="toc-link h2">Доступ і модифікація</a></li>
+  <li><a href="#stack-queue" class="toc-link h2">Стек і черга</a></li>
+  <li><a href="#splice-slice" class="toc-link h2">splice і slice</a></li>
+  <li><a href="#poshuk"      class="toc-link h2">Пошук</a></li>
+  <li><a href="#iteratsiya"  class="toc-link h2">Ітерація</a></li>
+  <li><a href="#summary"     class="toc-link h2">Підсумок</a></li>
+</ul>
+<div class="toc-progress"><div class="toc-prog-meta"><span>Прогрес</span><span id="progress-pct">0%</span></div><div class="prog-bar"><div class="prog-fill" id="progress-fill"></div></div></div>
+<div class="toc-donate"><p>Матеріал корисний? <strong>Підтримай проект</strong></p><a href="https://send.monobank.ua/jar/YOUR_JAR_ID" class="btn-donate-sm" target="_blank" rel="noopener">🟢 Задонатити</a></div></aside>
+</div></div>
+<script>const ARTICLE_META = { secId: 'data-types', artId: 'array' };</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-javascript.min.js"></script>
+<script src="../assets/js/app.js"></script>
+</body></html>

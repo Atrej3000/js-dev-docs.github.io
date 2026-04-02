@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="uk" data-theme="dark">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Дата і час | UA Dev Docs</title>
+  <meta name="description" content="Дата і час у JavaScript — детальний розбір з прикладами, підводними каменями та best practices.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://YOUR_DOMAIN/data-types/date.html">
+  <meta property="og:type" content="article"><meta property="og:title" content="Дата і час — UA Dev Docs"><meta property="og:locale" content="uk_UA">
+  <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600;700;800&family=Literata:ital,opsz,wght@0,7..72,400;0,7..72,500;1,7..72,400&display=swap" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-tomorrow.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="../assets/css/main.css">
+</head>
+<body>
+<header class="site-header" role="banner">
+  <button class="btn-icon" id="sidebar-toggle" aria-label="Відкрити навігацію" aria-expanded="false"><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M2 5h16M2 10h16M2 15h16"/></svg></button>
+  <a href="../index.html" class="logo"><div class="logo-mark" aria-hidden="true">UA</div><span class="logo-text">dev<em>docs</em></span></a>
+  <div class="hdr-search" role="search"><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="9" cy="9" r="6"/><path d="m15 15-3-3"/></svg><input type="search" id="header-search" placeholder="Пошук…" aria-label="Пошук" autocomplete="off"></div>
+  <div class="hdr-actions"><button class="btn-icon" id="theme-btn" aria-label="Змінити тему"><svg id="theme-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg></button><a href="../index.html#support" class="btn-support"><svg viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M8 14.25C8 14.25 1.5 10 1.5 5.5a3.5 3.5 0 0 1 6.5-1.8A3.5 3.5 0 0 1 14.5 5.5C14.5 10 8 14.25 8 14.25z"/></svg><span>Підтримати</span></a></div>
+</header>
+<div id="search-overlay" class="search-overlay" role="dialog" aria-modal="true" aria-label="Пошук"><div class="search-panel" id="search-panel"><input type="search" id="search-input" placeholder="Що шукаємо?" autocomplete="off" style="width:100%;height:52px;background:var(--bg2);border:none;border-bottom:1px solid var(--bd);border-radius:var(--r3) var(--r3) 0 0;padding:0 1.25rem;font-family:var(--mono);font-size:14px;color:var(--tx);outline:none"></div></div>
+<div class="page"><div class="doc-layout">
+<aside class="doc-sidebar" id="sidebar" aria-label="Розділи курсу"></aside>
+<main class="doc-main" id="main-content"><div class="article-inner">
+  <nav class="breadcrumbs"><a href="../index.html">Головна</a><span class="sep">›</span><span>Типи даних</span><span class="sep">›</span><span aria-current="page">Дата і час</span></nav>
+  <h1 class="article-title">Дата і час</h1>
+  <div class="article-badges"><span class="badge badge-mid">Середній</span><span class="badge badge-sec">Типи даних</span><span class="badge badge-time">~ 14 хв</span></div>
+  <article class="prose">
+
+    <p><code>Date</code> — вбудований клас для роботи з датою та часом. Внутрішньо зберігає мілісекунди від Unix epoch (1 січня 1970 UTC). Клас має чимало пасток: місяці від 0, локальні vs UTC методи, відсутність часових зон.</p>
+
+    <h2 id="creation">Створення</h2>
+    <div class="code-block"><div class="code-head"><span class="code-lang">JavaScript</span><button class="btn-copy" aria-label="Копіювати"></button></div>
+<pre><code class="language-javascript">// Поточний момент
+const now = new Date();
+
+// З мілісекунд (timestamp)
+const d1 = new Date(0);           // 1970-01-01T00:00:00.000Z
+const d2 = new Date(1000 * 3600); // +1 година від epoch
+
+// З рядка (ISO 8601 рекомендований)
+const d3 = new Date('2024-03-15');
+const d4 = new Date('2024-03-15T10:30:00Z');
+
+// З компонентів (місяць від 0!)
+const d5 = new Date(2024, 2, 15, 10, 30, 0); // 15 березня 2024
+//                        ^ 2 = березень (0-indexed)
+
+// Timestamp
+Date.now();      // поточний timestamp, швидше ніж new Date().getTime()
+d4.getTime();    // мілісекунди</code></pre></div>
+
+    <h2 id="getters">Читання компонентів</h2>
+    <div class="code-block"><div class="code-head"><span class="code-lang">JavaScript</span><button class="btn-copy" aria-label="Копіювати"></button></div>
+<pre><code class="language-javascript">const d = new Date('2024-03-15T10:30:45.123Z');
+
+// Локальний час (залежить від системної TZ)
+d.getFullYear();     // 2024
+d.getMonth();        // 2 (березень — 0-indexed!)
+d.getDate();         // 15 (день місяця)
+d.getDay();          // 5 (п'ятниця, 0=неділя)
+d.getHours();        // залежить від TZ
+d.getMinutes();      // 30
+d.getSeconds();      // 45
+d.getMilliseconds(); // 123
+
+// UTC версії
+d.getUTCFullYear();  // 2024
+d.getUTCHours();     // 10 (UTC, не залежить від TZ)
+d.getUTCMonth();     // 2
+
+// Timestamp
+d.getTime();         // ms від epoch</code></pre></div>
+
+    <h2 id="setters">Модифікація</h2>
+    <div class="code-block"><div class="code-head"><span class="code-lang">JavaScript</span><button class="btn-copy" aria-label="Копіювати"></button></div>
+<pre><code class="language-javascript">const d = new Date('2024-01-15');
+
+d.setFullYear(2025);     // змінює рік
+d.setMonth(5);           // червень (0-indexed)
+d.setDate(d.getDate() + 7); // +7 днів
+
+// Авто-корекція: Date коригує некоректні значення
+const weird = new Date(2024, 1, 31); // 31 лютого
+console.log(weird);  // 2024-03-02 — автоматично перенесено!
+
+const backtrack = new Date(2024, 2, 0); // 0-й день березня
+console.log(backtrack); // 2024-02-29 — останній день лютого</code></pre></div>
+    <div class="callout callout-info"><p>Авто-корекція <code>Date</code> зручна для арифметики: <code>setDate(date.getDate() + N)</code> коректно переходить через межі місяців і років.</p></div>
+
+    <h2 id="formatting">Форматування</h2>
+    <div class="code-block"><div class="code-head"><span class="code-lang">JavaScript</span><button class="btn-copy" aria-label="Копіювати"></button></div>
+<pre><code class="language-javascript">const d = new Date('2024-03-15T10:30:00');
+
+// Вбудовані методи
+d.toString();      // 'Fri Mar 15 2024 10:30:00 GMT+0200'
+d.toISOString();   // '2024-03-15T08:30:00.000Z' (UTC!)
+d.toLocaleDateString('uk-UA'); // '15.03.2024'
+d.toLocaleTimeString('uk-UA'); // '10:30:00'
+d.toLocaleString('uk-UA', {
+  day: '2-digit', month: 'long', year: 'numeric'
+}); // '15 березня 2024 р.'
+
+// Intl.DateTimeFormat (рекомендовано для production)
+const fmt = new Intl.DateTimeFormat('uk-UA', {
+  weekday: 'long', year: 'numeric', month: 'long', day: 'numeric'
+});
+fmt.format(d); // 'п'ятниця, 15 березня 2024 р.'</code></pre></div>
+
+    <h2 id="diff">Різниця між датами</h2>
+    <div class="code-block"><div class="code-head"><span class="code-lang">JavaScript</span><button class="btn-copy" aria-label="Копіювати"></button></div>
+<pre><code class="language-javascript">const start = new Date('2024-01-01');
+const end   = new Date('2024-03-15');
+
+const diffMs   = end - start;          // різниця в мілісекундах
+const diffDays = diffMs / (1000*60*60*24); // ~74.x днів
+
+// Вік людини
+function age(birthDate) {
+  const diff = Date.now() - new Date(birthDate).getTime();
+  return Math.floor(diff / (1000*60*60*24*365.25));
+}
+console.log(age('1990-05-20')); // кількість повних років</code></pre></div>
+
+    <h2 id="pitfalls">Підводні камені</h2>
+    <div class="callout callout-warn"><p>1. Місяці від 0 — найпоширеніша помилка. 2. <code>new Date(string)</code> без ізо-формату може вести себе по-різному в різних браузерах. 3. Методи без UTC повертають локальний час — результат залежить від машини.</p></div>
+
+    <h2 id="summary">Підсумок</h2>
+    <ul>
+      <li>Місяці 0–11, дні тижня 0–6 (неділя=0)</li>
+      <li><code>Date.now()</code> — найшвидший спосіб отримати timestamp</li>
+      <li>Завжди використовуй ISO-рядки при парсингу</li>
+      <li>Для UTC: методи <code>getUTC*</code> / <code>setUTC*</code></li>
+      <li>Авто-корекція дозволяє просту арифметику дат</li>
+      <li>Для серйозної роботи з датами — бібліотека <code>date-fns</code> або <code>Temporal</code> API</li>
+    </ul>
+
+  </article>
+  <div class="support-block"><p>Якщо матеріал був корисним — підтримай проєкт:</p><a href="../index.html#support" class="btn-support-lg">❤️ Підтримати UA Dev Docs</a></div>
+</div></main>
+</div></div>
+<script>const ARTICLE_META = { secId: 5, artId: 11 };</script>
+<script src="../assets/js/app.js" defer></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" defer></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-javascript.min.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="uk" data-theme="dark">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Перетворення об'єктів в примітиви | UA Dev Docs</title>
+  <meta name="description" content="Перетворення об'єктів JavaScript у примітиви: ToPrimitive, hint, Symbol.toPrimitive, valueOf, toString — внутрішній алгоритм.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://YOUR_DOMAIN/objects/object-toprimitive.html">
+  <meta property="og:type" content="article"><meta property="og:title" content="Перетворення об'єктів в примітиви — UA Dev Docs"><meta property="og:locale" content="uk_UA">
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"TechArticle","headline":"Перетворення об'єктів в примітиви","inLanguage":"uk","url":"https://YOUR_DOMAIN/objects/object-toprimitive.html","author":{"@type":"Organization","name":"UA Dev Docs"}}</script>
+  <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600;700;800&family=Literata:ital,opsz,wght@0,7..72,400;0,7..72,500;1,7..72,400&display=swap" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-tomorrow.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="../assets/css/main.css">
+</head>
+<body>
+<header class="site-header" role="banner">
+  <button class="btn-icon" id="sidebar-toggle" aria-label="Відкрити навігацію" aria-expanded="false"><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M2 5h16M2 10h16M2 15h16"/></svg></button>
+  <a href="../index.html" class="logo"><div class="logo-mark" aria-hidden="true">UA</div><span class="logo-text">dev<em>docs</em></span></a>
+  <div class="hdr-search" role="search"><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="9" cy="9" r="6"/><path d="m15 15-3-3"/></svg><input type="search" id="header-search" placeholder="Пошук…" aria-label="Пошук" autocomplete="off"></div>
+  <div class="hdr-actions"><button class="btn-icon" id="theme-btn" aria-label="Змінити тему"><svg id="theme-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg></button><a href="../index.html#support" class="btn-support"><svg viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M8 14.25C8 14.25 1.5 10 1.5 5.5a3.5 3.5 0 0 1 6.5-1.8A3.5 3.5 0 0 1 14.5 5.5C14.5 10 8 14.25 8 14.25z"/></svg><span>Підтримати</span></a></div>
+</header>
+<div id="search-overlay" class="search-overlay" role="dialog" aria-modal="true" aria-label="Пошук"><div class="search-panel" id="search-panel"><input type="search" id="search-input" placeholder="Що шукаємо?" autocomplete="off" style="width:100%;height:52px;background:var(--bg2);border:none;border-bottom:1px solid var(--bd);border-radius:var(--r3) var(--r3) 0 0;padding:0 1.25rem;font-family:var(--mono);font-size:14px;color:var(--tx);outline:none"></div></div>
+<div class="page">
+  <div class="doc-layout">
+    <aside class="doc-sidebar" id="sidebar" aria-label="Розділи курсу"></aside>
+    <main class="doc-main" id="main-content">
+      <div class="article-inner">
+        <nav class="breadcrumbs"><a href="../index.html">Головна</a><span class="sep">›</span><span>Об'єкти: основи</span><span class="sep">›</span><span aria-current="page">Перетворення об'єктів в примітиви</span></nav>
+        <h1 class="article-title">Перетворення об'єктів в примітиви</h1>
+        <div class="article-badges"><span class="badge badge-mid">Середній</span><span class="badge badge-sec">Об'єкти: основи</span><span class="badge badge-time">~ 11 хв</span></div>
+        <article class="prose">
+
+          <p>Коли об'єкт використовується в контексті де очікується примітив (арифметика, конкатенація, порівняння), рушій виконує внутрішню операцію <strong>ToPrimitive</strong>. Алгоритм визначається через <em>hint</em> — підказку про очікуваний тип.</p>
+
+          <h2 id="hints">Три hint-значення</h2>
+          <table>
+            <thead><tr><th>Hint</th><th>Коли виникає</th></tr></thead>
+            <tbody>
+              <tr><td><code>"string"</code></td><td>Шаблонний літерал, <code>alert(obj)</code>, ключ об'єкта</td></tr>
+              <tr><td><code>"number"</code></td><td>Математичні оператори (<code>-</code>, <code>*</code>, <code>/</code>, порівняння), унарний <code>+</code></td></tr>
+              <tr><td><code>"default"</code></td><td><code>+</code> бінарний, <code>==</code> (без явного типу)</td></tr>
+            </tbody>
+          </table>
+
+          <h2 id="algorithm">Алгоритм ToPrimitive</h2>
+          <ol>
+            <li>Якщо є <code>[Symbol.toPrimitive](hint)</code> — викликає і повертає результат.</li>
+            <li>Для hint <code>"string"</code>: спочатку <code>toString()</code>, потім <code>valueOf()</code>.</li>
+            <li>Для hint <code>"number"</code> або <code>"default"</code>: спочатку <code>valueOf()</code>, потім <code>toString()</code>.</li>
+          </ol>
+
+          <h2 id="symbol-toprim">Symbol.toPrimitive — рекомендований спосіб</h2>
+          <div class="code-block">
+            <div class="code-head"><span class="code-lang">JavaScript</span><button class="btn-copy" aria-label="Копіювати"></button></div>
+<pre><code class="language-javascript">const money = {
+  amount:   1500,
+  currency: 'UAH',
+
+  [Symbol.toPrimitive](hint) {
+    switch (hint) {
+      case 'number': return this.amount;
+      case 'string': return `${this.amount} ${this.currency}`;
+      default:       return this.amount; // default = number-like
+    }
+  }
+};
+
+console.log(+money);           // 1500        (number hint)
+console.log(`${money}`);       // "1500 UAH"  (string hint)
+console.log(money + 500);      // 2000        (default hint)
+console.log(money > 1000);     // true        (number hint)</code></pre>
+          </div>
+
+          <h2 id="valueof-tostring">valueOf і toString</h2>
+          <div class="code-block">
+            <div class="code-head"><span class="code-lang">JavaScript</span><button class="btn-copy" aria-label="Копіювати"></button></div>
+<pre><code class="language-javascript">// Без Symbol.toPrimitive — рушій шукає valueOf і toString
+const point = {
+  x: 3,
+  y: 4,
+
+  valueOf() {
+    // Викликається при number hint
+    return Math.sqrt(this.x ** 2 + this.y ** 2); // відстань від 0
+  },
+
+  toString() {
+    // Викликається при string hint
+    return `(${this.x}, ${this.y})`;
+  },
+};
+
+console.log(+point);        // 5     (valueOf)
+console.log(`${point}`);    // "(3, 4)" (toString)
+console.log(point * 2);     // 10    (valueOf)
+console.log(point + '');    // "5"   (default → valueOf, потім String(5))
+
+// Стандартний Object.prototype.valueOf() повертає сам об'єкт
+// Стандартний Object.prototype.toString() повертає "[object Object]"
+const plain = { value: 42 };
+console.log(plain + 1);     // "[object Object]1" (toString → concat)</code></pre>
+          </div>
+
+          <h2 id="date-example">Date як приклад</h2>
+          <div class="code-block">
+            <div class="code-head"><span class="code-lang">JavaScript</span><button class="btn-copy" aria-label="Копіювати"></button></div>
+<pre><code class="language-javascript">const now = new Date();
+
+// Date реалізує обидва методи
+console.log(+now);    // Unix timestamp (ms) — valueOf
+console.log(`${now}`); // "Thu Jan 01 2026..."  — toString
+
+// Різниця дат — числовий контекст → valueOf
+const d1 = new Date('2026-01-01');
+const d2 = new Date('2026-06-01');
+const diffMs = d2 - d1; // обидва перетворені через valueOf
+console.log(diffMs / (1000 * 60 * 60 * 24)); // кількість днів</code></pre>
+          </div>
+
+          <h2 id="summary">Підсумок</h2>
+          <ul>
+            <li>ToPrimitive виконується автоматично при використанні об'єкта в примітивному контексті.</li>
+            <li>Три hint: <code>"string"</code>, <code>"number"</code>, <code>"default"</code>.</li>
+            <li><code>[Symbol.toPrimitive](hint)</code> — найточніший спосіб контролювати перетворення.</li>
+            <li>Без <code>Symbol.toPrimitive</code>: для number-hint — <code>valueOf()</code> потім <code>toString()</code>; для string-hint — навпаки.</li>
+            <li>Стандартний <code>valueOf()</code> повертає сам об'єкт, тому більшість об'єктів конвертуються через <code>toString()</code> → <code>"[object Object]"</code>.</li>
+          </ul>
+
+          <div class="article-support"><p><strong>Матеріал корисний?</strong> Підтримай проект.</p><div class="support-btns-inline"><a href="https://send.monobank.ua/jar/YOUR_JAR_ID" class="btn-mono" target="_blank" rel="noopener" style="font-size:12px;height:36px;padding:0 14px">🟢 Monobank</a><a href="https://www.buymeacoffee.com/YOUR_HANDLE" class="btn-coffee" target="_blank" rel="noopener" style="font-size:12px;height:36px;padding:0 14px">☕ Coffee</a></div></div>
+        </article>
+        <nav class="art-nav">
+          <a href="symbol.html" class="art-nav-a"><span class="art-nav-dir">← Попередня</span><span class="art-nav-title">Тип даних Symbol</span></a>
+          <a href="../data-types/primitives-methods.html" class="art-nav-a is-next"><span class="art-nav-dir">Наступна →</span><span class="art-nav-title">Методи примітивів</span></a>
+        </nav>
+      </div>
+    </main>
+    <aside class="doc-toc"><p class="toc-label">Зміст</p><ul class="toc-list">
+      <li class="toc-item"><a href="#hints"           class="toc-link h2">Три hint-значення</a></li>
+      <li class="toc-item"><a href="#algorithm"       class="toc-link h2">Алгоритм ToPrimitive</a></li>
+      <li class="toc-item"><a href="#symbol-toprim"   class="toc-link h2">Symbol.toPrimitive</a></li>
+      <li class="toc-item"><a href="#valueof-tostring" class="toc-link h2">valueOf і toString</a></li>
+      <li class="toc-item"><a href="#date-example"    class="toc-link h2">Date як приклад</a></li>
+      <li class="toc-item"><a href="#summary"         class="toc-link h2">Підсумок</a></li>
+    </ul>
+    <div class="toc-progress"><div class="toc-prog-meta"><span>Прогрес</span><span id="progress-pct">0%</span></div><div class="prog-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"><div class="prog-fill" id="progress-fill"></div></div></div>
+    <div class="toc-donate"><p>Матеріал корисний? <strong>Підтримай проект</strong></p><a href="https://send.monobank.ua/jar/YOUR_JAR_ID" class="btn-donate-sm" target="_blank" rel="noopener">🟢 Задонатити</a></div></aside>
+  </div>
+</div>
+<script>const ARTICLE_META = { secId: 'objects', artId: 'object-toprimitive' };</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-javascript.min.js"></script>
+<script src="../assets/js/app.js"></script>
+</body>
+</html>
