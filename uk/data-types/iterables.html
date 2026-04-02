@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="uk" data-theme="dark">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ітеровані об'єкти | UA Dev Docs</title>
+  <meta name="description" content="Ітеровані об'єкти у JavaScript — детальний розбір з прикладами, підводними каменями та best practices.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://YOUR_DOMAIN/data-types/iterables.html">
+  <meta property="og:type" content="article"><meta property="og:title" content="Ітеровані об'єкти — UA Dev Docs"><meta property="og:locale" content="uk_UA">
+  <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600;700;800&family=Literata:ital,opsz,wght@0,7..72,400;0,7..72,500;1,7..72,400&display=swap" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-tomorrow.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="/assets/css/main.css">
+</head>
+<body>
+<header class="site-header" role="banner">
+  <button class="btn-icon" id="sidebar-toggle" aria-label="Відкрити навігацію" aria-expanded="false"><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M2 5h16M2 10h16M2 15h16"/></svg></button>
+  <a href="/uk/" class="logo"><div class="logo-mark" aria-hidden="true">UA</div><span class="logo-text">dev<em>docs</em></span></a>
+  <div class="hdr-search" role="search"><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="9" cy="9" r="6"/><path d="m15 15-3-3"/></svg><input type="search" id="header-search" placeholder="Пошук…" aria-label="Пошук" autocomplete="off"></div>
+  <div class="hdr-actions"><button class="btn-icon" id="theme-btn" aria-label="Змінити тему"><svg id="theme-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg></button><a href="../index.html#support" class="btn-support"><svg viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M8 14.25C8 14.25 1.5 10 1.5 5.5a3.5 3.5 0 0 1 6.5-1.8A3.5 3.5 0 0 1 14.5 5.5C14.5 10 8 14.25 8 14.25z"/></svg><span>Підтримати</span></a></div>
+</header>
+<div id="search-overlay" class="search-overlay" role="dialog" aria-modal="true" aria-label="Пошук"><div class="search-panel" id="search-panel"><input type="search" id="search-input" placeholder="Що шукаємо?" autocomplete="off" style="width:100%;height:52px;background:var(--bg2);border:none;border-bottom:1px solid var(--bd);border-radius:var(--r3) var(--r3) 0 0;padding:0 1.25rem;font-family:var(--mono);font-size:14px;color:var(--tx);outline:none"></div></div>
+<div class="page"><div class="doc-layout">
+<aside class="doc-sidebar" id="sidebar" aria-label="Розділи курсу"></aside>
+<main class="doc-main" id="main-content"><div class="article-inner">
+  <nav class="breadcrumbs"><a href="/uk/">Головна</a><span class="sep">›</span><span>Типи даних</span><span class="sep">›</span><span aria-current="page">Ітеровані об'єкти</span></nav>
+  <h1 class="article-title">Ітеровані об'єкти</h1>
+  <div class="article-badges"><span class="badge badge-begin">Початковий</span><span class="badge badge-sec">Типи даних</span><span class="badge badge-time">~ 10 хв</span></div>
+  <article class="prose">
+
+    <p>Ітерований об'єкт (<em>iterable</em>) — будь-який об'єкт, який можна перебрати оператором <code>for...of</code>. Вбудовані ітерабельні: рядки, масиви, <code>Map</code>, <code>Set</code>, <code>arguments</code>, NodeList. Основа — символьний метод <code>[Symbol.iterator]()</code>.</p>
+
+    <h2 id="protocol">Протокол ітерації</h2>
+    <p>Об'єкт є ітерабельним, якщо він містить метод <code>[Symbol.iterator]</code>, що повертає <strong>ітератор</strong> — об'єкт з методом <code>next()</code>. Метод <code>next()</code> повертає <code>{ value, done }</code>.</p>
+    <div class="code-block"><div class="code-head"><span class="code-lang">JavaScript</span><button class="btn-copy" aria-label="Копіювати"></button></div>
+<pre><code class="language-javascript">// Ітератор вручну
+const range = {
+  from: 1, to: 3,
+  [Symbol.iterator]() {
+    let cur = this.from;
+    const last = this.to;
+    return {
+      next() {
+        return cur <= last
+          ? { value: cur++, done: false }
+          : { value: undefined, done: true };
+      }
+    };
+  }
+};
+
+for (const n of range) console.log(n); // 1 2 3
+console.log([...range]);               // [1, 2, 3]
+const [a, b] = range;                  // деструктуризація</code></pre></div>
+
+    <h2 id="string">Рядок як ітерабельний</h2>
+    <div class="code-block"><div class="code-head"><span class="code-lang">JavaScript</span><button class="btn-copy" aria-label="Копіювати"></button></div>
+<pre><code class="language-javascript">for (const ch of 'hello') console.log(ch); // h e l l o
+
+// Рядок ітерує по Unicode-codepoint, а не байтах
+const emoji = '😀👍';
+console.log([...emoji].length); // 2 (не 4!)
+console.log(emoji.length);      // 4 — UTF-16 пари</code></pre></div>
+
+    <h2 id="array-like">Array-like vs Iterable</h2>
+    <div class="callout callout-info"><p>Array-like має <code>length</code> і числові індекси, але може не мати <code>[Symbol.iterator]</code>. Iterable має ітератор, але може не мати <code>length</code>. Масиви — і те, і інше.</p></div>
+    <div class="code-block"><div class="code-head"><span class="code-lang">JavaScript</span><button class="btn-copy" aria-label="Копіювати"></button></div>
+<pre><code class="language-javascript">// Array-like — не iterable!
+const arrayLike = { 0: 'a', 1: 'b', length: 2 };
+// for (const x of arrayLike) {}  // TypeError!
+
+// Конвертація через Array.from
+const arr = Array.from(arrayLike); // ['a', 'b']
+Array.from(arrayLike, x => x.toUpperCase()); // ['A', 'B']</code></pre></div>
+
+    <h2 id="custom">Власний ітератор із замиканням</h2>
+    <div class="code-block"><div class="code-head"><span class="code-lang">JavaScript</span><button class="btn-copy" aria-label="Копіювати"></button></div>
+<pre><code class="language-javascript">// Генератор як ітератор (спрощена форма)
+function* fibonacci() {
+  let [a, b] = [0, 1];
+  while (true) {
+    yield a;
+    [a, b] = [b, a + b];
+  }
+}
+
+const fib = fibonacci();
+console.log(fib.next().value); // 0
+console.log(fib.next().value); // 1
+console.log(fib.next().value); // 1
+console.log(fib.next().value); // 2
+
+// Перші 6 чисел Фібоначчі
+import { take } from 'lodash'; // або вручну
+const first6 = [];
+for (const n of fibonacci()) {
+  if (first6.length === 6) break;
+  first6.push(n);
+}
+console.log(first6); // [0,1,1,2,3,5]</code></pre></div>
+
+    <h2 id="spread">Spread і деструктуризація</h2>
+    <div class="code-block"><div class="code-head"><span class="code-lang">JavaScript</span><button class="btn-copy" aria-label="Копіювати"></button></div>
+<pre><code class="language-javascript">// Spread розгортає iterable
+const set = new Set([1, 2, 3]);
+const arr = [...set];          // [1, 2, 3]
+const combined = [...arr, ...set]; // [1,2,3,1,2,3]
+
+// Деструктуризація iterable
+const [first, second] = new Set([10, 20, 30]);
+console.log(first, second); // 10 20
+
+// Promise.all, Array.from, Map/Set constructor — всі приймають iterable
+const map = new Map([['a', 1], ['b', 2]]);
+const keys = [...map.keys()]; // ['a', 'b']</code></pre></div>
+
+    <h2 id="pitfalls">Підводні камені</h2>
+    <div class="callout callout-warn"><p>Ітератор одноразовий — після завершення повторний виклик <code>for...of</code> не дасть результату. Для повторного перебору потрібен новий ітератор (новий виклик <code>[Symbol.iterator]()</code>).</p></div>
+    <div class="code-block"><div class="code-head"><span class="code-lang">JavaScript</span><button class="btn-copy" aria-label="Копіювати"></button></div>
+<pre><code class="language-javascript">// Нескінченний ітератор без break — зависне!
+// for (const n of fibonacci()) console.log(n); // ∞ loop
+
+// Завжди використовуй break або take(n)
+
+// Lazy evaluation: ітератор не обчислює всі значення наперед
+// Це перевага над масивами для великих/нескінченних послідовностей</code></pre></div>
+
+    <h2 id="summary">Підсумок</h2>
+    <ul>
+      <li><strong>Iterable</strong> — має <code>[Symbol.iterator]()</code>, працює з <code>for...of</code>, spread, деструктуризацією</li>
+      <li><strong>Iterator</strong> — об'єкт з <code>next()</code> → <code>{value, done}</code></li>
+      <li><code>Array.from(iterable)</code> — конвертація у масив</li>
+      <li>Генератори — найзручніший спосіб створювати власні ітератори</li>
+      <li>Array-like ≠ iterable; <code>Array.from</code> обробляє обидва</li>
+    </ul>
+
+  </article>
+  <div class="support-block"><p>Якщо матеріал був корисним — підтримай проєкт:</p><a href="../index.html#support" class="btn-support-lg">❤️ Підтримати UA Dev Docs</a></div>
+</div></main>
+</div></div>
+<script>const ARTICLE_META = { secId: 5, artId: 3 };</script>
+<script src="/assets/js/app.js" defer></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" defer></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-javascript.min.js" defer></script>
+</body>
+</html>

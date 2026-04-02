@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="uk" data-theme="dark">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Reference Type | UA Dev Docs</title>
+  <meta name="description" content="Reference Type у JavaScript — детальний розбір з прикладами, підводними каменями та best practices.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://YOUR_DOMAIN/misc/reference-type.html">
+  <meta property="og:type" content="article"><meta property="og:title" content="Reference Type — UA Dev Docs"><meta property="og:locale" content="uk_UA">
+  <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600;700;800&family=Literata:ital,opsz,wght@0,7..72,400;0,7..72,500;1,7..72,400&display=swap" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-tomorrow.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="/assets/css/main.css">
+</head>
+<body>
+<header class="site-header" role="banner">
+  <button class="btn-icon" id="sidebar-toggle" aria-label="Відкрити навігацію" aria-expanded="false"><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M2 5h16M2 10h16M2 15h16"/></svg></button>
+  <a href="/uk/" class="logo"><div class="logo-mark" aria-hidden="true">UA</div><span class="logo-text">dev<em>docs</em></span></a>
+  <div class="hdr-search" role="search"><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="9" cy="9" r="6"/><path d="m15 15-3-3"/></svg><input type="search" id="header-search" placeholder="Пошук…" aria-label="Пошук" autocomplete="off"></div>
+  <div class="hdr-actions"><button class="btn-icon" id="theme-btn" aria-label="Змінити тему"><svg id="theme-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg></button><a href="../index.html#support" class="btn-support"><svg viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M8 14.25C8 14.25 1.5 10 1.5 5.5a3.5 3.5 0 0 1 6.5-1.8A3.5 3.5 0 0 1 14.5 5.5C14.5 10 8 14.25 8 14.25z"/></svg><span>Підтримати</span></a></div>
+</header>
+<div id="search-overlay" class="search-overlay" role="dialog" aria-modal="true" aria-label="Пошук"><div class="search-panel" id="search-panel"><input type="search" id="search-input" placeholder="Що шукаємо?" autocomplete="off" style="width:100%;height:52px;background:var(--bg2);border:none;border-bottom:1px solid var(--bd);border-radius:var(--r3) var(--r3) 0 0;padding:0 1.25rem;font-family:var(--mono);font-size:14px;color:var(--tx);outline:none"></div></div>
+<div class="page"><div class="doc-layout">
+<aside class="doc-sidebar" id="sidebar" aria-label="Розділи курсу"></aside>
+<main class="doc-main" id="main-content"><div class="article-inner">
+  <nav class="breadcrumbs"><a href="/uk/">Головна</a><span class="sep">›</span><span>Різне</span><span class="sep">›</span><span aria-current="page">Reference Type</span></nav>
+  <h1 class="article-title">Reference Type</h1>
+  <div class="article-badges"><span class="badge badge-adv">Просунутий</span><span class="badge badge-sec">Різне</span><span class="badge badge-time">~ 8 хв</span></div>
+  <article class="prose">
+
+    <p>Reference Type — внутрішній механізм специфікації JS, що пояснює, чому одні виклики методів зберігають <code>this</code>, а інші — ні. Знання цього допомагає передбачати поведінку <code>this</code> без магічного мислення.</p>
+
+    <h2 id="the-problem">Проблема втрати this</h2>
+    <div class="code-block"><div class="code-head"><span class="code-lang">JavaScript</span><button class="btn-copy" aria-label="Копіювати"></button></div>
+<pre><code class="language-javascript">const user = {
+  name: 'Alice',
+  greet() { return `Hello, ${this.name}`; }
+};
+
+user.greet();           // 'Hello, Alice' — this = user
+
+const fn = user.greet;
+fn();                   // 'Hello, undefined' — this = undefined (strict) або window
+
+// Чому? Розберемо через Reference Type</code></pre></div>
+
+    <h2 id="ref-type">Що таке Reference Type</h2>
+    <div class="code-block"><div class="code-head"><span class="code-lang">JavaScript</span><button class="btn-copy" aria-label="Копіювати"></button></div>
+<pre><code class="language-javascript">// Reference Type — це специфікаційний тип (не реальний JS-тип)
+// Він зберігає три компоненти:
+// { base: об'єкт, name: ім'я властивості, strict: режим }
+
+// user.greet — це Reference: { base: user, name: 'greet' }
+// При виклику user.greet() — JS бере base як this → this = user
+
+// const fn = user.greet — присвоєння витягує значення (саму функцію)
+// Reference втрачається — this = undefined (strict)
+
+// Операції, що руйнують Reference Type:
+const { greet } = user;    // деструктуризація
+greet();                    // this = undefined
+
+const fn2 = (true ? user.greet : null);
+fn2();                      // умовний вираз — Reference втрачена, this = undefined
+
+const fn3 = (user.greet);   // дужки без аргументів — зберігає Reference
+fn3.call(user);             // але сам виклик вже з правильним this</code></pre></div>
+
+    <h2 id="cases">Кейси поведінки this</h2>
+    <div class="code-block"><div class="code-head"><span class="code-lang">JavaScript</span><button class="btn-copy" aria-label="Копіювати"></button></div>
+<pre><code class="language-javascript">const obj = {
+  val: 42,
+  getVal() { return this.val; },
+  arrow: () => console.log(this), // this з outer scope (не obj)
+};
+
+// ✅ Зберігають this (Reference цілий)
+obj.getVal();                   // 42
+obj['getVal']();                // 42
+
+// ❌ Руйнують Reference
+const f1 = obj.getVal;
+f1();                           // undefined
+
+const f2 = (obj.getVal);
+// Виклик f2() — Reference вже не збережена в f2
+
+// setTimeout — завжди втрачає this
+setTimeout(obj.getVal, 100);    // undefined — передається копія функції
+
+// Рішення 1: bind
+setTimeout(obj.getVal.bind(obj), 100); // 42
+
+// Рішення 2: стрілка
+setTimeout(() => obj.getVal(), 100);   // 42
+
+// Рішення 3: arrow method у класі
+class C {
+  val = 42;
+  getVal = () => this.val; // стрілка — this завжди прив'язаний
+}</code></pre></div>
+    <div class="callout callout-info"><p>Reference Type — концепція зі специфікації ECMAScript, а не реальний тип даних. Вона описує внутрішній механізм. Програмісту достатньо знати правило: <em>виклик через крапку або дужки зберігає this; присвоєння, деструктуризація, передача аргументом — руйнує.</em></p></div>
+
+    <h2 id="summary">Підсумок</h2>
+    <ul>
+      <li><code>obj.method()</code> — Reference ціла → <code>this = obj</code></li>
+      <li>Присвоєння, деструктуризація, умовний вираз — Reference руйнується → <code>this = undefined</code></li>
+      <li>Рішення: <code>.bind()</code>, стрілкова функція-обгортка, class field arrow</li>
+      <li>Стрілкові функції не мають власного <code>this</code> — не залежать від Reference Type</li>
+    </ul>
+
+  </article>
+  <div class="support-block"><p>Якщо матеріал був корисним — підтримай проєкт:</p><a href="../index.html#support" class="btn-support-lg">❤️ Підтримати UA Dev Docs</a></div>
+</div></main>
+</div></div>
+<script>const ARTICLE_META = { secId: 14, artId: 3 };</script>
+<script src="/assets/js/app.js" defer></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" defer></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-javascript.min.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="uk" data-theme="dark">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Оператор instanceof | UA Dev Docs</title>
+  <meta name="description" content="Оператор instanceof у JavaScript — детальний розбір з прикладами, підводними каменями та best practices.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://YOUR_DOMAIN/classes/instanceof.html">
+  <meta property="og:type" content="article"><meta property="og:title" content="Оператор instanceof — UA Dev Docs"><meta property="og:locale" content="uk_UA">
+  <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600;700;800&family=Literata:ital,opsz,wght@0,7..72,400;0,7..72,500;1,7..72,400&display=swap" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-tomorrow.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="/assets/css/main.css">
+</head>
+<body>
+<header class="site-header" role="banner">
+  <button class="btn-icon" id="sidebar-toggle" aria-label="Відкрити навігацію" aria-expanded="false"><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M2 5h16M2 10h16M2 15h16"/></svg></button>
+  <a href="/uk/" class="logo"><div class="logo-mark" aria-hidden="true">UA</div><span class="logo-text">dev<em>docs</em></span></a>
+  <div class="hdr-search" role="search"><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="9" cy="9" r="6"/><path d="m15 15-3-3"/></svg><input type="search" id="header-search" placeholder="Пошук…" aria-label="Пошук" autocomplete="off"></div>
+  <div class="hdr-actions"><button class="btn-icon" id="theme-btn" aria-label="Змінити тему"><svg id="theme-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg></button><a href="../index.html#support" class="btn-support"><svg viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M8 14.25C8 14.25 1.5 10 1.5 5.5a3.5 3.5 0 0 1 6.5-1.8A3.5 3.5 0 0 1 14.5 5.5C14.5 10 8 14.25 8 14.25z"/></svg><span>Підтримати</span></a></div>
+</header>
+<div id="search-overlay" class="search-overlay" role="dialog" aria-modal="true" aria-label="Пошук"><div class="search-panel" id="search-panel"><input type="search" id="search-input" placeholder="Що шукаємо?" autocomplete="off" style="width:100%;height:52px;background:var(--bg2);border:none;border-bottom:1px solid var(--bd);border-radius:var(--r3) var(--r3) 0 0;padding:0 1.25rem;font-family:var(--mono);font-size:14px;color:var(--tx);outline:none"></div></div>
+<div class="page"><div class="doc-layout">
+<aside class="doc-sidebar" id="sidebar" aria-label="Розділи курсу"></aside>
+<main class="doc-main" id="main-content"><div class="article-inner">
+  <nav class="breadcrumbs"><a href="/uk/">Головна</a><span class="sep">›</span><span>Класи</span><span class="sep">›</span><span aria-current="page">Оператор instanceof</span></nav>
+  <h1 class="article-title">Оператор instanceof</h1>
+  <div class="article-badges"><span class="badge badge-mid">Середній</span><span class="badge badge-sec">Класи</span><span class="badge badge-time">~ 8 хв</span></div>
+  <article class="prose">
+
+    <p>Оператор <code>instanceof</code> перевіряє, чи належить об'єкт до певного класу через ланцюжок прототипів. Поведінку можна налаштувати через <code>Symbol.hasInstance</code>.</p>
+
+    <h2 id="basics">Базова поведінка</h2>
+    <div class="code-block"><div class="code-head"><span class="code-lang">JavaScript</span><button class="btn-copy" aria-label="Копіювати"></button></div>
+<pre><code class="language-javascript">class Animal {}
+class Dog extends Animal {}
+
+const dog = new Dog();
+
+console.log(dog instanceof Dog);    // true
+console.log(dog instanceof Animal); // true — через ланцюжок прототипів
+console.log(dog instanceof Object); // true — всі об'єкти
+
+// Як це працює всередині:
+// dog.__proto__ === Dog.prototype          ✓ → true
+// dog.__proto__.__proto__ === Animal.prototype ✓ → true</code></pre></div>
+
+    <h2 id="prototype-chain">Перевірка через прототипи</h2>
+    <div class="code-block"><div class="code-head"><span class="code-lang">JavaScript</span><button class="btn-copy" aria-label="Копіювати"></button></div>
+<pre><code class="language-javascript">// instanceof перевіряє весь ланцюжок до null
+function checkChain(obj, Cls) {
+  let proto = Object.getPrototypeOf(obj);
+  while (proto !== null) {
+    if (proto === Cls.prototype) return true;
+    proto = Object.getPrototypeOf(proto);
+  }
+  return false;
+}
+
+// Еквівалентно instanceof
+console.log(checkChain(dog, Dog));    // true
+console.log(checkChain(dog, Animal)); // true
+
+// Пастка: зміна prototype після створення
+function Foo() {}
+const foo = new Foo();
+Foo.prototype = {};        // перезаписали прототип
+
+console.log(foo instanceof Foo); // false! — foo досі посилається на старий prototype</code></pre></div>
+
+    <h2 id="symbol-hasinstance">Symbol.hasInstance</h2>
+    <div class="code-block"><div class="code-head"><span class="code-lang">JavaScript</span><button class="btn-copy" aria-label="Копіювати"></button></div>
+<pre><code class="language-javascript">// Кастомна логіка instanceof
+class EvenNumber {
+  static [Symbol.hasInstance](num) {
+    return typeof num === 'number' && num % 2 === 0;
+  }
+}
+
+console.log(2  instanceof EvenNumber); // true
+console.log(3  instanceof EvenNumber); // false
+console.log(10 instanceof EvenNumber); // true</code></pre></div>
+
+    <h2 id="typeof-vs">instanceof vs typeof vs constructor</h2>
+    <div class="code-block"><div class="code-head"><span class="code-lang">JavaScript</span><button class="btn-copy" aria-label="Копіювати"></button></div>
+<pre><code class="language-javascript">const arr = [1, 2, 3];
+const obj = {};
+
+// typeof
+typeof arr;      // 'object' — не розрізняє масив і об'єкт
+typeof null;     // 'object' — відома помилка
+
+// instanceof
+arr instanceof Array;   // true
+arr instanceof Object;  // true
+null instanceof Object; // false — не кидає помилку
+
+// Array.isArray — найнадійніший спосіб для масивів
+Array.isArray(arr);     // true
+Array.isArray(obj);     // false
+
+// constructor (крихке — легко замінити)
+arr.constructor === Array;   // true (але можна перезаписати)
+
+// Object.prototype.toString — універсальний тег
+Object.prototype.toString.call(arr);  // '[object Array]'
+Object.prototype.toString.call(null); // '[object Null]'
+Object.prototype.toString.call(/re/); // '[object RegExp]'</code></pre></div>
+    <div class="callout callout-info"><p>Для перевірки примітивів (<code>string</code>, <code>number</code>, <code>boolean</code>) <code>instanceof</code> завжди повертає <code>false</code>. Використовуй <code>typeof</code> для примітивів і <code>instanceof</code> для класів та об'єктів.</p></div>
+
+    <h2 id="summary">Підсумок</h2>
+    <ul>
+      <li><code>instanceof</code> перевіряє ланцюжок прототипів аж до <code>null</code></li>
+      <li>Повертає <code>false</code> для примітивів</li>
+      <li><code>Symbol.hasInstance</code> дозволяє задати кастомну логіку перевірки</li>
+      <li>Для масивів — <code>Array.isArray()</code>; для тегів — <code>Object.prototype.toString.call()</code></li>
+    </ul>
+
+  </article>
+  <div class="support-block"><p>Якщо матеріал був корисним — підтримай проєкт:</p><a href="../index.html#support" class="btn-support-lg">❤️ Підтримати UA Dev Docs</a></div>
+</div></main>
+</div></div>
+<script>const ARTICLE_META = { secId: 9, artId: 6 };</script>
+<script src="/assets/js/app.js" defer></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" defer></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-javascript.min.js" defer></script>
+</body>
+</html>

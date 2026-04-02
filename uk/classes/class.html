@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="uk" data-theme="dark">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Базовий синтаксис класу | UA Dev Docs</title>
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://YOUR_DOMAIN/classes/class.html">
+  <meta property="og:type" content="article"><meta property="og:title" content="Базовий синтаксис класу — UA Dev Docs"><meta property="og:locale" content="uk_UA">
+  <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600;700;800&family=Literata:ital,opsz,wght@0,7..72,400;0,7..72,500;1,7..72,400&display=swap" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-tomorrow.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="/assets/css/main.css">
+</head>
+<body>
+<header class="site-header" role="banner">
+  <button class="btn-icon" id="sidebar-toggle" aria-label="Відкрити навігацію" aria-expanded="false"><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M2 5h16M2 10h16M2 15h16"/></svg></button>
+  <a href="/uk/" class="logo"><div class="logo-mark" aria-hidden="true">UA</div><span class="logo-text">dev<em>docs</em></span></a>
+  <div class="hdr-search" role="search"><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="9" cy="9" r="6"/><path d="m15 15-3-3"/></svg><input type="search" id="header-search" placeholder="Пошук…" aria-label="Пошук" autocomplete="off"></div>
+  <div class="hdr-actions"><button class="btn-icon" id="theme-btn" aria-label="Змінити тему"><svg id="theme-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg></button><a href="../index.html#support" class="btn-support"><svg viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M8 14.25C8 14.25 1.5 10 1.5 5.5a3.5 3.5 0 0 1 6.5-1.8A3.5 3.5 0 0 1 14.5 5.5C14.5 10 8 14.25 8 14.25z"/></svg><span>Підтримати</span></a></div>
+</header>
+<div id="search-overlay" class="search-overlay" role="dialog" aria-modal="true" aria-label="Пошук"><div class="search-panel" id="search-panel"><input type="search" id="search-input" placeholder="Що шукаємо?" autocomplete="off" style="width:100%;height:52px;background:var(--bg2);border:none;border-bottom:1px solid var(--bd);border-radius:var(--r3) var(--r3) 0 0;padding:0 1.25rem;font-family:var(--mono);font-size:14px;color:var(--tx);outline:none"></div></div>
+<div class="page"><div class="doc-layout">
+<aside class="doc-sidebar" id="sidebar" aria-label="Розділи курсу"></aside>
+<main class="doc-main" id="main-content"><div class="article-inner">
+  <nav class="breadcrumbs"><a href="/uk/">Головна</a><span class="sep">›</span><span>Класи</span><span class="sep">›</span><span aria-current="page">Клас</span></nav>
+  <h1 class="article-title">Базовий синтаксис класу</h1>
+  <div class="article-badges"><span class="badge badge-begin">Початковий</span><span class="badge badge-sec">Класи</span><span class="badge badge-time">~ 13 хв</span></div>
+  <article class="prose">
+
+    <p>Клас (ES6) — синтаксичний цукор поверх прotototype-успадкування. Надає зручний синтаксис для створення конструкторів і методів, автоматично встановлює прotototype і захищає від виклику без <code>new</code>.</p>
+
+    <h2 id="syntaksys">Базовий синтаксис</h2>
+    <div class="code-block"><div class="code-head"><span class="code-lang">JavaScript</span><button class="btn-copy" aria-label="Копіювати"></button></div>
+<pre><code class="language-javascript">class User {
+  // Конструктор: викликається при new User(...)
+  constructor(name, email) {
+    this.name  = name;
+    this.email = email;
+  }
+
+  // Метод: зберігається у User.prototype
+  greet() {
+    return `Привіт, ${this.name}!`;
+  }
+
+  describe() {
+    return `${this.name} (${this.email})`;
+  }
+}
+
+const alice = new User('Alice', 'alice@example.com');
+console.log(alice.greet());    // "Привіт, Alice!"
+console.log(alice.describe()); // "Alice (alice@example.com)"
+
+// Методи класу — не enumerable (відмінність від ручного prototype)
+console.log(Object.keys(alice)); // [] — методи не перелічуються
+
+// Без new — TypeError (на відміну від функцій-конструкторів)
+// User('Bob', 'b@b.com'); // TypeError: Class constructor must be called with new</code></pre></div>
+
+    <h2 id="fields">Поля класу (Class Fields)</h2>
+    <div class="code-block"><div class="code-head"><span class="code-lang">JavaScript</span><button class="btn-copy" aria-label="Копіювати"></button></div>
+<pre><code class="language-javascript">class Counter {
+  // Публічне поле — власна властивість екземпляра (не prototype)
+  count = 0;
+  step  = 1;
+
+  // Приватне поле — доступне лише всередині класу
+  #history = [];
+
+  increment() {
+    this.count += this.step;
+    this.#history.push(this.count);
+  }
+
+  getHistory() { return [...this.#history]; }
+}
+
+const c = new Counter();
+c.increment();
+c.increment();
+console.log(c.count);        // 2
+console.log(c.getHistory()); // [1, 2]
+// c.#history;               // SyntaxError — приватне</code></pre></div>
+
+    <h2 id="static">Статичні методи і поля</h2>
+    <div class="code-block"><div class="code-head"><span class="code-lang">JavaScript</span><button class="btn-copy" aria-label="Копіювати"></button></div>
+<pre><code class="language-javascript">class MathHelper {
+  static PI = 3.14159265;
+
+  static circleArea(r) { return MathHelper.PI * r ** 2; }
+  static distance(p1, p2) {
+    return Math.sqrt((p2.x - p1.x) ** 2 + (p2.y - p1.y) ** 2);
+  }
+}
+
+// Виклик через клас, не через екземпляр
+console.log(MathHelper.PI);              // 3.14159265
+console.log(MathHelper.circleArea(5));   // ~78.54
+
+// Фабричний метод
+class User {
+  #name; #email;
+  constructor(name, email) { this.#name = name; this.#email = email; }
+
+  static fromJSON(json) {
+    const { name, email } = JSON.parse(json);
+    return new User(name, email);
+  }
+}
+
+const u = User.fromJSON('{"name":"Bob","email":"b@b.com"}');</code></pre></div>
+
+    <h2 id="summary">Підсумок</h2>
+    <ul>
+      <li>Клас: <code>constructor</code> — ініціалізація; методи — на <code>prototype</code>; поля класу — власна властивість екземпляра.</li>
+      <li>Методи класу не enumerable. Виклик без <code>new</code> → TypeError.</li>
+      <li>Приватні поля <code>#field</code> — недоступні ззовні, навіть через рефлексію.</li>
+      <li>Статичні методи і поля — на самому класі, не на екземплярах.</li>
+    </ul>
+    <div class="article-support"><p><strong>Матеріал корисний?</strong> Підтримай проект.</p><div class="support-btns-inline"><a href="https://send.monobank.ua/jar/YOUR_JAR_ID" class="btn-mono" target="_blank" rel="noopener" style="font-size:12px;height:36px;padding:0 14px">🟢 Monobank</a><a href="https://www.buymeacoffee.com/YOUR_HANDLE" class="btn-coffee" target="_blank" rel="noopener" style="font-size:12px;height:36px;padding:0 14px">☕ Coffee</a></div></div>
+  </article>
+  <nav class="art-nav">
+    <a href="../prototypes/prototype-methods.html" class="art-nav-a"><span class="art-nav-dir">← Попередня</span><span class="art-nav-title">Методи прotototype</span></a>
+    <a href="../classes/class-inheritance.html" class="art-nav-a is-next"><span class="art-nav-dir">Наступна →</span><span class="art-nav-title">Наслідування класу</span></a>
+  </nav>
+</div></main>
+<aside class="doc-toc"><p class="toc-label">Зміст</p><ul class="toc-list">
+  <li><a href="#syntaksys" class="toc-link h2">Базовий синтаксис</a></li>
+  <li><a href="#fields"     class="toc-link h2">Поля класу</a></li>
+  <li><a href="#static"     class="toc-link h2">Статичні</a></li>
+  <li><a href="#summary"    class="toc-link h2">Підсумок</a></li>
+</ul>
+<div class="toc-progress"><div class="toc-prog-meta"><span>Прогрес</span><span id="progress-pct">0%</span></div><div class="prog-bar"><div class="prog-fill" id="progress-fill"></div></div></div>
+<div class="toc-donate"><p>Корисно? <strong>Підтримай</strong></p><a href="https://send.monobank.ua/jar/YOUR_JAR_ID" class="btn-donate-sm" target="_blank" rel="noopener">🟢 Задонатити</a></div></aside>
+</div></div>
+<script>const ARTICLE_META = { secId: 'classes', artId: 'class' };</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-javascript.min.js"></script>
+<script src="/assets/js/app.js"></script>
+</body></html>

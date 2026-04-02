@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="uk" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>WeakRef та FinalizationRegistry | UA Dev Docs</title>
+  <meta name="description" content="WeakRef та FinalizationRegistry у JavaScript — детальний розбір з прикладами та підводними каменями.">
+  <link rel="canonical" href="/uk/misc/weakref.html">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600;700;800&family=Literata:ital,opsz,wght@0,7..72,400;0,7..72,500;1,7..72,400&display=swap" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-tomorrow.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="/assets/css/main.css">
+</head>
+<body>
+<header class="site-header" role="banner">
+  <button class="btn-icon" id="sidebar-toggle" aria-label="Menu">
+    <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 5h16M2 10h16M2 15h16"/></svg>
+  </button>
+  <a href="/uk/" class="logo"><div class="logo-mark">UA</div><span class="logo-text">dev<em>docs</em></span></a>
+  <div class="hdr-search" role="search">
+    <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2"><circle cx="9" cy="9" r="6"/><path d="m15 15-3-3"/></svg>
+    <input type="search" id="header-search" placeholder="Search..." aria-label="Search" autocomplete="off">
+  </div>
+  <div class="hdr-actions">
+    <button class="btn-icon" id="theme-btn" aria-label="Toggle theme">
+      <svg id="theme-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+    </button>
+  </div>
+</header>
+<div id="search-overlay" class="search-overlay" role="dialog" aria-modal="true" aria-label="Search">
+  <div class="search-panel" id="search-panel">
+    <input type="search" id="search-input" placeholder="Search..." autocomplete="off" style="width:100%;height:52px;background:var(--bg2);border:none;border-bottom:1px solid var(--bd);padding:0 1.25rem;font-size:14px;color:var(--tx);outline:none">
+  </div>
+</div>
+<div class="doc-layout">
+  <aside class="doc-sidebar" id="sidebar" aria-label="Navigation"></aside>
+  <main class="doc-main" id="main-content">
+    <div class="article-inner">
+      <nav class="breadcrumbs">
+        <a href="/uk/">Home</a><span class="sep">›</span>
+        <span>Різне</span><span class="sep">›</span>
+        <span aria-current="page">WeakRef та FinalizationRegistry</span>
+      </nav>
+      <h1 class="article-title">WeakRef та FinalizationRegistry</h1>
+      <div class="article-badges">
+        <span class="badge badge-begin">Просунутий</span>
+        <span class="badge badge-sec">Різне</span>
+        <span class="badge badge-time">~ 8 хв</span>
+      </div>
+      <article class="prose">
+
+        <p><code>WeakRef</code> та <code>FinalizationRegistry</code> — просунуті інструменти для роботи з пам'яттю. Вони дозволяють тримати слабке посилання на об'єкт, не заважаючи збирачу сміття його видалити.</p>
+
+        <div class="callout c-warn">
+          <div class="callout-title">Обережно</div>
+          <p>Ці можливості рідко потрібні у звичайному коді. Використовуй їх тільки якщо точно розумієш навіщо.</p>
+        </div>
+
+        <h2 id="weakref">WeakRef</h2>
+        <p><code>WeakRef</code> зберігає слабке посилання на об'єкт — збирач сміття може видалити його в будь-який момент, якщо немає інших сильних посилань.</p>
+        <pre><code class="language-javascript">let user = { name: 'Alice' };
+
+// Створюємо слабке посилання
+const weakUser = new WeakRef(user);
+
+// Отримати об'єкт (може повернути undefined, якщо вже зібраний)
+const ref = weakUser.deref();
+if (ref) {
+  console.log(ref.name); // 'Alice'
+} else {
+  console.log('Object was garbage collected');
+}
+
+// Прибираємо сильне посилання
+user = null;
+// Тепер збирач сміття може видалити об'єкт
+// weakUser.deref() може повернути undefined</code></pre>
+
+        <h2 id="finalization-registry">FinalizationRegistry</h2>
+        <p>Дозволяє зареєструвати колбек, який викличеться коли об'єкт буде видалено збирачем сміття.</p>
+        <pre><code class="language-javascript">const registry = new FinalizationRegistry((value) => {
+  console.log('Cleaned up:', value);
+});
+
+let user = { name: 'Bob' };
+
+// Реєструємо об'єкт з токеном
+registry.register(user, 'user-bob');
+
+// Прибираємо посилання
+user = null;
+
+// Колись після збирання сміття:
+// 'Cleaned up: user-bob'</code></pre>
+
+        <h2 id="practical-use">Практичне застосування</h2>
+        <p>Найчастіше <code>WeakRef</code> використовується для кешування без витоків пам'яті:</p>
+        <pre><code class="language-javascript">class Cache {
+  #cache = new Map();
+  #registry = new FinalizationRegistry((key) => {
+    this.#cache.delete(key); // очищаємо запис коли об'єкт видалено
+  });
+
+  set(key, value) {
+    this.#cache.set(key, new WeakRef(value));
+    this.#registry.register(value, key);
+  }
+
+  get(key) {
+    const ref = this.#cache.get(key);
+    return ref ? ref.deref() : undefined;
+  }
+}
+
+const cache = new Cache();
+let bigData = { size: '100MB', content: '...' };
+cache.set('data', bigData);
+
+console.log(cache.get('data')); // { size: '100MB', ... }
+bigData = null; // може бути видалено збирачем сміття</code></pre>
+
+        <h2 id="summary">Підсумок</h2>
+        <ul>
+          <li><code>new WeakRef(obj)</code> — слабке посилання на об'єкт</li>
+          <li><code>ref.deref()</code> — отримати об'єкт або <code>undefined</code> якщо вже видалено</li>
+          <li><code>new FinalizationRegistry(callback)</code> — реєстрація колбека на видалення</li>
+          <li><code>registry.register(obj, token)</code> — реєструє об'єкт для відстеження</li>
+          <li>Момент виклику колбека <strong>не гарантований</strong> — залежить від збирача сміття</li>
+          <li>Не використовуй для критичної логіки — тільки для оптимізацій</li>
+        </ul>
+
+        <div class="article-support">
+          <p>Матеріал корисний? Підтримай проект:</p>
+          <div class="support-btns-inline">
+            <a href="https://send.monobank.ua/jar/YOUR_JAR_ID" class="btn-mono" target="_blank" rel="noopener">Monobank</a>
+            <a href="https://www.buymeacoffee.com/YOUR_HANDLE" class="btn-coffee" target="_blank" rel="noopener">Buy me a coffee</a>
+          </div>
+        </div>
+      </article>
+      <nav class="art-nav" aria-label="Between articles">
+        <a href="/uk/misc/unicode.html" class="art-nav-a">
+          <span class="art-nav-dir">← Previous</span>
+          <span class="art-nav-title">Юнікод, внутрішня будова рядків</span>
+        </a>
+        <a href="/uk/uk/" class="art-nav-a is-next">
+          <span class="art-nav-dir">Next →</span>
+          <span class="art-nav-title">Назад на головну</span>
+        </a>
+      </nav>
+    </div>
+  </main>
+  <aside class="doc-toc" aria-label="Contents">
+    <p class="toc-label">Contents</p>
+    <ul class="toc-list" id="toc-list"></ul>
+    <div class="toc-progress">
+      <div class="toc-prog-meta"><span>Progress</span><span id="progress-pct">0%</span></div>
+      <div class="prog-bar"><div class="prog-fill" id="progress-fill"></div></div>
+    </div>
+  </aside>
+</div>
+<script>const ARTICLE_META = { secId: 'misc', artId: 'weakref' };</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" defer></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-javascript.min.js" defer></script>
+<script src="/assets/js/app.js" defer></script>
+</body>
+</html>

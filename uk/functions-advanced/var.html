@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="uk" data-theme="dark">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Застаріле ключове слово var | UA Dev Docs</title>
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://YOUR_DOMAIN/functions-advanced/var.html">
+  <meta property="og:type" content="article"><meta property="og:title" content="Застаріле ключове слово var — UA Dev Docs"><meta property="og:locale" content="uk_UA">
+  <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600;700;800&family=Literata:ital,opsz,wght@0,7..72,400;0,7..72,500;1,7..72,400&display=swap" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-tomorrow.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="/assets/css/main.css">
+</head>
+<body>
+<header class="site-header" role="banner">
+  <button class="btn-icon" id="sidebar-toggle" aria-label="Відкрити навігацію" aria-expanded="false"><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M2 5h16M2 10h16M2 15h16"/></svg></button>
+  <a href="/uk/" class="logo"><div class="logo-mark" aria-hidden="true">UA</div><span class="logo-text">dev<em>docs</em></span></a>
+  <div class="hdr-search" role="search"><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="9" cy="9" r="6"/><path d="m15 15-3-3"/></svg><input type="search" id="header-search" placeholder="Пошук…" aria-label="Пошук" autocomplete="off"></div>
+  <div class="hdr-actions"><button class="btn-icon" id="theme-btn" aria-label="Змінити тему"><svg id="theme-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg></button><a href="../index.html#support" class="btn-support"><svg viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M8 14.25C8 14.25 1.5 10 1.5 5.5a3.5 3.5 0 0 1 6.5-1.8A3.5 3.5 0 0 1 14.5 5.5C14.5 10 8 14.25 8 14.25z"/></svg><span>Підтримати</span></a></div>
+</header>
+<div id="search-overlay" class="search-overlay" role="dialog" aria-modal="true" aria-label="Пошук"><div class="search-panel" id="search-panel"><input type="search" id="search-input" placeholder="Що шукаємо?" autocomplete="off" style="width:100%;height:52px;background:var(--bg2);border:none;border-bottom:1px solid var(--bd);border-radius:var(--r3) var(--r3) 0 0;padding:0 1.25rem;font-family:var(--mono);font-size:14px;color:var(--tx);outline:none"></div></div>
+<div class="page"><div class="doc-layout">
+<aside class="doc-sidebar" id="sidebar" aria-label="Розділи курсу"></aside>
+<main class="doc-main" id="main-content"><div class="article-inner">
+  <nav class="breadcrumbs"><a href="/uk/">Головна</a><span class="sep">›</span><span>Розширена робота з функціями</span><span class="sep">›</span><span aria-current="page">Застаріле ключове слово var</span></nav>
+  <h1 class="article-title">Застаріле ключове слово var</h1>
+  <div class="article-badges"><span class="badge badge-begin">Початковий</span><span class="badge badge-sec">Функції</span><span class="badge badge-time">~ 11 хв</span></div>
+  <article class="prose">
+
+    <p><code>var</code> — старий спосіб оголошення змінних до ES6. Відрізняється від <code>let</code>/<code>const</code> у трьох ключових аспектах: функціональна (не блокова) область видимості, hoisting і дозволяє повторне оголошення. У сучасному коді використовуйте <code>const</code>/<code>let</code>.</p>
+
+    <h2 id="function-scope">Функціональна область видимості</h2>
+    <div class="code-block"><div class="code-head"><span class="code-lang">JavaScript</span><button class="btn-copy" aria-label="Копіювати"></button></div>
+<pre><code class="language-javascript">// var не обмежується блоком — видима у всій функції
+function example() {
+  if (true) {
+    var x = 10;  // не блокова!
+    let y = 20;  // блокова
+  }
+  console.log(x); // 10 — var видима за межами if-блоку
+  // console.log(y); // ReferenceError — let — ні
+}
+
+// var у циклі — небезпечно
+for (var i = 0; i < 3; i++) { /* ... */ }
+console.log(i); // 3 — витекла за межі циклу!
+
+for (let j = 0; j < 3; j++) { /* ... */ }
+// console.log(j); // ReferenceError</code></pre></div>
+
+    <h2 id="hoisting">Hoisting з var</h2>
+    <div class="code-block"><div class="code-head"><span class="code-lang">JavaScript</span><button class="btn-copy" aria-label="Копіювати"></button></div>
+<pre><code class="language-javascript">// var піднімається у верх функції, ініціалізується undefined
+console.log(x); // undefined (не ReferenceError)
+var x = 5;
+console.log(x); // 5
+
+// Що відбувається насправді:
+// var x;          // ← підняте оголошення
+// console.log(x); // undefined
+// x = 5;
+// console.log(x); // 5
+
+// let/const: TDZ — використання до рядка оголошення → ReferenceError
+// console.log(z); // ReferenceError: Cannot access before initialization
+// let z = 5;</code></pre></div>
+
+    <h2 id="redeclare">Повторне оголошення</h2>
+    <div class="code-block"><div class="code-head"><span class="code-lang">JavaScript</span><button class="btn-copy" aria-label="Копіювати"></button></div>
+<pre><code class="language-javascript">// var дозволяє повторне оголошення (мовчки ігнорує)
+var user = 'Alice';
+var user = 'Bob'; // не помилка
+console.log(user); // "Bob"
+
+// let/const — SyntaxError
+// let name = 'Alice';
+// let name = 'Bob'; // SyntaxError: Identifier already declared
+
+// var у глобальному scope стає властивістю window
+var globalVar = 'test';
+console.log(window.globalVar); // "test" (у браузері)</code></pre></div>
+
+    <h2 id="koly-var">Коли зустрічати var</h2>
+    <p>У легасі-коді <code>var</code> поширений. При рефакторингу:</p>
+    <ul>
+      <li>Замінюйте <code>var</code> на <code>const</code> якщо змінна не переприсвоюється.</li>
+      <li>На <code>let</code> якщо потрібне переприсвоєння.</li>
+      <li>Перевіряйте що заміна не змінює область видимості (особливо у циклах і блоках).</li>
+    </ul>
+
+    <h2 id="summary">Підсумок</h2>
+    <ul>
+      <li><code>var</code>: функціональна область видимості, hoisting з <code>undefined</code>, повторне оголошення.</li>
+      <li><code>let</code>/<code>const</code>: блокова область видимості, TDZ, заборона повторного оголошення.</li>
+      <li>У сучасному коді: <code>const</code> за замовчуванням, <code>let</code> коли потрібне переприсвоєння, <code>var</code> — ніколи.</li>
+    </ul>
+    <div class="article-support"><p><strong>Матеріал корисний?</strong> Підтримай проект.</p><div class="support-btns-inline"><a href="https://send.monobank.ua/jar/YOUR_JAR_ID" class="btn-mono" target="_blank" rel="noopener" style="font-size:12px;height:36px;padding:0 14px">🟢 Monobank</a><a href="https://www.buymeacoffee.com/YOUR_HANDLE" class="btn-coffee" target="_blank" rel="noopener" style="font-size:12px;height:36px;padding:0 14px">☕ Coffee</a></div></div>
+  </article>
+  <nav class="art-nav">
+    <a href="../functions-advanced/closure.html" class="art-nav-a"><span class="art-nav-dir">← Попередня</span><span class="art-nav-title">Замикання</span></a>
+    <a href="../functions-advanced/global-object.html" class="art-nav-a is-next"><span class="art-nav-dir">Наступна →</span><span class="art-nav-title">Глобальний об'єкт</span></a>
+  </nav>
+</div></main>
+<aside class="doc-toc"><p class="toc-label">Зміст</p><ul class="toc-list">
+  <li><a href="#function-scope" class="toc-link h2">Функціональна область</a></li>
+  <li><a href="#hoisting"       class="toc-link h2">Hoisting</a></li>
+  <li><a href="#redeclare"      class="toc-link h2">Повторне оголошення</a></li>
+  <li><a href="#koly-var"       class="toc-link h2">Коли зустрічати var</a></li>
+  <li><a href="#summary"        class="toc-link h2">Підсумок</a></li>
+</ul>
+<div class="toc-progress"><div class="toc-prog-meta"><span>Прогрес</span><span id="progress-pct">0%</span></div><div class="prog-bar"><div class="prog-fill" id="progress-fill"></div></div></div>
+<div class="toc-donate"><p>Корисно? <strong>Підтримай</strong></p><a href="https://send.monobank.ua/jar/YOUR_JAR_ID" class="btn-donate-sm" target="_blank" rel="noopener">🟢 Задонатити</a></div></aside>
+</div></div>
+<script>const ARTICLE_META = { secId: 'functions-advanced', artId: 'var' };</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-javascript.min.js"></script>
+<script src="/assets/js/app.js"></script>
+</body></html>

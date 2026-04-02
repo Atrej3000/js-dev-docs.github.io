@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="uk" data-theme="dark">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Гетери і сетери властивостей | UA Dev Docs</title>
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://YOUR_DOMAIN/object-properties/property-accessors.html">
+  <meta property="og:type" content="article"><meta property="og:title" content="Гетери і сетери властивостей — UA Dev Docs"><meta property="og:locale" content="uk_UA">
+  <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600;700;800&family=Literata:ital,opsz,wght@0,7..72,400;0,7..72,500;1,7..72,400&display=swap" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-tomorrow.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="/assets/css/main.css">
+</head>
+<body>
+<header class="site-header" role="banner">
+  <button class="btn-icon" id="sidebar-toggle" aria-label="Відкрити навігацію" aria-expanded="false"><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M2 5h16M2 10h16M2 15h16"/></svg></button>
+  <a href="/uk/" class="logo"><div class="logo-mark" aria-hidden="true">UA</div><span class="logo-text">dev<em>docs</em></span></a>
+  <div class="hdr-search" role="search"><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="9" cy="9" r="6"/><path d="m15 15-3-3"/></svg><input type="search" id="header-search" placeholder="Пошук…" aria-label="Пошук" autocomplete="off"></div>
+  <div class="hdr-actions"><button class="btn-icon" id="theme-btn" aria-label="Змінити тему"><svg id="theme-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg></button><a href="../index.html#support" class="btn-support"><svg viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M8 14.25C8 14.25 1.5 10 1.5 5.5a3.5 3.5 0 0 1 6.5-1.8A3.5 3.5 0 0 1 14.5 5.5C14.5 10 8 14.25 8 14.25z"/></svg><span>Підтримати</span></a></div>
+</header>
+<div id="search-overlay" class="search-overlay" role="dialog" aria-modal="true" aria-label="Пошук"><div class="search-panel" id="search-panel"><input type="search" id="search-input" placeholder="Що шукаємо?" autocomplete="off" style="width:100%;height:52px;background:var(--bg2);border:none;border-bottom:1px solid var(--bd);border-radius:var(--r3) var(--r3) 0 0;padding:0 1.25rem;font-family:var(--mono);font-size:14px;color:var(--tx);outline:none"></div></div>
+<div class="page"><div class="doc-layout">
+<aside class="doc-sidebar" id="sidebar" aria-label="Розділи курсу"></aside>
+<main class="doc-main" id="main-content"><div class="article-inner">
+  <nav class="breadcrumbs"><a href="/uk/">Головна</a><span class="sep">›</span><span>Властивості об'єктів, їх конфігурація</span><span class="sep">›</span><span aria-current="page">Гетери і сетери</span></nav>
+  <h1 class="article-title">Гетери і сетери властивостей</h1>
+  <div class="article-badges"><span class="badge badge-mid">Середній</span><span class="badge badge-sec">Властивості об'єктів, їх конфігурація</span><span class="badge badge-time">~ 11 хв</span></div>
+  <article class="prose">
+
+    <p>Аксесори (accessor properties) — властивості-функції, що виглядають як звичайні властивості. <code>get</code> викликається при читанні, <code>set</code> — при записі. Дозволяють обчислювані або захищені властивості без зміни публічного інтерфейсу.</p>
+
+    <h2 id="get-set">get і set</h2>
+    <div class="code-block"><div class="code-head"><span class="code-lang">JavaScript</span><button class="btn-copy" aria-label="Копіювати"></button></div>
+<pre><code class="language-javascript">const user = {
+  firstName: 'Олена',
+  lastName:  'Коваль',
+
+  // Обчислювана властивість
+  get fullName() {
+    return `${this.firstName} ${this.lastName}`;
+  },
+
+  set fullName(value) {
+    const parts = value.trim().split(' ');
+    this.firstName = parts[0];
+    this.lastName  = parts[1] ?? '';
+  },
+};
+
+console.log(user.fullName);        // "Олена Коваль" — викликає get
+user.fullName = 'Андрій Серга';    // викликає set
+console.log(user.firstName);       // "Андрій"
+console.log(user.lastName);        // "Серга"</code></pre></div>
+
+    <h2 id="validatsiya">Валідація через set</h2>
+    <div class="code-block"><div class="code-head"><span class="code-lang">JavaScript</span><button class="btn-copy" aria-label="Копіювати"></button></div>
+<pre><code class="language-javascript">class Temperature {
+  #celsius = 0;  // приватне поле
+
+  get celsius() { return this.#celsius; }
+  set celsius(value) {
+    if (typeof value !== 'number') throw new TypeError('Must be a number');
+    if (value < -273.15) throw new RangeError('Below absolute zero');
+    this.#celsius = value;
+  }
+
+  get fahrenheit() { return this.#celsius * 9/5 + 32; }
+  set fahrenheit(value) { this.celsius = (value - 32) * 5/9; }
+}
+
+const t = new Temperature();
+t.celsius = 100;
+console.log(t.fahrenheit);  // 212
+t.fahrenheit = 32;
+console.log(t.celsius);     // 0
+// t.celsius = -300;        // RangeError</code></pre></div>
+
+    <h2 id="define-accessor">Аксесор через defineProperty</h2>
+    <div class="code-block"><div class="code-head"><span class="code-lang">JavaScript</span><button class="btn-copy" aria-label="Копіювати"></button></div>
+<pre><code class="language-javascript">const obj = { _name: 'Alice' };
+
+Object.defineProperty(obj, 'name', {
+  get() { return this._name; },
+  set(value) { this._name = value.trim(); },
+  enumerable:   true,
+  configurable: true,
+});
+
+obj.name = '  Bob  ';
+console.log(obj.name); // "Bob" — trim() у сетері</code></pre></div>
+
+    <h2 id="summary">Підсумок</h2>
+    <ul>
+      <li><code>get prop()</code> — виклик при читанні. <code>set prop(value)</code> — при записі.</li>
+      <li>Аксесор не має <code>value</code> і <code>writable</code> в дескрипторі — лише <code>get</code>, <code>set</code>, <code>enumerable</code>, <code>configurable</code>.</li>
+      <li>Валідація, обчислювані значення, приватний стан без зміни публічного API.</li>
+    </ul>
+    <div class="article-support"><p><strong>Матеріал корисний?</strong> Підтримай проект.</p><div class="support-btns-inline"><a href="https://send.monobank.ua/jar/YOUR_JAR_ID" class="btn-mono" target="_blank" rel="noopener" style="font-size:12px;height:36px;padding:0 14px">🟢 Monobank</a><a href="https://www.buymeacoffee.com/YOUR_HANDLE" class="btn-coffee" target="_blank" rel="noopener" style="font-size:12px;height:36px;padding:0 14px">☕ Coffee</a></div></div>
+  </article>
+  <nav class="art-nav">
+    <a href="../object-properties/property-descriptors.html" class="art-nav-a"><span class="art-nav-dir">← Попередня</span><span class="art-nav-title">Дескриптори властивостей</span></a>
+    <a href="../prototypes/prototype-inheritance.html" class="art-nav-a is-next"><span class="art-nav-dir">Наступна →</span><span class="art-nav-title">Успадкування через прототипи</span></a>
+  </nav>
+</div></main>
+<aside class="doc-toc"><p class="toc-label">Зміст</p><ul class="toc-list">
+  <li><a href="#get-set"        class="toc-link h2">get і set</a></li>
+  <li><a href="#validatsiya"    class="toc-link h2">Валідація</a></li>
+  <li><a href="#define-accessor" class="toc-link h2">defineProperty</a></li>
+  <li><a href="#summary"         class="toc-link h2">Підсумок</a></li>
+</ul>
+<div class="toc-progress"><div class="toc-prog-meta"><span>Прогрес</span><span id="progress-pct">0%</span></div><div class="prog-bar"><div class="prog-fill" id="progress-fill"></div></div></div>
+<div class="toc-donate"><p>Корисно? <strong>Підтримай</strong></p><a href="https://send.monobank.ua/jar/YOUR_JAR_ID" class="btn-donate-sm" target="_blank" rel="noopener">🟢 Задонатити</a></div></aside>
+</div></div>
+<script>const ARTICLE_META = { secId: 'object-properties', artId: 'property-accessors' };</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-javascript.min.js"></script>
+<script src="/assets/js/app.js"></script>
+</body></html>
