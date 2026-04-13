@@ -1,0 +1,85 @@
+<p>Метод <code>bind</code> створює нову функцію з назавжди прив'язаним <code>this</code> і необов'язково частково застосованими аргументами. На відміну від <code>call</code>/<code>apply</code>, <code>bind</code> не викликає функцію — лише повертає прив'язану копію.</p>
+
+    <h2 id="bind-basic">Прив'язка this</h2>
+    <div class="code-block"><div class="code-head"><span class="code-lang">JavaScript</span><button class="btn-copy" aria-label="Копіювати"></button></div>
+<pre><code class="language-javascript">function greet(greeting) {
+  return `${greeting}, ${this.name}!`;
+}
+
+const user = { name: 'Олена' };
+
+// bind: повертає нову функцію з прив'язаним this
+const boundGreet = greet.bind(user);
+console.log(boundGreet('Привіт'));    // "Привіт, Олена!"
+console.log(boundGreet('Доброго дня')); // "Доброго дня, Олена!"
+
+// this більше не змінюється навіть через call/apply
+console.log(boundGreet.call({ name: 'Інший' }, 'Hi')); // "Hi, Олена!"
+
+// Класичний кейс: метод як callback
+const timer = {
+  id:    1,
+  start() {
+    setTimeout(this.tick.bind(this), 1000); // bind фіксує this = timer
+  },
+  tick() {
+    console.log(`Timer ${this.id} tick`);
+  }
+};
+timer.start(); // "Timer 1 tick" через 1 секунду</code></pre></div>
+
+    <h2 id="partial">Часткове застосування (Partial Application)</h2>
+    <div class="code-block"><div class="code-head"><span class="code-lang">JavaScript</span><button class="btn-copy" aria-label="Копіювати"></button></div>
+<pre><code class="language-javascript">function multiply(a, b) { return a * b; }
+
+// bind(null, a) — фіксує перший аргумент, this не важливий
+const double = multiply.bind(null, 2);
+const triple = multiply.bind(null, 3);
+
+console.log(double(5));  // 10
+console.log(double(10)); // 20
+console.log(triple(5));  // 15
+
+// Практичне: лог-функції з префіксом
+function log(level, message) {
+  console.log(`[${level}] ${message}`);
+}
+
+const info  = log.bind(null, 'INFO');
+const error = log.bind(null, 'ERROR');
+
+info('Server started');   // [INFO] Server started
+error('Connection lost'); // [ERROR] Connection lost</code></pre></div>
+
+    <h2 id="arrow-vs-bind">Стрілкові функції vs bind</h2>
+    <div class="code-block"><div class="code-head"><span class="code-lang">JavaScript</span><button class="btn-copy" aria-label="Копіювати"></button></div>
+<pre><code class="language-javascript">class Timer {
+  constructor() { this.ticks = 0; }
+
+  // СПОСІБ 1: bind у конструкторі
+  // constructor() {
+  //   this.tick = this.tick.bind(this);
+  // }
+
+  // СПОСІБ 2: стрілкове поле класу (ES2022)
+  tick = () => {
+    this.ticks++; // this завжди = екземпляр
+    console.log(this.ticks);
+  };
+
+  start() {
+    setInterval(this.tick, 1000);
+  }
+}
+
+const t = new Timer();
+t.start(); // 1, 2, 3...</code></pre></div>
+
+    <h2 id="summary">Підсумок</h2>
+    <ul>
+      <li><code>fn.bind(ctx)</code> → нова функція з постійним <code>this = ctx</code>. Виклик відкладений.</li>
+      <li>Прив'язаний <code>this</code> не можна перевизначити через <code>call</code>/<code>apply</code>.</li>
+      <li>Часткове застосування: <code>fn.bind(null, arg1)</code> фіксує перший аргумент.</li>
+      <li>Стрілкові class fields — сучасна альтернатива <code>bind</code> у класах.</li>
+    </ul>
+    <div class="article-support"><p><strong>Матеріал корисний?</strong> Підтримай проект.</p><div class="support-btns-inline"><a href="https://send.monobank.ua/jar/YOUR_JAR_ID" class="btn-mono" target="_blank" rel="noopener" style="font-size:12px;height:36px;padding:0 14px">🟢 Monobank</a><a href="https://www.buymeacoffee.com/YOUR_HANDLE" class="btn-coffee" target="_blank" rel="noopener" style="font-size:12px;height:36px;padding:0 14px">☕ Coffee</a></div></div>

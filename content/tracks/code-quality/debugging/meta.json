@@ -1,0 +1,304 @@
+{
+  "id": "code-quality/debugging",
+  "locale": "uk",
+  "locales": {
+    "uk": true,
+    "en": false
+  },
+  "availableLocales": [
+    "uk"
+  ],
+  "title": "Налагодження в браузері",
+  "description": "Дебаґінг JavaScript у Chrome DevTools: breakpoints, watch expressions, call stack, scope, stepping. Стратегії пошуку помилок.",
+  "track": "code-quality",
+  "trackTitle": "Якість коду",
+  "slug": "debugging",
+  "sourcePath": "uk/code-quality/debugging.html",
+  "sourceIdentity": {
+    "track": "code-quality",
+    "slug": "debugging"
+  },
+  "canonicalRoute": "/uk/docs/code-quality/debugging",
+  "canonicalLegacyPath": "/code-quality/debugging.html",
+  "legacyHtmlPath": "/uk/code-quality/debugging.html",
+  "legacyAliases": [
+    "/uk/code-quality/debugging.html",
+    "/uk/code-quality/debugging",
+    "/code-quality/debugging.html"
+  ],
+  "sectionOrder": 3,
+  "lessonOrder": 1,
+  "overallOrder": 23,
+  "articleNumber": "3.1",
+  "estimatedMinutes": 15,
+  "headings": [
+    {
+      "level": 2,
+      "id": "vidkrytty",
+      "text": "Відкриття та панель Sources"
+    },
+    {
+      "level": 2,
+      "id": "breakpoints",
+      "text": "Точки зупинки (Breakpoints)"
+    },
+    {
+      "level": 2,
+      "id": "stepping",
+      "text": "Крокове виконання"
+    },
+    {
+      "level": 2,
+      "id": "types-of-breakpoints",
+      "text": "Типи точок зупинки"
+    },
+    {
+      "level": 3,
+      "id": "conditional",
+      "text": "Умовні точки зупинки"
+    },
+    {
+      "level": 3,
+      "id": "logpoints",
+      "text": "Logpoints"
+    },
+    {
+      "level": 3,
+      "id": "dom-breakpoints",
+      "text": "DOM breakpoints"
+    },
+    {
+      "level": 3,
+      "id": "event-breakpoints",
+      "text": "Event listener breakpoints"
+    },
+    {
+      "level": 2,
+      "id": "debugger-stmt",
+      "text": "Оператор debugger"
+    },
+    {
+      "level": 2,
+      "id": "watch",
+      "text": "Watch expressions"
+    },
+    {
+      "level": 2,
+      "id": "call-stack",
+      "text": "Call Stack аналіз"
+    },
+    {
+      "level": 2,
+      "id": "stratehiyi",
+      "text": "Стратегії пошуку помилок"
+    },
+    {
+      "level": 3,
+      "id": "divide-conquer",
+      "text": "Divide and conquer"
+    },
+    {
+      "level": 3,
+      "id": "rubber-duck",
+      "text": "Поясніть код вголос"
+    },
+    {
+      "level": 3,
+      "id": "console-tracing",
+      "text": "Console tracing"
+    },
+    {
+      "level": 2,
+      "id": "sourcemaps",
+      "text": "Source maps"
+    },
+    {
+      "level": 2,
+      "id": "summary",
+      "text": "Підсумок"
+    }
+  ],
+  "badges": [
+    "Початковий",
+    "Якість коду",
+    "~ 15 хв"
+  ],
+  "donationLinks": [
+    "https://send.monobank.ua/jar/YOUR_JAR_ID",
+    "https://www.buymeacoffee.com/YOUR_HANDLE"
+  ],
+  "breadcrumbTrail": [
+    "Головна",
+    "Якість коду",
+    "Налагодження в браузері"
+  ],
+  "relatedSourceTrack": "code-quality",
+  "contentFiles": {
+    "uk": "content/tracks/code-quality/debugging/index.uk.html",
+    "en": "content/tracks/code-quality/debugging/index.en.mdx"
+  },
+  "metadataFile": "content/tracks/code-quality/debugging/meta.json",
+  "translationStatus": {
+    "sourceLocale": "uk",
+    "availableLocales": [
+      "uk"
+    ],
+    "fallbackLocales": {
+      "en": "uk"
+    },
+    "locales": {
+      "uk": {
+        "status": "published",
+        "filePath": "content/tracks/code-quality/debugging/index.uk.html",
+        "format": "html",
+        "title": "Налагодження в браузері",
+        "description": "Дебаґінг JavaScript у Chrome DevTools: breakpoints, watch expressions, call stack, scope, stepping. Стратегії пошуку помилок.",
+        "completeness": 100,
+        "isFallback": false,
+        "headings": [
+          {
+            "level": 2,
+            "id": "vidkrytty",
+            "text": "Відкриття та панель Sources"
+          },
+          {
+            "level": 2,
+            "id": "breakpoints",
+            "text": "Точки зупинки (Breakpoints)"
+          },
+          {
+            "level": 2,
+            "id": "stepping",
+            "text": "Крокове виконання"
+          },
+          {
+            "level": 2,
+            "id": "types-of-breakpoints",
+            "text": "Типи точок зупинки"
+          },
+          {
+            "level": 3,
+            "id": "conditional",
+            "text": "Умовні точки зупинки"
+          },
+          {
+            "level": 3,
+            "id": "logpoints",
+            "text": "Logpoints"
+          },
+          {
+            "level": 3,
+            "id": "dom-breakpoints",
+            "text": "DOM breakpoints"
+          },
+          {
+            "level": 3,
+            "id": "event-breakpoints",
+            "text": "Event listener breakpoints"
+          },
+          {
+            "level": 2,
+            "id": "debugger-stmt",
+            "text": "Оператор debugger"
+          },
+          {
+            "level": 2,
+            "id": "watch",
+            "text": "Watch expressions"
+          },
+          {
+            "level": 2,
+            "id": "call-stack",
+            "text": "Call Stack аналіз"
+          },
+          {
+            "level": 2,
+            "id": "stratehiyi",
+            "text": "Стратегії пошуку помилок"
+          },
+          {
+            "level": 3,
+            "id": "divide-conquer",
+            "text": "Divide and conquer"
+          },
+          {
+            "level": 3,
+            "id": "rubber-duck",
+            "text": "Поясніть код вголос"
+          },
+          {
+            "level": 3,
+            "id": "console-tracing",
+            "text": "Console tracing"
+          },
+          {
+            "level": 2,
+            "id": "sourcemaps",
+            "text": "Source maps"
+          },
+          {
+            "level": 2,
+            "id": "summary",
+            "text": "Підсумок"
+          }
+        ]
+      },
+      "en": {
+        "status": "draft",
+        "filePath": "content/tracks/code-quality/debugging/index.en.mdx",
+        "format": "mdx",
+        "title": "TODO: Translate title",
+        "description": "TODO: Translate description",
+        "completeness": 0,
+        "isFallback": true,
+        "headings": [
+          {
+            "level": 2,
+            "id": "source-lesson",
+            "text": "Source lesson"
+          }
+        ],
+        "slug": "debugging",
+        "track": "code-quality",
+        "locale": "en",
+        "sourceLocale": "uk",
+        "hasBody": true
+      }
+    }
+  },
+  "translationCompleteness": {
+    "uk": 100,
+    "en": 0
+  },
+  "migration": {
+    "migratedFromLegacy": true,
+    "canonicalIdentitySource": "canonical",
+    "override": null,
+    "articleMeta": {
+      "type": "string",
+      "raw": {
+        "secId": "code-quality",
+        "artId": "debugging"
+      },
+      "resolved": {
+        "track": "code-quality",
+        "slug": "debugging"
+      }
+    },
+    "mismatches": {
+      "filePathVsCanonical": false,
+      "filePathVsStringMeta": false,
+      "filePathVsNumericMeta": false
+    },
+    "hasLegacyJsonLd": true,
+    "hasLegacyToc": true,
+    "hasLegacyPrevNext": true,
+    "legacyArticleSupport": true
+  },
+  "bodySourcePath": "content/tracks/code-quality/debugging/index.uk.html",
+  "sourceProvenance": {
+    "sourcePath": "uk/code-quality/debugging.html",
+    "sourceTrack": "code-quality",
+    "sourceSlug": "debugging"
+  }
+}

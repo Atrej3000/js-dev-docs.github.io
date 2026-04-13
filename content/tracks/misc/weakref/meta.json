@@ -1,0 +1,174 @@
+{
+  "id": "misc/weakref",
+  "locale": "uk",
+  "locales": {
+    "uk": true,
+    "en": false
+  },
+  "availableLocales": [
+    "uk"
+  ],
+  "title": "WeakRef та FinalizationRegistry",
+  "description": "WeakRef та FinalizationRegistry у JavaScript — детальний розбір з прикладами та підводними каменями.",
+  "track": "misc",
+  "trackTitle": "Різне",
+  "slug": "weakref",
+  "sourcePath": "uk/misc/weakref.html",
+  "sourceIdentity": {
+    "track": "misc",
+    "slug": "weakref"
+  },
+  "canonicalRoute": "/uk/docs/misc/weakref",
+  "canonicalLegacyPath": "/misc/weakref.html",
+  "legacyHtmlPath": "/uk/misc/weakref.html",
+  "legacyAliases": [
+    "/uk/misc/weakref.html",
+    "/uk/misc/weakref",
+    "/misc/weakref.html"
+  ],
+  "sectionOrder": 14,
+  "lessonOrder": 7,
+  "overallOrder": 94,
+  "articleNumber": "14.7",
+  "estimatedMinutes": 8,
+  "headings": [
+    {
+      "level": 2,
+      "id": "weakref",
+      "text": "WeakRef"
+    },
+    {
+      "level": 2,
+      "id": "finalization-registry",
+      "text": "FinalizationRegistry"
+    },
+    {
+      "level": 2,
+      "id": "practical-use",
+      "text": "Практичне застосування"
+    },
+    {
+      "level": 2,
+      "id": "summary",
+      "text": "Підсумок"
+    }
+  ],
+  "badges": [
+    "Просунутий",
+    "Різне",
+    "~ 8 хв"
+  ],
+  "donationLinks": [
+    "https://send.monobank.ua/jar/YOUR_JAR_ID",
+    "https://www.buymeacoffee.com/YOUR_HANDLE"
+  ],
+  "breadcrumbTrail": [
+    "Головна",
+    "Різне",
+    "WeakRef та FinalizationRegistry"
+  ],
+  "relatedSourceTrack": "misc",
+  "contentFiles": {
+    "uk": "content/tracks/misc/weakref/index.uk.html",
+    "en": "content/tracks/misc/weakref/index.en.mdx"
+  },
+  "metadataFile": "content/tracks/misc/weakref/meta.json",
+  "translationStatus": {
+    "sourceLocale": "uk",
+    "availableLocales": [
+      "uk"
+    ],
+    "fallbackLocales": {
+      "en": "uk"
+    },
+    "locales": {
+      "uk": {
+        "status": "published",
+        "filePath": "content/tracks/misc/weakref/index.uk.html",
+        "format": "html",
+        "title": "WeakRef та FinalizationRegistry",
+        "description": "WeakRef та FinalizationRegistry у JavaScript — детальний розбір з прикладами та підводними каменями.",
+        "completeness": 100,
+        "isFallback": false,
+        "headings": [
+          {
+            "level": 2,
+            "id": "weakref",
+            "text": "WeakRef"
+          },
+          {
+            "level": 2,
+            "id": "finalization-registry",
+            "text": "FinalizationRegistry"
+          },
+          {
+            "level": 2,
+            "id": "practical-use",
+            "text": "Практичне застосування"
+          },
+          {
+            "level": 2,
+            "id": "summary",
+            "text": "Підсумок"
+          }
+        ]
+      },
+      "en": {
+        "status": "draft",
+        "filePath": "content/tracks/misc/weakref/index.en.mdx",
+        "format": "mdx",
+        "title": "TODO: Translate title",
+        "description": "TODO: Translate description",
+        "completeness": 0,
+        "isFallback": true,
+        "headings": [
+          {
+            "level": 2,
+            "id": "source-lesson",
+            "text": "Source lesson"
+          }
+        ],
+        "slug": "weakref",
+        "track": "misc",
+        "locale": "en",
+        "sourceLocale": "uk",
+        "hasBody": true
+      }
+    }
+  },
+  "translationCompleteness": {
+    "uk": 100,
+    "en": 0
+  },
+  "migration": {
+    "migratedFromLegacy": true,
+    "canonicalIdentitySource": "canonical",
+    "override": null,
+    "articleMeta": {
+      "type": "string",
+      "raw": {
+        "secId": "misc",
+        "artId": "weakref"
+      },
+      "resolved": {
+        "track": "misc",
+        "slug": "weakref"
+      }
+    },
+    "mismatches": {
+      "filePathVsCanonical": false,
+      "filePathVsStringMeta": false,
+      "filePathVsNumericMeta": false
+    },
+    "hasLegacyJsonLd": false,
+    "hasLegacyToc": true,
+    "hasLegacyPrevNext": true,
+    "legacyArticleSupport": true
+  },
+  "bodySourcePath": "content/tracks/misc/weakref/index.uk.html",
+  "sourceProvenance": {
+    "sourcePath": "uk/misc/weakref.html",
+    "sourceTrack": "misc",
+    "sourceSlug": "weakref"
+  }
+}

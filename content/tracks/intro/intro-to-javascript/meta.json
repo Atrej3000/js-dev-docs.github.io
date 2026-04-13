@@ -1,0 +1,309 @@
+{
+  "id": "intro/intro-to-javascript",
+  "locale": "uk",
+  "locales": {
+    "uk": true,
+    "en": true
+  },
+  "availableLocales": [
+    "uk",
+    "en"
+  ],
+  "title": "Вступ до JavaScript",
+  "description": "Що таке JavaScript: роль у вебі, відносини з HTML/CSS, рушій V8, середовища виконання, обмеження безпеки браузера. Технічно точний огляд.",
+  "track": "intro",
+  "trackTitle": "Вступ",
+  "slug": "intro-to-javascript",
+  "sourcePath": "uk/introduction/intro.html",
+  "sourceIdentity": {
+    "track": "introduction",
+    "slug": "intro"
+  },
+  "canonicalRoute": "/uk/docs/intro/intro-to-javascript",
+  "canonicalLegacyPath": "/intro/intro-to-javascript.html",
+  "legacyHtmlPath": "/uk/introduction/intro.html",
+  "legacyAliases": [
+    "/uk/introduction/intro.html",
+    "/uk/introduction/intro",
+    "/intro/intro-to-javascript.html"
+  ],
+  "sectionOrder": 1,
+  "lessonOrder": 1,
+  "overallOrder": 1,
+  "articleNumber": "1.1",
+  "estimatedMinutes": 12,
+  "headings": [
+    {
+      "level": 2,
+      "id": "chomu-vazhlivo",
+      "text": "Чому це важливо"
+    },
+    {
+      "level": 2,
+      "id": "shcho-take-javascript",
+      "text": "Що таке JavaScript"
+    },
+    {
+      "level": 2,
+      "id": "rushiy",
+      "text": "Як працює рушій JavaScript"
+    },
+    {
+      "level": 2,
+      "id": "seredovyshcha",
+      "text": "Середовища виконання"
+    },
+    {
+      "level": 3,
+      "id": "browser-env",
+      "text": "Браузерне середовище"
+    },
+    {
+      "level": 3,
+      "id": "nodejs-env",
+      "text": "Node.js"
+    },
+    {
+      "level": 2,
+      "id": "obmezhennya-bezpeky",
+      "text": "Обмеження безпеки браузера"
+    },
+    {
+      "level": 2,
+      "id": "js-html-css",
+      "text": "JavaScript, HTML, CSS: ролі"
+    },
+    {
+      "level": 2,
+      "id": "mozhlyvosti",
+      "text": "Що вміє JavaScript у браузері"
+    },
+    {
+      "level": 2,
+      "id": "unikalnyy-status",
+      "text": "Унікальний статус мови"
+    },
+    {
+      "level": 2,
+      "id": "movy-poverh-js",
+      "text": "Мови, що компілюються у JavaScript"
+    },
+    {
+      "level": 2,
+      "id": "summary",
+      "text": "Підсумок"
+    }
+  ],
+  "badges": [
+    "Початковий",
+    "Вступ",
+    "~ 12 хв"
+  ],
+  "donationLinks": [
+    "https://send.monobank.ua/jar/YOUR_JAR_ID",
+    "https://www.buymeacoffee.com/YOUR_HANDLE"
+  ],
+  "breadcrumbTrail": [
+    "Головна",
+    "Вступ",
+    "Вступ до JavaScript"
+  ],
+  "relatedSourceTrack": "introduction",
+  "contentFiles": {
+    "uk": "content/tracks/intro/intro-to-javascript/index.uk.html",
+    "en": "content/tracks/intro/intro-to-javascript/index.en.mdx"
+  },
+  "metadataFile": "content/tracks/intro/intro-to-javascript/meta.json",
+  "translationStatus": {
+    "sourceLocale": "uk",
+    "availableLocales": [
+      "uk",
+      "en"
+    ],
+    "fallbackLocales": {},
+    "locales": {
+      "uk": {
+        "status": "published",
+        "filePath": "content/tracks/intro/intro-to-javascript/index.uk.html",
+        "format": "html",
+        "title": "Вступ до JavaScript",
+        "description": "Що таке JavaScript: роль у вебі, відносини з HTML/CSS, рушій V8, середовища виконання, обмеження безпеки браузера. Технічно точний огляд.",
+        "completeness": 100,
+        "isFallback": false,
+        "headings": [
+          {
+            "level": 2,
+            "id": "chomu-vazhlivo",
+            "text": "Чому це важливо"
+          },
+          {
+            "level": 2,
+            "id": "shcho-take-javascript",
+            "text": "Що таке JavaScript"
+          },
+          {
+            "level": 2,
+            "id": "rushiy",
+            "text": "Як працює рушій JavaScript"
+          },
+          {
+            "level": 2,
+            "id": "seredovyshcha",
+            "text": "Середовища виконання"
+          },
+          {
+            "level": 3,
+            "id": "browser-env",
+            "text": "Браузерне середовище"
+          },
+          {
+            "level": 3,
+            "id": "nodejs-env",
+            "text": "Node.js"
+          },
+          {
+            "level": 2,
+            "id": "obmezhennya-bezpeky",
+            "text": "Обмеження безпеки браузера"
+          },
+          {
+            "level": 2,
+            "id": "js-html-css",
+            "text": "JavaScript, HTML, CSS: ролі"
+          },
+          {
+            "level": 2,
+            "id": "mozhlyvosti",
+            "text": "Що вміє JavaScript у браузері"
+          },
+          {
+            "level": 2,
+            "id": "unikalnyy-status",
+            "text": "Унікальний статус мови"
+          },
+          {
+            "level": 2,
+            "id": "movy-poverh-js",
+            "text": "Мови, що компілюються у JavaScript"
+          },
+          {
+            "level": 2,
+            "id": "summary",
+            "text": "Підсумок"
+          }
+        ]
+      },
+      "en": {
+        "status": "published",
+        "filePath": "content/tracks/intro/intro-to-javascript/index.en.mdx",
+        "format": "mdx",
+        "title": "Introduction to JavaScript",
+        "description": "What JavaScript is, how engines and runtimes work, and why the language is unique on the web.",
+        "completeness": 100,
+        "isFallback": false,
+        "headings": [
+          {
+            "level": 2,
+            "id": "why-this-matters",
+            "text": "Why this matters"
+          },
+          {
+            "level": 2,
+            "id": "what-javascript-is",
+            "text": "What JavaScript is"
+          },
+          {
+            "level": 2,
+            "id": "how-a-javascript-engine-works",
+            "text": "How a JavaScript engine works"
+          },
+          {
+            "level": 2,
+            "id": "runtime-environments",
+            "text": "Runtime environments"
+          },
+          {
+            "level": 3,
+            "id": "browser-environment",
+            "text": "Browser environment"
+          },
+          {
+            "level": 3,
+            "id": "node-js",
+            "text": "Node.js"
+          },
+          {
+            "level": 2,
+            "id": "browser-security-restrictions",
+            "text": "Browser security restrictions"
+          },
+          {
+            "level": 2,
+            "id": "javascript-html-and-css-different-roles",
+            "text": "JavaScript, HTML, and CSS: different roles"
+          },
+          {
+            "level": 2,
+            "id": "what-javascript-can-do-in-the-browser",
+            "text": "What JavaScript can do in the browser"
+          },
+          {
+            "level": 2,
+            "id": "why-the-language-has-a-unique-place",
+            "text": "Why the language has a unique place"
+          },
+          {
+            "level": 2,
+            "id": "languages-that-compile-to-javascript",
+            "text": "Languages that compile to JavaScript"
+          },
+          {
+            "level": 2,
+            "id": "summary",
+            "text": "Summary"
+          }
+        ],
+        "slug": "intro-to-javascript",
+        "track": "intro",
+        "locale": "en",
+        "sourceLocale": "uk",
+        "hasBody": true
+      }
+    }
+  },
+  "translationCompleteness": {
+    "uk": 100,
+    "en": 100
+  },
+  "migration": {
+    "migratedFromLegacy": true,
+    "canonicalIdentitySource": "canonical",
+    "override": null,
+    "articleMeta": {
+      "type": "string",
+      "raw": {
+        "secId": "intro",
+        "artId": "intro-to-javascript"
+      },
+      "resolved": {
+        "track": "intro",
+        "slug": "intro-to-javascript"
+      }
+    },
+    "mismatches": {
+      "filePathVsCanonical": true,
+      "filePathVsStringMeta": true,
+      "filePathVsNumericMeta": false
+    },
+    "hasLegacyJsonLd": true,
+    "hasLegacyToc": true,
+    "hasLegacyPrevNext": true,
+    "legacyArticleSupport": true
+  },
+  "bodySourcePath": "content/tracks/intro/intro-to-javascript/index.uk.html",
+  "sourceProvenance": {
+    "sourcePath": "uk/introduction/intro.html",
+    "sourceTrack": "introduction",
+    "sourceSlug": "intro"
+  }
+}

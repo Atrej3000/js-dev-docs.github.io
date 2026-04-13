@@ -1,0 +1,181 @@
+{
+  "id": "promises/promise-error-handling",
+  "locale": "uk",
+  "locales": {
+    "uk": true,
+    "en": false
+  },
+  "availableLocales": [
+    "uk"
+  ],
+  "title": "Обробка помилок у промісах",
+  "description": "Обробка помилок у промісах у JavaScript — детальний розбір з прикладами, підводними каменями та best practices.",
+  "track": "promises",
+  "trackTitle": "Проміси, async/await",
+  "slug": "promise-error-handling",
+  "sourcePath": "uk/promises/promise-error-handling.html",
+  "sourceIdentity": {
+    "track": "promises",
+    "slug": "promise-error-handling"
+  },
+  "canonicalRoute": "/uk/docs/promises/promise-error-handling",
+  "canonicalLegacyPath": "/promises/promise-error-handling.html",
+  "legacyHtmlPath": "/uk/promises/promise-error-handling.html",
+  "legacyAliases": [
+    "/uk/promises/promise-error-handling.html",
+    "/uk/promises/promise-error-handling",
+    "/promises/promise-error-handling.html"
+  ],
+  "sectionOrder": 11,
+  "lessonOrder": 4,
+  "overallOrder": 78,
+  "articleNumber": "11.4",
+  "estimatedMinutes": 10,
+  "headings": [
+    {
+      "level": 2,
+      "id": "implicit-catch",
+      "text": "Неявне перехоплення"
+    },
+    {
+      "level": 2,
+      "id": "recovery",
+      "text": "Відновлення після помилки"
+    },
+    {
+      "level": 2,
+      "id": "unhandled",
+      "text": "Необроблені помилки"
+    },
+    {
+      "level": 2,
+      "id": "placement",
+      "text": "Де ставити .catch()"
+    },
+    {
+      "level": 2,
+      "id": "summary",
+      "text": "Підсумок"
+    }
+  ],
+  "badges": [
+    "Середній",
+    "Проміси, async/await",
+    "~ 10 хв"
+  ],
+  "donationLinks": [],
+  "breadcrumbTrail": [
+    "Головна",
+    "Проміси, async/await",
+    "Обробка помилок у промісах"
+  ],
+  "relatedSourceTrack": "promises",
+  "contentFiles": {
+    "uk": "content/tracks/promises/promise-error-handling/index.uk.html",
+    "en": "content/tracks/promises/promise-error-handling/index.en.mdx"
+  },
+  "metadataFile": "content/tracks/promises/promise-error-handling/meta.json",
+  "translationStatus": {
+    "sourceLocale": "uk",
+    "availableLocales": [
+      "uk"
+    ],
+    "fallbackLocales": {
+      "en": "uk"
+    },
+    "locales": {
+      "uk": {
+        "status": "published",
+        "filePath": "content/tracks/promises/promise-error-handling/index.uk.html",
+        "format": "html",
+        "title": "Обробка помилок у промісах",
+        "description": "Обробка помилок у промісах у JavaScript — детальний розбір з прикладами, підводними каменями та best practices.",
+        "completeness": 100,
+        "isFallback": false,
+        "headings": [
+          {
+            "level": 2,
+            "id": "implicit-catch",
+            "text": "Неявне перехоплення"
+          },
+          {
+            "level": 2,
+            "id": "recovery",
+            "text": "Відновлення після помилки"
+          },
+          {
+            "level": 2,
+            "id": "unhandled",
+            "text": "Необроблені помилки"
+          },
+          {
+            "level": 2,
+            "id": "placement",
+            "text": "Де ставити .catch()"
+          },
+          {
+            "level": 2,
+            "id": "summary",
+            "text": "Підсумок"
+          }
+        ]
+      },
+      "en": {
+        "status": "draft",
+        "filePath": "content/tracks/promises/promise-error-handling/index.en.mdx",
+        "format": "mdx",
+        "title": "TODO: Translate title",
+        "description": "TODO: Translate description",
+        "completeness": 0,
+        "isFallback": true,
+        "headings": [
+          {
+            "level": 2,
+            "id": "source-lesson",
+            "text": "Source lesson"
+          }
+        ],
+        "slug": "promise-error-handling",
+        "track": "promises",
+        "locale": "en",
+        "sourceLocale": "uk",
+        "hasBody": true
+      }
+    }
+  },
+  "translationCompleteness": {
+    "uk": 100,
+    "en": 0
+  },
+  "migration": {
+    "migratedFromLegacy": true,
+    "canonicalIdentitySource": "canonical",
+    "override": null,
+    "articleMeta": {
+      "type": "numeric",
+      "raw": {
+        "secId": "11",
+        "artId": "4"
+      },
+      "resolved": {
+        "track": "promises",
+        "slug": "promise-error-handling"
+      }
+    },
+    "mismatches": {
+      "filePathVsCanonical": false,
+      "filePathVsStringMeta": false,
+      "filePathVsNumericMeta": false
+    },
+    "hasLegacyJsonLd": false,
+    "hasLegacyToc": false,
+    "hasLegacyPrevNext": false,
+    "legacyArticleSupport": true
+  },
+  "bodySourcePath": "content/tracks/promises/promise-error-handling/index.uk.html",
+  "sourceProvenance": {
+    "sourcePath": "uk/promises/promise-error-handling.html",
+    "sourceTrack": "promises",
+    "sourceSlug": "promise-error-handling"
+  }
+}

@@ -1,0 +1,174 @@
+{
+  "id": "classes/class",
+  "locale": "uk",
+  "locales": {
+    "uk": true,
+    "en": false
+  },
+  "availableLocales": [
+    "uk"
+  ],
+  "title": "Базовий синтаксис класу",
+  "description": "",
+  "track": "classes",
+  "trackTitle": "Класи",
+  "slug": "class",
+  "sourcePath": "uk/classes/class.html",
+  "sourceIdentity": {
+    "track": "classes",
+    "slug": "class"
+  },
+  "canonicalRoute": "/uk/docs/classes/class",
+  "canonicalLegacyPath": "/classes/class.html",
+  "legacyHtmlPath": "/uk/classes/class.html",
+  "legacyAliases": [
+    "/uk/classes/class.html",
+    "/uk/classes/class",
+    "/classes/class.html"
+  ],
+  "sectionOrder": 9,
+  "lessonOrder": 1,
+  "overallOrder": 66,
+  "articleNumber": "9.1",
+  "estimatedMinutes": 13,
+  "headings": [
+    {
+      "level": 2,
+      "id": "syntaksys",
+      "text": "Базовий синтаксис"
+    },
+    {
+      "level": 2,
+      "id": "fields",
+      "text": "Поля класу (Class Fields)"
+    },
+    {
+      "level": 2,
+      "id": "static",
+      "text": "Статичні методи і поля"
+    },
+    {
+      "level": 2,
+      "id": "summary",
+      "text": "Підсумок"
+    }
+  ],
+  "badges": [
+    "Початковий",
+    "Класи",
+    "~ 13 хв"
+  ],
+  "donationLinks": [
+    "https://send.monobank.ua/jar/YOUR_JAR_ID",
+    "https://www.buymeacoffee.com/YOUR_HANDLE"
+  ],
+  "breadcrumbTrail": [
+    "Головна",
+    "Класи",
+    "Клас"
+  ],
+  "relatedSourceTrack": "classes",
+  "contentFiles": {
+    "uk": "content/tracks/classes/class/index.uk.html",
+    "en": "content/tracks/classes/class/index.en.mdx"
+  },
+  "metadataFile": "content/tracks/classes/class/meta.json",
+  "translationStatus": {
+    "sourceLocale": "uk",
+    "availableLocales": [
+      "uk"
+    ],
+    "fallbackLocales": {
+      "en": "uk"
+    },
+    "locales": {
+      "uk": {
+        "status": "published",
+        "filePath": "content/tracks/classes/class/index.uk.html",
+        "format": "html",
+        "title": "Базовий синтаксис класу",
+        "description": "",
+        "completeness": 100,
+        "isFallback": false,
+        "headings": [
+          {
+            "level": 2,
+            "id": "syntaksys",
+            "text": "Базовий синтаксис"
+          },
+          {
+            "level": 2,
+            "id": "fields",
+            "text": "Поля класу (Class Fields)"
+          },
+          {
+            "level": 2,
+            "id": "static",
+            "text": "Статичні методи і поля"
+          },
+          {
+            "level": 2,
+            "id": "summary",
+            "text": "Підсумок"
+          }
+        ]
+      },
+      "en": {
+        "status": "draft",
+        "filePath": "content/tracks/classes/class/index.en.mdx",
+        "format": "mdx",
+        "title": "TODO: Translate title",
+        "description": "TODO: Translate description",
+        "completeness": 0,
+        "isFallback": true,
+        "headings": [
+          {
+            "level": 2,
+            "id": "source-lesson",
+            "text": "Source lesson"
+          }
+        ],
+        "slug": "class",
+        "track": "classes",
+        "locale": "en",
+        "sourceLocale": "uk",
+        "hasBody": true
+      }
+    }
+  },
+  "translationCompleteness": {
+    "uk": 100,
+    "en": 0
+  },
+  "migration": {
+    "migratedFromLegacy": true,
+    "canonicalIdentitySource": "canonical",
+    "override": null,
+    "articleMeta": {
+      "type": "string",
+      "raw": {
+        "secId": "classes",
+        "artId": "class"
+      },
+      "resolved": {
+        "track": "classes",
+        "slug": "class"
+      }
+    },
+    "mismatches": {
+      "filePathVsCanonical": false,
+      "filePathVsStringMeta": false,
+      "filePathVsNumericMeta": false
+    },
+    "hasLegacyJsonLd": false,
+    "hasLegacyToc": true,
+    "hasLegacyPrevNext": true,
+    "legacyArticleSupport": true
+  },
+  "bodySourcePath": "content/tracks/classes/class/index.uk.html",
+  "sourceProvenance": {
+    "sourcePath": "uk/classes/class.html",
+    "sourceTrack": "classes",
+    "sourceSlug": "class"
+  }
+}

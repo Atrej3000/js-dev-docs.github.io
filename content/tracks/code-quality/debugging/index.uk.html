@@ -1,0 +1,150 @@
+<p>Налагодження (debugging) — процес пошуку і виправлення помилок у коді. Браузерні DevTools надають повноцінний дебаґер з точками зупинки, переглядом стану і крокове виконання. Навичка ефективного використання дебаґера скорочує час пошуку помилок у рази.</p>
+
+          <h2 id="vidkrytty">Відкриття та панель Sources</h2>
+          <p>Відкрийте DevTools через <kbd>F12</kbd> або <kbd>Ctrl+Shift+I</kbd> (Windows/Linux) / <kbd>Cmd+Option+I</kbd> (macOS) і перейдіть на вкладку <strong>Sources</strong>. Ліва панель показує файлову структуру. Центральна — вихідний код. Права — інструменти дебаґінгу.</p>
+
+          <h2 id="breakpoints">Точки зупинки (Breakpoints)</h2>
+          <p>Клік на номер рядка встановлює <strong>точку зупинки</strong> — позначку де виконання призупиниться. При зупинці стають доступні:</p>
+          <ul>
+            <li><strong>Scope</strong> — всі змінні поточного, замикаючих і глобального scope</li>
+            <li><strong>Call Stack</strong> — ланцюг викликів від поточної функції до точки входу</li>
+            <li><strong>Watch</strong> — довільні вирази, обчислювані в поточному контексті</li>
+          </ul>
+
+          <div class="code-block">
+            <div class="code-head"><span class="code-lang">JavaScript</span><button class="btn-copy" aria-label="Копіювати"></button></div>
+<pre><code class="language-javascript">function processOrder(items) {
+  const subtotal = items.reduce((sum, item) => sum + item.price, 0); // ← breakpoint тут
+  const tax      = subtotal * 0.2;
+  const total    = subtotal + tax;
+  return { subtotal, tax, total };
+}
+
+// При зупинці на рядку з reduce:
+// Scope показує: items = [...], sum = 0 (перша ітерація)
+// Call Stack показує: processOrder → (caller)</code></pre>
+          </div>
+
+          <h2 id="stepping">Крокове виконання</h2>
+          <table>
+            <thead><tr><th>Дія</th><th>Клавіша</th><th>Значення</th></tr></thead>
+            <tbody>
+              <tr><td>Resume</td><td><kbd>F8</kbd></td><td>Продовжити до наступної точки зупинки</td></tr>
+              <tr><td>Step over</td><td><kbd>F10</kbd></td><td>Наступна інструкція, не заходити в функцію</td></tr>
+              <tr><td>Step into</td><td><kbd>F11</kbd></td><td>Зайти всередину викликаної функції</td></tr>
+              <tr><td>Step out</td><td><kbd>Shift+F11</kbd></td><td>Вийти з поточної функції</td></tr>
+              <tr><td>Step</td><td><kbd>F9</kbd></td><td>Наступна інструкція (заходить у функції)</td></tr>
+            </tbody>
+          </table>
+
+          <h2 id="types-of-breakpoints">Типи точок зупинки</h2>
+
+          <h3 id="conditional">Умовні точки зупинки</h3>
+          <p>Правий клік на точку зупинки → «Edit breakpoint» — зупиняється лише якщо вираз <code>true</code>. Незамінні для налагодження циклів із тисячами ітерацій.</p>
+
+          <div class="code-block">
+            <div class="code-head"><span class="code-lang">JavaScript</span><button class="btn-copy" aria-label="Копіювати"></button></div>
+<pre><code class="language-javascript">// Умова для точки зупинки:
+// i === 999 && data.length === 0
+// Зупиниться лише на 999-й ітерації з порожнім data
+
+for (let i = 0; i < 10000; i++) {
+  processChunk(data, i); // ← умовний breakpoint
+}</code></pre>
+          </div>
+
+          <h3 id="logpoints">Logpoints</h3>
+          <p>Правий клік на рядок → «Add logpoint» — виводить вираз у консоль без зупинки виконання. Еквівалент <code>console.log</code> без зміни коду.</p>
+
+          <h3 id="dom-breakpoints">DOM breakpoints</h3>
+          <p>В панелі Elements: правий клік на елемент → «Break on» → вибір типу:</p>
+          <ul>
+            <li><strong>Subtree modifications</strong> — зупиняє при зміні дочірніх елементів</li>
+            <li><strong>Attribute modifications</strong> — при зміні атрибутів</li>
+            <li><strong>Node removal</strong> — при видаленні елемента</li>
+          </ul>
+
+          <h3 id="event-breakpoints">Event listener breakpoints</h3>
+          <p>Права панель Sources → «Event Listener Breakpoints» — зупинка при будь-якій події браузера (click, XHR, timer тощо) без прив'язки до конкретного рядка.</p>
+
+          <h2 id="debugger-stmt">Оператор debugger</h2>
+          <div class="code-block">
+            <div class="code-head"><span class="code-lang">JavaScript</span><button class="btn-copy" aria-label="Копіювати"></button></div>
+<pre><code class="language-javascript">function calculateDiscount(price, code) {
+  debugger; // зупиниться тут якщо DevTools відкриті
+
+  const validCodes = { 'SAVE10': 0.10, 'SAVE20': 0.20 };
+  const rate = validCodes[code];
+  if (!rate) return price;
+  return price * (1 - rate);
+}
+
+// У продакшені: DevTools закриті → debugger ігнорується
+// Видаляйте debugger перед комітом (або налаштуйте ESLint no-debugger)</code></pre>
+          </div>
+
+          <h2 id="watch">Watch expressions</h2>
+          <p>У панелі Watch (права колонка Sources) можна додати вирази, що обчислюватимуться в поточному контексті при кожній зупинці. Корисно для відстеження складних умов.</p>
+
+          <div class="code-block">
+            <div class="code-head"><span class="code-lang">JavaScript</span><button class="btn-copy" aria-label="Копіювати"></button></div>
+<pre><code class="language-javascript">// Приклади виразів для Watch:
+// items.length
+// total > budget
+// JSON.stringify(config)
+// user?.role === 'admin'
+// items.filter(i => i.price > 100).length</code></pre>
+          </div>
+
+          <h2 id="call-stack">Call Stack аналіз</h2>
+          <p>Call Stack показує послідовність викликів, що призвела до поточної точки. Клік на кадр — перехід до відповідного рядка і контексту. Це дозволяє відстежити звідки прийшли дані, що спричинили помилку.</p>
+
+          <div class="code-block">
+            <div class="code-head"><span class="code-lang">JavaScript</span><button class="btn-copy" aria-label="Копіювати"></button></div>
+<pre><code class="language-javascript">// Якщо в Stack бачимо: processPayment → validateCard → formatNumber
+// Клікаємо на validateCard — DevTools показує контекст того виклику
+// Можна перевірити значення card, amount у той момент</code></pre>
+          </div>
+
+          <h2 id="stratehiyi">Стратегії пошуку помилок</h2>
+
+          <h3 id="divide-conquer">Divide and conquer</h3>
+          <p>Ізолюйте проблему: розбийте код на половини і перевіряйте яка половина містить помилку. Повторюйте до знаходження мінімального відтворюючого прикладу.</p>
+
+          <h3 id="rubber-duck">Поясніть код вголос</h3>
+          <p>Пояснення коду рядок за рядком (навіть відсутній співрозмовник підійде) часто виявляє помилку — мозок по-іншому обробляє вербальний опис.</p>
+
+          <h3 id="console-tracing">Console tracing</h3>
+          <div class="code-block">
+            <div class="code-head"><span class="code-lang">JavaScript</span><button class="btn-copy" aria-label="Копіювати"></button></div>
+<pre><code class="language-javascript">// console.trace() — виводить поточний call stack
+function processData(data) {
+  console.trace('processData called');
+  return transform(data);
+}
+
+// console.time/timeEnd — пошук вузьких місць
+console.time('heavy-operation');
+heavyOperation();
+console.timeEnd('heavy-operation'); // "heavy-operation: 142ms"
+
+// console.count — кількість викликів
+function render() {
+  console.count('render'); // render: 1, render: 2...
+}</code></pre>
+          </div>
+
+          <h2 id="sourcemaps">Source maps</h2>
+          <p>Bundler-и (Webpack, Vite, esbuild) компілюють і мінімізують код. Source maps дозволяють DevTools показувати оригінальний TypeScript/ES6+ код замість скомпільованого. Переконайтесь що <code>devtools: 'source-map'</code> увімкнено в конфігурації збірки.</p>
+
+          <h2 id="summary">Підсумок</h2>
+          <ul>
+            <li>Sources → клік на номер рядка → breakpoint. При зупинці доступні Scope, Call Stack, Watch.</li>
+            <li>Крокове виконання: <kbd>F8</kbd> Resume, <kbd>F10</kbd> Step over, <kbd>F11</kbd> Step into, <kbd>Shift+F11</kbd> Step out.</li>
+            <li>Умовні breakpoints — для циклів. Logpoints — замість <code>console.log</code> без зміни коду. DOM breakpoints — при мутаціях DOM.</li>
+            <li><code>debugger</code> у коді — програмна точка зупинки. Видаляйте перед комітом.</li>
+            <li>Watch expressions — довільні вирази в поточному контексті. Call Stack — трасування ланцюга викликів.</li>
+            <li>Source maps — дебаґінг оригінального коду після компіляції.</li>
+          </ul>
+
+          <div class="article-support"><p><strong>Матеріал корисний?</strong> Підтримай проект.</p><div class="support-btns-inline"><a href="https://send.monobank.ua/jar/YOUR_JAR_ID" class="btn-mono" target="_blank" rel="noopener" style="font-size:12px;height:36px;padding:0 14px">🟢 Monobank</a><a href="https://www.buymeacoffee.com/YOUR_HANDLE" class="btn-coffee" target="_blank" rel="noopener" style="font-size:12px;height:36px;padding:0 14px">☕ Coffee</a></div></div>

@@ -1,0 +1,214 @@
+{
+  "id": "code-quality/polyfills",
+  "locale": "uk",
+  "locales": {
+    "uk": true,
+    "en": false
+  },
+  "availableLocales": [
+    "uk"
+  ],
+  "title": "Поліфіли та транспілери",
+  "description": "Поліфіли та транспілери JavaScript: Babel, core-js, browserslist, @babel/preset-env. Різниця між transpiling та polyfilling.",
+  "track": "code-quality",
+  "trackTitle": "Якість коду",
+  "slug": "polyfills",
+  "sourcePath": "uk/code-quality/polyfills.html",
+  "sourceIdentity": {
+    "track": "code-quality",
+    "slug": "polyfills"
+  },
+  "canonicalRoute": "/uk/docs/code-quality/polyfills",
+  "canonicalLegacyPath": "/code-quality/polyfills.html",
+  "legacyHtmlPath": "/uk/code-quality/polyfills.html",
+  "legacyAliases": [
+    "/uk/code-quality/polyfills.html",
+    "/uk/code-quality/polyfills",
+    "/code-quality/polyfills.html"
+  ],
+  "sectionOrder": 3,
+  "lessonOrder": 6,
+  "overallOrder": 28,
+  "articleNumber": "3.6",
+  "estimatedMinutes": 12,
+  "headings": [
+    {
+      "level": 2,
+      "id": "transpiler",
+      "text": "Транспілер: перетворення синтаксису"
+    },
+    {
+      "level": 2,
+      "id": "babel",
+      "text": "Babel"
+    },
+    {
+      "level": 2,
+      "id": "polyfill",
+      "text": "Поліфіл: реалізація відсутнього API"
+    },
+    {
+      "level": 2,
+      "id": "core-js",
+      "text": "core-js"
+    },
+    {
+      "level": 2,
+      "id": "browserslist",
+      "text": "browserslist"
+    },
+    {
+      "level": 2,
+      "id": "typescript",
+      "text": "TypeScript як транспілер"
+    },
+    {
+      "level": 2,
+      "id": "suchasna-alternativa",
+      "text": "Сучасна альтернатива"
+    },
+    {
+      "level": 2,
+      "id": "summary",
+      "text": "Підсумок"
+    }
+  ],
+  "badges": [
+    "Початковий",
+    "Якість коду",
+    "~ 12 хв"
+  ],
+  "donationLinks": [
+    "https://send.monobank.ua/jar/YOUR_JAR_ID",
+    "https://www.buymeacoffee.com/YOUR_HANDLE"
+  ],
+  "breadcrumbTrail": [
+    "Головна",
+    "Якість коду",
+    "Поліфіли та транспілери"
+  ],
+  "relatedSourceTrack": "code-quality",
+  "contentFiles": {
+    "uk": "content/tracks/code-quality/polyfills/index.uk.html",
+    "en": "content/tracks/code-quality/polyfills/index.en.mdx"
+  },
+  "metadataFile": "content/tracks/code-quality/polyfills/meta.json",
+  "translationStatus": {
+    "sourceLocale": "uk",
+    "availableLocales": [
+      "uk"
+    ],
+    "fallbackLocales": {
+      "en": "uk"
+    },
+    "locales": {
+      "uk": {
+        "status": "published",
+        "filePath": "content/tracks/code-quality/polyfills/index.uk.html",
+        "format": "html",
+        "title": "Поліфіли та транспілери",
+        "description": "Поліфіли та транспілери JavaScript: Babel, core-js, browserslist, @babel/preset-env. Різниця між transpiling та polyfilling.",
+        "completeness": 100,
+        "isFallback": false,
+        "headings": [
+          {
+            "level": 2,
+            "id": "transpiler",
+            "text": "Транспілер: перетворення синтаксису"
+          },
+          {
+            "level": 2,
+            "id": "babel",
+            "text": "Babel"
+          },
+          {
+            "level": 2,
+            "id": "polyfill",
+            "text": "Поліфіл: реалізація відсутнього API"
+          },
+          {
+            "level": 2,
+            "id": "core-js",
+            "text": "core-js"
+          },
+          {
+            "level": 2,
+            "id": "browserslist",
+            "text": "browserslist"
+          },
+          {
+            "level": 2,
+            "id": "typescript",
+            "text": "TypeScript як транспілер"
+          },
+          {
+            "level": 2,
+            "id": "suchasna-alternativa",
+            "text": "Сучасна альтернатива"
+          },
+          {
+            "level": 2,
+            "id": "summary",
+            "text": "Підсумок"
+          }
+        ]
+      },
+      "en": {
+        "status": "draft",
+        "filePath": "content/tracks/code-quality/polyfills/index.en.mdx",
+        "format": "mdx",
+        "title": "TODO: Translate title",
+        "description": "TODO: Translate description",
+        "completeness": 0,
+        "isFallback": true,
+        "headings": [
+          {
+            "level": 2,
+            "id": "source-lesson",
+            "text": "Source lesson"
+          }
+        ],
+        "slug": "polyfills",
+        "track": "code-quality",
+        "locale": "en",
+        "sourceLocale": "uk",
+        "hasBody": true
+      }
+    }
+  },
+  "translationCompleteness": {
+    "uk": 100,
+    "en": 0
+  },
+  "migration": {
+    "migratedFromLegacy": true,
+    "canonicalIdentitySource": "canonical",
+    "override": null,
+    "articleMeta": {
+      "type": "string",
+      "raw": {
+        "secId": "code-quality",
+        "artId": "polyfills"
+      },
+      "resolved": {
+        "track": "code-quality",
+        "slug": "polyfills"
+      }
+    },
+    "mismatches": {
+      "filePathVsCanonical": false,
+      "filePathVsStringMeta": false,
+      "filePathVsNumericMeta": false
+    },
+    "hasLegacyJsonLd": true,
+    "hasLegacyToc": true,
+    "hasLegacyPrevNext": true,
+    "legacyArticleSupport": true
+  },
+  "bodySourcePath": "content/tracks/code-quality/polyfills/index.uk.html",
+  "sourceProvenance": {
+    "sourcePath": "uk/code-quality/polyfills.html",
+    "sourceTrack": "code-quality",
+    "sourceSlug": "polyfills"
+  }
+}

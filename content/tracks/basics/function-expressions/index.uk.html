@@ -1,0 +1,125 @@
+<p>Функціональний вираз (function expression) — це функція, створена як частина виразу і присвоєна змінній або передана як аргумент. На відміну від function declaration, він не піднімається.</p>
+
+          <h2 id="syntaksys">Синтаксис</h2>
+          <div class="code-block">
+            <div class="code-head"><span class="code-lang">JavaScript</span><button class="btn-copy" aria-label="Копіювати"></button></div>
+<pre><code class="language-javascript">// Function expression — присвоєння функції змінній
+const square = function(n) {
+  return n * n;
+};
+
+console.log(square(4)); // 16
+console.log(typeof square); // "function"
+
+// На відміну від declaration — не піднімається (TDZ для const)
+// console.log(cube(3)); // ReferenceError
+const cube = function(n) { return n ** 3; };
+console.log(cube(3)); // 27</code></pre>
+          </div>
+
+          <h2 id="declaration-vs-expression">Declaration vs Expression</h2>
+          <table>
+            <thead><tr><th>Ознака</th><th>Declaration</th><th>Expression</th></tr></thead>
+            <tbody>
+              <tr><td>Синтаксис</td><td><code>function f() {}</code></td><td><code>const f = function() {}</code></td></tr>
+              <tr><td>Hoisting</td><td class="t-y">Повний (тіло)</td><td class="t-n">Ні (TDZ)</td></tr>
+              <tr><td>Виклик до оголошення</td><td class="t-y">Так</td><td class="t-n">Ні</td></tr>
+              <tr><td>Умовне оголошення</td><td class="t-n">Ненадійно</td><td class="t-y">Так</td></tr>
+            </tbody>
+          </table>
+
+          <div class="code-block">
+            <div class="code-head"><span class="code-lang">JavaScript</span><button class="btn-copy" aria-label="Копіювати"></button></div>
+<pre><code class="language-javascript">// Умовне оголошення через expression — надійно
+let process;
+if (isProduction) {
+  process = function(data) { return minify(data); };
+} else {
+  process = function(data) { return data; };
+}
+
+// Function declaration в блоку — поведінка залежить від режиму
+// У strict mode — блокова область видимості
+// У sloppy mode — непередбачувано
+// Завжди використовуйте expression для умовних функцій</code></pre>
+          </div>
+
+          <h2 id="callback">Callback-функції</h2>
+          <p>Функція, передана як аргумент іншій функції для подальшого виклику.</p>
+
+          <div class="code-block">
+            <div class="code-head"><span class="code-lang">JavaScript</span><button class="btn-copy" aria-label="Копіювати"></button></div>
+<pre><code class="language-javascript">// Анонімний callback
+const numbers = [3, 1, 4, 1, 5, 9];
+const sorted = numbers.sort(function(a, b) { return a - b; });
+console.log(sorted); // [1, 1, 3, 4, 5, 9]
+
+// Іменований callback (кращий стек викликів при помилках)
+function compareAsc(a, b) { return a - b; }
+const sorted2 = numbers.sort(compareAsc);
+
+// setTimeout — типовий кейс для callback
+setTimeout(function() {
+  console.log('1 секунда пройшла');
+}, 1000);</code></pre>
+          </div>
+
+          <h2 id="nfe">Named Function Expression (NFE)</h2>
+          <p>Функціональний вираз може мати ім'я. Це ім'я видиме <em>лише всередині самої функції</em> — корисно для рекурсії і відлагодження.</p>
+
+          <div class="code-block">
+            <div class="code-head"><span class="code-lang">JavaScript</span><button class="btn-copy" aria-label="Копіювати"></button></div>
+<pre><code class="language-javascript">const factorial = function fact(n) {
+  if (n <= 1) return 1;
+  return n * fact(n - 1); // ім'я 'fact' доступне всередині
+};
+
+console.log(factorial(5)); // 120
+// console.log(fact(5));   // ReferenceError — 'fact' не видиме зовні
+
+// Переваги NFE: ім'я у стеку викликів при помилці
+const processData = function processData(data) {
+  // У stack trace буде "processData" замість "anonymous"
+  if (!data) throw new Error('No data');
+};</code></pre>
+          </div>
+
+          <h2 id="iife">IIFE — Immediately Invoked Function Expression</h2>
+          <p>Функція, що викликається одразу після оголошення. Створює ізольований scope.</p>
+
+          <div class="code-block">
+            <div class="code-head"><span class="code-lang">JavaScript</span><button class="btn-copy" aria-label="Копіювати"></button></div>
+<pre><code class="language-javascript">// Класичний IIFE (дужки обов'язкові — без них SyntaxError)
+(function() {
+  const privateVar = 'секрет';
+  console.log(privateVar);
+})();
+
+// IIFE зі стрілковою функцією
+(() => {
+  const config = initConfig();
+  applyConfig(config);
+})();
+
+// IIFE з поверненням значення
+const appVersion = (function() {
+  const major = 2, minor = 5;
+  return `${major}.${minor}`;
+})();
+
+// Сучасна альтернатива IIFE — блок зі let/const або ES-модулі
+{
+  const privateVar = 'секрет'; // видима лише в цьому блоці
+}</code></pre>
+          </div>
+
+          <h2 id="summary">Підсумок</h2>
+          <ul>
+            <li>Function expression не піднімається — виклик до оголошення викидає ReferenceError.</li>
+            <li>Для умовного оголошення функції — завжди expression.</li>
+            <li>NFE: ім'я видиме лише всередині — для рекурсії і кращих stack trace.</li>
+            <li>Callback — функція як аргумент. Іменований callback кращий за анонімний для відлагодження.</li>
+            <li>IIFE — ізоляція scope. У сучасному коді замінюється ES-модулями або блоками.</li>
+          </ul>
+
+          <div class="article-support"><p><strong>Матеріал корисний?</strong> Підтримай проект.</p><div class="support-btns-inline"><a href="https://send.monobank.ua/jar/YOUR_JAR_ID" class="btn-mono" target="_blank" rel="noopener" style="font-size:12px;height:36px;padding:0 14px">🟢 Monobank</a><a href="https://www.buymeacoffee.com/YOUR_HANDLE" class="btn-coffee" target="_blank" rel="noopener" style="font-size:12px;height:36px;padding:0 14px">☕ Coffee</a></div></div>

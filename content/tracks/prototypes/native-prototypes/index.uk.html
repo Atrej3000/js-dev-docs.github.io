@@ -1,0 +1,58 @@
+<p>Вбудовані об'єкти JavaScript (<code>Array</code>, <code>String</code>, <code>Object</code>) мають свої прotototype-ланцюги. Всі вони зрештою успадковують від <code>Object.prototype</code>. Розуміння цієї ієрархії пояснює звідки беруться методи на масивах, рядках і числах.</p>
+
+    <h2 id="hierarchy">Ієрархія прotototype</h2>
+    <div class="code-block"><div class="code-head"><span class="code-lang">JavaScript</span><button class="btn-copy" aria-label="Копіювати"></button></div>
+<pre><code class="language-javascript">// Масив: arr → Array.prototype → Object.prototype → null
+const arr = [1, 2, 3];
+console.log(Object.getPrototypeOf(arr) === Array.prototype);         // true
+console.log(Object.getPrototypeOf(Array.prototype) === Object.prototype); // true
+
+// arr.map — з Array.prototype
+// arr.toString — з Object.prototype
+
+// Рядок (autoboxing): str → String.prototype → Object.prototype
+const str = 'hello';
+// String.prototype.toUpperCase, slice, includes...
+
+// Число: num → Number.prototype → Object.prototype
+// Number.prototype.toFixed, toString...
+
+// Функція: fn → Function.prototype → Object.prototype
+// Function.prototype.call, apply, bind...</code></pre></div>
+
+    <h2 id="polyfills">Поліфіли вбудованих методів</h2>
+    <div class="code-block"><div class="code-head"><span class="code-lang">JavaScript</span><button class="btn-copy" aria-label="Копіювати"></button></div>
+<pre><code class="language-javascript">// Можна додати власний метод у вбудований prototype
+// АЛЕ це небезпечна практика — уникайте у production!
+
+if (!String.prototype.trimAll) {
+  String.prototype.trimAll = function() {
+    return this.replace(/\s+/g, ' ').trim();
+  };
+}
+console.log('  hello   world  '.trimAll()); // "hello world"
+
+// Проблеми полютованих прotototype:
+// 1. Конфлікт з майбутніми стандартами (Array.prototype.flat так з'явився)
+// 2. Конфлікт з іншими бібліотеками
+// 3. for...in може підхопити додані методи</code></pre></div>
+
+    <h2 id="borrowing">Запозичення методів</h2>
+    <div class="code-block"><div class="code-head"><span class="code-lang">JavaScript</span><button class="btn-copy" aria-label="Копіювати"></button></div>
+<pre><code class="language-javascript">// Запозичення методу Array для array-like об'єктів
+function joinArgs() {
+  // arguments — array-like, але не масив
+  return Array.prototype.join.call(arguments, ', ');
+}
+console.log(joinArgs(1, 2, 3)); // "1, 2, 3"
+
+// Сучасний підхід — spread або Array.from
+function joinArgs2(...args) { return args.join(', '); }</code></pre></div>
+
+    <h2 id="summary">Підсумок</h2>
+    <ul>
+      <li>Всі об'єкти успадковують від <code>Object.prototype</code>. Масиви → Array.prototype → Object.prototype → null.</li>
+      <li>Методи на примітивах (рядках, числах) беруться з відповідних вбудованих прotototype через autoboxing.</li>
+      <li>Розширення вбудованих прotototype — погана практика (поліфіли є єдиним виправданим випадком).</li>
+    </ul>
+    <div class="article-support"><p><strong>Матеріал корисний?</strong> Підтримай проект.</p><div class="support-btns-inline"><a href="https://send.monobank.ua/jar/YOUR_JAR_ID" class="btn-mono" target="_blank" rel="noopener" style="font-size:12px;height:36px;padding:0 14px">🟢 Monobank</a><a href="https://www.buymeacoffee.com/YOUR_HANDLE" class="btn-coffee" target="_blank" rel="noopener" style="font-size:12px;height:36px;padding:0 14px">☕ Coffee</a></div></div>

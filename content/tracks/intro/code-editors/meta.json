@@ -1,0 +1,234 @@
+{
+  "id": "intro/code-editors",
+  "locale": "uk",
+  "locales": {
+    "uk": true,
+    "en": true
+  },
+  "availableLocales": [
+    "uk",
+    "en"
+  ],
+  "title": "Редактори коду",
+  "description": "Вибір редактора для JavaScript-розробки: VS Code, WebStorm, Neovim. Ключові функції IDE, налаштування, розширення для JS/TS розробника.",
+  "track": "intro",
+  "trackTitle": "Вступ",
+  "slug": "code-editors",
+  "sourcePath": "uk/introduction/editors.html",
+  "sourceIdentity": {
+    "track": "introduction",
+    "slug": "editors"
+  },
+  "canonicalRoute": "/uk/docs/intro/code-editors",
+  "canonicalLegacyPath": "/intro/code-editors.html",
+  "legacyHtmlPath": "/uk/introduction/editors.html",
+  "legacyAliases": [
+    "/uk/introduction/editors.html",
+    "/uk/introduction/editors",
+    "/intro/code-editors.html"
+  ],
+  "sectionOrder": 1,
+  "lessonOrder": 3,
+  "overallOrder": 3,
+  "articleNumber": "1.3",
+  "estimatedMinutes": 7,
+  "headings": [
+    {
+      "level": 2,
+      "id": "chomu-vazhlivo",
+      "text": "Чому це важливо"
+    },
+    {
+      "level": 2,
+      "id": "vscode",
+      "text": "Visual Studio Code"
+    },
+    {
+      "level": 3,
+      "id": "vscode-extensions",
+      "text": "Рекомендовані розширення для JS/TS"
+    },
+    {
+      "level": 2,
+      "id": "webstorm",
+      "text": "WebStorm"
+    },
+    {
+      "level": 2,
+      "id": "lightweight",
+      "text": "Легкі редактори"
+    },
+    {
+      "level": 2,
+      "id": "kliuchovi-funktsiyi",
+      "text": "Ключові функції будь-якого редактора для JS"
+    },
+    {
+      "level": 2,
+      "id": "summary",
+      "text": "Підсумок"
+    }
+  ],
+  "badges": [
+    "Початковий",
+    "Вступ",
+    "~ 7 хв"
+  ],
+  "donationLinks": [
+    "https://send.monobank.ua/jar/YOUR_JAR_ID",
+    "https://www.buymeacoffee.com/YOUR_HANDLE"
+  ],
+  "breadcrumbTrail": [
+    "Головна",
+    "Вступ",
+    "Редактори коду"
+  ],
+  "relatedSourceTrack": "introduction",
+  "contentFiles": {
+    "uk": "content/tracks/intro/code-editors/index.uk.html",
+    "en": "content/tracks/intro/code-editors/index.en.mdx"
+  },
+  "metadataFile": "content/tracks/intro/code-editors/meta.json",
+  "translationStatus": {
+    "sourceLocale": "uk",
+    "availableLocales": [
+      "uk",
+      "en"
+    ],
+    "fallbackLocales": {},
+    "locales": {
+      "uk": {
+        "status": "published",
+        "filePath": "content/tracks/intro/code-editors/index.uk.html",
+        "format": "html",
+        "title": "Редактори коду",
+        "description": "Вибір редактора для JavaScript-розробки: VS Code, WebStorm, Neovim. Ключові функції IDE, налаштування, розширення для JS/TS розробника.",
+        "completeness": 100,
+        "isFallback": false,
+        "headings": [
+          {
+            "level": 2,
+            "id": "chomu-vazhlivo",
+            "text": "Чому це важливо"
+          },
+          {
+            "level": 2,
+            "id": "vscode",
+            "text": "Visual Studio Code"
+          },
+          {
+            "level": 3,
+            "id": "vscode-extensions",
+            "text": "Рекомендовані розширення для JS/TS"
+          },
+          {
+            "level": 2,
+            "id": "webstorm",
+            "text": "WebStorm"
+          },
+          {
+            "level": 2,
+            "id": "lightweight",
+            "text": "Легкі редактори"
+          },
+          {
+            "level": 2,
+            "id": "kliuchovi-funktsiyi",
+            "text": "Ключові функції будь-якого редактора для JS"
+          },
+          {
+            "level": 2,
+            "id": "summary",
+            "text": "Підсумок"
+          }
+        ]
+      },
+      "en": {
+        "status": "published",
+        "filePath": "content/tracks/intro/code-editors/index.en.mdx",
+        "format": "mdx",
+        "title": "Code Editors",
+        "description": "How to choose and configure a JavaScript code editor for fast feedback, navigation, and safer development.",
+        "completeness": 100,
+        "isFallback": false,
+        "headings": [
+          {
+            "level": 2,
+            "id": "why-this-matters",
+            "text": "Why this matters"
+          },
+          {
+            "level": 2,
+            "id": "visual-studio-code",
+            "text": "Visual Studio Code"
+          },
+          {
+            "level": 3,
+            "id": "recommended-extensions-for-js-ts",
+            "text": "Recommended extensions for JS/TS"
+          },
+          {
+            "level": 2,
+            "id": "webstorm",
+            "text": "WebStorm"
+          },
+          {
+            "level": 2,
+            "id": "lightweight-editors",
+            "text": "Lightweight editors"
+          },
+          {
+            "level": 2,
+            "id": "essential-features-for-any-javascript-editor",
+            "text": "Essential features for any JavaScript editor"
+          },
+          {
+            "level": 2,
+            "id": "summary",
+            "text": "Summary"
+          }
+        ],
+        "slug": "code-editors",
+        "track": "intro",
+        "locale": "en",
+        "sourceLocale": "uk",
+        "hasBody": true
+      }
+    }
+  },
+  "translationCompleteness": {
+    "uk": 100,
+    "en": 100
+  },
+  "migration": {
+    "migratedFromLegacy": true,
+    "canonicalIdentitySource": "canonical",
+    "override": null,
+    "articleMeta": {
+      "type": "string",
+      "raw": {
+        "secId": "intro",
+        "artId": "code-editors"
+      },
+      "resolved": {
+        "track": "intro",
+        "slug": "code-editors"
+      }
+    },
+    "mismatches": {
+      "filePathVsCanonical": true,
+      "filePathVsStringMeta": true,
+      "filePathVsNumericMeta": false
+    },
+    "hasLegacyJsonLd": true,
+    "hasLegacyToc": true,
+    "hasLegacyPrevNext": true,
+    "legacyArticleSupport": true
+  },
+  "bodySourcePath": "content/tracks/intro/code-editors/index.uk.html",
+  "sourceProvenance": {
+    "sourcePath": "uk/introduction/editors.html",
+    "sourceTrack": "introduction",
+    "sourceSlug": "editors"
+  }
+}

@@ -1,0 +1,85 @@
+<p>Оператор <code>?.</code> (optional chaining, ES2020) дозволяє безпечно звертатись до вкладених властивостей об'єкта: якщо будь-яке посилання в ланцюгу є <code>null</code> або <code>undefined</code> — повертається <code>undefined</code> замість <code>TypeError</code>.</p>
+
+          <h2 id="problema">Проблема без ?.</h2>
+          <div class="code-block">
+            <div class="code-head"><span class="code-lang">JavaScript</span><button class="btn-copy" aria-label="Копіювати"></button></div>
+<pre><code class="language-javascript">const user = { profile: null };
+
+// Без ?.: кожен крок потрібно перевіряти вручну
+const street = user && user.profile && user.profile.address && user.profile.address.street;
+
+// TypeError без перевірки
+// const street2 = user.profile.address.street; // TypeError: Cannot read properties of null</code></pre>
+          </div>
+
+          <h2 id="syntaksys">Синтаксис</h2>
+          <div class="code-block">
+            <div class="code-head"><span class="code-lang">JavaScript</span><button class="btn-copy" aria-label="Копіювати"></button></div>
+<pre><code class="language-javascript">const user = {
+  name: 'Олена',
+  address: {
+    city: 'Київ',
+    street: null,
+  },
+  getAge: () => 28,
+};
+
+// ?. для властивості
+console.log(user?.name);                    // "Олена"
+console.log(user?.address?.city);           // "Київ"
+console.log(user?.address?.street?.name);   // undefined — не TypeError
+
+// ?. для методу
+console.log(user?.getAge());                // 28
+console.log(user?.getPhone?.());            // undefined — метод не існує
+
+// ?.[] для динамічного ключа
+const key = 'city';
+console.log(user?.address?.[key]);          // "Київ"
+
+// З відсутнім об'єктом
+const guest = null;
+console.log(guest?.name);     // undefined
+console.log(guest?.greet?.()); // undefined</code></pre>
+          </div>
+
+          <h2 id="kombinatsiya">Комбінація з ??</h2>
+          <div class="code-block">
+            <div class="code-head"><span class="code-lang">JavaScript</span><button class="btn-copy" aria-label="Копіювати"></button></div>
+<pre><code class="language-javascript">// ?. + ?? — отримати значення або дефолт
+const city    = user?.address?.city    ?? 'Невідомо';
+const country = user?.address?.country ?? 'Україна';
+
+// Замість громіздкого:
+const cityOld = (user && user.address && user.address.city != null)
+  ? user.address.city
+  : 'Невідомо';</code></pre>
+          </div>
+
+          <h2 id="obmezhennya">Обмеження і антипатерни</h2>
+          <div class="code-block">
+            <div class="code-head"><span class="code-head"><span class="code-lang">JavaScript</span><button class="btn-copy" aria-label="Копіювати"></button></span></div>
+<pre><code class="language-javascript">// НЕ можна використовувати зліва від присвоєння
+// user?.name = 'Bob'; // SyntaxError
+
+// ?. не замовчує логічні помилки — використовуйте обережно
+// Якщо user завжди має бути об'єктом — відсутність user є помилкою
+// ?. приховає її
+
+// АНТИПАТЕРН: надмірне використання
+const val = a?.b?.c?.d?.e?.f; // якщо кожен рівень є завжди — це маскує баги
+
+// ПРАВИЛЬНО: ?. лише де null/undefined є очікуваним
+const street = user?.address?.street; // address може бути відсутній — очікувано</code></pre>
+          </div>
+
+          <h2 id="summary">Підсумок</h2>
+          <ul>
+            <li><code>obj?.prop</code> → <code>undefined</code> якщо <code>obj</code> є <code>null</code>/<code>undefined</code>.</li>
+            <li>Три форми: <code>?.prop</code>, <code>?.[key]</code>, <code>?.(args)</code>.</li>
+            <li>Зупиняє обчислення і повертає <code>undefined</code> при першому <code>null</code>/<code>undefined</code> в ланцюгу.</li>
+            <li>Комбінуйте з <code>??</code> для значень за замовчуванням.</li>
+            <li>Не використовуйте для присвоєння зліва. Не маскуйте реальні помилки надмірним <code>?.</code>.</li>
+          </ul>
+
+          <div class="article-support"><p><strong>Матеріал корисний?</strong> Підтримай проект.</p><div class="support-btns-inline"><a href="https://send.monobank.ua/jar/YOUR_JAR_ID" class="btn-mono" target="_blank" rel="noopener" style="font-size:12px;height:36px;padding:0 14px">🟢 Monobank</a><a href="https://www.buymeacoffee.com/YOUR_HANDLE" class="btn-coffee" target="_blank" rel="noopener" style="font-size:12px;height:36px;padding:0 14px">☕ Coffee</a></div></div>

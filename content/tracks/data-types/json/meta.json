@@ -1,0 +1,184 @@
+{
+  "id": "data-types/json",
+  "locale": "uk",
+  "locales": {
+    "uk": true,
+    "en": false
+  },
+  "availableLocales": [
+    "uk"
+  ],
+  "title": "JSON, методи toJSON",
+  "description": "JSON в JavaScript: JSON.stringify, JSON.parse, replacer, reviver, серіалізація класів.",
+  "track": "data-types",
+  "trackTitle": "Типи даних",
+  "slug": "json",
+  "sourcePath": "uk/data-types/json.html",
+  "sourceIdentity": {
+    "track": "data-types",
+    "slug": "json"
+  },
+  "canonicalRoute": "/uk/docs/data-types/json",
+  "canonicalLegacyPath": "/data-types/json.html",
+  "legacyHtmlPath": "/uk/data-types/json.html",
+  "legacyAliases": [
+    "/uk/data-types/json.html",
+    "/uk/data-types/json",
+    "/data-types/json.html"
+  ],
+  "sectionOrder": 5,
+  "lessonOrder": 12,
+  "overallOrder": 48,
+  "articleNumber": "5.12",
+  "estimatedMinutes": 11,
+  "headings": [
+    {
+      "level": 2,
+      "id": "stringify",
+      "text": "JSON.stringify"
+    },
+    {
+      "level": 2,
+      "id": "replacer",
+      "text": "Replacer-функція і масив"
+    },
+    {
+      "level": 2,
+      "id": "parse",
+      "text": "JSON.parse і reviver"
+    },
+    {
+      "level": 2,
+      "id": "tojson",
+      "text": "toJSON"
+    },
+    {
+      "level": 2,
+      "id": "summary",
+      "text": "Підсумок"
+    }
+  ],
+  "badges": [
+    "Початковий",
+    "Типи даних",
+    "~ 11 хв"
+  ],
+  "donationLinks": [
+    "https://send.monobank.ua/jar/YOUR_JAR_ID",
+    "https://www.buymeacoffee.com/YOUR_HANDLE"
+  ],
+  "breadcrumbTrail": [
+    "Головна",
+    "Типи даних",
+    "JSON"
+  ],
+  "relatedSourceTrack": "data-types",
+  "contentFiles": {
+    "uk": "content/tracks/data-types/json/index.uk.html",
+    "en": "content/tracks/data-types/json/index.en.mdx"
+  },
+  "metadataFile": "content/tracks/data-types/json/meta.json",
+  "translationStatus": {
+    "sourceLocale": "uk",
+    "availableLocales": [
+      "uk"
+    ],
+    "fallbackLocales": {
+      "en": "uk"
+    },
+    "locales": {
+      "uk": {
+        "status": "published",
+        "filePath": "content/tracks/data-types/json/index.uk.html",
+        "format": "html",
+        "title": "JSON, методи toJSON",
+        "description": "JSON в JavaScript: JSON.stringify, JSON.parse, replacer, reviver, серіалізація класів.",
+        "completeness": 100,
+        "isFallback": false,
+        "headings": [
+          {
+            "level": 2,
+            "id": "stringify",
+            "text": "JSON.stringify"
+          },
+          {
+            "level": 2,
+            "id": "replacer",
+            "text": "Replacer-функція і масив"
+          },
+          {
+            "level": 2,
+            "id": "parse",
+            "text": "JSON.parse і reviver"
+          },
+          {
+            "level": 2,
+            "id": "tojson",
+            "text": "toJSON"
+          },
+          {
+            "level": 2,
+            "id": "summary",
+            "text": "Підсумок"
+          }
+        ]
+      },
+      "en": {
+        "status": "draft",
+        "filePath": "content/tracks/data-types/json/index.en.mdx",
+        "format": "mdx",
+        "title": "TODO: Translate title",
+        "description": "TODO: Translate description",
+        "completeness": 0,
+        "isFallback": true,
+        "headings": [
+          {
+            "level": 2,
+            "id": "source-lesson",
+            "text": "Source lesson"
+          }
+        ],
+        "slug": "json",
+        "track": "data-types",
+        "locale": "en",
+        "sourceLocale": "uk",
+        "hasBody": true
+      }
+    }
+  },
+  "translationCompleteness": {
+    "uk": 100,
+    "en": 0
+  },
+  "migration": {
+    "migratedFromLegacy": true,
+    "canonicalIdentitySource": "canonical",
+    "override": null,
+    "articleMeta": {
+      "type": "string",
+      "raw": {
+        "secId": "data-types",
+        "artId": "json"
+      },
+      "resolved": {
+        "track": "data-types",
+        "slug": "json"
+      }
+    },
+    "mismatches": {
+      "filePathVsCanonical": false,
+      "filePathVsStringMeta": false,
+      "filePathVsNumericMeta": false
+    },
+    "hasLegacyJsonLd": false,
+    "hasLegacyToc": true,
+    "hasLegacyPrevNext": true,
+    "legacyArticleSupport": true
+  },
+  "bodySourcePath": "content/tracks/data-types/json/index.uk.html",
+  "sourceProvenance": {
+    "sourcePath": "uk/data-types/json.html",
+    "sourceTrack": "data-types",
+    "sourceSlug": "json"
+  }
+}

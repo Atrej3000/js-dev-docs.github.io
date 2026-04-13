@@ -1,0 +1,103 @@
+<p>Вбудовані класи (<code>Array</code>, <code>Map</code>, <code>Error</code> тощо) можна розширювати через <code>extends</code>. Однак є нюанс: <code>Symbol.species</code> контролює, який конструктор використовується у вбудованих методах, що повертають новий екземпляр.</p>
+
+    <h2 id="extends-array">Розширення Array</h2>
+    <div class="code-block"><div class="code-head"><span class="code-lang">JavaScript</span><button class="btn-copy" aria-label="Копіювати"></button></div>
+<pre><code class="language-javascript">class PowerArray extends Array {
+  isEmpty() { return this.length === 0; }
+
+  sum() { return this.reduce((acc, val) => acc + val, 0); }
+
+  average() { return this.length ? this.sum() / this.length : 0; }
+}
+
+const arr = new PowerArray(1, 2, 3, 4, 5);
+console.log(arr.isEmpty()); // false
+console.log(arr.sum());     // 15
+console.log(arr.average()); // 3
+
+// Метод filter повертає PowerArray, не Array!
+const evens = arr.filter(n => n % 2 === 0);
+console.log(evens instanceof PowerArray); // true
+console.log(evens.sum());                 // 6</code></pre></div>
+
+    <h2 id="symbol-species">Symbol.species</h2>
+    <div class="code-block"><div class="code-head"><span class="code-lang">JavaScript</span><button class="btn-copy" aria-label="Копіювати"></button></div>
+<pre><code class="language-javascript">// Вбудовані методи map, filter, slice використовують Symbol.species
+// для визначення конструктора нового об'єкта
+
+class PowerArray extends Array {
+  // Примусово повертати звичайний Array з map/filter
+  static get [Symbol.species]() { return Array; }
+
+  sum() { return this.reduce((a, b) => a + b, 0); }
+}
+
+const pa = new PowerArray(1, 2, 3);
+const mapped = pa.map(x => x * 2);
+
+console.log(mapped instanceof PowerArray); // false — звичайний Array
+console.log(mapped instanceof Array);      // true
+// console.log(mapped.sum()); // TypeError — sum немає в Array</code></pre></div>
+
+    <h2 id="extends-error">Розширення Error</h2>
+    <div class="code-block"><div class="code-head"><span class="code-lang">JavaScript</span><button class="btn-copy" aria-label="Копіювати"></button></div>
+<pre><code class="language-javascript">class ValidationError extends Error {
+  constructor(message, field) {
+    super(message);
+    this.name  = 'ValidationError';
+    this.field = field;
+  }
+}
+
+class HttpError extends Error {
+  constructor(statusCode, message) {
+    super(message);
+    this.name       = 'HttpError';
+    this.statusCode = statusCode;
+  }
+}
+
+try {
+  throw new ValidationError('Required field', 'email');
+} catch (e) {
+  if (e instanceof ValidationError) {
+    console.log(e.field);   // 'email'
+    console.log(e.message); // 'Required field'
+    console.log(e.name);    // 'ValidationError'
+    console.log(e.stack);   // стек виклику
+  }
+}</code></pre></div>
+
+    <h2 id="extends-map">Розширення Map</h2>
+    <div class="code-block"><div class="code-head"><span class="code-lang">JavaScript</span><button class="btn-copy" aria-label="Копіювати"></button></div>
+<pre><code class="language-javascript">class TypedMap extends Map {
+  constructor(keyType, valueType) {
+    super();
+    this.keyType   = keyType;
+    this.valueType = valueType;
+  }
+
+  set(key, value) {
+    if (typeof key !== this.keyType) {
+      throw new TypeError(\`Key must be \${this.keyType}\`);
+    }
+    if (typeof value !== this.valueType) {
+      throw new TypeError(\`Value must be \${this.valueType}\`);
+    }
+    return super.set(key, value);
+  }
+}
+
+const map = new TypedMap('string', 'number');
+map.set('age', 30);        // OK
+// map.set(42, 30);        // TypeError: Key must be string
+// map.set('age', 'old');  // TypeError: Value must be number</code></pre></div>
+    <div class="callout callout-warn"><p>Не всі вбудовані методи дотримуються <code>Symbol.species</code>. Наприклад, <code>flat()</code>, <code>flatMap()</code> в деяких рушіях не поважають species. Тестуй поведінку конкретного середовища.</p></div>
+
+    <h2 id="summary">Підсумок</h2>
+    <ul>
+      <li>Вбудовані класи розширюються стандартним <code>extends</code></li>
+      <li>Методи, що повертають новий об'єкт (<code>map</code>, <code>filter</code>), використовують <code>Symbol.species</code></li>
+      <li>Перевизнач <code>static get [Symbol.species]() { return Array; }</code> щоб повертати базовий клас</li>
+      <li>Найпоширеніші кейси: кастомні <code>Error</code>, збагачені <code>Array</code>, типізовані <code>Map</code></li>
+    </ul>

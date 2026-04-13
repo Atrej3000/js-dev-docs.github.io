@@ -1,0 +1,184 @@
+{
+  "id": "generators/generators",
+  "locale": "uk",
+  "locales": {
+    "uk": true,
+    "en": false
+  },
+  "availableLocales": [
+    "uk"
+  ],
+  "title": "Генератори",
+  "description": "",
+  "track": "generators",
+  "trackTitle": "Генератори, розширення ітерації",
+  "slug": "generators",
+  "sourcePath": "uk/generators/generators.html",
+  "sourceIdentity": {
+    "track": "generators",
+    "slug": "generators"
+  },
+  "canonicalRoute": "/uk/docs/generators/generators",
+  "canonicalLegacyPath": "/generators/generators.html",
+  "legacyHtmlPath": "/uk/generators/generators.html",
+  "legacyAliases": [
+    "/uk/generators/generators.html",
+    "/uk/generators/generators",
+    "/generators/generators.html"
+  ],
+  "sectionOrder": 12,
+  "lessonOrder": 1,
+  "overallOrder": 83,
+  "articleNumber": "12.1",
+  "estimatedMinutes": 14,
+  "headings": [
+    {
+      "level": 2,
+      "id": "basics",
+      "text": "Основи"
+    },
+    {
+      "level": 2,
+      "id": "yield-star",
+      "text": "yield*"
+    },
+    {
+      "level": 2,
+      "id": "two-way",
+      "text": "Двостороннє спілкування"
+    },
+    {
+      "level": 2,
+      "id": "use-cases",
+      "text": "Застосування"
+    },
+    {
+      "level": 2,
+      "id": "summary",
+      "text": "Підсумок"
+    }
+  ],
+  "badges": [
+    "Середній",
+    "Генератори, розширення ітерації",
+    "~ 14 хв"
+  ],
+  "donationLinks": [
+    "https://send.monobank.ua/jar/YOUR_JAR_ID",
+    "https://www.buymeacoffee.com/YOUR_HANDLE"
+  ],
+  "breadcrumbTrail": [
+    "Головна",
+    "Генератори, розширення ітерації",
+    "Генератори"
+  ],
+  "relatedSourceTrack": "generators",
+  "contentFiles": {
+    "uk": "content/tracks/generators/generators/index.uk.html",
+    "en": "content/tracks/generators/generators/index.en.mdx"
+  },
+  "metadataFile": "content/tracks/generators/generators/meta.json",
+  "translationStatus": {
+    "sourceLocale": "uk",
+    "availableLocales": [
+      "uk"
+    ],
+    "fallbackLocales": {
+      "en": "uk"
+    },
+    "locales": {
+      "uk": {
+        "status": "published",
+        "filePath": "content/tracks/generators/generators/index.uk.html",
+        "format": "html",
+        "title": "Генератори",
+        "description": "",
+        "completeness": 100,
+        "isFallback": false,
+        "headings": [
+          {
+            "level": 2,
+            "id": "basics",
+            "text": "Основи"
+          },
+          {
+            "level": 2,
+            "id": "yield-star",
+            "text": "yield*"
+          },
+          {
+            "level": 2,
+            "id": "two-way",
+            "text": "Двостороннє спілкування"
+          },
+          {
+            "level": 2,
+            "id": "use-cases",
+            "text": "Застосування"
+          },
+          {
+            "level": 2,
+            "id": "summary",
+            "text": "Підсумок"
+          }
+        ]
+      },
+      "en": {
+        "status": "draft",
+        "filePath": "content/tracks/generators/generators/index.en.mdx",
+        "format": "mdx",
+        "title": "TODO: Translate title",
+        "description": "TODO: Translate description",
+        "completeness": 0,
+        "isFallback": true,
+        "headings": [
+          {
+            "level": 2,
+            "id": "source-lesson",
+            "text": "Source lesson"
+          }
+        ],
+        "slug": "generators",
+        "track": "generators",
+        "locale": "en",
+        "sourceLocale": "uk",
+        "hasBody": true
+      }
+    }
+  },
+  "translationCompleteness": {
+    "uk": 100,
+    "en": 0
+  },
+  "migration": {
+    "migratedFromLegacy": true,
+    "canonicalIdentitySource": "canonical",
+    "override": null,
+    "articleMeta": {
+      "type": "string",
+      "raw": {
+        "secId": "generators",
+        "artId": "generators"
+      },
+      "resolved": {
+        "track": "generators",
+        "slug": "generators"
+      }
+    },
+    "mismatches": {
+      "filePathVsCanonical": false,
+      "filePathVsStringMeta": false,
+      "filePathVsNumericMeta": false
+    },
+    "hasLegacyJsonLd": false,
+    "hasLegacyToc": true,
+    "hasLegacyPrevNext": true,
+    "legacyArticleSupport": true
+  },
+  "bodySourcePath": "content/tracks/generators/generators/index.uk.html",
+  "sourceProvenance": {
+    "sourcePath": "uk/generators/generators.html",
+    "sourceTrack": "generators",
+    "sourceSlug": "generators"
+  }
+}

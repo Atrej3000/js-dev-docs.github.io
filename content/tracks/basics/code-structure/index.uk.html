@@ -1,0 +1,149 @@
+<p>Програма на JavaScript складається з інструкцій. Інструкції розділяються крапкою з комою. Крім коду, файл може містити коментарі. Розуміння правил розбору тексту рушієм запобігає класу важко відтворюваних помилок.</p>
+
+          <h2 id="instruktsii">Інструкції</h2>
+          <p>Інструкція — синтаксична конструкція, що виконує певну дію. Кілька інструкцій в одному рядку розділяються крапкою з комою:</p>
+
+          <div class="code-block">
+            <div class="code-head"><span class="code-lang">JavaScript</span><button class="btn-copy" aria-label="Копіювати"></button></div>
+<pre><code class="language-javascript">// Одна інструкція на рядок — стандарт читабельності
+const greeting = 'Hello';
+console.log(greeting);
+
+// Дозволено, але не рекомендовано: кілька на рядок
+const x = 1; const y = 2; console.log(x + y);</code></pre>
+          </div>
+
+          <h2 id="krapka-z-komoyu">Крапка з комою</h2>
+          <p>Крапка з комою завершує інструкцію. Це явне позначення межі між інструкціями і є рекомендованою практикою для більшості стилів коду.</p>
+
+          <h2 id="asi">Автоматична вставка крапки з комою (ASI)</h2>
+          <p><strong>Automatic Semicolon Insertion (ASI)</strong> — механізм специфікації ECMAScript, за яким рушій вставляє крапку з комою в певних місцях, де її немає у вихідному коді. Це дозволяє писати код без явних крапок з комою, але механізм має нетривіальні винятки.</p>
+
+          <div class="code-block">
+            <div class="code-head"><span class="code-lang">JavaScript</span><button class="btn-copy" aria-label="Копіювати"></button></div>
+<pre><code class="language-javascript">// ASI вставляє крапку з комою — цей код працює
+const a = 1
+const b = 2
+console.log(a + b) // 3</code></pre>
+          </div>
+
+          <h3 id="asi-pogliad">Небезпечні випадки ASI</h3>
+          <p>ASI <em>не</em> вставляє крапку з комою, якщо рядок може бути продовженням попереднього. Найпоширеніша пастка — рядок, що починається з <code>(</code>, <code>[</code> або шаблонного літерала:</p>
+
+          <div class="code-block">
+            <div class="code-head"><span class="code-lang">JavaScript</span><button class="btn-copy" aria-label="Копіювати"></button></div>
+<pre><code class="language-javascript">// ПАСТКА: ASI не вставляє крапку з комою перед (
+const value = 1
+(function() { console.log('IIFE') })()
+// Рушій бачить: const value = 1(function(){...})()
+// TypeError: 1 is not a function
+
+// РІШЕННЯ: явна крапка з комою
+const value = 1;
+(function() { console.log('IIFE') })();
+
+// Інша пастка: рядок починається з [
+const arr = [1, 2, 3]
+[0, 1].forEach(i => console.log(arr[i]))
+// Рушій: const arr = [1,2,3][0,1].forEach(...)
+// TypeError: не масив
+
+// Захисна крапка з комою на початку (стиль деяких мінімалістичних кодестайлів)
+;[0, 1].forEach(i => console.log(arr[i]))</code></pre>
+          </div>
+
+          <div class="callout c-warn">
+            <div class="callout-title">Рекомендація</div>
+            <p>Завжди ставте крапку з комою явно. ASI — не заміна явній семантиці, а механізм сумісності. Linter (ESLint) з правилом <code>semi</code> автоматично контролює це.</p>
+          </div>
+
+          <h2 id="komentari">Коментарі</h2>
+          <p>Коментарі не виконуються рушієм. Вони існують для людей, які читають код.</p>
+
+          <div class="code-block">
+            <div class="code-head"><span class="code-lang">JavaScript</span><button class="btn-copy" aria-label="Копіювати"></button></div>
+<pre><code class="language-javascript">// Однорядковий коментар — від // до кінця рядка
+
+/*
+  Багаторядковий коментар.
+  Використовується для блоків тексту або тимчасового
+  відключення великого фрагмента коду.
+*/
+
+/**
+ * JSDoc-коментар — документація для функцій та класів.
+ * Підтримується редакторами для IntelliSense.
+ *
+ * @param {number} amount - Сума платежу в гривнях
+ * @param {string} currency - Код валюти (ISO 4217)
+ * @returns {number} Конвертована сума
+ */
+function convertCurrency(amount, currency) {
+  // реалізація
+}</code></pre>
+          </div>
+
+          <h3 id="komentari-yak">Що коментувати, а що — ні</h3>
+          <p>Коментар пояснює <em>чому</em>, а не <em>що</em>. Код сам описує що він робить. Коментар додає контекст, недоступний з коду.</p>
+
+          <div class="code-block">
+            <div class="code-head"><span class="code-lang">JavaScript</span><button class="btn-copy" aria-label="Копіювати"></button></div>
+<pre><code class="language-javascript">// ПОГАНИЙ коментар: переказує код
+// Збільшуємо лічильник на 1
+count++;
+
+// ХОРОШИЙ коментар: пояснює причину
+// Зсув на 1 компенсує 0-базовану індексацію API (документація v3, §4.2)
+const pageIndex = currentPage - 1;
+
+// ХОРОШИЙ коментар: попереджає про неочевидне
+// parseInt без основи може давати вісімковий результат у старих браузерах
+// тому завжди вказуємо 10
+const parsed = parseInt(input, 10);</code></pre>
+          </div>
+
+          <h2 id="edge-cases">Edge cases</h2>
+          <h3 id="return-asi">ASI після return</h3>
+          <p>Одна з найвідоміших пасток: рядковий перенос після <code>return</code> вставляє крапку з комою — функція повертає <code>undefined</code>.</p>
+
+          <div class="code-block">
+            <div class="code-head"><span class="code-lang">JavaScript</span><button class="btn-copy" aria-label="Копіювати"></button></div>
+<pre><code class="language-javascript">// АНТИПАТЕРН: ASI після return
+function getConfig() {
+  return          // ← ASI вставляє ; тут
+  {               // цей об'єкт НІКОЛИ не повертається
+    timeout: 5000
+  };
+}
+console.log(getConfig()); // undefined
+
+// ПРАВИЛЬНО: дужка на тому ж рядку
+function getConfig() {
+  return {
+    timeout: 5000
+  };
+}
+console.log(getConfig()); // { timeout: 5000 }</code></pre>
+          </div>
+
+          <div class="callout c-danger">
+            <div class="callout-title">return на окремому рядку</div>
+            <p>ASI після <code>return</code>, <code>throw</code>, <code>break</code>, <code>continue</code> є джерелом реальних продакшен-помилок. Ніколи не переносьте вираз, що повертається, на новий рядок без відкриваючої дужки.</p>
+          </div>
+
+          <h2 id="summary">Підсумок</h2>
+          <ul>
+            <li>Інструкції завершуються крапкою з комою. Явна крапка з комою — надійніший стиль.</li>
+            <li>ASI автоматично вставляє крапку з комою в більшості місць, але має нетривіальні винятки: рядки, що починаються з <code>(</code>, <code>[</code>, шаблонних літералів.</li>
+            <li>Перенос рядка після <code>return</code> вставляє <code>;</code> — функція поверне <code>undefined</code>. Відкриваюча дужка завжди на тому ж рядку, що й <code>return</code>.</li>
+            <li><code>//</code> — однорядковий коментар, <code>/* */</code> — блоковий, <code>/** */</code> — JSDoc.</li>
+            <li>Коментар пояснює «чому», а не «що».</li>
+          </ul>
+
+          <div class="article-support">
+            <p><strong>Матеріал корисний?</strong> Підтримай проект.</p>
+            <div class="support-btns-inline">
+              <a href="https://send.monobank.ua/jar/YOUR_JAR_ID" class="btn-mono" target="_blank" rel="noopener" style="font-size:12px;height:36px;padding:0 14px">🟢 Monobank</a>
+              <a href="https://www.buymeacoffee.com/YOUR_HANDLE" class="btn-coffee" target="_blank" rel="noopener" style="font-size:12px;height:36px;padding:0 14px">☕ Coffee</a>
+            </div>
+          </div>

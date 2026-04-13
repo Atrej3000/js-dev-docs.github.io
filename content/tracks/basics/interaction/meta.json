@@ -1,0 +1,204 @@
+{
+  "id": "basics/interaction",
+  "locale": "uk",
+  "locales": {
+    "uk": true,
+    "en": true
+  },
+  "availableLocales": [
+    "uk",
+    "en"
+  ],
+  "title": "Взаємодія: alert, prompt, confirm",
+  "description": "Браузерні діалоги JavaScript: alert, prompt, confirm — синтаксис, повернуті значення, блокування, обмеження та альтернативи.",
+  "track": "basics",
+  "trackTitle": "Основи JavaScript",
+  "slug": "interaction",
+  "sourcePath": "uk/basics/interaction.html",
+  "sourceIdentity": {
+    "track": "basics",
+    "slug": "interaction"
+  },
+  "canonicalRoute": "/uk/docs/basics/interaction",
+  "canonicalLegacyPath": "/basics/interaction.html",
+  "legacyHtmlPath": "/uk/basics/interaction.html",
+  "legacyAliases": [
+    "/uk/basics/interaction.html",
+    "/uk/basics/interaction",
+    "/basics/interaction.html"
+  ],
+  "sectionOrder": 2,
+  "lessonOrder": 6,
+  "overallOrder": 10,
+  "articleNumber": "2.6",
+  "estimatedMinutes": 7,
+  "headings": [
+    {
+      "level": 2,
+      "id": "alert",
+      "text": "alert"
+    },
+    {
+      "level": 2,
+      "id": "prompt",
+      "text": "prompt"
+    },
+    {
+      "level": 2,
+      "id": "confirm",
+      "text": "confirm"
+    },
+    {
+      "level": 2,
+      "id": "obmezhennya",
+      "text": "Обмеження браузерних діалогів"
+    },
+    {
+      "level": 2,
+      "id": "summary",
+      "text": "Підсумок"
+    }
+  ],
+  "badges": [
+    "Початковий",
+    "Основи JavaScript",
+    "~ 7 хв"
+  ],
+  "donationLinks": [
+    "https://send.monobank.ua/jar/YOUR_JAR_ID",
+    "https://www.buymeacoffee.com/YOUR_HANDLE"
+  ],
+  "breadcrumbTrail": [
+    "Головна",
+    "Основи JavaScript",
+    "Взаємодія: alert, prompt, confirm"
+  ],
+  "relatedSourceTrack": "basics",
+  "contentFiles": {
+    "uk": "content/tracks/basics/interaction/index.uk.html",
+    "en": "content/tracks/basics/interaction/index.en.mdx"
+  },
+  "metadataFile": "content/tracks/basics/interaction/meta.json",
+  "translationStatus": {
+    "sourceLocale": "uk",
+    "availableLocales": [
+      "uk",
+      "en"
+    ],
+    "fallbackLocales": {},
+    "locales": {
+      "uk": {
+        "status": "published",
+        "filePath": "content/tracks/basics/interaction/index.uk.html",
+        "format": "html",
+        "title": "Взаємодія: alert, prompt, confirm",
+        "description": "Браузерні діалоги JavaScript: alert, prompt, confirm — синтаксис, повернуті значення, блокування, обмеження та альтернативи.",
+        "completeness": 100,
+        "isFallback": false,
+        "headings": [
+          {
+            "level": 2,
+            "id": "alert",
+            "text": "alert"
+          },
+          {
+            "level": 2,
+            "id": "prompt",
+            "text": "prompt"
+          },
+          {
+            "level": 2,
+            "id": "confirm",
+            "text": "confirm"
+          },
+          {
+            "level": 2,
+            "id": "obmezhennya",
+            "text": "Обмеження браузерних діалогів"
+          },
+          {
+            "level": 2,
+            "id": "summary",
+            "text": "Підсумок"
+          }
+        ]
+      },
+      "en": {
+        "status": "published",
+        "filePath": "content/tracks/basics/interaction/index.en.mdx",
+        "format": "mdx",
+        "title": "Interaction: `alert`, `prompt`, `confirm`",
+        "description": "The browser's built-in dialog functions and their limitations.",
+        "completeness": 100,
+        "isFallback": false,
+        "headings": [
+          {
+            "level": 2,
+            "id": "alert",
+            "text": "`alert`"
+          },
+          {
+            "level": 2,
+            "id": "prompt",
+            "text": "`prompt`"
+          },
+          {
+            "level": 2,
+            "id": "confirm",
+            "text": "`confirm`"
+          },
+          {
+            "level": 2,
+            "id": "limitations-of-browser-dialogs",
+            "text": "Limitations of browser dialogs"
+          },
+          {
+            "level": 2,
+            "id": "summary",
+            "text": "Summary"
+          }
+        ],
+        "slug": "interaction",
+        "track": "basics",
+        "locale": "en",
+        "sourceLocale": "uk",
+        "hasBody": true
+      }
+    }
+  },
+  "translationCompleteness": {
+    "uk": 100,
+    "en": 100
+  },
+  "migration": {
+    "migratedFromLegacy": true,
+    "canonicalIdentitySource": "canonical",
+    "override": null,
+    "articleMeta": {
+      "type": "string",
+      "raw": {
+        "secId": "basics",
+        "artId": "interaction"
+      },
+      "resolved": {
+        "track": "basics",
+        "slug": "interaction"
+      }
+    },
+    "mismatches": {
+      "filePathVsCanonical": false,
+      "filePathVsStringMeta": false,
+      "filePathVsNumericMeta": false
+    },
+    "hasLegacyJsonLd": true,
+    "hasLegacyToc": true,
+    "hasLegacyPrevNext": true,
+    "legacyArticleSupport": true
+  },
+  "bodySourcePath": "content/tracks/basics/interaction/index.uk.html",
+  "sourceProvenance": {
+    "sourcePath": "uk/basics/interaction.html",
+    "sourceTrack": "basics",
+    "sourceSlug": "interaction"
+  }
+}

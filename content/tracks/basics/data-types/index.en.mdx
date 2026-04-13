@@ -1,0 +1,205 @@
+---
+title: "Data Types"
+description: "The primitive and object data types in JavaScript, how `typeof` behaves, and the edge cases every beginner should know."
+slug: "data-types"
+track: "basics"
+locale: "en"
+sourceLocale: "uk"
+translationStatus: "published"
+translationCompleteness: 100
+---
+
+ECMAScript defines **eight data types**: seven primitive types and one complex type. JavaScript is dynamically typed, which means the type belongs to the value at runtime, not to the variable name.
+
+## Number
+
+JavaScript uses one main numeric type, `number`, for both integers and floating-point values. It is based on the IEEE 754 double-precision format.
+
+```javascript
+const integer = 42;
+const float = 3.14159;
+const hex = 0xff;
+const binary = 0b11111111;
+const exp = 1.5e3;
+
+console.log(1 / 0);   // Infinity
+console.log(-1 / 0);  // -Infinity
+console.log(0 / 0);   // NaN
+```
+
+### IEEE 754 precision
+
+Floating-point values are not represented perfectly:
+
+```javascript
+console.log(0.1 + 0.2); // 0.30000000000000004
+console.log(0.1 + 0.2 === 0.3); // false
+
+const epsilon = Number.EPSILON;
+console.log(Math.abs(0.1 + 0.2 - 0.3) < epsilon); // true
+```
+
+## String
+
+A string is an immutable sequence of UTF-16 code units.
+
+```javascript
+const single = 'single quotes';
+const double = "double quotes";
+const template = `template literal: ${1 + 2}`;
+
+console.log("  Hello  ".trim()); // "Hello"
+```
+
+There is no separate character type in JavaScript. A single character is just a string of length `1`.
+
+## Boolean
+
+Boolean values are simply `true` and `false`.
+
+```javascript
+console.log(5 > 3); // true
+console.log("a" === "b"); // false
+```
+
+Booleans also appear after conversion:
+
+```javascript
+console.log(Boolean(0));   // false
+console.log(Boolean(""));  // false
+console.log(Boolean([]));  // true
+console.log(Boolean({}));  // true
+```
+
+## `null`
+
+`null` is a primitive value that usually means "no value on purpose".
+
+```javascript
+let currentUser = null;
+
+if (currentUser === null) {
+  console.log("No user is signed in");
+}
+```
+
+A famous historical bug:
+
+```javascript
+console.log(typeof null); // "object"
+```
+
+## `undefined`
+
+`undefined` usually means a value has not been assigned yet.
+
+```javascript
+let status;
+console.log(status); // undefined
+
+const obj = { name: "admin" };
+console.log(obj.age); // undefined
+```
+
+Use `null` when you intentionally want to represent "no value". Reserve `undefined` for the language's natural default behavior.
+
+## Symbol
+
+A `Symbol` is a unique primitive value, often used for unique property keys.
+
+```javascript
+const id1 = Symbol("id");
+const id2 = Symbol("id");
+
+console.log(id1 === id2); // false
+```
+
+## BigInt
+
+`BigInt` is for integers that are too large for the safe range of `number`.
+
+```javascript
+const huge = 9007199254740993n;
+console.log(typeof huge); // "bigint"
+console.log(huge + 1n);   // 9007199254740994n
+```
+
+Do not mix `BigInt` and `number` directly:
+
+```javascript
+console.log(1n + BigInt(1)); // 2n
+// console.log(1n + 1); // TypeError
+```
+
+## Object
+
+Objects are the only complex data type. Arrays, functions, dates, regular expressions, maps, and sets are all objects in JavaScript.
+
+```javascript
+const config = { host: "localhost", port: 3000 };
+const items = ["a", "b", "c"];
+
+console.log(Array.isArray(items)); // true
+console.log(typeof items); // "object"
+```
+
+Objects are assigned and passed **by reference**, while primitive values are copied **by value**.
+
+```javascript
+const a = { value: 1 };
+const b = a;
+b.value = 2;
+console.log(a.value); // 2
+```
+
+## The `typeof` operator
+
+```javascript
+typeof 42;            // "number"
+typeof "text";        // "string"
+typeof true;          // "boolean"
+typeof undefined;     // "undefined"
+typeof Symbol();      // "symbol"
+typeof 42n;           // "bigint"
+typeof {};            // "object"
+typeof [];            // "object"
+typeof null;          // "object"
+typeof function() {}; // "function"
+```
+
+`typeof` is useful, but you still need to know its exceptions, especially for arrays and `null`.
+
+## Quick summary table
+
+| Type | `typeof` result | How it is passed | Mutable |
+| --- | --- | --- | --- |
+| `Number` | `"number"` | by value | no |
+| `String` | `"string"` | by value | no |
+| `Boolean` | `"boolean"` | by value | no |
+| `null` | `"object"` (legacy bug) | by value | no |
+| `undefined` | `"undefined"` | by value | no |
+| `Symbol` | `"symbol"` | by value | no |
+| `BigInt` | `"bigint"` | by value | no |
+| `Object` | `"object"` | by reference | yes |
+
+## Edge cases
+
+```javascript
+console.log(NaN === NaN); // false
+console.log(Number.isNaN(NaN)); // true
+
+console.log(typeof []); // "object"
+console.log(Array.isArray([])); // true
+
+console.log(-0 === 0); // true
+console.log(Object.is(-0, 0)); // false
+```
+
+## Summary
+
+- JavaScript has seven primitive types and one complex type, `Object`.
+- `number` handles both integers and floating-point values.
+- `NaN`, `Infinity`, and `-Infinity` are still numbers.
+- `null` and `undefined` are different concepts.
+- Arrays are objects, so use `Array.isArray()` when that distinction matters.
+- `typeof` is useful, but you need to know its historical quirks.

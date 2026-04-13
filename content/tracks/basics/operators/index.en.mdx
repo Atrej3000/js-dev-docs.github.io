@@ -1,0 +1,137 @@
+---
+title: "Basic Operators and Math"
+description: "Arithmetic, assignment, operator precedence, and the core JavaScript operators you use every day."
+slug: "operators"
+track: "basics"
+locale: "en"
+sourceLocale: "uk"
+translationStatus: "published"
+translationCompleteness: 100
+---
+
+Operators are the symbols and keywords that perform work on values. In this lesson we focus on the basic operators used in arithmetic, assignment, and everyday expressions.
+
+## Arithmetic operators
+
+```javascript
+console.log(5 + 3); // 8
+console.log(5 - 3); // 2
+console.log(5 * 3); // 15
+console.log(5 / 2); // 2.5
+console.log(5 % 2); // 1
+console.log(2 ** 3); // 8
+```
+
+## The `+` operator with strings
+
+The `+` operator is special: it also performs string concatenation.
+
+```javascript
+console.log("Hello, " + "world"); // "Hello, world"
+console.log("5" + 2); // "52"
+console.log(1 + 2 + " items"); // "3 items"
+```
+
+Once one side becomes a string, `+` keeps concatenating.
+
+## Unary operators
+
+Unary operators work on a single operand.
+
+```javascript
+const x = 5;
+
+console.log(-x); // -5
+console.log(+true); // 1
+console.log(+"42"); // 42
+```
+
+Unary `+` is often used for explicit number conversion.
+
+## Increment and decrement
+
+```javascript
+let counter = 0;
+
+counter++;
+console.log(counter); // 1
+
+counter--;
+console.log(counter); // 0
+```
+
+Prefix and postfix forms behave differently inside larger expressions:
+
+```javascript
+let a = 1;
+console.log(++a); // 2
+
+let b = 1;
+console.log(b++); // 1
+console.log(b);   // 2
+```
+
+## Operator precedence
+
+Operator precedence determines which part of an expression is evaluated first.
+
+```javascript
+console.log(2 + 3 * 4); // 14
+console.log((2 + 3) * 4); // 20
+```
+
+When in doubt, use parentheses. Readability is more important than memorizing precedence tables.
+
+## Assignment operators
+
+```javascript
+let total = 10;
+
+total += 5; // 15
+total -= 3; // 12
+total *= 2; // 24
+total /= 4; // 6
+total %= 4; // 2
+```
+
+These are just shorthand forms:
+
+```javascript
+let count = 1;
+count += 2; // same as count = count + 2
+```
+
+## Bitwise operators
+
+Bitwise operators work on the binary representation of numbers.
+
+```javascript
+console.log(5 & 1); // 1
+console.log(5 | 1); // 5
+console.log(5 ^ 1); // 4
+console.log(~5);    // -6
+console.log(5 << 1); // 10
+console.log(5 >> 1); // 2
+```
+
+They are useful in some low-level cases, but most beginner JavaScript code does not need them often.
+
+## The comma operator
+
+The comma operator evaluates several expressions and returns the last one.
+
+```javascript
+let result = (1 + 2, 3 + 4);
+console.log(result); // 7
+```
+
+It exists, but it is rarely necessary in readable application code.
+
+## Summary
+
+- Arithmetic operators work on numbers.
+- `+` is special because it also concatenates strings.
+- Unary `+` converts a value to a number.
+- `++` and `--` change a variable by one.
+- Operator precedence affects how expressions are evaluated.
+- Assignment operators such as `+=` and `*=` are shorthand for reassignment.

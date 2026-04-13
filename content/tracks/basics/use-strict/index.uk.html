@@ -1,0 +1,135 @@
+<p>Директива <code>"use strict"</code> вмикає суворий режим виконання (strict mode), введений у ES5. Він перетворює мовчазні помилки JavaScript на явні винятки і забороняє деякі небезпечні конструкції.</p>
+
+          <h2 id="chomu-vazhlivo">Чому це важливо</h2>
+          <p>JavaScript до ES5 мав поведінку «мовчати замість помилки»: присвоєння неоголошеній змінній, запис у read-only властивість, видалення невидаляємого — все це відбувалося без помилки. Strict mode перетворює ці тихі збої на <code>TypeError</code> або <code>ReferenceError</code>, що дозволяє знайти їх під час розробки, а не в продакшені.</p>
+
+          <h2 id="aktivatsiya">Активація</h2>
+          <p>Директива — це рядковий літерал <code>"use strict"</code> або <code>'use strict'</code>, що стоїть <strong>першим рядком</strong> скрипта або функції.</p>
+
+          <div class="code-block">
+            <div class="code-head"><span class="code-lang">JavaScript</span><button class="btn-copy" aria-label="Копіювати"></button></div>
+<pre><code class="language-javascript">// Весь файл у strict mode
+"use strict";
+
+function processOrder(order) {
+  // ...
+}
+
+// Тільки функція у strict mode (застарілий підхід для legacy-файлів)
+function validate(data) {
+  "use strict";
+  // ...
+}</code></pre>
+          </div>
+
+          <div class="callout c-warn">
+            <div class="callout-title">Позиція директиви критична</div>
+            <p>Якщо перед <code>"use strict"</code> є будь-який виконуваний код (навіть порожній рядок не є проблемою, але інструкція — так), директива ігнорується. Вона повинна бути першою інструкцією.</p>
+          </div>
+
+          <h2 id="shcho-zminyuye">Що змінює strict mode</h2>
+
+          <h3 id="undeclared">1. Заборона неоголошених змінних</h3>
+          <div class="code-block">
+            <div class="code-head"><span class="code-lang">JavaScript</span><button class="btn-copy" aria-label="Копіювати"></button></div>
+<pre><code class="language-javascript">"use strict";
+
+// sloppy mode: тихо створює глобальну змінну
+// strict mode: ReferenceError
+typoVariable = 42; // ReferenceError: typoVariable is not defined
+
+// Правильно: завжди оголошувати
+let typoVariable = 42;</code></pre>
+          </div>
+
+          <h3 id="readonly">2. Заборона запису у read-only властивості</h3>
+          <div class="code-block">
+            <div class="code-head"><span class="code-head"><span class="code-lang">JavaScript</span><button class="btn-copy" aria-label="Копіювати"></button></span></div>
+<pre><code class="language-javascript">"use strict";
+
+const obj = {};
+Object.defineProperty(obj, 'id', { value: 1, writable: false });
+
+obj.id = 2; // TypeError: Cannot assign to read only property 'id'
+// У sloppy mode це мовчки ігнорується</code></pre>
+          </div>
+
+          <h3 id="delete">3. Заборона видалення невидаляємих властивостей</h3>
+          <div class="code-block">
+            <div class="code-head"><span class="code-lang">JavaScript</span><button class="btn-copy" aria-label="Копіювати"></button></div>
+<pre><code class="language-javascript">"use strict";
+
+delete Object.prototype; // TypeError
+// У sloppy mode повертає false без помилки</code></pre>
+          </div>
+
+          <h3 id="duplicate-params">4. Заборона дублікатів параметрів</h3>
+          <div class="code-block">
+            <div class="code-head"><span class="code-lang">JavaScript</span><button class="btn-copy" aria-label="Копіювати"></button></div>
+<pre><code class="language-javascript">"use strict";
+
+// SyntaxError: Duplicate parameter name not allowed in this context
+function sum(a, a, b) { // ← дублікат параметра
+  return a + b;
+}
+// У sloppy mode другий 'a' мовчки перекриває перший</code></pre>
+          </div>
+
+          <h3 id="this-strict">5. this у функціях без контексту</h3>
+          <div class="code-block">
+            <div class="code-head"><span class="code-lang">JavaScript</span><button class="btn-copy" aria-label="Копіювати"></button></div>
+<pre><code class="language-javascript">"use strict";
+
+function showThis() {
+  console.log(this);
+}
+
+showThis();         // undefined (strict)
+                    // globalThis (sloppy)
+
+showThis.call(null); // null (strict)
+                     // globalThis (sloppy)</code></pre>
+          </div>
+
+          <h3 id="reserved">6. Заборона зарезервованих слів</h3>
+          <p>Strict mode забороняє використовувати як ідентифікатори слова, зарезервовані для майбутніх версій: <code>implements</code>, <code>interface</code>, <code>let</code>, <code>package</code>, <code>private</code>, <code>protected</code>, <code>public</code>, <code>static</code>, <code>yield</code>.</p>
+
+          <h2 id="moduli-ta-klasy">Модулі та класи — завжди strict</h2>
+          <p>ES-модулі (<code>type="module"</code>) та тіла класів виконуються у strict mode автоматично, незалежно від наявності директиви. У сучасному коді на модулях <code>"use strict"</code> надлишковий.</p>
+
+          <div class="code-block">
+            <div class="code-head"><span class="code-lang">JavaScript</span><button class="btn-copy" aria-label="Копіювати"></button></div>
+<pre><code class="language-javascript">// type="module" → автоматично strict mode
+// "use strict" тут надлишковий, але не шкідливий
+export function processData(data) {
+  undeclaredVar = 1; // ReferenceError без директиви
+}
+
+// Тіло класу — також завжди strict
+class Service {
+  process() {
+    undeclaredVar = 1; // ReferenceError
+  }
+}</code></pre>
+          </div>
+
+          <h2 id="transpilery">Транспілери та bundler</h2>
+          <p>Babel, TypeScript (з <code>target: ES5</code>), esbuild та більшість bundler-ів за замовчуванням додають <code>"use strict"</code> до скомпільованого коду. Тому у TypeScript-проектах директива є автоматично.</p>
+
+          <h2 id="summary">Підсумок</h2>
+          <ul>
+            <li><code>"use strict"</code> — директива ES5, що перетворює мовчазні помилки на явні винятки.</li>
+            <li>Повинна бути першою інструкцією файлу або функції.</li>
+            <li>Забороняє: неоголошені змінні, запис у read-only, дублікати параметрів, видалення невидаляємого.</li>
+            <li>Змінює значення <code>this</code> у функціях без контексту: <code>undefined</code> замість <code>globalThis</code>.</li>
+            <li>ES-модулі та тіла класів — завжди strict mode автоматично.</li>
+            <li>Завжди використовуйте strict mode у новому коді. У проектах на ES-модулях або TypeScript він вже активний.</li>
+          </ul>
+
+          <div class="article-support">
+            <p><strong>Матеріал корисний?</strong> Підтримай проект.</p>
+            <div class="support-btns-inline">
+              <a href="https://send.monobank.ua/jar/YOUR_JAR_ID" class="btn-mono" target="_blank" rel="noopener" style="font-size:12px;height:36px;padding:0 14px">🟢 Monobank</a>
+              <a href="https://www.buymeacoffee.com/YOUR_HANDLE" class="btn-coffee" target="_blank" rel="noopener" style="font-size:12px;height:36px;padding:0 14px">☕ Coffee</a>
+            </div>
+          </div>

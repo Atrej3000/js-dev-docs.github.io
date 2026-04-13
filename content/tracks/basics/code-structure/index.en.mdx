@@ -1,0 +1,139 @@
+---
+title: "Code Structure"
+description: "Statements, semicolons, automatic semicolon insertion, and comments in JavaScript."
+slug: "code-structure"
+track: "basics"
+locale: "en"
+sourceLocale: "uk"
+translationStatus: "published"
+translationCompleteness: 100
+---
+
+A JavaScript program consists of **statements**. Statements can be separated by semicolons, and source files can also contain comments. Understanding how the engine reads source text helps prevent subtle bugs.
+
+## Statements
+
+A statement is a piece of syntax that performs an action.
+
+```javascript
+const greeting = "Hello";
+console.log(greeting);
+
+// Allowed, but harder to read
+const x = 1; const y = 2; console.log(x + y);
+```
+
+In real code, one statement per line is the clearest style.
+
+## Semicolons
+
+A semicolon explicitly ends a statement. Many teams recommend always writing semicolons because it removes ambiguity.
+
+## Automatic Semicolon Insertion (ASI)
+
+JavaScript can insert semicolons automatically in many places. This is called **Automatic Semicolon Insertion**, or **ASI**.
+
+```javascript
+const a = 1
+const b = 2
+console.log(a + b)
+```
+
+The code above works because the engine inserts semicolons for you. But ASI has edge cases, and that is where trouble starts.
+
+### Dangerous ASI cases
+
+If the next line can be interpreted as a continuation of the previous one, the engine may **not** insert a semicolon.
+
+```javascript
+const value = 1
+(function () {
+  console.log("IIFE");
+})();
+
+// The engine can interpret that as:
+// const value = 1(function(){...})()
+```
+
+Another classic trap:
+
+```javascript
+const arr = [1, 2, 3]
+[0, 1].forEach(i => console.log(arr[i]))
+
+// Interpreted as:
+// const arr = [1,2,3][0,1].forEach(...)
+```
+
+The safest rule for beginners is simple: **write semicolons explicitly**.
+
+## Comments
+
+Comments are for people reading the code, not for the engine.
+
+```javascript
+// Single-line comment
+
+/*
+  Multi-line comment
+*/
+
+/**
+ * JSDoc comment
+ * @param {number} amount
+ * @returns {number}
+ */
+function convert(amount) {
+  return amount;
+}
+```
+
+### What to comment and what not to comment
+
+A good comment explains **why**, not **what**.
+
+```javascript
+// Bad: repeats the code
+count++;
+
+// Good: explains a non-obvious reason
+// The API uses zero-based indexing, so we subtract one here.
+const pageIndex = currentPage - 1;
+```
+
+## Edge cases
+
+### ASI after `return`
+
+One of the most famous ASI bugs happens when the returned expression is moved to the next line:
+
+```javascript
+function getConfig() {
+  return
+  {
+    timeout: 5000
+  };
+}
+
+console.log(getConfig()); // undefined
+```
+
+The engine inserts a semicolon right after `return`, so the object is never returned.
+
+Correct version:
+
+```javascript
+function getConfig() {
+  return {
+    timeout: 5000,
+  };
+}
+```
+
+## Summary
+
+- JavaScript programs are made of statements.
+- Semicolons make statement boundaries explicit.
+- ASI often works, but it has dangerous edge cases.
+- The most common ASI traps involve lines that start with `(` or `[` and line breaks after `return`.
+- Comments should explain intent, not restate obvious code.

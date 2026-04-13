@@ -1,0 +1,234 @@
+{
+  "id": "objects/object-basics",
+  "locale": "uk",
+  "locales": {
+    "uk": true,
+    "en": false
+  },
+  "availableLocales": [
+    "uk"
+  ],
+  "title": "Об'єкти",
+  "description": "Об'єкти JavaScript: літерал, доступ до властивостей, скорочений синтаксис, обчислювані ключі, перевірка існування, видалення, обхід.",
+  "track": "objects",
+  "trackTitle": "Об'єкти: основи",
+  "slug": "object-basics",
+  "sourcePath": "uk/objects/objects.html",
+  "sourceIdentity": {
+    "track": "objects",
+    "slug": "objects"
+  },
+  "canonicalRoute": "/uk/docs/objects/object-basics",
+  "canonicalLegacyPath": "/objects/object-basics.html",
+  "legacyHtmlPath": "/uk/objects/objects.html",
+  "legacyAliases": [
+    "/uk/objects/objects.html",
+    "/uk/objects/objects",
+    "/objects/object-basics.html"
+  ],
+  "sectionOrder": 4,
+  "lessonOrder": 1,
+  "overallOrder": 29,
+  "articleNumber": "4.1",
+  "estimatedMinutes": 16,
+  "headings": [
+    {
+      "level": 2,
+      "id": "literaly",
+      "text": "Літеральний синтаксис"
+    },
+    {
+      "level": 2,
+      "id": "dostup",
+      "text": "Доступ до властивостей"
+    },
+    {
+      "level": 2,
+      "id": "shorthand",
+      "text": "Скорочений синтаксис властивостей (ES6)"
+    },
+    {
+      "level": 2,
+      "id": "computed",
+      "text": "Обчислювані ключі"
+    },
+    {
+      "level": 2,
+      "id": "delete-in",
+      "text": "Видалення та перевірка існування"
+    },
+    {
+      "level": 2,
+      "id": "obkhid",
+      "text": "Обхід властивостей"
+    },
+    {
+      "level": 2,
+      "id": "poryadok-klyuchiv",
+      "text": "Порядок ключів"
+    },
+    {
+      "level": 2,
+      "id": "spred-obiekt",
+      "text": "Spread і злиття об'єктів"
+    },
+    {
+      "level": 2,
+      "id": "edge-cases",
+      "text": "Edge cases"
+    },
+    {
+      "level": 2,
+      "id": "summary",
+      "text": "Підсумок"
+    }
+  ],
+  "badges": [
+    "Початковий",
+    "Об'єкти: основи",
+    "~ 16 хв"
+  ],
+  "donationLinks": [
+    "https://send.monobank.ua/jar/YOUR_JAR_ID",
+    "https://www.buymeacoffee.com/YOUR_HANDLE"
+  ],
+  "breadcrumbTrail": [
+    "Головна",
+    "Об'єкти: основи",
+    "Об'єкти"
+  ],
+  "relatedSourceTrack": "objects",
+  "contentFiles": {
+    "uk": "content/tracks/objects/object-basics/index.uk.html",
+    "en": "content/tracks/objects/object-basics/index.en.mdx"
+  },
+  "metadataFile": "content/tracks/objects/object-basics/meta.json",
+  "translationStatus": {
+    "sourceLocale": "uk",
+    "availableLocales": [
+      "uk"
+    ],
+    "fallbackLocales": {
+      "en": "uk"
+    },
+    "locales": {
+      "uk": {
+        "status": "published",
+        "filePath": "content/tracks/objects/object-basics/index.uk.html",
+        "format": "html",
+        "title": "Об'єкти",
+        "description": "Об'єкти JavaScript: літерал, доступ до властивостей, скорочений синтаксис, обчислювані ключі, перевірка існування, видалення, обхід.",
+        "completeness": 100,
+        "isFallback": false,
+        "headings": [
+          {
+            "level": 2,
+            "id": "literaly",
+            "text": "Літеральний синтаксис"
+          },
+          {
+            "level": 2,
+            "id": "dostup",
+            "text": "Доступ до властивостей"
+          },
+          {
+            "level": 2,
+            "id": "shorthand",
+            "text": "Скорочений синтаксис властивостей (ES6)"
+          },
+          {
+            "level": 2,
+            "id": "computed",
+            "text": "Обчислювані ключі"
+          },
+          {
+            "level": 2,
+            "id": "delete-in",
+            "text": "Видалення та перевірка існування"
+          },
+          {
+            "level": 2,
+            "id": "obkhid",
+            "text": "Обхід властивостей"
+          },
+          {
+            "level": 2,
+            "id": "poryadok-klyuchiv",
+            "text": "Порядок ключів"
+          },
+          {
+            "level": 2,
+            "id": "spred-obiekt",
+            "text": "Spread і злиття об'єктів"
+          },
+          {
+            "level": 2,
+            "id": "edge-cases",
+            "text": "Edge cases"
+          },
+          {
+            "level": 2,
+            "id": "summary",
+            "text": "Підсумок"
+          }
+        ]
+      },
+      "en": {
+        "status": "draft",
+        "filePath": "content/tracks/objects/object-basics/index.en.mdx",
+        "format": "mdx",
+        "title": "TODO: Translate title",
+        "description": "TODO: Translate description",
+        "completeness": 0,
+        "isFallback": true,
+        "headings": [
+          {
+            "level": 2,
+            "id": "source-lesson",
+            "text": "Source lesson"
+          }
+        ],
+        "slug": "object-basics",
+        "track": "objects",
+        "locale": "en",
+        "sourceLocale": "uk",
+        "hasBody": true
+      }
+    }
+  },
+  "translationCompleteness": {
+    "uk": 100,
+    "en": 0
+  },
+  "migration": {
+    "migratedFromLegacy": true,
+    "canonicalIdentitySource": "canonical",
+    "override": null,
+    "articleMeta": {
+      "type": "string",
+      "raw": {
+        "secId": "objects",
+        "artId": "object-basics"
+      },
+      "resolved": {
+        "track": "objects",
+        "slug": "object-basics"
+      }
+    },
+    "mismatches": {
+      "filePathVsCanonical": true,
+      "filePathVsStringMeta": true,
+      "filePathVsNumericMeta": false
+    },
+    "hasLegacyJsonLd": true,
+    "hasLegacyToc": true,
+    "hasLegacyPrevNext": true,
+    "legacyArticleSupport": true
+  },
+  "bodySourcePath": "content/tracks/objects/object-basics/index.uk.html",
+  "sourceProvenance": {
+    "sourcePath": "uk/objects/objects.html",
+    "sourceTrack": "objects",
+    "sourceSlug": "objects"
+  }
+}

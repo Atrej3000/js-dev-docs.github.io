@@ -1,0 +1,85 @@
+<p>Стрілкові функції — це не просто скорочений синтаксис. Вони принципово відрізняються від звичайних функцій у тому, як обробляють <code>this</code>, <code>arguments</code> та конструктор. Ця стаття — поглиблений розгляд після вивчення <code>bind</code>, <code>call/apply</code> і замикань.</p>
+
+    <h2 id="no-this">Відсутність власного this</h2>
+    <div class="code-block"><div class="code-head"><span class="code-lang">JavaScript</span><button class="btn-copy" aria-label="Копіювати"></button></div>
+<pre><code class="language-javascript">// Стрілкова функція бере this з лексичного контексту (де написана)
+class EventEmitter {
+  constructor() {
+    this.handlers = [];
+  }
+
+  on(handler) {
+    // Стрілка — this з on (= екземпляр класу)
+    this.handlers.push(() => handler.call(this));
+  }
+
+  emit() {
+    this.handlers.forEach(h => h()); // this зберігається
+  }
+}
+
+// bind/call/apply НЕ змінюють this стрілки
+const arrow = () => console.log(this);
+arrow.call({ x: 1 }); // виведе зовнішній this, не { x: 1 }</code></pre></div>
+
+    <h2 id="no-arguments">Відсутність arguments</h2>
+    <div class="code-block"><div class="code-head"><span class="code-lang">JavaScript</span><button class="btn-copy" aria-label="Копіювати"></button></div>
+<pre><code class="language-javascript">// Звичайна функція: arguments доступний
+function regularFn() {
+  console.log(arguments); // Arguments [1, 2, 3]
+}
+regularFn(1, 2, 3);
+
+// Стрілкова: arguments — це arguments зовнішньої функції
+function outer() {
+  const arrow = () => console.log(arguments);
+  arrow(10, 20); // виводить arguments з outer, не [10, 20]!
+}
+outer(1, 2, 3); // Arguments [1, 2, 3]
+
+// Правильна альтернатива для стрілок:
+const arrowWithRest = (...args) => console.log(args);
+arrowWithRest(1, 2, 3); // [1, 2, 3]</code></pre></div>
+
+    <h2 id="use-cases">Коли використовувати стрілки</h2>
+    <div class="code-block"><div class="code-head"><span class="code-lang">JavaScript</span><button class="btn-copy" aria-label="Копіювати"></button></div>
+<pre><code class="language-javascript">// ✓ Callbacks у методах масивів
+const doubled = [1, 2, 3].map(x => x * 2);
+
+// ✓ Promise chains
+fetch('/api/users')
+  .then(res => res.json())
+  .then(users => users.filter(u => u.active));
+
+// ✓ Callbacks усередині методів класу (зберігає this)
+class DataService {
+  constructor(data) { this.data = data; }
+
+  process() {
+    return this.data
+      .filter(item => item.active)    // this.data доступне
+      .map(item => this.transform(item)); // this.transform доступне
+  }
+  transform(item) { return { ...item, processed: true }; }
+}
+
+// ✗ НЕ для методів об'єкта
+const obj = {
+  value: 42,
+  getValue: () => this.value, // this = globalThis, не obj!
+  getValueCorrect() { return this.value; } // правильно
+};
+
+// ✗ НЕ для конструкторів
+// const F = () => {};
+// new F(); // TypeError: F is not a constructor</code></pre></div>
+
+    <h2 id="summary">Підсумок</h2>
+    <ul>
+      <li>Стрілки не мають власного <code>this</code>: беруть з лексичного контексту. <code>bind</code>/<code>call</code>/<code>apply</code> не змінюють <code>this</code>.</li>
+      <li>Стрілки не мають <code>arguments</code> — використовуйте <code>...rest</code>.</li>
+      <li>Стрілки не можна використовувати з <code>new</code>, не мають <code>prototype</code>.</li>
+      <li>Ідеальні для: callbacks у <code>map</code>/<code>filter</code>, Promise chains, callbacks у методах класу.</li>
+      <li>Не для: методів об'єкта, конструкторів, генераторів, функцій з <code>arguments</code>.</li>
+    </ul>
+    <div class="article-support"><p><strong>Матеріал корисний?</strong> Підтримай проект.</p><div class="support-btns-inline"><a href="https://send.monobank.ua/jar/YOUR_JAR_ID" class="btn-mono" target="_blank" rel="noopener" style="font-size:12px;height:36px;padding:0 14px">🟢 Monobank</a><a href="https://www.buymeacoffee.com/YOUR_HANDLE" class="btn-coffee" target="_blank" rel="noopener" style="font-size:12px;height:36px;padding:0 14px">☕ Coffee</a></div></div>

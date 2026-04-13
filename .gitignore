@@ -1,0 +1,8 @@
+node_modules
+.next
+out
+dist
+coverage
+.turbo
+.DS_Store
+content/generated/*.tmp.json

@@ -1,0 +1,110 @@
+---
+title: "Conditional Branching: `if`, `?`"
+description: "How to write conditions with `if`, `else`, the ternary operator, and guard clauses."
+slug: "ifelse"
+track: "basics"
+locale: "en"
+sourceLocale: "uk"
+translationStatus: "published"
+translationCompleteness: 100
+---
+
+Programs often need to choose between different paths. In JavaScript, the main tools for that are `if`, `else`, and the ternary operator `?`.
+
+## The `if` statement
+
+```javascript
+const age = 20;
+
+if (age >= 18) {
+  console.log("Access granted");
+}
+```
+
+You can add an `else` branch:
+
+```javascript
+if (age >= 18) {
+  console.log("Access granted");
+} else {
+  console.log("Access denied");
+}
+```
+
+## Truthy and falsy values in conditions
+
+Conditions do not need to be literal booleans. JavaScript converts the value to a boolean.
+
+```javascript
+if ("hello") {
+  console.log("This runs");
+}
+
+if (0) {
+  console.log("This does not run");
+}
+```
+
+Remember:
+
+- empty strings are falsy
+- `0` is falsy
+- `null` and `undefined` are falsy
+- empty arrays and empty objects are still truthy
+
+## The ternary operator `?`
+
+The ternary operator is a compact conditional expression.
+
+```javascript
+const message = age >= 18 ? "Adult" : "Minor";
+console.log(message);
+```
+
+Use it for short expressions. If the branches become complex, prefer `if` and `else`.
+
+## Guard clauses
+
+A guard clause handles an exceptional case early and exits immediately.
+
+```javascript
+function divide(a, b) {
+  if (b === 0) {
+    return null;
+  }
+
+  return a / b;
+}
+```
+
+Guard clauses often make code flatter and easier to read.
+
+## `if/else` vs `switch`
+
+Use `if/else` when your branches are based on flexible conditions or ranges:
+
+```javascript
+if (score >= 90) {
+  grade = "A";
+} else if (score >= 80) {
+  grade = "B";
+} else {
+  grade = "C";
+}
+```
+
+Use `switch` when you are matching one value against several exact cases.
+
+## Edge cases
+
+- Avoid relying on truthy/falsy behavior when a more explicit condition would be clearer.
+- Nested ternary expressions quickly become hard to read.
+- Always use braces for multi-line branches.
+
+## Summary
+
+- `if` and `else` choose between code paths.
+- Conditions use JavaScript boolean conversion rules.
+- The ternary operator is useful for short conditional expressions.
+- Guard clauses help you return early and reduce nesting.
+- Choose `switch` only when you are matching one value against specific cases.

@@ -1,0 +1,184 @@
+{
+  "id": "modules/export-import",
+  "locale": "uk",
+  "locales": {
+    "uk": true,
+    "en": false
+  },
+  "availableLocales": [
+    "uk"
+  ],
+  "title": "Експорт та імпорт",
+  "description": "",
+  "track": "modules",
+  "trackTitle": "Модулі",
+  "slug": "export-import",
+  "sourcePath": "uk/modules/import-export.html",
+  "sourceIdentity": {
+    "track": "modules",
+    "slug": "import-export"
+  },
+  "canonicalRoute": "/uk/docs/modules/export-import",
+  "canonicalLegacyPath": "/modules/export-import.html",
+  "legacyHtmlPath": "/uk/modules/import-export.html",
+  "legacyAliases": [
+    "/uk/modules/import-export.html",
+    "/uk/modules/import-export",
+    "/modules/export-import.html"
+  ],
+  "sectionOrder": 13,
+  "lessonOrder": 2,
+  "overallOrder": 86,
+  "articleNumber": "13.2",
+  "estimatedMinutes": 14,
+  "headings": [
+    {
+      "level": 2,
+      "id": "named",
+      "text": "Named exports"
+    },
+    {
+      "level": 2,
+      "id": "default",
+      "text": "Default export"
+    },
+    {
+      "level": 2,
+      "id": "re-export",
+      "text": "Ре-експорт"
+    },
+    {
+      "level": 2,
+      "id": "live-bindings",
+      "text": "Live bindings"
+    },
+    {
+      "level": 2,
+      "id": "summary",
+      "text": "Підсумок"
+    }
+  ],
+  "badges": [
+    "Початковий",
+    "Модулі",
+    "~ 14 хв"
+  ],
+  "donationLinks": [
+    "https://send.monobank.ua/jar/YOUR_JAR_ID",
+    "https://www.buymeacoffee.com/YOUR_HANDLE"
+  ],
+  "breadcrumbTrail": [
+    "Головна",
+    "Модулі",
+    "Експорт та імпорт"
+  ],
+  "relatedSourceTrack": "modules",
+  "contentFiles": {
+    "uk": "content/tracks/modules/export-import/index.uk.html",
+    "en": "content/tracks/modules/export-import/index.en.mdx"
+  },
+  "metadataFile": "content/tracks/modules/export-import/meta.json",
+  "translationStatus": {
+    "sourceLocale": "uk",
+    "availableLocales": [
+      "uk"
+    ],
+    "fallbackLocales": {
+      "en": "uk"
+    },
+    "locales": {
+      "uk": {
+        "status": "published",
+        "filePath": "content/tracks/modules/export-import/index.uk.html",
+        "format": "html",
+        "title": "Експорт та імпорт",
+        "description": "",
+        "completeness": 100,
+        "isFallback": false,
+        "headings": [
+          {
+            "level": 2,
+            "id": "named",
+            "text": "Named exports"
+          },
+          {
+            "level": 2,
+            "id": "default",
+            "text": "Default export"
+          },
+          {
+            "level": 2,
+            "id": "re-export",
+            "text": "Ре-експорт"
+          },
+          {
+            "level": 2,
+            "id": "live-bindings",
+            "text": "Live bindings"
+          },
+          {
+            "level": 2,
+            "id": "summary",
+            "text": "Підсумок"
+          }
+        ]
+      },
+      "en": {
+        "status": "draft",
+        "filePath": "content/tracks/modules/export-import/index.en.mdx",
+        "format": "mdx",
+        "title": "TODO: Translate title",
+        "description": "TODO: Translate description",
+        "completeness": 0,
+        "isFallback": true,
+        "headings": [
+          {
+            "level": 2,
+            "id": "source-lesson",
+            "text": "Source lesson"
+          }
+        ],
+        "slug": "export-import",
+        "track": "modules",
+        "locale": "en",
+        "sourceLocale": "uk",
+        "hasBody": true
+      }
+    }
+  },
+  "translationCompleteness": {
+    "uk": 100,
+    "en": 0
+  },
+  "migration": {
+    "migratedFromLegacy": true,
+    "canonicalIdentitySource": "canonical",
+    "override": null,
+    "articleMeta": {
+      "type": "string",
+      "raw": {
+        "secId": "modules",
+        "artId": "export-import"
+      },
+      "resolved": {
+        "track": "modules",
+        "slug": "export-import"
+      }
+    },
+    "mismatches": {
+      "filePathVsCanonical": true,
+      "filePathVsStringMeta": true,
+      "filePathVsNumericMeta": false
+    },
+    "hasLegacyJsonLd": false,
+    "hasLegacyToc": true,
+    "hasLegacyPrevNext": true,
+    "legacyArticleSupport": true
+  },
+  "bodySourcePath": "content/tracks/modules/export-import/index.uk.html",
+  "sourceProvenance": {
+    "sourcePath": "uk/modules/import-export.html",
+    "sourceTrack": "modules",
+    "sourceSlug": "import-export"
+  }
+}

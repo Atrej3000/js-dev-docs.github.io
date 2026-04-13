@@ -1,0 +1,81 @@
+---
+title: "Nullish Coalescing Operator `??`"
+description: "How `??` differs from `||`, how it works with optional chaining, and when to use `??=`."
+slug: "nullish-coalescing"
+track: "basics"
+locale: "en"
+sourceLocale: "uk"
+translationStatus: "published"
+translationCompleteness: 100
+---
+
+The nullish coalescing operator `??` lets you provide a fallback only when the left side is `null` or `undefined`.
+
+## Syntax and mechanics
+
+```javascript
+const name = input ?? "Anonymous";
+```
+
+This means:
+
+- if `input` is `null` or `undefined`, use `"Anonymous"`
+- otherwise, keep `input`
+
+## `??` vs `||`
+
+This difference matters a lot:
+
+```javascript
+console.log(0 || 100);   // 100
+console.log(0 ?? 100);   // 0
+
+console.log("" || "N/A");  // "N/A"
+console.log("" ?? "N/A");  // ""
+```
+
+Use `||` when you want a fallback for any falsy value. Use `??` when `0`, `false`, or `""` are still valid and should be preserved.
+
+## Combining with optional chaining
+
+`??` works especially well with optional chaining.
+
+```javascript
+const city = user?.address?.city ?? "Unknown city";
+```
+
+If the property chain is missing, the fallback is used. If the property exists and contains a valid value, that value is preserved.
+
+## `??=` - nullish assignment
+
+The nullish assignment operator only assigns when the current value is `null` or `undefined`.
+
+```javascript
+let timeout = null;
+timeout ??= 5000;
+console.log(timeout); // 5000
+
+let retries = 0;
+retries ??= 3;
+console.log(retries); // 0
+```
+
+## Restriction: do not mix it directly with `||` and `&&`
+
+JavaScript does not allow mixing `??` with `||` or `&&` in one expression without parentheses.
+
+```javascript
+// const value = a ?? b || c; // SyntaxError
+
+const value = (a ?? b) || c;
+```
+
+This rule avoids ambiguous logic.
+
+## Summary
+
+- `??` falls back only for `null` and `undefined`.
+- It is safer than `||` when `0`, `false`, or `""` are valid values.
+- It works naturally with optional chaining.
+- `??=` is useful for defaults that should only apply to nullish values.
+- Use parentheses when combining `??` with `||` or `&&`.

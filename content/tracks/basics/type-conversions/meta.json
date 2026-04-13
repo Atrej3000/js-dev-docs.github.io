@@ -1,0 +1,249 @@
+{
+  "id": "basics/type-conversions",
+  "locale": "uk",
+  "locales": {
+    "uk": true,
+    "en": true
+  },
+  "availableLocales": [
+    "uk",
+    "en"
+  ],
+  "title": "Перетворення типів",
+  "description": "Явне і неявне перетворення типів у JavaScript: рядкове, числове, булеве. Abstract operations ToNumber, ToString, ToBoolean. Edge cases.",
+  "track": "basics",
+  "trackTitle": "Основи JavaScript",
+  "slug": "type-conversions",
+  "sourcePath": "uk/basics/type-casting.html",
+  "sourceIdentity": {
+    "track": "basics",
+    "slug": "type-casting"
+  },
+  "canonicalRoute": "/uk/docs/basics/type-conversions",
+  "canonicalLegacyPath": "/basics/type-conversions.html",
+  "legacyHtmlPath": "/uk/basics/type-casting.html",
+  "legacyAliases": [
+    "/uk/basics/type-casting.html",
+    "/uk/basics/type-casting",
+    "/basics/type-conversions.html"
+  ],
+  "sectionOrder": 2,
+  "lessonOrder": 7,
+  "overallOrder": 11,
+  "articleNumber": "2.7",
+  "estimatedMinutes": 13,
+  "headings": [
+    {
+      "level": 2,
+      "id": "chomu-vazhlivo",
+      "text": "Чому це важливо"
+    },
+    {
+      "level": 2,
+      "id": "ryadkove",
+      "text": "Рядкове перетворення (ToString)"
+    },
+    {
+      "level": 2,
+      "id": "chyslove",
+      "text": "Числове перетворення (ToNumber)"
+    },
+    {
+      "level": 2,
+      "id": "buleве",
+      "text": "Булеве перетворення (ToBoolean)"
+    },
+    {
+      "level": 2,
+      "id": "object-to-primitive",
+      "text": "Перетворення об'єктів у примітиви"
+    },
+    {
+      "level": 2,
+      "id": "явні-функції",
+      "text": "Явні функції перетворення"
+    },
+    {
+      "level": 2,
+      "id": "edge-cases",
+      "text": "Edge cases"
+    },
+    {
+      "level": 2,
+      "id": "summary",
+      "text": "Підсумок"
+    }
+  ],
+  "badges": [
+    "Початковий",
+    "Основи JavaScript",
+    "~ 13 хв"
+  ],
+  "donationLinks": [
+    "https://send.monobank.ua/jar/YOUR_JAR_ID",
+    "https://www.buymeacoffee.com/YOUR_HANDLE"
+  ],
+  "breadcrumbTrail": [
+    "Головна",
+    "Основи JavaScript",
+    "Перетворення типів"
+  ],
+  "relatedSourceTrack": "basics",
+  "contentFiles": {
+    "uk": "content/tracks/basics/type-conversions/index.uk.html",
+    "en": "content/tracks/basics/type-conversions/index.en.mdx"
+  },
+  "metadataFile": "content/tracks/basics/type-conversions/meta.json",
+  "translationStatus": {
+    "sourceLocale": "uk",
+    "availableLocales": [
+      "uk",
+      "en"
+    ],
+    "fallbackLocales": {},
+    "locales": {
+      "uk": {
+        "status": "published",
+        "filePath": "content/tracks/basics/type-conversions/index.uk.html",
+        "format": "html",
+        "title": "Перетворення типів",
+        "description": "Явне і неявне перетворення типів у JavaScript: рядкове, числове, булеве. Abstract operations ToNumber, ToString, ToBoolean. Edge cases.",
+        "completeness": 100,
+        "isFallback": false,
+        "headings": [
+          {
+            "level": 2,
+            "id": "chomu-vazhlivo",
+            "text": "Чому це важливо"
+          },
+          {
+            "level": 2,
+            "id": "ryadkove",
+            "text": "Рядкове перетворення (ToString)"
+          },
+          {
+            "level": 2,
+            "id": "chyslove",
+            "text": "Числове перетворення (ToNumber)"
+          },
+          {
+            "level": 2,
+            "id": "buleве",
+            "text": "Булеве перетворення (ToBoolean)"
+          },
+          {
+            "level": 2,
+            "id": "object-to-primitive",
+            "text": "Перетворення об'єктів у примітиви"
+          },
+          {
+            "level": 2,
+            "id": "явні-функції",
+            "text": "Явні функції перетворення"
+          },
+          {
+            "level": 2,
+            "id": "edge-cases",
+            "text": "Edge cases"
+          },
+          {
+            "level": 2,
+            "id": "summary",
+            "text": "Підсумок"
+          }
+        ]
+      },
+      "en": {
+        "status": "published",
+        "filePath": "content/tracks/basics/type-conversions/index.en.mdx",
+        "format": "mdx",
+        "title": "Type Conversions",
+        "description": "How JavaScript converts values to strings, numbers, booleans, and primitives, both implicitly and explicitly.",
+        "completeness": 100,
+        "isFallback": false,
+        "headings": [
+          {
+            "level": 2,
+            "id": "why-this-matters",
+            "text": "Why this matters"
+          },
+          {
+            "level": 2,
+            "id": "string-conversion-tostring",
+            "text": "String conversion (`ToString`)"
+          },
+          {
+            "level": 2,
+            "id": "number-conversion-tonumber",
+            "text": "Number conversion (`ToNumber`)"
+          },
+          {
+            "level": 2,
+            "id": "boolean-conversion-toboolean",
+            "text": "Boolean conversion (`ToBoolean`)"
+          },
+          {
+            "level": 2,
+            "id": "converting-objects-to-primitives",
+            "text": "Converting objects to primitives"
+          },
+          {
+            "level": 2,
+            "id": "explicit-conversion-helpers",
+            "text": "Explicit conversion helpers"
+          },
+          {
+            "level": 2,
+            "id": "edge-cases",
+            "text": "Edge cases"
+          },
+          {
+            "level": 2,
+            "id": "summary",
+            "text": "Summary"
+          }
+        ],
+        "slug": "type-conversions",
+        "track": "basics",
+        "locale": "en",
+        "sourceLocale": "uk",
+        "hasBody": true
+      }
+    }
+  },
+  "translationCompleteness": {
+    "uk": 100,
+    "en": 100
+  },
+  "migration": {
+    "migratedFromLegacy": true,
+    "canonicalIdentitySource": "canonical",
+    "override": null,
+    "articleMeta": {
+      "type": "string",
+      "raw": {
+        "secId": "basics",
+        "artId": "type-conversions"
+      },
+      "resolved": {
+        "track": "basics",
+        "slug": "type-conversions"
+      }
+    },
+    "mismatches": {
+      "filePathVsCanonical": true,
+      "filePathVsStringMeta": true,
+      "filePathVsNumericMeta": false
+    },
+    "hasLegacyJsonLd": true,
+    "hasLegacyToc": true,
+    "hasLegacyPrevNext": true,
+    "legacyArticleSupport": true
+  },
+  "bodySourcePath": "content/tracks/basics/type-conversions/index.uk.html",
+  "sourceProvenance": {
+    "sourcePath": "uk/basics/type-casting.html",
+    "sourceTrack": "basics",
+    "sourceSlug": "type-casting"
+  }
+}

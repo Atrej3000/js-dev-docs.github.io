@@ -1,0 +1,184 @@
+{
+  "id": "prototypes/prototype-inheritance",
+  "locale": "uk",
+  "locales": {
+    "uk": true,
+    "en": false
+  },
+  "availableLocales": [
+    "uk"
+  ],
+  "title": "Успадкування через прототипи",
+  "description": "",
+  "track": "prototypes",
+  "trackTitle": "Прототипи, наслідування",
+  "slug": "prototype-inheritance",
+  "sourcePath": "uk/prototypes/prototype-inheritance.html",
+  "sourceIdentity": {
+    "track": "prototypes",
+    "slug": "prototype-inheritance"
+  },
+  "canonicalRoute": "/uk/docs/prototypes/prototype-inheritance",
+  "canonicalLegacyPath": "/prototypes/prototype-inheritance.html",
+  "legacyHtmlPath": "/uk/prototypes/prototype-inheritance.html",
+  "legacyAliases": [
+    "/uk/prototypes/prototype-inheritance.html",
+    "/uk/prototypes/prototype-inheritance",
+    "/prototypes/prototype-inheritance.html"
+  ],
+  "sectionOrder": 8,
+  "lessonOrder": 1,
+  "overallOrder": 62,
+  "articleNumber": "8.1",
+  "estimatedMinutes": 14,
+  "headings": [
+    {
+      "level": 2,
+      "id": "prototype-chain",
+      "text": "Ланцюг прототипів"
+    },
+    {
+      "level": 2,
+      "id": "object-create",
+      "text": "Object.create"
+    },
+    {
+      "level": 2,
+      "id": "shadowing",
+      "text": "Shadowing: перекриття властивостей"
+    },
+    {
+      "level": 2,
+      "id": "hasown",
+      "text": "hasOwn і for...in"
+    },
+    {
+      "level": 2,
+      "id": "summary",
+      "text": "Підсумок"
+    }
+  ],
+  "badges": [
+    "Середній",
+    "Прототипи, наслідування",
+    "~ 14 хв"
+  ],
+  "donationLinks": [
+    "https://send.monobank.ua/jar/YOUR_JAR_ID",
+    "https://www.buymeacoffee.com/YOUR_HANDLE"
+  ],
+  "breadcrumbTrail": [
+    "Головна",
+    "Прототипи, наслідування",
+    "Прототипне успадкування"
+  ],
+  "relatedSourceTrack": "prototypes",
+  "contentFiles": {
+    "uk": "content/tracks/prototypes/prototype-inheritance/index.uk.html",
+    "en": "content/tracks/prototypes/prototype-inheritance/index.en.mdx"
+  },
+  "metadataFile": "content/tracks/prototypes/prototype-inheritance/meta.json",
+  "translationStatus": {
+    "sourceLocale": "uk",
+    "availableLocales": [
+      "uk"
+    ],
+    "fallbackLocales": {
+      "en": "uk"
+    },
+    "locales": {
+      "uk": {
+        "status": "published",
+        "filePath": "content/tracks/prototypes/prototype-inheritance/index.uk.html",
+        "format": "html",
+        "title": "Успадкування через прототипи",
+        "description": "",
+        "completeness": 100,
+        "isFallback": false,
+        "headings": [
+          {
+            "level": 2,
+            "id": "prototype-chain",
+            "text": "Ланцюг прототипів"
+          },
+          {
+            "level": 2,
+            "id": "object-create",
+            "text": "Object.create"
+          },
+          {
+            "level": 2,
+            "id": "shadowing",
+            "text": "Shadowing: перекриття властивостей"
+          },
+          {
+            "level": 2,
+            "id": "hasown",
+            "text": "hasOwn і for...in"
+          },
+          {
+            "level": 2,
+            "id": "summary",
+            "text": "Підсумок"
+          }
+        ]
+      },
+      "en": {
+        "status": "draft",
+        "filePath": "content/tracks/prototypes/prototype-inheritance/index.en.mdx",
+        "format": "mdx",
+        "title": "TODO: Translate title",
+        "description": "TODO: Translate description",
+        "completeness": 0,
+        "isFallback": true,
+        "headings": [
+          {
+            "level": 2,
+            "id": "source-lesson",
+            "text": "Source lesson"
+          }
+        ],
+        "slug": "prototype-inheritance",
+        "track": "prototypes",
+        "locale": "en",
+        "sourceLocale": "uk",
+        "hasBody": true
+      }
+    }
+  },
+  "translationCompleteness": {
+    "uk": 100,
+    "en": 0
+  },
+  "migration": {
+    "migratedFromLegacy": true,
+    "canonicalIdentitySource": "canonical",
+    "override": null,
+    "articleMeta": {
+      "type": "string",
+      "raw": {
+        "secId": "prototypes",
+        "artId": "prototype-inheritance"
+      },
+      "resolved": {
+        "track": "prototypes",
+        "slug": "prototype-inheritance"
+      }
+    },
+    "mismatches": {
+      "filePathVsCanonical": false,
+      "filePathVsStringMeta": false,
+      "filePathVsNumericMeta": false
+    },
+    "hasLegacyJsonLd": false,
+    "hasLegacyToc": true,
+    "hasLegacyPrevNext": true,
+    "legacyArticleSupport": true
+  },
+  "bodySourcePath": "content/tracks/prototypes/prototype-inheritance/index.uk.html",
+  "sourceProvenance": {
+    "sourcePath": "uk/prototypes/prototype-inheritance.html",
+    "sourceTrack": "prototypes",
+    "sourceSlug": "prototype-inheritance"
+  }
+}

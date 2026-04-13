@@ -1,0 +1,294 @@
+<p>ECMAScript визначає <strong>8 типів даних</strong>: 7 примітивних і один складний. JavaScript — мова з <em>динамічною типізацією</em>: тип визначається значенням під час виконання і може змінюватись. Знання всіх типів та їх граничних значень є базою для розуміння перетворень, порівнянь і поведінки операторів.</p>
+
+          <h2 id="number">Number</h2>
+          <p>Єдиний числовий тип для цілих і дробових значень. Реалізований як 64-бітний формат IEEE 754 double-precision. Безпечний діапазон цілих: від <code>-(2⁵³ - 1)</code> до <code>2⁵³ - 1</code>.</p>
+
+          <div class="code-block">
+            <div class="code-head"><span class="code-lang">JavaScript</span><button class="btn-copy" aria-label="Копіювати"></button></div>
+<pre><code class="language-javascript">const integer   = 42;
+const float     = 3.14159;
+const negative  = -7;
+const separator = 1_000_000;    // числовий роздільник (ES2021)
+const hex       = 0xFF;         // 255 у шістнадцятковій
+const octal     = 0o377;        // 255 у вісімковій
+const binary    = 0b11111111;   // 255 у двійковій
+const exp       = 1.5e3;        // 1500
+
+// Спеціальні значення
+const inf     = Infinity;
+const negInf  = -Infinity;
+const nan     = NaN;            // Not a Number — результат невалідних операцій
+
+console.log(1 / 0);             // Infinity
+console.log(-1 / 0);            // -Infinity
+console.log(0 / 0);             // NaN
+console.log('text' - 1);        // NaN
+
+// NaN не дорівнює нічому, включно з собою
+console.log(NaN === NaN);       // false
+console.log(Number.isNaN(NaN)); // true — правильна перевірка</code></pre>
+          </div>
+
+          <h3 id="number-precision">Точність IEEE 754</h3>
+          <div class="code-block">
+            <div class="code-head"><span class="code-lang">JavaScript</span><button class="btn-copy" aria-label="Копіювати"></button></div>
+<pre><code class="language-javascript">console.log(0.1 + 0.2);          // 0.30000000000000004 — IEEE 754
+console.log(0.1 + 0.2 === 0.3);  // false
+
+// Коректне порівняння дробів
+const EPSILON = Number.EPSILON;
+console.log(Math.abs(0.1 + 0.2 - 0.3) < EPSILON); // true
+
+// Безпечна межа цілих
+console.log(Number.MAX_SAFE_INTEGER); // 9007199254740991
+console.log(9007199254740991 + 1);    // 9007199254740992 — ОК
+console.log(9007199254740991 + 2);    // 9007199254740992 — помилка точності!</code></pre>
+          </div>
+
+          <h2 id="string">String</h2>
+          <p>Незмінна послідовність кодових одиниць UTF-16. Нема окремого типу «символ» — одиночний символ є рядком довжиною 1.</p>
+
+          <div class="code-block">
+            <div class="code-head"><span class="code-lang">JavaScript</span><button class="btn-copy" aria-label="Копіювати"></button></div>
+<pre><code class="language-javascript">const single   = 'одинарні лапки';
+const double   = "подвійні лапки";
+const template = `шаблонний літерал: ${1 + 2}`;   // "шаблонний літерал: 3"
+
+// Екранування
+const withQuote = 'it\'s fine';
+const newline   = "рядок 1\nрядок 2";
+const tab       = "col1\tcol2";
+const unicode   = "\u0041";     // "A"
+
+// Рядки незмінні: методи повертають новий рядок
+const str = "  Hello  ";
+console.log(str.trim());           // "Hello"
+console.log(str.toLowerCase());    // "  hello  "
+console.log(str.trim().length);    // 5
+
+// Шаблонний літерал — багаторядковий без \n
+const html = `
+  &lt;div&gt;
+    &lt;p&gt;Вміст&lt;/p&gt;
+  &lt;/div&gt;
+`;</code></pre>
+          </div>
+
+          <h2 id="boolean">Boolean</h2>
+          <p>Рівно два значення: <code>true</code> і <code>false</code>. Є результатом порівнянь та логічних операцій.</p>
+
+          <div class="code-block">
+            <div class="code-head"><span class="code-lang">JavaScript</span><button class="btn-copy" aria-label="Копіювати"></button></div>
+<pre><code class="language-javascript">const isActive  = true;
+const hasErrors = false;
+
+// Порівняння повертають boolean
+console.log(5 > 3);       // true
+console.log('a' === 'b'); // false
+
+// Falsy значення: false, 0, -0, 0n, "", null, undefined, NaN
+// Truthy — все решта, включно з [] і {}
+console.log(Boolean(0));         // false
+console.log(Boolean(''));        // false
+console.log(Boolean(null));      // false
+console.log(Boolean([]));        // true  — порожній масив truthy!
+console.log(Boolean({}));        // true  — порожній об'єкт truthy!</code></pre>
+          </div>
+
+          <h2 id="null">null</h2>
+          <p><code>null</code> — примітив, що явно позначає «відсутність значення». Встановлюється програмістом навмисно.</p>
+
+          <div class="code-block">
+            <div class="code-head"><span class="code-lang">JavaScript</span><button class="btn-copy" aria-label="Копіювати"></button></div>
+<pre><code class="language-javascript">let currentUser = null; // явно: «зараз нікого не авторизовано»
+
+// typeof null — відомий баг специфікації (з 1995 р.)
+console.log(typeof null);   // "object" — НЕ "null"
+
+// Перевірка на null: завжди суворе порівняння
+if (currentUser === null) {
+  redirectToLogin();
+}
+
+// Нестрога перевірка — обидва null і undefined
+if (currentUser == null) {
+  // спрацює для null і undefined
+}</code></pre>
+          </div>
+
+          <h2 id="undefined">undefined</h2>
+          <p><code>undefined</code> означає, що змінна оголошена, але значення не присвоєно. Також є результатом читання неіснуючої властивості або відсутнього аргументу функції.</p>
+
+          <div class="code-block">
+            <div class="code-head"><span class="code-lang">JavaScript</span><button class="btn-copy" aria-label="Копіювати"></button></div>
+<pre><code class="language-javascript">let status;
+console.log(status);            // undefined — не ініціалізовано
+
+const obj = { name: 'admin' };
+console.log(obj.age);           // undefined — властивість не існує
+
+function greet(name) {
+  console.log(name);            // undefined якщо не передано аргумент
+}
+greet();
+
+// Явне присвоєння undefined — антипатерн
+// Використовуйте null для явного "немає значення"
+let data = undefined; // погано
+let data2 = null;     // краще</code></pre>
+          </div>
+
+          <h2 id="symbol">Symbol</h2>
+          <p>Унікальний незмінний примітив. Кожен <code>Symbol()</code> — гарантовано новий унікальний ідентифікатор. Призначений для створення унікальних ключів властивостей без ризику колізій.</p>
+
+          <div class="code-block">
+            <div class="code-head"><span class="code-lang">JavaScript</span><button class="btn-copy" aria-label="Копіювати"></button></div>
+<pre><code class="language-javascript">const id1 = Symbol('id');
+const id2 = Symbol('id');
+
+console.log(id1 === id2);  // false — завжди унікальні
+
+// Символи як ключі об'єкта — не конфліктують зі строковими ключами
+const KEY = Symbol('key');
+const obj = {
+  key: 'string key',
+  [KEY]: 'symbol key',
+};
+
+console.log(obj.key);   // "string key"
+console.log(obj[KEY]);  // "symbol key"
+
+// Символи не потрапляють у for...in та Object.keys()
+console.log(Object.keys(obj)); // ["key"] — без Symbol
+
+// Symbol.for — глобальний реєстр (той самий символ за описом)
+const s1 = Symbol.for('shared');
+const s2 = Symbol.for('shared');
+console.log(s1 === s2); // true</code></pre>
+          </div>
+
+          <h2 id="bigint">BigInt</h2>
+          <p>Цілі числа довільної точності. Суфікс <code>n</code> або функція <code>BigInt()</code>. Необхідний для значень за межами <code>Number.MAX_SAFE_INTEGER</code>.</p>
+
+          <div class="code-block">
+            <div class="code-head"><span class="code-lang">JavaScript</span><button class="btn-copy" aria-label="Копіювати"></button></div>
+<pre><code class="language-javascript">const huge   = 9_007_199_254_740_993n;  // більше MAX_SAFE_INTEGER
+const fromFn = BigInt(9007199254740991);
+
+console.log(typeof huge); // "bigint"
+console.log(huge + 1n);   // 9007199254740994n
+
+// BigInt і Number не можна змішувати напряму
+// console.log(1n + 1); // TypeError
+console.log(1n + BigInt(1)); // 2n
+console.log(Number(1n));     // 1 — конвертація в Number
+
+// BigInt не має Infinity і NaN
+// console.log(1n / 0n); // RangeError</code></pre>
+          </div>
+
+          <h2 id="object">Object</h2>
+          <p>Єдиний складний тип. Все, що не є примітивом — об'єкт: літеральні об'єкти, масиви, функції, дати, регулярні вирази, Map, Set тощо. Об'єкти передаються <em>за посиланням</em>, примітиви — <em>за значенням</em>.</p>
+
+          <div class="code-block">
+            <div class="code-head"><span class="code-lang">JavaScript</span><button class="btn-copy" aria-label="Копіювати"></button></div>
+<pre><code class="language-javascript">// Літеральний об'єкт
+const config = { host: 'localhost', port: 3000 };
+
+// Масив — спеціалізований об'єкт
+const items = ['a', 'b', 'c'];
+console.log(Array.isArray(items)); // true — правильна перевірка
+console.log(typeof items);         // "object" — не "array"
+
+// Функція — callable object
+function fn() {}
+console.log(typeof fn); // "function" — спеціальний підтип Object
+
+// Передача за посиланням
+const a = { value: 1 };
+const b = a;
+b.value = 2;
+console.log(a.value); // 2 — a і b посилаються на один об'єкт
+
+// Передача примітиву — за значенням (копія)
+let x = 1;
+let y = x;
+y = 2;
+console.log(x); // 1 — x не змінився</code></pre>
+          </div>
+
+          <h2 id="typeof">Оператор typeof</h2>
+          <div class="code-block">
+            <div class="code-head"><span class="code-lang">JavaScript</span><button class="btn-copy" aria-label="Копіювати"></button></div>
+<pre><code class="language-javascript">typeof 42             // "number"
+typeof 3.14           // "number"
+typeof NaN            // "number"  ← NaN є типом number
+typeof "text"         // "string"
+typeof true           // "boolean"
+typeof undefined      // "undefined"
+typeof Symbol()       // "symbol"
+typeof 42n            // "bigint"
+typeof {}             // "object"
+typeof []             // "object"  ← масив є object
+typeof null           // "object"  ← баг специфікації
+typeof function(){}   // "function"</code></pre>
+          </div>
+
+          <h2 id="zvedena-tablitsya">Зведена таблиця</h2>
+          <table>
+            <thead><tr><th>Тип</th><th>typeof</th><th>Передача</th><th>Мутабельний</th></tr></thead>
+            <tbody>
+              <tr><td>Number</td><td><code>"number"</code></td><td>За значенням</td><td class="t-n">Ні</td></tr>
+              <tr><td>String</td><td><code>"string"</code></td><td>За значенням</td><td class="t-n">Ні</td></tr>
+              <tr><td>Boolean</td><td><code>"boolean"</code></td><td>За значенням</td><td class="t-n">Ні</td></tr>
+              <tr><td>null</td><td><code>"object"</code> ⚠</td><td>За значенням</td><td class="t-n">Ні</td></tr>
+              <tr><td>undefined</td><td><code>"undefined"</code></td><td>За значенням</td><td class="t-n">Ні</td></tr>
+              <tr><td>Symbol</td><td><code>"symbol"</code></td><td>За значенням</td><td class="t-n">Ні</td></tr>
+              <tr><td>BigInt</td><td><code>"bigint"</code></td><td>За значенням</td><td class="t-n">Ні</td></tr>
+              <tr><td>Object</td><td><code>"object"</code></td><td>За посиланням</td><td class="t-y">Так</td></tr>
+            </tbody>
+          </table>
+
+          <h2 id="edge-cases">Edge cases</h2>
+          <div class="code-block">
+            <div class="code-head"><span class="code-lang">JavaScript</span><button class="btn-copy" aria-label="Копіювати"></button></div>
+<pre><code class="language-javascript">// NaN не дорівнює нічому
+console.log(NaN === NaN); // false
+console.log(NaN !== NaN); // true — тест на NaN: Number.isNaN()
+
+// Перевірка масиву: typeof не допоможе
+console.log(typeof []);         // "object"
+console.log(Array.isArray([])); // true — правильно
+
+// Перевірка null: не typeof
+console.log(typeof null);       // "object"
+console.log(null === null);     // true — правильно
+
+// -0 є у JavaScript
+console.log(-0 === 0);          // true — оператор === не розрізняє
+console.log(Object.is(-0, 0)); // false — Object.is розрізняє
+
+// Порожній рядок і 0 — falsy, але не рівні
+console.log('' == 0);  // true  — нестрога рівність з перетворенням
+console.log('' === 0); // false — суворий тип</code></pre>
+          </div>
+
+          <h2 id="summary">Підсумок</h2>
+          <ul>
+            <li>7 примітивів: Number, String, Boolean, null, undefined, Symbol, BigInt. Один складний тип: Object.</li>
+            <li>Number — IEEE 754 double. Є <code>Infinity</code>, <code>-Infinity</code>, <code>NaN</code>. Дробові числа мають похибку: <code>0.1 + 0.2 !== 0.3</code>.</li>
+            <li><code>NaN !== NaN</code>. Перевіряйте через <code>Number.isNaN()</code>.</li>
+            <li><code>null</code> — явна відсутність (встановлює розробник). <code>undefined</code> — неініціалізоване або відсутнє.</li>
+            <li><code>typeof null === "object"</code> — баг. Перевіряйте через <code>=== null</code>.</li>
+            <li>Масив — Object. Перевіряйте через <code>Array.isArray()</code>.</li>
+            <li>Примітиви передаються за значенням, Object — за посиланням.</li>
+            <li><code>Object.is(a, b)</code> — строге порівняння без виключень: розрізняє <code>-0</code> і <code>0</code>, <code>NaN</code> дорівнює собі.</li>
+          </ul>
+
+          <div class="article-support">
+            <p><strong>Матеріал корисний?</strong> Підтримай проект.</p>
+            <div class="support-btns-inline">
+              <a href="https://send.monobank.ua/jar/YOUR_JAR_ID" class="btn-mono" target="_blank" rel="noopener" style="font-size:12px;height:36px;padding:0 14px">🟢 Monobank</a>
+              <a href="https://www.buymeacoffee.com/YOUR_HANDLE" class="btn-coffee" target="_blank" rel="noopener" style="font-size:12px;height:36px;padding:0 14px">☕ Coffee</a>
+            </div>
+          </div>

@@ -1,0 +1,214 @@
+{
+  "id": "code-quality/ninja-code",
+  "locale": "uk",
+  "locales": {
+    "uk": true,
+    "en": false
+  },
+  "availableLocales": [
+    "uk"
+  ],
+  "title": "Гарний код",
+  "description": "Антипатерни JavaScript-коду: ninja code ознаки та рефакторинг. Принципи DRY, KISS, YAGNI, single responsibility.",
+  "track": "code-quality",
+  "trackTitle": "Якість коду",
+  "slug": "ninja-code",
+  "sourcePath": "uk/code-quality/ninja-code.html",
+  "sourceIdentity": {
+    "track": "code-quality",
+    "slug": "ninja-code"
+  },
+  "canonicalRoute": "/uk/docs/code-quality/ninja-code",
+  "canonicalLegacyPath": "/code-quality/ninja-code.html",
+  "legacyHtmlPath": "/uk/code-quality/ninja-code.html",
+  "legacyAliases": [
+    "/uk/code-quality/ninja-code.html",
+    "/uk/code-quality/ninja-code",
+    "/code-quality/ninja-code.html"
+  ],
+  "sectionOrder": 3,
+  "lessonOrder": 4,
+  "overallOrder": 26,
+  "articleNumber": "3.4",
+  "estimatedMinutes": 12,
+  "headings": [
+    {
+      "level": 2,
+      "id": "printsypy",
+      "text": "Базові принципи"
+    },
+    {
+      "level": 2,
+      "id": "short-names",
+      "text": "Антипатерн 1: скорочені імена"
+    },
+    {
+      "level": 2,
+      "id": "clever-oneliner",
+      "text": "Антипатерн 2: надмірно стислі однорядники"
+    },
+    {
+      "level": 2,
+      "id": "side-effects",
+      "text": "Антипатерн 3: приховані побічні ефекти"
+    },
+    {
+      "level": 2,
+      "id": "magic-numbers",
+      "text": "Антипатерн 4: магічні числа і рядки"
+    },
+    {
+      "level": 2,
+      "id": "deep-nesting",
+      "text": "Антипатерн 5: глибока вкладеність"
+    },
+    {
+      "level": 2,
+      "id": "large-functions",
+      "text": "Антипатерн 6: великі функції"
+    },
+    {
+      "level": 2,
+      "id": "summary",
+      "text": "Підсумок"
+    }
+  ],
+  "badges": [
+    "Початковий",
+    "Якість коду",
+    "~ 12 хв"
+  ],
+  "donationLinks": [
+    "https://send.monobank.ua/jar/YOUR_JAR_ID",
+    "https://www.buymeacoffee.com/YOUR_HANDLE"
+  ],
+  "breadcrumbTrail": [
+    "Головна",
+    "Якість коду",
+    "Гарний код"
+  ],
+  "relatedSourceTrack": "code-quality",
+  "contentFiles": {
+    "uk": "content/tracks/code-quality/ninja-code/index.uk.html",
+    "en": "content/tracks/code-quality/ninja-code/index.en.mdx"
+  },
+  "metadataFile": "content/tracks/code-quality/ninja-code/meta.json",
+  "translationStatus": {
+    "sourceLocale": "uk",
+    "availableLocales": [
+      "uk"
+    ],
+    "fallbackLocales": {
+      "en": "uk"
+    },
+    "locales": {
+      "uk": {
+        "status": "published",
+        "filePath": "content/tracks/code-quality/ninja-code/index.uk.html",
+        "format": "html",
+        "title": "Гарний код",
+        "description": "Антипатерни JavaScript-коду: ninja code ознаки та рефакторинг. Принципи DRY, KISS, YAGNI, single responsibility.",
+        "completeness": 100,
+        "isFallback": false,
+        "headings": [
+          {
+            "level": 2,
+            "id": "printsypy",
+            "text": "Базові принципи"
+          },
+          {
+            "level": 2,
+            "id": "short-names",
+            "text": "Антипатерн 1: скорочені імена"
+          },
+          {
+            "level": 2,
+            "id": "clever-oneliner",
+            "text": "Антипатерн 2: надмірно стислі однорядники"
+          },
+          {
+            "level": 2,
+            "id": "side-effects",
+            "text": "Антипатерн 3: приховані побічні ефекти"
+          },
+          {
+            "level": 2,
+            "id": "magic-numbers",
+            "text": "Антипатерн 4: магічні числа і рядки"
+          },
+          {
+            "level": 2,
+            "id": "deep-nesting",
+            "text": "Антипатерн 5: глибока вкладеність"
+          },
+          {
+            "level": 2,
+            "id": "large-functions",
+            "text": "Антипатерн 6: великі функції"
+          },
+          {
+            "level": 2,
+            "id": "summary",
+            "text": "Підсумок"
+          }
+        ]
+      },
+      "en": {
+        "status": "draft",
+        "filePath": "content/tracks/code-quality/ninja-code/index.en.mdx",
+        "format": "mdx",
+        "title": "TODO: Translate title",
+        "description": "TODO: Translate description",
+        "completeness": 0,
+        "isFallback": true,
+        "headings": [
+          {
+            "level": 2,
+            "id": "source-lesson",
+            "text": "Source lesson"
+          }
+        ],
+        "slug": "ninja-code",
+        "track": "code-quality",
+        "locale": "en",
+        "sourceLocale": "uk",
+        "hasBody": true
+      }
+    }
+  },
+  "translationCompleteness": {
+    "uk": 100,
+    "en": 0
+  },
+  "migration": {
+    "migratedFromLegacy": true,
+    "canonicalIdentitySource": "canonical",
+    "override": null,
+    "articleMeta": {
+      "type": "string",
+      "raw": {
+        "secId": "code-quality",
+        "artId": "ninja-code"
+      },
+      "resolved": {
+        "track": "code-quality",
+        "slug": "ninja-code"
+      }
+    },
+    "mismatches": {
+      "filePathVsCanonical": false,
+      "filePathVsStringMeta": false,
+      "filePathVsNumericMeta": false
+    },
+    "hasLegacyJsonLd": true,
+    "hasLegacyToc": true,
+    "hasLegacyPrevNext": true,
+    "legacyArticleSupport": true
+  },
+  "bodySourcePath": "content/tracks/code-quality/ninja-code/index.uk.html",
+  "sourceProvenance": {
+    "sourcePath": "uk/code-quality/ninja-code.html",
+    "sourceTrack": "code-quality",
+    "sourceSlug": "ninja-code"
+  }
+}

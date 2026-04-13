@@ -1,0 +1,66 @@
+<p>Каррінг — трансформація функції з кількома аргументами у ланцюг функцій з одним аргументом. <code>f(a, b, c)</code> → <code>f(a)(b)(c)</code>. Дозволяє частковий виклик і композицію функцій.</p>
+
+    <h2 id="basics">Ручний каррінг</h2>
+    <div class="code-block"><div class="code-head"><span class="code-lang">JavaScript</span><button class="btn-copy" aria-label="Копіювати"></button></div>
+<pre><code class="language-javascript">// Звичайна функція
+function add(a, b) { return a + b; }
+
+// Каррінг вручну
+function curriedAdd(a) {
+  return function(b) {
+    return a + b;
+  };
+}
+
+const add5 = curriedAdd(5);
+console.log(add5(3));  // 8
+console.log(add5(10)); // 15
+
+// Практичний приклад
+const multiply = a => b => a * b;
+const double   = multiply(2);
+const triple   = multiply(3);
+console.log([1,2,3,4,5].map(double)); // [2,4,6,8,10]</code></pre></div>
+
+    <h2 id="universal-curry">Загальна функція curry</h2>
+    <div class="code-block"><div class="code-head"><span class="code-lang">JavaScript</span><button class="btn-copy" aria-label="Копіювати"></button></div>
+<pre><code class="language-javascript">function curry(fn) {
+  return function curried(...args) {
+    if (args.length >= fn.length) {
+      return fn.apply(this, args); // всі аргументи зібрані — викликаємо
+    }
+    return function(...moreArgs) {
+      return curried.apply(this, args.concat(moreArgs));
+    };
+  };
+}
+
+const curriedAdd = curry((a, b, c) => a + b + c);
+
+console.log(curriedAdd(1)(2)(3));  // 6
+console.log(curriedAdd(1, 2)(3));  // 6
+console.log(curriedAdd(1)(2, 3));  // 6
+console.log(curriedAdd(1, 2, 3));  // 6</code></pre></div>
+
+    <h2 id="composition">Композиція функцій</h2>
+    <div class="code-block"><div class="code-head"><span class="code-lang">JavaScript</span><button class="btn-copy" aria-label="Копіювати"></button></div>
+<pre><code class="language-javascript">// pipe: застосовує функції зліва направо
+const pipe = (...fns) => x => fns.reduce((v, f) => f(v), x);
+
+const processUser = pipe(
+  u => u.trim(),
+  u => u.toLowerCase(),
+  u => ({ username: u, createdAt: Date.now() }),
+);
+
+console.log(processUser('  Alice  '));
+// { username: 'alice', createdAt: ... }</code></pre></div>
+
+    <h2 id="summary">Підсумок</h2>
+    <ul>
+      <li>Каррінг: <code>f(a, b)</code> → <code>f(a)(b)</code>. Кожен виклик повертає нову функцію.</li>
+      <li>Частковий виклик: фіксуємо перші аргументи, отримуємо спеціалізовану функцію.</li>
+      <li>Загальна <code>curry(fn)</code> підтримує гнучке застосування аргументів.</li>
+      <li><code>pipe</code> і <code>compose</code> будуються поверх часткового застосування.</li>
+    </ul>
+    <div class="article-support"><p><strong>Матеріал корисний?</strong> Підтримай проект.</p><div class="support-btns-inline"><a href="https://send.monobank.ua/jar/YOUR_JAR_ID" class="btn-mono" target="_blank" rel="noopener" style="font-size:12px;height:36px;padding:0 14px">🟢 Monobank</a><a href="https://www.buymeacoffee.com/YOUR_HANDLE" class="btn-coffee" target="_blank" rel="noopener" style="font-size:12px;height:36px;padding:0 14px">☕ Coffee</a></div></div>

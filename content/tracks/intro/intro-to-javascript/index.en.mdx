@@ -1,0 +1,164 @@
+---
+title: "Introduction to JavaScript"
+description: "What JavaScript is, how engines and runtimes work, and why the language is unique on the web."
+slug: "intro-to-javascript"
+track: "intro"
+locale: "en"
+sourceLocale: "uk"
+translationStatus: "published"
+translationCompleteness: 100
+---
+
+JavaScript is a general-purpose programming language with dynamic typing. It was created for the browser, but today it also runs on servers, in desktop apps, in cloud functions, and even on embedded devices.
+
+## Why this matters
+
+JavaScript is the only programming language that runs in every modern browser without plugins or ahead-of-time compilation. Understanding what JavaScript is, where it runs, and which APIs belong to the language versus the runtime explains a lot of beginner questions:
+
+- Why `document` exists in the browser but not in Node.js
+- Why browser code cannot read arbitrary files from your operating system
+- Why the same JavaScript syntax can be used in very different environments
+
+## What JavaScript is
+
+JavaScript first appeared in 1995 in Netscape Navigator. In 1997, the language was standardized under the name **ECMAScript**. That specification defines the language syntax, semantics, and built-in objects.
+
+In practice:
+
+- **ECMAScript** is the specification
+- **JavaScript** is the most widely used implementation of that specification
+
+When people say `ES2024` or `ES2025`, they mean a specific version of the ECMAScript standard.
+
+## How a JavaScript engine works
+
+A JavaScript engine is the program that reads and executes JavaScript code. The engine is embedded into a browser or another runtime.
+
+Main engines:
+
+- **V8**: Chrome, Edge, Node.js, Deno, Bun
+- **SpiderMonkey**: Firefox
+- **JavaScriptCore**: Safari
+
+A simplified execution flow looks like this:
+
+1. **Parsing**. The engine reads the source text and builds an internal representation of the program.
+2. **Compilation**. Modern engines do not simply interpret code line by line. Hot code paths are compiled to native machine code.
+3. **Execution**. The compiled code runs on the CPU.
+4. **Garbage collection**. Memory that is no longer reachable is reclaimed automatically.
+
+This is often called **JIT compilation**: compilation happens during execution, not only before it.
+
+## Runtime environments
+
+The engine itself is only the language core. Real programs need a **runtime environment** around that core.
+
+### Browser environment
+
+The browser provides:
+
+- the DOM API for working with HTML
+- the Browser Object Model: `window`, `navigator`, `location`, `history`
+- Web APIs such as `fetch`, `setTimeout`, `localStorage`, `WebSocket`, `Canvas`, and more
+- the event loop that coordinates events and asynchronous work
+
+These APIs are not part of ECMAScript itself. They are provided by the browser runtime.
+
+### Node.js
+
+Node.js is a server-side runtime built on V8. Instead of the DOM, it gives you APIs such as:
+
+- `fs` for the file system
+- `http` and `https` for networking
+- `path`, `os`, `crypto`, and other system modules
+- module systems such as CommonJS and ESM
+
+Code that uses `document` or `window` will not work in Node.js, because those objects do not exist there.
+
+```javascript
+// In a browser
+console.log(typeof window);   // "object"
+console.log(typeof document); // "object"
+console.log(typeof process);  // "undefined"
+
+// In Node.js
+console.log(typeof process);  // "object"
+console.log(typeof window);   // "undefined"
+console.log(typeof document); // "undefined"
+
+// Shared ECMAScript core
+console.log(typeof Array);    // "function"
+console.log(typeof Promise);  // "function"
+console.log(typeof JSON);     // "object"
+```
+
+## Browser security restrictions
+
+Browser JavaScript runs inside a **sandbox**. That is intentional: code from a random website must not get unrestricted access to the user's computer.
+
+Important limitations:
+
+- no direct access to the file system without explicit user action
+- **Same-Origin Policy** restrictions for reading data from other sites
+- no direct execution of operating-system commands
+- no unrestricted access to tabs or pages from another origin
+
+Node.js does not have those browser restrictions. That is why server-side code needs stronger security discipline around user input.
+
+## JavaScript, HTML, and CSS: different roles
+
+These three technologies solve different problems:
+
+| Technology | Role | Typical job |
+| --- | --- | --- |
+| HTML | Structure and content | headings, forms, links, paragraphs |
+| CSS | Presentation and layout | colors, spacing, fonts, animation |
+| JavaScript | Behavior and interaction | events, DOM changes, network requests |
+
+JavaScript can change both HTML and CSS dynamically, but it is not a replacement for them.
+
+## What JavaScript can do in the browser
+
+In the browser, JavaScript can:
+
+- update the DOM
+- react to user events
+- send network requests
+- store data locally with `localStorage`, `sessionStorage`, or `IndexedDB`
+- draw with Canvas or WebGL
+- work with media, the camera, and the microphone after permission is granted
+- offload work to Web Workers
+
+## Why the language has a unique place
+
+JavaScript is special because it is supported natively by all major browsers. Any alternative that wants to run in the browser eventually has to become JavaScript.
+
+That also makes JavaScript unusually versatile. It can be used for:
+
+- frontend applications
+- backend services
+- desktop apps
+- mobile apps
+- cloud and edge functions
+- embedded systems
+
+## Languages that compile to JavaScript
+
+Because the browser ultimately executes JavaScript, a number of other languages compile or transpile to it:
+
+- **TypeScript**
+- **Dart**
+- **Elm**
+- **ReasonML**
+- **PureScript**
+
+Even if you work mostly in TypeScript, you still benefit from understanding JavaScript itself. It helps with debugging, understanding runtime behavior, and using browser APIs effectively.
+
+## Summary
+
+- JavaScript is the most common implementation of the ECMAScript standard.
+- A JavaScript engine parses, compiles, executes, and garbage-collects your code.
+- The browser and Node.js are different runtimes built around the same language core.
+- Browser JavaScript runs in a sandbox with important security restrictions.
+- HTML, CSS, and JavaScript have different responsibilities on the web platform.
+- JavaScript is still the only language browsers run natively.

@@ -1,0 +1,234 @@
+{
+  "id": "basics/ifelse",
+  "locale": "uk",
+  "locales": {
+    "uk": true,
+    "en": true
+  },
+  "availableLocales": [
+    "uk",
+    "en"
+  ],
+  "title": "Умовне розгалуження: if, ?",
+  "description": "Умовне розгалуження в JavaScript: if/else if/else, тернарний оператор, вкладені умови, кращі практики. Edge cases булевого перетворення.",
+  "track": "basics",
+  "trackTitle": "Основи JavaScript",
+  "slug": "ifelse",
+  "sourcePath": "uk/basics/if-else.html",
+  "sourceIdentity": {
+    "track": "basics",
+    "slug": "if-else"
+  },
+  "canonicalRoute": "/uk/docs/basics/ifelse",
+  "canonicalLegacyPath": "/basics/ifelse.html",
+  "legacyHtmlPath": "/uk/basics/if-else.html",
+  "legacyAliases": [
+    "/uk/basics/if-else.html",
+    "/uk/basics/if-else",
+    "/basics/ifelse.html"
+  ],
+  "sectionOrder": 2,
+  "lessonOrder": 10,
+  "overallOrder": 14,
+  "articleNumber": "2.10",
+  "estimatedMinutes": 11,
+  "headings": [
+    {
+      "level": 2,
+      "id": "if",
+      "text": "Інструкція if"
+    },
+    {
+      "level": 2,
+      "id": "truthy-falsy-umovy",
+      "text": "Truthy/falsy в умовах"
+    },
+    {
+      "level": 2,
+      "id": "ternary",
+      "text": "Тернарний оператор ?"
+    },
+    {
+      "level": 2,
+      "id": "early-return",
+      "text": "Ранній вихід (Guard Clause)"
+    },
+    {
+      "level": 2,
+      "id": "switch-alt",
+      "text": "if/else vs switch"
+    },
+    {
+      "level": 2,
+      "id": "edge-cases",
+      "text": "Edge cases"
+    },
+    {
+      "level": 2,
+      "id": "summary",
+      "text": "Підсумок"
+    }
+  ],
+  "badges": [
+    "Початковий",
+    "Основи JavaScript",
+    "~ 11 хв"
+  ],
+  "donationLinks": [
+    "https://send.monobank.ua/jar/YOUR_JAR_ID",
+    "https://www.buymeacoffee.com/YOUR_HANDLE"
+  ],
+  "breadcrumbTrail": [
+    "Головна",
+    "Основи JavaScript",
+    "Умовне розгалуження: if, ?"
+  ],
+  "relatedSourceTrack": "basics",
+  "contentFiles": {
+    "uk": "content/tracks/basics/ifelse/index.uk.html",
+    "en": "content/tracks/basics/ifelse/index.en.mdx"
+  },
+  "metadataFile": "content/tracks/basics/ifelse/meta.json",
+  "translationStatus": {
+    "sourceLocale": "uk",
+    "availableLocales": [
+      "uk",
+      "en"
+    ],
+    "fallbackLocales": {},
+    "locales": {
+      "uk": {
+        "status": "published",
+        "filePath": "content/tracks/basics/ifelse/index.uk.html",
+        "format": "html",
+        "title": "Умовне розгалуження: if, ?",
+        "description": "Умовне розгалуження в JavaScript: if/else if/else, тернарний оператор, вкладені умови, кращі практики. Edge cases булевого перетворення.",
+        "completeness": 100,
+        "isFallback": false,
+        "headings": [
+          {
+            "level": 2,
+            "id": "if",
+            "text": "Інструкція if"
+          },
+          {
+            "level": 2,
+            "id": "truthy-falsy-umovy",
+            "text": "Truthy/falsy в умовах"
+          },
+          {
+            "level": 2,
+            "id": "ternary",
+            "text": "Тернарний оператор ?"
+          },
+          {
+            "level": 2,
+            "id": "early-return",
+            "text": "Ранній вихід (Guard Clause)"
+          },
+          {
+            "level": 2,
+            "id": "switch-alt",
+            "text": "if/else vs switch"
+          },
+          {
+            "level": 2,
+            "id": "edge-cases",
+            "text": "Edge cases"
+          },
+          {
+            "level": 2,
+            "id": "summary",
+            "text": "Підсумок"
+          }
+        ]
+      },
+      "en": {
+        "status": "published",
+        "filePath": "content/tracks/basics/ifelse/index.en.mdx",
+        "format": "mdx",
+        "title": "Conditional Branching: `if`, `?`",
+        "description": "How to write conditions with `if`, `else`, the ternary operator, and guard clauses.",
+        "completeness": 100,
+        "isFallback": false,
+        "headings": [
+          {
+            "level": 2,
+            "id": "the-if-statement",
+            "text": "The `if` statement"
+          },
+          {
+            "level": 2,
+            "id": "truthy-and-falsy-values-in-conditions",
+            "text": "Truthy and falsy values in conditions"
+          },
+          {
+            "level": 2,
+            "id": "the-ternary-operator",
+            "text": "The ternary operator `?`"
+          },
+          {
+            "level": 2,
+            "id": "guard-clauses",
+            "text": "Guard clauses"
+          },
+          {
+            "level": 2,
+            "id": "if-else-vs-switch",
+            "text": "`if/else` vs `switch`"
+          },
+          {
+            "level": 2,
+            "id": "edge-cases",
+            "text": "Edge cases"
+          },
+          {
+            "level": 2,
+            "id": "summary",
+            "text": "Summary"
+          }
+        ],
+        "slug": "ifelse",
+        "track": "basics",
+        "locale": "en",
+        "sourceLocale": "uk",
+        "hasBody": true
+      }
+    }
+  },
+  "translationCompleteness": {
+    "uk": 100,
+    "en": 100
+  },
+  "migration": {
+    "migratedFromLegacy": true,
+    "canonicalIdentitySource": "canonical",
+    "override": null,
+    "articleMeta": {
+      "type": "string",
+      "raw": {
+        "secId": "basics",
+        "artId": "ifelse"
+      },
+      "resolved": {
+        "track": "basics",
+        "slug": "ifelse"
+      }
+    },
+    "mismatches": {
+      "filePathVsCanonical": true,
+      "filePathVsStringMeta": true,
+      "filePathVsNumericMeta": false
+    },
+    "hasLegacyJsonLd": true,
+    "hasLegacyToc": true,
+    "hasLegacyPrevNext": true,
+    "legacyArticleSupport": true
+  },
+  "bodySourcePath": "content/tracks/basics/ifelse/index.uk.html",
+  "sourceProvenance": {
+    "sourcePath": "uk/basics/if-else.html",
+    "sourceTrack": "basics",
+    "sourceSlug": "if-else"
+  }
+}

@@ -1,0 +1,181 @@
+{
+  "id": "promises/callbacks",
+  "locale": "uk",
+  "locales": {
+    "uk": true,
+    "en": false
+  },
+  "availableLocales": [
+    "uk"
+  ],
+  "title": "Вступ: колбеки",
+  "description": "Вступ: колбеки у JavaScript — детальний розбір з прикладами, підводними каменями та best practices.",
+  "track": "promises",
+  "trackTitle": "Проміси, async/await",
+  "slug": "callbacks",
+  "sourcePath": "uk/promises/callbacks.html",
+  "sourceIdentity": {
+    "track": "promises",
+    "slug": "callbacks"
+  },
+  "canonicalRoute": "/uk/docs/promises/callbacks",
+  "canonicalLegacyPath": "/promises/callbacks.html",
+  "legacyHtmlPath": "/uk/promises/callbacks.html",
+  "legacyAliases": [
+    "/uk/promises/callbacks.html",
+    "/uk/promises/callbacks",
+    "/promises/callbacks.html"
+  ],
+  "sectionOrder": 11,
+  "lessonOrder": 1,
+  "overallOrder": 75,
+  "articleNumber": "11.1",
+  "estimatedMinutes": 8,
+  "headings": [
+    {
+      "level": 2,
+      "id": "basics",
+      "text": "Синхронні та асинхронні callbacks"
+    },
+    {
+      "level": 2,
+      "id": "callback-hell",
+      "text": "Callback hell"
+    },
+    {
+      "level": 2,
+      "id": "error-first",
+      "text": "Error-first convention"
+    },
+    {
+      "level": 2,
+      "id": "named",
+      "text": "Уникнення callback hell через іменовані функції"
+    },
+    {
+      "level": 2,
+      "id": "summary",
+      "text": "Підсумок"
+    }
+  ],
+  "badges": [
+    "Початковий",
+    "Проміси, async/await",
+    "~ 8 хв"
+  ],
+  "donationLinks": [],
+  "breadcrumbTrail": [
+    "Головна",
+    "Проміси, async/await",
+    "Вступ: колбеки"
+  ],
+  "relatedSourceTrack": "promises",
+  "contentFiles": {
+    "uk": "content/tracks/promises/callbacks/index.uk.html",
+    "en": "content/tracks/promises/callbacks/index.en.mdx"
+  },
+  "metadataFile": "content/tracks/promises/callbacks/meta.json",
+  "translationStatus": {
+    "sourceLocale": "uk",
+    "availableLocales": [
+      "uk"
+    ],
+    "fallbackLocales": {
+      "en": "uk"
+    },
+    "locales": {
+      "uk": {
+        "status": "published",
+        "filePath": "content/tracks/promises/callbacks/index.uk.html",
+        "format": "html",
+        "title": "Вступ: колбеки",
+        "description": "Вступ: колбеки у JavaScript — детальний розбір з прикладами, підводними каменями та best practices.",
+        "completeness": 100,
+        "isFallback": false,
+        "headings": [
+          {
+            "level": 2,
+            "id": "basics",
+            "text": "Синхронні та асинхронні callbacks"
+          },
+          {
+            "level": 2,
+            "id": "callback-hell",
+            "text": "Callback hell"
+          },
+          {
+            "level": 2,
+            "id": "error-first",
+            "text": "Error-first convention"
+          },
+          {
+            "level": 2,
+            "id": "named",
+            "text": "Уникнення callback hell через іменовані функції"
+          },
+          {
+            "level": 2,
+            "id": "summary",
+            "text": "Підсумок"
+          }
+        ]
+      },
+      "en": {
+        "status": "draft",
+        "filePath": "content/tracks/promises/callbacks/index.en.mdx",
+        "format": "mdx",
+        "title": "TODO: Translate title",
+        "description": "TODO: Translate description",
+        "completeness": 0,
+        "isFallback": true,
+        "headings": [
+          {
+            "level": 2,
+            "id": "source-lesson",
+            "text": "Source lesson"
+          }
+        ],
+        "slug": "callbacks",
+        "track": "promises",
+        "locale": "en",
+        "sourceLocale": "uk",
+        "hasBody": true
+      }
+    }
+  },
+  "translationCompleteness": {
+    "uk": 100,
+    "en": 0
+  },
+  "migration": {
+    "migratedFromLegacy": true,
+    "canonicalIdentitySource": "canonical",
+    "override": null,
+    "articleMeta": {
+      "type": "numeric",
+      "raw": {
+        "secId": "11",
+        "artId": "1"
+      },
+      "resolved": {
+        "track": "promises",
+        "slug": "callbacks"
+      }
+    },
+    "mismatches": {
+      "filePathVsCanonical": false,
+      "filePathVsStringMeta": false,
+      "filePathVsNumericMeta": false
+    },
+    "hasLegacyJsonLd": false,
+    "hasLegacyToc": false,
+    "hasLegacyPrevNext": false,
+    "legacyArticleSupport": true
+  },
+  "bodySourcePath": "content/tracks/promises/callbacks/index.uk.html",
+  "sourceProvenance": {
+    "sourcePath": "uk/promises/callbacks.html",
+    "sourceTrack": "promises",
+    "sourceSlug": "callbacks"
+  }
+}

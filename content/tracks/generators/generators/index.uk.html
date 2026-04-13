@@ -1,0 +1,103 @@
+<p>Генератор — функція що може зупиняти виконання і відновлюватись з тієї ж точки. Позначається <code>function*</code>. Повертає ітератор. Ключове слово <code>yield</code> видає значення і призупиняє функцію.</p>
+
+    <h2 id="basics">Основи</h2>
+    <div class="code-block"><div class="code-head"><span class="code-lang">JavaScript</span><button class="btn-copy" aria-label="Копіювати"></button></div>
+<pre><code class="language-javascript">function* counter(start = 0) {
+  while (true) {
+    yield start++;
+  }
+}
+
+const gen = counter(5);
+console.log(gen.next()); // { value: 5, done: false }
+console.log(gen.next()); // { value: 6, done: false }
+console.log(gen.next()); // { value: 7, done: false }
+
+// Скінченний генератор
+function* range(from, to) {
+  for (let i = from; i <= to; i++) {
+    yield i;
+  }
+}
+
+for (const n of range(1, 5)) {
+  console.log(n); // 1 2 3 4 5
+}
+
+console.log([...range(1, 5)]); // [1, 2, 3, 4, 5]</code></pre></div>
+
+    <h2 id="yield-star">yield*</h2>
+    <div class="code-block"><div class="code-head"><span class="code-lang">JavaScript</span><button class="btn-copy" aria-label="Копіювати"></button></div>
+<pre><code class="language-javascript">// yield* делегує ітерацію іншому iterable
+function* concat(...iterables) {
+  for (const iter of iterables) {
+    yield* iter;
+  }
+}
+
+console.log([...concat([1,2], [3,4], [5])]); // [1,2,3,4,5]
+
+// Рекурсивний обхід дерева без стека
+function* flatten(arr) {
+  for (const item of arr) {
+    if (Array.isArray(item)) yield* flatten(item);
+    else yield item;
+  }
+}
+
+console.log([...flatten([1,[2,[3,[4]]],5])]); // [1,2,3,4,5]</code></pre></div>
+
+    <h2 id="two-way">Двостороннє спілкування</h2>
+    <div class="code-block"><div class="code-head"><span class="code-lang">JavaScript</span><button class="btn-copy" aria-label="Копіювати"></button></div>
+<pre><code class="language-javascript">// next(value) передає значення назад у генератор
+function* calculator() {
+  let result = 0;
+  while (true) {
+    const input = yield result; // пауза, повертає result, отримує input
+    if (input === null) break;
+    result += input;
+  }
+  return result;
+}
+
+const calc = calculator();
+calc.next();    // запуск (до першого yield), { value: 0 }
+calc.next(5);   // передаємо 5, { value: 5 }
+calc.next(3);   // передаємо 3, { value: 8 }
+calc.next(null); // завершення, { value: 8, done: true }</code></pre></div>
+
+    <h2 id="use-cases">Застосування</h2>
+    <div class="code-block"><div class="code-head"><span class="code-lang">JavaScript</span><button class="btn-copy" aria-label="Копіювати"></button></div>
+<pre><code class="language-javascript">// Нескінченні послідовності без витоку пам'яті
+function* fibonacci() {
+  let [a, b] = [0, 1];
+  while (true) { yield a; [a, b] = [b, a + b]; }
+}
+
+function take(n, iter) {
+  const result = [];
+  for (const v of iter) {
+    result.push(v);
+    if (result.length === n) return result;
+  }
+}
+console.log(take(8, fibonacci())); // [0,1,1,2,3,5,8,13]
+
+// ID генератор
+function* idGenerator(prefix = '') {
+  let id = 1;
+  while (true) yield `${prefix}${id++}`;
+}
+const userId = idGenerator('user_');
+console.log(userId.next().value); // "user_1"
+console.log(userId.next().value); // "user_2"</code></pre></div>
+
+    <h2 id="summary">Підсумок</h2>
+    <ul>
+      <li><code>function*</code> — генератор. <code>yield</code> видає значення і призупиняє. <code>next()</code> продовжує.</li>
+      <li>Генератор реалізує протокол ітератора: <code>for...of</code>, spread, деструктуризація.</li>
+      <li><code>yield*</code> делегує до іншого iterable.</li>
+      <li><code>next(value)</code> передає значення назад у генератор.</li>
+      <li>Нескінченні послідовності, ліниві обчислення, кастомні ітератори.</li>
+    </ul>
+    <div class="article-support"><p><strong>Матеріал корисний?</strong> Підтримай проект.</p><div class="support-btns-inline"><a href="https://send.monobank.ua/jar/YOUR_JAR_ID" class="btn-mono" target="_blank" rel="noopener" style="font-size:12px;height:36px;padding:0 14px">🟢 Monobank</a><a href="https://www.buymeacoffee.com/YOUR_HANDLE" class="btn-coffee" target="_blank" rel="noopener" style="font-size:12px;height:36px;padding:0 14px">☕ Coffee</a></div></div>

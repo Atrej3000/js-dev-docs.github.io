@@ -1,0 +1,22 @@
+[
+  "intro/intro-to-javascript",
+  "intro/code-editors",
+  "intro/devtools",
+  "basics/hello-world",
+  "basics/code-structure",
+  "basics/use-strict",
+  "basics/variables",
+  "basics/data-types",
+  "basics/interaction",
+  "basics/type-conversions",
+  "basics/operators",
+  "basics/comparison",
+  "basics/ifelse",
+  "basics/logical-operators",
+  "basics/nullish-coalescing",
+  "basics/loops",
+  "basics/switch",
+  "basics/function-basics",
+  "basics/function-expressions",
+  "basics/arrow-functions"
+]

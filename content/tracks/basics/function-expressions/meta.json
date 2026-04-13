@@ -1,0 +1,219 @@
+{
+  "id": "basics/function-expressions",
+  "locale": "uk",
+  "locales": {
+    "uk": true,
+    "en": true
+  },
+  "availableLocales": [
+    "uk",
+    "en"
+  ],
+  "title": "Функціональні вирази",
+  "description": "Функціональні вирази в JavaScript: function expression vs declaration, callback, IIFE, анонімні та іменовані функціональні вирази.",
+  "track": "basics",
+  "trackTitle": "Основи JavaScript",
+  "slug": "function-expressions",
+  "sourcePath": "uk/basics/function-expressions.html",
+  "sourceIdentity": {
+    "track": "basics",
+    "slug": "function-expressions"
+  },
+  "canonicalRoute": "/uk/docs/basics/function-expressions",
+  "canonicalLegacyPath": "/basics/function-expressions.html",
+  "legacyHtmlPath": "/uk/basics/function-expressions.html",
+  "legacyAliases": [
+    "/uk/basics/function-expressions.html",
+    "/uk/basics/function-expressions",
+    "/basics/function-expressions.html"
+  ],
+  "sectionOrder": 2,
+  "lessonOrder": 16,
+  "overallOrder": 20,
+  "articleNumber": "2.16",
+  "estimatedMinutes": 11,
+  "headings": [
+    {
+      "level": 2,
+      "id": "syntaksys",
+      "text": "Синтаксис"
+    },
+    {
+      "level": 2,
+      "id": "declaration-vs-expression",
+      "text": "Declaration vs Expression"
+    },
+    {
+      "level": 2,
+      "id": "callback",
+      "text": "Callback-функції"
+    },
+    {
+      "level": 2,
+      "id": "nfe",
+      "text": "Named Function Expression (NFE)"
+    },
+    {
+      "level": 2,
+      "id": "iife",
+      "text": "IIFE — Immediately Invoked Function Expression"
+    },
+    {
+      "level": 2,
+      "id": "summary",
+      "text": "Підсумок"
+    }
+  ],
+  "badges": [
+    "Початковий",
+    "Основи JavaScript",
+    "~ 11 хв"
+  ],
+  "donationLinks": [
+    "https://send.monobank.ua/jar/YOUR_JAR_ID",
+    "https://www.buymeacoffee.com/YOUR_HANDLE"
+  ],
+  "breadcrumbTrail": [
+    "Головна",
+    "Основи JavaScript",
+    "Функціональні вирази"
+  ],
+  "relatedSourceTrack": "basics",
+  "contentFiles": {
+    "uk": "content/tracks/basics/function-expressions/index.uk.html",
+    "en": "content/tracks/basics/function-expressions/index.en.mdx"
+  },
+  "metadataFile": "content/tracks/basics/function-expressions/meta.json",
+  "translationStatus": {
+    "sourceLocale": "uk",
+    "availableLocales": [
+      "uk",
+      "en"
+    ],
+    "fallbackLocales": {},
+    "locales": {
+      "uk": {
+        "status": "published",
+        "filePath": "content/tracks/basics/function-expressions/index.uk.html",
+        "format": "html",
+        "title": "Функціональні вирази",
+        "description": "Функціональні вирази в JavaScript: function expression vs declaration, callback, IIFE, анонімні та іменовані функціональні вирази.",
+        "completeness": 100,
+        "isFallback": false,
+        "headings": [
+          {
+            "level": 2,
+            "id": "syntaksys",
+            "text": "Синтаксис"
+          },
+          {
+            "level": 2,
+            "id": "declaration-vs-expression",
+            "text": "Declaration vs Expression"
+          },
+          {
+            "level": 2,
+            "id": "callback",
+            "text": "Callback-функції"
+          },
+          {
+            "level": 2,
+            "id": "nfe",
+            "text": "Named Function Expression (NFE)"
+          },
+          {
+            "level": 2,
+            "id": "iife",
+            "text": "IIFE — Immediately Invoked Function Expression"
+          },
+          {
+            "level": 2,
+            "id": "summary",
+            "text": "Підсумок"
+          }
+        ]
+      },
+      "en": {
+        "status": "published",
+        "filePath": "content/tracks/basics/function-expressions/index.en.mdx",
+        "format": "mdx",
+        "title": "Function Expressions",
+        "description": "How function expressions differ from declarations, how callbacks work, and when to use named function expressions or IIFEs.",
+        "completeness": 100,
+        "isFallback": false,
+        "headings": [
+          {
+            "level": 2,
+            "id": "syntax",
+            "text": "Syntax"
+          },
+          {
+            "level": 2,
+            "id": "declaration-vs-expression",
+            "text": "Declaration vs expression"
+          },
+          {
+            "level": 2,
+            "id": "callback-functions",
+            "text": "Callback functions"
+          },
+          {
+            "level": 2,
+            "id": "named-function-expression-nfe",
+            "text": "Named Function Expression (NFE)"
+          },
+          {
+            "level": 2,
+            "id": "iife-immediately-invoked-function-expression",
+            "text": "IIFE - Immediately Invoked Function Expression"
+          },
+          {
+            "level": 2,
+            "id": "summary",
+            "text": "Summary"
+          }
+        ],
+        "slug": "function-expressions",
+        "track": "basics",
+        "locale": "en",
+        "sourceLocale": "uk",
+        "hasBody": true
+      }
+    }
+  },
+  "translationCompleteness": {
+    "uk": 100,
+    "en": 100
+  },
+  "migration": {
+    "migratedFromLegacy": true,
+    "canonicalIdentitySource": "canonical",
+    "override": null,
+    "articleMeta": {
+      "type": "string",
+      "raw": {
+        "secId": "basics",
+        "artId": "function-expressions"
+      },
+      "resolved": {
+        "track": "basics",
+        "slug": "function-expressions"
+      }
+    },
+    "mismatches": {
+      "filePathVsCanonical": false,
+      "filePathVsStringMeta": false,
+      "filePathVsNumericMeta": false
+    },
+    "hasLegacyJsonLd": true,
+    "hasLegacyToc": true,
+    "hasLegacyPrevNext": true,
+    "legacyArticleSupport": true
+  },
+  "bodySourcePath": "content/tracks/basics/function-expressions/index.uk.html",
+  "sourceProvenance": {
+    "sourcePath": "uk/basics/function-expressions.html",
+    "sourceTrack": "basics",
+    "sourceSlug": "function-expressions"
+  }
+}

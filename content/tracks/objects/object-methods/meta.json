@@ -1,0 +1,204 @@
+{
+  "id": "objects/object-methods",
+  "locale": "uk",
+  "locales": {
+    "uk": true,
+    "en": false
+  },
+  "availableLocales": [
+    "uk"
+  ],
+  "title": "Методи об'єкта, this",
+  "description": "Методи об'єктів JavaScript і ключове слово this: динамічний контекст, виклик методу, втрата контексту, bind/call/apply.",
+  "track": "objects",
+  "trackTitle": "Об'єкти: основи",
+  "slug": "object-methods",
+  "sourcePath": "uk/objects/this.html",
+  "sourceIdentity": {
+    "track": "objects",
+    "slug": "this"
+  },
+  "canonicalRoute": "/uk/docs/objects/object-methods",
+  "canonicalLegacyPath": "/objects/object-methods.html",
+  "legacyHtmlPath": "/uk/objects/this.html",
+  "legacyAliases": [
+    "/uk/objects/this.html",
+    "/uk/objects/this",
+    "/objects/object-methods.html"
+  ],
+  "sectionOrder": 4,
+  "lessonOrder": 4,
+  "overallOrder": 32,
+  "articleNumber": "4.4",
+  "estimatedMinutes": 14,
+  "headings": [
+    {
+      "level": 2,
+      "id": "metody",
+      "text": "Оголошення методів"
+    },
+    {
+      "level": 2,
+      "id": "this-dynamic",
+      "text": "this — динамічний контекст"
+    },
+    {
+      "level": 2,
+      "id": "vtrata",
+      "text": "Втрата контексту this"
+    },
+    {
+      "level": 2,
+      "id": "this-strict",
+      "text": "this без контексту"
+    },
+    {
+      "level": 2,
+      "id": "call-apply-bind",
+      "text": "call, apply, bind"
+    },
+    {
+      "level": 2,
+      "id": "chaining",
+      "text": "Ланцюговий виклик методів"
+    },
+    {
+      "level": 2,
+      "id": "summary",
+      "text": "Підсумок"
+    }
+  ],
+  "badges": [
+    "Початковий",
+    "Об'єкти: основи",
+    "~ 14 хв"
+  ],
+  "donationLinks": [
+    "https://send.monobank.ua/jar/YOUR_JAR_ID",
+    "https://www.buymeacoffee.com/YOUR_HANDLE"
+  ],
+  "breadcrumbTrail": [
+    "Головна",
+    "Об'єкти: основи",
+    "Методи об'єкта, this"
+  ],
+  "relatedSourceTrack": "objects",
+  "contentFiles": {
+    "uk": "content/tracks/objects/object-methods/index.uk.html",
+    "en": "content/tracks/objects/object-methods/index.en.mdx"
+  },
+  "metadataFile": "content/tracks/objects/object-methods/meta.json",
+  "translationStatus": {
+    "sourceLocale": "uk",
+    "availableLocales": [
+      "uk"
+    ],
+    "fallbackLocales": {
+      "en": "uk"
+    },
+    "locales": {
+      "uk": {
+        "status": "published",
+        "filePath": "content/tracks/objects/object-methods/index.uk.html",
+        "format": "html",
+        "title": "Методи об'єкта, this",
+        "description": "Методи об'єктів JavaScript і ключове слово this: динамічний контекст, виклик методу, втрата контексту, bind/call/apply.",
+        "completeness": 100,
+        "isFallback": false,
+        "headings": [
+          {
+            "level": 2,
+            "id": "metody",
+            "text": "Оголошення методів"
+          },
+          {
+            "level": 2,
+            "id": "this-dynamic",
+            "text": "this — динамічний контекст"
+          },
+          {
+            "level": 2,
+            "id": "vtrata",
+            "text": "Втрата контексту this"
+          },
+          {
+            "level": 2,
+            "id": "this-strict",
+            "text": "this без контексту"
+          },
+          {
+            "level": 2,
+            "id": "call-apply-bind",
+            "text": "call, apply, bind"
+          },
+          {
+            "level": 2,
+            "id": "chaining",
+            "text": "Ланцюговий виклик методів"
+          },
+          {
+            "level": 2,
+            "id": "summary",
+            "text": "Підсумок"
+          }
+        ]
+      },
+      "en": {
+        "status": "draft",
+        "filePath": "content/tracks/objects/object-methods/index.en.mdx",
+        "format": "mdx",
+        "title": "TODO: Translate title",
+        "description": "TODO: Translate description",
+        "completeness": 0,
+        "isFallback": true,
+        "headings": [
+          {
+            "level": 2,
+            "id": "source-lesson",
+            "text": "Source lesson"
+          }
+        ],
+        "slug": "object-methods",
+        "track": "objects",
+        "locale": "en",
+        "sourceLocale": "uk",
+        "hasBody": true
+      }
+    }
+  },
+  "translationCompleteness": {
+    "uk": 100,
+    "en": 0
+  },
+  "migration": {
+    "migratedFromLegacy": true,
+    "canonicalIdentitySource": "canonical",
+    "override": null,
+    "articleMeta": {
+      "type": "string",
+      "raw": {
+        "secId": "objects",
+        "artId": "object-methods"
+      },
+      "resolved": {
+        "track": "objects",
+        "slug": "object-methods"
+      }
+    },
+    "mismatches": {
+      "filePathVsCanonical": true,
+      "filePathVsStringMeta": true,
+      "filePathVsNumericMeta": false
+    },
+    "hasLegacyJsonLd": true,
+    "hasLegacyToc": true,
+    "hasLegacyPrevNext": true,
+    "legacyArticleSupport": true
+  },
+  "bodySourcePath": "content/tracks/objects/object-methods/index.uk.html",
+  "sourceProvenance": {
+    "sourcePath": "uk/objects/this.html",
+    "sourceTrack": "objects",
+    "sourceSlug": "this"
+  }
+}

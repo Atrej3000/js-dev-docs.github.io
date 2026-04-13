@@ -1,0 +1,174 @@
+{
+  "id": "classes/private-protected",
+  "locale": "uk",
+  "locales": {
+    "uk": true,
+    "en": false
+  },
+  "availableLocales": [
+    "uk"
+  ],
+  "title": "Приватні та захищені властивості та методи",
+  "description": "",
+  "track": "classes",
+  "trackTitle": "Класи",
+  "slug": "private-protected",
+  "sourcePath": "uk/classes/private-protected-properties-methods.html",
+  "sourceIdentity": {
+    "track": "classes",
+    "slug": "private-protected-properties-methods"
+  },
+  "canonicalRoute": "/uk/docs/classes/private-protected",
+  "canonicalLegacyPath": "/classes/private-protected.html",
+  "legacyHtmlPath": "/uk/classes/private-protected-properties-methods.html",
+  "legacyAliases": [
+    "/uk/classes/private-protected-properties-methods.html",
+    "/uk/classes/private-protected-properties-methods",
+    "/classes/private-protected.html"
+  ],
+  "sectionOrder": 9,
+  "lessonOrder": 4,
+  "overallOrder": 69,
+  "articleNumber": "9.4",
+  "estimatedMinutes": 12,
+  "headings": [
+    {
+      "level": 2,
+      "id": "private",
+      "text": "Приватні поля і методи (#)"
+    },
+    {
+      "level": 2,
+      "id": "protected",
+      "text": "Захищені властивості (конвенція _)"
+    },
+    {
+      "level": 2,
+      "id": "in-operator",
+      "text": "Перевірка приватного поля через in"
+    },
+    {
+      "level": 2,
+      "id": "summary",
+      "text": "Підсумок"
+    }
+  ],
+  "badges": [
+    "Середній",
+    "Класи",
+    "~ 12 хв"
+  ],
+  "donationLinks": [
+    "https://send.monobank.ua/jar/YOUR_JAR_ID",
+    "https://www.buymeacoffee.com/YOUR_HANDLE"
+  ],
+  "breadcrumbTrail": [
+    "Головна",
+    "Класи",
+    "Приватні і захищені"
+  ],
+  "relatedSourceTrack": "classes",
+  "contentFiles": {
+    "uk": "content/tracks/classes/private-protected/index.uk.html",
+    "en": "content/tracks/classes/private-protected/index.en.mdx"
+  },
+  "metadataFile": "content/tracks/classes/private-protected/meta.json",
+  "translationStatus": {
+    "sourceLocale": "uk",
+    "availableLocales": [
+      "uk"
+    ],
+    "fallbackLocales": {
+      "en": "uk"
+    },
+    "locales": {
+      "uk": {
+        "status": "published",
+        "filePath": "content/tracks/classes/private-protected/index.uk.html",
+        "format": "html",
+        "title": "Приватні та захищені властивості та методи",
+        "description": "",
+        "completeness": 100,
+        "isFallback": false,
+        "headings": [
+          {
+            "level": 2,
+            "id": "private",
+            "text": "Приватні поля і методи (#)"
+          },
+          {
+            "level": 2,
+            "id": "protected",
+            "text": "Захищені властивості (конвенція _)"
+          },
+          {
+            "level": 2,
+            "id": "in-operator",
+            "text": "Перевірка приватного поля через in"
+          },
+          {
+            "level": 2,
+            "id": "summary",
+            "text": "Підсумок"
+          }
+        ]
+      },
+      "en": {
+        "status": "draft",
+        "filePath": "content/tracks/classes/private-protected/index.en.mdx",
+        "format": "mdx",
+        "title": "TODO: Translate title",
+        "description": "TODO: Translate description",
+        "completeness": 0,
+        "isFallback": true,
+        "headings": [
+          {
+            "level": 2,
+            "id": "source-lesson",
+            "text": "Source lesson"
+          }
+        ],
+        "slug": "private-protected",
+        "track": "classes",
+        "locale": "en",
+        "sourceLocale": "uk",
+        "hasBody": true
+      }
+    }
+  },
+  "translationCompleteness": {
+    "uk": 100,
+    "en": 0
+  },
+  "migration": {
+    "migratedFromLegacy": true,
+    "canonicalIdentitySource": "canonical",
+    "override": null,
+    "articleMeta": {
+      "type": "string",
+      "raw": {
+        "secId": "classes",
+        "artId": "private-protected"
+      },
+      "resolved": {
+        "track": "classes",
+        "slug": "private-protected"
+      }
+    },
+    "mismatches": {
+      "filePathVsCanonical": true,
+      "filePathVsStringMeta": true,
+      "filePathVsNumericMeta": false
+    },
+    "hasLegacyJsonLd": false,
+    "hasLegacyToc": true,
+    "hasLegacyPrevNext": true,
+    "legacyArticleSupport": true
+  },
+  "bodySourcePath": "content/tracks/classes/private-protected/index.uk.html",
+  "sourceProvenance": {
+    "sourcePath": "uk/classes/private-protected-properties-methods.html",
+    "sourceTrack": "classes",
+    "sourceSlug": "private-protected-properties-methods"
+  }
+}

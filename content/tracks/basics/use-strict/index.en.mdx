@@ -1,0 +1,131 @@
+---
+title: "Strict Mode: `use strict`"
+description: "Why strict mode exists, how to enable it, and which JavaScript mistakes it turns into explicit errors."
+slug: "use-strict"
+track: "basics"
+locale: "en"
+sourceLocale: "uk"
+translationStatus: "published"
+translationCompleteness: 100
+---
+
+The `"use strict"` directive enables **strict mode**, introduced in ES5. Strict mode turns many silent JavaScript failures into explicit errors and forbids several risky language behaviors.
+
+## Why this matters
+
+Older JavaScript often failed quietly:
+
+- assigning to an undeclared variable
+- writing to a read-only property
+- deleting a non-configurable property
+
+Strict mode turns those quiet failures into real exceptions such as `ReferenceError` or `TypeError`. That makes bugs easier to catch during development.
+
+## Activation
+
+Use `"use strict"` as the first statement in a file or function.
+
+```javascript
+"use strict";
+
+function processOrder(order) {
+  // ...
+}
+
+function validate(data) {
+  "use strict";
+  // ...
+}
+```
+
+If executable code appears before the directive, it is ignored.
+
+## What strict mode changes
+
+### 1. No undeclared variables
+
+```javascript
+"use strict";
+
+typoVariable = 42; // ReferenceError
+
+let correctVariable = 42;
+```
+
+### 2. No writing to read-only properties
+
+```javascript
+"use strict";
+
+const obj = {};
+Object.defineProperty(obj, "id", { value: 1, writable: false });
+
+obj.id = 2; // TypeError
+```
+
+### 3. No deleting non-configurable properties
+
+```javascript
+"use strict";
+
+delete Object.prototype; // TypeError
+```
+
+### 4. No duplicate parameters
+
+```javascript
+"use strict";
+
+function sum(a, a, b) { // SyntaxError
+  return a + b;
+}
+```
+
+### 5. `this` in plain functions
+
+```javascript
+"use strict";
+
+function showThis() {
+  console.log(this);
+}
+
+showThis(); // undefined
+showThis.call(null); // null
+```
+
+Without strict mode, `this` in such calls often points to the global object.
+
+### 6. Reserved words become stricter
+
+Some identifiers reserved for the language cannot be used freely in strict mode.
+
+## Modules and classes are already strict
+
+ES modules and class bodies always run in strict mode automatically.
+
+```javascript
+export function processData(data) {
+  undeclaredVar = 1; // ReferenceError
+}
+
+class Service {
+  process() {
+    undeclaredVar = 1; // ReferenceError
+  }
+}
+```
+
+In modern module-based code, writing `"use strict"` is usually redundant, but it is still useful to understand what strict mode changes.
+
+## Transpilers and bundlers
+
+Many build tools add strict mode automatically to compiled output. TypeScript transpilation and modern bundlers often do this for you.
+
+## Summary
+
+- Strict mode turns silent failures into explicit errors.
+- The directive must be the first statement in the current scope.
+- It disallows undeclared variables, duplicate parameters, unsafe writes, and several legacy quirks.
+- ES modules and class bodies are strict by default.
+- In modern JavaScript, strict mode is usually already active, but you should still understand its rules.

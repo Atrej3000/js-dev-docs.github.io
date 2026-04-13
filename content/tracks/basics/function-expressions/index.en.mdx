@@ -1,0 +1,127 @@
+---
+title: "Function Expressions"
+description: "How function expressions differ from declarations, how callbacks work, and when to use named function expressions or IIFEs."
+slug: "function-expressions"
+track: "basics"
+locale: "en"
+sourceLocale: "uk"
+translationStatus: "published"
+translationCompleteness: 100
+---
+
+A **function expression** is a function created as part of an expression and usually assigned to a variable or passed as an argument. Unlike a function declaration, it does not get full hoisting.
+
+## Syntax
+
+```javascript
+const square = function (n) {
+  return n * n;
+};
+
+console.log(square(4)); // 16
+console.log(typeof square); // "function"
+```
+
+Because this is an expression assigned to `const`, calling it before the declaration causes a TDZ error.
+
+```javascript
+// console.log(cube(3)); // ReferenceError
+const cube = function (n) {
+  return n ** 3;
+};
+```
+
+## Declaration vs expression
+
+| Feature | Declaration | Expression |
+| --- | --- | --- |
+| Syntax | `function f() {}` | `const f = function() {}` |
+| Hoisting | full | no full hoisting |
+| Call before definition | yes | no |
+| Conditional definition | unreliable | yes |
+
+Function expressions are the safer choice when you need to define a function conditionally.
+
+```javascript
+let process;
+
+if (isProduction) {
+  process = function (data) {
+    return minify(data);
+  };
+} else {
+  process = function (data) {
+    return data;
+  };
+}
+```
+
+## Callback functions
+
+A **callback** is a function passed to another function so it can be called later.
+
+```javascript
+const numbers = [3, 1, 4, 1, 5, 9];
+
+const sorted = numbers.sort(function (a, b) {
+  return a - b;
+});
+
+setTimeout(function () {
+  console.log("One second passed");
+}, 1000);
+```
+
+Named callbacks are often easier to debug because they improve stack traces and readability:
+
+```javascript
+function compareAsc(a, b) {
+  return a - b;
+}
+
+numbers.sort(compareAsc);
+```
+
+## Named Function Expression (NFE)
+
+A function expression may also have an internal name.
+
+```javascript
+const factorial = function fact(n) {
+  if (n <= 1) return 1;
+  return n * fact(n - 1);
+};
+
+console.log(factorial(5)); // 120
+```
+
+The name `fact` is available inside the function itself, which is useful for recursion and debugging.
+
+## IIFE - Immediately Invoked Function Expression
+
+An IIFE is a function expression that is created and called immediately.
+
+```javascript
+(function () {
+  const privateVar = "secret";
+  console.log(privateVar);
+})();
+
+const appVersion = (function () {
+  const major = 2;
+  const minor = 5;
+  return `${major}.${minor}`;
+})();
+```
+
+IIFEs were often used to create isolated scope before `let`, `const`, and ES modules became common.
+
+Today, modules and block scope usually make IIFEs unnecessary, but you should still recognize the pattern.
+
+## Summary
+
+- Function expressions are created as part of expressions.
+- They do not get the same hoisting behavior as function declarations.
+- They are especially useful for callbacks and conditional definitions.
+- Named function expressions help with recursion and debugging.
+- IIFEs create isolated scope, though modern JavaScript usually prefers modules and block scope.

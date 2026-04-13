@@ -1,0 +1,234 @@
+{
+  "id": "basics/logical-operators",
+  "locale": "uk",
+  "locales": {
+    "uk": true,
+    "en": true
+  },
+  "availableLocales": [
+    "uk",
+    "en"
+  ],
+  "title": "Логічні оператори",
+  "description": "Логічні оператори JavaScript: &&, ||, ! — short-circuit evaluation, повернення значень, ланцюги. Практичні патерни та антипатерни.",
+  "track": "basics",
+  "trackTitle": "Основи JavaScript",
+  "slug": "logical-operators",
+  "sourcePath": "uk/basics/logical-operators.html",
+  "sourceIdentity": {
+    "track": "basics",
+    "slug": "logical-operators"
+  },
+  "canonicalRoute": "/uk/docs/basics/logical-operators",
+  "canonicalLegacyPath": "/basics/logical-operators.html",
+  "legacyHtmlPath": "/uk/basics/logical-operators.html",
+  "legacyAliases": [
+    "/uk/basics/logical-operators.html",
+    "/uk/basics/logical-operators",
+    "/basics/logical-operators.html"
+  ],
+  "sectionOrder": 2,
+  "lessonOrder": 11,
+  "overallOrder": 15,
+  "articleNumber": "2.11",
+  "estimatedMinutes": 11,
+  "headings": [
+    {
+      "level": 2,
+      "id": "or",
+      "text": "|| — логічне АБО"
+    },
+    {
+      "level": 2,
+      "id": "and",
+      "text": "&&— логічне І"
+    },
+    {
+      "level": 2,
+      "id": "not",
+      "text": "! — логічне НЕ"
+    },
+    {
+      "level": 2,
+      "id": "priorytety-loh",
+      "text": "Пріоритет логічних операторів"
+    },
+    {
+      "level": 2,
+      "id": "patterns",
+      "text": "Практичні патерни"
+    },
+    {
+      "level": 2,
+      "id": "edge-cases",
+      "text": "Edge cases"
+    },
+    {
+      "level": 2,
+      "id": "summary",
+      "text": "Підсумок"
+    }
+  ],
+  "badges": [
+    "Початковий",
+    "Основи JavaScript",
+    "~ 11 хв"
+  ],
+  "donationLinks": [
+    "https://send.monobank.ua/jar/YOUR_JAR_ID",
+    "https://www.buymeacoffee.com/YOUR_HANDLE"
+  ],
+  "breadcrumbTrail": [
+    "Головна",
+    "Основи JavaScript",
+    "Логічні оператори"
+  ],
+  "relatedSourceTrack": "basics",
+  "contentFiles": {
+    "uk": "content/tracks/basics/logical-operators/index.uk.html",
+    "en": "content/tracks/basics/logical-operators/index.en.mdx"
+  },
+  "metadataFile": "content/tracks/basics/logical-operators/meta.json",
+  "translationStatus": {
+    "sourceLocale": "uk",
+    "availableLocales": [
+      "uk",
+      "en"
+    ],
+    "fallbackLocales": {},
+    "locales": {
+      "uk": {
+        "status": "published",
+        "filePath": "content/tracks/basics/logical-operators/index.uk.html",
+        "format": "html",
+        "title": "Логічні оператори",
+        "description": "Логічні оператори JavaScript: &&, ||, ! — short-circuit evaluation, повернення значень, ланцюги. Практичні патерни та антипатерни.",
+        "completeness": 100,
+        "isFallback": false,
+        "headings": [
+          {
+            "level": 2,
+            "id": "or",
+            "text": "|| — логічне АБО"
+          },
+          {
+            "level": 2,
+            "id": "and",
+            "text": "&&— логічне І"
+          },
+          {
+            "level": 2,
+            "id": "not",
+            "text": "! — логічне НЕ"
+          },
+          {
+            "level": 2,
+            "id": "priorytety-loh",
+            "text": "Пріоритет логічних операторів"
+          },
+          {
+            "level": 2,
+            "id": "patterns",
+            "text": "Практичні патерни"
+          },
+          {
+            "level": 2,
+            "id": "edge-cases",
+            "text": "Edge cases"
+          },
+          {
+            "level": 2,
+            "id": "summary",
+            "text": "Підсумок"
+          }
+        ]
+      },
+      "en": {
+        "status": "published",
+        "filePath": "content/tracks/basics/logical-operators/index.en.mdx",
+        "format": "mdx",
+        "title": "Logical Operators",
+        "description": "How `||`, `&&`, and `!` work in JavaScript, including short-circuit behavior and practical usage patterns.",
+        "completeness": 100,
+        "isFallback": false,
+        "headings": [
+          {
+            "level": 2,
+            "id": "logical-or",
+            "text": "`||` - logical OR"
+          },
+          {
+            "level": 2,
+            "id": "logical-and",
+            "text": "`&&` - logical AND"
+          },
+          {
+            "level": 2,
+            "id": "logical-not",
+            "text": "`!` - logical NOT"
+          },
+          {
+            "level": 2,
+            "id": "logical-operator-precedence",
+            "text": "Logical operator precedence"
+          },
+          {
+            "level": 2,
+            "id": "practical-patterns",
+            "text": "Practical patterns"
+          },
+          {
+            "level": 2,
+            "id": "edge-cases",
+            "text": "Edge cases"
+          },
+          {
+            "level": 2,
+            "id": "summary",
+            "text": "Summary"
+          }
+        ],
+        "slug": "logical-operators",
+        "track": "basics",
+        "locale": "en",
+        "sourceLocale": "uk",
+        "hasBody": true
+      }
+    }
+  },
+  "translationCompleteness": {
+    "uk": 100,
+    "en": 100
+  },
+  "migration": {
+    "migratedFromLegacy": true,
+    "canonicalIdentitySource": "canonical",
+    "override": null,
+    "articleMeta": {
+      "type": "string",
+      "raw": {
+        "secId": "basics",
+        "artId": "logical-operators"
+      },
+      "resolved": {
+        "track": "basics",
+        "slug": "logical-operators"
+      }
+    },
+    "mismatches": {
+      "filePathVsCanonical": false,
+      "filePathVsStringMeta": false,
+      "filePathVsNumericMeta": false
+    },
+    "hasLegacyJsonLd": true,
+    "hasLegacyToc": true,
+    "hasLegacyPrevNext": true,
+    "legacyArticleSupport": true
+  },
+  "bodySourcePath": "content/tracks/basics/logical-operators/index.uk.html",
+  "sourceProvenance": {
+    "sourcePath": "uk/basics/logical-operators.html",
+    "sourceTrack": "basics",
+    "sourceSlug": "logical-operators"
+  }
+}

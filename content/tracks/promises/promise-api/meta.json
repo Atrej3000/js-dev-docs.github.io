@@ -1,0 +1,191 @@
+{
+  "id": "promises/promise-api",
+  "locale": "uk",
+  "locales": {
+    "uk": true,
+    "en": false
+  },
+  "availableLocales": [
+    "uk"
+  ],
+  "title": "Promise API",
+  "description": "Promise API у JavaScript — детальний розбір з прикладами, підводними каменями та best practices.",
+  "track": "promises",
+  "trackTitle": "Проміси, async/await",
+  "slug": "promise-api",
+  "sourcePath": "uk/promises/promise-api.html",
+  "sourceIdentity": {
+    "track": "promises",
+    "slug": "promise-api"
+  },
+  "canonicalRoute": "/uk/docs/promises/promise-api",
+  "canonicalLegacyPath": "/promises/promise-api.html",
+  "legacyHtmlPath": "/uk/promises/promise-api.html",
+  "legacyAliases": [
+    "/uk/promises/promise-api.html",
+    "/uk/promises/promise-api",
+    "/promises/promise-api.html"
+  ],
+  "sectionOrder": 11,
+  "lessonOrder": 5,
+  "overallOrder": 79,
+  "articleNumber": "11.5",
+  "estimatedMinutes": 10,
+  "headings": [
+    {
+      "level": 2,
+      "id": "all",
+      "text": "Promise.all()"
+    },
+    {
+      "level": 2,
+      "id": "allsettled",
+      "text": "Promise.allSettled()"
+    },
+    {
+      "level": 2,
+      "id": "race",
+      "text": "Promise.race()"
+    },
+    {
+      "level": 2,
+      "id": "any",
+      "text": "Promise.any()"
+    },
+    {
+      "level": 2,
+      "id": "comparison",
+      "text": "Порівняльна таблиця"
+    },
+    {
+      "level": 2,
+      "id": "summary",
+      "text": "Підсумок"
+    }
+  ],
+  "badges": [
+    "Середній",
+    "Проміси, async/await",
+    "~ 10 хв"
+  ],
+  "donationLinks": [],
+  "breadcrumbTrail": [
+    "Головна",
+    "Проміси, async/await",
+    "Promise API"
+  ],
+  "relatedSourceTrack": "promises",
+  "contentFiles": {
+    "uk": "content/tracks/promises/promise-api/index.uk.html",
+    "en": "content/tracks/promises/promise-api/index.en.mdx"
+  },
+  "metadataFile": "content/tracks/promises/promise-api/meta.json",
+  "translationStatus": {
+    "sourceLocale": "uk",
+    "availableLocales": [
+      "uk"
+    ],
+    "fallbackLocales": {
+      "en": "uk"
+    },
+    "locales": {
+      "uk": {
+        "status": "published",
+        "filePath": "content/tracks/promises/promise-api/index.uk.html",
+        "format": "html",
+        "title": "Promise API",
+        "description": "Promise API у JavaScript — детальний розбір з прикладами, підводними каменями та best practices.",
+        "completeness": 100,
+        "isFallback": false,
+        "headings": [
+          {
+            "level": 2,
+            "id": "all",
+            "text": "Promise.all()"
+          },
+          {
+            "level": 2,
+            "id": "allsettled",
+            "text": "Promise.allSettled()"
+          },
+          {
+            "level": 2,
+            "id": "race",
+            "text": "Promise.race()"
+          },
+          {
+            "level": 2,
+            "id": "any",
+            "text": "Promise.any()"
+          },
+          {
+            "level": 2,
+            "id": "comparison",
+            "text": "Порівняльна таблиця"
+          },
+          {
+            "level": 2,
+            "id": "summary",
+            "text": "Підсумок"
+          }
+        ]
+      },
+      "en": {
+        "status": "draft",
+        "filePath": "content/tracks/promises/promise-api/index.en.mdx",
+        "format": "mdx",
+        "title": "TODO: Translate title",
+        "description": "TODO: Translate description",
+        "completeness": 0,
+        "isFallback": true,
+        "headings": [
+          {
+            "level": 2,
+            "id": "source-lesson",
+            "text": "Source lesson"
+          }
+        ],
+        "slug": "promise-api",
+        "track": "promises",
+        "locale": "en",
+        "sourceLocale": "uk",
+        "hasBody": true
+      }
+    }
+  },
+  "translationCompleteness": {
+    "uk": 100,
+    "en": 0
+  },
+  "migration": {
+    "migratedFromLegacy": true,
+    "canonicalIdentitySource": "canonical",
+    "override": null,
+    "articleMeta": {
+      "type": "numeric",
+      "raw": {
+        "secId": "11",
+        "artId": "5"
+      },
+      "resolved": {
+        "track": "promises",
+        "slug": "promise-api"
+      }
+    },
+    "mismatches": {
+      "filePathVsCanonical": false,
+      "filePathVsStringMeta": false,
+      "filePathVsNumericMeta": false
+    },
+    "hasLegacyJsonLd": false,
+    "hasLegacyToc": false,
+    "hasLegacyPrevNext": false,
+    "legacyArticleSupport": true
+  },
+  "bodySourcePath": "content/tracks/promises/promise-api/index.uk.html",
+  "sourceProvenance": {
+    "sourcePath": "uk/promises/promise-api.html",
+    "sourceTrack": "promises",
+    "sourceSlug": "promise-api"
+  }
+}

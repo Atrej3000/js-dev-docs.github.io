@@ -1,0 +1,67 @@
+<p>Синтаксис <code>new Function(...args, body)</code> дозволяє створювати функції динамічно з рядка коду. Особливість: такі функції замикаються на <strong>глобальний</strong> scope, а не на scope місця створення. Це важливо для мінімізаторів і серіалізації.</p>
+
+    <h2 id="syntax">Синтаксис</h2>
+    <div class="code-block"><div class="code-head"><span class="code-lang">JavaScript</span><button class="btn-copy" aria-label="Копіювати"></button></div>
+<pre><code class="language-javascript">// new Function([...argNames], functionBody)
+const add = new Function('a', 'b', 'return a + b');
+console.log(add(2, 3)); // 5
+
+// Без параметрів
+const greet = new Function('return "Hello!"');
+console.log(greet()); // 'Hello!'
+
+// Кілька параметрів — різні варіанти запису
+const fn1 = new Function('a', 'b', 'c', 'return a + b + c');
+const fn2 = new Function('a,b,c', 'return a + b + c');
+const fn3 = new Function('a, b, c', 'return a + b + c');
+// Всі еквівалентні</code></pre></div>
+
+    <h2 id="global-scope">Глобальний scope</h2>
+    <div class="code-block"><div class="code-head"><span class="code-lang">JavaScript</span><button class="btn-copy" aria-label="Копіювати"></button></div>
+<pre><code class="language-javascript">const value = 'outer';
+
+function createFn() {
+  const value = 'inner';
+
+  // Звичайна функція — замикання на inner scope
+  const regular = () => value;
+
+  // new Function — глобальний scope
+  const dynamic = new Function('return value');
+
+  console.log(regular()); // 'inner'
+  // console.log(dynamic()); // ReferenceError або 'outer' (якщо value у global)
+}
+createFn();</code></pre></div>
+    <div class="callout callout-warn"><p>Після мінімізації (minification) локальні змінні перейменовуються. Функція, створена через <code>new Function</code>, посилається на глобальний scope за іменем — і знайде лише те, що там є. Ніколи не покладайся на локальні змінні всередині <code>new Function</code>.</p></div>
+
+    <h2 id="usecases">Де реально використовується</h2>
+    <div class="code-block"><div class="code-head"><span class="code-lang">JavaScript</span><button class="btn-copy" aria-label="Копіювати"></button></div>
+<pre><code class="language-javascript">// 1. Отримання функції з сервера (template engine, formula evaluator)
+async function loadValidator(serverCode) {
+  // serverCode = "if (value < 0) return 'negative';"
+  const validate = new Function('value', serverCode);
+  return validate;
+}
+
+// 2. Динамічна компіляція шаблону
+function compileTemplate(template) {
+  // 'Hello, {{name}}!' → функція з підстановкою
+  const body = 'return `' + template.replace(/{{(\w+)}}/g, '${data.$1}') + '`';
+  return new Function('data', body);
+}
+const tmpl = compileTemplate('Hello, {{name}}! You are {{age}} years old.');
+console.log(tmpl({ name: 'Alice', age: 30 }));
+
+// 3. JSON.parse з eval — НЕ робіть так (небезпечно)
+// const data = new Function('return ' + json)(); // вразливість XSS!</code></pre></div>
+    <div class="callout callout-info"><p>У безпечних середовищах <code>new Function</code> заблоковано Content Security Policy (CSP). Це ще одна причина використовувати його лише як останній засіб, а не загальний підхід.</p></div>
+
+    <h2 id="summary">Підсумок</h2>
+    <ul>
+      <li><code>new Function(args, body)</code> — динамічна компіляція функції з рядка</li>
+      <li>Scope — завжди глобальний, не місця створення</li>
+      <li>Проблеми: мінімізатори зламають посилання на локальні змінні</li>
+      <li>Безпека: ніколи не підставляй у <code>body</code> дані від користувача — XSS</li>
+      <li>Реальне застосування: шаблонізатори, динамічні validators, отримані з сервера формули</li>
+    </ul>

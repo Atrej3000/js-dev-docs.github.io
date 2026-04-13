@@ -1,0 +1,116 @@
+<p><code>Symbol</code> — примітивний тип що представляє гарантовано унікальний ідентифікатор. Навіть два символи з однаковим описом не рівні між собою. Символи використовуються як ключі властивостей для запобігання конфліктів імен.</p>
+
+          <h2 id="stvorennya">Створення і унікальність</h2>
+          <div class="code-block">
+            <div class="code-head"><span class="code-lang">JavaScript</span><button class="btn-copy" aria-label="Копіювати"></button></div>
+<pre><code class="language-javascript">// Symbol() — завжди унікальний
+const id1 = Symbol('id');
+const id2 = Symbol('id');
+
+console.log(id1 === id2);  // false — різні символи незважаючи на однаковий опис
+console.log(typeof id1);   // "symbol"
+
+// Опис (description) — лише для налагодження
+console.log(id1.description);   // "id"
+console.log(id1.toString());    // "Symbol(id)"
+
+// Symbol не конвертується в рядок автоматично
+// console.log(`id: ${id1}`); // TypeError
+console.log(`id: ${id1.toString()}`); // OK
+console.log(`id: ${String(id1)}`);    // OK</code></pre>
+          </div>
+
+          <h2 id="klyuchi">Symbol як ключі об'єкта</h2>
+          <div class="code-block">
+            <div class="code-head"><span class="code-lang">JavaScript</span><button class="btn-copy" aria-label="Копіювати"></button></div>
+<pre><code class="language-javascript">const USER_ID = Symbol('userId');
+const ROLE    = Symbol('role');
+
+const user = {
+  name: 'Олена',
+  [USER_ID]: 42,      // Symbol-ключ
+  [ROLE]: 'admin',
+};
+
+console.log(user[USER_ID]); // 42
+console.log(user[ROLE]);    // "admin"
+
+// Symbol-ключі невидимі для стандартних ітерацій
+console.log(Object.keys(user));   // ['name'] — без символів
+console.log(JSON.stringify(user)); // '{"name":"Олена"}' — символи пропущені
+
+// Але доступні через спеціальний метод
+console.log(Object.getOwnPropertySymbols(user)); // [Symbol(userId), Symbol(role)]
+
+// Reflect.ownKeys — повертає всі ключи включно з символами
+console.log(Reflect.ownKeys(user)); // ['name', Symbol(userId), Symbol(role)]</code></pre>
+          </div>
+
+          <h2 id="symbol-for">Symbol.for — глобальний реєстр</h2>
+          <div class="code-block">
+            <div class="code-head"><span class="code-lang">JavaScript</span><button class="btn-copy" aria-label="Копіювати"></button></div>
+<pre><code class="language-javascript">// Symbol.for шукає в глобальному реєстрі або створює
+const s1 = Symbol.for('shared.key');
+const s2 = Symbol.for('shared.key');
+
+console.log(s1 === s2); // true — однаковий символ з реєстру
+
+// Symbol.keyFor — отримати опис зареєстрованого символу
+console.log(Symbol.keyFor(s1));        // "shared.key"
+console.log(Symbol.keyFor(Symbol())); // undefined — локальний символ не в реєстрі</code></pre>
+          </div>
+
+          <h2 id="well-known">Well-known Symbols</h2>
+          <p>ECMAScript визначає вбудовані символи (<em>well-known symbols</em>), що керують поведінкою об'єктів. Вони доступні як статичні властивості <code>Symbol</code>.</p>
+
+          <div class="code-block">
+            <div class="code-head"><span class="code-lang">JavaScript</span><button class="btn-copy" aria-label="Копіювати"></button></div>
+<pre><code class="language-javascript">// Symbol.iterator — робить об'єкт iterable
+const range = {
+  from: 1,
+  to: 5,
+  [Symbol.iterator]() {
+    let current = this.from;
+    const last  = this.to;
+    return {
+      next() {
+        return current <= last
+          ? { value: current++, done: false }
+          : { value: undefined, done: true };
+      }
+    };
+  }
+};
+
+for (const num of range) {
+  console.log(num); // 1, 2, 3, 4, 5
+}
+
+// Symbol.toPrimitive — перетворення в примітив
+const temperature = {
+  value: 22,
+  [Symbol.toPrimitive](hint) {
+    if (hint === 'number') return this.value;
+    if (hint === 'string') return `${this.value}°C`;
+    return this.value;
+  }
+};
+
+console.log(+temperature);         // 22
+console.log(`${temperature}`);     // "22°C"
+
+// Symbol.hasInstance — поведінка instanceof
+// Symbol.species — конструктор для похідних об'єктів
+// Symbol.asyncIterator — асинхронна ітерація</code></pre>
+          </div>
+
+          <h2 id="summary">Підсумок</h2>
+          <ul>
+            <li><code>Symbol()</code> — завжди унікальний. Два символи з однаковим описом не рівні.</li>
+            <li>Symbol-ключі не видимі для <code>Object.keys</code>, <code>for...in</code>, <code>JSON.stringify</code>.</li>
+            <li><code>Object.getOwnPropertySymbols</code> / <code>Reflect.ownKeys</code> — для доступу до Symbol-ключів.</li>
+            <li><code>Symbol.for</code> — глобальний реєстр: одне ім'я = один символ.</li>
+            <li>Well-known symbols (<code>Symbol.iterator</code>, <code>Symbol.toPrimitive</code> тощо) керують вбудованою поведінкою.</li>
+          </ul>
+
+          <div class="article-support"><p><strong>Матеріал корисний?</strong> Підтримай проект.</p><div class="support-btns-inline"><a href="https://send.monobank.ua/jar/YOUR_JAR_ID" class="btn-mono" target="_blank" rel="noopener" style="font-size:12px;height:36px;padding:0 14px">🟢 Monobank</a><a href="https://www.buymeacoffee.com/YOUR_HANDLE" class="btn-coffee" target="_blank" rel="noopener" style="font-size:12px;height:36px;padding:0 14px">☕ Coffee</a></div></div>

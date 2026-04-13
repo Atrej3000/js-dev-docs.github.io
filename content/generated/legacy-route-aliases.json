@@ -1,0 +1,1694 @@
+[
+  {
+    "alias": "/uk/basics/arrow-functions.html",
+    "destination": "/uk/docs/basics/arrow-functions",
+    "type": "legacy-html",
+    "sourcePath": "uk/basics/arrow-functions.html"
+  },
+  {
+    "alias": "/uk/basics/arrow-functions",
+    "destination": "/uk/docs/basics/arrow-functions",
+    "type": "legacy-docs-alias",
+    "sourcePath": "uk/basics/arrow-functions.html"
+  },
+  {
+    "alias": "/basics/arrow-functions.html",
+    "destination": "/uk/docs/basics/arrow-functions",
+    "type": "legacy-canonical-path",
+    "sourcePath": "uk/basics/arrow-functions.html"
+  },
+  {
+    "alias": "/uk/basics/code-structure.html",
+    "destination": "/uk/docs/basics/code-structure",
+    "type": "legacy-html",
+    "sourcePath": "uk/basics/code-structure.html"
+  },
+  {
+    "alias": "/uk/basics/code-structure",
+    "destination": "/uk/docs/basics/code-structure",
+    "type": "legacy-docs-alias",
+    "sourcePath": "uk/basics/code-structure.html"
+  },
+  {
+    "alias": "/basics/code-structure.html",
+    "destination": "/uk/docs/basics/code-structure",
+    "type": "legacy-canonical-path",
+    "sourcePath": "uk/basics/code-structure.html"
+  },
+  {
+    "alias": "/uk/basics/comparisons.html",
+    "destination": "/uk/docs/basics/comparison",
+    "type": "legacy-html",
+    "sourcePath": "uk/basics/comparisons.html"
+  },
+  {
+    "alias": "/uk/basics/comparisons",
+    "destination": "/uk/docs/basics/comparison",
+    "type": "legacy-docs-alias",
+    "sourcePath": "uk/basics/comparisons.html"
+  },
+  {
+    "alias": "/basics/comparison.html",
+    "destination": "/uk/docs/basics/comparison",
+    "type": "legacy-canonical-path",
+    "sourcePath": "uk/basics/comparisons.html"
+  },
+  {
+    "alias": "/uk/basics/function-expressions.html",
+    "destination": "/uk/docs/basics/function-expressions",
+    "type": "legacy-html",
+    "sourcePath": "uk/basics/function-expressions.html"
+  },
+  {
+    "alias": "/uk/basics/function-expressions",
+    "destination": "/uk/docs/basics/function-expressions",
+    "type": "legacy-docs-alias",
+    "sourcePath": "uk/basics/function-expressions.html"
+  },
+  {
+    "alias": "/basics/function-expressions.html",
+    "destination": "/uk/docs/basics/function-expressions",
+    "type": "legacy-canonical-path",
+    "sourcePath": "uk/basics/function-expressions.html"
+  },
+  {
+    "alias": "/uk/basics/functions.html",
+    "destination": "/uk/docs/basics/function-basics",
+    "type": "legacy-html",
+    "sourcePath": "uk/basics/functions.html"
+  },
+  {
+    "alias": "/uk/basics/functions",
+    "destination": "/uk/docs/basics/function-basics",
+    "type": "legacy-docs-alias",
+    "sourcePath": "uk/basics/functions.html"
+  },
+  {
+    "alias": "/basics/function-basics.html",
+    "destination": "/uk/docs/basics/function-basics",
+    "type": "legacy-canonical-path",
+    "sourcePath": "uk/basics/functions.html"
+  },
+  {
+    "alias": "/uk/basics/hello-world.html",
+    "destination": "/uk/docs/basics/hello-world",
+    "type": "legacy-html",
+    "sourcePath": "uk/basics/hello-world.html"
+  },
+  {
+    "alias": "/uk/basics/hello-world",
+    "destination": "/uk/docs/basics/hello-world",
+    "type": "legacy-docs-alias",
+    "sourcePath": "uk/basics/hello-world.html"
+  },
+  {
+    "alias": "/basics/hello-world.html",
+    "destination": "/uk/docs/basics/hello-world",
+    "type": "legacy-canonical-path",
+    "sourcePath": "uk/basics/hello-world.html"
+  },
+  {
+    "alias": "/uk/basics/if-else.html",
+    "destination": "/uk/docs/basics/ifelse",
+    "type": "legacy-html",
+    "sourcePath": "uk/basics/if-else.html"
+  },
+  {
+    "alias": "/uk/basics/if-else",
+    "destination": "/uk/docs/basics/ifelse",
+    "type": "legacy-docs-alias",
+    "sourcePath": "uk/basics/if-else.html"
+  },
+  {
+    "alias": "/basics/ifelse.html",
+    "destination": "/uk/docs/basics/ifelse",
+    "type": "legacy-canonical-path",
+    "sourcePath": "uk/basics/if-else.html"
+  },
+  {
+    "alias": "/uk/basics/interaction.html",
+    "destination": "/uk/docs/basics/interaction",
+    "type": "legacy-html",
+    "sourcePath": "uk/basics/interaction.html"
+  },
+  {
+    "alias": "/uk/basics/interaction",
+    "destination": "/uk/docs/basics/interaction",
+    "type": "legacy-docs-alias",
+    "sourcePath": "uk/basics/interaction.html"
+  },
+  {
+    "alias": "/basics/interaction.html",
+    "destination": "/uk/docs/basics/interaction",
+    "type": "legacy-canonical-path",
+    "sourcePath": "uk/basics/interaction.html"
+  },
+  {
+    "alias": "/uk/basics/js-specials.html",
+    "destination": "/uk/docs/basics/javascript-specials",
+    "type": "legacy-html",
+    "sourcePath": "uk/basics/js-specials.html"
+  },
+  {
+    "alias": "/uk/basics/js-specials",
+    "destination": "/uk/docs/basics/javascript-specials",
+    "type": "legacy-docs-alias",
+    "sourcePath": "uk/basics/js-specials.html"
+  },
+  {
+    "alias": "/basics/javascript-specials.html",
+    "destination": "/uk/docs/basics/javascript-specials",
+    "type": "legacy-canonical-path",
+    "sourcePath": "uk/basics/js-specials.html"
+  },
+  {
+    "alias": "/uk/basics/logical-operators.html",
+    "destination": "/uk/docs/basics/logical-operators",
+    "type": "legacy-html",
+    "sourcePath": "uk/basics/logical-operators.html"
+  },
+  {
+    "alias": "/uk/basics/logical-operators",
+    "destination": "/uk/docs/basics/logical-operators",
+    "type": "legacy-docs-alias",
+    "sourcePath": "uk/basics/logical-operators.html"
+  },
+  {
+    "alias": "/basics/logical-operators.html",
+    "destination": "/uk/docs/basics/logical-operators",
+    "type": "legacy-canonical-path",
+    "sourcePath": "uk/basics/logical-operators.html"
+  },
+  {
+    "alias": "/uk/basics/loops.html",
+    "destination": "/uk/docs/basics/loops",
+    "type": "legacy-html",
+    "sourcePath": "uk/basics/loops.html"
+  },
+  {
+    "alias": "/uk/basics/loops",
+    "destination": "/uk/docs/basics/loops",
+    "type": "legacy-docs-alias",
+    "sourcePath": "uk/basics/loops.html"
+  },
+  {
+    "alias": "/basics/loops.html",
+    "destination": "/uk/docs/basics/loops",
+    "type": "legacy-canonical-path",
+    "sourcePath": "uk/basics/loops.html"
+  },
+  {
+    "alias": "/uk/basics/nullish-coalescing.html",
+    "destination": "/uk/docs/basics/nullish-coalescing",
+    "type": "legacy-html",
+    "sourcePath": "uk/basics/nullish-coalescing.html"
+  },
+  {
+    "alias": "/uk/basics/nullish-coalescing",
+    "destination": "/uk/docs/basics/nullish-coalescing",
+    "type": "legacy-docs-alias",
+    "sourcePath": "uk/basics/nullish-coalescing.html"
+  },
+  {
+    "alias": "/basics/nullish-coalescing.html",
+    "destination": "/uk/docs/basics/nullish-coalescing",
+    "type": "legacy-canonical-path",
+    "sourcePath": "uk/basics/nullish-coalescing.html"
+  },
+  {
+    "alias": "/uk/basics/operators.html",
+    "destination": "/uk/docs/basics/operators",
+    "type": "legacy-html",
+    "sourcePath": "uk/basics/operators.html"
+  },
+  {
+    "alias": "/uk/basics/operators",
+    "destination": "/uk/docs/basics/operators",
+    "type": "legacy-docs-alias",
+    "sourcePath": "uk/basics/operators.html"
+  },
+  {
+    "alias": "/basics/operators.html",
+    "destination": "/uk/docs/basics/operators",
+    "type": "legacy-canonical-path",
+    "sourcePath": "uk/basics/operators.html"
+  },
+  {
+    "alias": "/uk/basics/strict-mode.html",
+    "destination": "/uk/docs/basics/use-strict",
+    "type": "legacy-html",
+    "sourcePath": "uk/basics/strict-mode.html"
+  },
+  {
+    "alias": "/uk/basics/strict-mode",
+    "destination": "/uk/docs/basics/use-strict",
+    "type": "legacy-docs-alias",
+    "sourcePath": "uk/basics/strict-mode.html"
+  },
+  {
+    "alias": "/basics/use-strict.html",
+    "destination": "/uk/docs/basics/use-strict",
+    "type": "legacy-canonical-path",
+    "sourcePath": "uk/basics/strict-mode.html"
+  },
+  {
+    "alias": "/uk/basics/switch.html",
+    "destination": "/uk/docs/basics/switch",
+    "type": "legacy-html",
+    "sourcePath": "uk/basics/switch.html"
+  },
+  {
+    "alias": "/uk/basics/switch",
+    "destination": "/uk/docs/basics/switch",
+    "type": "legacy-docs-alias",
+    "sourcePath": "uk/basics/switch.html"
+  },
+  {
+    "alias": "/basics/switch.html",
+    "destination": "/uk/docs/basics/switch",
+    "type": "legacy-canonical-path",
+    "sourcePath": "uk/basics/switch.html"
+  },
+  {
+    "alias": "/uk/basics/type-casting.html",
+    "destination": "/uk/docs/basics/type-conversions",
+    "type": "legacy-html",
+    "sourcePath": "uk/basics/type-casting.html"
+  },
+  {
+    "alias": "/uk/basics/type-casting",
+    "destination": "/uk/docs/basics/type-conversions",
+    "type": "legacy-docs-alias",
+    "sourcePath": "uk/basics/type-casting.html"
+  },
+  {
+    "alias": "/basics/type-conversions.html",
+    "destination": "/uk/docs/basics/type-conversions",
+    "type": "legacy-canonical-path",
+    "sourcePath": "uk/basics/type-casting.html"
+  },
+  {
+    "alias": "/uk/basics/types.html",
+    "destination": "/uk/docs/basics/data-types",
+    "type": "legacy-html",
+    "sourcePath": "uk/basics/types.html"
+  },
+  {
+    "alias": "/uk/basics/types",
+    "destination": "/uk/docs/basics/data-types",
+    "type": "legacy-docs-alias",
+    "sourcePath": "uk/basics/types.html"
+  },
+  {
+    "alias": "/basics/data-types.html",
+    "destination": "/uk/docs/basics/data-types",
+    "type": "legacy-canonical-path",
+    "sourcePath": "uk/basics/types.html"
+  },
+  {
+    "alias": "/uk/basics/variables.html",
+    "destination": "/uk/docs/basics/variables",
+    "type": "legacy-html",
+    "sourcePath": "uk/basics/variables.html"
+  },
+  {
+    "alias": "/uk/basics/variables",
+    "destination": "/uk/docs/basics/variables",
+    "type": "legacy-docs-alias",
+    "sourcePath": "uk/basics/variables.html"
+  },
+  {
+    "alias": "/basics/variables.html",
+    "destination": "/uk/docs/basics/variables",
+    "type": "legacy-canonical-path",
+    "sourcePath": "uk/basics/variables.html"
+  },
+  {
+    "alias": "/uk/classes/class-inheritance.html",
+    "destination": "/uk/docs/classes/class-inheritance",
+    "type": "legacy-html",
+    "sourcePath": "uk/classes/class-inheritance.html"
+  },
+  {
+    "alias": "/uk/classes/class-inheritance",
+    "destination": "/uk/docs/classes/class-inheritance",
+    "type": "legacy-docs-alias",
+    "sourcePath": "uk/classes/class-inheritance.html"
+  },
+  {
+    "alias": "/classes/class-inheritance.html",
+    "destination": "/uk/docs/classes/class-inheritance",
+    "type": "legacy-canonical-path",
+    "sourcePath": "uk/classes/class-inheritance.html"
+  },
+  {
+    "alias": "/uk/classes/class.html",
+    "destination": "/uk/docs/classes/class",
+    "type": "legacy-html",
+    "sourcePath": "uk/classes/class.html"
+  },
+  {
+    "alias": "/uk/classes/class",
+    "destination": "/uk/docs/classes/class",
+    "type": "legacy-docs-alias",
+    "sourcePath": "uk/classes/class.html"
+  },
+  {
+    "alias": "/classes/class.html",
+    "destination": "/uk/docs/classes/class",
+    "type": "legacy-canonical-path",
+    "sourcePath": "uk/classes/class.html"
+  },
+  {
+    "alias": "/uk/classes/extending-built-ins.html",
+    "destination": "/uk/docs/classes/extending-built-in",
+    "type": "legacy-html",
+    "sourcePath": "uk/classes/extending-built-ins.html"
+  },
+  {
+    "alias": "/uk/classes/extending-built-ins",
+    "destination": "/uk/docs/classes/extending-built-in",
+    "type": "legacy-docs-alias",
+    "sourcePath": "uk/classes/extending-built-ins.html"
+  },
+  {
+    "alias": "/classes/extending-built-in.html",
+    "destination": "/uk/docs/classes/extending-built-in",
+    "type": "legacy-canonical-path",
+    "sourcePath": "uk/classes/extending-built-ins.html"
+  },
+  {
+    "alias": "/uk/classes/instanceof.html",
+    "destination": "/uk/docs/classes/instanceof",
+    "type": "legacy-html",
+    "sourcePath": "uk/classes/instanceof.html"
+  },
+  {
+    "alias": "/uk/classes/instanceof",
+    "destination": "/uk/docs/classes/instanceof",
+    "type": "legacy-docs-alias",
+    "sourcePath": "uk/classes/instanceof.html"
+  },
+  {
+    "alias": "/classes/instanceof.html",
+    "destination": "/uk/docs/classes/instanceof",
+    "type": "legacy-canonical-path",
+    "sourcePath": "uk/classes/instanceof.html"
+  },
+  {
+    "alias": "/uk/classes/mixins.html",
+    "destination": "/uk/docs/classes/mixins",
+    "type": "legacy-html",
+    "sourcePath": "uk/classes/mixins.html"
+  },
+  {
+    "alias": "/uk/classes/mixins",
+    "destination": "/uk/docs/classes/mixins",
+    "type": "legacy-docs-alias",
+    "sourcePath": "uk/classes/mixins.html"
+  },
+  {
+    "alias": "/classes/mixins.html",
+    "destination": "/uk/docs/classes/mixins",
+    "type": "legacy-canonical-path",
+    "sourcePath": "uk/classes/mixins.html"
+  },
+  {
+    "alias": "/uk/classes/private-protected-properties-methods.html",
+    "destination": "/uk/docs/classes/private-protected",
+    "type": "legacy-html",
+    "sourcePath": "uk/classes/private-protected-properties-methods.html"
+  },
+  {
+    "alias": "/uk/classes/private-protected-properties-methods",
+    "destination": "/uk/docs/classes/private-protected",
+    "type": "legacy-docs-alias",
+    "sourcePath": "uk/classes/private-protected-properties-methods.html"
+  },
+  {
+    "alias": "/classes/private-protected.html",
+    "destination": "/uk/docs/classes/private-protected",
+    "type": "legacy-canonical-path",
+    "sourcePath": "uk/classes/private-protected-properties-methods.html"
+  },
+  {
+    "alias": "/uk/classes/static-properties-methods.html",
+    "destination": "/uk/docs/classes/static-properties",
+    "type": "legacy-html",
+    "sourcePath": "uk/classes/static-properties-methods.html"
+  },
+  {
+    "alias": "/uk/classes/static-properties-methods",
+    "destination": "/uk/docs/classes/static-properties",
+    "type": "legacy-docs-alias",
+    "sourcePath": "uk/classes/static-properties-methods.html"
+  },
+  {
+    "alias": "/classes/static-properties.html",
+    "destination": "/uk/docs/classes/static-properties",
+    "type": "legacy-canonical-path",
+    "sourcePath": "uk/classes/static-properties-methods.html"
+  },
+  {
+    "alias": "/uk/code-quality/coding-style.html",
+    "destination": "/uk/docs/code-quality/coding-style",
+    "type": "legacy-html",
+    "sourcePath": "uk/code-quality/coding-style.html"
+  },
+  {
+    "alias": "/uk/code-quality/coding-style",
+    "destination": "/uk/docs/code-quality/coding-style",
+    "type": "legacy-docs-alias",
+    "sourcePath": "uk/code-quality/coding-style.html"
+  },
+  {
+    "alias": "/code-quality/coding-style.html",
+    "destination": "/uk/docs/code-quality/coding-style",
+    "type": "legacy-canonical-path",
+    "sourcePath": "uk/code-quality/coding-style.html"
+  },
+  {
+    "alias": "/uk/code-quality/comments.html",
+    "destination": "/uk/docs/code-quality/comments",
+    "type": "legacy-html",
+    "sourcePath": "uk/code-quality/comments.html"
+  },
+  {
+    "alias": "/uk/code-quality/comments",
+    "destination": "/uk/docs/code-quality/comments",
+    "type": "legacy-docs-alias",
+    "sourcePath": "uk/code-quality/comments.html"
+  },
+  {
+    "alias": "/code-quality/comments.html",
+    "destination": "/uk/docs/code-quality/comments",
+    "type": "legacy-canonical-path",
+    "sourcePath": "uk/code-quality/comments.html"
+  },
+  {
+    "alias": "/uk/code-quality/debugging.html",
+    "destination": "/uk/docs/code-quality/debugging",
+    "type": "legacy-html",
+    "sourcePath": "uk/code-quality/debugging.html"
+  },
+  {
+    "alias": "/uk/code-quality/debugging",
+    "destination": "/uk/docs/code-quality/debugging",
+    "type": "legacy-docs-alias",
+    "sourcePath": "uk/code-quality/debugging.html"
+  },
+  {
+    "alias": "/code-quality/debugging.html",
+    "destination": "/uk/docs/code-quality/debugging",
+    "type": "legacy-canonical-path",
+    "sourcePath": "uk/code-quality/debugging.html"
+  },
+  {
+    "alias": "/uk/code-quality/ninja-code.html",
+    "destination": "/uk/docs/code-quality/ninja-code",
+    "type": "legacy-html",
+    "sourcePath": "uk/code-quality/ninja-code.html"
+  },
+  {
+    "alias": "/uk/code-quality/ninja-code",
+    "destination": "/uk/docs/code-quality/ninja-code",
+    "type": "legacy-docs-alias",
+    "sourcePath": "uk/code-quality/ninja-code.html"
+  },
+  {
+    "alias": "/code-quality/ninja-code.html",
+    "destination": "/uk/docs/code-quality/ninja-code",
+    "type": "legacy-canonical-path",
+    "sourcePath": "uk/code-quality/ninja-code.html"
+  },
+  {
+    "alias": "/uk/code-quality/polyfills.html",
+    "destination": "/uk/docs/code-quality/polyfills",
+    "type": "legacy-html",
+    "sourcePath": "uk/code-quality/polyfills.html"
+  },
+  {
+    "alias": "/uk/code-quality/polyfills",
+    "destination": "/uk/docs/code-quality/polyfills",
+    "type": "legacy-docs-alias",
+    "sourcePath": "uk/code-quality/polyfills.html"
+  },
+  {
+    "alias": "/code-quality/polyfills.html",
+    "destination": "/uk/docs/code-quality/polyfills",
+    "type": "legacy-canonical-path",
+    "sourcePath": "uk/code-quality/polyfills.html"
+  },
+  {
+    "alias": "/uk/code-quality/testing.html",
+    "destination": "/uk/docs/code-quality/testing-mocha",
+    "type": "legacy-html",
+    "sourcePath": "uk/code-quality/testing.html"
+  },
+  {
+    "alias": "/uk/code-quality/testing",
+    "destination": "/uk/docs/code-quality/testing-mocha",
+    "type": "legacy-docs-alias",
+    "sourcePath": "uk/code-quality/testing.html"
+  },
+  {
+    "alias": "/code-quality/testing-mocha.html",
+    "destination": "/uk/docs/code-quality/testing-mocha",
+    "type": "legacy-canonical-path",
+    "sourcePath": "uk/code-quality/testing.html"
+  },
+  {
+    "alias": "/uk/data-types/array-methods.html",
+    "destination": "/uk/docs/data-types/array-methods",
+    "type": "legacy-html",
+    "sourcePath": "uk/data-types/array-methods.html"
+  },
+  {
+    "alias": "/uk/data-types/array-methods",
+    "destination": "/uk/docs/data-types/array-methods",
+    "type": "legacy-docs-alias",
+    "sourcePath": "uk/data-types/array-methods.html"
+  },
+  {
+    "alias": "/data-types/array-methods.html",
+    "destination": "/uk/docs/data-types/array-methods",
+    "type": "legacy-canonical-path",
+    "sourcePath": "uk/data-types/array-methods.html"
+  },
+  {
+    "alias": "/uk/data-types/array.html",
+    "destination": "/uk/docs/data-types/array",
+    "type": "legacy-html",
+    "sourcePath": "uk/data-types/array.html"
+  },
+  {
+    "alias": "/uk/data-types/array",
+    "destination": "/uk/docs/data-types/array",
+    "type": "legacy-docs-alias",
+    "sourcePath": "uk/data-types/array.html"
+  },
+  {
+    "alias": "/data-types/array.html",
+    "destination": "/uk/docs/data-types/array",
+    "type": "legacy-canonical-path",
+    "sourcePath": "uk/data-types/array.html"
+  },
+  {
+    "alias": "/uk/data-types/date.html",
+    "destination": "/uk/docs/data-types/date",
+    "type": "legacy-html",
+    "sourcePath": "uk/data-types/date.html"
+  },
+  {
+    "alias": "/uk/data-types/date",
+    "destination": "/uk/docs/data-types/date",
+    "type": "legacy-docs-alias",
+    "sourcePath": "uk/data-types/date.html"
+  },
+  {
+    "alias": "/data-types/date.html",
+    "destination": "/uk/docs/data-types/date",
+    "type": "legacy-canonical-path",
+    "sourcePath": "uk/data-types/date.html"
+  },
+  {
+    "alias": "/uk/data-types/destructuring-assignment.html",
+    "destination": "/uk/docs/data-types/destructuring-assignment",
+    "type": "legacy-html",
+    "sourcePath": "uk/data-types/destructuring-assignment.html"
+  },
+  {
+    "alias": "/uk/data-types/destructuring-assignment",
+    "destination": "/uk/docs/data-types/destructuring-assignment",
+    "type": "legacy-docs-alias",
+    "sourcePath": "uk/data-types/destructuring-assignment.html"
+  },
+  {
+    "alias": "/data-types/destructuring-assignment.html",
+    "destination": "/uk/docs/data-types/destructuring-assignment",
+    "type": "legacy-canonical-path",
+    "sourcePath": "uk/data-types/destructuring-assignment.html"
+  },
+  {
+    "alias": "/uk/data-types/iterables.html",
+    "destination": "/uk/docs/data-types/iterables",
+    "type": "legacy-html",
+    "sourcePath": "uk/data-types/iterables.html"
+  },
+  {
+    "alias": "/uk/data-types/iterables",
+    "destination": "/uk/docs/data-types/iterables",
+    "type": "legacy-docs-alias",
+    "sourcePath": "uk/data-types/iterables.html"
+  },
+  {
+    "alias": "/data-types/iterables.html",
+    "destination": "/uk/docs/data-types/iterables",
+    "type": "legacy-canonical-path",
+    "sourcePath": "uk/data-types/iterables.html"
+  },
+  {
+    "alias": "/uk/data-types/json.html",
+    "destination": "/uk/docs/data-types/json",
+    "type": "legacy-html",
+    "sourcePath": "uk/data-types/json.html"
+  },
+  {
+    "alias": "/uk/data-types/json",
+    "destination": "/uk/docs/data-types/json",
+    "type": "legacy-docs-alias",
+    "sourcePath": "uk/data-types/json.html"
+  },
+  {
+    "alias": "/data-types/json.html",
+    "destination": "/uk/docs/data-types/json",
+    "type": "legacy-canonical-path",
+    "sourcePath": "uk/data-types/json.html"
+  },
+  {
+    "alias": "/uk/data-types/keys-values-entries.html",
+    "destination": "/uk/docs/data-types/keys-values-entries",
+    "type": "legacy-html",
+    "sourcePath": "uk/data-types/keys-values-entries.html"
+  },
+  {
+    "alias": "/uk/data-types/keys-values-entries",
+    "destination": "/uk/docs/data-types/keys-values-entries",
+    "type": "legacy-docs-alias",
+    "sourcePath": "uk/data-types/keys-values-entries.html"
+  },
+  {
+    "alias": "/data-types/keys-values-entries.html",
+    "destination": "/uk/docs/data-types/keys-values-entries",
+    "type": "legacy-canonical-path",
+    "sourcePath": "uk/data-types/keys-values-entries.html"
+  },
+  {
+    "alias": "/uk/data-types/map-set.html",
+    "destination": "/uk/docs/data-types/map-set",
+    "type": "legacy-html",
+    "sourcePath": "uk/data-types/map-set.html"
+  },
+  {
+    "alias": "/uk/data-types/map-set",
+    "destination": "/uk/docs/data-types/map-set",
+    "type": "legacy-docs-alias",
+    "sourcePath": "uk/data-types/map-set.html"
+  },
+  {
+    "alias": "/data-types/map-set.html",
+    "destination": "/uk/docs/data-types/map-set",
+    "type": "legacy-canonical-path",
+    "sourcePath": "uk/data-types/map-set.html"
+  },
+  {
+    "alias": "/uk/data-types/number.html",
+    "destination": "/uk/docs/data-types/number",
+    "type": "legacy-html",
+    "sourcePath": "uk/data-types/number.html"
+  },
+  {
+    "alias": "/uk/data-types/number",
+    "destination": "/uk/docs/data-types/number",
+    "type": "legacy-docs-alias",
+    "sourcePath": "uk/data-types/number.html"
+  },
+  {
+    "alias": "/data-types/number.html",
+    "destination": "/uk/docs/data-types/number",
+    "type": "legacy-canonical-path",
+    "sourcePath": "uk/data-types/number.html"
+  },
+  {
+    "alias": "/uk/data-types/primitives-methods.html",
+    "destination": "/uk/docs/data-types/primitives-methods",
+    "type": "legacy-html",
+    "sourcePath": "uk/data-types/primitives-methods.html"
+  },
+  {
+    "alias": "/uk/data-types/primitives-methods",
+    "destination": "/uk/docs/data-types/primitives-methods",
+    "type": "legacy-docs-alias",
+    "sourcePath": "uk/data-types/primitives-methods.html"
+  },
+  {
+    "alias": "/data-types/primitives-methods.html",
+    "destination": "/uk/docs/data-types/primitives-methods",
+    "type": "legacy-canonical-path",
+    "sourcePath": "uk/data-types/primitives-methods.html"
+  },
+  {
+    "alias": "/uk/data-types/string.html",
+    "destination": "/uk/docs/data-types/string",
+    "type": "legacy-html",
+    "sourcePath": "uk/data-types/string.html"
+  },
+  {
+    "alias": "/uk/data-types/string",
+    "destination": "/uk/docs/data-types/string",
+    "type": "legacy-docs-alias",
+    "sourcePath": "uk/data-types/string.html"
+  },
+  {
+    "alias": "/data-types/string.html",
+    "destination": "/uk/docs/data-types/string",
+    "type": "legacy-canonical-path",
+    "sourcePath": "uk/data-types/string.html"
+  },
+  {
+    "alias": "/uk/data-types/weakmap-weakset.html",
+    "destination": "/uk/docs/data-types/weakmap-weakset",
+    "type": "legacy-html",
+    "sourcePath": "uk/data-types/weakmap-weakset.html"
+  },
+  {
+    "alias": "/uk/data-types/weakmap-weakset",
+    "destination": "/uk/docs/data-types/weakmap-weakset",
+    "type": "legacy-docs-alias",
+    "sourcePath": "uk/data-types/weakmap-weakset.html"
+  },
+  {
+    "alias": "/data-types/weakmap-weakset.html",
+    "destination": "/uk/docs/data-types/weakmap-weakset",
+    "type": "legacy-canonical-path",
+    "sourcePath": "uk/data-types/weakmap-weakset.html"
+  },
+  {
+    "alias": "/uk/error-handling/custom-errors.html",
+    "destination": "/uk/docs/error-handling/custom-errors",
+    "type": "legacy-html",
+    "sourcePath": "uk/error-handling/custom-errors.html"
+  },
+  {
+    "alias": "/uk/error-handling/custom-errors",
+    "destination": "/uk/docs/error-handling/custom-errors",
+    "type": "legacy-docs-alias",
+    "sourcePath": "uk/error-handling/custom-errors.html"
+  },
+  {
+    "alias": "/error-handling/custom-errors.html",
+    "destination": "/uk/docs/error-handling/custom-errors",
+    "type": "legacy-canonical-path",
+    "sourcePath": "uk/error-handling/custom-errors.html"
+  },
+  {
+    "alias": "/uk/error-handling/try-catch.html",
+    "destination": "/uk/docs/error-handling/try-catch",
+    "type": "legacy-html",
+    "sourcePath": "uk/error-handling/try-catch.html"
+  },
+  {
+    "alias": "/uk/error-handling/try-catch",
+    "destination": "/uk/docs/error-handling/try-catch",
+    "type": "legacy-docs-alias",
+    "sourcePath": "uk/error-handling/try-catch.html"
+  },
+  {
+    "alias": "/error-handling/try-catch.html",
+    "destination": "/uk/docs/error-handling/try-catch",
+    "type": "legacy-canonical-path",
+    "sourcePath": "uk/error-handling/try-catch.html"
+  },
+  {
+    "alias": "/uk/functions-advanced/arrow-functions-revisited.html",
+    "destination": "/uk/docs/functions-advanced/arrow-functions-revisited",
+    "type": "legacy-html",
+    "sourcePath": "uk/functions-advanced/arrow-functions-revisited.html"
+  },
+  {
+    "alias": "/uk/functions-advanced/arrow-functions-revisited",
+    "destination": "/uk/docs/functions-advanced/arrow-functions-revisited",
+    "type": "legacy-docs-alias",
+    "sourcePath": "uk/functions-advanced/arrow-functions-revisited.html"
+  },
+  {
+    "alias": "/functions-advanced/arrow-functions-revisited.html",
+    "destination": "/uk/docs/functions-advanced/arrow-functions-revisited",
+    "type": "legacy-canonical-path",
+    "sourcePath": "uk/functions-advanced/arrow-functions-revisited.html"
+  },
+  {
+    "alias": "/uk/functions-advanced/bind.html",
+    "destination": "/uk/docs/functions-advanced/bind",
+    "type": "legacy-html",
+    "sourcePath": "uk/functions-advanced/bind.html"
+  },
+  {
+    "alias": "/uk/functions-advanced/bind",
+    "destination": "/uk/docs/functions-advanced/bind",
+    "type": "legacy-docs-alias",
+    "sourcePath": "uk/functions-advanced/bind.html"
+  },
+  {
+    "alias": "/functions-advanced/bind.html",
+    "destination": "/uk/docs/functions-advanced/bind",
+    "type": "legacy-canonical-path",
+    "sourcePath": "uk/functions-advanced/bind.html"
+  },
+  {
+    "alias": "/uk/functions-advanced/call-apply-decorators.html",
+    "destination": "/uk/docs/functions-advanced/call-apply-decorators",
+    "type": "legacy-html",
+    "sourcePath": "uk/functions-advanced/call-apply-decorators.html"
+  },
+  {
+    "alias": "/uk/functions-advanced/call-apply-decorators",
+    "destination": "/uk/docs/functions-advanced/call-apply-decorators",
+    "type": "legacy-docs-alias",
+    "sourcePath": "uk/functions-advanced/call-apply-decorators.html"
+  },
+  {
+    "alias": "/functions-advanced/call-apply-decorators.html",
+    "destination": "/uk/docs/functions-advanced/call-apply-decorators",
+    "type": "legacy-canonical-path",
+    "sourcePath": "uk/functions-advanced/call-apply-decorators.html"
+  },
+  {
+    "alias": "/uk/functions-advanced/closure.html",
+    "destination": "/uk/docs/functions-advanced/closure",
+    "type": "legacy-html",
+    "sourcePath": "uk/functions-advanced/closure.html"
+  },
+  {
+    "alias": "/uk/functions-advanced/closure",
+    "destination": "/uk/docs/functions-advanced/closure",
+    "type": "legacy-docs-alias",
+    "sourcePath": "uk/functions-advanced/closure.html"
+  },
+  {
+    "alias": "/functions-advanced/closure.html",
+    "destination": "/uk/docs/functions-advanced/closure",
+    "type": "legacy-canonical-path",
+    "sourcePath": "uk/functions-advanced/closure.html"
+  },
+  {
+    "alias": "/uk/functions-advanced/function-object.html",
+    "destination": "/uk/docs/functions-advanced/function-object",
+    "type": "legacy-html",
+    "sourcePath": "uk/functions-advanced/function-object.html"
+  },
+  {
+    "alias": "/uk/functions-advanced/function-object",
+    "destination": "/uk/docs/functions-advanced/function-object",
+    "type": "legacy-docs-alias",
+    "sourcePath": "uk/functions-advanced/function-object.html"
+  },
+  {
+    "alias": "/functions-advanced/function-object.html",
+    "destination": "/uk/docs/functions-advanced/function-object",
+    "type": "legacy-canonical-path",
+    "sourcePath": "uk/functions-advanced/function-object.html"
+  },
+  {
+    "alias": "/uk/functions-advanced/global-object.html",
+    "destination": "/uk/docs/functions-advanced/global-object",
+    "type": "legacy-html",
+    "sourcePath": "uk/functions-advanced/global-object.html"
+  },
+  {
+    "alias": "/uk/functions-advanced/global-object",
+    "destination": "/uk/docs/functions-advanced/global-object",
+    "type": "legacy-docs-alias",
+    "sourcePath": "uk/functions-advanced/global-object.html"
+  },
+  {
+    "alias": "/functions-advanced/global-object.html",
+    "destination": "/uk/docs/functions-advanced/global-object",
+    "type": "legacy-canonical-path",
+    "sourcePath": "uk/functions-advanced/global-object.html"
+  },
+  {
+    "alias": "/uk/functions-advanced/new-function.html",
+    "destination": "/uk/docs/functions-advanced/new-function",
+    "type": "legacy-html",
+    "sourcePath": "uk/functions-advanced/new-function.html"
+  },
+  {
+    "alias": "/uk/functions-advanced/new-function",
+    "destination": "/uk/docs/functions-advanced/new-function",
+    "type": "legacy-docs-alias",
+    "sourcePath": "uk/functions-advanced/new-function.html"
+  },
+  {
+    "alias": "/functions-advanced/new-function.html",
+    "destination": "/uk/docs/functions-advanced/new-function",
+    "type": "legacy-canonical-path",
+    "sourcePath": "uk/functions-advanced/new-function.html"
+  },
+  {
+    "alias": "/uk/functions-advanced/recursion.html",
+    "destination": "/uk/docs/functions-advanced/recursion",
+    "type": "legacy-html",
+    "sourcePath": "uk/functions-advanced/recursion.html"
+  },
+  {
+    "alias": "/uk/functions-advanced/recursion",
+    "destination": "/uk/docs/functions-advanced/recursion",
+    "type": "legacy-docs-alias",
+    "sourcePath": "uk/functions-advanced/recursion.html"
+  },
+  {
+    "alias": "/functions-advanced/recursion.html",
+    "destination": "/uk/docs/functions-advanced/recursion",
+    "type": "legacy-canonical-path",
+    "sourcePath": "uk/functions-advanced/recursion.html"
+  },
+  {
+    "alias": "/uk/functions-advanced/rest-parameters-spread.html",
+    "destination": "/uk/docs/functions-advanced/rest-parameters-spread",
+    "type": "legacy-html",
+    "sourcePath": "uk/functions-advanced/rest-parameters-spread.html"
+  },
+  {
+    "alias": "/uk/functions-advanced/rest-parameters-spread",
+    "destination": "/uk/docs/functions-advanced/rest-parameters-spread",
+    "type": "legacy-docs-alias",
+    "sourcePath": "uk/functions-advanced/rest-parameters-spread.html"
+  },
+  {
+    "alias": "/functions-advanced/rest-parameters-spread.html",
+    "destination": "/uk/docs/functions-advanced/rest-parameters-spread",
+    "type": "legacy-canonical-path",
+    "sourcePath": "uk/functions-advanced/rest-parameters-spread.html"
+  },
+  {
+    "alias": "/uk/functions-advanced/settimeout-setinterval.html",
+    "destination": "/uk/docs/functions-advanced/settimeout-setinterval",
+    "type": "legacy-html",
+    "sourcePath": "uk/functions-advanced/settimeout-setinterval.html"
+  },
+  {
+    "alias": "/uk/functions-advanced/settimeout-setinterval",
+    "destination": "/uk/docs/functions-advanced/settimeout-setinterval",
+    "type": "legacy-docs-alias",
+    "sourcePath": "uk/functions-advanced/settimeout-setinterval.html"
+  },
+  {
+    "alias": "/functions-advanced/settimeout-setinterval.html",
+    "destination": "/uk/docs/functions-advanced/settimeout-setinterval",
+    "type": "legacy-canonical-path",
+    "sourcePath": "uk/functions-advanced/settimeout-setinterval.html"
+  },
+  {
+    "alias": "/uk/functions-advanced/var.html",
+    "destination": "/uk/docs/functions-advanced/var",
+    "type": "legacy-html",
+    "sourcePath": "uk/functions-advanced/var.html"
+  },
+  {
+    "alias": "/uk/functions-advanced/var",
+    "destination": "/uk/docs/functions-advanced/var",
+    "type": "legacy-docs-alias",
+    "sourcePath": "uk/functions-advanced/var.html"
+  },
+  {
+    "alias": "/functions-advanced/var.html",
+    "destination": "/uk/docs/functions-advanced/var",
+    "type": "legacy-canonical-path",
+    "sourcePath": "uk/functions-advanced/var.html"
+  },
+  {
+    "alias": "/uk/generators/async-iterators-generators.html",
+    "destination": "/uk/docs/generators/async-iterators-generators",
+    "type": "legacy-html",
+    "sourcePath": "uk/generators/async-iterators-generators.html"
+  },
+  {
+    "alias": "/uk/generators/async-iterators-generators",
+    "destination": "/uk/docs/generators/async-iterators-generators",
+    "type": "legacy-docs-alias",
+    "sourcePath": "uk/generators/async-iterators-generators.html"
+  },
+  {
+    "alias": "/generators/async-iterators-generators.html",
+    "destination": "/uk/docs/generators/async-iterators-generators",
+    "type": "legacy-canonical-path",
+    "sourcePath": "uk/generators/async-iterators-generators.html"
+  },
+  {
+    "alias": "/uk/generators/generators.html",
+    "destination": "/uk/docs/generators/generators",
+    "type": "legacy-html",
+    "sourcePath": "uk/generators/generators.html"
+  },
+  {
+    "alias": "/uk/generators/generators",
+    "destination": "/uk/docs/generators/generators",
+    "type": "legacy-docs-alias",
+    "sourcePath": "uk/generators/generators.html"
+  },
+  {
+    "alias": "/generators/generators.html",
+    "destination": "/uk/docs/generators/generators",
+    "type": "legacy-canonical-path",
+    "sourcePath": "uk/generators/generators.html"
+  },
+  {
+    "alias": "/uk/introduction/devtools.html",
+    "destination": "/uk/docs/intro/devtools",
+    "type": "legacy-html",
+    "sourcePath": "uk/introduction/devtools.html"
+  },
+  {
+    "alias": "/uk/introduction/devtools",
+    "destination": "/uk/docs/intro/devtools",
+    "type": "legacy-docs-alias",
+    "sourcePath": "uk/introduction/devtools.html"
+  },
+  {
+    "alias": "/intro/devtools.html",
+    "destination": "/uk/docs/intro/devtools",
+    "type": "legacy-canonical-path",
+    "sourcePath": "uk/introduction/devtools.html"
+  },
+  {
+    "alias": "/uk/introduction/editors.html",
+    "destination": "/uk/docs/intro/code-editors",
+    "type": "legacy-html",
+    "sourcePath": "uk/introduction/editors.html"
+  },
+  {
+    "alias": "/uk/introduction/editors",
+    "destination": "/uk/docs/intro/code-editors",
+    "type": "legacy-docs-alias",
+    "sourcePath": "uk/introduction/editors.html"
+  },
+  {
+    "alias": "/intro/code-editors.html",
+    "destination": "/uk/docs/intro/code-editors",
+    "type": "legacy-canonical-path",
+    "sourcePath": "uk/introduction/editors.html"
+  },
+  {
+    "alias": "/uk/introduction/intro.html",
+    "destination": "/uk/docs/intro/intro-to-javascript",
+    "type": "legacy-html",
+    "sourcePath": "uk/introduction/intro.html"
+  },
+  {
+    "alias": "/uk/introduction/intro",
+    "destination": "/uk/docs/intro/intro-to-javascript",
+    "type": "legacy-docs-alias",
+    "sourcePath": "uk/introduction/intro.html"
+  },
+  {
+    "alias": "/intro/intro-to-javascript.html",
+    "destination": "/uk/docs/intro/intro-to-javascript",
+    "type": "legacy-canonical-path",
+    "sourcePath": "uk/introduction/intro.html"
+  },
+  {
+    "alias": "/uk/introduction/reference.html",
+    "destination": "/uk/docs/intro/specifications",
+    "type": "legacy-html",
+    "sourcePath": "uk/introduction/reference.html"
+  },
+  {
+    "alias": "/uk/introduction/reference",
+    "destination": "/uk/docs/intro/specifications",
+    "type": "legacy-docs-alias",
+    "sourcePath": "uk/introduction/reference.html"
+  },
+  {
+    "alias": "/intro/specifications.html",
+    "destination": "/uk/docs/intro/specifications",
+    "type": "legacy-canonical-path",
+    "sourcePath": "uk/introduction/reference.html"
+  },
+  {
+    "alias": "/uk/misc/bigint.html",
+    "destination": "/uk/docs/misc/bigint",
+    "type": "legacy-html",
+    "sourcePath": "uk/misc/bigint.html"
+  },
+  {
+    "alias": "/uk/misc/bigint",
+    "destination": "/uk/docs/misc/bigint",
+    "type": "legacy-docs-alias",
+    "sourcePath": "uk/misc/bigint.html"
+  },
+  {
+    "alias": "/misc/bigint.html",
+    "destination": "/uk/docs/misc/bigint",
+    "type": "legacy-canonical-path",
+    "sourcePath": "uk/misc/bigint.html"
+  },
+  {
+    "alias": "/uk/misc/currying.html",
+    "destination": "/uk/docs/misc/currying",
+    "type": "legacy-html",
+    "sourcePath": "uk/misc/currying.html"
+  },
+  {
+    "alias": "/uk/misc/currying",
+    "destination": "/uk/docs/misc/currying",
+    "type": "legacy-docs-alias",
+    "sourcePath": "uk/misc/currying.html"
+  },
+  {
+    "alias": "/misc/currying.html",
+    "destination": "/uk/docs/misc/currying",
+    "type": "legacy-canonical-path",
+    "sourcePath": "uk/misc/currying.html"
+  },
+  {
+    "alias": "/uk/misc/eval.html",
+    "destination": "/uk/docs/misc/eval",
+    "type": "legacy-html",
+    "sourcePath": "uk/misc/eval.html"
+  },
+  {
+    "alias": "/uk/misc/eval",
+    "destination": "/uk/docs/misc/eval",
+    "type": "legacy-docs-alias",
+    "sourcePath": "uk/misc/eval.html"
+  },
+  {
+    "alias": "/misc/eval.html",
+    "destination": "/uk/docs/misc/eval",
+    "type": "legacy-canonical-path",
+    "sourcePath": "uk/misc/eval.html"
+  },
+  {
+    "alias": "/uk/misc/proxy.html",
+    "destination": "/uk/docs/misc/proxy-reflect",
+    "type": "legacy-html",
+    "sourcePath": "uk/misc/proxy.html"
+  },
+  {
+    "alias": "/uk/misc/proxy",
+    "destination": "/uk/docs/misc/proxy-reflect",
+    "type": "legacy-docs-alias",
+    "sourcePath": "uk/misc/proxy.html"
+  },
+  {
+    "alias": "/misc/proxy-reflect.html",
+    "destination": "/uk/docs/misc/proxy-reflect",
+    "type": "legacy-canonical-path",
+    "sourcePath": "uk/misc/proxy.html"
+  },
+  {
+    "alias": "/uk/misc/reference-type.html",
+    "destination": "/uk/docs/misc/reference-type",
+    "type": "legacy-html",
+    "sourcePath": "uk/misc/reference-type.html"
+  },
+  {
+    "alias": "/uk/misc/reference-type",
+    "destination": "/uk/docs/misc/reference-type",
+    "type": "legacy-docs-alias",
+    "sourcePath": "uk/misc/reference-type.html"
+  },
+  {
+    "alias": "/misc/reference-type.html",
+    "destination": "/uk/docs/misc/reference-type",
+    "type": "legacy-canonical-path",
+    "sourcePath": "uk/misc/reference-type.html"
+  },
+  {
+    "alias": "/uk/misc/unicode.html",
+    "destination": "/uk/docs/misc/unicode-strings",
+    "type": "legacy-html",
+    "sourcePath": "uk/misc/unicode.html"
+  },
+  {
+    "alias": "/uk/misc/unicode",
+    "destination": "/uk/docs/misc/unicode-strings",
+    "type": "legacy-docs-alias",
+    "sourcePath": "uk/misc/unicode.html"
+  },
+  {
+    "alias": "/misc/unicode-strings.html",
+    "destination": "/uk/docs/misc/unicode-strings",
+    "type": "legacy-canonical-path",
+    "sourcePath": "uk/misc/unicode.html"
+  },
+  {
+    "alias": "/uk/misc/weakref.html",
+    "destination": "/uk/docs/misc/weakref",
+    "type": "legacy-html",
+    "sourcePath": "uk/misc/weakref.html"
+  },
+  {
+    "alias": "/uk/misc/weakref",
+    "destination": "/uk/docs/misc/weakref",
+    "type": "legacy-docs-alias",
+    "sourcePath": "uk/misc/weakref.html"
+  },
+  {
+    "alias": "/misc/weakref.html",
+    "destination": "/uk/docs/misc/weakref",
+    "type": "legacy-canonical-path",
+    "sourcePath": "uk/misc/weakref.html"
+  },
+  {
+    "alias": "/uk/modules/dynamic-imports.html",
+    "destination": "/uk/docs/modules/dynamic-imports",
+    "type": "legacy-html",
+    "sourcePath": "uk/modules/dynamic-imports.html"
+  },
+  {
+    "alias": "/uk/modules/dynamic-imports",
+    "destination": "/uk/docs/modules/dynamic-imports",
+    "type": "legacy-docs-alias",
+    "sourcePath": "uk/modules/dynamic-imports.html"
+  },
+  {
+    "alias": "/modules/dynamic-imports.html",
+    "destination": "/uk/docs/modules/dynamic-imports",
+    "type": "legacy-canonical-path",
+    "sourcePath": "uk/modules/dynamic-imports.html"
+  },
+  {
+    "alias": "/uk/modules/import-export.html",
+    "destination": "/uk/docs/modules/export-import",
+    "type": "legacy-html",
+    "sourcePath": "uk/modules/import-export.html"
+  },
+  {
+    "alias": "/uk/modules/import-export",
+    "destination": "/uk/docs/modules/export-import",
+    "type": "legacy-docs-alias",
+    "sourcePath": "uk/modules/import-export.html"
+  },
+  {
+    "alias": "/modules/export-import.html",
+    "destination": "/uk/docs/modules/export-import",
+    "type": "legacy-canonical-path",
+    "sourcePath": "uk/modules/import-export.html"
+  },
+  {
+    "alias": "/uk/modules/modules-intro.html",
+    "destination": "/uk/docs/modules/modules-intro",
+    "type": "legacy-html",
+    "sourcePath": "uk/modules/modules-intro.html"
+  },
+  {
+    "alias": "/uk/modules/modules-intro",
+    "destination": "/uk/docs/modules/modules-intro",
+    "type": "legacy-docs-alias",
+    "sourcePath": "uk/modules/modules-intro.html"
+  },
+  {
+    "alias": "/modules/modules-intro.html",
+    "destination": "/uk/docs/modules/modules-intro",
+    "type": "legacy-canonical-path",
+    "sourcePath": "uk/modules/modules-intro.html"
+  },
+  {
+    "alias": "/uk/object-properties/property-accessors.html",
+    "destination": "/uk/docs/object-properties/property-accessors",
+    "type": "legacy-html",
+    "sourcePath": "uk/object-properties/property-accessors.html"
+  },
+  {
+    "alias": "/uk/object-properties/property-accessors",
+    "destination": "/uk/docs/object-properties/property-accessors",
+    "type": "legacy-docs-alias",
+    "sourcePath": "uk/object-properties/property-accessors.html"
+  },
+  {
+    "alias": "/object-properties/property-accessors.html",
+    "destination": "/uk/docs/object-properties/property-accessors",
+    "type": "legacy-canonical-path",
+    "sourcePath": "uk/object-properties/property-accessors.html"
+  },
+  {
+    "alias": "/uk/object-properties/property-descriptors.html",
+    "destination": "/uk/docs/object-properties/property-descriptors",
+    "type": "legacy-html",
+    "sourcePath": "uk/object-properties/property-descriptors.html"
+  },
+  {
+    "alias": "/uk/object-properties/property-descriptors",
+    "destination": "/uk/docs/object-properties/property-descriptors",
+    "type": "legacy-docs-alias",
+    "sourcePath": "uk/object-properties/property-descriptors.html"
+  },
+  {
+    "alias": "/object-properties/property-descriptors.html",
+    "destination": "/uk/docs/object-properties/property-descriptors",
+    "type": "legacy-canonical-path",
+    "sourcePath": "uk/object-properties/property-descriptors.html"
+  },
+  {
+    "alias": "/uk/objects/constructor-new.html",
+    "destination": "/uk/docs/objects/constructor-new",
+    "type": "legacy-html",
+    "sourcePath": "uk/objects/constructor-new.html"
+  },
+  {
+    "alias": "/uk/objects/constructor-new",
+    "destination": "/uk/docs/objects/constructor-new",
+    "type": "legacy-docs-alias",
+    "sourcePath": "uk/objects/constructor-new.html"
+  },
+  {
+    "alias": "/objects/constructor-new.html",
+    "destination": "/uk/docs/objects/constructor-new",
+    "type": "legacy-canonical-path",
+    "sourcePath": "uk/objects/constructor-new.html"
+  },
+  {
+    "alias": "/uk/objects/garbage-collection.html",
+    "destination": "/uk/docs/objects/garbage-collection",
+    "type": "legacy-html",
+    "sourcePath": "uk/objects/garbage-collection.html"
+  },
+  {
+    "alias": "/uk/objects/garbage-collection",
+    "destination": "/uk/docs/objects/garbage-collection",
+    "type": "legacy-docs-alias",
+    "sourcePath": "uk/objects/garbage-collection.html"
+  },
+  {
+    "alias": "/objects/garbage-collection.html",
+    "destination": "/uk/docs/objects/garbage-collection",
+    "type": "legacy-canonical-path",
+    "sourcePath": "uk/objects/garbage-collection.html"
+  },
+  {
+    "alias": "/uk/objects/object-copy.html",
+    "destination": "/uk/docs/objects/object-copy",
+    "type": "legacy-html",
+    "sourcePath": "uk/objects/object-copy.html"
+  },
+  {
+    "alias": "/uk/objects/object-copy",
+    "destination": "/uk/docs/objects/object-copy",
+    "type": "legacy-docs-alias",
+    "sourcePath": "uk/objects/object-copy.html"
+  },
+  {
+    "alias": "/objects/object-copy.html",
+    "destination": "/uk/docs/objects/object-copy",
+    "type": "legacy-canonical-path",
+    "sourcePath": "uk/objects/object-copy.html"
+  },
+  {
+    "alias": "/uk/objects/object-toprimitive.html",
+    "destination": "/uk/docs/objects/object-toprimitive",
+    "type": "legacy-html",
+    "sourcePath": "uk/objects/object-toprimitive.html"
+  },
+  {
+    "alias": "/uk/objects/object-toprimitive",
+    "destination": "/uk/docs/objects/object-toprimitive",
+    "type": "legacy-docs-alias",
+    "sourcePath": "uk/objects/object-toprimitive.html"
+  },
+  {
+    "alias": "/objects/object-toprimitive.html",
+    "destination": "/uk/docs/objects/object-toprimitive",
+    "type": "legacy-canonical-path",
+    "sourcePath": "uk/objects/object-toprimitive.html"
+  },
+  {
+    "alias": "/uk/objects/objects.html",
+    "destination": "/uk/docs/objects/object-basics",
+    "type": "legacy-html",
+    "sourcePath": "uk/objects/objects.html"
+  },
+  {
+    "alias": "/uk/objects/objects",
+    "destination": "/uk/docs/objects/object-basics",
+    "type": "legacy-docs-alias",
+    "sourcePath": "uk/objects/objects.html"
+  },
+  {
+    "alias": "/objects/object-basics.html",
+    "destination": "/uk/docs/objects/object-basics",
+    "type": "legacy-canonical-path",
+    "sourcePath": "uk/objects/objects.html"
+  },
+  {
+    "alias": "/uk/objects/optional-chaining.html",
+    "destination": "/uk/docs/objects/optional-chaining",
+    "type": "legacy-html",
+    "sourcePath": "uk/objects/optional-chaining.html"
+  },
+  {
+    "alias": "/uk/objects/optional-chaining",
+    "destination": "/uk/docs/objects/optional-chaining",
+    "type": "legacy-docs-alias",
+    "sourcePath": "uk/objects/optional-chaining.html"
+  },
+  {
+    "alias": "/objects/optional-chaining.html",
+    "destination": "/uk/docs/objects/optional-chaining",
+    "type": "legacy-canonical-path",
+    "sourcePath": "uk/objects/optional-chaining.html"
+  },
+  {
+    "alias": "/uk/objects/symbol.html",
+    "destination": "/uk/docs/objects/symbol",
+    "type": "legacy-html",
+    "sourcePath": "uk/objects/symbol.html"
+  },
+  {
+    "alias": "/uk/objects/symbol",
+    "destination": "/uk/docs/objects/symbol",
+    "type": "legacy-docs-alias",
+    "sourcePath": "uk/objects/symbol.html"
+  },
+  {
+    "alias": "/objects/symbol.html",
+    "destination": "/uk/docs/objects/symbol",
+    "type": "legacy-canonical-path",
+    "sourcePath": "uk/objects/symbol.html"
+  },
+  {
+    "alias": "/uk/objects/this.html",
+    "destination": "/uk/docs/objects/object-methods",
+    "type": "legacy-html",
+    "sourcePath": "uk/objects/this.html"
+  },
+  {
+    "alias": "/uk/objects/this",
+    "destination": "/uk/docs/objects/object-methods",
+    "type": "legacy-docs-alias",
+    "sourcePath": "uk/objects/this.html"
+  },
+  {
+    "alias": "/objects/object-methods.html",
+    "destination": "/uk/docs/objects/object-methods",
+    "type": "legacy-canonical-path",
+    "sourcePath": "uk/objects/this.html"
+  },
+  {
+    "alias": "/uk/promises/async-await.html",
+    "destination": "/uk/docs/promises/async-await",
+    "type": "legacy-html",
+    "sourcePath": "uk/promises/async-await.html"
+  },
+  {
+    "alias": "/uk/promises/async-await",
+    "destination": "/uk/docs/promises/async-await",
+    "type": "legacy-docs-alias",
+    "sourcePath": "uk/promises/async-await.html"
+  },
+  {
+    "alias": "/promises/async-await.html",
+    "destination": "/uk/docs/promises/async-await",
+    "type": "legacy-canonical-path",
+    "sourcePath": "uk/promises/async-await.html"
+  },
+  {
+    "alias": "/uk/promises/callbacks.html",
+    "destination": "/uk/docs/promises/callbacks",
+    "type": "legacy-html",
+    "sourcePath": "uk/promises/callbacks.html"
+  },
+  {
+    "alias": "/uk/promises/callbacks",
+    "destination": "/uk/docs/promises/callbacks",
+    "type": "legacy-docs-alias",
+    "sourcePath": "uk/promises/callbacks.html"
+  },
+  {
+    "alias": "/promises/callbacks.html",
+    "destination": "/uk/docs/promises/callbacks",
+    "type": "legacy-canonical-path",
+    "sourcePath": "uk/promises/callbacks.html"
+  },
+  {
+    "alias": "/uk/promises/microtasks.html",
+    "destination": "/uk/docs/promises/microtasks",
+    "type": "legacy-html",
+    "sourcePath": "uk/promises/microtasks.html"
+  },
+  {
+    "alias": "/uk/promises/microtasks",
+    "destination": "/uk/docs/promises/microtasks",
+    "type": "legacy-docs-alias",
+    "sourcePath": "uk/promises/microtasks.html"
+  },
+  {
+    "alias": "/promises/microtasks.html",
+    "destination": "/uk/docs/promises/microtasks",
+    "type": "legacy-canonical-path",
+    "sourcePath": "uk/promises/microtasks.html"
+  },
+  {
+    "alias": "/uk/promises/promise-api.html",
+    "destination": "/uk/docs/promises/promise-api",
+    "type": "legacy-html",
+    "sourcePath": "uk/promises/promise-api.html"
+  },
+  {
+    "alias": "/uk/promises/promise-api",
+    "destination": "/uk/docs/promises/promise-api",
+    "type": "legacy-docs-alias",
+    "sourcePath": "uk/promises/promise-api.html"
+  },
+  {
+    "alias": "/promises/promise-api.html",
+    "destination": "/uk/docs/promises/promise-api",
+    "type": "legacy-canonical-path",
+    "sourcePath": "uk/promises/promise-api.html"
+  },
+  {
+    "alias": "/uk/promises/promise-basics.html",
+    "destination": "/uk/docs/promises/promise-basics",
+    "type": "legacy-html",
+    "sourcePath": "uk/promises/promise-basics.html"
+  },
+  {
+    "alias": "/uk/promises/promise-basics",
+    "destination": "/uk/docs/promises/promise-basics",
+    "type": "legacy-docs-alias",
+    "sourcePath": "uk/promises/promise-basics.html"
+  },
+  {
+    "alias": "/promises/promise-basics.html",
+    "destination": "/uk/docs/promises/promise-basics",
+    "type": "legacy-canonical-path",
+    "sourcePath": "uk/promises/promise-basics.html"
+  },
+  {
+    "alias": "/uk/promises/promise-chaining.html",
+    "destination": "/uk/docs/promises/promise-chaining",
+    "type": "legacy-html",
+    "sourcePath": "uk/promises/promise-chaining.html"
+  },
+  {
+    "alias": "/uk/promises/promise-chaining",
+    "destination": "/uk/docs/promises/promise-chaining",
+    "type": "legacy-docs-alias",
+    "sourcePath": "uk/promises/promise-chaining.html"
+  },
+  {
+    "alias": "/promises/promise-chaining.html",
+    "destination": "/uk/docs/promises/promise-chaining",
+    "type": "legacy-canonical-path",
+    "sourcePath": "uk/promises/promise-chaining.html"
+  },
+  {
+    "alias": "/uk/promises/promise-error-handling.html",
+    "destination": "/uk/docs/promises/promise-error-handling",
+    "type": "legacy-html",
+    "sourcePath": "uk/promises/promise-error-handling.html"
+  },
+  {
+    "alias": "/uk/promises/promise-error-handling",
+    "destination": "/uk/docs/promises/promise-error-handling",
+    "type": "legacy-docs-alias",
+    "sourcePath": "uk/promises/promise-error-handling.html"
+  },
+  {
+    "alias": "/promises/promise-error-handling.html",
+    "destination": "/uk/docs/promises/promise-error-handling",
+    "type": "legacy-canonical-path",
+    "sourcePath": "uk/promises/promise-error-handling.html"
+  },
+  {
+    "alias": "/uk/promises/promisify.html",
+    "destination": "/uk/docs/promises/promisification",
+    "type": "legacy-html",
+    "sourcePath": "uk/promises/promisify.html"
+  },
+  {
+    "alias": "/uk/promises/promisify",
+    "destination": "/uk/docs/promises/promisification",
+    "type": "legacy-docs-alias",
+    "sourcePath": "uk/promises/promisify.html"
+  },
+  {
+    "alias": "/promises/promisification.html",
+    "destination": "/uk/docs/promises/promisification",
+    "type": "legacy-canonical-path",
+    "sourcePath": "uk/promises/promisify.html"
+  },
+  {
+    "alias": "/uk/prototypes/function-prototype.html",
+    "destination": "/uk/docs/prototypes/function-prototype",
+    "type": "legacy-html",
+    "sourcePath": "uk/prototypes/function-prototype.html"
+  },
+  {
+    "alias": "/uk/prototypes/function-prototype",
+    "destination": "/uk/docs/prototypes/function-prototype",
+    "type": "legacy-docs-alias",
+    "sourcePath": "uk/prototypes/function-prototype.html"
+  },
+  {
+    "alias": "/prototypes/function-prototype.html",
+    "destination": "/uk/docs/prototypes/function-prototype",
+    "type": "legacy-canonical-path",
+    "sourcePath": "uk/prototypes/function-prototype.html"
+  },
+  {
+    "alias": "/uk/prototypes/native-prototypes.html",
+    "destination": "/uk/docs/prototypes/native-prototypes",
+    "type": "legacy-html",
+    "sourcePath": "uk/prototypes/native-prototypes.html"
+  },
+  {
+    "alias": "/uk/prototypes/native-prototypes",
+    "destination": "/uk/docs/prototypes/native-prototypes",
+    "type": "legacy-docs-alias",
+    "sourcePath": "uk/prototypes/native-prototypes.html"
+  },
+  {
+    "alias": "/prototypes/native-prototypes.html",
+    "destination": "/uk/docs/prototypes/native-prototypes",
+    "type": "legacy-canonical-path",
+    "sourcePath": "uk/prototypes/native-prototypes.html"
+  },
+  {
+    "alias": "/uk/prototypes/prototype-inheritance.html",
+    "destination": "/uk/docs/prototypes/prototype-inheritance",
+    "type": "legacy-html",
+    "sourcePath": "uk/prototypes/prototype-inheritance.html"
+  },
+  {
+    "alias": "/uk/prototypes/prototype-inheritance",
+    "destination": "/uk/docs/prototypes/prototype-inheritance",
+    "type": "legacy-docs-alias",
+    "sourcePath": "uk/prototypes/prototype-inheritance.html"
+  },
+  {
+    "alias": "/prototypes/prototype-inheritance.html",
+    "destination": "/uk/docs/prototypes/prototype-inheritance",
+    "type": "legacy-canonical-path",
+    "sourcePath": "uk/prototypes/prototype-inheritance.html"
+  },
+  {
+    "alias": "/uk/prototypes/prototype-methods.html",
+    "destination": "/uk/docs/prototypes/proto-methods",
+    "type": "legacy-html",
+    "sourcePath": "uk/prototypes/prototype-methods.html"
+  },
+  {
+    "alias": "/uk/prototypes/prototype-methods",
+    "destination": "/uk/docs/prototypes/proto-methods",
+    "type": "legacy-docs-alias",
+    "sourcePath": "uk/prototypes/prototype-methods.html"
+  },
+  {
+    "alias": "/prototypes/proto-methods.html",
+    "destination": "/uk/docs/prototypes/proto-methods",
+    "type": "legacy-canonical-path",
+    "sourcePath": "uk/prototypes/prototype-methods.html"
+  }
+]

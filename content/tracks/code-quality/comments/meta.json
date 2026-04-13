@@ -1,0 +1,194 @@
+{
+  "id": "code-quality/comments",
+  "locale": "uk",
+  "locales": {
+    "uk": true,
+    "en": false
+  },
+  "availableLocales": [
+    "uk"
+  ],
+  "title": "Коментарі",
+  "description": "Коментарі в JavaScript: що коментувати, а що ні. JSDoc анотації, TODO/FIXME маркери, self-documenting code.",
+  "track": "code-quality",
+  "trackTitle": "Якість коду",
+  "slug": "comments",
+  "sourcePath": "uk/code-quality/comments.html",
+  "sourceIdentity": {
+    "track": "code-quality",
+    "slug": "comments"
+  },
+  "canonicalRoute": "/uk/docs/code-quality/comments",
+  "canonicalLegacyPath": "/code-quality/comments.html",
+  "legacyHtmlPath": "/uk/code-quality/comments.html",
+  "legacyAliases": [
+    "/uk/code-quality/comments.html",
+    "/uk/code-quality/comments",
+    "/code-quality/comments.html"
+  ],
+  "sectionOrder": 3,
+  "lessonOrder": 3,
+  "overallOrder": 25,
+  "articleNumber": "3.3",
+  "estimatedMinutes": 10,
+  "headings": [
+    {
+      "level": 2,
+      "id": "anatypaterny",
+      "text": "Антипатерни: що не варто коментувати"
+    },
+    {
+      "level": 2,
+      "id": "dobre",
+      "text": "Що варто коментувати"
+    },
+    {
+      "level": 2,
+      "id": "jsdoc",
+      "text": "JSDoc"
+    },
+    {
+      "level": 2,
+      "id": "todo-fixme",
+      "text": "TODO і FIXME маркери"
+    },
+    {
+      "level": 2,
+      "id": "self-documenting",
+      "text": "Самодокументований код"
+    },
+    {
+      "level": 2,
+      "id": "summary",
+      "text": "Підсумок"
+    }
+  ],
+  "badges": [
+    "Початковий",
+    "Якість коду",
+    "~ 10 хв"
+  ],
+  "donationLinks": [
+    "https://send.monobank.ua/jar/YOUR_JAR_ID",
+    "https://www.buymeacoffee.com/YOUR_HANDLE"
+  ],
+  "breadcrumbTrail": [
+    "Головна",
+    "Якість коду",
+    "Коментарі"
+  ],
+  "relatedSourceTrack": "code-quality",
+  "contentFiles": {
+    "uk": "content/tracks/code-quality/comments/index.uk.html",
+    "en": "content/tracks/code-quality/comments/index.en.mdx"
+  },
+  "metadataFile": "content/tracks/code-quality/comments/meta.json",
+  "translationStatus": {
+    "sourceLocale": "uk",
+    "availableLocales": [
+      "uk"
+    ],
+    "fallbackLocales": {
+      "en": "uk"
+    },
+    "locales": {
+      "uk": {
+        "status": "published",
+        "filePath": "content/tracks/code-quality/comments/index.uk.html",
+        "format": "html",
+        "title": "Коментарі",
+        "description": "Коментарі в JavaScript: що коментувати, а що ні. JSDoc анотації, TODO/FIXME маркери, self-documenting code.",
+        "completeness": 100,
+        "isFallback": false,
+        "headings": [
+          {
+            "level": 2,
+            "id": "anatypaterny",
+            "text": "Антипатерни: що не варто коментувати"
+          },
+          {
+            "level": 2,
+            "id": "dobre",
+            "text": "Що варто коментувати"
+          },
+          {
+            "level": 2,
+            "id": "jsdoc",
+            "text": "JSDoc"
+          },
+          {
+            "level": 2,
+            "id": "todo-fixme",
+            "text": "TODO і FIXME маркери"
+          },
+          {
+            "level": 2,
+            "id": "self-documenting",
+            "text": "Самодокументований код"
+          },
+          {
+            "level": 2,
+            "id": "summary",
+            "text": "Підсумок"
+          }
+        ]
+      },
+      "en": {
+        "status": "draft",
+        "filePath": "content/tracks/code-quality/comments/index.en.mdx",
+        "format": "mdx",
+        "title": "TODO: Translate title",
+        "description": "TODO: Translate description",
+        "completeness": 0,
+        "isFallback": true,
+        "headings": [
+          {
+            "level": 2,
+            "id": "source-lesson",
+            "text": "Source lesson"
+          }
+        ],
+        "slug": "comments",
+        "track": "code-quality",
+        "locale": "en",
+        "sourceLocale": "uk",
+        "hasBody": true
+      }
+    }
+  },
+  "translationCompleteness": {
+    "uk": 100,
+    "en": 0
+  },
+  "migration": {
+    "migratedFromLegacy": true,
+    "canonicalIdentitySource": "canonical",
+    "override": null,
+    "articleMeta": {
+      "type": "string",
+      "raw": {
+        "secId": "code-quality",
+        "artId": "comments"
+      },
+      "resolved": {
+        "track": "code-quality",
+        "slug": "comments"
+      }
+    },
+    "mismatches": {
+      "filePathVsCanonical": false,
+      "filePathVsStringMeta": false,
+      "filePathVsNumericMeta": false
+    },
+    "hasLegacyJsonLd": true,
+    "hasLegacyToc": true,
+    "hasLegacyPrevNext": true,
+    "legacyArticleSupport": true
+  },
+  "bodySourcePath": "content/tracks/code-quality/comments/index.uk.html",
+  "sourceProvenance": {
+    "sourcePath": "uk/code-quality/comments.html",
+    "sourceTrack": "code-quality",
+    "sourceSlug": "comments"
+  }
+}

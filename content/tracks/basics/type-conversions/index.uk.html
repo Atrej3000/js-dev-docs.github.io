@@ -1,0 +1,201 @@
+<p>JavaScript виконує <strong>автоматичне (неявне) перетворення типів</strong> коли значення різних типів використовуються разом. Розуміння алгоритмів перетворення — ключ до передбачуваної поведінки операторів, умовних виразів і порівнянь.</p>
+
+          <h2 id="chomu-vazhlivo">Чому це важливо</h2>
+          <p>Більшість дивних результатів у JavaScript (<code>"5" - 2 === 3</code>, але <code>"5" + 2 === "52"</code>) є прямим наслідком неявного перетворення типів. Знання правил перетворення перетворює «магію» на передбачувану механіку.</p>
+
+          <h2 id="ryadkove">Рядкове перетворення (ToString)</h2>
+          <p>Відбувається при конкатенації з рядком або явному виклику <code>String()</code>.</p>
+
+          <div class="code-block">
+            <div class="code-head"><span class="code-lang">JavaScript</span><button class="btn-copy" aria-label="Копіювати"></button></div>
+<pre><code class="language-javascript">// Явне перетворення
+String(123)        // "123"
+String(-0)         // "0"
+String(Infinity)   // "Infinity"
+String(NaN)        // "NaN"
+String(true)       // "true"
+String(false)      // "false"
+String(null)       // "null"
+String(undefined)  // "undefined"
+String([1, 2, 3])  // "1,2,3"
+String({})         // "[object Object]"
+
+// Неявне: конкатенація з рядком через +
+console.log('value: ' + 42);        // "value: 42"
+console.log('result: ' + null);     // "result: null"
+console.log('flag: ' + true);       // "flag: true"
+console.log(1 + 2 + ' items');      // "3 items" (зліва направо: 1+2=3, потім "3"+" items")
+console.log('items: ' + 1 + 2);    // "items: 12" (рядок + число = конкат)</code></pre>
+          </div>
+
+          <h2 id="chyslove">Числове перетворення (ToNumber)</h2>
+          <p>Відбувається в арифметичних операціях (крім <code>+</code> з рядком), при явному виклику <code>Number()</code> або унарному <code>+</code>.</p>
+
+          <div class="code-block">
+            <div class="code-head"><span class="code-lang">JavaScript</span><button class="btn-copy" aria-label="Копіювати"></button></div>
+<pre><code class="language-javascript">// Явне перетворення
+Number(undefined)   // NaN
+Number(null)        // 0
+Number(true)        // 1
+Number(false)       // 0
+Number('')          // 0
+Number(' ')         // 0   — пробіли обрізаються
+Number('42')        // 42
+Number('3.14')      // 3.14
+Number('0xFF')      // 255
+Number('12abc')     // NaN — містить нецифровий символ
+Number([])          // 0   — порожній масив → "" → 0
+Number([1])         // 1   — один елемент → "1" → 1
+Number([1, 2])      // NaN — "1,2" → NaN
+Number({})          // NaN
+
+// Неявне: арифметичні операції
+console.log('6' / '2');    // 3   — обидва перетворені
+console.log('6' - 2);      // 4
+console.log('6' * '3');    // 18
+console.log(true + true);  // 2
+console.log(false + 1);    // 1
+console.log(null + 1);     // 1
+console.log(undefined + 1);// NaN
+
+// Унарний + — швидке перетворення до числа
+const input = '42';
+console.log(+input);  // 42
+console.log(+true);   // 1
+console.log(+null);   // 0
+console.log(+'');     // 0</code></pre>
+          </div>
+
+          <h2 id="buleве">Булеве перетворення (ToBoolean)</h2>
+          <p>Відбувається в умовних виразах (<code>if</code>, <code>while</code>, тернарний оператор) або при явному <code>Boolean()</code> чи <code>!!</code>.</p>
+
+          <p>Правило просте: є рівно 8 <strong>falsy</strong>-значень, все решта — <strong>truthy</strong>.</p>
+
+          <table>
+            <thead><tr><th>Значення</th><th>Boolean()</th></tr></thead>
+            <tbody>
+              <tr><td><code>false</code></td><td class="t-n">false</td></tr>
+              <tr><td><code>0</code></td><td class="t-n">false</td></tr>
+              <tr><td><code>-0</code></td><td class="t-n">false</td></tr>
+              <tr><td><code>0n</code> (BigInt нуль)</td><td class="t-n">false</td></tr>
+              <tr><td><code>""</code> (порожній рядок)</td><td class="t-n">false</td></tr>
+              <tr><td><code>null</code></td><td class="t-n">false</td></tr>
+              <tr><td><code>undefined</code></td><td class="t-n">false</td></tr>
+              <tr><td><code>NaN</code></td><td class="t-n">false</td></tr>
+              <tr><td>Все решта</td><td class="t-y">true</td></tr>
+            </tbody>
+          </table>
+
+          <div class="code-block">
+            <div class="code-head"><span class="code-lang">JavaScript</span><button class="btn-copy" aria-label="Копіювати"></button></div>
+<pre><code class="language-javascript">// Truthy-сюрпризи
+Boolean('0')         // true  — непорожній рядок
+Boolean('false')     // true  — непорожній рядок
+Boolean([])          // true  — порожній масив є truthy!
+Boolean({})          // true  — порожній об'єкт є truthy!
+Boolean(-1)          // true  — будь-яке ненульове число
+
+// Практичне застосування
+const items = [];
+if (items) {                    // true — перевірка масиву через truthy НЕПРАВИЛЬНА
+  console.log('є елементи');   // виконується навіть для порожнього масиву!
+}
+if (items.length > 0) {        // ПРАВИЛЬНА перевірка
+  console.log('є елементи');
+}
+
+// Подвійне заперечення — ідіоматичне перетворення в boolean
+console.log(!!0);        // false
+console.log(!!'hello');  // true
+console.log(!!null);     // false
+console.log(!![]);       // true</code></pre>
+          </div>
+
+          <h2 id="object-to-primitive">Перетворення об'єктів у примітиви</h2>
+          <p>Коли об'єкт використовується там, де очікується примітив, рушій викликає внутрішню абстрактну операцію <code>ToPrimitive</code>. Алгоритм залежить від <em>hint</em>: <code>"string"</code>, <code>"number"</code> або <code>"default"</code>.</p>
+
+          <div class="code-block">
+            <div class="code-head"><span class="code-lang">JavaScript</span><button class="btn-copy" aria-label="Копіювати"></button></div>
+<pre><code class="language-javascript">// Стандартна поведінка об'єктів
+console.log({} + []);    // "0" або "[object Object]" (залежить від контексту)
+console.log([] + []);    // ""
+console.log([] + {});    // "[object Object]"
+
+// Власне перетворення через Symbol.toPrimitive
+const temperature = {
+  celsius: 22,
+  [Symbol.toPrimitive](hint) {
+    if (hint === 'number') return this.celsius;
+    if (hint === 'string') return `${this.celsius}°C`;
+    return this.celsius; // default
+  }
+};
+
+console.log(+temperature);          // 22  (number hint)
+console.log(`${temperature}`);      // "22°C" (string hint)
+console.log(temperature + 0);       // 22 (default hint)</code></pre>
+          </div>
+
+          <h2 id="явні-функції">Явні функції перетворення</h2>
+          <table>
+            <thead><tr><th>Функція</th><th>До типу</th><th>Особливості</th></tr></thead>
+            <tbody>
+              <tr><td><code>String(v)</code></td><td>string</td><td>Безпечна для всіх значень</td></tr>
+              <tr><td><code>Number(v)</code></td><td>number</td><td><code>null→0</code>, <code>undefined→NaN</code></td></tr>
+              <tr><td><code>Boolean(v)</code></td><td>boolean</td><td>8 falsy значень</td></tr>
+              <tr><td><code>parseInt(v, radix)</code></td><td>integer</td><td>Парсить до першого нецифрового; radix обов'язковий</td></tr>
+              <tr><td><code>parseFloat(v)</code></td><td>float</td><td>Парсить дробові числа</td></tr>
+            </tbody>
+          </table>
+
+          <div class="code-block">
+            <div class="code-head"><span class="code-lang">JavaScript</span><button class="btn-copy" aria-label="Копіювати"></button></div>
+<pre><code class="language-javascript">// parseInt зупиняється на першому нецифровому символі
+parseInt('42px', 10)    // 42
+parseInt('3.14', 10)    // 3 — відкидає дробову частину
+parseInt('0xFF', 16)    // 255
+parseInt('abc', 10)     // NaN
+
+// Завжди вказуйте основу системи числення
+parseInt('010')         // 10 (сучасні рушії) або 8 (legacy)
+parseInt('010', 10)     // 10 — явно десяткова, надійно
+parseInt('010', 8)      // 8  — явно вісімкова
+
+parseFloat('3.14abc')   // 3.14
+parseFloat('abc')       // NaN</code></pre>
+          </div>
+
+          <h2 id="edge-cases">Edge cases</h2>
+          <div class="code-block">
+            <div class="code-head"><span class="code-lang">JavaScript</span><button class="btn-copy" aria-label="Копіювати"></button></div>
+<pre><code class="language-javascript">// Несподіване поводження null і undefined
+console.log(null + 1);       // 1  (null → 0)
+console.log(undefined + 1);  // NaN (undefined → NaN)
+console.log(null + '1');      // "null1" (рядкова конкатенація)
+
+// Порожній масив
+console.log(Number([]));     // 0
+console.log(Number([1]));    // 1
+console.log(Number([1,2]));  // NaN
+console.log([] == false);    // true (обидва → 0)
+console.log([] == ![]);      // true — відома аномалія
+
+// String + Number: + є конкатенацією якщо один з операндів рядок
+console.log(1 + '2');   // "12"
+console.log('1' + 2);   // "12"
+console.log(1 - '2');   // -1 — мінус завжди числовий
+console.log(1 * '2');   // 2
+console.log('3' ** 2);  // 9</code></pre>
+          </div>
+
+          <h2 id="summary">Підсумок</h2>
+          <ul>
+            <li>Три напрямки перетворення: ToString, ToNumber, ToBoolean.</li>
+            <li>ToString: <code>null→"null"</code>, <code>undefined→"undefined"</code>, <code>{}→"[object Object]"</code>, <code>[]→""</code>.</li>
+            <li>ToNumber: <code>null→0</code>, <code>undefined→NaN</code>, <code>""→0</code>, <code>true→1</code>, <code>false→0</code>, нецифровий рядок→<code>NaN</code>.</li>
+            <li>ToBoolean: falsy — <code>false, 0, -0, 0n, "", null, undefined, NaN</code>. Порожній <code>[]</code> і <code>{}</code> — truthy.</li>
+            <li>Оператор <code>+</code> з рядком → конкатенація. Усі інші арифметичні оператори → числове перетворення.</li>
+            <li><code>parseInt(str, 10)</code> — завжди вказуйте основу. Парсить до першого нецифрового символу.</li>
+          </ul>
+
+          <div class="article-support"><p><strong>Матеріал корисний?</strong> Підтримай проект.</p><div class="support-btns-inline"><a href="https://send.monobank.ua/jar/YOUR_JAR_ID" class="btn-mono" target="_blank" rel="noopener" style="font-size:12px;height:36px;padding:0 14px">🟢 Monobank</a><a href="https://www.buymeacoffee.com/YOUR_HANDLE" class="btn-coffee" target="_blank" rel="noopener" style="font-size:12px;height:36px;padding:0 14px">☕ Coffee</a></div></div>

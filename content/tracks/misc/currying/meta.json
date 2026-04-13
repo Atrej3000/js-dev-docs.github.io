@@ -1,0 +1,174 @@
+{
+  "id": "misc/currying",
+  "locale": "uk",
+  "locales": {
+    "uk": true,
+    "en": false
+  },
+  "availableLocales": [
+    "uk"
+  ],
+  "title": "Каррінг",
+  "description": "",
+  "track": "misc",
+  "trackTitle": "Різне",
+  "slug": "currying",
+  "sourcePath": "uk/misc/currying.html",
+  "sourceIdentity": {
+    "track": "misc",
+    "slug": "currying"
+  },
+  "canonicalRoute": "/uk/docs/misc/currying",
+  "canonicalLegacyPath": "/misc/currying.html",
+  "legacyHtmlPath": "/uk/misc/currying.html",
+  "legacyAliases": [
+    "/uk/misc/currying.html",
+    "/uk/misc/currying",
+    "/misc/currying.html"
+  ],
+  "sectionOrder": 14,
+  "lessonOrder": 3,
+  "overallOrder": 90,
+  "articleNumber": "14.3",
+  "estimatedMinutes": 11,
+  "headings": [
+    {
+      "level": 2,
+      "id": "basics",
+      "text": "Ручний каррінг"
+    },
+    {
+      "level": 2,
+      "id": "universal-curry",
+      "text": "Загальна функція curry"
+    },
+    {
+      "level": 2,
+      "id": "composition",
+      "text": "Композиція функцій"
+    },
+    {
+      "level": 2,
+      "id": "summary",
+      "text": "Підсумок"
+    }
+  ],
+  "badges": [
+    "Середній",
+    "Різне",
+    "~ 11 хв"
+  ],
+  "donationLinks": [
+    "https://send.monobank.ua/jar/YOUR_JAR_ID",
+    "https://www.buymeacoffee.com/YOUR_HANDLE"
+  ],
+  "breadcrumbTrail": [
+    "Головна",
+    "Різне",
+    "Каррінг"
+  ],
+  "relatedSourceTrack": "misc",
+  "contentFiles": {
+    "uk": "content/tracks/misc/currying/index.uk.html",
+    "en": "content/tracks/misc/currying/index.en.mdx"
+  },
+  "metadataFile": "content/tracks/misc/currying/meta.json",
+  "translationStatus": {
+    "sourceLocale": "uk",
+    "availableLocales": [
+      "uk"
+    ],
+    "fallbackLocales": {
+      "en": "uk"
+    },
+    "locales": {
+      "uk": {
+        "status": "published",
+        "filePath": "content/tracks/misc/currying/index.uk.html",
+        "format": "html",
+        "title": "Каррінг",
+        "description": "",
+        "completeness": 100,
+        "isFallback": false,
+        "headings": [
+          {
+            "level": 2,
+            "id": "basics",
+            "text": "Ручний каррінг"
+          },
+          {
+            "level": 2,
+            "id": "universal-curry",
+            "text": "Загальна функція curry"
+          },
+          {
+            "level": 2,
+            "id": "composition",
+            "text": "Композиція функцій"
+          },
+          {
+            "level": 2,
+            "id": "summary",
+            "text": "Підсумок"
+          }
+        ]
+      },
+      "en": {
+        "status": "draft",
+        "filePath": "content/tracks/misc/currying/index.en.mdx",
+        "format": "mdx",
+        "title": "TODO: Translate title",
+        "description": "TODO: Translate description",
+        "completeness": 0,
+        "isFallback": true,
+        "headings": [
+          {
+            "level": 2,
+            "id": "source-lesson",
+            "text": "Source lesson"
+          }
+        ],
+        "slug": "currying",
+        "track": "misc",
+        "locale": "en",
+        "sourceLocale": "uk",
+        "hasBody": true
+      }
+    }
+  },
+  "translationCompleteness": {
+    "uk": 100,
+    "en": 0
+  },
+  "migration": {
+    "migratedFromLegacy": true,
+    "canonicalIdentitySource": "canonical",
+    "override": null,
+    "articleMeta": {
+      "type": "string",
+      "raw": {
+        "secId": "misc",
+        "artId": "currying"
+      },
+      "resolved": {
+        "track": "misc",
+        "slug": "currying"
+      }
+    },
+    "mismatches": {
+      "filePathVsCanonical": false,
+      "filePathVsStringMeta": false,
+      "filePathVsNumericMeta": false
+    },
+    "hasLegacyJsonLd": false,
+    "hasLegacyToc": true,
+    "hasLegacyPrevNext": true,
+    "legacyArticleSupport": true
+  },
+  "bodySourcePath": "content/tracks/misc/currying/index.uk.html",
+  "sourceProvenance": {
+    "sourcePath": "uk/misc/currying.html",
+    "sourceTrack": "misc",
+    "sourceSlug": "currying"
+  }
+}

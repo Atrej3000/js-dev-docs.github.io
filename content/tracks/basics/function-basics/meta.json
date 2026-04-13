@@ -1,0 +1,249 @@
+{
+  "id": "basics/function-basics",
+  "locale": "uk",
+  "locales": {
+    "uk": true,
+    "en": true
+  },
+  "availableLocales": [
+    "uk",
+    "en"
+  ],
+  "title": "Функції",
+  "description": "Функції в JavaScript: оголошення, параметри, значення за замовчуванням, return, область видимості, чисті функції. Базові концепції та best practices.",
+  "track": "basics",
+  "trackTitle": "Основи JavaScript",
+  "slug": "function-basics",
+  "sourcePath": "uk/basics/functions.html",
+  "sourceIdentity": {
+    "track": "basics",
+    "slug": "functions"
+  },
+  "canonicalRoute": "/uk/docs/basics/function-basics",
+  "canonicalLegacyPath": "/basics/function-basics.html",
+  "legacyHtmlPath": "/uk/basics/functions.html",
+  "legacyAliases": [
+    "/uk/basics/functions.html",
+    "/uk/basics/functions",
+    "/basics/function-basics.html"
+  ],
+  "sectionOrder": 2,
+  "lessonOrder": 15,
+  "overallOrder": 19,
+  "articleNumber": "2.15",
+  "estimatedMinutes": 14,
+  "headings": [
+    {
+      "level": 2,
+      "id": "ogoloshennya",
+      "text": "Function declaration"
+    },
+    {
+      "level": 2,
+      "id": "parametry",
+      "text": "Параметри і аргументи"
+    },
+    {
+      "level": 2,
+      "id": "default-params",
+      "text": "Значення параметрів за замовчуванням (ES6)"
+    },
+    {
+      "level": 2,
+      "id": "return",
+      "text": "Оператор return"
+    },
+    {
+      "level": 2,
+      "id": "scope",
+      "text": "Область видимості функції"
+    },
+    {
+      "level": 2,
+      "id": "pure-functions",
+      "text": "Чисті функції"
+    },
+    {
+      "level": 2,
+      "id": "best-practices",
+      "text": "Найкращі практики"
+    },
+    {
+      "level": 2,
+      "id": "summary",
+      "text": "Підсумок"
+    }
+  ],
+  "badges": [
+    "Початковий",
+    "Основи JavaScript",
+    "~ 14 хв"
+  ],
+  "donationLinks": [
+    "https://send.monobank.ua/jar/YOUR_JAR_ID",
+    "https://www.buymeacoffee.com/YOUR_HANDLE"
+  ],
+  "breadcrumbTrail": [
+    "Головна",
+    "Основи JavaScript",
+    "Функції"
+  ],
+  "relatedSourceTrack": "basics",
+  "contentFiles": {
+    "uk": "content/tracks/basics/function-basics/index.uk.html",
+    "en": "content/tracks/basics/function-basics/index.en.mdx"
+  },
+  "metadataFile": "content/tracks/basics/function-basics/meta.json",
+  "translationStatus": {
+    "sourceLocale": "uk",
+    "availableLocales": [
+      "uk",
+      "en"
+    ],
+    "fallbackLocales": {},
+    "locales": {
+      "uk": {
+        "status": "published",
+        "filePath": "content/tracks/basics/function-basics/index.uk.html",
+        "format": "html",
+        "title": "Функції",
+        "description": "Функції в JavaScript: оголошення, параметри, значення за замовчуванням, return, область видимості, чисті функції. Базові концепції та best practices.",
+        "completeness": 100,
+        "isFallback": false,
+        "headings": [
+          {
+            "level": 2,
+            "id": "ogoloshennya",
+            "text": "Function declaration"
+          },
+          {
+            "level": 2,
+            "id": "parametry",
+            "text": "Параметри і аргументи"
+          },
+          {
+            "level": 2,
+            "id": "default-params",
+            "text": "Значення параметрів за замовчуванням (ES6)"
+          },
+          {
+            "level": 2,
+            "id": "return",
+            "text": "Оператор return"
+          },
+          {
+            "level": 2,
+            "id": "scope",
+            "text": "Область видимості функції"
+          },
+          {
+            "level": 2,
+            "id": "pure-functions",
+            "text": "Чисті функції"
+          },
+          {
+            "level": 2,
+            "id": "best-practices",
+            "text": "Найкращі практики"
+          },
+          {
+            "level": 2,
+            "id": "summary",
+            "text": "Підсумок"
+          }
+        ]
+      },
+      "en": {
+        "status": "published",
+        "filePath": "content/tracks/basics/function-basics/index.en.mdx",
+        "format": "mdx",
+        "title": "Functions",
+        "description": "Function declarations, parameters, return values, scope, and the basic best practices for writing functions in JavaScript.",
+        "completeness": 100,
+        "isFallback": false,
+        "headings": [
+          {
+            "level": 2,
+            "id": "function-declaration",
+            "text": "Function declaration"
+          },
+          {
+            "level": 2,
+            "id": "parameters-and-arguments",
+            "text": "Parameters and arguments"
+          },
+          {
+            "level": 2,
+            "id": "default-parameter-values",
+            "text": "Default parameter values"
+          },
+          {
+            "level": 2,
+            "id": "the-return-operator",
+            "text": "The `return` operator"
+          },
+          {
+            "level": 2,
+            "id": "function-scope",
+            "text": "Function scope"
+          },
+          {
+            "level": 2,
+            "id": "pure-functions",
+            "text": "Pure functions"
+          },
+          {
+            "level": 2,
+            "id": "best-practices",
+            "text": "Best practices"
+          },
+          {
+            "level": 2,
+            "id": "summary",
+            "text": "Summary"
+          }
+        ],
+        "slug": "function-basics",
+        "track": "basics",
+        "locale": "en",
+        "sourceLocale": "uk",
+        "hasBody": true
+      }
+    }
+  },
+  "translationCompleteness": {
+    "uk": 100,
+    "en": 100
+  },
+  "migration": {
+    "migratedFromLegacy": true,
+    "canonicalIdentitySource": "canonical",
+    "override": null,
+    "articleMeta": {
+      "type": "string",
+      "raw": {
+        "secId": "basics",
+        "artId": "function-basics"
+      },
+      "resolved": {
+        "track": "basics",
+        "slug": "function-basics"
+      }
+    },
+    "mismatches": {
+      "filePathVsCanonical": true,
+      "filePathVsStringMeta": true,
+      "filePathVsNumericMeta": false
+    },
+    "hasLegacyJsonLd": true,
+    "hasLegacyToc": true,
+    "hasLegacyPrevNext": true,
+    "legacyArticleSupport": true
+  },
+  "bodySourcePath": "content/tracks/basics/function-basics/index.uk.html",
+  "sourceProvenance": {
+    "sourcePath": "uk/basics/functions.html",
+    "sourceTrack": "basics",
+    "sourceSlug": "functions"
+  }
+}

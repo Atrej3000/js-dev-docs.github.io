@@ -1,0 +1,145 @@
+<p>JavaScript має два типи перевірки рівності: <strong>строге</strong> (<code>===</code>) і <strong>нестроге</strong> (<code>==</code>). Різниця між ними є джерелом цілого класу важко відтворюваних помилок. Строге порівняння — стандарт у сучасному коді.</p>
+
+          <h2 id="reliyatsiyni">Реляційні оператори</h2>
+          <p>Повертають <code>boolean</code>. Для чисел — числове порівняння. Для рядків — лексикографічне.</p>
+
+          <div class="code-block">
+            <div class="code-head"><span class="code-lang">JavaScript</span><button class="btn-copy" aria-label="Копіювати"></button></div>
+<pre><code class="language-javascript">console.log(5 > 3);    // true
+console.log(5 < 3);    // false
+console.log(5 >= 5);   // true
+console.log(5 <= 4);   // false
+
+// Рядки: порівняння по кодах Unicode символ за символом
+console.log('B' > 'A');      // true  (66 > 65)
+console.log('abc' > 'ab');   // true  (довший виграє за рівних)
+console.log('apple' > 'Banana'); // true  — мала 'a' > велика 'B'
+// Увага: 'a'.charCodeAt(0) = 97, 'B'.charCodeAt(0) = 66
+
+// Порівняння різних типів → числова конвертація
+console.log('5' > 3);    // true  ('5' → 5)
+console.log(null > 0);   // false
+console.log(null == 0);  // false
+console.log(null >= 0);  // true  — несподівано! (null → 0 у >=)</code></pre>
+          </div>
+
+          <h2 id="stryke">Строге порівняння ===</h2>
+          <p>Оператор <code>===</code> перевіряє і значення, і тип без будь-яких перетворень. Якщо типи різні — завжди <code>false</code>.</p>
+
+          <div class="code-block">
+            <div class="code-head"><span class="code-lang">JavaScript</span><button class="btn-copy" aria-label="Копіювати"></button></div>
+<pre><code class="language-javascript">// Однакові типи і значення
+console.log(1 === 1);         // true
+console.log('abc' === 'abc'); // true
+console.log(true === true);   // true
+console.log(null === null);   // true
+
+// Різні типи — завжди false
+console.log(1 === '1');       // false
+console.log(0 === false);     // false
+console.log(null === undefined); // false
+
+// Об'єкти: порівнюються за посиланням
+const a = { x: 1 };
+const b = { x: 1 };
+const c = a;
+console.log(a === b); // false — різні об'єкти в пам'яті
+console.log(a === c); // true  — одне і те ж посилання
+
+// Спеціальні значення
+console.log(NaN === NaN);   // false — NaN не дорівнює нічому
+console.log(+0 === -0);     // true  — === не розрізняє -0 і 0</code></pre>
+          </div>
+
+          <h2 id="nestroke">Нестроге порівняння ==</h2>
+          <p>Оператор <code>==</code> виконує <strong>Abstract Equality Comparison</strong> зі специфікації ECMAScript: при різних типах застосовує перетворення перед порівнянням. Результати часто неінтуїтивні.</p>
+
+          <div class="code-block">
+            <div class="code-head"><span class="code-lang">JavaScript</span><button class="btn-copy" aria-label="Копіювати"></button></div>
+<pre><code class="language-javascript">// Число і рядок: рядок конвертується в число
+console.log(1 == '1');      // true  ('1' → 1)
+console.log(0 == '');       // true  ('' → 0)
+console.log(0 == '0');      // true  ('0' → 0)
+console.log('' == '0');     // false (обидва рядки, різні)
+
+// Boolean конвертується в число
+console.log(false == 0);    // true  (false → 0)
+console.log(true == 1);     // true  (true → 1)
+console.log(true == '1');   // true  (обидва → 1)
+console.log(false == '');   // true  (false→0, ''→0)
+
+// null і undefined: рівні тільки між собою
+console.log(null == undefined);  // true  — спеціальне правило
+console.log(null == 0);          // false — null не конвертується
+console.log(null == false);      // false
+console.log(undefined == false); // false
+
+// Об'єкт і примітив: ToPrimitive
+console.log([] == false);    // true  ([] → '' → 0, false → 0)
+console.log([] == 0);        // true  ([] → '' → 0)
+console.log([1] == 1);       // true  ([1] → '1' → 1)
+console.log('' == false);    // true  ('' → 0, false → 0)</code></pre>
+          </div>
+
+          <div class="callout c-danger">
+            <div class="callout-title">== — джерело помилок</div>
+            <p>Нестроге порівняння має 11 правил перетворення. Навіть досвідчені розробники іноді помиляються з ними. Використовуйте <code>===</code> за замовчуванням. Єдиний прийнятний виняток: перевірка на <code>null</code> або <code>undefined</code> одночасно: <code>value == null</code>.</p>
+          </div>
+
+          <h2 id="null-undefined">Особливості null та undefined</h2>
+          <div class="code-block">
+            <div class="code-head"><span class="code-lang">JavaScript</span><button class="btn-copy" aria-label="Копіювати"></button></div>
+<pre><code class="language-javascript">// == між null і undefined — true (спеціальне правило)
+console.log(null == undefined);   // true
+console.log(null === undefined);  // false
+
+// null у реляційних операторах: конвертується в 0
+console.log(null > 0);    // false  (0 > 0 = false)
+console.log(null < 0);    // false  (0 < 0 = false)
+console.log(null >= 0);   // true   (0 >= 0 = true)
+console.log(null == 0);   // false  — УВАГА: == НЕ конвертує null!
+// null == 0 та null >= 0 дають суперечливі результати
+
+// undefined у будь-яких операціях → NaN
+console.log(undefined > 0);   // false
+console.log(undefined < 0);   // false
+console.log(undefined == 0);  // false
+
+// Практична перевірка: == null покриває обидва випадки
+function process(value) {
+  if (value == null) {   // true для null і undefined
+    return 'empty';
+  }
+  return value;
+}</code></pre>
+          </div>
+
+          <h2 id="object-is">Object.is — строге без виключень</h2>
+          <p><code>Object.is(a, b)</code> аналогічний <code>===</code>, але коректно обробляє два крайніх випадки:</p>
+
+          <div class="code-block">
+            <div class="code-head"><span class="code-lang">JavaScript</span><button class="btn-copy" aria-label="Копіювати"></button></div>
+<pre><code class="language-javascript">// === та Object.is
+console.log(NaN === NaN);        // false
+console.log(Object.is(NaN, NaN)); // true ← правильно
+
+console.log(+0 === -0);          // true
+console.log(Object.is(+0, -0));  // false ← розрізняє
+
+// В решті випадків — ідентичний ===
+console.log(Object.is(1, 1));    // true
+console.log(Object.is(1, '1')); // false</code></pre>
+          </div>
+
+          <h2 id="summary">Підсумок</h2>
+          <ul>
+            <li>Реляційні оператори <code>&gt; &lt; &gt;= &lt;=</code>: числове порівняння, для рядків — лексикографічне по Unicode.</li>
+            <li><code>===</code> — строге: не виконує перетворень, різні типи завжди <code>false</code>.</li>
+            <li><code>==</code> — нестроге: виконує Abstract Equality Comparison. Результати часто неінтуїтивні. Уникайте.</li>
+            <li><code>null == undefined</code> — <code>true</code> (спеціальне правило). Це єдиний доцільний кейс для <code>==</code>.</li>
+            <li><code>null</code> у реляційних операторах конвертується в <code>0</code>, але <code>null == 0</code> — <code>false</code>.</li>
+            <li><code>Object.is(a, b)</code>: строге порівняння без двох виключень <code>===</code> — правильно обробляє <code>NaN</code> і <code>-0</code>.</li>
+            <li>Об'єкти порівнюються за посиланням: два різних об'єкти з однаковим вмістом — не рівні.</li>
+          </ul>
+
+          <div class="article-support"><p><strong>Матеріал корисний?</strong> Підтримай проект.</p><div class="support-btns-inline"><a href="https://send.monobank.ua/jar/YOUR_JAR_ID" class="btn-mono" target="_blank" rel="noopener" style="font-size:12px;height:36px;padding:0 14px">🟢 Monobank</a><a href="https://www.buymeacoffee.com/YOUR_HANDLE" class="btn-coffee" target="_blank" rel="noopener" style="font-size:12px;height:36px;padding:0 14px">☕ Coffee</a></div></div>

@@ -1,0 +1,174 @@
+{
+  "id": "misc/proxy-reflect",
+  "locale": "uk",
+  "locales": {
+    "uk": true,
+    "en": false
+  },
+  "availableLocales": [
+    "uk"
+  ],
+  "title": "Proxy та Reflect",
+  "description": "",
+  "track": "misc",
+  "trackTitle": "Різне",
+  "slug": "proxy-reflect",
+  "sourcePath": "uk/misc/proxy.html",
+  "sourceIdentity": {
+    "track": "misc",
+    "slug": "proxy"
+  },
+  "canonicalRoute": "/uk/docs/misc/proxy-reflect",
+  "canonicalLegacyPath": "/misc/proxy-reflect.html",
+  "legacyHtmlPath": "/uk/misc/proxy.html",
+  "legacyAliases": [
+    "/uk/misc/proxy.html",
+    "/uk/misc/proxy",
+    "/misc/proxy-reflect.html"
+  ],
+  "sectionOrder": 14,
+  "lessonOrder": 1,
+  "overallOrder": 88,
+  "articleNumber": "14.1",
+  "estimatedMinutes": 14,
+  "headings": [
+    {
+      "level": 2,
+      "id": "proxy-basics",
+      "text": "Proxy: основи"
+    },
+    {
+      "level": 2,
+      "id": "use-cases",
+      "text": "Практичні застосування"
+    },
+    {
+      "level": 2,
+      "id": "reflect",
+      "text": "Reflect"
+    },
+    {
+      "level": 2,
+      "id": "summary",
+      "text": "Підсумок"
+    }
+  ],
+  "badges": [
+    "Середній",
+    "Різне",
+    "~ 14 хв"
+  ],
+  "donationLinks": [
+    "https://send.monobank.ua/jar/YOUR_JAR_ID",
+    "https://www.buymeacoffee.com/YOUR_HANDLE"
+  ],
+  "breadcrumbTrail": [
+    "Головна",
+    "Різне",
+    "Proxy та Reflect"
+  ],
+  "relatedSourceTrack": "misc",
+  "contentFiles": {
+    "uk": "content/tracks/misc/proxy-reflect/index.uk.html",
+    "en": "content/tracks/misc/proxy-reflect/index.en.mdx"
+  },
+  "metadataFile": "content/tracks/misc/proxy-reflect/meta.json",
+  "translationStatus": {
+    "sourceLocale": "uk",
+    "availableLocales": [
+      "uk"
+    ],
+    "fallbackLocales": {
+      "en": "uk"
+    },
+    "locales": {
+      "uk": {
+        "status": "published",
+        "filePath": "content/tracks/misc/proxy-reflect/index.uk.html",
+        "format": "html",
+        "title": "Proxy та Reflect",
+        "description": "",
+        "completeness": 100,
+        "isFallback": false,
+        "headings": [
+          {
+            "level": 2,
+            "id": "proxy-basics",
+            "text": "Proxy: основи"
+          },
+          {
+            "level": 2,
+            "id": "use-cases",
+            "text": "Практичні застосування"
+          },
+          {
+            "level": 2,
+            "id": "reflect",
+            "text": "Reflect"
+          },
+          {
+            "level": 2,
+            "id": "summary",
+            "text": "Підсумок"
+          }
+        ]
+      },
+      "en": {
+        "status": "draft",
+        "filePath": "content/tracks/misc/proxy-reflect/index.en.mdx",
+        "format": "mdx",
+        "title": "TODO: Translate title",
+        "description": "TODO: Translate description",
+        "completeness": 0,
+        "isFallback": true,
+        "headings": [
+          {
+            "level": 2,
+            "id": "source-lesson",
+            "text": "Source lesson"
+          }
+        ],
+        "slug": "proxy-reflect",
+        "track": "misc",
+        "locale": "en",
+        "sourceLocale": "uk",
+        "hasBody": true
+      }
+    }
+  },
+  "translationCompleteness": {
+    "uk": 100,
+    "en": 0
+  },
+  "migration": {
+    "migratedFromLegacy": true,
+    "canonicalIdentitySource": "canonical",
+    "override": null,
+    "articleMeta": {
+      "type": "string",
+      "raw": {
+        "secId": "misc",
+        "artId": "proxy-reflect"
+      },
+      "resolved": {
+        "track": "misc",
+        "slug": "proxy-reflect"
+      }
+    },
+    "mismatches": {
+      "filePathVsCanonical": true,
+      "filePathVsStringMeta": true,
+      "filePathVsNumericMeta": false
+    },
+    "hasLegacyJsonLd": false,
+    "hasLegacyToc": true,
+    "hasLegacyPrevNext": true,
+    "legacyArticleSupport": true
+  },
+  "bodySourcePath": "content/tracks/misc/proxy-reflect/index.uk.html",
+  "sourceProvenance": {
+    "sourcePath": "uk/misc/proxy.html",
+    "sourceTrack": "misc",
+    "sourceSlug": "proxy"
+  }
+}

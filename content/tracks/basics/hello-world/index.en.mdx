@@ -1,0 +1,123 @@
+---
+title: "Hello, World!"
+description: "How JavaScript is loaded in the browser with script tags, defer, async, and modules."
+slug: "hello-world"
+track: "basics"
+locale: "en"
+sourceLocale: "uk"
+translationStatus: "published"
+translationCompleteness: 100
+---
+
+A JavaScript program is just source code executed by a JavaScript engine. In the browser, the usual entry point is the `<script>` tag. How you include a script directly affects when it loads and when it runs.
+
+## The `<script>` tag
+
+A `<script>` tag can either contain JavaScript directly or load it from a file with `src`.
+
+```html
+<script>
+  console.log("Hello from an inline script");
+</script>
+
+<script src="./app.js">
+  console.log("This code will be ignored");
+</script>
+```
+
+If `src` is present, the inline body is ignored.
+
+External `.js` files are usually preferable because browsers can cache them.
+
+## Default execution order
+
+Without attributes, a `<script>` tag blocks HTML parsing. The browser pauses DOM construction, downloads the script if needed, executes it, and only then continues parsing the page.
+
+That is why scripts were historically placed near the end of `<body>`.
+
+```html
+<!doctype html>
+<html>
+  <head>
+    <title>My page</title>
+  </head>
+  <body>
+    <p>Page content</p>
+    <script src="./app.js"></script>
+  </body>
+</html>
+```
+
+## `async` and `defer`
+
+Modern pages usually load scripts with `defer` or, in some special cases, `async`.
+
+| Attribute | Download | Execution | Order |
+| --- | --- | --- | --- |
+| none | blocks parsing | immediately after download | HTML order |
+| `defer` | parallel with parsing | after DOM parsing finishes | HTML order |
+| `async` | parallel with parsing | as soon as download completes | not guaranteed |
+
+```html
+<script defer src="./vendor.js"></script>
+<script defer src="./app.js"></script>
+<script async src="https://example.com/analytics.js"></script>
+```
+
+Use `defer` for the main application scripts. Use `async` only for truly independent scripts.
+
+## `type="module"`
+
+Setting `type="module"` turns the script into an ES module.
+
+That means:
+
+- strict mode is enabled automatically
+- the module gets its own scope
+- `import` and `export` become available
+- loading behaves like `defer`
+- a module is loaded once, even if referenced multiple times
+
+```html
+<script type="module" src="./main.js"></script>
+```
+
+```javascript
+// main.js
+import { formatDate } from "./utils.js";
+
+const today = formatDate(new Date());
+console.log(today);
+```
+
+Modules must be served over HTTP(S). Opening an HTML file directly with `file://` often leads to CORS-related errors.
+
+## Your first script
+
+```html
+<!doctype html>
+<html>
+  <head>
+    <title>First script</title>
+    <script defer src="./main.js"></script>
+  </head>
+  <body>
+    <h1 id="output">Loading...</h1>
+  </body>
+</html>
+```
+
+```javascript
+const output = document.getElementById("output");
+output.textContent = "Hello, world!";
+
+console.log("Script executed");
+```
+
+## Summary
+
+- A plain `<script>` tag blocks HTML parsing while it loads and runs.
+- `defer` downloads in parallel and runs after the DOM is ready.
+- `async` downloads in parallel but runs as soon as it is ready, so order is not guaranteed.
+- `type="module"` enables ES modules with automatic strict mode and module scope.
+- If `src` is present, inline script content inside the tag is ignored.

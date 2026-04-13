@@ -1,0 +1,134 @@
+---
+title: "Developer Tools"
+description: "How to use the browser's developer tools to inspect pages, debug JavaScript, and analyze network activity."
+slug: "devtools"
+track: "intro"
+locale: "en"
+sourceLocale: "uk"
+translationStatus: "published"
+translationCompleteness: 100
+---
+
+Browser Developer Tools are built-in utilities for debugging, profiling, and inspecting web pages. For JavaScript work, the most important panels are usually **Console**, **Sources**, **Network**, and **Elements**.
+
+## Why this matters
+
+When something breaks in the browser, DevTools is usually the first place to look. Strong debugging habits save hours of guesswork and help you understand what your code is actually doing.
+
+## How to open DevTools
+
+Typical shortcuts:
+
+| Platform | Shortcut |
+| --- | --- |
+| Windows / Linux | `F12` or `Ctrl+Shift+I` |
+| macOS | `Cmd+Option+I` |
+| Any OS | right-click a page element and choose **Inspect** |
+
+These instructions match Chromium-based browsers such as Chrome and Edge, but Firefox and Safari provide similar tools.
+
+## Console panel
+
+The Console is a REPL-like environment where you can run JavaScript in the context of the current page. It also shows errors and messages produced by your code.
+
+### `console` methods
+
+```javascript
+console.log("regular message");
+console.info("informational message");
+console.warn("warning");
+console.error("error");
+
+const user = { id: 1, name: "admin", roles: ["read", "write"] };
+console.log(user);
+console.table([user]);
+
+console.group("Auth flow");
+console.log("checking token...");
+console.log("token valid");
+console.groupEnd();
+
+console.time("fetch");
+// await fetch("/api/data");
+console.timeEnd("fetch");
+
+console.assert(user.id > 0, "user.id must be positive", user);
+```
+
+In production code, uncontrolled logging can hurt performance and expose sensitive information. Use logs intentionally.
+
+## Sources panel: the debugger
+
+The Sources panel lets you pause JavaScript execution and inspect program state.
+
+### Breakpoints
+
+Click a line number to set a breakpoint. When execution stops there, you can inspect:
+
+- the current **scope**
+- the **call stack**
+- watched expressions
+
+### Step-by-step execution
+
+| Action | Common shortcut | Meaning |
+| --- | --- | --- |
+| Resume | `F8` | continue until the next breakpoint |
+| Step over | `F10` | run the next line without entering a function |
+| Step into | `F11` | enter the called function |
+| Step out | `Shift+F11` | leave the current function |
+
+### The `debugger` statement
+
+You can also place a breakpoint in code:
+
+```javascript
+function processPayment(amount, currency) {
+  debugger;
+
+  if (amount <= 0) {
+    throw new Error("Amount must be positive");
+  }
+
+  return `${amount} ${currency}`;
+}
+```
+
+When DevTools is open, execution pauses at `debugger`.
+
+### Conditional breakpoints
+
+Sometimes you only want execution to stop for a specific state. A conditional breakpoint lets you provide an expression such as:
+
+```javascript
+user.role === "admin" && requestCount > 100
+```
+
+Execution stops only when that condition becomes `true`.
+
+## Network panel
+
+The Network panel shows the page's requests: scripts, styles, images, XHR, `fetch`, and more.
+
+For each request you can inspect:
+
+- headers
+- payload
+- response body
+- timing information
+
+This is one of the best places to debug failed API calls and performance issues.
+
+## Elements panel
+
+The Elements panel lets you inspect and temporarily edit the DOM and CSS in real time. It is ideal for testing selectors, checking computed styles, and understanding page structure.
+
+A useful debugging feature is **Break on...**, which can pause execution when a DOM node changes.
+
+## Summary
+
+- Use DevTools as your first debugging workspace in the browser.
+- The Console is useful for quick evaluation, diagnostics, and structured logging.
+- The Sources panel gives you breakpoints, stepping, scope inspection, and call-stack analysis.
+- The Network panel helps you debug API calls, resources, and timing.
+- The Elements panel helps you inspect and experiment with DOM and CSS.

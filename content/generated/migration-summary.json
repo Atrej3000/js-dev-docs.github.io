@@ -1,0 +1,123 @@
+{
+  "generatedAt": "2026-04-13T14:45:48.347Z",
+  "counts": {
+    "lessons": 94,
+    "tracks": 14,
+    "canonicalDrift": 22,
+    "stringMetaCount": 69,
+    "numericMetaCount": 25,
+    "knownOverrides": 3
+  },
+  "tracks": [
+    {
+      "track": "intro",
+      "title": "Вступ",
+      "lessonCount": 4,
+      "sectionOrder": 1
+    },
+    {
+      "track": "basics",
+      "title": "Основи JavaScript",
+      "lessonCount": 18,
+      "sectionOrder": 2
+    },
+    {
+      "track": "code-quality",
+      "title": "Якість коду",
+      "lessonCount": 6,
+      "sectionOrder": 3
+    },
+    {
+      "track": "objects",
+      "title": "Об'єкти: основи",
+      "lessonCount": 8,
+      "sectionOrder": 4
+    },
+    {
+      "track": "data-types",
+      "title": "Типи даних",
+      "lessonCount": 12,
+      "sectionOrder": 5
+    },
+    {
+      "track": "functions-advanced",
+      "title": "Розширена робота з функціями",
+      "lessonCount": 11,
+      "sectionOrder": 6
+    },
+    {
+      "track": "object-properties",
+      "title": "Властивості об'єктів, їх конфігурація",
+      "lessonCount": 2,
+      "sectionOrder": 7
+    },
+    {
+      "track": "prototypes",
+      "title": "Прототипи, наслідування",
+      "lessonCount": 4,
+      "sectionOrder": 8
+    },
+    {
+      "track": "classes",
+      "title": "Класи",
+      "lessonCount": 7,
+      "sectionOrder": 9
+    },
+    {
+      "track": "error-handling",
+      "title": "Обробка помилок",
+      "lessonCount": 2,
+      "sectionOrder": 10
+    },
+    {
+      "track": "promises",
+      "title": "Проміси, async/await",
+      "lessonCount": 8,
+      "sectionOrder": 11
+    },
+    {
+      "track": "generators",
+      "title": "Генератори, розширена ітерація",
+      "lessonCount": 2,
+      "sectionOrder": 12
+    },
+    {
+      "track": "modules",
+      "title": "Модулі",
+      "lessonCount": 3,
+      "sectionOrder": 13
+    },
+    {
+      "track": "misc",
+      "title": "Різне",
+      "lessonCount": 7,
+      "sectionOrder": 14
+    }
+  ],
+  "overrides": [
+    {
+      "sourcePath": "uk/data-types/iterables.html",
+      "forceIdentity": {
+        "track": "data-types",
+        "slug": "iterables"
+      },
+      "reason": "Numeric ARTICLE_META points to data-types/string instead of the iterables lesson."
+    },
+    {
+      "sourcePath": "uk/misc/bigint.html",
+      "forceIdentity": {
+        "track": "misc",
+        "slug": "bigint"
+      },
+      "reason": "Numeric ARTICLE_META points to misc/reference-type instead of the bigint lesson."
+    },
+    {
+      "sourcePath": "uk/misc/reference-type.html",
+      "forceIdentity": {
+        "track": "misc",
+        "slug": "reference-type"
+      },
+      "reason": "Numeric ARTICLE_META points to misc/currying instead of the reference-type lesson."
+    }
+  ]
+}

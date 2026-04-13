@@ -1,0 +1,181 @@
+{
+  "id": "classes/instanceof",
+  "locale": "uk",
+  "locales": {
+    "uk": true,
+    "en": false
+  },
+  "availableLocales": [
+    "uk"
+  ],
+  "title": "Оператор instanceof",
+  "description": "Оператор instanceof у JavaScript — детальний розбір з прикладами, підводними каменями та best practices.",
+  "track": "classes",
+  "trackTitle": "Класи",
+  "slug": "instanceof",
+  "sourcePath": "uk/classes/instanceof.html",
+  "sourceIdentity": {
+    "track": "classes",
+    "slug": "instanceof"
+  },
+  "canonicalRoute": "/uk/docs/classes/instanceof",
+  "canonicalLegacyPath": "/classes/instanceof.html",
+  "legacyHtmlPath": "/uk/classes/instanceof.html",
+  "legacyAliases": [
+    "/uk/classes/instanceof.html",
+    "/uk/classes/instanceof",
+    "/classes/instanceof.html"
+  ],
+  "sectionOrder": 9,
+  "lessonOrder": 6,
+  "overallOrder": 71,
+  "articleNumber": "9.6",
+  "estimatedMinutes": 8,
+  "headings": [
+    {
+      "level": 2,
+      "id": "basics",
+      "text": "Базова поведінка"
+    },
+    {
+      "level": 2,
+      "id": "prototype-chain",
+      "text": "Перевірка через прототипи"
+    },
+    {
+      "level": 2,
+      "id": "symbol-hasinstance",
+      "text": "Symbol.hasInstance"
+    },
+    {
+      "level": 2,
+      "id": "typeof-vs",
+      "text": "instanceof vs typeof vs constructor"
+    },
+    {
+      "level": 2,
+      "id": "summary",
+      "text": "Підсумок"
+    }
+  ],
+  "badges": [
+    "Середній",
+    "Класи",
+    "~ 8 хв"
+  ],
+  "donationLinks": [],
+  "breadcrumbTrail": [
+    "Головна",
+    "Класи",
+    "Оператор instanceof"
+  ],
+  "relatedSourceTrack": "classes",
+  "contentFiles": {
+    "uk": "content/tracks/classes/instanceof/index.uk.html",
+    "en": "content/tracks/classes/instanceof/index.en.mdx"
+  },
+  "metadataFile": "content/tracks/classes/instanceof/meta.json",
+  "translationStatus": {
+    "sourceLocale": "uk",
+    "availableLocales": [
+      "uk"
+    ],
+    "fallbackLocales": {
+      "en": "uk"
+    },
+    "locales": {
+      "uk": {
+        "status": "published",
+        "filePath": "content/tracks/classes/instanceof/index.uk.html",
+        "format": "html",
+        "title": "Оператор instanceof",
+        "description": "Оператор instanceof у JavaScript — детальний розбір з прикладами, підводними каменями та best practices.",
+        "completeness": 100,
+        "isFallback": false,
+        "headings": [
+          {
+            "level": 2,
+            "id": "basics",
+            "text": "Базова поведінка"
+          },
+          {
+            "level": 2,
+            "id": "prototype-chain",
+            "text": "Перевірка через прототипи"
+          },
+          {
+            "level": 2,
+            "id": "symbol-hasinstance",
+            "text": "Symbol.hasInstance"
+          },
+          {
+            "level": 2,
+            "id": "typeof-vs",
+            "text": "instanceof vs typeof vs constructor"
+          },
+          {
+            "level": 2,
+            "id": "summary",
+            "text": "Підсумок"
+          }
+        ]
+      },
+      "en": {
+        "status": "draft",
+        "filePath": "content/tracks/classes/instanceof/index.en.mdx",
+        "format": "mdx",
+        "title": "TODO: Translate title",
+        "description": "TODO: Translate description",
+        "completeness": 0,
+        "isFallback": true,
+        "headings": [
+          {
+            "level": 2,
+            "id": "source-lesson",
+            "text": "Source lesson"
+          }
+        ],
+        "slug": "instanceof",
+        "track": "classes",
+        "locale": "en",
+        "sourceLocale": "uk",
+        "hasBody": true
+      }
+    }
+  },
+  "translationCompleteness": {
+    "uk": 100,
+    "en": 0
+  },
+  "migration": {
+    "migratedFromLegacy": true,
+    "canonicalIdentitySource": "canonical",
+    "override": null,
+    "articleMeta": {
+      "type": "numeric",
+      "raw": {
+        "secId": "9",
+        "artId": "6"
+      },
+      "resolved": {
+        "track": "classes",
+        "slug": "instanceof"
+      }
+    },
+    "mismatches": {
+      "filePathVsCanonical": false,
+      "filePathVsStringMeta": false,
+      "filePathVsNumericMeta": false
+    },
+    "hasLegacyJsonLd": false,
+    "hasLegacyToc": false,
+    "hasLegacyPrevNext": false,
+    "legacyArticleSupport": true
+  },
+  "bodySourcePath": "content/tracks/classes/instanceof/index.uk.html",
+  "sourceProvenance": {
+    "sourcePath": "uk/classes/instanceof.html",
+    "sourceTrack": "classes",
+    "sourceSlug": "instanceof"
+  }
+}

@@ -1,0 +1,111 @@
+---
+title: "Loops: `while` and `for`"
+description: "How to repeat work in JavaScript with `while`, `do...while`, `for`, `for...of`, and `for...in`."
+slug: "loops"
+track: "basics"
+locale: "en"
+sourceLocale: "uk"
+translationStatus: "published"
+translationCompleteness: 100
+---
+
+Loops let a program repeat work until a condition changes. JavaScript supports several loop forms, each suited to a slightly different job.
+
+## The `while` loop
+
+`while` repeats as long as its condition stays truthy.
+
+```javascript
+let i = 0;
+
+while (i < 3) {
+  console.log(i);
+  i++;
+}
+```
+
+## The `do...while` loop
+
+`do...while` runs the body first and checks the condition afterward.
+
+```javascript
+let i = 0;
+
+do {
+  console.log(i);
+  i++;
+} while (i < 3);
+```
+
+This is useful when the loop must execute at least once.
+
+## The `for` loop
+
+`for` combines initialization, condition, and update in one place.
+
+```javascript
+for (let i = 0; i < 3; i++) {
+  console.log(i);
+}
+```
+
+This is the most common loop when you need a counter.
+
+## `break` and `continue`
+
+`break` stops the loop completely. `continue` skips the rest of the current iteration and moves to the next one.
+
+```javascript
+for (let i = 0; i < 5; i++) {
+  if (i === 2) continue;
+  if (i === 4) break;
+  console.log(i);
+}
+```
+
+## Labels for nested loops
+
+Labels are rare, but JavaScript allows them:
+
+```javascript
+outer: for (let i = 0; i < 3; i++) {
+  for (let j = 0; j < 3; j++) {
+    if (i === 1 && j === 1) {
+      break outer;
+    }
+  }
+}
+```
+
+They should be used sparingly because they can make control flow harder to follow.
+
+## `for...of` and `for...in`
+
+`for...of` iterates over iterable values such as arrays and strings.
+
+```javascript
+for (const item of ["a", "b", "c"]) {
+  console.log(item);
+}
+```
+
+`for...in` iterates over object keys.
+
+```javascript
+const user = { name: "Ann", role: "admin" };
+
+for (const key in user) {
+  console.log(key, user[key]);
+}
+```
+
+For arrays, prefer `for...of` over `for...in`.
+
+## Summary
+
+- `while` repeats while a condition is true.
+- `do...while` runs at least once.
+- `for` is the standard counted loop.
+- `break` exits a loop and `continue` skips to the next iteration.
+- `for...of` is best for arrays and other iterables.
+- `for...in` is mainly for object keys.

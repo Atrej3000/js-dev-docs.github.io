@@ -1,0 +1,194 @@
+{
+  "id": "error-handling/try-catch",
+  "locale": "uk",
+  "locales": {
+    "uk": true,
+    "en": false
+  },
+  "availableLocales": [
+    "uk"
+  ],
+  "title": "Робота з помилками: try...catch",
+  "description": "",
+  "track": "error-handling",
+  "trackTitle": "Обробка помилок",
+  "slug": "try-catch",
+  "sourcePath": "uk/error-handling/try-catch.html",
+  "sourceIdentity": {
+    "track": "error-handling",
+    "slug": "try-catch"
+  },
+  "canonicalRoute": "/uk/docs/error-handling/try-catch",
+  "canonicalLegacyPath": "/error-handling/try-catch.html",
+  "legacyHtmlPath": "/uk/error-handling/try-catch.html",
+  "legacyAliases": [
+    "/uk/error-handling/try-catch.html",
+    "/uk/error-handling/try-catch",
+    "/error-handling/try-catch.html"
+  ],
+  "sectionOrder": 10,
+  "lessonOrder": 1,
+  "overallOrder": 73,
+  "articleNumber": "10.1",
+  "estimatedMinutes": 14,
+  "headings": [
+    {
+      "level": 2,
+      "id": "syntax",
+      "text": "Синтаксис"
+    },
+    {
+      "level": 2,
+      "id": "error-object",
+      "text": "Об'єкт Error"
+    },
+    {
+      "level": 2,
+      "id": "custom-errors",
+      "text": "Власні класи помилок"
+    },
+    {
+      "level": 2,
+      "id": "rethrowing",
+      "text": "Перекидання помилок"
+    },
+    {
+      "level": 2,
+      "id": "async-errors",
+      "text": "Помилки в асинхронному коді"
+    },
+    {
+      "level": 2,
+      "id": "summary",
+      "text": "Підсумок"
+    }
+  ],
+  "badges": [
+    "Середній",
+    "Обробка помилок",
+    "~ 14 хв"
+  ],
+  "donationLinks": [
+    "https://send.monobank.ua/jar/YOUR_JAR_ID",
+    "https://www.buymeacoffee.com/YOUR_HANDLE"
+  ],
+  "breadcrumbTrail": [
+    "Головна",
+    "Обробка помилок",
+    "Робота з помилками: try...catch"
+  ],
+  "relatedSourceTrack": "error-handling",
+  "contentFiles": {
+    "uk": "content/tracks/error-handling/try-catch/index.uk.html",
+    "en": "content/tracks/error-handling/try-catch/index.en.mdx"
+  },
+  "metadataFile": "content/tracks/error-handling/try-catch/meta.json",
+  "translationStatus": {
+    "sourceLocale": "uk",
+    "availableLocales": [
+      "uk"
+    ],
+    "fallbackLocales": {
+      "en": "uk"
+    },
+    "locales": {
+      "uk": {
+        "status": "published",
+        "filePath": "content/tracks/error-handling/try-catch/index.uk.html",
+        "format": "html",
+        "title": "Робота з помилками: try...catch",
+        "description": "",
+        "completeness": 100,
+        "isFallback": false,
+        "headings": [
+          {
+            "level": 2,
+            "id": "syntax",
+            "text": "Синтаксис"
+          },
+          {
+            "level": 2,
+            "id": "error-object",
+            "text": "Об'єкт Error"
+          },
+          {
+            "level": 2,
+            "id": "custom-errors",
+            "text": "Власні класи помилок"
+          },
+          {
+            "level": 2,
+            "id": "rethrowing",
+            "text": "Перекидання помилок"
+          },
+          {
+            "level": 2,
+            "id": "async-errors",
+            "text": "Помилки в асинхронному коді"
+          },
+          {
+            "level": 2,
+            "id": "summary",
+            "text": "Підсумок"
+          }
+        ]
+      },
+      "en": {
+        "status": "draft",
+        "filePath": "content/tracks/error-handling/try-catch/index.en.mdx",
+        "format": "mdx",
+        "title": "TODO: Translate title",
+        "description": "TODO: Translate description",
+        "completeness": 0,
+        "isFallback": true,
+        "headings": [
+          {
+            "level": 2,
+            "id": "source-lesson",
+            "text": "Source lesson"
+          }
+        ],
+        "slug": "try-catch",
+        "track": "error-handling",
+        "locale": "en",
+        "sourceLocale": "uk",
+        "hasBody": true
+      }
+    }
+  },
+  "translationCompleteness": {
+    "uk": 100,
+    "en": 0
+  },
+  "migration": {
+    "migratedFromLegacy": true,
+    "canonicalIdentitySource": "canonical",
+    "override": null,
+    "articleMeta": {
+      "type": "string",
+      "raw": {
+        "secId": "error-handling",
+        "artId": "try-catch"
+      },
+      "resolved": {
+        "track": "error-handling",
+        "slug": "try-catch"
+      }
+    },
+    "mismatches": {
+      "filePathVsCanonical": false,
+      "filePathVsStringMeta": false,
+      "filePathVsNumericMeta": false
+    },
+    "hasLegacyJsonLd": false,
+    "hasLegacyToc": true,
+    "hasLegacyPrevNext": true,
+    "legacyArticleSupport": true
+  },
+  "bodySourcePath": "content/tracks/error-handling/try-catch/index.uk.html",
+  "sourceProvenance": {
+    "sourcePath": "uk/error-handling/try-catch.html",
+    "sourceTrack": "error-handling",
+    "sourceSlug": "try-catch"
+  }
+}

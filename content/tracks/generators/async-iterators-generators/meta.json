@@ -1,0 +1,181 @@
+{
+  "id": "generators/async-iterators-generators",
+  "locale": "uk",
+  "locales": {
+    "uk": true,
+    "en": false
+  },
+  "availableLocales": [
+    "uk"
+  ],
+  "title": "Асинхронні ітератори та генератори",
+  "description": "Асинхронні ітератори та генератори у JavaScript — детальний розбір з прикладами, підводними каменями та best practices.",
+  "track": "generators",
+  "trackTitle": "Генератори, розширена ітерація",
+  "slug": "async-iterators-generators",
+  "sourcePath": "uk/generators/async-iterators-generators.html",
+  "sourceIdentity": {
+    "track": "generators",
+    "slug": "async-iterators-generators"
+  },
+  "canonicalRoute": "/uk/docs/generators/async-iterators-generators",
+  "canonicalLegacyPath": "/generators/async-iterators-generators.html",
+  "legacyHtmlPath": "/uk/generators/async-iterators-generators.html",
+  "legacyAliases": [
+    "/uk/generators/async-iterators-generators.html",
+    "/uk/generators/async-iterators-generators",
+    "/generators/async-iterators-generators.html"
+  ],
+  "sectionOrder": 12,
+  "lessonOrder": 2,
+  "overallOrder": 84,
+  "articleNumber": "12.2",
+  "estimatedMinutes": 12,
+  "headings": [
+    {
+      "level": 2,
+      "id": "async-iterable",
+      "text": "Асинхронний ітерабельний"
+    },
+    {
+      "level": 2,
+      "id": "async-generator",
+      "text": "Асинхронний генератор"
+    },
+    {
+      "level": 2,
+      "id": "stream",
+      "text": "Читання потоку (stream)"
+    },
+    {
+      "level": 2,
+      "id": "spread-limit",
+      "text": "Spread та деструктуризація"
+    },
+    {
+      "level": 2,
+      "id": "summary",
+      "text": "Підсумок"
+    }
+  ],
+  "badges": [
+    "Просунутий",
+    "Генератори, розширена ітерація",
+    "~ 12 хв"
+  ],
+  "donationLinks": [],
+  "breadcrumbTrail": [
+    "Головна",
+    "Генератори, розширена ітерація",
+    "Асинхронні ітератори та генератори"
+  ],
+  "relatedSourceTrack": "generators",
+  "contentFiles": {
+    "uk": "content/tracks/generators/async-iterators-generators/index.uk.html",
+    "en": "content/tracks/generators/async-iterators-generators/index.en.mdx"
+  },
+  "metadataFile": "content/tracks/generators/async-iterators-generators/meta.json",
+  "translationStatus": {
+    "sourceLocale": "uk",
+    "availableLocales": [
+      "uk"
+    ],
+    "fallbackLocales": {
+      "en": "uk"
+    },
+    "locales": {
+      "uk": {
+        "status": "published",
+        "filePath": "content/tracks/generators/async-iterators-generators/index.uk.html",
+        "format": "html",
+        "title": "Асинхронні ітератори та генератори",
+        "description": "Асинхронні ітератори та генератори у JavaScript — детальний розбір з прикладами, підводними каменями та best practices.",
+        "completeness": 100,
+        "isFallback": false,
+        "headings": [
+          {
+            "level": 2,
+            "id": "async-iterable",
+            "text": "Асинхронний ітерабельний"
+          },
+          {
+            "level": 2,
+            "id": "async-generator",
+            "text": "Асинхронний генератор"
+          },
+          {
+            "level": 2,
+            "id": "stream",
+            "text": "Читання потоку (stream)"
+          },
+          {
+            "level": 2,
+            "id": "spread-limit",
+            "text": "Spread та деструктуризація"
+          },
+          {
+            "level": 2,
+            "id": "summary",
+            "text": "Підсумок"
+          }
+        ]
+      },
+      "en": {
+        "status": "draft",
+        "filePath": "content/tracks/generators/async-iterators-generators/index.en.mdx",
+        "format": "mdx",
+        "title": "TODO: Translate title",
+        "description": "TODO: Translate description",
+        "completeness": 0,
+        "isFallback": true,
+        "headings": [
+          {
+            "level": 2,
+            "id": "source-lesson",
+            "text": "Source lesson"
+          }
+        ],
+        "slug": "async-iterators-generators",
+        "track": "generators",
+        "locale": "en",
+        "sourceLocale": "uk",
+        "hasBody": true
+      }
+    }
+  },
+  "translationCompleteness": {
+    "uk": 100,
+    "en": 0
+  },
+  "migration": {
+    "migratedFromLegacy": true,
+    "canonicalIdentitySource": "canonical",
+    "override": null,
+    "articleMeta": {
+      "type": "numeric",
+      "raw": {
+        "secId": "12",
+        "artId": "2"
+      },
+      "resolved": {
+        "track": "generators",
+        "slug": "async-iterators-generators"
+      }
+    },
+    "mismatches": {
+      "filePathVsCanonical": false,
+      "filePathVsStringMeta": false,
+      "filePathVsNumericMeta": false
+    },
+    "hasLegacyJsonLd": false,
+    "hasLegacyToc": false,
+    "hasLegacyPrevNext": false,
+    "legacyArticleSupport": true
+  },
+  "bodySourcePath": "content/tracks/generators/async-iterators-generators/index.uk.html",
+  "sourceProvenance": {
+    "sourcePath": "uk/generators/async-iterators-generators.html",
+    "sourceTrack": "generators",
+    "sourceSlug": "async-iterators-generators"
+  }
+}

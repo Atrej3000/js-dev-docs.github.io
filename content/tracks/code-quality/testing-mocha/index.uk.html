@@ -1,0 +1,169 @@
+<p>Автоматичне тестування — виконання коду, що перевіряє правильність роботи іншого коду. Тест виявляє регресії: зміни, що зламали функціональність яка раніше працювала. Добре протестований код можна безпечно рефакторити.</p>
+
+          <h2 id="chomu-vazhlivo">Чому це важливо</h2>
+          <p>Без тестів кожна зміна в коді потребує ручної перевірки всіх пов'язаних сценаріїв. Зі збільшенням кодової бази це стає неможливим. Тести дозволяють розробнику вносити зміни з впевненістю: якщо тести проходять — поведінка збережена.</p>
+
+          <h2 id="vidy-testiv">Види тестів</h2>
+          <ul>
+            <li><strong>Unit tests</strong> — тестують ізольовану функцію або модуль без зовнішніх залежностей.</li>
+            <li><strong>Integration tests</strong> — тестують взаємодію кількох модулів.</li>
+            <li><strong>End-to-end (E2E) tests</strong> — тестують повні сценарії користувача через браузер.</li>
+          </ul>
+
+          <h2 id="mocha">Mocha — тестовий фреймворк</h2>
+          <p>Mocha надає структуру для тестів: <code>describe</code> для групування, <code>it</code> для окремих тест-кейсів. Не містить assertion-бібліотеки — для перевірок використовують Chai, Node.js <code>assert</code> або інші.</p>
+
+          <div class="code-block">
+            <div class="code-head"><span class="code-lang">bash</span><button class="btn-copy" aria-label="Копіювати"></button></div>
+<pre><code class="language-javascript">npm install --save-dev mocha chai
+# package.json: "test": "mocha"</code></pre>
+          </div>
+
+          <h2 id="bdd-syntax">BDD синтаксис</h2>
+          <div class="code-block">
+            <div class="code-head"><span class="code-lang">JavaScript — pow.test.js</span><button class="btn-copy" aria-label="Копіювати"></button></div>
+<pre><code class="language-javascript">import { expect } from 'chai';
+import { pow } from './pow.js';
+
+// describe — група тестів (зазвичай один модуль або функція)
+describe('pow', () => {
+
+  // it — один тест-кейс: "щось має щось"
+  it('повертає n у степені 1 як n', () => {
+    expect(pow(3, 1)).to.equal(3);
+    expect(pow(7, 1)).to.equal(7);
+  });
+
+  it('повертає n у степені 2 як n*n', () => {
+    expect(pow(3, 2)).to.equal(9);
+    expect(pow(4, 2)).to.equal(16);
+  });
+
+  it('повертає n у степені 3', () => {
+    expect(pow(2, 3)).to.equal(8);
+    expect(pow(3, 3)).to.equal(27);
+  });
+
+  it('кидає помилку для від\'ємного степеня', () => {
+    expect(() => pow(2, -1)).to.throw(RangeError);
+  });
+
+});</code></pre>
+          </div>
+
+          <h2 id="chai-assertions">Chai assertions</h2>
+          <div class="code-block">
+            <div class="code-head"><span class="code-lang">JavaScript</span><button class="btn-copy" aria-label="Копіювати"></button></div>
+<pre><code class="language-javascript">// Рівність
+expect(result).to.equal(42);          // строга рівність ===
+expect(result).to.deep.equal({a: 1}); // глибоке порівняння
+expect(result).to.not.equal(0);
+
+// Тип
+expect(value).to.be.a('string');
+expect(arr).to.be.an('array');
+expect(fn).to.be.a('function');
+
+// Булеве
+expect(isActive).to.be.true;
+expect(hasError).to.be.false;
+expect(result).to.be.null;
+expect(value).to.be.undefined;
+
+// Числа
+expect(score).to.be.above(0);
+expect(score).to.be.below(100);
+expect(score).to.be.within(0, 100);
+
+// Рядки і масиви
+expect(name).to.include('John');
+expect(arr).to.include(42);
+expect(arr).to.have.lengthOf(3);
+
+// Винятки
+expect(() => fn(null)).to.throw(TypeError);
+expect(() => fn(-1)).to.throw(RangeError, 'must be positive');</code></pre>
+          </div>
+
+          <h2 id="hooks">Hooks: beforeEach і afterEach</h2>
+          <div class="code-block">
+            <div class="code-head"><span class="code-lang">JavaScript</span><button class="btn-copy" aria-label="Копіювати"></button></div>
+<pre><code class="language-javascript">describe('UserService', () => {
+  let service;
+  let mockDb;
+
+  // Виконується перед кожним it
+  beforeEach(() => {
+    mockDb  = createMockDatabase();
+    service = new UserService(mockDb);
+  });
+
+  // Виконується після кожного it — очищення
+  afterEach(() => {
+    mockDb.clear();
+  });
+
+  // before/after — один раз для всього describe
+  before(() => { /* ініціалізація дорогого ресурсу */ });
+  after(()  => { /* звільнення ресурсу */ });
+
+  it('створює користувача', () => {
+    const user = service.create({ name: 'Test' });
+    expect(user.id).to.be.a('number');
+  });
+
+  it('знаходить користувача за id', () => {
+    const created = service.create({ name: 'Test' });
+    const found   = service.findById(created.id);
+    expect(found).to.deep.equal(created);
+  });
+});</code></pre>
+          </div>
+
+          <h2 id="async-tests">Асинхронні тести</h2>
+          <div class="code-block">
+            <div class="code-head"><span class="code-lang">JavaScript</span><button class="btn-copy" aria-label="Копіювати"></button></div>
+<pre><code class="language-javascript">describe('fetchUser', () => {
+
+  // async/await — найзручніший спосіб
+  it('повертає дані користувача', async () => {
+    const user = await fetchUser(1);
+    expect(user.id).to.equal(1);
+    expect(user).to.have.property('name');
+  });
+
+  it('відхиляє проміс при неіснуючому id', async () => {
+    try {
+      await fetchUser(99999);
+      expect.fail('Мав кинути помилку'); // якщо дійшли сюди — тест провалений
+    } catch (err) {
+      expect(err).to.be.instanceOf(NotFoundError);
+    }
+  });
+
+  // Або через chai-as-promised
+  it('відхиляє проміс', () => {
+    return expect(fetchUser(99999)).to.be.rejectedWith(NotFoundError);
+  });
+});</code></pre>
+          </div>
+
+          <h2 id="tdd">TDD: Test-Driven Development</h2>
+          <p>Підхід де тест пишеться <em>до</em> реалізації. Цикл: <strong>Red → Green → Refactor</strong>.</p>
+          <ol>
+            <li><strong>Red:</strong> Напишіть тест для нової функції — він має не проходити.</li>
+            <li><strong>Green:</strong> Напишіть мінімальну реалізацію щоб тест пройшов.</li>
+            <li><strong>Refactor:</strong> Покращіть код зберігаючи проходження тестів.</li>
+          </ol>
+
+          <h2 id="summary">Підсумок</h2>
+          <ul>
+            <li><code>describe</code> — група тестів. <code>it</code> — один тест-кейс. Назви у форматі «що має що робити».</li>
+            <li>Chai <code>expect</code>: <code>.equal</code>, <code>.deep.equal</code>, <code>.to.throw</code>, <code>.to.be.a</code>.</li>
+            <li><code>beforeEach</code>/<code>afterEach</code> — setup/teardown для кожного тесту.</li>
+            <li>Async тести: <code>async/await</code> у callback <code>it</code>.</li>
+            <li>TDD: Red → Green → Refactor.</li>
+            <li>Альтернативи Mocha: Jest (вбудовані assertions, mocking), Vitest (ES-modules, швидший).</li>
+          </ul>
+
+          <div class="article-support"><p><strong>Матеріал корисний?</strong> Підтримай проект.</p><div class="support-btns-inline"><a href="https://send.monobank.ua/jar/YOUR_JAR_ID" class="btn-mono" target="_blank" rel="noopener" style="font-size:12px;height:36px;padding:0 14px">🟢 Monobank</a><a href="https://www.buymeacoffee.com/YOUR_HANDLE" class="btn-coffee" target="_blank" rel="noopener" style="font-size:12px;height:36px;padding:0 14px">☕ Coffee</a></div></div>

@@ -1,0 +1,164 @@
+{
+  "id": "classes/mixins",
+  "locale": "uk",
+  "locales": {
+    "uk": true,
+    "en": false
+  },
+  "availableLocales": [
+    "uk"
+  ],
+  "title": "Міксини",
+  "description": "",
+  "track": "classes",
+  "trackTitle": "Класи",
+  "slug": "mixins",
+  "sourcePath": "uk/classes/mixins.html",
+  "sourceIdentity": {
+    "track": "classes",
+    "slug": "mixins"
+  },
+  "canonicalRoute": "/uk/docs/classes/mixins",
+  "canonicalLegacyPath": "/classes/mixins.html",
+  "legacyHtmlPath": "/uk/classes/mixins.html",
+  "legacyAliases": [
+    "/uk/classes/mixins.html",
+    "/uk/classes/mixins",
+    "/classes/mixins.html"
+  ],
+  "sectionOrder": 9,
+  "lessonOrder": 7,
+  "overallOrder": 72,
+  "articleNumber": "9.7",
+  "estimatedMinutes": 10,
+  "headings": [
+    {
+      "level": 2,
+      "id": "pattern",
+      "text": "Базовий патерн міксина"
+    },
+    {
+      "level": 2,
+      "id": "object-assign-mixin",
+      "text": "Object.assign міксин"
+    },
+    {
+      "level": 2,
+      "id": "summary",
+      "text": "Підсумок"
+    }
+  ],
+  "badges": [
+    "Середній",
+    "Класи",
+    "~ 10 хв"
+  ],
+  "donationLinks": [
+    "https://send.monobank.ua/jar/YOUR_JAR_ID",
+    "https://www.buymeacoffee.com/YOUR_HANDLE"
+  ],
+  "breadcrumbTrail": [
+    "Головна",
+    "Класи",
+    "Міксини"
+  ],
+  "relatedSourceTrack": "classes",
+  "contentFiles": {
+    "uk": "content/tracks/classes/mixins/index.uk.html",
+    "en": "content/tracks/classes/mixins/index.en.mdx"
+  },
+  "metadataFile": "content/tracks/classes/mixins/meta.json",
+  "translationStatus": {
+    "sourceLocale": "uk",
+    "availableLocales": [
+      "uk"
+    ],
+    "fallbackLocales": {
+      "en": "uk"
+    },
+    "locales": {
+      "uk": {
+        "status": "published",
+        "filePath": "content/tracks/classes/mixins/index.uk.html",
+        "format": "html",
+        "title": "Міксини",
+        "description": "",
+        "completeness": 100,
+        "isFallback": false,
+        "headings": [
+          {
+            "level": 2,
+            "id": "pattern",
+            "text": "Базовий патерн міксина"
+          },
+          {
+            "level": 2,
+            "id": "object-assign-mixin",
+            "text": "Object.assign міксин"
+          },
+          {
+            "level": 2,
+            "id": "summary",
+            "text": "Підсумок"
+          }
+        ]
+      },
+      "en": {
+        "status": "draft",
+        "filePath": "content/tracks/classes/mixins/index.en.mdx",
+        "format": "mdx",
+        "title": "TODO: Translate title",
+        "description": "TODO: Translate description",
+        "completeness": 0,
+        "isFallback": true,
+        "headings": [
+          {
+            "level": 2,
+            "id": "source-lesson",
+            "text": "Source lesson"
+          }
+        ],
+        "slug": "mixins",
+        "track": "classes",
+        "locale": "en",
+        "sourceLocale": "uk",
+        "hasBody": true
+      }
+    }
+  },
+  "translationCompleteness": {
+    "uk": 100,
+    "en": 0
+  },
+  "migration": {
+    "migratedFromLegacy": true,
+    "canonicalIdentitySource": "canonical",
+    "override": null,
+    "articleMeta": {
+      "type": "string",
+      "raw": {
+        "secId": "classes",
+        "artId": "mixins"
+      },
+      "resolved": {
+        "track": "classes",
+        "slug": "mixins"
+      }
+    },
+    "mismatches": {
+      "filePathVsCanonical": false,
+      "filePathVsStringMeta": false,
+      "filePathVsNumericMeta": false
+    },
+    "hasLegacyJsonLd": false,
+    "hasLegacyToc": true,
+    "hasLegacyPrevNext": true,
+    "legacyArticleSupport": true
+  },
+  "bodySourcePath": "content/tracks/classes/mixins/index.uk.html",
+  "sourceProvenance": {
+    "sourcePath": "uk/classes/mixins.html",
+    "sourceTrack": "classes",
+    "sourceSlug": "mixins"
+  }
+}

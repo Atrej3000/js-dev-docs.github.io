@@ -1,0 +1,174 @@
+{
+  "id": "prototypes/native-prototypes",
+  "locale": "uk",
+  "locales": {
+    "uk": true,
+    "en": false
+  },
+  "availableLocales": [
+    "uk"
+  ],
+  "title": "Вбудовані прототипи",
+  "description": "",
+  "track": "prototypes",
+  "trackTitle": "Прототипи, наслідування",
+  "slug": "native-prototypes",
+  "sourcePath": "uk/prototypes/native-prototypes.html",
+  "sourceIdentity": {
+    "track": "prototypes",
+    "slug": "native-prototypes"
+  },
+  "canonicalRoute": "/uk/docs/prototypes/native-prototypes",
+  "canonicalLegacyPath": "/prototypes/native-prototypes.html",
+  "legacyHtmlPath": "/uk/prototypes/native-prototypes.html",
+  "legacyAliases": [
+    "/uk/prototypes/native-prototypes.html",
+    "/uk/prototypes/native-prototypes",
+    "/prototypes/native-prototypes.html"
+  ],
+  "sectionOrder": 8,
+  "lessonOrder": 3,
+  "overallOrder": 64,
+  "articleNumber": "8.3",
+  "estimatedMinutes": 10,
+  "headings": [
+    {
+      "level": 2,
+      "id": "hierarchy",
+      "text": "Ієрархія прotototype"
+    },
+    {
+      "level": 2,
+      "id": "polyfills",
+      "text": "Поліфіли вбудованих методів"
+    },
+    {
+      "level": 2,
+      "id": "borrowing",
+      "text": "Запозичення методів"
+    },
+    {
+      "level": 2,
+      "id": "summary",
+      "text": "Підсумок"
+    }
+  ],
+  "badges": [
+    "Середній",
+    "Прототипи, наслідування",
+    "~ 10 хв"
+  ],
+  "donationLinks": [
+    "https://send.monobank.ua/jar/YOUR_JAR_ID",
+    "https://www.buymeacoffee.com/YOUR_HANDLE"
+  ],
+  "breadcrumbTrail": [
+    "Головна",
+    "Прототипи, наслідування",
+    "Вбудовані прототипи"
+  ],
+  "relatedSourceTrack": "prototypes",
+  "contentFiles": {
+    "uk": "content/tracks/prototypes/native-prototypes/index.uk.html",
+    "en": "content/tracks/prototypes/native-prototypes/index.en.mdx"
+  },
+  "metadataFile": "content/tracks/prototypes/native-prototypes/meta.json",
+  "translationStatus": {
+    "sourceLocale": "uk",
+    "availableLocales": [
+      "uk"
+    ],
+    "fallbackLocales": {
+      "en": "uk"
+    },
+    "locales": {
+      "uk": {
+        "status": "published",
+        "filePath": "content/tracks/prototypes/native-prototypes/index.uk.html",
+        "format": "html",
+        "title": "Вбудовані прототипи",
+        "description": "",
+        "completeness": 100,
+        "isFallback": false,
+        "headings": [
+          {
+            "level": 2,
+            "id": "hierarchy",
+            "text": "Ієрархія прotototype"
+          },
+          {
+            "level": 2,
+            "id": "polyfills",
+            "text": "Поліфіли вбудованих методів"
+          },
+          {
+            "level": 2,
+            "id": "borrowing",
+            "text": "Запозичення методів"
+          },
+          {
+            "level": 2,
+            "id": "summary",
+            "text": "Підсумок"
+          }
+        ]
+      },
+      "en": {
+        "status": "draft",
+        "filePath": "content/tracks/prototypes/native-prototypes/index.en.mdx",
+        "format": "mdx",
+        "title": "TODO: Translate title",
+        "description": "TODO: Translate description",
+        "completeness": 0,
+        "isFallback": true,
+        "headings": [
+          {
+            "level": 2,
+            "id": "source-lesson",
+            "text": "Source lesson"
+          }
+        ],
+        "slug": "native-prototypes",
+        "track": "prototypes",
+        "locale": "en",
+        "sourceLocale": "uk",
+        "hasBody": true
+      }
+    }
+  },
+  "translationCompleteness": {
+    "uk": 100,
+    "en": 0
+  },
+  "migration": {
+    "migratedFromLegacy": true,
+    "canonicalIdentitySource": "canonical",
+    "override": null,
+    "articleMeta": {
+      "type": "string",
+      "raw": {
+        "secId": "prototypes",
+        "artId": "native-prototypes"
+      },
+      "resolved": {
+        "track": "prototypes",
+        "slug": "native-prototypes"
+      }
+    },
+    "mismatches": {
+      "filePathVsCanonical": false,
+      "filePathVsStringMeta": false,
+      "filePathVsNumericMeta": false
+    },
+    "hasLegacyJsonLd": false,
+    "hasLegacyToc": true,
+    "hasLegacyPrevNext": true,
+    "legacyArticleSupport": true
+  },
+  "bodySourcePath": "content/tracks/prototypes/native-prototypes/index.uk.html",
+  "sourceProvenance": {
+    "sourcePath": "uk/prototypes/native-prototypes.html",
+    "sourceTrack": "prototypes",
+    "sourceSlug": "native-prototypes"
+  }
+}

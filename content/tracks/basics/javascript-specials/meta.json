@@ -1,0 +1,214 @@
+{
+  "id": "basics/javascript-specials",
+  "locale": "uk",
+  "locales": {
+    "uk": true,
+    "en": false
+  },
+  "availableLocales": [
+    "uk"
+  ],
+  "title": "Особливості JavaScript",
+  "description": "Ключові особливості JavaScript: підсумок основ. Типізація, перетворення, оператори, функції, область видимості — зведені правила.",
+  "track": "basics",
+  "trackTitle": "Основи JavaScript",
+  "slug": "javascript-specials",
+  "sourcePath": "uk/basics/js-specials.html",
+  "sourceIdentity": {
+    "track": "basics",
+    "slug": "js-specials"
+  },
+  "canonicalRoute": "/uk/docs/basics/javascript-specials",
+  "canonicalLegacyPath": "/basics/javascript-specials.html",
+  "legacyHtmlPath": "/uk/basics/js-specials.html",
+  "legacyAliases": [
+    "/uk/basics/js-specials.html",
+    "/uk/basics/js-specials",
+    "/basics/javascript-specials.html"
+  ],
+  "sectionOrder": 2,
+  "lessonOrder": 18,
+  "overallOrder": 22,
+  "articleNumber": "2.18",
+  "estimatedMinutes": 10,
+  "headings": [
+    {
+      "level": 2,
+      "id": "struktura",
+      "text": "Структура коду"
+    },
+    {
+      "level": 2,
+      "id": "zminni",
+      "text": "Змінні"
+    },
+    {
+      "level": 2,
+      "id": "typy",
+      "text": "Типи даних"
+    },
+    {
+      "level": 2,
+      "id": "peretvorennya",
+      "text": "Перетворення типів"
+    },
+    {
+      "level": 2,
+      "id": "operatory",
+      "text": "Оператори і порівняння"
+    },
+    {
+      "level": 2,
+      "id": "tsykly",
+      "text": "Цикли"
+    },
+    {
+      "level": 2,
+      "id": "funktsiyi",
+      "text": "Функції"
+    },
+    {
+      "level": 2,
+      "id": "shcho-dalshе",
+      "text": "Що далі"
+    }
+  ],
+  "badges": [
+    "Початковий",
+    "Основи JavaScript",
+    "~ 10 хв"
+  ],
+  "donationLinks": [
+    "https://send.monobank.ua/jar/YOUR_JAR_ID",
+    "https://www.buymeacoffee.com/YOUR_HANDLE"
+  ],
+  "breadcrumbTrail": [
+    "Головна",
+    "Основи JavaScript",
+    "Особливості JavaScript"
+  ],
+  "relatedSourceTrack": "basics",
+  "contentFiles": {
+    "uk": "content/tracks/basics/javascript-specials/index.uk.html",
+    "en": "content/tracks/basics/javascript-specials/index.en.mdx"
+  },
+  "metadataFile": "content/tracks/basics/javascript-specials/meta.json",
+  "translationStatus": {
+    "sourceLocale": "uk",
+    "availableLocales": [
+      "uk"
+    ],
+    "fallbackLocales": {
+      "en": "uk"
+    },
+    "locales": {
+      "uk": {
+        "status": "published",
+        "filePath": "content/tracks/basics/javascript-specials/index.uk.html",
+        "format": "html",
+        "title": "Особливості JavaScript",
+        "description": "Ключові особливості JavaScript: підсумок основ. Типізація, перетворення, оператори, функції, область видимості — зведені правила.",
+        "completeness": 100,
+        "isFallback": false,
+        "headings": [
+          {
+            "level": 2,
+            "id": "struktura",
+            "text": "Структура коду"
+          },
+          {
+            "level": 2,
+            "id": "zminni",
+            "text": "Змінні"
+          },
+          {
+            "level": 2,
+            "id": "typy",
+            "text": "Типи даних"
+          },
+          {
+            "level": 2,
+            "id": "peretvorennya",
+            "text": "Перетворення типів"
+          },
+          {
+            "level": 2,
+            "id": "operatory",
+            "text": "Оператори і порівняння"
+          },
+          {
+            "level": 2,
+            "id": "tsykly",
+            "text": "Цикли"
+          },
+          {
+            "level": 2,
+            "id": "funktsiyi",
+            "text": "Функції"
+          },
+          {
+            "level": 2,
+            "id": "shcho-dalshе",
+            "text": "Що далі"
+          }
+        ]
+      },
+      "en": {
+        "status": "draft",
+        "filePath": "content/tracks/basics/javascript-specials/index.en.mdx",
+        "format": "mdx",
+        "title": "TODO: Translate title",
+        "description": "TODO: Translate description",
+        "completeness": 0,
+        "isFallback": true,
+        "headings": [
+          {
+            "level": 2,
+            "id": "source-lesson",
+            "text": "Source lesson"
+          }
+        ],
+        "slug": "javascript-specials",
+        "track": "basics",
+        "locale": "en",
+        "sourceLocale": "uk",
+        "hasBody": true
+      }
+    }
+  },
+  "translationCompleteness": {
+    "uk": 100,
+    "en": 0
+  },
+  "migration": {
+    "migratedFromLegacy": true,
+    "canonicalIdentitySource": "canonical",
+    "override": null,
+    "articleMeta": {
+      "type": "string",
+      "raw": {
+        "secId": "basics",
+        "artId": "javascript-specials"
+      },
+      "resolved": {
+        "track": "basics",
+        "slug": "javascript-specials"
+      }
+    },
+    "mismatches": {
+      "filePathVsCanonical": true,
+      "filePathVsStringMeta": true,
+      "filePathVsNumericMeta": false
+    },
+    "hasLegacyJsonLd": true,
+    "hasLegacyToc": true,
+    "hasLegacyPrevNext": true,
+    "legacyArticleSupport": true
+  },
+  "bodySourcePath": "content/tracks/basics/javascript-specials/index.uk.html",
+  "sourceProvenance": {
+    "sourcePath": "uk/basics/js-specials.html",
+    "sourceTrack": "basics",
+    "sourceSlug": "js-specials"
+  }
+}

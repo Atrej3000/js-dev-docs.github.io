@@ -1,0 +1,564 @@
+{
+  "id": "basics/variables",
+  "locale": "uk",
+  "locales": {
+    "uk": true,
+    "en": true
+  },
+  "availableLocales": [
+    "uk",
+    "en"
+  ],
+  "title": "Змінні",
+  "description": "Повний розбір змінних у JavaScript: var, let, const — область видимості, hoisting, TDZ, замикання в циклах. Внутрішня механіка рушія, edge cases, антипатерни.",
+  "track": "basics",
+  "trackTitle": "Основи JavaScript",
+  "slug": "variables",
+  "sourcePath": "uk/basics/variables.html",
+  "sourceIdentity": {
+    "track": "basics",
+    "slug": "variables"
+  },
+  "canonicalRoute": "/uk/docs/basics/variables",
+  "canonicalLegacyPath": "/basics/variables.html",
+  "legacyHtmlPath": "/uk/basics/variables.html",
+  "legacyAliases": [
+    "/uk/basics/variables.html",
+    "/uk/basics/variables",
+    "/basics/variables.html"
+  ],
+  "sectionOrder": 2,
+  "lessonOrder": 4,
+  "overallOrder": 8,
+  "articleNumber": "2.4",
+  "estimatedMinutes": 18,
+  "headings": [
+    {
+      "level": 2,
+      "id": "chomu-vazhlivo",
+      "text": "Чому це важливо"
+    },
+    {
+      "level": 2,
+      "id": "kliuchovi-slova",
+      "text": "Ключові слова: var, let, const"
+    },
+    {
+      "level": 3,
+      "id": "var",
+      "text": "var — функціональна область видимості"
+    },
+    {
+      "level": 3,
+      "id": "let",
+      "text": "let — блокова область видимості"
+    },
+    {
+      "level": 3,
+      "id": "const",
+      "text": "const — незмінна прив'язка"
+    },
+    {
+      "level": 2,
+      "id": "hoisting",
+      "text": "Hoisting: підйом оголошень"
+    },
+    {
+      "level": 3,
+      "id": "var-hoisting",
+      "text": "var hoisting"
+    },
+    {
+      "level": 3,
+      "id": "tdz",
+      "text": "let та const: Temporal Dead Zone (TDZ)"
+    },
+    {
+      "level": 3,
+      "id": "fn-hoisting",
+      "text": "Hoisting оголошень функцій"
+    },
+    {
+      "level": 2,
+      "id": "scope",
+      "text": "Область видимості на практиці"
+    },
+    {
+      "level": 3,
+      "id": "scope-block",
+      "text": "Блок як одиниця ізоляції"
+    },
+    {
+      "level": 3,
+      "id": "scope-nested",
+      "text": "Вкладені scope та shadowing"
+    },
+    {
+      "level": 2,
+      "id": "tsykly",
+      "text": "Змінні в циклах: класична пастка"
+    },
+    {
+      "level": 2,
+      "id": "edge-cases",
+      "text": "Edge Cases"
+    },
+    {
+      "level": 3,
+      "id": "redeclaration",
+      "text": "Повторне оголошення"
+    },
+    {
+      "level": 3,
+      "id": "const-object-freeze",
+      "text": "const та Object.freeze"
+    },
+    {
+      "level": 3,
+      "id": "switch-scope",
+      "text": "Спільний scope у switch"
+    },
+    {
+      "level": 2,
+      "id": "antypaterny",
+      "text": "Антипатерни та поширені помилки"
+    },
+    {
+      "level": 3,
+      "id": "mistake-var-leak",
+      "text": "1. Витік var у глобальний scope"
+    },
+    {
+      "level": 3,
+      "id": "mistake-uninitialized",
+      "text": "2. Використання const без ініціалізації"
+    },
+    {
+      "level": 3,
+      "id": "mistake-tdz-class",
+      "text": "3. TDZ у методах класу"
+    },
+    {
+      "level": 3,
+      "id": "mistake-for-in-var",
+      "text": "4. var у for…in / for…of"
+    },
+    {
+      "level": 2,
+      "id": "best-practices",
+      "text": "Найкращі практики"
+    },
+    {
+      "level": 3,
+      "id": "bp-const-first",
+      "text": "1. const за замовчуванням"
+    },
+    {
+      "level": 3,
+      "id": "bp-scope-minimize",
+      "text": "2. Мінімізуйте scope"
+    },
+    {
+      "level": 3,
+      "id": "bp-descriptive-names",
+      "text": "3. Описові імена, без скорочень"
+    },
+    {
+      "level": 3,
+      "id": "bp-no-var",
+      "text": "4. Не використовуйте var у новому коді"
+    },
+    {
+      "level": 2,
+      "id": "mentalna-model",
+      "text": "Ментальна модель"
+    },
+    {
+      "level": 2,
+      "id": "summary",
+      "text": "Підсумок"
+    }
+  ],
+  "badges": [
+    "Початковий",
+    "Основи JavaScript",
+    "~ 18 хв"
+  ],
+  "donationLinks": [
+    "https://send.monobank.ua/jar/YOUR_JAR_ID",
+    "https://www.buymeacoffee.com/YOUR_HANDLE"
+  ],
+  "breadcrumbTrail": [
+    "Головна",
+    "Основи JavaScript",
+    "Змінні"
+  ],
+  "relatedSourceTrack": "basics",
+  "contentFiles": {
+    "uk": "content/tracks/basics/variables/index.uk.html",
+    "en": "content/tracks/basics/variables/index.en.mdx"
+  },
+  "metadataFile": "content/tracks/basics/variables/meta.json",
+  "translationStatus": {
+    "sourceLocale": "uk",
+    "availableLocales": [
+      "uk",
+      "en"
+    ],
+    "fallbackLocales": {},
+    "locales": {
+      "uk": {
+        "status": "published",
+        "filePath": "content/tracks/basics/variables/index.uk.html",
+        "format": "html",
+        "title": "Змінні",
+        "description": "Повний розбір змінних у JavaScript: var, let, const — область видимості, hoisting, TDZ, замикання в циклах. Внутрішня механіка рушія, edge cases, антипатерни.",
+        "completeness": 100,
+        "isFallback": false,
+        "headings": [
+          {
+            "level": 2,
+            "id": "chomu-vazhlivo",
+            "text": "Чому це важливо"
+          },
+          {
+            "level": 2,
+            "id": "kliuchovi-slova",
+            "text": "Ключові слова: var, let, const"
+          },
+          {
+            "level": 3,
+            "id": "var",
+            "text": "var — функціональна область видимості"
+          },
+          {
+            "level": 3,
+            "id": "let",
+            "text": "let — блокова область видимості"
+          },
+          {
+            "level": 3,
+            "id": "const",
+            "text": "const — незмінна прив'язка"
+          },
+          {
+            "level": 2,
+            "id": "hoisting",
+            "text": "Hoisting: підйом оголошень"
+          },
+          {
+            "level": 3,
+            "id": "var-hoisting",
+            "text": "var hoisting"
+          },
+          {
+            "level": 3,
+            "id": "tdz",
+            "text": "let та const: Temporal Dead Zone (TDZ)"
+          },
+          {
+            "level": 3,
+            "id": "fn-hoisting",
+            "text": "Hoisting оголошень функцій"
+          },
+          {
+            "level": 2,
+            "id": "scope",
+            "text": "Область видимості на практиці"
+          },
+          {
+            "level": 3,
+            "id": "scope-block",
+            "text": "Блок як одиниця ізоляції"
+          },
+          {
+            "level": 3,
+            "id": "scope-nested",
+            "text": "Вкладені scope та shadowing"
+          },
+          {
+            "level": 2,
+            "id": "tsykly",
+            "text": "Змінні в циклах: класична пастка"
+          },
+          {
+            "level": 2,
+            "id": "edge-cases",
+            "text": "Edge Cases"
+          },
+          {
+            "level": 3,
+            "id": "redeclaration",
+            "text": "Повторне оголошення"
+          },
+          {
+            "level": 3,
+            "id": "const-object-freeze",
+            "text": "const та Object.freeze"
+          },
+          {
+            "level": 3,
+            "id": "switch-scope",
+            "text": "Спільний scope у switch"
+          },
+          {
+            "level": 2,
+            "id": "antypaterny",
+            "text": "Антипатерни та поширені помилки"
+          },
+          {
+            "level": 3,
+            "id": "mistake-var-leak",
+            "text": "1. Витік var у глобальний scope"
+          },
+          {
+            "level": 3,
+            "id": "mistake-uninitialized",
+            "text": "2. Використання const без ініціалізації"
+          },
+          {
+            "level": 3,
+            "id": "mistake-tdz-class",
+            "text": "3. TDZ у методах класу"
+          },
+          {
+            "level": 3,
+            "id": "mistake-for-in-var",
+            "text": "4. var у for…in / for…of"
+          },
+          {
+            "level": 2,
+            "id": "best-practices",
+            "text": "Найкращі практики"
+          },
+          {
+            "level": 3,
+            "id": "bp-const-first",
+            "text": "1. const за замовчуванням"
+          },
+          {
+            "level": 3,
+            "id": "bp-scope-minimize",
+            "text": "2. Мінімізуйте scope"
+          },
+          {
+            "level": 3,
+            "id": "bp-descriptive-names",
+            "text": "3. Описові імена, без скорочень"
+          },
+          {
+            "level": 3,
+            "id": "bp-no-var",
+            "text": "4. Не використовуйте var у новому коді"
+          },
+          {
+            "level": 2,
+            "id": "mentalna-model",
+            "text": "Ментальна модель"
+          },
+          {
+            "level": 2,
+            "id": "summary",
+            "text": "Підсумок"
+          }
+        ]
+      },
+      "en": {
+        "status": "published",
+        "filePath": "content/tracks/basics/variables/index.en.mdx",
+        "format": "mdx",
+        "title": "Variables",
+        "description": "How `var`, `let`, and `const` differ in scope, hoisting, reassignment, and common real-world pitfalls.",
+        "completeness": 100,
+        "isFallback": false,
+        "headings": [
+          {
+            "level": 2,
+            "id": "why-this-matters",
+            "text": "Why this matters"
+          },
+          {
+            "level": 2,
+            "id": "keywords-var-let-const",
+            "text": "Keywords: `var`, `let`, `const`"
+          },
+          {
+            "level": 3,
+            "id": "var-function-scope",
+            "text": "`var` - function scope"
+          },
+          {
+            "level": 3,
+            "id": "let-block-scope",
+            "text": "`let` - block scope"
+          },
+          {
+            "level": 3,
+            "id": "const-immutable-binding",
+            "text": "`const` - immutable binding"
+          },
+          {
+            "level": 2,
+            "id": "hoisting",
+            "text": "Hoisting"
+          },
+          {
+            "level": 3,
+            "id": "var-hoisting",
+            "text": "`var` hoisting"
+          },
+          {
+            "level": 3,
+            "id": "let-and-const-the-temporal-dead-zone",
+            "text": "`let` and `const`: the Temporal Dead Zone"
+          },
+          {
+            "level": 3,
+            "id": "function-declaration-hoisting",
+            "text": "Function declaration hoisting"
+          },
+          {
+            "level": 2,
+            "id": "scope-in-practice",
+            "text": "Scope in practice"
+          },
+          {
+            "level": 3,
+            "id": "a-block-as-an-isolation-unit",
+            "text": "A block as an isolation unit"
+          },
+          {
+            "level": 3,
+            "id": "nested-scopes-and-shadowing",
+            "text": "Nested scopes and shadowing"
+          },
+          {
+            "level": 2,
+            "id": "variables-in-loops-a-classic-trap",
+            "text": "Variables in loops: a classic trap"
+          },
+          {
+            "level": 2,
+            "id": "edge-cases",
+            "text": "Edge cases"
+          },
+          {
+            "level": 3,
+            "id": "redeclaration",
+            "text": "Redeclaration"
+          },
+          {
+            "level": 3,
+            "id": "const-and-object-freeze",
+            "text": "`const` and `Object.freeze`"
+          },
+          {
+            "level": 3,
+            "id": "shared-scope-inside-switch",
+            "text": "Shared scope inside `switch`"
+          },
+          {
+            "level": 2,
+            "id": "common-mistakes-and-anti-patterns",
+            "text": "Common mistakes and anti-patterns"
+          },
+          {
+            "level": 3,
+            "id": "1-letting-var-leak-into-global-scope",
+            "text": "1. Letting `var` leak into global scope"
+          },
+          {
+            "level": 3,
+            "id": "2-declaring-const-without-initializing-it",
+            "text": "2. Declaring `const` without initializing it"
+          },
+          {
+            "level": 3,
+            "id": "3-forgetting-tdz-rules",
+            "text": "3. Forgetting TDZ rules"
+          },
+          {
+            "level": 3,
+            "id": "4-using-var-in-for-in-or-for-of",
+            "text": "4. Using `var` in `for...in` or `for...of`"
+          },
+          {
+            "level": 2,
+            "id": "best-practices",
+            "text": "Best practices"
+          },
+          {
+            "level": 3,
+            "id": "1-use-const-by-default",
+            "text": "1. Use `const` by default"
+          },
+          {
+            "level": 3,
+            "id": "2-minimize-scope",
+            "text": "2. Minimize scope"
+          },
+          {
+            "level": 3,
+            "id": "3-use-descriptive-names",
+            "text": "3. Use descriptive names"
+          },
+          {
+            "level": 3,
+            "id": "4-avoid-var-in-new-code",
+            "text": "4. Avoid `var` in new code"
+          },
+          {
+            "level": 2,
+            "id": "mental-model",
+            "text": "Mental model"
+          },
+          {
+            "level": 2,
+            "id": "summary",
+            "text": "Summary"
+          }
+        ],
+        "slug": "variables",
+        "track": "basics",
+        "locale": "en",
+        "sourceLocale": "uk",
+        "hasBody": true
+      }
+    }
+  },
+  "translationCompleteness": {
+    "uk": 100,
+    "en": 100
+  },
+  "migration": {
+    "migratedFromLegacy": true,
+    "canonicalIdentitySource": "canonical",
+    "override": null,
+    "articleMeta": {
+      "type": "string",
+      "raw": {
+        "secId": "basics",
+        "artId": "variables"
+      },
+      "resolved": {
+        "track": "basics",
+        "slug": "variables"
+      }
+    },
+    "mismatches": {
+      "filePathVsCanonical": false,
+      "filePathVsStringMeta": false,
+      "filePathVsNumericMeta": false
+    },
+    "hasLegacyJsonLd": true,
+    "hasLegacyToc": true,
+    "hasLegacyPrevNext": true,
+    "legacyArticleSupport": true
+  },
+  "bodySourcePath": "content/tracks/basics/variables/index.uk.html",
+  "sourceProvenance": {
+    "sourcePath": "uk/basics/variables.html",
+    "sourceTrack": "basics",
+    "sourceSlug": "variables"
+  }
+}

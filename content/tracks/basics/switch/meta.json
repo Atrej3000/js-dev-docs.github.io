@@ -1,0 +1,204 @@
+{
+  "id": "basics/switch",
+  "locale": "uk",
+  "locales": {
+    "uk": true,
+    "en": true
+  },
+  "availableLocales": [
+    "uk",
+    "en"
+  ],
+  "title": "Конструкція switch",
+  "description": "Конструкція switch в JavaScript: синтаксис, fall-through, break, default, групування case. Порівняння з if/else та lookup object патерном.",
+  "track": "basics",
+  "trackTitle": "Основи JavaScript",
+  "slug": "switch",
+  "sourcePath": "uk/basics/switch.html",
+  "sourceIdentity": {
+    "track": "basics",
+    "slug": "switch"
+  },
+  "canonicalRoute": "/uk/docs/basics/switch",
+  "canonicalLegacyPath": "/basics/switch.html",
+  "legacyHtmlPath": "/uk/basics/switch.html",
+  "legacyAliases": [
+    "/uk/basics/switch.html",
+    "/uk/basics/switch",
+    "/basics/switch.html"
+  ],
+  "sectionOrder": 2,
+  "lessonOrder": 14,
+  "overallOrder": 18,
+  "articleNumber": "2.14",
+  "estimatedMinutes": 9,
+  "headings": [
+    {
+      "level": 2,
+      "id": "syntaksys",
+      "text": "Синтаксис"
+    },
+    {
+      "level": 2,
+      "id": "fall-through",
+      "text": "Fall-through"
+    },
+    {
+      "level": 2,
+      "id": "scope-switch",
+      "text": "Область видимості в switch"
+    },
+    {
+      "level": 2,
+      "id": "lookup-object",
+      "text": "Альтернатива: lookup object"
+    },
+    {
+      "level": 2,
+      "id": "summary",
+      "text": "Підсумок"
+    }
+  ],
+  "badges": [
+    "Початковий",
+    "Основи JavaScript",
+    "~ 9 хв"
+  ],
+  "donationLinks": [
+    "https://send.monobank.ua/jar/YOUR_JAR_ID",
+    "https://www.buymeacoffee.com/YOUR_HANDLE"
+  ],
+  "breadcrumbTrail": [
+    "Головна",
+    "Основи JavaScript",
+    "Конструкція switch"
+  ],
+  "relatedSourceTrack": "basics",
+  "contentFiles": {
+    "uk": "content/tracks/basics/switch/index.uk.html",
+    "en": "content/tracks/basics/switch/index.en.mdx"
+  },
+  "metadataFile": "content/tracks/basics/switch/meta.json",
+  "translationStatus": {
+    "sourceLocale": "uk",
+    "availableLocales": [
+      "uk",
+      "en"
+    ],
+    "fallbackLocales": {},
+    "locales": {
+      "uk": {
+        "status": "published",
+        "filePath": "content/tracks/basics/switch/index.uk.html",
+        "format": "html",
+        "title": "Конструкція switch",
+        "description": "Конструкція switch в JavaScript: синтаксис, fall-through, break, default, групування case. Порівняння з if/else та lookup object патерном.",
+        "completeness": 100,
+        "isFallback": false,
+        "headings": [
+          {
+            "level": 2,
+            "id": "syntaksys",
+            "text": "Синтаксис"
+          },
+          {
+            "level": 2,
+            "id": "fall-through",
+            "text": "Fall-through"
+          },
+          {
+            "level": 2,
+            "id": "scope-switch",
+            "text": "Область видимості в switch"
+          },
+          {
+            "level": 2,
+            "id": "lookup-object",
+            "text": "Альтернатива: lookup object"
+          },
+          {
+            "level": 2,
+            "id": "summary",
+            "text": "Підсумок"
+          }
+        ]
+      },
+      "en": {
+        "status": "published",
+        "filePath": "content/tracks/basics/switch/index.en.mdx",
+        "format": "mdx",
+        "title": "The `switch` Statement",
+        "description": "How to branch on one value with `switch`, understand fall-through, and avoid scope pitfalls.",
+        "completeness": 100,
+        "isFallback": false,
+        "headings": [
+          {
+            "level": 2,
+            "id": "syntax",
+            "text": "Syntax"
+          },
+          {
+            "level": 2,
+            "id": "fall-through",
+            "text": "Fall-through"
+          },
+          {
+            "level": 2,
+            "id": "scope-inside-switch",
+            "text": "Scope inside `switch`"
+          },
+          {
+            "level": 2,
+            "id": "alternative-lookup-object",
+            "text": "Alternative: lookup object"
+          },
+          {
+            "level": 2,
+            "id": "summary",
+            "text": "Summary"
+          }
+        ],
+        "slug": "switch",
+        "track": "basics",
+        "locale": "en",
+        "sourceLocale": "uk",
+        "hasBody": true
+      }
+    }
+  },
+  "translationCompleteness": {
+    "uk": 100,
+    "en": 100
+  },
+  "migration": {
+    "migratedFromLegacy": true,
+    "canonicalIdentitySource": "canonical",
+    "override": null,
+    "articleMeta": {
+      "type": "string",
+      "raw": {
+        "secId": "basics",
+        "artId": "switch"
+      },
+      "resolved": {
+        "track": "basics",
+        "slug": "switch"
+      }
+    },
+    "mismatches": {
+      "filePathVsCanonical": false,
+      "filePathVsStringMeta": false,
+      "filePathVsNumericMeta": false
+    },
+    "hasLegacyJsonLd": true,
+    "hasLegacyToc": true,
+    "hasLegacyPrevNext": true,
+    "legacyArticleSupport": true
+  },
+  "bodySourcePath": "content/tracks/basics/switch/index.uk.html",
+  "sourceProvenance": {
+    "sourcePath": "uk/basics/switch.html",
+    "sourceTrack": "basics",
+    "sourceSlug": "switch"
+  }
+}

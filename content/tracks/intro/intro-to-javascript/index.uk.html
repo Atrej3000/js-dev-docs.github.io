@@ -1,0 +1,342 @@
+<!-- ── DEFINITION ─────────────────────────────────── -->
+          <p>
+            JavaScript — мова програмування загального призначення з динамічною
+            типізацією, яка первісно розроблялася для виконання в браузері.
+            Сьогодні вона виконується у багатьох середовищах: від серверів
+            до мікроконтролерів.
+          </p>
+
+          <!-- ── WHY IT MATTERS ─────────────────────────────── -->
+          <h2 id="chomu-vazhlivo">Чому це важливо</h2>
+
+          <p>
+            JavaScript — єдина мова програмування, яка виконується безпосередньо
+            в браузері без компіляції чи плагінів. Розуміння її природи —
+            не просто теоретична база: воно визначає, як і де виконується код,
+            чому певні API доступні в одних середовищах і відсутні в інших,
+            а також чому браузерний код не може читати файли операційної системи.
+          </p>
+
+          <!-- ── WHAT IS JS ──────────────────────────────────── -->
+          <h2 id="shcho-take-javascript">Що таке JavaScript</h2>
+
+          <p>
+            JavaScript вперше з'явився у 1995 році як скриптова мова для
+            браузера Netscape Navigator. У 1997 році мову стандартизували
+            під назвою <strong>ECMAScript</strong> (скорочено ES) — саме ця
+            специфікація описує синтаксис, семантику і вбудовані об'єкти мови.
+          </p>
+
+          <p>
+            Назва «JavaScript» є зареєстрованою торговою маркою Oracle Corporation.
+            Коректні технічні назви — <strong>ECMAScript</strong> або просто
+            <strong>JS</strong>.
+          </p>
+
+          <div class="callout c-info">
+            <div class="callout-title">ECMAScript vs JavaScript</div>
+            <p>
+              ECMAScript — специфікація мови. JavaScript — найпоширеніша її
+              реалізація. Коли говорять «ES2024» або «ES15», мають на увазі
+              конкретну версію стандарту ECMAScript. Нові версії виходять
+              щороку у червні.
+            </p>
+          </div>
+
+          <!-- ── ENGINE ─────────────────────────────────────── -->
+          <h2 id="rushiy">Як працює рушій JavaScript</h2>
+
+          <p>
+            Рушій (engine) — це програма, яка читає JS-код і виконує його.
+            Рушій вбудований у браузер або середовище виконання.
+          </p>
+
+          <p>Основні рушії:</p>
+          <ul>
+            <li><strong>V8</strong> — Google Chrome, Microsoft Edge, Node.js, Deno, Bun</li>
+            <li><strong>SpiderMonkey</strong> — Mozilla Firefox</li>
+            <li><strong>JavaScriptCore (Nitro)</strong> — Safari, WebKit</li>
+          </ul>
+
+          <p>Спрощений процес виконання коду рушієм V8:</p>
+
+          <ol>
+            <li>
+              <strong>Парсинг.</strong> Рушій читає вихідний текст
+              і будує <em>AST</em> — абстрактне синтаксичне дерево.
+            </li>
+            <li>
+              <strong>Компіляція (JIT).</strong> V8 не інтерпретує AST рядок
+              за рядком. Він компілює «гарячі» ділянки коду у нативний
+              машинний код за допомогою Turbofan/Maglev.
+              Це робить JavaScript значно швидшим від традиційної інтерпретації.
+            </li>
+            <li>
+              <strong>Виконання.</strong> Скомпільований машинний код
+              виконується на процесорі. V8 може перекомпілювати код повторно
+              з урахуванням зібраної статистики типів.
+            </li>
+            <li>
+              <strong>Garbage collection.</strong> Рушій автоматично
+              звільняє пам'ять від значень, на які більше немає посилань
+              (алгоритм mark-and-sweep).
+            </li>
+          </ol>
+
+          <div class="callout c-tip">
+            <div class="callout-title">JIT-компіляція</div>
+            <p>
+              «JIT» (Just-In-Time) означає, що компіляція відбувається під час
+              виконання, а не заздалегідь. Рушій аналізує, які функції
+              викликаються часто, і компілює їх у машинний код.
+              Решта коду може залишатись в інтерпретованому режимі.
+            </p>
+          </div>
+
+          <!-- ── ENVIRONMENTS ───────────────────────────────── -->
+          <h2 id="seredovyshcha">Середовища виконання</h2>
+
+          <p>
+            Рушій — це лише мовне ядро. Для реальної роботи до нього
+            приєднується <strong>середовище виконання</strong> (runtime),
+            яке надає додаткові API.
+          </p>
+
+          <h3 id="browser-env">Браузерне середовище</h3>
+
+          <p>Браузер надає:</p>
+          <ul>
+            <li><strong>DOM API</strong> — маніпуляції з HTML-документом</li>
+            <li><strong>BOM</strong> (Browser Object Model) — <code>window</code>, <code>navigator</code>, <code>location</code>, <code>history</code></li>
+            <li><strong>Web APIs</strong> — <code>fetch</code>, <code>setTimeout</code>, <code>localStorage</code>, <code>WebSocket</code>, <code>Canvas</code>, <code>WebGL</code>, Geolocation тощо</li>
+            <li><strong>Event Loop</strong> — механізм обробки подій та асинхронних операцій</li>
+          </ul>
+
+          <p>
+            Жоден з цих об'єктів не є частиною специфікації ECMAScript.
+            Це розширення конкретного середовища.
+          </p>
+
+          <h3 id="nodejs-env">Node.js</h3>
+
+          <p>
+            Node.js — серверне середовище виконання на основі V8.
+            Замість DOM та Web APIs воно надає:
+          </p>
+          <ul>
+            <li>модуль <code>fs</code> — робота з файловою системою</li>
+            <li>модуль <code>http</code>/<code>https</code> — HTTP сервер і клієнт</li>
+            <li>модуль <code>path</code>, <code>os</code>, <code>crypto</code> тощо</li>
+            <li>власну систему модулів (CommonJS та ESM)</li>
+          </ul>
+
+          <p>
+            Код, який звертається до <code>document</code> або <code>window</code>,
+            не працюватиме в Node.js — ці об'єкти не існують у цьому середовищі.
+          </p>
+
+          <div class="code-block">
+            <div class="code-head"><span class="code-lang">JavaScript</span><button class="btn-copy" aria-label="Копіювати"></button></div>
+<pre><code class="language-javascript">// Середовище — браузер
+console.log(typeof window);   // "object"
+console.log(typeof document);  // "object"
+console.log(typeof process);   // "undefined"
+
+// Середовище — Node.js
+console.log(typeof process);   // "object"
+console.log(typeof window);    // "undefined"
+console.log(typeof document);  // "undefined"
+
+// Спільне для обох середовищ (ECMAScript core)
+console.log(typeof Array);    // "function"
+console.log(typeof Promise);  // "function"
+console.log(typeof JSON);     // "object"</code></pre>
+          </div>
+
+          <!-- ── SECURITY ────────────────────────────────────── -->
+          <h2 id="obmezhennya-bezpeky">Обмеження безпеки браузера</h2>
+
+          <p>
+            Браузерний JavaScript виконується в <strong>пісочниці</strong> (sandbox) —
+            ізольованому середовищі з суворими обмеженнями. Це свідомий
+            дизайн: код із довільного веб-сайту не повинен мати доступ
+            до ресурсів комп'ютера користувача.
+          </p>
+
+          <p>Ключові обмеження:</p>
+
+          <ul>
+            <li>
+              <strong>Немає прямого доступу до файлової системи.</strong>
+              JavaScript у браузері не може читати або записувати файли
+              без явної дії користувача (наприклад, вибір файлу через
+              <code>&lt;input type="file"&gt;</code>).
+            </li>
+            <li>
+              <strong>Same-Origin Policy.</strong> Скрипт зі сторінки
+              <code>site-a.com</code> не може читати відповіді з
+              <code>site-b.com</code> без відповідних CORS-заголовків
+              на стороні <code>site-b.com</code>.
+            </li>
+            <li>
+              <strong>Немає доступу до ОС.</strong> Неможливо виконати
+              системну команду, прочитати реєстр Windows, відкрити
+              сокет на довільному порту тощо.
+            </li>
+            <li>
+              <strong>Обмежений між-вкладковий доступ.</strong>
+              Одна вкладка не може читати DOM іншої, якщо вони не
+              з одного origin і не налаштовано явної комунікації
+              (postMessage, SharedWorker тощо).
+            </li>
+          </ul>
+
+          <div class="callout c-warn">
+            <div class="callout-title">Браузер vs Node.js</div>
+            <p>
+              Node.js <em>не має</em> цих обмежень: він може читати файли,
+              виконувати системні команди, відкривати мережеві з'єднання.
+              Саме тому серверний Node.js-код потребує уважного ставлення
+              до введеного користувачем контенту.
+            </p>
+          </div>
+
+          <!-- ── HTML vs CSS vs JS ──────────────────────────── -->
+          <h2 id="js-html-css">JavaScript, HTML, CSS: ролі</h2>
+
+          <p>
+            Три технології браузера вирішують різні задачі і навмисно
+            розділені між собою:
+          </p>
+
+          <table>
+            <thead>
+              <tr>
+                <th>Технологія</th>
+                <th>Роль</th>
+                <th>Приклад</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>HTML</strong></td>
+                <td>Структура і вміст</td>
+                <td>Заголовки, параграфи, форми, посилання</td>
+              </tr>
+              <tr>
+                <td><strong>CSS</strong></td>
+                <td>Стиль і розташування</td>
+                <td>Колір, шрифт, відступи, анімація</td>
+              </tr>
+              <tr>
+                <td><strong>JavaScript</strong></td>
+                <td>Поведінка і взаємодія</td>
+                <td>Обробка подій, зміна DOM, мережеві запити</td>
+              </tr>
+            </tbody>
+          </table>
+
+          <p>
+            JavaScript може динамічно змінювати і HTML, і CSS — але
+            початковий документ завантажується без JS.
+            Якщо рушій відключений або відбулася помилка, HTML і CSS
+            залишаються видимими.
+          </p>
+
+          <!-- ── WHAT JS CAN DO ─────────────────────────────── -->
+          <h2 id="mozhlyvosti">Що вміє JavaScript у браузері</h2>
+
+          <ul>
+            <li>Змінювати DOM: додавати, видаляти, змінювати HTML-елементи та їх атрибути</li>
+            <li>Реагувати на події: кліки, натискання клавіш, рухи миші, завантаження сторінки</li>
+            <li>Надсилати мережеві запити та отримувати відповіді (AJAX, Fetch API) без перезавантаження сторінки</li>
+            <li>Зберігати дані на стороні клієнта: <code>localStorage</code>, <code>sessionStorage</code>, <code>IndexedDB</code>, cookies</li>
+            <li>Малювати графіку через Canvas API та WebGL</li>
+            <li>Відтворювати аудіо і відео через Media API</li>
+            <li>Взаємодіяти з камерою і мікрофоном через MediaDevices API (з дозволу користувача)</li>
+            <li>Виконувати фонові операції через Web Workers</li>
+          </ul>
+
+          <!-- ── UNIQUENESS ─────────────────────────────────── -->
+          <h2 id="unikalnyy-status">Унікальний статус мови</h2>
+
+          <p>
+            JavaScript є єдиною мовою, яка <em>нативно</em> підтримується
+            усіма браузерами без плагінів чи додаткового ПЗ.
+            Це надає їй особливе місце: будь-який пристрій із браузером
+            є потенційним середовищем виконання.
+          </p>
+
+          <p>
+            Крім того, JavaScript — єдина мова, яка водночас є:
+          </p>
+          <ul>
+            <li>мовою для браузерних клієнтів (frontend)</li>
+            <li>повноцінною серверною мовою (Node.js, Deno, Bun)</li>
+            <li>мовою для мобільних застосунків (React Native, Ionic)</li>
+            <li>мовою для десктопних застосунків (Electron, Tauri)</li>
+            <li>мовою для хмарних функцій (Cloudflare Workers, AWS Lambda)</li>
+            <li>мовою для вбудованих систем (Espruino, Moddable SDK)</li>
+          </ul>
+
+          <!-- ── LANGUAGES ON TOP OF JS ─────────────────────── -->
+          <h2 id="movy-poverh-js">Мови, що компілюються у JavaScript</h2>
+
+          <p>
+            Для браузерного виконання будь-який код зрештою перетворюється
+            на JavaScript. Це призвело до появи мов, які транспілюються у JS:
+          </p>
+
+          <ul>
+            <li>
+              <strong>TypeScript</strong> — статична типізація поверх JavaScript.
+              Компілятор <code>tsc</code> перетворює TS-код на JS.
+            </li>
+            <li>
+              <strong>CoffeeScript</strong> — лаконічний синтаксис,
+              інспірований Python і Ruby. Сьогодні значно менш актуальний.
+            </li>
+            <li>
+              <strong>Dart</strong> — мова Google, основна для Flutter.
+              Може компілюватись у JS для браузера.
+            </li>
+            <li>
+              <strong>Elm, ReasonML, PureScript</strong> — функціональні мови
+              зі строгою типізацією, орієнтовані на браузер.
+            </li>
+          </ul>
+
+          <p>
+            Знання JavaScript залишається необхідним для розуміння
+            скомпільованого коду, налагодження і роботи зі стандартними
+            браузерними API — навіть якщо повсякденна робота ведеться
+            на TypeScript або іншому компільованому варіанті.
+          </p>
+
+          <!-- ── SUMMARY ─────────────────────────────────────── -->
+          <h2 id="summary">Підсумок</h2>
+
+          <ul>
+            <li>JavaScript — реалізація стандарту ECMAScript. Нові версії стандарту виходять щороку.</li>
+            <li>Рушій (V8, SpiderMonkey, JavaScriptCore) виконує JS через JIT-компіляцію — не інтерпретує рядок за рядком.</li>
+            <li>Браузер і Node.js — різні середовища. Вони додають різні API поверх спільного ядра ECMAScript.</li>
+            <li>Браузерний JS виконується в пісочниці: немає доступу до файлової системи, ОС, довільних мережевих з'єднань без обмежень Same-Origin Policy.</li>
+            <li>JavaScript — єдина мова нативної підтримки в браузерах. Усі альтернативи (TypeScript тощо) компілюються у JS.</li>
+            <li>Сфера застосування: браузер, сервер, мобільні, десктоп, хмарні функції, вбудовані системи.</li>
+          </ul>
+
+          <div class="article-support">
+            <p>
+              <strong>Матеріал корисний?</strong> Проект існує завдяки
+              волонтерській роботі. Підтримай його — допомагаєш будувати
+              якісні україномовні ресурси для розробників.
+            </p>
+            <div class="support-btns-inline">
+              <a href="https://send.monobank.ua/jar/YOUR_JAR_ID"
+                 class="btn-mono" target="_blank" rel="noopener"
+                 style="font-size:12px;height:36px;padding:0 14px">🟢 Monobank</a>
+              <a href="https://www.buymeacoffee.com/YOUR_HANDLE"
+                 class="btn-coffee" target="_blank" rel="noopener"
+                 style="font-size:12px;height:36px;padding:0 14px">☕ Coffee</a>
+            </div>
+          </div>

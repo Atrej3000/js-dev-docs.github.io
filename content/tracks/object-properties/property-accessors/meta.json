@@ -1,0 +1,174 @@
+{
+  "id": "object-properties/property-accessors",
+  "locale": "uk",
+  "locales": {
+    "uk": true,
+    "en": false
+  },
+  "availableLocales": [
+    "uk"
+  ],
+  "title": "Гетери і сетери властивостей",
+  "description": "",
+  "track": "object-properties",
+  "trackTitle": "Властивості об'єктів, їх конфігурація",
+  "slug": "property-accessors",
+  "sourcePath": "uk/object-properties/property-accessors.html",
+  "sourceIdentity": {
+    "track": "object-properties",
+    "slug": "property-accessors"
+  },
+  "canonicalRoute": "/uk/docs/object-properties/property-accessors",
+  "canonicalLegacyPath": "/object-properties/property-accessors.html",
+  "legacyHtmlPath": "/uk/object-properties/property-accessors.html",
+  "legacyAliases": [
+    "/uk/object-properties/property-accessors.html",
+    "/uk/object-properties/property-accessors",
+    "/object-properties/property-accessors.html"
+  ],
+  "sectionOrder": 7,
+  "lessonOrder": 2,
+  "overallOrder": 61,
+  "articleNumber": "7.2",
+  "estimatedMinutes": 11,
+  "headings": [
+    {
+      "level": 2,
+      "id": "get-set",
+      "text": "get і set"
+    },
+    {
+      "level": 2,
+      "id": "validatsiya",
+      "text": "Валідація через set"
+    },
+    {
+      "level": 2,
+      "id": "define-accessor",
+      "text": "Аксесор через defineProperty"
+    },
+    {
+      "level": 2,
+      "id": "summary",
+      "text": "Підсумок"
+    }
+  ],
+  "badges": [
+    "Середній",
+    "Властивості об'єктів, їх конфігурація",
+    "~ 11 хв"
+  ],
+  "donationLinks": [
+    "https://send.monobank.ua/jar/YOUR_JAR_ID",
+    "https://www.buymeacoffee.com/YOUR_HANDLE"
+  ],
+  "breadcrumbTrail": [
+    "Головна",
+    "Властивості об'єктів, їх конфігурація",
+    "Гетери і сетери"
+  ],
+  "relatedSourceTrack": "object-properties",
+  "contentFiles": {
+    "uk": "content/tracks/object-properties/property-accessors/index.uk.html",
+    "en": "content/tracks/object-properties/property-accessors/index.en.mdx"
+  },
+  "metadataFile": "content/tracks/object-properties/property-accessors/meta.json",
+  "translationStatus": {
+    "sourceLocale": "uk",
+    "availableLocales": [
+      "uk"
+    ],
+    "fallbackLocales": {
+      "en": "uk"
+    },
+    "locales": {
+      "uk": {
+        "status": "published",
+        "filePath": "content/tracks/object-properties/property-accessors/index.uk.html",
+        "format": "html",
+        "title": "Гетери і сетери властивостей",
+        "description": "",
+        "completeness": 100,
+        "isFallback": false,
+        "headings": [
+          {
+            "level": 2,
+            "id": "get-set",
+            "text": "get і set"
+          },
+          {
+            "level": 2,
+            "id": "validatsiya",
+            "text": "Валідація через set"
+          },
+          {
+            "level": 2,
+            "id": "define-accessor",
+            "text": "Аксесор через defineProperty"
+          },
+          {
+            "level": 2,
+            "id": "summary",
+            "text": "Підсумок"
+          }
+        ]
+      },
+      "en": {
+        "status": "draft",
+        "filePath": "content/tracks/object-properties/property-accessors/index.en.mdx",
+        "format": "mdx",
+        "title": "TODO: Translate title",
+        "description": "TODO: Translate description",
+        "completeness": 0,
+        "isFallback": true,
+        "headings": [
+          {
+            "level": 2,
+            "id": "source-lesson",
+            "text": "Source lesson"
+          }
+        ],
+        "slug": "property-accessors",
+        "track": "object-properties",
+        "locale": "en",
+        "sourceLocale": "uk",
+        "hasBody": true
+      }
+    }
+  },
+  "translationCompleteness": {
+    "uk": 100,
+    "en": 0
+  },
+  "migration": {
+    "migratedFromLegacy": true,
+    "canonicalIdentitySource": "canonical",
+    "override": null,
+    "articleMeta": {
+      "type": "string",
+      "raw": {
+        "secId": "object-properties",
+        "artId": "property-accessors"
+      },
+      "resolved": {
+        "track": "object-properties",
+        "slug": "property-accessors"
+      }
+    },
+    "mismatches": {
+      "filePathVsCanonical": false,
+      "filePathVsStringMeta": false,
+      "filePathVsNumericMeta": false
+    },
+    "hasLegacyJsonLd": false,
+    "hasLegacyToc": true,
+    "hasLegacyPrevNext": true,
+    "legacyArticleSupport": true
+  },
+  "bodySourcePath": "content/tracks/object-properties/property-accessors/index.uk.html",
+  "sourceProvenance": {
+    "sourcePath": "uk/object-properties/property-accessors.html",
+    "sourceTrack": "object-properties",
+    "sourceSlug": "property-accessors"
+  }
+}

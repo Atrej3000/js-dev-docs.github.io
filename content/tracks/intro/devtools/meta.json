@@ -1,0 +1,309 @@
+{
+  "id": "intro/devtools",
+  "locale": "uk",
+  "locales": {
+    "uk": true,
+    "en": true
+  },
+  "availableLocales": [
+    "uk",
+    "en"
+  ],
+  "title": "Інструменти розробника",
+  "description": "Chrome DevTools для JavaScript: консоль, дебаґер, breakpoints, watch expressions, call stack, network panel. Практичний посібник.",
+  "track": "intro",
+  "trackTitle": "Вступ",
+  "slug": "devtools",
+  "sourcePath": "uk/introduction/devtools.html",
+  "sourceIdentity": {
+    "track": "introduction",
+    "slug": "devtools"
+  },
+  "canonicalRoute": "/uk/docs/intro/devtools",
+  "canonicalLegacyPath": "/intro/devtools.html",
+  "legacyHtmlPath": "/uk/introduction/devtools.html",
+  "legacyAliases": [
+    "/uk/introduction/devtools.html",
+    "/uk/introduction/devtools",
+    "/intro/devtools.html"
+  ],
+  "sectionOrder": 1,
+  "lessonOrder": 4,
+  "overallOrder": 4,
+  "articleNumber": "1.4",
+  "estimatedMinutes": 10,
+  "headings": [
+    {
+      "level": 2,
+      "id": "chomu-vazhlivo",
+      "text": "Чому це важливо"
+    },
+    {
+      "level": 2,
+      "id": "vidkrytty",
+      "text": "Як відкрити DevTools"
+    },
+    {
+      "level": 2,
+      "id": "console",
+      "text": "Панель Console"
+    },
+    {
+      "level": 3,
+      "id": "console-methods",
+      "text": "Методи console"
+    },
+    {
+      "level": 2,
+      "id": "sources",
+      "text": "Панель Sources: дебаґер"
+    },
+    {
+      "level": 3,
+      "id": "breakpoints",
+      "text": "Точки зупинки (Breakpoints)"
+    },
+    {
+      "level": 3,
+      "id": "stepping",
+      "text": "Крокове виконання"
+    },
+    {
+      "level": 3,
+      "id": "debugger-statement",
+      "text": "Оператор debugger"
+    },
+    {
+      "level": 3,
+      "id": "conditional-breakpoints",
+      "text": "Умовні точки зупинки"
+    },
+    {
+      "level": 2,
+      "id": "network",
+      "text": "Панель Network"
+    },
+    {
+      "level": 2,
+      "id": "elements",
+      "text": "Панель Elements"
+    },
+    {
+      "level": 2,
+      "id": "summary",
+      "text": "Підсумок"
+    }
+  ],
+  "badges": [
+    "Початковий",
+    "Вступ",
+    "~ 10 хв"
+  ],
+  "donationLinks": [
+    "https://send.monobank.ua/jar/YOUR_JAR_ID",
+    "https://www.buymeacoffee.com/YOUR_HANDLE"
+  ],
+  "breadcrumbTrail": [
+    "Головна",
+    "Вступ",
+    "Інструменти розробника"
+  ],
+  "relatedSourceTrack": "introduction",
+  "contentFiles": {
+    "uk": "content/tracks/intro/devtools/index.uk.html",
+    "en": "content/tracks/intro/devtools/index.en.mdx"
+  },
+  "metadataFile": "content/tracks/intro/devtools/meta.json",
+  "translationStatus": {
+    "sourceLocale": "uk",
+    "availableLocales": [
+      "uk",
+      "en"
+    ],
+    "fallbackLocales": {},
+    "locales": {
+      "uk": {
+        "status": "published",
+        "filePath": "content/tracks/intro/devtools/index.uk.html",
+        "format": "html",
+        "title": "Інструменти розробника",
+        "description": "Chrome DevTools для JavaScript: консоль, дебаґер, breakpoints, watch expressions, call stack, network panel. Практичний посібник.",
+        "completeness": 100,
+        "isFallback": false,
+        "headings": [
+          {
+            "level": 2,
+            "id": "chomu-vazhlivo",
+            "text": "Чому це важливо"
+          },
+          {
+            "level": 2,
+            "id": "vidkrytty",
+            "text": "Як відкрити DevTools"
+          },
+          {
+            "level": 2,
+            "id": "console",
+            "text": "Панель Console"
+          },
+          {
+            "level": 3,
+            "id": "console-methods",
+            "text": "Методи console"
+          },
+          {
+            "level": 2,
+            "id": "sources",
+            "text": "Панель Sources: дебаґер"
+          },
+          {
+            "level": 3,
+            "id": "breakpoints",
+            "text": "Точки зупинки (Breakpoints)"
+          },
+          {
+            "level": 3,
+            "id": "stepping",
+            "text": "Крокове виконання"
+          },
+          {
+            "level": 3,
+            "id": "debugger-statement",
+            "text": "Оператор debugger"
+          },
+          {
+            "level": 3,
+            "id": "conditional-breakpoints",
+            "text": "Умовні точки зупинки"
+          },
+          {
+            "level": 2,
+            "id": "network",
+            "text": "Панель Network"
+          },
+          {
+            "level": 2,
+            "id": "elements",
+            "text": "Панель Elements"
+          },
+          {
+            "level": 2,
+            "id": "summary",
+            "text": "Підсумок"
+          }
+        ]
+      },
+      "en": {
+        "status": "published",
+        "filePath": "content/tracks/intro/devtools/index.en.mdx",
+        "format": "mdx",
+        "title": "Developer Tools",
+        "description": "How to use the browser's developer tools to inspect pages, debug JavaScript, and analyze network activity.",
+        "completeness": 100,
+        "isFallback": false,
+        "headings": [
+          {
+            "level": 2,
+            "id": "why-this-matters",
+            "text": "Why this matters"
+          },
+          {
+            "level": 2,
+            "id": "how-to-open-devtools",
+            "text": "How to open DevTools"
+          },
+          {
+            "level": 2,
+            "id": "console-panel",
+            "text": "Console panel"
+          },
+          {
+            "level": 3,
+            "id": "console-methods",
+            "text": "`console` methods"
+          },
+          {
+            "level": 2,
+            "id": "sources-panel-the-debugger",
+            "text": "Sources panel: the debugger"
+          },
+          {
+            "level": 3,
+            "id": "breakpoints",
+            "text": "Breakpoints"
+          },
+          {
+            "level": 3,
+            "id": "step-by-step-execution",
+            "text": "Step-by-step execution"
+          },
+          {
+            "level": 3,
+            "id": "the-debugger-statement",
+            "text": "The `debugger` statement"
+          },
+          {
+            "level": 3,
+            "id": "conditional-breakpoints",
+            "text": "Conditional breakpoints"
+          },
+          {
+            "level": 2,
+            "id": "network-panel",
+            "text": "Network panel"
+          },
+          {
+            "level": 2,
+            "id": "elements-panel",
+            "text": "Elements panel"
+          },
+          {
+            "level": 2,
+            "id": "summary",
+            "text": "Summary"
+          }
+        ],
+        "slug": "devtools",
+        "track": "intro",
+        "locale": "en",
+        "sourceLocale": "uk",
+        "hasBody": true
+      }
+    }
+  },
+  "translationCompleteness": {
+    "uk": 100,
+    "en": 100
+  },
+  "migration": {
+    "migratedFromLegacy": true,
+    "canonicalIdentitySource": "canonical",
+    "override": null,
+    "articleMeta": {
+      "type": "string",
+      "raw": {
+        "secId": "intro",
+        "artId": "devtools"
+      },
+      "resolved": {
+        "track": "intro",
+        "slug": "devtools"
+      }
+    },
+    "mismatches": {
+      "filePathVsCanonical": true,
+      "filePathVsStringMeta": true,
+      "filePathVsNumericMeta": false
+    },
+    "hasLegacyJsonLd": true,
+    "hasLegacyToc": true,
+    "hasLegacyPrevNext": true,
+    "legacyArticleSupport": true
+  },
+  "bodySourcePath": "content/tracks/intro/devtools/index.uk.html",
+  "sourceProvenance": {
+    "sourcePath": "uk/introduction/devtools.html",
+    "sourceTrack": "introduction",
+    "sourceSlug": "devtools"
+  }
+}

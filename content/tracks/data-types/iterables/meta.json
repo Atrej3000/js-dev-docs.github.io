@@ -1,0 +1,208 @@
+{
+  "id": "data-types/iterables",
+  "locale": "uk",
+  "locales": {
+    "uk": true,
+    "en": false
+  },
+  "availableLocales": [
+    "uk"
+  ],
+  "title": "Ітеровані об'єкти",
+  "description": "Ітеровані об'єкти у JavaScript — детальний розбір з прикладами, підводними каменями та best practices.",
+  "track": "data-types",
+  "trackTitle": "Типи даних",
+  "slug": "iterables",
+  "sourcePath": "uk/data-types/iterables.html",
+  "sourceIdentity": {
+    "track": "data-types",
+    "slug": "iterables"
+  },
+  "canonicalRoute": "/uk/docs/data-types/iterables",
+  "canonicalLegacyPath": "/data-types/iterables.html",
+  "legacyHtmlPath": "/uk/data-types/iterables.html",
+  "legacyAliases": [
+    "/uk/data-types/iterables.html",
+    "/uk/data-types/iterables",
+    "/data-types/iterables.html"
+  ],
+  "sectionOrder": 5,
+  "lessonOrder": 6,
+  "overallOrder": 42,
+  "articleNumber": "5.6",
+  "estimatedMinutes": 10,
+  "headings": [
+    {
+      "level": 2,
+      "id": "protocol",
+      "text": "Протокол ітерації"
+    },
+    {
+      "level": 2,
+      "id": "string",
+      "text": "Рядок як ітерабельний"
+    },
+    {
+      "level": 2,
+      "id": "array-like",
+      "text": "Array-like vs Iterable"
+    },
+    {
+      "level": 2,
+      "id": "custom",
+      "text": "Власний ітератор із замиканням"
+    },
+    {
+      "level": 2,
+      "id": "spread",
+      "text": "Spread і деструктуризація"
+    },
+    {
+      "level": 2,
+      "id": "pitfalls",
+      "text": "Підводні камені"
+    },
+    {
+      "level": 2,
+      "id": "summary",
+      "text": "Підсумок"
+    }
+  ],
+  "badges": [
+    "Початковий",
+    "Типи даних",
+    "~ 10 хв"
+  ],
+  "donationLinks": [],
+  "breadcrumbTrail": [
+    "Головна",
+    "Типи даних",
+    "Ітеровані об'єкти"
+  ],
+  "relatedSourceTrack": "data-types",
+  "contentFiles": {
+    "uk": "content/tracks/data-types/iterables/index.uk.html",
+    "en": "content/tracks/data-types/iterables/index.en.mdx"
+  },
+  "metadataFile": "content/tracks/data-types/iterables/meta.json",
+  "translationStatus": {
+    "sourceLocale": "uk",
+    "availableLocales": [
+      "uk"
+    ],
+    "fallbackLocales": {
+      "en": "uk"
+    },
+    "locales": {
+      "uk": {
+        "status": "published",
+        "filePath": "content/tracks/data-types/iterables/index.uk.html",
+        "format": "html",
+        "title": "Ітеровані об'єкти",
+        "description": "Ітеровані об'єкти у JavaScript — детальний розбір з прикладами, підводними каменями та best practices.",
+        "completeness": 100,
+        "isFallback": false,
+        "headings": [
+          {
+            "level": 2,
+            "id": "protocol",
+            "text": "Протокол ітерації"
+          },
+          {
+            "level": 2,
+            "id": "string",
+            "text": "Рядок як ітерабельний"
+          },
+          {
+            "level": 2,
+            "id": "array-like",
+            "text": "Array-like vs Iterable"
+          },
+          {
+            "level": 2,
+            "id": "custom",
+            "text": "Власний ітератор із замиканням"
+          },
+          {
+            "level": 2,
+            "id": "spread",
+            "text": "Spread і деструктуризація"
+          },
+          {
+            "level": 2,
+            "id": "pitfalls",
+            "text": "Підводні камені"
+          },
+          {
+            "level": 2,
+            "id": "summary",
+            "text": "Підсумок"
+          }
+        ]
+      },
+      "en": {
+        "status": "draft",
+        "filePath": "content/tracks/data-types/iterables/index.en.mdx",
+        "format": "mdx",
+        "title": "TODO: Translate title",
+        "description": "TODO: Translate description",
+        "completeness": 0,
+        "isFallback": true,
+        "headings": [
+          {
+            "level": 2,
+            "id": "source-lesson",
+            "text": "Source lesson"
+          }
+        ],
+        "slug": "iterables",
+        "track": "data-types",
+        "locale": "en",
+        "sourceLocale": "uk",
+        "hasBody": true
+      }
+    }
+  },
+  "translationCompleteness": {
+    "uk": 100,
+    "en": 0
+  },
+  "migration": {
+    "migratedFromLegacy": true,
+    "canonicalIdentitySource": "override",
+    "override": {
+      "sourcePath": "uk/data-types/iterables.html",
+      "forceIdentity": {
+        "track": "data-types",
+        "slug": "iterables"
+      },
+      "reason": "Numeric ARTICLE_META points to data-types/string instead of the iterables lesson."
+    },
+    "articleMeta": {
+      "type": "numeric",
+      "raw": {
+        "secId": "5",
+        "artId": "3"
+      },
+      "resolved": {
+        "track": "data-types",
+        "slug": "string"
+      }
+    },
+    "mismatches": {
+      "filePathVsCanonical": false,
+      "filePathVsStringMeta": false,
+      "filePathVsNumericMeta": true
+    },
+    "hasLegacyJsonLd": false,
+    "hasLegacyToc": false,
+    "hasLegacyPrevNext": false,
+    "legacyArticleSupport": true
+  },
+  "bodySourcePath": "content/tracks/data-types/iterables/index.uk.html",
+  "sourceProvenance": {
+    "sourcePath": "uk/data-types/iterables.html",
+    "sourceTrack": "data-types",
+    "sourceSlug": "iterables"
+  }
+}

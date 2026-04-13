@@ -1,0 +1,1244 @@
+[
+  {
+    "id": "intro/intro-to-javascript",
+    "track": "intro",
+    "slug": "intro-to-javascript",
+    "canonicalRoute": "/uk/docs/intro/intro-to-javascript",
+    "availableLocales": [
+      "uk",
+      "en"
+    ],
+    "statuses": {
+      "uk": "published",
+      "en": "published"
+    }
+  },
+  {
+    "id": "intro/specifications",
+    "track": "intro",
+    "slug": "specifications",
+    "canonicalRoute": "/uk/docs/intro/specifications",
+    "availableLocales": [
+      "uk"
+    ],
+    "statuses": {
+      "uk": "published",
+      "en": "draft"
+    }
+  },
+  {
+    "id": "intro/code-editors",
+    "track": "intro",
+    "slug": "code-editors",
+    "canonicalRoute": "/uk/docs/intro/code-editors",
+    "availableLocales": [
+      "uk",
+      "en"
+    ],
+    "statuses": {
+      "uk": "published",
+      "en": "published"
+    }
+  },
+  {
+    "id": "intro/devtools",
+    "track": "intro",
+    "slug": "devtools",
+    "canonicalRoute": "/uk/docs/intro/devtools",
+    "availableLocales": [
+      "uk",
+      "en"
+    ],
+    "statuses": {
+      "uk": "published",
+      "en": "published"
+    }
+  },
+  {
+    "id": "basics/hello-world",
+    "track": "basics",
+    "slug": "hello-world",
+    "canonicalRoute": "/uk/docs/basics/hello-world",
+    "availableLocales": [
+      "uk",
+      "en"
+    ],
+    "statuses": {
+      "uk": "published",
+      "en": "published"
+    }
+  },
+  {
+    "id": "basics/code-structure",
+    "track": "basics",
+    "slug": "code-structure",
+    "canonicalRoute": "/uk/docs/basics/code-structure",
+    "availableLocales": [
+      "uk",
+      "en"
+    ],
+    "statuses": {
+      "uk": "published",
+      "en": "published"
+    }
+  },
+  {
+    "id": "basics/use-strict",
+    "track": "basics",
+    "slug": "use-strict",
+    "canonicalRoute": "/uk/docs/basics/use-strict",
+    "availableLocales": [
+      "uk",
+      "en"
+    ],
+    "statuses": {
+      "uk": "published",
+      "en": "published"
+    }
+  },
+  {
+    "id": "basics/variables",
+    "track": "basics",
+    "slug": "variables",
+    "canonicalRoute": "/uk/docs/basics/variables",
+    "availableLocales": [
+      "uk",
+      "en"
+    ],
+    "statuses": {
+      "uk": "published",
+      "en": "published"
+    }
+  },
+  {
+    "id": "basics/data-types",
+    "track": "basics",
+    "slug": "data-types",
+    "canonicalRoute": "/uk/docs/basics/data-types",
+    "availableLocales": [
+      "uk",
+      "en"
+    ],
+    "statuses": {
+      "uk": "published",
+      "en": "published"
+    }
+  },
+  {
+    "id": "basics/interaction",
+    "track": "basics",
+    "slug": "interaction",
+    "canonicalRoute": "/uk/docs/basics/interaction",
+    "availableLocales": [
+      "uk",
+      "en"
+    ],
+    "statuses": {
+      "uk": "published",
+      "en": "published"
+    }
+  },
+  {
+    "id": "basics/type-conversions",
+    "track": "basics",
+    "slug": "type-conversions",
+    "canonicalRoute": "/uk/docs/basics/type-conversions",
+    "availableLocales": [
+      "uk",
+      "en"
+    ],
+    "statuses": {
+      "uk": "published",
+      "en": "published"
+    }
+  },
+  {
+    "id": "basics/operators",
+    "track": "basics",
+    "slug": "operators",
+    "canonicalRoute": "/uk/docs/basics/operators",
+    "availableLocales": [
+      "uk",
+      "en"
+    ],
+    "statuses": {
+      "uk": "published",
+      "en": "published"
+    }
+  },
+  {
+    "id": "basics/comparison",
+    "track": "basics",
+    "slug": "comparison",
+    "canonicalRoute": "/uk/docs/basics/comparison",
+    "availableLocales": [
+      "uk",
+      "en"
+    ],
+    "statuses": {
+      "uk": "published",
+      "en": "published"
+    }
+  },
+  {
+    "id": "basics/ifelse",
+    "track": "basics",
+    "slug": "ifelse",
+    "canonicalRoute": "/uk/docs/basics/ifelse",
+    "availableLocales": [
+      "uk",
+      "en"
+    ],
+    "statuses": {
+      "uk": "published",
+      "en": "published"
+    }
+  },
+  {
+    "id": "basics/logical-operators",
+    "track": "basics",
+    "slug": "logical-operators",
+    "canonicalRoute": "/uk/docs/basics/logical-operators",
+    "availableLocales": [
+      "uk",
+      "en"
+    ],
+    "statuses": {
+      "uk": "published",
+      "en": "published"
+    }
+  },
+  {
+    "id": "basics/nullish-coalescing",
+    "track": "basics",
+    "slug": "nullish-coalescing",
+    "canonicalRoute": "/uk/docs/basics/nullish-coalescing",
+    "availableLocales": [
+      "uk",
+      "en"
+    ],
+    "statuses": {
+      "uk": "published",
+      "en": "published"
+    }
+  },
+  {
+    "id": "basics/loops",
+    "track": "basics",
+    "slug": "loops",
+    "canonicalRoute": "/uk/docs/basics/loops",
+    "availableLocales": [
+      "uk",
+      "en"
+    ],
+    "statuses": {
+      "uk": "published",
+      "en": "published"
+    }
+  },
+  {
+    "id": "basics/switch",
+    "track": "basics",
+    "slug": "switch",
+    "canonicalRoute": "/uk/docs/basics/switch",
+    "availableLocales": [
+      "uk",
+      "en"
+    ],
+    "statuses": {
+      "uk": "published",
+      "en": "published"
+    }
+  },
+  {
+    "id": "basics/function-basics",
+    "track": "basics",
+    "slug": "function-basics",
+    "canonicalRoute": "/uk/docs/basics/function-basics",
+    "availableLocales": [
+      "uk",
+      "en"
+    ],
+    "statuses": {
+      "uk": "published",
+      "en": "published"
+    }
+  },
+  {
+    "id": "basics/function-expressions",
+    "track": "basics",
+    "slug": "function-expressions",
+    "canonicalRoute": "/uk/docs/basics/function-expressions",
+    "availableLocales": [
+      "uk",
+      "en"
+    ],
+    "statuses": {
+      "uk": "published",
+      "en": "published"
+    }
+  },
+  {
+    "id": "basics/arrow-functions",
+    "track": "basics",
+    "slug": "arrow-functions",
+    "canonicalRoute": "/uk/docs/basics/arrow-functions",
+    "availableLocales": [
+      "uk",
+      "en"
+    ],
+    "statuses": {
+      "uk": "published",
+      "en": "published"
+    }
+  },
+  {
+    "id": "basics/javascript-specials",
+    "track": "basics",
+    "slug": "javascript-specials",
+    "canonicalRoute": "/uk/docs/basics/javascript-specials",
+    "availableLocales": [
+      "uk"
+    ],
+    "statuses": {
+      "uk": "published",
+      "en": "draft"
+    }
+  },
+  {
+    "id": "code-quality/debugging",
+    "track": "code-quality",
+    "slug": "debugging",
+    "canonicalRoute": "/uk/docs/code-quality/debugging",
+    "availableLocales": [
+      "uk"
+    ],
+    "statuses": {
+      "uk": "published",
+      "en": "draft"
+    }
+  },
+  {
+    "id": "code-quality/coding-style",
+    "track": "code-quality",
+    "slug": "coding-style",
+    "canonicalRoute": "/uk/docs/code-quality/coding-style",
+    "availableLocales": [
+      "uk"
+    ],
+    "statuses": {
+      "uk": "published",
+      "en": "draft"
+    }
+  },
+  {
+    "id": "code-quality/comments",
+    "track": "code-quality",
+    "slug": "comments",
+    "canonicalRoute": "/uk/docs/code-quality/comments",
+    "availableLocales": [
+      "uk"
+    ],
+    "statuses": {
+      "uk": "published",
+      "en": "draft"
+    }
+  },
+  {
+    "id": "code-quality/ninja-code",
+    "track": "code-quality",
+    "slug": "ninja-code",
+    "canonicalRoute": "/uk/docs/code-quality/ninja-code",
+    "availableLocales": [
+      "uk"
+    ],
+    "statuses": {
+      "uk": "published",
+      "en": "draft"
+    }
+  },
+  {
+    "id": "code-quality/testing-mocha",
+    "track": "code-quality",
+    "slug": "testing-mocha",
+    "canonicalRoute": "/uk/docs/code-quality/testing-mocha",
+    "availableLocales": [
+      "uk"
+    ],
+    "statuses": {
+      "uk": "published",
+      "en": "draft"
+    }
+  },
+  {
+    "id": "code-quality/polyfills",
+    "track": "code-quality",
+    "slug": "polyfills",
+    "canonicalRoute": "/uk/docs/code-quality/polyfills",
+    "availableLocales": [
+      "uk"
+    ],
+    "statuses": {
+      "uk": "published",
+      "en": "draft"
+    }
+  },
+  {
+    "id": "objects/object-basics",
+    "track": "objects",
+    "slug": "object-basics",
+    "canonicalRoute": "/uk/docs/objects/object-basics",
+    "availableLocales": [
+      "uk"
+    ],
+    "statuses": {
+      "uk": "published",
+      "en": "draft"
+    }
+  },
+  {
+    "id": "objects/object-copy",
+    "track": "objects",
+    "slug": "object-copy",
+    "canonicalRoute": "/uk/docs/objects/object-copy",
+    "availableLocales": [
+      "uk"
+    ],
+    "statuses": {
+      "uk": "published",
+      "en": "draft"
+    }
+  },
+  {
+    "id": "objects/garbage-collection",
+    "track": "objects",
+    "slug": "garbage-collection",
+    "canonicalRoute": "/uk/docs/objects/garbage-collection",
+    "availableLocales": [
+      "uk"
+    ],
+    "statuses": {
+      "uk": "published",
+      "en": "draft"
+    }
+  },
+  {
+    "id": "objects/object-methods",
+    "track": "objects",
+    "slug": "object-methods",
+    "canonicalRoute": "/uk/docs/objects/object-methods",
+    "availableLocales": [
+      "uk"
+    ],
+    "statuses": {
+      "uk": "published",
+      "en": "draft"
+    }
+  },
+  {
+    "id": "objects/constructor-new",
+    "track": "objects",
+    "slug": "constructor-new",
+    "canonicalRoute": "/uk/docs/objects/constructor-new",
+    "availableLocales": [
+      "uk"
+    ],
+    "statuses": {
+      "uk": "published",
+      "en": "draft"
+    }
+  },
+  {
+    "id": "objects/optional-chaining",
+    "track": "objects",
+    "slug": "optional-chaining",
+    "canonicalRoute": "/uk/docs/objects/optional-chaining",
+    "availableLocales": [
+      "uk"
+    ],
+    "statuses": {
+      "uk": "published",
+      "en": "draft"
+    }
+  },
+  {
+    "id": "objects/symbol",
+    "track": "objects",
+    "slug": "symbol",
+    "canonicalRoute": "/uk/docs/objects/symbol",
+    "availableLocales": [
+      "uk"
+    ],
+    "statuses": {
+      "uk": "published",
+      "en": "draft"
+    }
+  },
+  {
+    "id": "objects/object-toprimitive",
+    "track": "objects",
+    "slug": "object-toprimitive",
+    "canonicalRoute": "/uk/docs/objects/object-toprimitive",
+    "availableLocales": [
+      "uk"
+    ],
+    "statuses": {
+      "uk": "published",
+      "en": "draft"
+    }
+  },
+  {
+    "id": "data-types/primitives-methods",
+    "track": "data-types",
+    "slug": "primitives-methods",
+    "canonicalRoute": "/uk/docs/data-types/primitives-methods",
+    "availableLocales": [
+      "uk"
+    ],
+    "statuses": {
+      "uk": "published",
+      "en": "draft"
+    }
+  },
+  {
+    "id": "data-types/number",
+    "track": "data-types",
+    "slug": "number",
+    "canonicalRoute": "/uk/docs/data-types/number",
+    "availableLocales": [
+      "uk"
+    ],
+    "statuses": {
+      "uk": "published",
+      "en": "draft"
+    }
+  },
+  {
+    "id": "data-types/string",
+    "track": "data-types",
+    "slug": "string",
+    "canonicalRoute": "/uk/docs/data-types/string",
+    "availableLocales": [
+      "uk"
+    ],
+    "statuses": {
+      "uk": "published",
+      "en": "draft"
+    }
+  },
+  {
+    "id": "data-types/array",
+    "track": "data-types",
+    "slug": "array",
+    "canonicalRoute": "/uk/docs/data-types/array",
+    "availableLocales": [
+      "uk"
+    ],
+    "statuses": {
+      "uk": "published",
+      "en": "draft"
+    }
+  },
+  {
+    "id": "data-types/array-methods",
+    "track": "data-types",
+    "slug": "array-methods",
+    "canonicalRoute": "/uk/docs/data-types/array-methods",
+    "availableLocales": [
+      "uk"
+    ],
+    "statuses": {
+      "uk": "published",
+      "en": "draft"
+    }
+  },
+  {
+    "id": "data-types/iterables",
+    "track": "data-types",
+    "slug": "iterables",
+    "canonicalRoute": "/uk/docs/data-types/iterables",
+    "availableLocales": [
+      "uk"
+    ],
+    "statuses": {
+      "uk": "published",
+      "en": "draft"
+    }
+  },
+  {
+    "id": "data-types/map-set",
+    "track": "data-types",
+    "slug": "map-set",
+    "canonicalRoute": "/uk/docs/data-types/map-set",
+    "availableLocales": [
+      "uk"
+    ],
+    "statuses": {
+      "uk": "published",
+      "en": "draft"
+    }
+  },
+  {
+    "id": "data-types/weakmap-weakset",
+    "track": "data-types",
+    "slug": "weakmap-weakset",
+    "canonicalRoute": "/uk/docs/data-types/weakmap-weakset",
+    "availableLocales": [
+      "uk"
+    ],
+    "statuses": {
+      "uk": "published",
+      "en": "draft"
+    }
+  },
+  {
+    "id": "data-types/keys-values-entries",
+    "track": "data-types",
+    "slug": "keys-values-entries",
+    "canonicalRoute": "/uk/docs/data-types/keys-values-entries",
+    "availableLocales": [
+      "uk"
+    ],
+    "statuses": {
+      "uk": "published",
+      "en": "draft"
+    }
+  },
+  {
+    "id": "data-types/destructuring-assignment",
+    "track": "data-types",
+    "slug": "destructuring-assignment",
+    "canonicalRoute": "/uk/docs/data-types/destructuring-assignment",
+    "availableLocales": [
+      "uk"
+    ],
+    "statuses": {
+      "uk": "published",
+      "en": "draft"
+    }
+  },
+  {
+    "id": "data-types/date",
+    "track": "data-types",
+    "slug": "date",
+    "canonicalRoute": "/uk/docs/data-types/date",
+    "availableLocales": [
+      "uk"
+    ],
+    "statuses": {
+      "uk": "published",
+      "en": "draft"
+    }
+  },
+  {
+    "id": "data-types/json",
+    "track": "data-types",
+    "slug": "json",
+    "canonicalRoute": "/uk/docs/data-types/json",
+    "availableLocales": [
+      "uk"
+    ],
+    "statuses": {
+      "uk": "published",
+      "en": "draft"
+    }
+  },
+  {
+    "id": "functions-advanced/recursion",
+    "track": "functions-advanced",
+    "slug": "recursion",
+    "canonicalRoute": "/uk/docs/functions-advanced/recursion",
+    "availableLocales": [
+      "uk"
+    ],
+    "statuses": {
+      "uk": "published",
+      "en": "draft"
+    }
+  },
+  {
+    "id": "functions-advanced/rest-parameters-spread",
+    "track": "functions-advanced",
+    "slug": "rest-parameters-spread",
+    "canonicalRoute": "/uk/docs/functions-advanced/rest-parameters-spread",
+    "availableLocales": [
+      "uk"
+    ],
+    "statuses": {
+      "uk": "published",
+      "en": "draft"
+    }
+  },
+  {
+    "id": "functions-advanced/closure",
+    "track": "functions-advanced",
+    "slug": "closure",
+    "canonicalRoute": "/uk/docs/functions-advanced/closure",
+    "availableLocales": [
+      "uk"
+    ],
+    "statuses": {
+      "uk": "published",
+      "en": "draft"
+    }
+  },
+  {
+    "id": "functions-advanced/var",
+    "track": "functions-advanced",
+    "slug": "var",
+    "canonicalRoute": "/uk/docs/functions-advanced/var",
+    "availableLocales": [
+      "uk"
+    ],
+    "statuses": {
+      "uk": "published",
+      "en": "draft"
+    }
+  },
+  {
+    "id": "functions-advanced/global-object",
+    "track": "functions-advanced",
+    "slug": "global-object",
+    "canonicalRoute": "/uk/docs/functions-advanced/global-object",
+    "availableLocales": [
+      "uk"
+    ],
+    "statuses": {
+      "uk": "published",
+      "en": "draft"
+    }
+  },
+  {
+    "id": "functions-advanced/function-object",
+    "track": "functions-advanced",
+    "slug": "function-object",
+    "canonicalRoute": "/uk/docs/functions-advanced/function-object",
+    "availableLocales": [
+      "uk"
+    ],
+    "statuses": {
+      "uk": "published",
+      "en": "draft"
+    }
+  },
+  {
+    "id": "functions-advanced/new-function",
+    "track": "functions-advanced",
+    "slug": "new-function",
+    "canonicalRoute": "/uk/docs/functions-advanced/new-function",
+    "availableLocales": [
+      "uk"
+    ],
+    "statuses": {
+      "uk": "published",
+      "en": "draft"
+    }
+  },
+  {
+    "id": "functions-advanced/settimeout-setinterval",
+    "track": "functions-advanced",
+    "slug": "settimeout-setinterval",
+    "canonicalRoute": "/uk/docs/functions-advanced/settimeout-setinterval",
+    "availableLocales": [
+      "uk"
+    ],
+    "statuses": {
+      "uk": "published",
+      "en": "draft"
+    }
+  },
+  {
+    "id": "functions-advanced/call-apply-decorators",
+    "track": "functions-advanced",
+    "slug": "call-apply-decorators",
+    "canonicalRoute": "/uk/docs/functions-advanced/call-apply-decorators",
+    "availableLocales": [
+      "uk"
+    ],
+    "statuses": {
+      "uk": "published",
+      "en": "draft"
+    }
+  },
+  {
+    "id": "functions-advanced/bind",
+    "track": "functions-advanced",
+    "slug": "bind",
+    "canonicalRoute": "/uk/docs/functions-advanced/bind",
+    "availableLocales": [
+      "uk"
+    ],
+    "statuses": {
+      "uk": "published",
+      "en": "draft"
+    }
+  },
+  {
+    "id": "functions-advanced/arrow-functions-revisited",
+    "track": "functions-advanced",
+    "slug": "arrow-functions-revisited",
+    "canonicalRoute": "/uk/docs/functions-advanced/arrow-functions-revisited",
+    "availableLocales": [
+      "uk"
+    ],
+    "statuses": {
+      "uk": "published",
+      "en": "draft"
+    }
+  },
+  {
+    "id": "object-properties/property-descriptors",
+    "track": "object-properties",
+    "slug": "property-descriptors",
+    "canonicalRoute": "/uk/docs/object-properties/property-descriptors",
+    "availableLocales": [
+      "uk"
+    ],
+    "statuses": {
+      "uk": "published",
+      "en": "draft"
+    }
+  },
+  {
+    "id": "object-properties/property-accessors",
+    "track": "object-properties",
+    "slug": "property-accessors",
+    "canonicalRoute": "/uk/docs/object-properties/property-accessors",
+    "availableLocales": [
+      "uk"
+    ],
+    "statuses": {
+      "uk": "published",
+      "en": "draft"
+    }
+  },
+  {
+    "id": "prototypes/prototype-inheritance",
+    "track": "prototypes",
+    "slug": "prototype-inheritance",
+    "canonicalRoute": "/uk/docs/prototypes/prototype-inheritance",
+    "availableLocales": [
+      "uk"
+    ],
+    "statuses": {
+      "uk": "published",
+      "en": "draft"
+    }
+  },
+  {
+    "id": "prototypes/function-prototype",
+    "track": "prototypes",
+    "slug": "function-prototype",
+    "canonicalRoute": "/uk/docs/prototypes/function-prototype",
+    "availableLocales": [
+      "uk"
+    ],
+    "statuses": {
+      "uk": "published",
+      "en": "draft"
+    }
+  },
+  {
+    "id": "prototypes/native-prototypes",
+    "track": "prototypes",
+    "slug": "native-prototypes",
+    "canonicalRoute": "/uk/docs/prototypes/native-prototypes",
+    "availableLocales": [
+      "uk"
+    ],
+    "statuses": {
+      "uk": "published",
+      "en": "draft"
+    }
+  },
+  {
+    "id": "prototypes/proto-methods",
+    "track": "prototypes",
+    "slug": "proto-methods",
+    "canonicalRoute": "/uk/docs/prototypes/proto-methods",
+    "availableLocales": [
+      "uk"
+    ],
+    "statuses": {
+      "uk": "published",
+      "en": "draft"
+    }
+  },
+  {
+    "id": "classes/class",
+    "track": "classes",
+    "slug": "class",
+    "canonicalRoute": "/uk/docs/classes/class",
+    "availableLocales": [
+      "uk"
+    ],
+    "statuses": {
+      "uk": "published",
+      "en": "draft"
+    }
+  },
+  {
+    "id": "classes/class-inheritance",
+    "track": "classes",
+    "slug": "class-inheritance",
+    "canonicalRoute": "/uk/docs/classes/class-inheritance",
+    "availableLocales": [
+      "uk"
+    ],
+    "statuses": {
+      "uk": "published",
+      "en": "draft"
+    }
+  },
+  {
+    "id": "classes/static-properties",
+    "track": "classes",
+    "slug": "static-properties",
+    "canonicalRoute": "/uk/docs/classes/static-properties",
+    "availableLocales": [
+      "uk"
+    ],
+    "statuses": {
+      "uk": "published",
+      "en": "draft"
+    }
+  },
+  {
+    "id": "classes/private-protected",
+    "track": "classes",
+    "slug": "private-protected",
+    "canonicalRoute": "/uk/docs/classes/private-protected",
+    "availableLocales": [
+      "uk"
+    ],
+    "statuses": {
+      "uk": "published",
+      "en": "draft"
+    }
+  },
+  {
+    "id": "classes/extending-built-in",
+    "track": "classes",
+    "slug": "extending-built-in",
+    "canonicalRoute": "/uk/docs/classes/extending-built-in",
+    "availableLocales": [
+      "uk"
+    ],
+    "statuses": {
+      "uk": "published",
+      "en": "draft"
+    }
+  },
+  {
+    "id": "classes/instanceof",
+    "track": "classes",
+    "slug": "instanceof",
+    "canonicalRoute": "/uk/docs/classes/instanceof",
+    "availableLocales": [
+      "uk"
+    ],
+    "statuses": {
+      "uk": "published",
+      "en": "draft"
+    }
+  },
+  {
+    "id": "classes/mixins",
+    "track": "classes",
+    "slug": "mixins",
+    "canonicalRoute": "/uk/docs/classes/mixins",
+    "availableLocales": [
+      "uk"
+    ],
+    "statuses": {
+      "uk": "published",
+      "en": "draft"
+    }
+  },
+  {
+    "id": "error-handling/try-catch",
+    "track": "error-handling",
+    "slug": "try-catch",
+    "canonicalRoute": "/uk/docs/error-handling/try-catch",
+    "availableLocales": [
+      "uk"
+    ],
+    "statuses": {
+      "uk": "published",
+      "en": "draft"
+    }
+  },
+  {
+    "id": "error-handling/custom-errors",
+    "track": "error-handling",
+    "slug": "custom-errors",
+    "canonicalRoute": "/uk/docs/error-handling/custom-errors",
+    "availableLocales": [
+      "uk"
+    ],
+    "statuses": {
+      "uk": "published",
+      "en": "draft"
+    }
+  },
+  {
+    "id": "promises/callbacks",
+    "track": "promises",
+    "slug": "callbacks",
+    "canonicalRoute": "/uk/docs/promises/callbacks",
+    "availableLocales": [
+      "uk"
+    ],
+    "statuses": {
+      "uk": "published",
+      "en": "draft"
+    }
+  },
+  {
+    "id": "promises/promise-basics",
+    "track": "promises",
+    "slug": "promise-basics",
+    "canonicalRoute": "/uk/docs/promises/promise-basics",
+    "availableLocales": [
+      "uk"
+    ],
+    "statuses": {
+      "uk": "published",
+      "en": "draft"
+    }
+  },
+  {
+    "id": "promises/promise-chaining",
+    "track": "promises",
+    "slug": "promise-chaining",
+    "canonicalRoute": "/uk/docs/promises/promise-chaining",
+    "availableLocales": [
+      "uk"
+    ],
+    "statuses": {
+      "uk": "published",
+      "en": "draft"
+    }
+  },
+  {
+    "id": "promises/promise-error-handling",
+    "track": "promises",
+    "slug": "promise-error-handling",
+    "canonicalRoute": "/uk/docs/promises/promise-error-handling",
+    "availableLocales": [
+      "uk"
+    ],
+    "statuses": {
+      "uk": "published",
+      "en": "draft"
+    }
+  },
+  {
+    "id": "promises/promise-api",
+    "track": "promises",
+    "slug": "promise-api",
+    "canonicalRoute": "/uk/docs/promises/promise-api",
+    "availableLocales": [
+      "uk"
+    ],
+    "statuses": {
+      "uk": "published",
+      "en": "draft"
+    }
+  },
+  {
+    "id": "promises/promisification",
+    "track": "promises",
+    "slug": "promisification",
+    "canonicalRoute": "/uk/docs/promises/promisification",
+    "availableLocales": [
+      "uk"
+    ],
+    "statuses": {
+      "uk": "published",
+      "en": "draft"
+    }
+  },
+  {
+    "id": "promises/microtasks",
+    "track": "promises",
+    "slug": "microtasks",
+    "canonicalRoute": "/uk/docs/promises/microtasks",
+    "availableLocales": [
+      "uk"
+    ],
+    "statuses": {
+      "uk": "published",
+      "en": "draft"
+    }
+  },
+  {
+    "id": "promises/async-await",
+    "track": "promises",
+    "slug": "async-await",
+    "canonicalRoute": "/uk/docs/promises/async-await",
+    "availableLocales": [
+      "uk"
+    ],
+    "statuses": {
+      "uk": "published",
+      "en": "draft"
+    }
+  },
+  {
+    "id": "generators/generators",
+    "track": "generators",
+    "slug": "generators",
+    "canonicalRoute": "/uk/docs/generators/generators",
+    "availableLocales": [
+      "uk"
+    ],
+    "statuses": {
+      "uk": "published",
+      "en": "draft"
+    }
+  },
+  {
+    "id": "generators/async-iterators-generators",
+    "track": "generators",
+    "slug": "async-iterators-generators",
+    "canonicalRoute": "/uk/docs/generators/async-iterators-generators",
+    "availableLocales": [
+      "uk"
+    ],
+    "statuses": {
+      "uk": "published",
+      "en": "draft"
+    }
+  },
+  {
+    "id": "modules/modules-intro",
+    "track": "modules",
+    "slug": "modules-intro",
+    "canonicalRoute": "/uk/docs/modules/modules-intro",
+    "availableLocales": [
+      "uk"
+    ],
+    "statuses": {
+      "uk": "published",
+      "en": "draft"
+    }
+  },
+  {
+    "id": "modules/export-import",
+    "track": "modules",
+    "slug": "export-import",
+    "canonicalRoute": "/uk/docs/modules/export-import",
+    "availableLocales": [
+      "uk"
+    ],
+    "statuses": {
+      "uk": "published",
+      "en": "draft"
+    }
+  },
+  {
+    "id": "modules/dynamic-imports",
+    "track": "modules",
+    "slug": "dynamic-imports",
+    "canonicalRoute": "/uk/docs/modules/dynamic-imports",
+    "availableLocales": [
+      "uk"
+    ],
+    "statuses": {
+      "uk": "published",
+      "en": "draft"
+    }
+  },
+  {
+    "id": "misc/proxy-reflect",
+    "track": "misc",
+    "slug": "proxy-reflect",
+    "canonicalRoute": "/uk/docs/misc/proxy-reflect",
+    "availableLocales": [
+      "uk"
+    ],
+    "statuses": {
+      "uk": "published",
+      "en": "draft"
+    }
+  },
+  {
+    "id": "misc/eval",
+    "track": "misc",
+    "slug": "eval",
+    "canonicalRoute": "/uk/docs/misc/eval",
+    "availableLocales": [
+      "uk"
+    ],
+    "statuses": {
+      "uk": "published",
+      "en": "draft"
+    }
+  },
+  {
+    "id": "misc/currying",
+    "track": "misc",
+    "slug": "currying",
+    "canonicalRoute": "/uk/docs/misc/currying",
+    "availableLocales": [
+      "uk"
+    ],
+    "statuses": {
+      "uk": "published",
+      "en": "draft"
+    }
+  },
+  {
+    "id": "misc/reference-type",
+    "track": "misc",
+    "slug": "reference-type",
+    "canonicalRoute": "/uk/docs/misc/reference-type",
+    "availableLocales": [
+      "uk"
+    ],
+    "statuses": {
+      "uk": "published",
+      "en": "draft"
+    }
+  },
+  {
+    "id": "misc/bigint",
+    "track": "misc",
+    "slug": "bigint",
+    "canonicalRoute": "/uk/docs/misc/bigint",
+    "availableLocales": [
+      "uk"
+    ],
+    "statuses": {
+      "uk": "published",
+      "en": "draft"
+    }
+  },
+  {
+    "id": "misc/unicode-strings",
+    "track": "misc",
+    "slug": "unicode-strings",
+    "canonicalRoute": "/uk/docs/misc/unicode-strings",
+    "availableLocales": [
+      "uk"
+    ],
+    "statuses": {
+      "uk": "published",
+      "en": "draft"
+    }
+  },
+  {
+    "id": "misc/weakref",
+    "track": "misc",
+    "slug": "weakref",
+    "canonicalRoute": "/uk/docs/misc/weakref",
+    "availableLocales": [
+      "uk"
+    ],
+    "statuses": {
+      "uk": "published",
+      "en": "draft"
+    }
+  }
+]

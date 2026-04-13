@@ -1,0 +1,191 @@
+{
+  "id": "modules/modules-intro",
+  "locale": "uk",
+  "locales": {
+    "uk": true,
+    "en": false
+  },
+  "availableLocales": [
+    "uk"
+  ],
+  "title": "Вступ до модулів",
+  "description": "Вступ до модулів у JavaScript — детальний розбір з прикладами, підводними каменями та best practices.",
+  "track": "modules",
+  "trackTitle": "Модулі",
+  "slug": "modules-intro",
+  "sourcePath": "uk/modules/modules-intro.html",
+  "sourceIdentity": {
+    "track": "modules",
+    "slug": "modules-intro"
+  },
+  "canonicalRoute": "/uk/docs/modules/modules-intro",
+  "canonicalLegacyPath": "/modules/modules-intro.html",
+  "legacyHtmlPath": "/uk/modules/modules-intro.html",
+  "legacyAliases": [
+    "/uk/modules/modules-intro.html",
+    "/uk/modules/modules-intro",
+    "/modules/modules-intro.html"
+  ],
+  "sectionOrder": 13,
+  "lessonOrder": 1,
+  "overallOrder": 85,
+  "articleNumber": "13.1",
+  "estimatedMinutes": 10,
+  "headings": [
+    {
+      "level": 2,
+      "id": "what-is",
+      "text": "Що дає модуль"
+    },
+    {
+      "level": 2,
+      "id": "export",
+      "text": "export"
+    },
+    {
+      "level": 2,
+      "id": "import",
+      "text": "import"
+    },
+    {
+      "level": 2,
+      "id": "browser",
+      "text": "Модулі у браузері"
+    },
+    {
+      "level": 2,
+      "id": "features",
+      "text": "Особливості ESM"
+    },
+    {
+      "level": 2,
+      "id": "summary",
+      "text": "Підсумок"
+    }
+  ],
+  "badges": [
+    "Початковий",
+    "Модулі",
+    "~ 10 хв"
+  ],
+  "donationLinks": [],
+  "breadcrumbTrail": [
+    "Головна",
+    "Модулі",
+    "Вступ до модулів"
+  ],
+  "relatedSourceTrack": "modules",
+  "contentFiles": {
+    "uk": "content/tracks/modules/modules-intro/index.uk.html",
+    "en": "content/tracks/modules/modules-intro/index.en.mdx"
+  },
+  "metadataFile": "content/tracks/modules/modules-intro/meta.json",
+  "translationStatus": {
+    "sourceLocale": "uk",
+    "availableLocales": [
+      "uk"
+    ],
+    "fallbackLocales": {
+      "en": "uk"
+    },
+    "locales": {
+      "uk": {
+        "status": "published",
+        "filePath": "content/tracks/modules/modules-intro/index.uk.html",
+        "format": "html",
+        "title": "Вступ до модулів",
+        "description": "Вступ до модулів у JavaScript — детальний розбір з прикладами, підводними каменями та best practices.",
+        "completeness": 100,
+        "isFallback": false,
+        "headings": [
+          {
+            "level": 2,
+            "id": "what-is",
+            "text": "Що дає модуль"
+          },
+          {
+            "level": 2,
+            "id": "export",
+            "text": "export"
+          },
+          {
+            "level": 2,
+            "id": "import",
+            "text": "import"
+          },
+          {
+            "level": 2,
+            "id": "browser",
+            "text": "Модулі у браузері"
+          },
+          {
+            "level": 2,
+            "id": "features",
+            "text": "Особливості ESM"
+          },
+          {
+            "level": 2,
+            "id": "summary",
+            "text": "Підсумок"
+          }
+        ]
+      },
+      "en": {
+        "status": "draft",
+        "filePath": "content/tracks/modules/modules-intro/index.en.mdx",
+        "format": "mdx",
+        "title": "TODO: Translate title",
+        "description": "TODO: Translate description",
+        "completeness": 0,
+        "isFallback": true,
+        "headings": [
+          {
+            "level": 2,
+            "id": "source-lesson",
+            "text": "Source lesson"
+          }
+        ],
+        "slug": "modules-intro",
+        "track": "modules",
+        "locale": "en",
+        "sourceLocale": "uk",
+        "hasBody": true
+      }
+    }
+  },
+  "translationCompleteness": {
+    "uk": 100,
+    "en": 0
+  },
+  "migration": {
+    "migratedFromLegacy": true,
+    "canonicalIdentitySource": "canonical",
+    "override": null,
+    "articleMeta": {
+      "type": "numeric",
+      "raw": {
+        "secId": "13",
+        "artId": "1"
+      },
+      "resolved": {
+        "track": "modules",
+        "slug": "modules-intro"
+      }
+    },
+    "mismatches": {
+      "filePathVsCanonical": false,
+      "filePathVsStringMeta": false,
+      "filePathVsNumericMeta": false
+    },
+    "hasLegacyJsonLd": false,
+    "hasLegacyToc": false,
+    "hasLegacyPrevNext": false,
+    "legacyArticleSupport": true
+  },
+  "bodySourcePath": "content/tracks/modules/modules-intro/index.uk.html",
+  "sourceProvenance": {
+    "sourcePath": "uk/modules/modules-intro.html",
+    "sourceTrack": "modules",
+    "sourceSlug": "modules-intro"
+  }
+}

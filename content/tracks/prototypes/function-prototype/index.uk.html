@@ -1,0 +1,72 @@
+<p>Кожна функція-конструктор має властивість <code>prototype</code> — об'єкт, який стає <code>[[Prototype]]</code> для всіх об'єктів, створених через <code>new F()</code>. Це механізм що лежить в основі успадкування через конструктори.</p>
+
+    <h2 id="f-prototype">Властивість prototype функції</h2>
+    <div class="code-block"><div class="code-head"><span class="code-lang">JavaScript</span><button class="btn-copy" aria-label="Копіювати"></button></div>
+<pre><code class="language-javascript">function Animal(name) {
+  this.name = name;
+}
+
+// Animal.prototype — об'єкт що стане прототипом екземплярів
+Animal.prototype.speak = function() {
+  return `${this.name} speaks`;
+};
+
+const dog = new Animal('Rex');
+const cat = new Animal('Luna');
+
+console.log(dog.speak()); // "Rex speaks"
+console.log(cat.speak()); // "Luna speaks"
+
+// Методи СПІЛЬНІ для всіх екземплярів (один об'єкт у пам'яті)
+console.log(dog.speak === cat.speak); // true — один і той самий метод
+
+// [[Prototype]] екземпляра = Animal.prototype
+console.log(Object.getPrototypeOf(dog) === Animal.prototype); // true
+console.log(dog instanceof Animal); // true</code></pre></div>
+
+    <h2 id="constructor">Властивість constructor</h2>
+    <div class="code-block"><div class="code-head"><span class="code-lang">JavaScript</span><button class="btn-copy" aria-label="Копіювати"></button></div>
+<pre><code class="language-javascript">// За замовчуванням prototype = { constructor: F }
+function Rabbit() {}
+console.log(Rabbit.prototype.constructor === Rabbit); // true
+
+const r = new Rabbit();
+console.log(r.constructor === Rabbit); // true — через прotototype
+
+// Якщо перезаписати prototype — constructor втрачається!
+Rabbit.prototype = {
+  jump() { return 'jump'; },
+};
+const r2 = new Rabbit();
+console.log(r2.constructor === Rabbit); // false — перезаписали!
+console.log(r2.constructor);            // Object
+
+// ПРАВИЛЬНО: зберегти constructor при розширенні
+Rabbit.prototype = {
+  constructor: Rabbit,   // явно відновити
+  jump() { return 'jump'; },
+};</code></pre></div>
+
+    <h2 id="vs-class">F.prototype vs class</h2>
+    <div class="code-block"><div class="code-head"><span class="code-lang">JavaScript</span><button class="btn-copy" aria-label="Копіювати"></button></div>
+<pre><code class="language-javascript">// Конструктор + prototype (ES5)
+function Person(name) { this.name = name; }
+Person.prototype.greet = function() { return `Hi, ${this.name}`; };
+
+// Еквівалентний клас (ES6)
+class PersonClass {
+  constructor(name) { this.name = name; }
+  greet() { return `Hi, ${this.name}`; }
+}
+
+// Внутрішньо вони дають однаковий результат
+// Але class забезпечує: обов'язковий new, методи non-enumerable, super</code></pre></div>
+
+    <h2 id="summary">Підсумок</h2>
+    <ul>
+      <li><code>new F()</code> встановлює <code>[[Prototype]] = F.prototype</code>.</li>
+      <li>Методи на <code>F.prototype</code> спільні для всіх екземплярів (економія пам'яті).</li>
+      <li>При перезаписі <code>prototype</code> об'єктом — відновлюйте <code>constructor</code> вручну.</li>
+      <li><code>class</code> робить те саме автоматично і безпечніше.</li>
+    </ul>
+    <div class="article-support"><p><strong>Матеріал корисний?</strong> Підтримай проект.</p><div class="support-btns-inline"><a href="https://send.monobank.ua/jar/YOUR_JAR_ID" class="btn-mono" target="_blank" rel="noopener" style="font-size:12px;height:36px;padding:0 14px">🟢 Monobank</a><a href="https://www.buymeacoffee.com/YOUR_HANDLE" class="btn-coffee" target="_blank" rel="noopener" style="font-size:12px;height:36px;padding:0 14px">☕ Coffee</a></div></div>

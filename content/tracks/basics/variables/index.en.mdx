@@ -1,0 +1,312 @@
+---
+title: "Variables"
+description: "How `var`, `let`, and `const` differ in scope, hoisting, reassignment, and common real-world pitfalls."
+slug: "variables"
+track: "basics"
+locale: "en"
+sourceLocale: "uk"
+translationStatus: "published"
+translationCompleteness: 100
+---
+
+A **variable** is a named place where your program stores a value. In modern JavaScript, a variable is best understood as a binding between a name and a value inside a particular lexical environment.
+
+## Why this matters
+
+Choosing between `var`, `let`, and `const` affects:
+
+- which part of the program can access the variable
+- whether the binding can be reassigned
+- when the variable becomes available during execution
+- how closures behave in loops
+- whether the variable pollutes the global object
+
+These are not cosmetic differences. They change program behavior.
+
+## Keywords: `var`, `let`, `const`
+
+JavaScript has three main ways to declare a variable.
+
+### `var` - function scope
+
+`var` belongs to the nearest function scope. Blocks such as `if`, `for`, or `while` do not create a separate scope for `var`.
+
+```javascript
+function processData() {
+  if (true) {
+    var result = 42;
+  }
+
+  console.log(result); // 42
+}
+```
+
+At the top level in the browser, `var` also creates a property on `globalThis`:
+
+```javascript
+var appName = "Dashboard";
+console.log(globalThis.appName); // "Dashboard"
+
+let version = "1.0";
+console.log(globalThis.version); // undefined
+```
+
+### `let` - block scope
+
+`let` belongs to the nearest block scope. Reassignment is allowed.
+
+```javascript
+for (let i = 0; i < 3; i++) {
+  console.log(i);
+}
+
+// console.log(i); // ReferenceError
+```
+
+### `const` - immutable binding
+
+`const` is also block-scoped, but the binding cannot be reassigned.
+
+```javascript
+const MAX_RETRIES = 3;
+// MAX_RETRIES = 5; // TypeError
+
+const config = { timeout: 5000 };
+config.timeout = 10000; // allowed
+```
+
+`const` protects the binding, not the object itself.
+
+## Hoisting
+
+Before code runs, JavaScript registers declarations in the current lexical environment.
+
+### `var` hoisting
+
+`var` is hoisted and initialized with `undefined`.
+
+```javascript
+console.log(status); // undefined
+var status = "active";
+```
+
+This is often described as if the engine had rewritten the code to:
+
+```javascript
+var status;
+console.log(status);
+status = "active";
+```
+
+### `let` and `const`: the Temporal Dead Zone
+
+`let` and `const` are also registered before execution, but they are not initialized until the declaration line is reached.
+
+```javascript
+{
+  // console.log(value); // ReferenceError
+  let value = 10;
+  console.log(value); // 10
+}
+```
+
+The time between entering the scope and reaching the declaration is called the **Temporal Dead Zone (TDZ)**.
+
+### Function declaration hoisting
+
+Function declarations are hoisted with their body.
+
+```javascript
+console.log(square(4)); // 16
+
+function square(n) {
+  return n * n;
+}
+```
+
+By contrast, function expressions follow the rules of the keyword used to declare them:
+
+```javascript
+// console.log(cube(3)); // ReferenceError
+const cube = function (n) {
+  return n ** 3;
+};
+```
+
+## Scope in practice
+
+### A block as an isolation unit
+
+Sometimes a block is useful purely to keep temporary values local:
+
+```javascript
+{
+  const requestId = crypto.randomUUID();
+  const payload = { requestId };
+  console.log(payload);
+}
+
+// requestId is not available here
+```
+
+### Nested scopes and shadowing
+
+An inner scope can declare a variable with the same name as an outer scope. That is called **shadowing**.
+
+```javascript
+const limit = 100;
+
+function applyUserLimit(userLimit) {
+  const limit = Math.min(userLimit, 50);
+  return limit;
+}
+
+console.log(applyUserLimit(80)); // 50
+console.log(limit); // 100
+```
+
+## Variables in loops: a classic trap
+
+The old `var` behavior in loops is one of the most famous beginner pitfalls.
+
+```javascript
+const handlers = [];
+
+for (var i = 0; i < 3; i++) {
+  handlers.push(function () {
+    console.log(i);
+  });
+}
+
+handlers[0](); // 3
+handlers[1](); // 3
+handlers[2](); // 3
+```
+
+All closures share the same `i`.
+
+With `let`, a fresh binding is created per iteration:
+
+```javascript
+const handlers = [];
+
+for (let i = 0; i < 3; i++) {
+  handlers.push(function () {
+    console.log(i);
+  });
+}
+
+handlers[0](); // 0
+handlers[1](); // 1
+handlers[2](); // 2
+```
+
+## Edge cases
+
+### Redeclaration
+
+```javascript
+var status = "active";
+var status = "pending"; // allowed
+
+let count = 0;
+// let count = 1; // SyntaxError
+```
+
+### `const` and `Object.freeze`
+
+```javascript
+const config = Object.freeze({
+  host: "localhost",
+  db: { port: 5432 },
+});
+
+config.db.port = 3306; // still allowed: freeze is shallow
+```
+
+### Shared scope inside `switch`
+
+All `case` clauses in a `switch` share the same scope unless you create explicit blocks.
+
+```javascript
+switch (status) {
+  case "active": {
+    const message = "User is active";
+    console.log(message);
+    break;
+  }
+  case "inactive": {
+    const message = "User is inactive";
+    console.log(message);
+    break;
+  }
+}
+```
+
+## Common mistakes and anti-patterns
+
+### 1. Letting `var` leak into global scope
+
+```javascript
+var userId = null; // becomes window.userId in the browser
+```
+
+### 2. Declaring `const` without initializing it
+
+```javascript
+// const MAX; // SyntaxError
+const MAX = 100;
+```
+
+### 3. Forgetting TDZ rules
+
+```javascript
+// console.log(total); // ReferenceError
+let total = 0;
+```
+
+### 4. Using `var` in `for...in` or `for...of`
+
+```javascript
+const data = { a: 1, b: 2 };
+
+for (const key in data) {
+  console.log(key);
+}
+```
+
+## Best practices
+
+### 1. Use `const` by default
+
+Start with `const`. Switch to `let` only when reassignment is actually needed.
+
+### 2. Minimize scope
+
+Declare a variable as close as possible to the place where it is used.
+
+### 3. Use descriptive names
+
+Prefer `currentUser`, `profileData`, or `lastSeenAt` over `u`, `d`, or `t`.
+
+### 4. Avoid `var` in new code
+
+Modern JavaScript gives you clearer and safer tools with `let` and `const`.
+
+## Mental model
+
+You can picture lexical scope as a chain of tables:
+
+- `var` writes into the current function scope
+- `let` and `const` write into the current block scope
+- the TDZ means the binding exists but is not initialized yet
+- closures keep access to the environment where they were created
+
+## Summary
+
+- `var` is function-scoped and should generally be avoided in new code.
+- `let` is block-scoped and allows reassignment.
+- `const` is block-scoped and prevents reassignment.
+- `let` and `const` have a Temporal Dead Zone.
+- `let` in loops gives each iteration its own binding.
+- Prefer `const`, use `let` when needed, and leave `var` to legacy code.

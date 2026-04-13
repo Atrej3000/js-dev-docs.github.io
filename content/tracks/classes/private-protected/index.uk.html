@@ -1,0 +1,81 @@
+<p>Інкапсуляція — приховання внутрішньої реалізації. JavaScript надає два рівні: <strong>приватні</strong> (<code>#field</code>) — мовна гарантія, <strong>захищені</strong> — конвенція через підкреслення (<code>_field</code>). Приватні поля доступні лише всередині тіла класу де вони визначені.</p>
+
+    <h2 id="private">Приватні поля і методи (#)</h2>
+    <div class="code-block"><div class="code-head"><span class="code-lang">JavaScript</span><button class="btn-copy" aria-label="Копіювати"></button></div>
+<pre><code class="language-javascript">class BankAccount {
+  #balance;      // приватне поле
+  #owner;
+
+  constructor(owner, initialBalance = 0) {
+    this.#owner   = owner;
+    this.#balance = initialBalance;
+  }
+
+  // Приватний метод
+  #validate(amount) {
+    if (amount <= 0) throw new RangeError('Amount must be positive');
+    return true;
+  }
+
+  deposit(amount) {
+    this.#validate(amount);
+    this.#balance += amount;
+  }
+
+  withdraw(amount) {
+    this.#validate(amount);
+    if (amount > this.#balance) throw new Error('Insufficient funds');
+    this.#balance -= amount;
+  }
+
+  get balance()  { return this.#balance; }
+  get owner()    { return this.#owner; }
+}
+
+const acc = new BankAccount('Alice', 1000);
+acc.deposit(500);
+console.log(acc.balance); // 1500
+// acc.#balance;           // SyntaxError — приватне!</code></pre></div>
+
+    <h2 id="protected">Захищені властивості (конвенція _)</h2>
+    <div class="code-block"><div class="code-head"><span class="code-lang">JavaScript</span><button class="btn-copy" aria-label="Копіювати"></button></div>
+<pre><code class="language-javascript">// _ означає "не чіпати ззовні" — угода між розробниками, не мовна гарантія
+class Logger {
+  _prefix = '[LOG]';   // захищене — можна перевизначити в нащадку
+  #output  = console;  // приватне — лише Logger
+
+  log(message) {
+    this.#output.log(`${this._prefix} ${message}`);
+  }
+}
+
+class DebugLogger extends Logger {
+  _prefix = '[DEBUG]';  // нащадок може перевизначити захищену властивість
+}
+
+const d = new DebugLogger();
+d.log('test'); // "[DEBUG] test"</code></pre></div>
+
+    <h2 id="in-operator">Перевірка приватного поля через in</h2>
+    <div class="code-block"><div class="code-head"><span class="code-lang">JavaScript</span><button class="btn-copy" aria-label="Копіювати"></button></div>
+<pre><code class="language-javascript">class Point {
+  #x; #y;
+  constructor(x, y) { this.#x = x; this.#y = y; }
+
+  // Перевірка що об'єкт є Point (не instanceof — уникає cross-realm проблем)
+  static isPoint(obj) {
+    return #x in obj; // true якщо obj має приватне поле #x
+  }
+}
+
+console.log(Point.isPoint(new Point(1,2))); // true
+console.log(Point.isPoint({}));              // false</code></pre></div>
+
+    <h2 id="summary">Підсумок</h2>
+    <ul>
+      <li>Приватні поля <code>#field</code>: мовна гарантія. Синтаксична помилка при доступі ззовні.</li>
+      <li>Захищені (<code>_field</code>): лише конвенція. Технічно доступні всім.</li>
+      <li><code>#field in obj</code> — безпечна перевірка наявності приватного поля.</li>
+      <li>Приватні поля НЕ успадковуються нащадками.</li>
+    </ul>
+    <div class="article-support"><p><strong>Матеріал корисний?</strong> Підтримай проект.</p><div class="support-btns-inline"><a href="https://send.monobank.ua/jar/YOUR_JAR_ID" class="btn-mono" target="_blank" rel="noopener" style="font-size:12px;height:36px;padding:0 14px">🟢 Monobank</a><a href="https://www.buymeacoffee.com/YOUR_HANDLE" class="btn-coffee" target="_blank" rel="noopener" style="font-size:12px;height:36px;padding:0 14px">☕ Coffee</a></div></div>

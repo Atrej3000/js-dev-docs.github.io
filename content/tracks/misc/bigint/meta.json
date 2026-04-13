@@ -1,0 +1,188 @@
+{
+  "id": "misc/bigint",
+  "locale": "uk",
+  "locales": {
+    "uk": true,
+    "en": false
+  },
+  "availableLocales": [
+    "uk"
+  ],
+  "title": "BigInt",
+  "description": "BigInt у JavaScript — детальний розбір з прикладами, підводними каменями та best practices.",
+  "track": "misc",
+  "trackTitle": "Різне",
+  "slug": "bigint",
+  "sourcePath": "uk/misc/bigint.html",
+  "sourceIdentity": {
+    "track": "misc",
+    "slug": "bigint"
+  },
+  "canonicalRoute": "/uk/docs/misc/bigint",
+  "canonicalLegacyPath": "/misc/bigint.html",
+  "legacyHtmlPath": "/uk/misc/bigint.html",
+  "legacyAliases": [
+    "/uk/misc/bigint.html",
+    "/uk/misc/bigint",
+    "/misc/bigint.html"
+  ],
+  "sectionOrder": 14,
+  "lessonOrder": 5,
+  "overallOrder": 92,
+  "articleNumber": "14.5",
+  "estimatedMinutes": 8,
+  "headings": [
+    {
+      "level": 2,
+      "id": "creation",
+      "text": "Створення"
+    },
+    {
+      "level": 2,
+      "id": "operations",
+      "text": "Операції"
+    },
+    {
+      "level": 2,
+      "id": "limits",
+      "text": "Обмеження"
+    },
+    {
+      "level": 2,
+      "id": "usecases",
+      "text": "Де реально потрібен"
+    },
+    {
+      "level": 2,
+      "id": "summary",
+      "text": "Підсумок"
+    }
+  ],
+  "badges": [
+    "Середній",
+    "Різне",
+    "~ 8 хв"
+  ],
+  "donationLinks": [],
+  "breadcrumbTrail": [
+    "Головна",
+    "Різне",
+    "BigInt"
+  ],
+  "relatedSourceTrack": "misc",
+  "contentFiles": {
+    "uk": "content/tracks/misc/bigint/index.uk.html",
+    "en": "content/tracks/misc/bigint/index.en.mdx"
+  },
+  "metadataFile": "content/tracks/misc/bigint/meta.json",
+  "translationStatus": {
+    "sourceLocale": "uk",
+    "availableLocales": [
+      "uk"
+    ],
+    "fallbackLocales": {
+      "en": "uk"
+    },
+    "locales": {
+      "uk": {
+        "status": "published",
+        "filePath": "content/tracks/misc/bigint/index.uk.html",
+        "format": "html",
+        "title": "BigInt",
+        "description": "BigInt у JavaScript — детальний розбір з прикладами, підводними каменями та best practices.",
+        "completeness": 100,
+        "isFallback": false,
+        "headings": [
+          {
+            "level": 2,
+            "id": "creation",
+            "text": "Створення"
+          },
+          {
+            "level": 2,
+            "id": "operations",
+            "text": "Операції"
+          },
+          {
+            "level": 2,
+            "id": "limits",
+            "text": "Обмеження"
+          },
+          {
+            "level": 2,
+            "id": "usecases",
+            "text": "Де реально потрібен"
+          },
+          {
+            "level": 2,
+            "id": "summary",
+            "text": "Підсумок"
+          }
+        ]
+      },
+      "en": {
+        "status": "draft",
+        "filePath": "content/tracks/misc/bigint/index.en.mdx",
+        "format": "mdx",
+        "title": "TODO: Translate title",
+        "description": "TODO: Translate description",
+        "completeness": 0,
+        "isFallback": true,
+        "headings": [
+          {
+            "level": 2,
+            "id": "source-lesson",
+            "text": "Source lesson"
+          }
+        ],
+        "slug": "bigint",
+        "track": "misc",
+        "locale": "en",
+        "sourceLocale": "uk",
+        "hasBody": true
+      }
+    }
+  },
+  "translationCompleteness": {
+    "uk": 100,
+    "en": 0
+  },
+  "migration": {
+    "migratedFromLegacy": true,
+    "canonicalIdentitySource": "override",
+    "override": {
+      "sourcePath": "uk/misc/bigint.html",
+      "forceIdentity": {
+        "track": "misc",
+        "slug": "bigint"
+      },
+      "reason": "Numeric ARTICLE_META points to misc/reference-type instead of the bigint lesson."
+    },
+    "articleMeta": {
+      "type": "numeric",
+      "raw": {
+        "secId": "14",
+        "artId": "4"
+      },
+      "resolved": {
+        "track": "misc",
+        "slug": "reference-type"
+      }
+    },
+    "mismatches": {
+      "filePathVsCanonical": false,
+      "filePathVsStringMeta": false,
+      "filePathVsNumericMeta": true
+    },
+    "hasLegacyJsonLd": false,
+    "hasLegacyToc": false,
+    "hasLegacyPrevNext": false,
+    "legacyArticleSupport": true
+  },
+  "bodySourcePath": "content/tracks/misc/bigint/index.uk.html",
+  "sourceProvenance": {
+    "sourcePath": "uk/misc/bigint.html",
+    "sourceTrack": "misc",
+    "sourceSlug": "bigint"
+  }
+}

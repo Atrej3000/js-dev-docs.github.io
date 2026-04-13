@@ -1,0 +1,181 @@
+{
+  "id": "promises/promisification",
+  "locale": "uk",
+  "locales": {
+    "uk": true,
+    "en": false
+  },
+  "availableLocales": [
+    "uk"
+  ],
+  "title": "Промісифікація",
+  "description": "Промісифікація у JavaScript — детальний розбір з прикладами, підводними каменями та best practices.",
+  "track": "promises",
+  "trackTitle": "Проміси, async/await",
+  "slug": "promisification",
+  "sourcePath": "uk/promises/promisify.html",
+  "sourceIdentity": {
+    "track": "promises",
+    "slug": "promisify"
+  },
+  "canonicalRoute": "/uk/docs/promises/promisification",
+  "canonicalLegacyPath": "/promises/promisification.html",
+  "legacyHtmlPath": "/uk/promises/promisify.html",
+  "legacyAliases": [
+    "/uk/promises/promisify.html",
+    "/uk/promises/promisify",
+    "/promises/promisification.html"
+  ],
+  "sectionOrder": 11,
+  "lessonOrder": 6,
+  "overallOrder": 80,
+  "articleNumber": "11.6",
+  "estimatedMinutes": 8,
+  "headings": [
+    {
+      "level": 2,
+      "id": "manual",
+      "text": "Ручна промісифікація"
+    },
+    {
+      "level": 2,
+      "id": "promisify-fn",
+      "text": "Універсальна функція promisify"
+    },
+    {
+      "level": 2,
+      "id": "util-promisify",
+      "text": "util.promisify (Node.js)"
+    },
+    {
+      "level": 2,
+      "id": "multiple-results",
+      "text": "Кілька результатів у callback"
+    },
+    {
+      "level": 2,
+      "id": "summary",
+      "text": "Підсумок"
+    }
+  ],
+  "badges": [
+    "Середній",
+    "Проміси, async/await",
+    "~ 8 хв"
+  ],
+  "donationLinks": [],
+  "breadcrumbTrail": [
+    "Головна",
+    "Проміси, async/await",
+    "Промісифікація"
+  ],
+  "relatedSourceTrack": "promises",
+  "contentFiles": {
+    "uk": "content/tracks/promises/promisification/index.uk.html",
+    "en": "content/tracks/promises/promisification/index.en.mdx"
+  },
+  "metadataFile": "content/tracks/promises/promisification/meta.json",
+  "translationStatus": {
+    "sourceLocale": "uk",
+    "availableLocales": [
+      "uk"
+    ],
+    "fallbackLocales": {
+      "en": "uk"
+    },
+    "locales": {
+      "uk": {
+        "status": "published",
+        "filePath": "content/tracks/promises/promisification/index.uk.html",
+        "format": "html",
+        "title": "Промісифікація",
+        "description": "Промісифікація у JavaScript — детальний розбір з прикладами, підводними каменями та best practices.",
+        "completeness": 100,
+        "isFallback": false,
+        "headings": [
+          {
+            "level": 2,
+            "id": "manual",
+            "text": "Ручна промісифікація"
+          },
+          {
+            "level": 2,
+            "id": "promisify-fn",
+            "text": "Універсальна функція promisify"
+          },
+          {
+            "level": 2,
+            "id": "util-promisify",
+            "text": "util.promisify (Node.js)"
+          },
+          {
+            "level": 2,
+            "id": "multiple-results",
+            "text": "Кілька результатів у callback"
+          },
+          {
+            "level": 2,
+            "id": "summary",
+            "text": "Підсумок"
+          }
+        ]
+      },
+      "en": {
+        "status": "draft",
+        "filePath": "content/tracks/promises/promisification/index.en.mdx",
+        "format": "mdx",
+        "title": "TODO: Translate title",
+        "description": "TODO: Translate description",
+        "completeness": 0,
+        "isFallback": true,
+        "headings": [
+          {
+            "level": 2,
+            "id": "source-lesson",
+            "text": "Source lesson"
+          }
+        ],
+        "slug": "promisification",
+        "track": "promises",
+        "locale": "en",
+        "sourceLocale": "uk",
+        "hasBody": true
+      }
+    }
+  },
+  "translationCompleteness": {
+    "uk": 100,
+    "en": 0
+  },
+  "migration": {
+    "migratedFromLegacy": true,
+    "canonicalIdentitySource": "canonical",
+    "override": null,
+    "articleMeta": {
+      "type": "numeric",
+      "raw": {
+        "secId": "11",
+        "artId": "6"
+      },
+      "resolved": {
+        "track": "promises",
+        "slug": "promisify"
+      }
+    },
+    "mismatches": {
+      "filePathVsCanonical": true,
+      "filePathVsStringMeta": false,
+      "filePathVsNumericMeta": false
+    },
+    "hasLegacyJsonLd": false,
+    "hasLegacyToc": false,
+    "hasLegacyPrevNext": false,
+    "legacyArticleSupport": true
+  },
+  "bodySourcePath": "content/tracks/promises/promisification/index.uk.html",
+  "sourceProvenance": {
+    "sourcePath": "uk/promises/promisify.html",
+    "sourceTrack": "promises",
+    "sourceSlug": "promisify"
+  }
+}

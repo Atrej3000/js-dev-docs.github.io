@@ -1,0 +1,94 @@
+---
+title: "Comparison Operators"
+description: "How JavaScript compares values with relational operators, strict equality, loose equality, and `Object.is`."
+slug: "comparison"
+track: "basics"
+locale: "en"
+sourceLocale: "uk"
+translationStatus: "published"
+translationCompleteness: 100
+---
+
+Comparison operators return a boolean value. They are the basis of conditions, branches, validation checks, and many common patterns throughout JavaScript.
+
+## Relational operators
+
+Relational operators compare whether one value is greater than, less than, or related to another.
+
+```javascript
+console.log(5 > 3);   // true
+console.log(5 < 3);   // false
+console.log(5 >= 5);  // true
+console.log(5 <= 4);  // false
+```
+
+Strings are compared lexicographically:
+
+```javascript
+console.log("apple" < "banana"); // true
+console.log("Zoo" > "apple");    // false
+```
+
+## Strict equality: `===`
+
+Strict equality compares both value and type.
+
+```javascript
+console.log(5 === 5);     // true
+console.log(5 === "5");   // false
+console.log(true === 1);  // false
+```
+
+As a rule, use `===` and `!==` by default.
+
+## Loose equality: `==`
+
+Loose equality performs type conversion before comparing.
+
+```javascript
+console.log(5 == "5");    // true
+console.log(false == 0);  // true
+console.log("" == 0);     // true
+```
+
+This can be useful in a few narrow cases, but it is often a source of confusion.
+
+## Special behavior of `null` and `undefined`
+
+One important loose-equality rule is:
+
+```javascript
+console.log(null == undefined); // true
+console.log(null === undefined); // false
+```
+
+But:
+
+```javascript
+console.log(null == 0); // false
+console.log(undefined == 0); // false
+```
+
+That is why `value == null` is sometimes used as a compact way to check for either `null` or `undefined`.
+
+## `Object.is`
+
+`Object.is` is like strict comparison without a couple of the usual exceptions.
+
+```javascript
+console.log(Object.is(NaN, NaN)); // true
+console.log(Object.is(-0, 0));    // false
+
+console.log(NaN === NaN); // false
+console.log(-0 === 0);    // true
+```
+
+In everyday application code, `===` is usually enough. `Object.is` is most helpful when those edge cases matter.
+
+## Summary
+
+- Relational operators compare order.
+- `===` compares without type conversion and should be your default.
+- `==` performs coercion and can lead to surprising results.
+- `null` and `undefined` are loosely equal to each other, but not to `0`.
+- `Object.is` handles `NaN` and `-0` differently from `===`.

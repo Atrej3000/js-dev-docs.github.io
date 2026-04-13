@@ -1,0 +1,184 @@
+{
+  "id": "promises/async-await",
+  "locale": "uk",
+  "locales": {
+    "uk": true,
+    "en": false
+  },
+  "availableLocales": [
+    "uk"
+  ],
+  "title": "Async/await",
+  "description": "",
+  "track": "promises",
+  "trackTitle": "Проміси, async/await",
+  "slug": "async-await",
+  "sourcePath": "uk/promises/async-await.html",
+  "sourceIdentity": {
+    "track": "promises",
+    "slug": "async-await"
+  },
+  "canonicalRoute": "/uk/docs/promises/async-await",
+  "canonicalLegacyPath": "/promises/async-await.html",
+  "legacyHtmlPath": "/uk/promises/async-await.html",
+  "legacyAliases": [
+    "/uk/promises/async-await.html",
+    "/uk/promises/async-await",
+    "/promises/async-await.html"
+  ],
+  "sectionOrder": 11,
+  "lessonOrder": 8,
+  "overallOrder": 82,
+  "articleNumber": "11.8",
+  "estimatedMinutes": 16,
+  "headings": [
+    {
+      "level": 2,
+      "id": "basics",
+      "text": "Основи"
+    },
+    {
+      "level": 2,
+      "id": "error-handling",
+      "text": "Обробка помилок"
+    },
+    {
+      "level": 2,
+      "id": "parallel",
+      "text": "Паралельне виконання"
+    },
+    {
+      "level": 2,
+      "id": "top-level",
+      "text": "Top-level await"
+    },
+    {
+      "level": 2,
+      "id": "summary",
+      "text": "Підсумок"
+    }
+  ],
+  "badges": [
+    "Середній",
+    "Проміси, async/await",
+    "~ 16 хв"
+  ],
+  "donationLinks": [
+    "https://send.monobank.ua/jar/YOUR_JAR_ID",
+    "https://www.buymeacoffee.com/YOUR_HANDLE"
+  ],
+  "breadcrumbTrail": [
+    "Головна",
+    "Проміси, async/await",
+    "Async/await"
+  ],
+  "relatedSourceTrack": "promises",
+  "contentFiles": {
+    "uk": "content/tracks/promises/async-await/index.uk.html",
+    "en": "content/tracks/promises/async-await/index.en.mdx"
+  },
+  "metadataFile": "content/tracks/promises/async-await/meta.json",
+  "translationStatus": {
+    "sourceLocale": "uk",
+    "availableLocales": [
+      "uk"
+    ],
+    "fallbackLocales": {
+      "en": "uk"
+    },
+    "locales": {
+      "uk": {
+        "status": "published",
+        "filePath": "content/tracks/promises/async-await/index.uk.html",
+        "format": "html",
+        "title": "Async/await",
+        "description": "",
+        "completeness": 100,
+        "isFallback": false,
+        "headings": [
+          {
+            "level": 2,
+            "id": "basics",
+            "text": "Основи"
+          },
+          {
+            "level": 2,
+            "id": "error-handling",
+            "text": "Обробка помилок"
+          },
+          {
+            "level": 2,
+            "id": "parallel",
+            "text": "Паралельне виконання"
+          },
+          {
+            "level": 2,
+            "id": "top-level",
+            "text": "Top-level await"
+          },
+          {
+            "level": 2,
+            "id": "summary",
+            "text": "Підсумок"
+          }
+        ]
+      },
+      "en": {
+        "status": "draft",
+        "filePath": "content/tracks/promises/async-await/index.en.mdx",
+        "format": "mdx",
+        "title": "TODO: Translate title",
+        "description": "TODO: Translate description",
+        "completeness": 0,
+        "isFallback": true,
+        "headings": [
+          {
+            "level": 2,
+            "id": "source-lesson",
+            "text": "Source lesson"
+          }
+        ],
+        "slug": "async-await",
+        "track": "promises",
+        "locale": "en",
+        "sourceLocale": "uk",
+        "hasBody": true
+      }
+    }
+  },
+  "translationCompleteness": {
+    "uk": 100,
+    "en": 0
+  },
+  "migration": {
+    "migratedFromLegacy": true,
+    "canonicalIdentitySource": "canonical",
+    "override": null,
+    "articleMeta": {
+      "type": "string",
+      "raw": {
+        "secId": "promises",
+        "artId": "async-await"
+      },
+      "resolved": {
+        "track": "promises",
+        "slug": "async-await"
+      }
+    },
+    "mismatches": {
+      "filePathVsCanonical": false,
+      "filePathVsStringMeta": false,
+      "filePathVsNumericMeta": false
+    },
+    "hasLegacyJsonLd": false,
+    "hasLegacyToc": true,
+    "hasLegacyPrevNext": true,
+    "legacyArticleSupport": true
+  },
+  "bodySourcePath": "content/tracks/promises/async-await/index.uk.html",
+  "sourceProvenance": {
+    "sourcePath": "uk/promises/async-await.html",
+    "sourceTrack": "promises",
+    "sourceSlug": "async-await"
+  }
+}

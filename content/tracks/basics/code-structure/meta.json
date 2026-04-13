@@ -1,0 +1,264 @@
+{
+  "id": "basics/code-structure",
+  "locale": "uk",
+  "locales": {
+    "uk": true,
+    "en": true
+  },
+  "availableLocales": [
+    "uk",
+    "en"
+  ],
+  "title": "Структура коду",
+  "description": "Інструкції, крапка з комою, ASI (Automatic Semicolon Insertion), коментарі в JavaScript. Правила і підводні камені.",
+  "track": "basics",
+  "trackTitle": "Основи JavaScript",
+  "slug": "code-structure",
+  "sourcePath": "uk/basics/code-structure.html",
+  "sourceIdentity": {
+    "track": "basics",
+    "slug": "code-structure"
+  },
+  "canonicalRoute": "/uk/docs/basics/code-structure",
+  "canonicalLegacyPath": "/basics/code-structure.html",
+  "legacyHtmlPath": "/uk/basics/code-structure.html",
+  "legacyAliases": [
+    "/uk/basics/code-structure.html",
+    "/uk/basics/code-structure",
+    "/basics/code-structure.html"
+  ],
+  "sectionOrder": 2,
+  "lessonOrder": 2,
+  "overallOrder": 6,
+  "articleNumber": "2.2",
+  "estimatedMinutes": 9,
+  "headings": [
+    {
+      "level": 2,
+      "id": "instruktsii",
+      "text": "Інструкції"
+    },
+    {
+      "level": 2,
+      "id": "krapka-z-komoyu",
+      "text": "Крапка з комою"
+    },
+    {
+      "level": 2,
+      "id": "asi",
+      "text": "Автоматична вставка крапки з комою (ASI)"
+    },
+    {
+      "level": 3,
+      "id": "asi-pogliad",
+      "text": "Небезпечні випадки ASI"
+    },
+    {
+      "level": 2,
+      "id": "komentari",
+      "text": "Коментарі"
+    },
+    {
+      "level": 3,
+      "id": "komentari-yak",
+      "text": "Що коментувати, а що — ні"
+    },
+    {
+      "level": 2,
+      "id": "edge-cases",
+      "text": "Edge cases"
+    },
+    {
+      "level": 3,
+      "id": "return-asi",
+      "text": "ASI після return"
+    },
+    {
+      "level": 2,
+      "id": "summary",
+      "text": "Підсумок"
+    }
+  ],
+  "badges": [
+    "Початковий",
+    "Основи JavaScript",
+    "~ 9 хв"
+  ],
+  "donationLinks": [
+    "https://send.monobank.ua/jar/YOUR_JAR_ID",
+    "https://www.buymeacoffee.com/YOUR_HANDLE"
+  ],
+  "breadcrumbTrail": [
+    "Головна",
+    "Основи JavaScript",
+    "Структура коду"
+  ],
+  "relatedSourceTrack": "basics",
+  "contentFiles": {
+    "uk": "content/tracks/basics/code-structure/index.uk.html",
+    "en": "content/tracks/basics/code-structure/index.en.mdx"
+  },
+  "metadataFile": "content/tracks/basics/code-structure/meta.json",
+  "translationStatus": {
+    "sourceLocale": "uk",
+    "availableLocales": [
+      "uk",
+      "en"
+    ],
+    "fallbackLocales": {},
+    "locales": {
+      "uk": {
+        "status": "published",
+        "filePath": "content/tracks/basics/code-structure/index.uk.html",
+        "format": "html",
+        "title": "Структура коду",
+        "description": "Інструкції, крапка з комою, ASI (Automatic Semicolon Insertion), коментарі в JavaScript. Правила і підводні камені.",
+        "completeness": 100,
+        "isFallback": false,
+        "headings": [
+          {
+            "level": 2,
+            "id": "instruktsii",
+            "text": "Інструкції"
+          },
+          {
+            "level": 2,
+            "id": "krapka-z-komoyu",
+            "text": "Крапка з комою"
+          },
+          {
+            "level": 2,
+            "id": "asi",
+            "text": "Автоматична вставка крапки з комою (ASI)"
+          },
+          {
+            "level": 3,
+            "id": "asi-pogliad",
+            "text": "Небезпечні випадки ASI"
+          },
+          {
+            "level": 2,
+            "id": "komentari",
+            "text": "Коментарі"
+          },
+          {
+            "level": 3,
+            "id": "komentari-yak",
+            "text": "Що коментувати, а що — ні"
+          },
+          {
+            "level": 2,
+            "id": "edge-cases",
+            "text": "Edge cases"
+          },
+          {
+            "level": 3,
+            "id": "return-asi",
+            "text": "ASI після return"
+          },
+          {
+            "level": 2,
+            "id": "summary",
+            "text": "Підсумок"
+          }
+        ]
+      },
+      "en": {
+        "status": "published",
+        "filePath": "content/tracks/basics/code-structure/index.en.mdx",
+        "format": "mdx",
+        "title": "Code Structure",
+        "description": "Statements, semicolons, automatic semicolon insertion, and comments in JavaScript.",
+        "completeness": 100,
+        "isFallback": false,
+        "headings": [
+          {
+            "level": 2,
+            "id": "statements",
+            "text": "Statements"
+          },
+          {
+            "level": 2,
+            "id": "semicolons",
+            "text": "Semicolons"
+          },
+          {
+            "level": 2,
+            "id": "automatic-semicolon-insertion-asi",
+            "text": "Automatic Semicolon Insertion (ASI)"
+          },
+          {
+            "level": 3,
+            "id": "dangerous-asi-cases",
+            "text": "Dangerous ASI cases"
+          },
+          {
+            "level": 2,
+            "id": "comments",
+            "text": "Comments"
+          },
+          {
+            "level": 3,
+            "id": "what-to-comment-and-what-not-to-comment",
+            "text": "What to comment and what not to comment"
+          },
+          {
+            "level": 2,
+            "id": "edge-cases",
+            "text": "Edge cases"
+          },
+          {
+            "level": 3,
+            "id": "asi-after-return",
+            "text": "ASI after `return`"
+          },
+          {
+            "level": 2,
+            "id": "summary",
+            "text": "Summary"
+          }
+        ],
+        "slug": "code-structure",
+        "track": "basics",
+        "locale": "en",
+        "sourceLocale": "uk",
+        "hasBody": true
+      }
+    }
+  },
+  "translationCompleteness": {
+    "uk": 100,
+    "en": 100
+  },
+  "migration": {
+    "migratedFromLegacy": true,
+    "canonicalIdentitySource": "canonical",
+    "override": null,
+    "articleMeta": {
+      "type": "string",
+      "raw": {
+        "secId": "basics",
+        "artId": "code-structure"
+      },
+      "resolved": {
+        "track": "basics",
+        "slug": "code-structure"
+      }
+    },
+    "mismatches": {
+      "filePathVsCanonical": false,
+      "filePathVsStringMeta": false,
+      "filePathVsNumericMeta": false
+    },
+    "hasLegacyJsonLd": true,
+    "hasLegacyToc": true,
+    "hasLegacyPrevNext": true,
+    "legacyArticleSupport": true
+  },
+  "bodySourcePath": "content/tracks/basics/code-structure/index.uk.html",
+  "sourceProvenance": {
+    "sourcePath": "uk/basics/code-structure.html",
+    "sourceTrack": "basics",
+    "sourceSlug": "code-structure"
+  }
+}

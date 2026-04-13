@@ -1,0 +1,82 @@
+<p>Оператор <code>...</code> виконує дві ролі: у параметрах функції — <strong>rest</strong> (збирає залишкові аргументи у масив), у виразах — <strong>spread</strong> (розгортає iterable у окремі значення).</p>
+
+    <h2 id="rest">Rest-параметри</h2>
+    <div class="code-block"><div class="code-head"><span class="code-lang">JavaScript</span><button class="btn-copy" aria-label="Копіювати"></button></div>
+<pre><code class="language-javascript">// ...rest збирає решту аргументів у масив
+function sum(...numbers) {
+  return numbers.reduce((acc, n) => acc + n, 0);
+}
+console.log(sum(1, 2, 3, 4, 5)); // 15
+
+// Rest після звичайних параметрів
+function log(level, ...messages) {
+  console.log(`[${level}]`, messages.join(' '));
+}
+log('INFO', 'Server', 'started', 'on', 'port', '3000');
+// [INFO] Server started on port 3000
+
+// Rest ЗАВЖДИ останній параметр
+// function bad(...a, b) {} // SyntaxError
+
+// Відмінність від arguments
+function old() {
+  // arguments — array-like, немає методів масиву, є у всіх функціях
+  console.log(Array.from(arguments));
+}
+function modern(...args) {
+  // args — справжній масив, є всі методи
+  console.log(args.map(x => x * 2));
+}
+modern(1, 2, 3); // [2, 4, 6]</code></pre></div>
+
+    <h2 id="spread-arrays">Spread у масивах</h2>
+    <div class="code-block"><div class="code-head"><span class="code-lang">JavaScript</span><button class="btn-copy" aria-label="Копіювати"></button></div>
+<pre><code class="language-javascript">const arr1 = [1, 2, 3];
+const arr2 = [4, 5, 6];
+
+// Конкатенація без concat
+const combined = [...arr1, ...arr2];         // [1, 2, 3, 4, 5, 6]
+const withExtra = [0, ...arr1, 99, ...arr2]; // [0, 1, 2, 3, 99, 4, 5, 6]
+
+// Копія (shallow)
+const copy = [...arr1];
+copy.push(99);
+console.log(arr1); // [1, 2, 3] — оригінал незмінний
+
+// Spread як аргументи функції
+const nums = [3, 1, 4, 1, 5, 9];
+console.log(Math.max(...nums));  // 9
+console.log(Math.min(...nums));  // 1
+
+// Spread рядка у масив символів
+const chars = [..."hello"]; // ['h','e','l','l','o']
+
+// Spread Set → унікальний масив
+const unique = [...new Set([1, 2, 2, 3])]; // [1, 2, 3]</code></pre></div>
+
+    <h2 id="spread-objects">Spread в об'єктах</h2>
+    <div class="code-block"><div class="code-head"><span class="code-lang">JavaScript</span><button class="btn-copy" aria-label="Копіювати"></button></div>
+<pre><code class="language-javascript">const defaults = { theme: 'dark', lang: 'uk', timeout: 5000 };
+const override = { lang: 'en', debug: true };
+
+// Злиття (пізніші перезаписують ранні)
+const config = { ...defaults, ...override };
+// { theme: 'dark', lang: 'en', timeout: 5000, debug: true }
+
+// Поверхнева копія
+const copy = { ...config };
+
+// Додавання/перезаписування властивості
+const updated = { ...user, role: 'admin', updatedAt: Date.now() };
+
+// Видалення властивості через деструктуризацію + spread
+const { password, ...safeUser } = user; // safeUser без password</code></pre></div>
+
+    <h2 id="summary">Підсумок</h2>
+    <ul>
+      <li>Rest (<code>...args</code>) у параметрах — збирає залишкові аргументи у справжній масив. Завжди останній.</li>
+      <li>Rest краще ніж <code>arguments</code>: справжній масив, є всі методи, є у стрілкових.</li>
+      <li>Spread (<code>...iter</code>) у масивах — розгортає iterable. Копія, конкатенація, аргументи функцій.</li>
+      <li>Spread в об'єктах — поверхневе злиття. Порядок важливий: пізніший ключ перезаписує ранній.</li>
+    </ul>
+    <div class="article-support"><p><strong>Матеріал корисний?</strong> Підтримай проект.</p><div class="support-btns-inline"><a href="https://send.monobank.ua/jar/YOUR_JAR_ID" class="btn-mono" target="_blank" rel="noopener" style="font-size:12px;height:36px;padding:0 14px">🟢 Monobank</a><a href="https://www.buymeacoffee.com/YOUR_HANDLE" class="btn-coffee" target="_blank" rel="noopener" style="font-size:12px;height:36px;padding:0 14px">☕ Coffee</a></div></div>

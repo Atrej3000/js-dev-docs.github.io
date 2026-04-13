@@ -1,0 +1,106 @@
+<p>Рекурсія — техніка коли функція викликає саму себе. Кожен виклик додає новий кадр у <em>стек викликів</em>. Рекурсія є природною для задач зі вкладеною структурою (дерева, вкладені об'єкти) або математичних визначень через самоподібні підзадачі.</p>
+
+    <h2 id="osnovy">Базова структура</h2>
+    <div class="code-block"><div class="code-head"><span class="code-lang">JavaScript</span><button class="btn-copy" aria-label="Копіювати"></button></div>
+<pre><code class="language-javascript">// Кожна рекурсивна функція має два випадки:
+// 1. Base case — умова зупинки (без рекурсії)
+// 2. Recursive case — виклик себе з меншим підзавданням
+
+function factorial(n) {
+  if (n <= 1) return 1;          // base case
+  return n * factorial(n - 1);  // recursive case
+}
+
+console.log(factorial(5)); // 120
+// factorial(5) = 5 * factorial(4)
+//              = 5 * 4 * factorial(3)
+//              = 5 * 4 * 3 * factorial(2)
+//              = 5 * 4 * 3 * 2 * factorial(1)
+//              = 5 * 4 * 3 * 2 * 1 = 120</code></pre></div>
+
+    <h2 id="stek">Стек викликів</h2>
+    <p>Кожен виклик функції резервує кадр у стеку: зберігає локальні змінні і адресу повернення. Рекурсія без base case або з надто великим входом спричинить <strong>Stack Overflow</strong> — вичерпання стеку.</p>
+
+    <div class="code-block"><div class="code-head"><span class="code-lang">JavaScript</span><button class="btn-copy" aria-label="Копіювати"></button></div>
+<pre><code class="language-javascript">// Stack overflow — нескінченна рекурсія
+function infinite(n) {
+  return infinite(n + 1); // немає base case
+}
+// RangeError: Maximum call stack size exceeded
+
+// Типовий ліміт: ~10 000–15 000 кадрів залежно від рушія
+// Перевірка глибини
+function depth(n = 0) {
+  try { return depth(n + 1); }
+  catch (e) { return n; }
+}
+console.log(depth()); // ~12000–15000</code></pre></div>
+
+    <h2 id="derev">Обхід вкладених структур</h2>
+    <div class="code-block"><div class="code-head"><span class="code-lang">JavaScript</span><button class="btn-copy" aria-label="Копіювати"></button></div>
+<pre><code class="language-javascript">// Сума всіх чисел у вкладеному масиві довільної глибини
+function deepSum(arr) {
+  let total = 0;
+  for (const item of arr) {
+    if (Array.isArray(item)) {
+      total += deepSum(item); // рекурсивно для підмасиву
+    } else {
+      total += item;
+    }
+  }
+  return total;
+}
+
+console.log(deepSum([1, [2, [3, [4]], 5]])); // 15
+
+// Обхід дерева (вкладений об'єкт)
+function sumTree(node) {
+  if (!node) return 0;
+  return node.value + sumTree(node.left) + sumTree(node.right);
+}
+
+const tree = {
+  value: 1,
+  left:  { value: 2, left: { value: 4, left: null, right: null }, right: null },
+  right: { value: 3, left: null, right: null },
+};
+console.log(sumTree(tree)); // 10</code></pre></div>
+
+    <h2 id="memoization">Мемоізація рекурсії</h2>
+    <div class="code-block"><div class="code-head"><span class="code-lang">JavaScript</span><button class="btn-copy" aria-label="Копіювати"></button></div>
+<pre><code class="language-javascript">// Наївний Fibonacci: O(2^n) — дуже повільно
+function fib(n) {
+  if (n <= 1) return n;
+  return fib(n - 1) + fib(n - 2);
+}
+
+// З мемоізацією: O(n)
+function fibMemo(n, memo = {}) {
+  if (n in memo) return memo[n];
+  if (n <= 1) return n;
+  memo[n] = fibMemo(n - 1, memo) + fibMemo(n - 2, memo);
+  return memo[n];
+}
+
+console.log(fibMemo(50)); // 12586269025 — швидко</code></pre></div>
+
+    <h2 id="vs-loop">Рекурсія vs цикл</h2>
+    <table>
+      <thead><tr><th>Критерій</th><th>Рекурсія</th><th>Цикл</th></tr></thead>
+      <tbody>
+        <tr><td>Читабельність</td><td class="t-y">Краща для дерев, вкладених структур</td><td>Краща для лінійних послідовностей</td></tr>
+        <tr><td>Пам'ять</td><td class="t-n">O(n) кадрів стеку</td><td class="t-y">O(1)</td></tr>
+        <tr><td>Ліміт</td><td class="t-n">~10 000 кадрів</td><td class="t-y">Немає</td></tr>
+        <tr><td>Tail call</td><td>TCO (не в V8)</td><td>—</td></tr>
+      </tbody>
+    </table>
+
+    <h2 id="summary">Підсумок</h2>
+    <ul>
+      <li>Рекурсія: base case (зупинка) + recursive case (менша задача).</li>
+      <li>Кожен виклик = новий кадр стеку. Ліміт ~10 000–15 000 в V8.</li>
+      <li>Природна для вкладених структур (дерева, вкладені масиви).</li>
+      <li>Мемоізація усуває повторні обчислення: O(2^n) → O(n) для Fibonacci.</li>
+      <li>Для лінійних задач (факторіал, сума) цикл ефективніший за рекурсію.</li>
+    </ul>
+    <div class="article-support"><p><strong>Матеріал корисний?</strong> Підтримай проект.</p><div class="support-btns-inline"><a href="https://send.monobank.ua/jar/YOUR_JAR_ID" class="btn-mono" target="_blank" rel="noopener" style="font-size:12px;height:36px;padding:0 14px">🟢 Monobank</a><a href="https://www.buymeacoffee.com/YOUR_HANDLE" class="btn-coffee" target="_blank" rel="noopener" style="font-size:12px;height:36px;padding:0 14px">☕ Coffee</a></div></div>

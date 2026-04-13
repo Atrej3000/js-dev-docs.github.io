@@ -1,0 +1,71 @@
+<p>Глобальний об'єкт надає змінні та функції, доступні всюди. У браузері це <code>window</code>, у Node.js — <code>global</code>, а з ES2020 — стандартизований <code>globalThis</code>, що працює в будь-якому середовищі.</p>
+
+    <h2 id="globalthis">globalThis</h2>
+    <div class="code-block"><div class="code-head"><span class="code-lang">JavaScript</span><button class="btn-copy" aria-label="Копіювати"></button></div>
+<pre><code class="language-javascript">// Єдиний стандартний спосіб (ES2020)
+console.log(globalThis === window);  // true (браузер)
+console.log(globalThis === global);  // true (Node.js)
+
+// До ES2020 — обходи
+const g = (typeof globalThis !== 'undefined') ? globalThis
+        : (typeof window     !== 'undefined') ? window
+        : (typeof global     !== 'undefined') ? global
+        : this;</code></pre></div>
+
+    <h2 id="global-vars">Глобальні змінні</h2>
+    <div class="code-block"><div class="code-head"><span class="code-lang">JavaScript</span><button class="btn-copy" aria-label="Копіювати"></button></div>
+<pre><code class="language-javascript">// var на верхньому рівні стає властивістю globalThis (браузер)
+var x = 10;
+console.log(globalThis.x); // 10
+
+// let/const НЕ стають властивістю globalThis
+let y = 20;
+console.log(globalThis.y); // undefined
+
+// Явна глобальна змінна
+globalThis.appConfig = { debug: false };
+
+// Перевірка існування
+if (!globalThis.Promise) {
+  // поліфіл для старих середовищ
+  globalThis.Promise = PolyfilledPromise;
+}</code></pre></div>
+
+    <h2 id="builtins">Вбудовані глобалі</h2>
+    <div class="code-block"><div class="code-head"><span class="code-lang">JavaScript</span><button class="btn-copy" aria-label="Копіювати"></button></div>
+<pre><code class="language-javascript">// Функції
+parseInt('42px');     // 42
+parseFloat('3.14em'); // 3.14
+isNaN(NaN);           // true
+isFinite(Infinity);   // false
+encodeURI('https://example.com/path?q=привіт');
+decodeURIComponent('%D0%BF%D1%80%D0%B8%D0%B2%D1%96%D1%82');
+
+// Конструктори
+new Array(), new Object(), new Map(), new Set()
+
+// Значення
+undefined, null, NaN, Infinity, -Infinity
+
+// Браузерні глобалі (тільки window)
+// setTimeout, setInterval, fetch, alert, document, location, history</code></pre></div>
+
+    <h2 id="polyfills">Поліфіли через globalThis</h2>
+    <div class="code-block"><div class="code-head"><span class="code-lang">JavaScript</span><button class="btn-copy" aria-label="Копіювати"></button></div>
+<pre><code class="language-javascript">// Перевірка і заповнення відсутньої функціональності
+if (!globalThis.queueMicrotask) {
+  globalThis.queueMicrotask = (fn) => Promise.resolve().then(fn);
+}
+
+// Feature detection без try/catch
+const hasLocalStorage = 'localStorage' in globalThis;
+const hasWebWorker    = 'Worker' in globalThis;</code></pre></div>
+    <div class="callout callout-warn"><p>Уникай засмічення глобального простору. Кожна бібліотека, що додає власні глобалі, збільшує ризик конфліктів. Використовуй модулі (ESM) — вони мають власний scope.</p></div>
+
+    <h2 id="summary">Підсумок</h2>
+    <ul>
+      <li><code>globalThis</code> — стандартний спосіб звертатись до глобального об'єкта в будь-якому середовищі</li>
+      <li><code>var</code> на верхньому рівні = властивість globalThis; <code>let</code>/<code>const</code> — ні</li>
+      <li>Глобальний об'єкт містить вбудовані функції, конструктори та середовищні API</li>
+      <li>Поліфіли розміщуй через <code>globalThis.X = ...</code> після перевірки існування</li>
+    </ul>

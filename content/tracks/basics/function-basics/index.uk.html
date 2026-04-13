@@ -1,0 +1,173 @@
+<p>Функція — іменований, перевикористовуваний блок коду. В JavaScript функції є <em>first-class objects</em>: їх можна передавати як аргументи, повертати з інших функцій і присвоювати змінним.</p>
+
+          <h2 id="ogoloshennya">Function declaration</h2>
+          <div class="code-block">
+            <div class="code-head"><span class="code-lang">JavaScript</span><button class="btn-copy" aria-label="Копіювати"></button></div>
+<pre><code class="language-javascript">// Синтаксис: function ім'я(параметри) { тіло }
+function greet(name) {
+  return `Привіт, ${name}!`;
+}
+
+console.log(greet('Олена')); // "Привіт, Олена!"
+
+// Function declaration піднімається (hoisting) — можна викликати до оголошення
+console.log(square(4)); // 16
+function square(n) {
+  return n * n;
+}</code></pre>
+          </div>
+
+          <h2 id="parametry">Параметри і аргументи</h2>
+          <p><strong>Параметри</strong> — імена у визначенні функції. <strong>Аргументи</strong> — значення, передані при виклику.</p>
+
+          <div class="code-block">
+            <div class="code-head"><span class="code-lang">JavaScript</span><button class="btn-copy" aria-label="Копіювати"></button></div>
+<pre><code class="language-javascript">function add(a, b) {  // a, b — параметри
+  return a + b;
+}
+add(2, 3);            // 2, 3 — аргументи
+
+// Зайві аргументи ігноруються
+console.log(add(1, 2, 3, 4)); // 3 — третій і четвертий проігноровані
+
+// Відсутні аргументи → undefined
+function show(x, y) {
+  console.log(x, y);
+}
+show(1); // 1 undefined</code></pre>
+          </div>
+
+          <h2 id="default-params">Значення параметрів за замовчуванням (ES6)</h2>
+          <div class="code-block">
+            <div class="code-head"><span class="code-lang">JavaScript</span><button class="btn-copy" aria-label="Копіювати"></button></div>
+<pre><code class="language-javascript">// Значення за замовчуванням застосовується якщо аргумент undefined
+function createUser(name, role = 'user', active = true) {
+  return { name, role, active };
+}
+
+console.log(createUser('Admin', 'admin')); // { name:'Admin', role:'admin', active:true }
+console.log(createUser('Guest'));          // { name:'Guest', role:'user', active:true }
+
+// Значення за замовчуванням — будь-який вираз, обчислюється при виклику
+function log(message, timestamp = Date.now()) {
+  console.log(timestamp, message);
+}
+
+// Явна передача undefined → спрацьовує дефолт
+createUser('Bob', undefined, false);
+// { name:'Bob', role:'user', active:false }
+// null НЕ спрацьовує як дефолт!
+createUser('Bob', null, false);
+// { name:'Bob', role:null, active:false }</code></pre>
+          </div>
+
+          <h2 id="return">Оператор return</h2>
+          <div class="code-block">
+            <div class="code-head"><span class="code-lang">JavaScript</span><button class="btn-copy" aria-label="Копіювати"></button></div>
+<pre><code class="language-javascript">// return повертає значення і зупиняє виконання
+function divide(a, b) {
+  if (b === 0) return null; // ранній вихід
+  return a / b;
+}
+
+// Функція без явного return повертає undefined
+function logMessage(msg) {
+  console.log(msg);
+  // немає return → повертає undefined
+}
+const result = logMessage('test'); // undefined
+
+// ASI пастка: return і значення мають бути в одному рядку
+function getConfig() {
+  return {    // ← фігурна дужка ОБОВ'ЯЗКОВО на цьому рядку
+    host: 'localhost'
+  };
+}</code></pre>
+          </div>
+
+          <h2 id="scope">Область видимості функції</h2>
+          <div class="code-block">
+            <div class="code-head"><span class="code-lang">JavaScript</span><button class="btn-copy" aria-label="Копіювати"></button></div>
+<pre><code class="language-javascript">const appName = 'MyApp'; // зовнішня змінна
+
+function displayInfo() {
+  const version = '1.0';          // локальна — видима тільки тут
+  console.log(appName, version);   // доступ до зовнішньої — OK
+}
+
+displayInfo();
+// console.log(version); // ReferenceError — недоступна зовні
+
+// Функція не змінює зовнішню змінну (якщо не мутує об'єкт)
+let counter = 0;
+function increment() {
+  counter++; // ПОБІЧНИЙ ЕФЕКТ — модифікує зовнішній стан
+}
+increment();
+console.log(counter); // 1</code></pre>
+          </div>
+
+          <h2 id="pure-functions">Чисті функції</h2>
+          <p>Функція є <strong>чистою</strong> якщо: (1) для однакових аргументів завжди повертає однаковий результат, (2) не має побічних ефектів.</p>
+
+          <div class="code-block">
+            <div class="code-head"><span class="code-lang">JavaScript</span><button class="btn-copy" aria-label="Копіювати"></button></div>
+<pre><code class="language-javascript">// Чиста функція — предбачувана, легко тестується
+function calculateTotal(price, taxRate) {
+  return price * (1 + taxRate);
+}
+
+// Нечиста: залежить від зовнішнього стану
+let taxRate = 0.2;
+function calculateTotalImpure(price) {
+  return price * (1 + taxRate); // результат залежить від зовнішньої zminnoi
+}
+
+// Нечиста: побічний ефект — змінює зовнішній масив
+function addItemImpure(items, item) {
+  items.push(item); // мутує вхідний масив!
+  return items;
+}
+
+// Чиста: повертає новий масив
+function addItem(items, item) {
+  return [...items, item];
+}</code></pre>
+          </div>
+
+          <h2 id="best-practices">Найкращі практики</h2>
+          <ul>
+            <li><strong>Одна функція — одна відповідальність.</strong> Якщо назва функції містить «і», «або» — це ознака, що варто розбити на дві.</li>
+            <li><strong>Описові імена.</strong> Ім'я функції має описувати що вона робить: <code>getUserById</code>, <code>calculateDiscount</code>, <code>isValidEmail</code>.</li>
+            <li><strong>Префікси.</strong> <code>get</code> — повертає значення, <code>set</code> — встановлює, <code>is</code>/<code>has</code>/<code>can</code> — повертає boolean, <code>create</code> — створює.</li>
+            <li><strong>Мало параметрів.</strong> До 3 параметрів — прийнятно. Більше — розгляньте options-об'єкт.</li>
+          </ul>
+
+          <div class="code-block">
+            <div class="code-head"><span class="code-lang">JavaScript</span><button class="btn-copy" aria-label="Копіювати"></button></div>
+<pre><code class="language-javascript">// АНТИПАТЕРН: багато параметрів
+function createRequest(method, url, body, timeout, retries, headers) {}
+
+// КРАЩЕ: options об'єкт
+function createRequest(url, options = {}) {
+  const {
+    method  = 'GET',
+    body    = null,
+    timeout = 5000,
+    retries = 3,
+    headers = {},
+  } = options;
+  // ...
+}</code></pre>
+          </div>
+
+          <h2 id="summary">Підсумок</h2>
+          <ul>
+            <li>Function declaration піднімається — можна викликати до оголошення.</li>
+            <li>Відсутній аргумент → <code>undefined</code>. Дефолтні значення спрацьовують лише для <code>undefined</code>, не для <code>null</code>.</li>
+            <li><code>return</code> зупиняє функцію. Без нього — <code>undefined</code>. ASI: відкриваюча дужка на тому ж рядку що й <code>return</code>.</li>
+            <li>Функції мають доступ до зовнішнього scope. Обмежуйте побічні ефекти.</li>
+            <li>Чиста функція: однаковий вхід → однаковий вихід, без побічних ефектів.</li>
+          </ul>
+
+          <div class="article-support"><p><strong>Матеріал корисний?</strong> Підтримай проект.</p><div class="support-btns-inline"><a href="https://send.monobank.ua/jar/YOUR_JAR_ID" class="btn-mono" target="_blank" rel="noopener" style="font-size:12px;height:36px;padding:0 14px">🟢 Monobank</a><a href="https://www.buymeacoffee.com/YOUR_HANDLE" class="btn-coffee" target="_blank" rel="noopener" style="font-size:12px;height:36px;padding:0 14px">☕ Coffee</a></div></div>

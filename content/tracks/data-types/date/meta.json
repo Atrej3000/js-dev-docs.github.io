@@ -1,0 +1,201 @@
+{
+  "id": "data-types/date",
+  "locale": "uk",
+  "locales": {
+    "uk": true,
+    "en": false
+  },
+  "availableLocales": [
+    "uk"
+  ],
+  "title": "Дата і час",
+  "description": "Дата і час у JavaScript — детальний розбір з прикладами, підводними каменями та best practices.",
+  "track": "data-types",
+  "trackTitle": "Типи даних",
+  "slug": "date",
+  "sourcePath": "uk/data-types/date.html",
+  "sourceIdentity": {
+    "track": "data-types",
+    "slug": "date"
+  },
+  "canonicalRoute": "/uk/docs/data-types/date",
+  "canonicalLegacyPath": "/data-types/date.html",
+  "legacyHtmlPath": "/uk/data-types/date.html",
+  "legacyAliases": [
+    "/uk/data-types/date.html",
+    "/uk/data-types/date",
+    "/data-types/date.html"
+  ],
+  "sectionOrder": 5,
+  "lessonOrder": 11,
+  "overallOrder": 47,
+  "articleNumber": "5.11",
+  "estimatedMinutes": 14,
+  "headings": [
+    {
+      "level": 2,
+      "id": "creation",
+      "text": "Створення"
+    },
+    {
+      "level": 2,
+      "id": "getters",
+      "text": "Читання компонентів"
+    },
+    {
+      "level": 2,
+      "id": "setters",
+      "text": "Модифікація"
+    },
+    {
+      "level": 2,
+      "id": "formatting",
+      "text": "Форматування"
+    },
+    {
+      "level": 2,
+      "id": "diff",
+      "text": "Різниця між датами"
+    },
+    {
+      "level": 2,
+      "id": "pitfalls",
+      "text": "Підводні камені"
+    },
+    {
+      "level": 2,
+      "id": "summary",
+      "text": "Підсумок"
+    }
+  ],
+  "badges": [
+    "Середній",
+    "Типи даних",
+    "~ 14 хв"
+  ],
+  "donationLinks": [],
+  "breadcrumbTrail": [
+    "Головна",
+    "Типи даних",
+    "Дата і час"
+  ],
+  "relatedSourceTrack": "data-types",
+  "contentFiles": {
+    "uk": "content/tracks/data-types/date/index.uk.html",
+    "en": "content/tracks/data-types/date/index.en.mdx"
+  },
+  "metadataFile": "content/tracks/data-types/date/meta.json",
+  "translationStatus": {
+    "sourceLocale": "uk",
+    "availableLocales": [
+      "uk"
+    ],
+    "fallbackLocales": {
+      "en": "uk"
+    },
+    "locales": {
+      "uk": {
+        "status": "published",
+        "filePath": "content/tracks/data-types/date/index.uk.html",
+        "format": "html",
+        "title": "Дата і час",
+        "description": "Дата і час у JavaScript — детальний розбір з прикладами, підводними каменями та best practices.",
+        "completeness": 100,
+        "isFallback": false,
+        "headings": [
+          {
+            "level": 2,
+            "id": "creation",
+            "text": "Створення"
+          },
+          {
+            "level": 2,
+            "id": "getters",
+            "text": "Читання компонентів"
+          },
+          {
+            "level": 2,
+            "id": "setters",
+            "text": "Модифікація"
+          },
+          {
+            "level": 2,
+            "id": "formatting",
+            "text": "Форматування"
+          },
+          {
+            "level": 2,
+            "id": "diff",
+            "text": "Різниця між датами"
+          },
+          {
+            "level": 2,
+            "id": "pitfalls",
+            "text": "Підводні камені"
+          },
+          {
+            "level": 2,
+            "id": "summary",
+            "text": "Підсумок"
+          }
+        ]
+      },
+      "en": {
+        "status": "draft",
+        "filePath": "content/tracks/data-types/date/index.en.mdx",
+        "format": "mdx",
+        "title": "TODO: Translate title",
+        "description": "TODO: Translate description",
+        "completeness": 0,
+        "isFallback": true,
+        "headings": [
+          {
+            "level": 2,
+            "id": "source-lesson",
+            "text": "Source lesson"
+          }
+        ],
+        "slug": "date",
+        "track": "data-types",
+        "locale": "en",
+        "sourceLocale": "uk",
+        "hasBody": true
+      }
+    }
+  },
+  "translationCompleteness": {
+    "uk": 100,
+    "en": 0
+  },
+  "migration": {
+    "migratedFromLegacy": true,
+    "canonicalIdentitySource": "canonical",
+    "override": null,
+    "articleMeta": {
+      "type": "numeric",
+      "raw": {
+        "secId": "5",
+        "artId": "11"
+      },
+      "resolved": {
+        "track": "data-types",
+        "slug": "date"
+      }
+    },
+    "mismatches": {
+      "filePathVsCanonical": false,
+      "filePathVsStringMeta": false,
+      "filePathVsNumericMeta": false
+    },
+    "hasLegacyJsonLd": false,
+    "hasLegacyToc": false,
+    "hasLegacyPrevNext": false,
+    "legacyArticleSupport": true
+  },
+  "bodySourcePath": "content/tracks/data-types/date/index.uk.html",
+  "sourceProvenance": {
+    "sourcePath": "uk/data-types/date.html",
+    "sourceTrack": "data-types",
+    "sourceSlug": "date"
+  }
+}

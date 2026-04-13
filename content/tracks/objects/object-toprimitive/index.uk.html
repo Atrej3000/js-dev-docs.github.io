@@ -1,0 +1,97 @@
+<p>Коли об'єкт використовується в контексті де очікується примітив (арифметика, конкатенація, порівняння), рушій виконує внутрішню операцію <strong>ToPrimitive</strong>. Алгоритм визначається через <em>hint</em> — підказку про очікуваний тип.</p>
+
+          <h2 id="hints">Три hint-значення</h2>
+          <table>
+            <thead><tr><th>Hint</th><th>Коли виникає</th></tr></thead>
+            <tbody>
+              <tr><td><code>"string"</code></td><td>Шаблонний літерал, <code>alert(obj)</code>, ключ об'єкта</td></tr>
+              <tr><td><code>"number"</code></td><td>Математичні оператори (<code>-</code>, <code>*</code>, <code>/</code>, порівняння), унарний <code>+</code></td></tr>
+              <tr><td><code>"default"</code></td><td><code>+</code> бінарний, <code>==</code> (без явного типу)</td></tr>
+            </tbody>
+          </table>
+
+          <h2 id="algorithm">Алгоритм ToPrimitive</h2>
+          <ol>
+            <li>Якщо є <code>[Symbol.toPrimitive](hint)</code> — викликає і повертає результат.</li>
+            <li>Для hint <code>"string"</code>: спочатку <code>toString()</code>, потім <code>valueOf()</code>.</li>
+            <li>Для hint <code>"number"</code> або <code>"default"</code>: спочатку <code>valueOf()</code>, потім <code>toString()</code>.</li>
+          </ol>
+
+          <h2 id="symbol-toprim">Symbol.toPrimitive — рекомендований спосіб</h2>
+          <div class="code-block">
+            <div class="code-head"><span class="code-lang">JavaScript</span><button class="btn-copy" aria-label="Копіювати"></button></div>
+<pre><code class="language-javascript">const money = {
+  amount:   1500,
+  currency: 'UAH',
+
+  [Symbol.toPrimitive](hint) {
+    switch (hint) {
+      case 'number': return this.amount;
+      case 'string': return `${this.amount} ${this.currency}`;
+      default:       return this.amount; // default = number-like
+    }
+  }
+};
+
+console.log(+money);           // 1500        (number hint)
+console.log(`${money}`);       // "1500 UAH"  (string hint)
+console.log(money + 500);      // 2000        (default hint)
+console.log(money > 1000);     // true        (number hint)</code></pre>
+          </div>
+
+          <h2 id="valueof-tostring">valueOf і toString</h2>
+          <div class="code-block">
+            <div class="code-head"><span class="code-lang">JavaScript</span><button class="btn-copy" aria-label="Копіювати"></button></div>
+<pre><code class="language-javascript">// Без Symbol.toPrimitive — рушій шукає valueOf і toString
+const point = {
+  x: 3,
+  y: 4,
+
+  valueOf() {
+    // Викликається при number hint
+    return Math.sqrt(this.x ** 2 + this.y ** 2); // відстань від 0
+  },
+
+  toString() {
+    // Викликається при string hint
+    return `(${this.x}, ${this.y})`;
+  },
+};
+
+console.log(+point);        // 5     (valueOf)
+console.log(`${point}`);    // "(3, 4)" (toString)
+console.log(point * 2);     // 10    (valueOf)
+console.log(point + '');    // "5"   (default → valueOf, потім String(5))
+
+// Стандартний Object.prototype.valueOf() повертає сам об'єкт
+// Стандартний Object.prototype.toString() повертає "[object Object]"
+const plain = { value: 42 };
+console.log(plain + 1);     // "[object Object]1" (toString → concat)</code></pre>
+          </div>
+
+          <h2 id="date-example">Date як приклад</h2>
+          <div class="code-block">
+            <div class="code-head"><span class="code-lang">JavaScript</span><button class="btn-copy" aria-label="Копіювати"></button></div>
+<pre><code class="language-javascript">const now = new Date();
+
+// Date реалізує обидва методи
+console.log(+now);    // Unix timestamp (ms) — valueOf
+console.log(`${now}`); // "Thu Jan 01 2026..."  — toString
+
+// Різниця дат — числовий контекст → valueOf
+const d1 = new Date('2026-01-01');
+const d2 = new Date('2026-06-01');
+const diffMs = d2 - d1; // обидва перетворені через valueOf
+console.log(diffMs / (1000 * 60 * 60 * 24)); // кількість днів</code></pre>
+          </div>
+
+          <h2 id="summary">Підсумок</h2>
+          <ul>
+            <li>ToPrimitive виконується автоматично при використанні об'єкта в примітивному контексті.</li>
+            <li>Три hint: <code>"string"</code>, <code>"number"</code>, <code>"default"</code>.</li>
+            <li><code>[Symbol.toPrimitive](hint)</code> — найточніший спосіб контролювати перетворення.</li>
+            <li>Без <code>Symbol.toPrimitive</code>: для number-hint — <code>valueOf()</code> потім <code>toString()</code>; для string-hint — навпаки.</li>
+            <li>Стандартний <code>valueOf()</code> повертає сам об'єкт, тому більшість об'єктів конвертуються через <code>toString()</code> → <code>"[object Object]"</code>.</li>
+          </ul>
+
+          <div class="article-support"><p><strong>Матеріал корисний?</strong> Підтримай проект.</p><div class="support-btns-inline"><a href="https://send.monobank.ua/jar/YOUR_JAR_ID" class="btn-mono" target="_blank" rel="noopener" style="font-size:12px;height:36px;padding:0 14px">🟢 Monobank</a><a href="https://www.buymeacoffee.com/YOUR_HANDLE" class="btn-coffee" target="_blank" rel="noopener" style="font-size:12px;height:36px;padding:0 14px">☕ Coffee</a></div></div>

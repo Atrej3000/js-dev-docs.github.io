@@ -1,0 +1,82 @@
+<p>Кожна властивість об'єкта має внутрішні <em>прапори</em> (дескрипторний запис), що визначають її поведінку. За замовчуванням властивості, створені через літерал або присвоєння, мають всі прапори <code>true</code>.</p>
+
+    <h2 id="prapory">Три прапори властивості</h2>
+    <ul>
+      <li><strong>writable</strong> — значення можна змінити.</li>
+      <li><strong>enumerable</strong> — властивість потрапляє в <code>for...in</code> і <code>Object.keys</code>.</li>
+      <li><strong>configurable</strong> — дескриптор можна змінити, властивість можна видалити.</li>
+    </ul>
+
+    <div class="code-block"><div class="code-head"><span class="code-lang">JavaScript</span><button class="btn-copy" aria-label="Копіювати"></button></div>
+<pre><code class="language-javascript">const user = { name: 'Alice' };
+
+// Отримати дескриптор
+console.log(Object.getOwnPropertyDescriptor(user, 'name'));
+// { value: 'Alice', writable: true, enumerable: true, configurable: true }
+
+// Всі дескриптори
+console.log(Object.getOwnPropertyDescriptors(user));</code></pre></div>
+
+    <h2 id="define-property">Object.defineProperty</h2>
+    <div class="code-block"><div class="code-head"><span class="code-lang">JavaScript</span><button class="btn-copy" aria-label="Копіювати"></button></div>
+<pre><code class="language-javascript">const config = {};
+
+Object.defineProperty(config, 'version', {
+  value:        '2.0',
+  writable:     false,    // не можна перезаписати
+  enumerable:   true,
+  configurable: false,    // не можна видалити чи перенастроїти
+});
+
+console.log(config.version);  // "2.0"
+config.version = '3.0';       // мовчки ігнорується (TypeError у strict)
+console.log(config.version);  // "2.0"
+
+// Не-enumerable: не потрапляє в for...in і Object.keys
+Object.defineProperty(config, '_internal', {
+  value: 42,
+  enumerable: false,
+  writable: true,
+  configurable: true,
+});
+console.log(Object.keys(config));    // ['version'] — _internal прихований
+console.log(config._internal);       // 42 — доступ прямий є
+
+// defineProperties: кілька одночасно
+Object.defineProperties(config, {
+  host: { value: 'localhost', writable: false, enumerable: true, configurable: false },
+  port: { value: 3000,        writable: false, enumerable: true, configurable: false },
+});</code></pre></div>
+
+    <h2 id="sealing">Запечатування і заморожування</h2>
+    <div class="code-block"><div class="code-head"><span class="code-lang">JavaScript</span><button class="btn-copy" aria-label="Копіювати"></button></div>
+<pre><code class="language-javascript">const obj = { x: 1, y: 2 };
+
+// Object.seal: configurable=false для всіх, додавання/видалення заборонено
+// але writable залишається true
+Object.seal(obj);
+obj.x = 10;         // OK — значення можна змінити
+obj.z = 3;          // ігнорується — нові властивості заборонені
+delete obj.x;       // ігнорується — видалення заборонено
+console.log(Object.isSealed(obj)); // true
+
+// Object.freeze: writable=false + seal
+const frozen = Object.freeze({ a: 1, b: 2 });
+frozen.a = 99;      // ігнорується (TypeError у strict)
+frozen.c = 3;       // ігнорується
+console.log(frozen.a); // 1
+console.log(Object.isFrozen(frozen)); // true
+
+// Заморожування ПОВЕРХНЕВЕ
+const deep = Object.freeze({ inner: { val: 1 } });
+deep.inner.val = 99; // OK — inner не заморожений!
+console.log(deep.inner.val); // 99</code></pre></div>
+
+    <h2 id="summary">Підсумок</h2>
+    <ul>
+      <li>Три прапори: <code>writable</code>, <code>enumerable</code>, <code>configurable</code>.</li>
+      <li><code>Object.defineProperty</code> — точне налаштування. Відсутні прапори = <code>false</code> при створенні через <code>defineProperty</code>.</li>
+      <li><code>Object.seal</code> — забороняє додавання/видалення. <code>Object.freeze</code> = seal + writable:false.</li>
+      <li>Заморожування поверхневе — вкладені об'єкти не заморожуються.</li>
+    </ul>
+    <div class="article-support"><p><strong>Матеріал корисний?</strong> Підтримай проект.</p><div class="support-btns-inline"><a href="https://send.monobank.ua/jar/YOUR_JAR_ID" class="btn-mono" target="_blank" rel="noopener" style="font-size:12px;height:36px;padding:0 14px">🟢 Monobank</a><a href="https://www.buymeacoffee.com/YOUR_HANDLE" class="btn-coffee" target="_blank" rel="noopener" style="font-size:12px;height:36px;padding:0 14px">☕ Coffee</a></div></div>

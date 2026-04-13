@@ -1,0 +1,163 @@
+---
+title: "Functions"
+description: "Function declarations, parameters, return values, scope, and the basic best practices for writing functions in JavaScript."
+slug: "function-basics"
+track: "basics"
+locale: "en"
+sourceLocale: "uk"
+translationStatus: "published"
+translationCompleteness: 100
+---
+
+A **function** is a reusable block of code. In JavaScript, functions are first-class objects: they can be stored in variables, passed as arguments, and returned from other functions.
+
+## Function declaration
+
+```javascript
+function greet(name) {
+  return `Hello, ${name}!`;
+}
+
+console.log(greet("Olena")); // "Hello, Olena!"
+```
+
+Function declarations are hoisted, so they can be called before their definition appears in the file:
+
+```javascript
+console.log(square(4)); // 16
+
+function square(n) {
+  return n * n;
+}
+```
+
+## Parameters and arguments
+
+Parameters are the names in a function definition. Arguments are the values you pass when calling the function.
+
+```javascript
+function add(a, b) { // parameters
+  return a + b;
+}
+
+add(2, 3); // arguments
+```
+
+Extra arguments are ignored unless you explicitly collect them. Missing arguments become `undefined`.
+
+```javascript
+function show(x, y) {
+  console.log(x, y);
+}
+
+show(1); // 1 undefined
+```
+
+## Default parameter values
+
+Default values are used when the argument is `undefined`.
+
+```javascript
+function createUser(name, role = "user", active = true) {
+  return { name, role, active };
+}
+
+console.log(createUser("Admin", "admin"));
+console.log(createUser("Guest"));
+```
+
+Passing `null` does **not** trigger the default:
+
+```javascript
+createUser("Bob", null, false);
+```
+
+## The `return` operator
+
+`return` sends a value back to the caller and stops the function.
+
+```javascript
+function divide(a, b) {
+  if (b === 0) return null;
+  return a / b;
+}
+```
+
+If a function has no explicit `return`, it returns `undefined`.
+
+```javascript
+function logMessage(msg) {
+  console.log(msg);
+}
+
+const result = logMessage("test");
+console.log(result); // undefined
+```
+
+Be careful with line breaks after `return` because of automatic semicolon insertion.
+
+## Function scope
+
+Functions create their own scope.
+
+```javascript
+const appName = "MyApp";
+
+function displayInfo() {
+  const version = "1.0";
+  console.log(appName, version);
+}
+
+displayInfo();
+// console.log(version); // ReferenceError
+```
+
+Functions can access values from outer scope, but that also means they can introduce side effects if they modify outer state.
+
+## Pure functions
+
+A function is called **pure** if:
+
+1. the same inputs always produce the same output
+2. it does not cause side effects
+
+```javascript
+function calculateTotal(price, taxRate) {
+  return price * (1 + taxRate);
+}
+
+function addItem(items, item) {
+  return [...items, item];
+}
+```
+
+Pure functions are easier to test and reason about.
+
+## Best practices
+
+- Give a function one clear responsibility.
+- Use descriptive names such as `getUserById`, `calculateDiscount`, or `isValidEmail`.
+- Prefer a small number of parameters.
+- If a function needs many settings, use an options object.
+
+```javascript
+function createRequest(url, options = {}) {
+  const {
+    method = "GET",
+    body = null,
+    timeout = 5000,
+    headers = {},
+  } = options;
+
+  return { url, method, body, timeout, headers };
+}
+```
+
+## Summary
+
+- Function declarations define reusable behavior.
+- Parameters belong to the definition; arguments belong to the call.
+- Default values apply only when the argument is `undefined`.
+- `return` ends the function and provides a result.
+- Functions create their own scope.
+- Pure functions are easier to understand and test.

@@ -1,0 +1,204 @@
+{
+  "id": "data-types/array",
+  "locale": "uk",
+  "locales": {
+    "uk": true,
+    "en": false
+  },
+  "availableLocales": [
+    "uk"
+  ],
+  "title": "Масиви",
+  "description": "Масиви JavaScript: створення, методи push/pop/shift/unshift, slice/splice, indexOf, includes, деструктуризація.",
+  "track": "data-types",
+  "trackTitle": "Типи даних",
+  "slug": "array",
+  "sourcePath": "uk/data-types/array.html",
+  "sourceIdentity": {
+    "track": "data-types",
+    "slug": "array"
+  },
+  "canonicalRoute": "/uk/docs/data-types/array",
+  "canonicalLegacyPath": "/data-types/array.html",
+  "legacyHtmlPath": "/uk/data-types/array.html",
+  "legacyAliases": [
+    "/uk/data-types/array.html",
+    "/uk/data-types/array",
+    "/data-types/array.html"
+  ],
+  "sectionOrder": 5,
+  "lessonOrder": 4,
+  "overallOrder": 40,
+  "articleNumber": "5.4",
+  "estimatedMinutes": 14,
+  "headings": [
+    {
+      "level": 2,
+      "id": "stvorennya",
+      "text": "Створення масиву"
+    },
+    {
+      "level": 2,
+      "id": "dostup",
+      "text": "Доступ і модифікація"
+    },
+    {
+      "level": 2,
+      "id": "stack-queue",
+      "text": "Стек і черга"
+    },
+    {
+      "level": 2,
+      "id": "splice-slice",
+      "text": "splice і slice"
+    },
+    {
+      "level": 2,
+      "id": "poshuk",
+      "text": "Пошук"
+    },
+    {
+      "level": 2,
+      "id": "iteratsiya",
+      "text": "Ітерація"
+    },
+    {
+      "level": 2,
+      "id": "summary",
+      "text": "Підсумок"
+    }
+  ],
+  "badges": [
+    "Початковий",
+    "Типи даних",
+    "~ 14 хв"
+  ],
+  "donationLinks": [
+    "https://send.monobank.ua/jar/YOUR_JAR_ID",
+    "https://www.buymeacoffee.com/YOUR_HANDLE"
+  ],
+  "breadcrumbTrail": [
+    "Головна",
+    "Типи даних",
+    "Масиви"
+  ],
+  "relatedSourceTrack": "data-types",
+  "contentFiles": {
+    "uk": "content/tracks/data-types/array/index.uk.html",
+    "en": "content/tracks/data-types/array/index.en.mdx"
+  },
+  "metadataFile": "content/tracks/data-types/array/meta.json",
+  "translationStatus": {
+    "sourceLocale": "uk",
+    "availableLocales": [
+      "uk"
+    ],
+    "fallbackLocales": {
+      "en": "uk"
+    },
+    "locales": {
+      "uk": {
+        "status": "published",
+        "filePath": "content/tracks/data-types/array/index.uk.html",
+        "format": "html",
+        "title": "Масиви",
+        "description": "Масиви JavaScript: створення, методи push/pop/shift/unshift, slice/splice, indexOf, includes, деструктуризація.",
+        "completeness": 100,
+        "isFallback": false,
+        "headings": [
+          {
+            "level": 2,
+            "id": "stvorennya",
+            "text": "Створення масиву"
+          },
+          {
+            "level": 2,
+            "id": "dostup",
+            "text": "Доступ і модифікація"
+          },
+          {
+            "level": 2,
+            "id": "stack-queue",
+            "text": "Стек і черга"
+          },
+          {
+            "level": 2,
+            "id": "splice-slice",
+            "text": "splice і slice"
+          },
+          {
+            "level": 2,
+            "id": "poshuk",
+            "text": "Пошук"
+          },
+          {
+            "level": 2,
+            "id": "iteratsiya",
+            "text": "Ітерація"
+          },
+          {
+            "level": 2,
+            "id": "summary",
+            "text": "Підсумок"
+          }
+        ]
+      },
+      "en": {
+        "status": "draft",
+        "filePath": "content/tracks/data-types/array/index.en.mdx",
+        "format": "mdx",
+        "title": "TODO: Translate title",
+        "description": "TODO: Translate description",
+        "completeness": 0,
+        "isFallback": true,
+        "headings": [
+          {
+            "level": 2,
+            "id": "source-lesson",
+            "text": "Source lesson"
+          }
+        ],
+        "slug": "array",
+        "track": "data-types",
+        "locale": "en",
+        "sourceLocale": "uk",
+        "hasBody": true
+      }
+    }
+  },
+  "translationCompleteness": {
+    "uk": 100,
+    "en": 0
+  },
+  "migration": {
+    "migratedFromLegacy": true,
+    "canonicalIdentitySource": "canonical",
+    "override": null,
+    "articleMeta": {
+      "type": "string",
+      "raw": {
+        "secId": "data-types",
+        "artId": "array"
+      },
+      "resolved": {
+        "track": "data-types",
+        "slug": "array"
+      }
+    },
+    "mismatches": {
+      "filePathVsCanonical": false,
+      "filePathVsStringMeta": false,
+      "filePathVsNumericMeta": false
+    },
+    "hasLegacyJsonLd": false,
+    "hasLegacyToc": true,
+    "hasLegacyPrevNext": true,
+    "legacyArticleSupport": true
+  },
+  "bodySourcePath": "content/tracks/data-types/array/index.uk.html",
+  "sourceProvenance": {
+    "sourcePath": "uk/data-types/array.html",
+    "sourceTrack": "data-types",
+    "sourceSlug": "array"
+  }
+}

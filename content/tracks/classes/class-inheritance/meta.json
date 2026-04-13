@@ -1,0 +1,174 @@
+{
+  "id": "classes/class-inheritance",
+  "locale": "uk",
+  "locales": {
+    "uk": true,
+    "en": false
+  },
+  "availableLocales": [
+    "uk"
+  ],
+  "title": "Наслідування класу",
+  "description": "",
+  "track": "classes",
+  "trackTitle": "Класи",
+  "slug": "class-inheritance",
+  "sourcePath": "uk/classes/class-inheritance.html",
+  "sourceIdentity": {
+    "track": "classes",
+    "slug": "class-inheritance"
+  },
+  "canonicalRoute": "/uk/docs/classes/class-inheritance",
+  "canonicalLegacyPath": "/classes/class-inheritance.html",
+  "legacyHtmlPath": "/uk/classes/class-inheritance.html",
+  "legacyAliases": [
+    "/uk/classes/class-inheritance.html",
+    "/uk/classes/class-inheritance",
+    "/classes/class-inheritance.html"
+  ],
+  "sectionOrder": 9,
+  "lessonOrder": 2,
+  "overallOrder": 67,
+  "articleNumber": "9.2",
+  "estimatedMinutes": 14,
+  "headings": [
+    {
+      "level": 2,
+      "id": "extends",
+      "text": "extends і super()"
+    },
+    {
+      "level": 2,
+      "id": "super-rules",
+      "text": "Правила super"
+    },
+    {
+      "level": 2,
+      "id": "private-inherit",
+      "text": "Приватні поля і наслідування"
+    },
+    {
+      "level": 2,
+      "id": "summary",
+      "text": "Підсумок"
+    }
+  ],
+  "badges": [
+    "Середній",
+    "Класи",
+    "~ 14 хв"
+  ],
+  "donationLinks": [
+    "https://send.monobank.ua/jar/YOUR_JAR_ID",
+    "https://www.buymeacoffee.com/YOUR_HANDLE"
+  ],
+  "breadcrumbTrail": [
+    "Головна",
+    "Класи",
+    "Наслідування"
+  ],
+  "relatedSourceTrack": "classes",
+  "contentFiles": {
+    "uk": "content/tracks/classes/class-inheritance/index.uk.html",
+    "en": "content/tracks/classes/class-inheritance/index.en.mdx"
+  },
+  "metadataFile": "content/tracks/classes/class-inheritance/meta.json",
+  "translationStatus": {
+    "sourceLocale": "uk",
+    "availableLocales": [
+      "uk"
+    ],
+    "fallbackLocales": {
+      "en": "uk"
+    },
+    "locales": {
+      "uk": {
+        "status": "published",
+        "filePath": "content/tracks/classes/class-inheritance/index.uk.html",
+        "format": "html",
+        "title": "Наслідування класу",
+        "description": "",
+        "completeness": 100,
+        "isFallback": false,
+        "headings": [
+          {
+            "level": 2,
+            "id": "extends",
+            "text": "extends і super()"
+          },
+          {
+            "level": 2,
+            "id": "super-rules",
+            "text": "Правила super"
+          },
+          {
+            "level": 2,
+            "id": "private-inherit",
+            "text": "Приватні поля і наслідування"
+          },
+          {
+            "level": 2,
+            "id": "summary",
+            "text": "Підсумок"
+          }
+        ]
+      },
+      "en": {
+        "status": "draft",
+        "filePath": "content/tracks/classes/class-inheritance/index.en.mdx",
+        "format": "mdx",
+        "title": "TODO: Translate title",
+        "description": "TODO: Translate description",
+        "completeness": 0,
+        "isFallback": true,
+        "headings": [
+          {
+            "level": 2,
+            "id": "source-lesson",
+            "text": "Source lesson"
+          }
+        ],
+        "slug": "class-inheritance",
+        "track": "classes",
+        "locale": "en",
+        "sourceLocale": "uk",
+        "hasBody": true
+      }
+    }
+  },
+  "translationCompleteness": {
+    "uk": 100,
+    "en": 0
+  },
+  "migration": {
+    "migratedFromLegacy": true,
+    "canonicalIdentitySource": "canonical",
+    "override": null,
+    "articleMeta": {
+      "type": "string",
+      "raw": {
+        "secId": "classes",
+        "artId": "class-inheritance"
+      },
+      "resolved": {
+        "track": "classes",
+        "slug": "class-inheritance"
+      }
+    },
+    "mismatches": {
+      "filePathVsCanonical": false,
+      "filePathVsStringMeta": false,
+      "filePathVsNumericMeta": false
+    },
+    "hasLegacyJsonLd": false,
+    "hasLegacyToc": true,
+    "hasLegacyPrevNext": true,
+    "legacyArticleSupport": true
+  },
+  "bodySourcePath": "content/tracks/classes/class-inheritance/index.uk.html",
+  "sourceProvenance": {
+    "sourcePath": "uk/classes/class-inheritance.html",
+    "sourceTrack": "classes",
+    "sourceSlug": "class-inheritance"
+  }
+}

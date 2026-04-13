@@ -1,0 +1,94 @@
+<p>Функції в JavaScript — повноцінні об'єкти типу <code>Function</code>. Вони мають вбудовані властивості (<code>name</code>, <code>length</code>) і дозволяють додавати довільні властивості. Це відкриває паттерн: функція як об'єкт з кешем або лічильником.</p>
+
+    <h2 id="name">Властивість name</h2>
+    <div class="code-block"><div class="code-head"><span class="code-lang">JavaScript</span><button class="btn-copy" aria-label="Копіювати"></button></div>
+<pre><code class="language-javascript">// Задається автоматично з контексту
+function greet() {}
+console.log(greet.name); // 'greet'
+
+const hello = function() {};
+console.log(hello.name); // 'hello' (з імені змінної)
+
+const obj = {
+  say() {},
+  show: function() {}
+};
+console.log(obj.say.name);  // 'say'
+console.log(obj.show.name); // 'show'
+
+// Анонімна без контексту
+console.log((function(){}).name); // '' — порожній рядок
+
+// Getter/Setter
+class C { get val() {} }
+const desc = Object.getOwnPropertyDescriptor(C.prototype, 'val');
+console.log(desc.get.name); // 'get val'</code></pre></div>
+
+    <h2 id="length">Властивість length</h2>
+    <div class="code-block"><div class="code-head"><span class="code-lang">JavaScript</span><button class="btn-copy" aria-label="Копіювати"></button></div>
+<pre><code class="language-javascript">function fn(a, b, c) {}
+console.log(fn.length); // 3
+
+// Rest-параметри та значення за замовчуванням НЕ рахуються
+function fn2(a, b = 1, ...rest) {}
+console.log(fn2.length); // 1 — лише a (до першого default/rest)
+
+// Застосування: диспетчер за кількістю аргументів
+function dispatch(...fns) {
+  return function(...args) {
+    const fn = fns.find(f => f.length === args.length);
+    return fn ? fn(...args) : fns[fns.length - 1](...args);
+  };
+}</code></pre></div>
+
+    <h2 id="custom-props">Власні властивості функції</h2>
+    <div class="code-block"><div class="code-head"><span class="code-lang">JavaScript</span><button class="btn-copy" aria-label="Копіювати"></button></div>
+<pre><code class="language-javascript">// Лічильник викликів
+function counter() {
+  counter.count = (counter.count || 0) + 1;
+  return counter.count;
+}
+counter.count = 0;
+
+counter(); counter(); counter();
+console.log(counter.count); // 3
+
+// Кешування (memoize)
+function memoize(fn) {
+  function wrapper(...args) {
+    const key = JSON.stringify(args);
+    if (key in wrapper.cache) return wrapper.cache[key];
+    return (wrapper.cache[key] = fn(...args));
+  }
+  wrapper.cache = {};
+  return wrapper;
+}
+
+const slowSquare = memoize(n => n * n);
+slowSquare(4); // обчислення
+slowSquare(4); // з кешу
+console.log(slowSquare.cache); // { '[4]': 16 }</code></pre></div>
+    <div class="callout callout-info"><p>Властивості функції — альтернатива замиканням для публічного стану. Замикання приховує стан, властивість функції — робить його доступним ззовні.</p></div>
+
+    <h2 id="named-expr">Named Function Expression (NFE)</h2>
+    <div class="code-block"><div class="code-head"><span class="code-lang">JavaScript</span><button class="btn-copy" aria-label="Копіювати"></button></div>
+<pre><code class="language-javascript">// Ім'я NFE видиме лише всередині функції
+const factorial = function fact(n) {
+  return n <= 1 ? 1 : n * fact(n - 1); // fact — внутрішнє посилання
+};
+
+console.log(factorial(5)); // 120
+// console.log(fact(5));   // ReferenceError
+
+// Навіщо? Якщо factorial перезаписати — рекурсія не зламається
+const orig = factorial;
+// factorial = null;
+console.log(orig(5)); // 120 — fact посилається на саму себе, не на змінну</code></pre></div>
+
+    <h2 id="summary">Підсумок</h2>
+    <ul>
+      <li><code>fn.name</code> — автоматично виводиться з контексту</li>
+      <li><code>fn.length</code> — кількість параметрів без default і rest</li>
+      <li>Власні властивості функції — паттерн для кешів і лічильників</li>
+      <li>NFE — безпечна рекурсія незалежно від імені змінної</li>
+    </ul>

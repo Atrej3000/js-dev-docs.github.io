@@ -1,0 +1,174 @@
+{
+  "id": "data-types/primitives-methods",
+  "locale": "uk",
+  "locales": {
+    "uk": true,
+    "en": false
+  },
+  "availableLocales": [
+    "uk"
+  ],
+  "title": "Методи примітивів",
+  "description": "Методи примітивів JavaScript: autoboxing, String/Number/Boolean обгортки, чому примітиви мають методи.",
+  "track": "data-types",
+  "trackTitle": "Типи даних",
+  "slug": "primitives-methods",
+  "sourcePath": "uk/data-types/primitives-methods.html",
+  "sourceIdentity": {
+    "track": "data-types",
+    "slug": "primitives-methods"
+  },
+  "canonicalRoute": "/uk/docs/data-types/primitives-methods",
+  "canonicalLegacyPath": "/data-types/primitives-methods.html",
+  "legacyHtmlPath": "/uk/data-types/primitives-methods.html",
+  "legacyAliases": [
+    "/uk/data-types/primitives-methods.html",
+    "/uk/data-types/primitives-methods",
+    "/data-types/primitives-methods.html"
+  ],
+  "sectionOrder": 5,
+  "lessonOrder": 1,
+  "overallOrder": 37,
+  "articleNumber": "5.1",
+  "estimatedMinutes": 8,
+  "headings": [
+    {
+      "level": 2,
+      "id": "autoboxing",
+      "text": "Autoboxing"
+    },
+    {
+      "level": 2,
+      "id": "wrappers",
+      "text": "Об'єктні обгортки — не використовуйте з new"
+    },
+    {
+      "level": 2,
+      "id": "null-undefined",
+      "text": "null і undefined — без обгорток"
+    },
+    {
+      "level": 2,
+      "id": "summary",
+      "text": "Підсумок"
+    }
+  ],
+  "badges": [
+    "Початковий",
+    "Типи даних",
+    "~ 8 хв"
+  ],
+  "donationLinks": [
+    "https://send.monobank.ua/jar/YOUR_JAR_ID",
+    "https://www.buymeacoffee.com/YOUR_HANDLE"
+  ],
+  "breadcrumbTrail": [
+    "Головна",
+    "Типи даних",
+    "Методи примітивів"
+  ],
+  "relatedSourceTrack": "data-types",
+  "contentFiles": {
+    "uk": "content/tracks/data-types/primitives-methods/index.uk.html",
+    "en": "content/tracks/data-types/primitives-methods/index.en.mdx"
+  },
+  "metadataFile": "content/tracks/data-types/primitives-methods/meta.json",
+  "translationStatus": {
+    "sourceLocale": "uk",
+    "availableLocales": [
+      "uk"
+    ],
+    "fallbackLocales": {
+      "en": "uk"
+    },
+    "locales": {
+      "uk": {
+        "status": "published",
+        "filePath": "content/tracks/data-types/primitives-methods/index.uk.html",
+        "format": "html",
+        "title": "Методи примітивів",
+        "description": "Методи примітивів JavaScript: autoboxing, String/Number/Boolean обгортки, чому примітиви мають методи.",
+        "completeness": 100,
+        "isFallback": false,
+        "headings": [
+          {
+            "level": 2,
+            "id": "autoboxing",
+            "text": "Autoboxing"
+          },
+          {
+            "level": 2,
+            "id": "wrappers",
+            "text": "Об'єктні обгортки — не використовуйте з new"
+          },
+          {
+            "level": 2,
+            "id": "null-undefined",
+            "text": "null і undefined — без обгорток"
+          },
+          {
+            "level": 2,
+            "id": "summary",
+            "text": "Підсумок"
+          }
+        ]
+      },
+      "en": {
+        "status": "draft",
+        "filePath": "content/tracks/data-types/primitives-methods/index.en.mdx",
+        "format": "mdx",
+        "title": "TODO: Translate title",
+        "description": "TODO: Translate description",
+        "completeness": 0,
+        "isFallback": true,
+        "headings": [
+          {
+            "level": 2,
+            "id": "source-lesson",
+            "text": "Source lesson"
+          }
+        ],
+        "slug": "primitives-methods",
+        "track": "data-types",
+        "locale": "en",
+        "sourceLocale": "uk",
+        "hasBody": true
+      }
+    }
+  },
+  "translationCompleteness": {
+    "uk": 100,
+    "en": 0
+  },
+  "migration": {
+    "migratedFromLegacy": true,
+    "canonicalIdentitySource": "canonical",
+    "override": null,
+    "articleMeta": {
+      "type": "string",
+      "raw": {
+        "secId": "data-types",
+        "artId": "primitives-methods"
+      },
+      "resolved": {
+        "track": "data-types",
+        "slug": "primitives-methods"
+      }
+    },
+    "mismatches": {
+      "filePathVsCanonical": false,
+      "filePathVsStringMeta": false,
+      "filePathVsNumericMeta": false
+    },
+    "hasLegacyJsonLd": false,
+    "hasLegacyToc": true,
+    "hasLegacyPrevNext": true,
+    "legacyArticleSupport": true
+  },
+  "bodySourcePath": "content/tracks/data-types/primitives-methods/index.uk.html",
+  "sourceProvenance": {
+    "sourcePath": "uk/data-types/primitives-methods.html",
+    "sourceTrack": "data-types",
+    "sourceSlug": "primitives-methods"
+  }
+}

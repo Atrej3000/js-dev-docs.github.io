@@ -1,0 +1,181 @@
+{
+  "id": "functions-advanced/global-object",
+  "locale": "uk",
+  "locales": {
+    "uk": true,
+    "en": false
+  },
+  "availableLocales": [
+    "uk"
+  ],
+  "title": "Глобальний об'єкт",
+  "description": "Глобальний об'єкт у JavaScript — детальний розбір з прикладами, підводними каменями та best practices.",
+  "track": "functions-advanced",
+  "trackTitle": "Розширена робота з функціями",
+  "slug": "global-object",
+  "sourcePath": "uk/functions-advanced/global-object.html",
+  "sourceIdentity": {
+    "track": "functions-advanced",
+    "slug": "global-object"
+  },
+  "canonicalRoute": "/uk/docs/functions-advanced/global-object",
+  "canonicalLegacyPath": "/functions-advanced/global-object.html",
+  "legacyHtmlPath": "/uk/functions-advanced/global-object.html",
+  "legacyAliases": [
+    "/uk/functions-advanced/global-object.html",
+    "/uk/functions-advanced/global-object",
+    "/functions-advanced/global-object.html"
+  ],
+  "sectionOrder": 6,
+  "lessonOrder": 5,
+  "overallOrder": 53,
+  "articleNumber": "6.5",
+  "estimatedMinutes": 8,
+  "headings": [
+    {
+      "level": 2,
+      "id": "globalthis",
+      "text": "globalThis"
+    },
+    {
+      "level": 2,
+      "id": "global-vars",
+      "text": "Глобальні змінні"
+    },
+    {
+      "level": 2,
+      "id": "builtins",
+      "text": "Вбудовані глобалі"
+    },
+    {
+      "level": 2,
+      "id": "polyfills",
+      "text": "Поліфіли через globalThis"
+    },
+    {
+      "level": 2,
+      "id": "summary",
+      "text": "Підсумок"
+    }
+  ],
+  "badges": [
+    "Початковий",
+    "Розширена робота з функціями",
+    "~ 8 хв"
+  ],
+  "donationLinks": [],
+  "breadcrumbTrail": [
+    "Головна",
+    "Розширена робота з функціями",
+    "Глобальний об'єкт"
+  ],
+  "relatedSourceTrack": "functions-advanced",
+  "contentFiles": {
+    "uk": "content/tracks/functions-advanced/global-object/index.uk.html",
+    "en": "content/tracks/functions-advanced/global-object/index.en.mdx"
+  },
+  "metadataFile": "content/tracks/functions-advanced/global-object/meta.json",
+  "translationStatus": {
+    "sourceLocale": "uk",
+    "availableLocales": [
+      "uk"
+    ],
+    "fallbackLocales": {
+      "en": "uk"
+    },
+    "locales": {
+      "uk": {
+        "status": "published",
+        "filePath": "content/tracks/functions-advanced/global-object/index.uk.html",
+        "format": "html",
+        "title": "Глобальний об'єкт",
+        "description": "Глобальний об'єкт у JavaScript — детальний розбір з прикладами, підводними каменями та best practices.",
+        "completeness": 100,
+        "isFallback": false,
+        "headings": [
+          {
+            "level": 2,
+            "id": "globalthis",
+            "text": "globalThis"
+          },
+          {
+            "level": 2,
+            "id": "global-vars",
+            "text": "Глобальні змінні"
+          },
+          {
+            "level": 2,
+            "id": "builtins",
+            "text": "Вбудовані глобалі"
+          },
+          {
+            "level": 2,
+            "id": "polyfills",
+            "text": "Поліфіли через globalThis"
+          },
+          {
+            "level": 2,
+            "id": "summary",
+            "text": "Підсумок"
+          }
+        ]
+      },
+      "en": {
+        "status": "draft",
+        "filePath": "content/tracks/functions-advanced/global-object/index.en.mdx",
+        "format": "mdx",
+        "title": "TODO: Translate title",
+        "description": "TODO: Translate description",
+        "completeness": 0,
+        "isFallback": true,
+        "headings": [
+          {
+            "level": 2,
+            "id": "source-lesson",
+            "text": "Source lesson"
+          }
+        ],
+        "slug": "global-object",
+        "track": "functions-advanced",
+        "locale": "en",
+        "sourceLocale": "uk",
+        "hasBody": true
+      }
+    }
+  },
+  "translationCompleteness": {
+    "uk": 100,
+    "en": 0
+  },
+  "migration": {
+    "migratedFromLegacy": true,
+    "canonicalIdentitySource": "canonical",
+    "override": null,
+    "articleMeta": {
+      "type": "numeric",
+      "raw": {
+        "secId": "6",
+        "artId": "5"
+      },
+      "resolved": {
+        "track": "functions-advanced",
+        "slug": "global-object"
+      }
+    },
+    "mismatches": {
+      "filePathVsCanonical": false,
+      "filePathVsStringMeta": false,
+      "filePathVsNumericMeta": false
+    },
+    "hasLegacyJsonLd": false,
+    "hasLegacyToc": false,
+    "hasLegacyPrevNext": false,
+    "legacyArticleSupport": true
+  },
+  "bodySourcePath": "content/tracks/functions-advanced/global-object/index.uk.html",
+  "sourceProvenance": {
+    "sourcePath": "uk/functions-advanced/global-object.html",
+    "sourceTrack": "functions-advanced",
+    "sourceSlug": "global-object"
+  }
+}

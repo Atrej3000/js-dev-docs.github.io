@@ -1,0 +1,171 @@
+{
+  "id": "promises/promise-chaining",
+  "locale": "uk",
+  "locales": {
+    "uk": true,
+    "en": false
+  },
+  "availableLocales": [
+    "uk"
+  ],
+  "title": "Ланцюжок промісів",
+  "description": "Ланцюжок промісів у JavaScript — детальний розбір з прикладами, підводними каменями та best practices.",
+  "track": "promises",
+  "trackTitle": "Проміси, async/await",
+  "slug": "promise-chaining",
+  "sourcePath": "uk/promises/promise-chaining.html",
+  "sourceIdentity": {
+    "track": "promises",
+    "slug": "promise-chaining"
+  },
+  "canonicalRoute": "/uk/docs/promises/promise-chaining",
+  "canonicalLegacyPath": "/promises/promise-chaining.html",
+  "legacyHtmlPath": "/uk/promises/promise-chaining.html",
+  "legacyAliases": [
+    "/uk/promises/promise-chaining.html",
+    "/uk/promises/promise-chaining",
+    "/promises/promise-chaining.html"
+  ],
+  "sectionOrder": 11,
+  "lessonOrder": 3,
+  "overallOrder": 77,
+  "articleNumber": "11.3",
+  "estimatedMinutes": 10,
+  "headings": [
+    {
+      "level": 2,
+      "id": "return-value",
+      "text": "Що повертає .then()"
+    },
+    {
+      "level": 2,
+      "id": "real-chain",
+      "text": "Реальний ланцюжок"
+    },
+    {
+      "level": 2,
+      "id": "pitfalls",
+      "text": "Типові помилки"
+    },
+    {
+      "level": 2,
+      "id": "summary",
+      "text": "Підсумок"
+    }
+  ],
+  "badges": [
+    "Середній",
+    "Проміси, async/await",
+    "~ 10 хв"
+  ],
+  "donationLinks": [],
+  "breadcrumbTrail": [
+    "Головна",
+    "Проміси, async/await",
+    "Ланцюжок промісів"
+  ],
+  "relatedSourceTrack": "promises",
+  "contentFiles": {
+    "uk": "content/tracks/promises/promise-chaining/index.uk.html",
+    "en": "content/tracks/promises/promise-chaining/index.en.mdx"
+  },
+  "metadataFile": "content/tracks/promises/promise-chaining/meta.json",
+  "translationStatus": {
+    "sourceLocale": "uk",
+    "availableLocales": [
+      "uk"
+    ],
+    "fallbackLocales": {
+      "en": "uk"
+    },
+    "locales": {
+      "uk": {
+        "status": "published",
+        "filePath": "content/tracks/promises/promise-chaining/index.uk.html",
+        "format": "html",
+        "title": "Ланцюжок промісів",
+        "description": "Ланцюжок промісів у JavaScript — детальний розбір з прикладами, підводними каменями та best practices.",
+        "completeness": 100,
+        "isFallback": false,
+        "headings": [
+          {
+            "level": 2,
+            "id": "return-value",
+            "text": "Що повертає .then()"
+          },
+          {
+            "level": 2,
+            "id": "real-chain",
+            "text": "Реальний ланцюжок"
+          },
+          {
+            "level": 2,
+            "id": "pitfalls",
+            "text": "Типові помилки"
+          },
+          {
+            "level": 2,
+            "id": "summary",
+            "text": "Підсумок"
+          }
+        ]
+      },
+      "en": {
+        "status": "draft",
+        "filePath": "content/tracks/promises/promise-chaining/index.en.mdx",
+        "format": "mdx",
+        "title": "TODO: Translate title",
+        "description": "TODO: Translate description",
+        "completeness": 0,
+        "isFallback": true,
+        "headings": [
+          {
+            "level": 2,
+            "id": "source-lesson",
+            "text": "Source lesson"
+          }
+        ],
+        "slug": "promise-chaining",
+        "track": "promises",
+        "locale": "en",
+        "sourceLocale": "uk",
+        "hasBody": true
+      }
+    }
+  },
+  "translationCompleteness": {
+    "uk": 100,
+    "en": 0
+  },
+  "migration": {
+    "migratedFromLegacy": true,
+    "canonicalIdentitySource": "canonical",
+    "override": null,
+    "articleMeta": {
+      "type": "numeric",
+      "raw": {
+        "secId": "11",
+        "artId": "3"
+      },
+      "resolved": {
+        "track": "promises",
+        "slug": "promise-chaining"
+      }
+    },
+    "mismatches": {
+      "filePathVsCanonical": false,
+      "filePathVsStringMeta": false,
+      "filePathVsNumericMeta": false
+    },
+    "hasLegacyJsonLd": false,
+    "hasLegacyToc": false,
+    "hasLegacyPrevNext": false,
+    "legacyArticleSupport": true
+  },
+  "bodySourcePath": "content/tracks/promises/promise-chaining/index.uk.html",
+  "sourceProvenance": {
+    "sourcePath": "uk/promises/promise-chaining.html",
+    "sourceTrack": "promises",
+    "sourceSlug": "promise-chaining"
+  }
+}

@@ -1,0 +1,101 @@
+<p><code>async/await</code> — синтаксичний цукор поверх Promise. Дозволяє писати асинхронний код у синхронному стилі. <code>async</code> функція завжди повертає Promise. <code>await</code> зупиняє виконання всередині функції до виконання Promise.</p>
+
+    <h2 id="basics">Основи</h2>
+    <div class="code-block"><div class="code-head"><span class="code-lang">JavaScript</span><button class="btn-copy" aria-label="Копіювати"></button></div>
+<pre><code class="language-javascript">// async функція завжди повертає Promise
+async function greet() {
+  return 'hello'; // еквівалент: return Promise.resolve('hello')
+}
+greet().then(console.log); // "hello"
+
+// await: зупиняє виконання всередині async функції
+async function fetchUser(id) {
+  const res  = await fetch(`/api/users/${id}`); // чекаємо fetch
+  const user = await res.json();                // чекаємо res.json()
+  return user;
+}
+
+// Порівняння з Promise ланцюжком
+// .then версія:
+fetchUserThen(id) {
+  return fetch(`/api/users/${id}`)
+    .then(res => res.json());
+}</code></pre></div>
+
+    <h2 id="error-handling">Обробка помилок</h2>
+    <div class="code-block"><div class="code-head"><span class="code-lang">JavaScript</span><button class="btn-copy" aria-label="Копіювати"></button></div>
+<pre><code class="language-javascript">// try/catch для async/await
+async function loadConfig() {
+  try {
+    const res = await fetch('/config.json');
+    if (!res.ok) throw new Error(`HTTP ${res.status}`);
+    return await res.json();
+  } catch (e) {
+    console.error('Config load failed:', e.message);
+    return {}; // значення за замовчуванням
+  }
+}
+
+// Або .catch на async функції
+loadConfig().catch(handleError);
+
+// Зручний helper для уникнення try/catch
+async function safeAwait(promise) {
+  try {
+    return [null, await promise];
+  } catch (error) {
+    return [error, null];
+  }
+}
+
+const [err, user] = await safeAwait(fetchUser(1));
+if (err) { handleError(err); return; }
+console.log(user.name);</code></pre></div>
+
+    <h2 id="parallel">Паралельне виконання</h2>
+    <div class="code-block"><div class="code-head"><span class="code-lang">JavaScript</span><button class="btn-copy" aria-label="Копіювати"></button></div>
+<pre><code class="language-javascript">// АНТИПАТЕРН: послідовне await (повільно)
+async function slowLoad() {
+  const user    = await fetchUser(1);    // чекаємо
+  const orders  = await fetchOrders(1); // потім чекаємо
+  return { user, orders };
+  // Загальний час = час1 + час2
+}
+
+// ПРАВИЛЬНО: паралельне через Promise.all
+async function fastLoad() {
+  const [user, orders] = await Promise.all([
+    fetchUser(1),
+    fetchOrders(1),
+  ]);
+  return { user, orders };
+  // Загальний час = max(час1, час2)
+}
+
+// Паралельний запуск, послідовна обробка
+async function processItems(items) {
+  const promises = items.map(item => processItem(item)); // всі запускаємо
+  const results  = await Promise.all(promises);          // чекаємо всіх
+  return results;
+}</code></pre></div>
+
+    <h2 id="top-level">Top-level await</h2>
+    <div class="code-block"><div class="code-head"><span class="code-lang">JavaScript</span><button class="btn-copy" aria-label="Копіювати"></button></div>
+<pre><code class="language-javascript">// В ES-модулях await можна використовувати на верхньому рівні
+// (поза async функцією)
+
+// main.js (type="module")
+const config = await fetch('/config.json').then(r => r.json());
+console.log(config.version);
+
+// Зручно для ініціалізації модуля
+const db = await connectDatabase(config.dbUrl);</code></pre></div>
+
+    <h2 id="summary">Підсумок</h2>
+    <ul>
+      <li><code>async</code> функція завжди повертає Promise. <code>await</code> зупиняє виконання і розгортає Promise.</li>
+      <li>Обробка помилок: <code>try/catch</code> всередині async функції або <code>.catch</code> зовні.</li>
+      <li>Послідовні <code>await</code> — повільно. Паралельне: <code>await Promise.all([...])</code>.</li>
+      <li>Top-level await — в ES-модулях без async обгортки.</li>
+    </ul>
+    <div class="article-support"><p><strong>Матеріал корисний?</strong> Підтримай проект.</p><div class="support-btns-inline"><a href="https://send.monobank.ua/jar/YOUR_JAR_ID" class="btn-mono" target="_blank" rel="noopener" style="font-size:12px;height:36px;padding:0 14px">🟢 Monobank</a><a href="https://www.buymeacoffee.com/YOUR_HANDLE" class="btn-coffee" target="_blank" rel="noopener" style="font-size:12px;height:36px;padding:0 14px">☕ Coffee</a></div></div>

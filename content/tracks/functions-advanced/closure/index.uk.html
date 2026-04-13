@@ -1,0 +1,134 @@
+<p>Замикання (closure) — функція, що «пам'ятає» лексичне оточення в якому була створена, навіть після того як зовнішня функція завершила виконання. Це фундаментальна концепція JavaScript — основа для модульних патернів, memoization, приватних даних і реактивних систем.</p>
+
+    <h2 id="leksychna">Лексична область видимості</h2>
+    <div class="code-block"><div class="code-head"><span class="code-lang">JavaScript</span><button class="btn-copy" aria-label="Копіювати"></button></div>
+<pre><code class="language-javascript">// Вкладена функція має доступ до змінних зовнішньої
+function outer() {
+  const message = 'hello';
+
+  function inner() {
+    console.log(message); // доступ до message з outer
+  }
+
+  inner(); // "hello"
+}
+
+// Область видимості визначається де функція НАПИСАНА, а не де викликана
+const x = 'global';
+function showX() { console.log(x); }
+
+function test() {
+  const x = 'local';
+  showX(); // "global" — showX бачить x де вона написана (глобальна)
+}</code></pre></div>
+
+    <h2 id="zamykannya">Замикання</h2>
+    <div class="code-block"><div class="code-head"><span class="code-lang">JavaScript</span><button class="btn-copy" aria-label="Копіювати"></button></div>
+<pre><code class="language-javascript">// Внутрішня функція повертається назовні — замикання живе далі
+function makeCounter(start = 0) {
+  let count = start;  // ← ця змінна захоплена замиканням
+
+  return {
+    increment() { count++; },
+    decrement() { count--; },
+    getCount()  { return count; },
+  };
+}
+
+const counter = makeCounter(10);
+counter.increment();
+counter.increment();
+counter.increment();
+console.log(counter.getCount()); // 13
+
+// count недоступний ззовні — приватний стан!
+// console.log(counter.count); // undefined
+
+// Кожен виклик makeCounter — НОВЕ замикання
+const c1 = makeCounter();
+const c2 = makeCounter(100);
+c1.increment();
+console.log(c1.getCount()); // 1
+console.log(c2.getCount()); // 100 — незалежні стани</code></pre></div>
+
+    <h2 id="for-loop">Замикання і цикли — класична пастка</h2>
+    <div class="code-block"><div class="code-head"><span class="code-lang">JavaScript</span><button class="btn-copy" aria-label="Копіювати"></button></div>
+<pre><code class="language-javascript">// АНТИПАТЕРН: var у циклі — спільна змінна для всіх замикань
+const funcs = [];
+for (var i = 0; i < 3; i++) {
+  funcs.push(function() { return i; });
+}
+console.log(funcs[0]()); // 3 — не 0!
+console.log(funcs[1]()); // 3
+console.log(funcs[2]()); // 3
+// var i — одна змінна для всього циклу, всі функції захоплюють одне i
+
+// РІШЕННЯ 1: let — нова прив'язка на кожну ітерацію
+const funcs2 = [];
+for (let i = 0; i < 3; i++) {
+  funcs2.push(function() { return i; });
+}
+console.log(funcs2[0]()); // 0
+console.log(funcs2[1]()); // 1
+console.log(funcs2[2]()); // 2
+
+// РІШЕННЯ 2: IIFE (для legacy коду з var)
+const funcs3 = [];
+for (var i = 0; i < 3; i++) {
+  funcs3.push((function(j) {
+    return function() { return j; };
+  })(i));
+}</code></pre></div>
+
+    <h2 id="patterny">Практичні патерни</h2>
+    <div class="code-block"><div class="code-head"><span class="code-lang">JavaScript</span><button class="btn-copy" aria-label="Копіювати"></button></div>
+<pre><code class="language-javascript">// 1. Мемоізація
+function memoize(fn) {
+  const cache = {};
+  return function(...args) {
+    const key = JSON.stringify(args);
+    if (key in cache) return cache[key];
+    cache[key] = fn(...args);
+    return cache[key];
+  };
+}
+
+const expensiveFib = memoize(function fib(n) {
+  if (n <= 1) return n;
+  return expensiveFib(n-1) + expensiveFib(n-2);
+});
+
+// 2. Частковий виклик (partial application)
+function multiply(a, b) { return a * b; }
+const double = function(x) { return multiply(2, x); };
+const triple = function(x) { return multiply(3, x); };
+console.log(double(5)); // 10
+console.log(triple(5)); // 15
+
+// 3. Module pattern — приватний стан і публічний API
+const bankModule = (function() {
+  let balance = 0; // приватна змінна
+
+  return {
+    deposit(amount) { balance += amount; },
+    withdraw(amount) {
+      if (amount > balance) throw new Error('Insufficient funds');
+      balance -= amount;
+    },
+    getBalance() { return balance; },
+  };
+})();
+
+bankModule.deposit(1000);
+bankModule.withdraw(300);
+console.log(bankModule.getBalance()); // 700</code></pre></div>
+
+    <h2 id="summary">Підсумок</h2>
+    <ul>
+      <li>Замикання: функція захоплює посилання на змінні зовнішнього scope на момент створення.</li>
+      <li>Лексична область видимості: де написана функція — там шукаються змінні, не де викликається.</li>
+      <li>Цикл + <code>var</code>: всі замикання спільно захоплюють одну змінну. Рішення: <code>let</code>.</li>
+      <li>Патерни: memoize, partial application, module pattern (приватний стан).</li>
+      <li>Замикання утримують посилання — слідкуйте за витоками пам'яті у довгоживучих замиканнях.</li>
+    </ul>
+    <div class="article-support"><p><strong>Матеріал корисний?</strong> Підтримай проект.</p><div class="support-btns-inline"><a href="https://send.monobank.ua/jar/YOUR_JAR_ID" class="btn-mono" target="_blank" rel="noopener" style="font-size:12px;height:36px;padding:0 14px">🟢 Monobank</a><a href="https://www.buymeacoffee.com/YOUR_HANDLE" class="btn-coffee" target="_blank" rel="noopener" style="font-size:12px;height:36px;padding:0 14px">☕ Coffee</a></div></div>

@@ -1,0 +1,181 @@
+{
+  "id": "classes/static-properties",
+  "locale": "uk",
+  "locales": {
+    "uk": true,
+    "en": false
+  },
+  "availableLocales": [
+    "uk"
+  ],
+  "title": "Статичні властивості та методи",
+  "description": "Статичні властивості та методи у JavaScript — детальний розбір з прикладами, підводними каменями та best practices.",
+  "track": "classes",
+  "trackTitle": "Класи",
+  "slug": "static-properties",
+  "sourcePath": "uk/classes/static-properties-methods.html",
+  "sourceIdentity": {
+    "track": "classes",
+    "slug": "static-properties-methods"
+  },
+  "canonicalRoute": "/uk/docs/classes/static-properties",
+  "canonicalLegacyPath": "/classes/static-properties.html",
+  "legacyHtmlPath": "/uk/classes/static-properties-methods.html",
+  "legacyAliases": [
+    "/uk/classes/static-properties-methods.html",
+    "/uk/classes/static-properties-methods",
+    "/classes/static-properties.html"
+  ],
+  "sectionOrder": 9,
+  "lessonOrder": 3,
+  "overallOrder": 68,
+  "articleNumber": "9.3",
+  "estimatedMinutes": 10,
+  "headings": [
+    {
+      "level": 2,
+      "id": "static-method",
+      "text": "Статичні методи"
+    },
+    {
+      "level": 2,
+      "id": "factory",
+      "text": "Статичні методи як фабрики"
+    },
+    {
+      "level": 2,
+      "id": "static-inherit",
+      "text": "Статичне успадкування"
+    },
+    {
+      "level": 2,
+      "id": "static-private",
+      "text": "Приватні статичні"
+    },
+    {
+      "level": 2,
+      "id": "summary",
+      "text": "Підсумок"
+    }
+  ],
+  "badges": [
+    "Середній",
+    "Класи",
+    "~ 10 хв"
+  ],
+  "donationLinks": [],
+  "breadcrumbTrail": [
+    "Головна",
+    "Класи",
+    "Статичні властивості та методи"
+  ],
+  "relatedSourceTrack": "classes",
+  "contentFiles": {
+    "uk": "content/tracks/classes/static-properties/index.uk.html",
+    "en": "content/tracks/classes/static-properties/index.en.mdx"
+  },
+  "metadataFile": "content/tracks/classes/static-properties/meta.json",
+  "translationStatus": {
+    "sourceLocale": "uk",
+    "availableLocales": [
+      "uk"
+    ],
+    "fallbackLocales": {
+      "en": "uk"
+    },
+    "locales": {
+      "uk": {
+        "status": "published",
+        "filePath": "content/tracks/classes/static-properties/index.uk.html",
+        "format": "html",
+        "title": "Статичні властивості та методи",
+        "description": "Статичні властивості та методи у JavaScript — детальний розбір з прикладами, підводними каменями та best practices.",
+        "completeness": 100,
+        "isFallback": false,
+        "headings": [
+          {
+            "level": 2,
+            "id": "static-method",
+            "text": "Статичні методи"
+          },
+          {
+            "level": 2,
+            "id": "factory",
+            "text": "Статичні методи як фабрики"
+          },
+          {
+            "level": 2,
+            "id": "static-inherit",
+            "text": "Статичне успадкування"
+          },
+          {
+            "level": 2,
+            "id": "static-private",
+            "text": "Приватні статичні"
+          },
+          {
+            "level": 2,
+            "id": "summary",
+            "text": "Підсумок"
+          }
+        ]
+      },
+      "en": {
+        "status": "draft",
+        "filePath": "content/tracks/classes/static-properties/index.en.mdx",
+        "format": "mdx",
+        "title": "TODO: Translate title",
+        "description": "TODO: Translate description",
+        "completeness": 0,
+        "isFallback": true,
+        "headings": [
+          {
+            "level": 2,
+            "id": "source-lesson",
+            "text": "Source lesson"
+          }
+        ],
+        "slug": "static-properties",
+        "track": "classes",
+        "locale": "en",
+        "sourceLocale": "uk",
+        "hasBody": true
+      }
+    }
+  },
+  "translationCompleteness": {
+    "uk": 100,
+    "en": 0
+  },
+  "migration": {
+    "migratedFromLegacy": true,
+    "canonicalIdentitySource": "canonical",
+    "override": null,
+    "articleMeta": {
+      "type": "numeric",
+      "raw": {
+        "secId": "9",
+        "artId": "3"
+      },
+      "resolved": {
+        "track": "classes",
+        "slug": "static-properties-methods"
+      }
+    },
+    "mismatches": {
+      "filePathVsCanonical": true,
+      "filePathVsStringMeta": false,
+      "filePathVsNumericMeta": false
+    },
+    "hasLegacyJsonLd": false,
+    "hasLegacyToc": false,
+    "hasLegacyPrevNext": false,
+    "legacyArticleSupport": true
+  },
+  "bodySourcePath": "content/tracks/classes/static-properties/index.uk.html",
+  "sourceProvenance": {
+    "sourcePath": "uk/classes/static-properties-methods.html",
+    "sourceTrack": "classes",
+    "sourceSlug": "static-properties-methods"
+  }
+}

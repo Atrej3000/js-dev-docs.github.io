@@ -1,0 +1,204 @@
+{
+  "id": "data-types/string",
+  "locale": "uk",
+  "locales": {
+    "uk": true,
+    "en": false
+  },
+  "availableLocales": [
+    "uk"
+  ],
+  "title": "Рядки",
+  "description": "Рядки JavaScript: методи String, slice/substring, indexOf/includes, replace, split, шаблонні літерали, Unicode.",
+  "track": "data-types",
+  "trackTitle": "Типи даних",
+  "slug": "string",
+  "sourcePath": "uk/data-types/string.html",
+  "sourceIdentity": {
+    "track": "data-types",
+    "slug": "string"
+  },
+  "canonicalRoute": "/uk/docs/data-types/string",
+  "canonicalLegacyPath": "/data-types/string.html",
+  "legacyHtmlPath": "/uk/data-types/string.html",
+  "legacyAliases": [
+    "/uk/data-types/string.html",
+    "/uk/data-types/string",
+    "/data-types/string.html"
+  ],
+  "sectionOrder": 5,
+  "lessonOrder": 3,
+  "overallOrder": 39,
+  "articleNumber": "5.3",
+  "estimatedMinutes": 15,
+  "headings": [
+    {
+      "level": 2,
+      "id": "literaly",
+      "text": "Літерали і спеціальні символи"
+    },
+    {
+      "level": 2,
+      "id": "dostup",
+      "text": "Довжина і доступ до символів"
+    },
+    {
+      "level": 2,
+      "id": "poshuk",
+      "text": "Пошук"
+    },
+    {
+      "level": 2,
+      "id": "ekstrakt",
+      "text": "Вилучення підрядків"
+    },
+    {
+      "level": 2,
+      "id": "modyfikatsiya",
+      "text": "Трансформація"
+    },
+    {
+      "level": 2,
+      "id": "template",
+      "text": "Шаблонні літерали"
+    },
+    {
+      "level": 2,
+      "id": "summary",
+      "text": "Підсумок"
+    }
+  ],
+  "badges": [
+    "Початковий",
+    "Типи даних",
+    "~ 15 хв"
+  ],
+  "donationLinks": [
+    "https://send.monobank.ua/jar/YOUR_JAR_ID",
+    "https://www.buymeacoffee.com/YOUR_HANDLE"
+  ],
+  "breadcrumbTrail": [
+    "Головна",
+    "Типи даних",
+    "Рядки"
+  ],
+  "relatedSourceTrack": "data-types",
+  "contentFiles": {
+    "uk": "content/tracks/data-types/string/index.uk.html",
+    "en": "content/tracks/data-types/string/index.en.mdx"
+  },
+  "metadataFile": "content/tracks/data-types/string/meta.json",
+  "translationStatus": {
+    "sourceLocale": "uk",
+    "availableLocales": [
+      "uk"
+    ],
+    "fallbackLocales": {
+      "en": "uk"
+    },
+    "locales": {
+      "uk": {
+        "status": "published",
+        "filePath": "content/tracks/data-types/string/index.uk.html",
+        "format": "html",
+        "title": "Рядки",
+        "description": "Рядки JavaScript: методи String, slice/substring, indexOf/includes, replace, split, шаблонні літерали, Unicode.",
+        "completeness": 100,
+        "isFallback": false,
+        "headings": [
+          {
+            "level": 2,
+            "id": "literaly",
+            "text": "Літерали і спеціальні символи"
+          },
+          {
+            "level": 2,
+            "id": "dostup",
+            "text": "Довжина і доступ до символів"
+          },
+          {
+            "level": 2,
+            "id": "poshuk",
+            "text": "Пошук"
+          },
+          {
+            "level": 2,
+            "id": "ekstrakt",
+            "text": "Вилучення підрядків"
+          },
+          {
+            "level": 2,
+            "id": "modyfikatsiya",
+            "text": "Трансформація"
+          },
+          {
+            "level": 2,
+            "id": "template",
+            "text": "Шаблонні літерали"
+          },
+          {
+            "level": 2,
+            "id": "summary",
+            "text": "Підсумок"
+          }
+        ]
+      },
+      "en": {
+        "status": "draft",
+        "filePath": "content/tracks/data-types/string/index.en.mdx",
+        "format": "mdx",
+        "title": "TODO: Translate title",
+        "description": "TODO: Translate description",
+        "completeness": 0,
+        "isFallback": true,
+        "headings": [
+          {
+            "level": 2,
+            "id": "source-lesson",
+            "text": "Source lesson"
+          }
+        ],
+        "slug": "string",
+        "track": "data-types",
+        "locale": "en",
+        "sourceLocale": "uk",
+        "hasBody": true
+      }
+    }
+  },
+  "translationCompleteness": {
+    "uk": 100,
+    "en": 0
+  },
+  "migration": {
+    "migratedFromLegacy": true,
+    "canonicalIdentitySource": "canonical",
+    "override": null,
+    "articleMeta": {
+      "type": "string",
+      "raw": {
+        "secId": "data-types",
+        "artId": "string"
+      },
+      "resolved": {
+        "track": "data-types",
+        "slug": "string"
+      }
+    },
+    "mismatches": {
+      "filePathVsCanonical": false,
+      "filePathVsStringMeta": false,
+      "filePathVsNumericMeta": false
+    },
+    "hasLegacyJsonLd": false,
+    "hasLegacyToc": true,
+    "hasLegacyPrevNext": true,
+    "legacyArticleSupport": true
+  },
+  "bodySourcePath": "content/tracks/data-types/string/index.uk.html",
+  "sourceProvenance": {
+    "sourcePath": "uk/data-types/string.html",
+    "sourceTrack": "data-types",
+    "sourceSlug": "string"
+  }
+}

@@ -1,0 +1,133 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: light;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  min-height: 100vh;
+  background:
+    radial-gradient(circle at top, rgba(169, 73, 34, 0.12), transparent 32%),
+    linear-gradient(180deg, #fdf8ef 0%, #f7f0e4 100%);
+}
+
+a {
+  color: inherit;
+}
+
+.shell-grid {
+  display: grid;
+  min-height: 100vh;
+  grid-template-rows: auto 1fr auto;
+}
+
+.lesson-html {
+  color: #241b14;
+  font-family: var(--font-serif), serif;
+  font-size: 1.05rem;
+  line-height: 1.8;
+}
+
+.lesson-html > * + * {
+  margin-top: 1rem;
+}
+
+.lesson-html h2,
+.lesson-html h3,
+.lesson-html h4 {
+  font-family: var(--font-sans), sans-serif;
+  font-weight: 700;
+  line-height: 1.2;
+  scroll-margin-top: 7rem;
+}
+
+.lesson-html h2 {
+  margin-top: 2.5rem;
+  font-size: 1.7rem;
+}
+
+.lesson-html h3 {
+  margin-top: 1.75rem;
+  font-size: 1.25rem;
+}
+
+.lesson-html p code,
+.lesson-html li code,
+.lesson-html td code {
+  border-radius: 0.5rem;
+  background: rgba(36, 83, 70, 0.08);
+  padding: 0.15rem 0.4rem;
+  font-family: var(--font-mono), monospace;
+  font-size: 0.92em;
+}
+
+.lesson-html pre {
+  overflow-x: auto;
+  border-radius: 1rem;
+  background: #16110c;
+  color: #f8f4ed;
+  padding: 1rem 1.1rem;
+  font-family: var(--font-mono), monospace;
+  font-size: 0.92rem;
+  line-height: 1.6;
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.06);
+}
+
+.lesson-html pre code {
+  background: transparent;
+  padding: 0;
+  color: inherit;
+}
+
+.lesson-html blockquote {
+  border-left: 4px solid rgba(169, 73, 34, 0.7);
+  background: rgba(169, 73, 34, 0.08);
+  padding: 1rem 1.1rem;
+  border-radius: 0 1rem 1rem 0;
+}
+
+.lesson-html ul,
+.lesson-html ol {
+  padding-left: 1.25rem;
+}
+
+.lesson-html table {
+  width: 100%;
+  border-collapse: collapse;
+  overflow: hidden;
+  border-radius: 1rem;
+  border: 1px solid rgba(36, 17, 12, 0.12);
+}
+
+.lesson-html th,
+.lesson-html td {
+  border-bottom: 1px solid rgba(36, 17, 12, 0.12);
+  padding: 0.75rem 0.9rem;
+  text-align: left;
+}
+
+.lesson-html img {
+  border-radius: 1rem;
+}
+
+.content-card {
+  border: 1px solid rgba(36, 17, 12, 0.08);
+  background: rgba(253, 249, 242, 0.84);
+  backdrop-filter: blur(12px);
+  box-shadow: 0 18px 60px rgba(22, 17, 12, 0.08);
+}
+
+.eyebrow {
+  font-family: var(--font-mono), monospace;
+  font-size: 0.74rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #7b543f;
+}

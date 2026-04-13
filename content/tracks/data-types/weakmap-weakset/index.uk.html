@@ -1,0 +1,107 @@
+<p><code>WeakMap</code> і <code>WeakSet</code> — колекції зі <em>слабкими посиланнями</em>. Якщо об'єкт-ключ більше ніде не доступний, збирач сміття може його видалити, і запис з колекції автоматично зникне. Це критично для кешів і метаданих, що не повинні перешкоджати GC.</p>
+
+    <h2 id="weakmap">WeakMap</h2>
+    <div class="code-block"><div class="code-head"><span class="code-lang">JavaScript</span><button class="btn-copy" aria-label="Копіювати"></button></div>
+<pre><code class="language-javascript">const cache = new WeakMap();
+
+function processUser(user) {
+  if (cache.has(user)) return cache.get(user);
+  const result = { processed: true, name: user.name.toUpperCase() };
+  cache.set(user, result);
+  return result;
+}
+
+let user = { name: 'Alice' };
+console.log(processUser(user)); // { processed: true, name: 'ALICE' }
+
+user = null; // об'єкт більше не потрібен
+// cache автоматично очищається — немає витоку пам'яті</code></pre></div>
+
+    <h2 id="weakmap-api">API WeakMap</h2>
+    <div class="code-block"><div class="code-head"><span class="code-lang">JavaScript</span><button class="btn-copy" aria-label="Копіювати"></button></div>
+<pre><code class="language-javascript">const wm = new WeakMap();
+const key1 = {};
+const key2 = {};
+
+wm.set(key1, 'data1');
+wm.set(key2, 42);
+
+console.log(wm.has(key1));   // true
+console.log(wm.get(key1));   // 'data1'
+wm.delete(key1);
+console.log(wm.has(key1));   // false
+
+// WeakMap НЕ ітерабельний — немає forEach, keys(), values(), size
+// Ключі — тільки об'єкти (не примітиви)</code></pre></div>
+    <div class="callout callout-info"><p>WeakMap не має методів ітерації навмисно: якщо б можна було перебрати ключі, це б перешкоджало GC — рушій не міг би знати, чи спостерігаємо ми за ключами.</p></div>
+
+    <h2 id="weakset">WeakSet</h2>
+    <div class="code-block"><div class="code-head"><span class="code-lang">JavaScript</span><button class="btn-copy" aria-label="Копіювати"></button></div>
+<pre><code class="language-javascript">const visited = new WeakSet();
+
+function markVisited(page) {
+  visited.add(page);
+}
+
+function isVisited(page) {
+  return visited.has(page);
+}
+
+let page = { url: '/home' };
+markVisited(page);
+console.log(isVisited(page)); // true
+
+page = null; // сторінка видалена — запис у WeakSet зникне
+
+// API: add(obj), has(obj), delete(obj)
+// Немає: size, forEach, ітерації</code></pre></div>
+
+    <h2 id="usecases">Сценарії застосування</h2>
+    <div class="code-block"><div class="code-head"><span class="code-lang">JavaScript</span><button class="btn-copy" aria-label="Копіювати"></button></div>
+<pre><code class="language-javascript">// 1. Приватні дані об'єкта (до появи #fields)
+const _private = new WeakMap();
+class User {
+  constructor(name) {
+    _private.set(this, { password: 'secret' });
+    this.name = name;
+  }
+  checkPassword(pwd) {
+    return _private.get(this).password === pwd;
+  }
+}
+
+// 2. Відстеження без утримання об'єкта
+const activeListeners = new WeakSet();
+function addListener(el, fn) {
+  if (!activeListeners.has(el)) {
+    el.addEventListener('click', fn);
+    activeListeners.add(el);
+  }
+}
+
+// 3. Кешування результатів (memoization)
+const memoCache = new WeakMap();
+function expensiveCalc(obj) {
+  if (memoCache.has(obj)) return memoCache.get(obj);
+  const result = /* ... */ obj.value * 2;
+  memoCache.set(obj, result);
+  return result;
+}</code></pre></div>
+
+    <h2 id="vs-map">WeakMap vs Map</h2>
+    <table>
+      <thead><tr><th>Параметр</th><th>Map</th><th>WeakMap</th></tr></thead>
+      <tbody>
+        <tr><td>Ключі</td><td>будь-які</td><td>тільки об'єкти</td></tr>
+        <tr><td>GC</td><td>утримує ключі</td><td>слабке посилання</td></tr>
+        <tr><td>Ітерація</td><td>✅ forEach, keys…</td><td>❌</td></tr>
+        <tr><td>size</td><td>✅</td><td>❌</td></tr>
+        <tr><td>Основне використання</td><td>загальні дані</td><td>метадані, кеш</td></tr>
+      </tbody>
+    </table>
+    <h2 id="summary">Підсумок</h2>
+    <ul>
+      <li><strong>WeakMap</strong>: ключ-об'єкт, слабке посилання, немає ітерації — ідеальний для кешів і приватних даних</li>
+      <li><strong>WeakSet</strong>: набір об'єктів зі слабкими посиланнями — для відстеження без утримання</li>
+      <li>Обидві структури не заважають GC — головна перевага над <code>Map</code>/<code>Set</code></li>
+    </ul>

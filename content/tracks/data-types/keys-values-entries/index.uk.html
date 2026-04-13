@@ -1,0 +1,78 @@
+<p><code>Object.keys()</code>, <code>Object.values()</code>, <code>Object.entries()</code> — три методи для ітерації власних перелічуваних властивостей об'єкта. Разом із <code>Object.fromEntries()</code> вони утворюють повноцінний pipeline трансформації об'єктів.</p>
+
+    <h2 id="basics">Основи</h2>
+    <div class="code-block"><div class="code-head"><span class="code-lang">JavaScript</span><button class="btn-copy" aria-label="Копіювати"></button></div>
+<pre><code class="language-javascript">const user = { name: 'Alice', age: 30, city: 'Kyiv' };
+
+Object.keys(user);    // ['name', 'age', 'city']
+Object.values(user);  // ['Alice', 30, 'Kyiv']
+Object.entries(user); // [['name','Alice'],['age',30],['city','Kyiv']]
+
+// Ітерація через entries
+for (const [key, val] of Object.entries(user)) {
+  console.log(\`\${key}: \${val}\`);
+}</code></pre></div>
+
+    <h2 id="transform">Трансформація об'єктів</h2>
+    <div class="code-block"><div class="code-head"><span class="code-lang">JavaScript</span><button class="btn-copy" aria-label="Копіювати"></button></div>
+<pre><code class="language-javascript">const prices = { apple: 1.5, banana: 0.8, cherry: 3.2 };
+
+// Подвоїти всі ціни
+const doubled = Object.fromEntries(
+  Object.entries(prices).map(([item, price]) => [item, price * 2])
+);
+// { apple: 3, banana: 1.6, cherry: 6.4 }
+
+// Відфільтрувати дорогі товари
+const expensive = Object.fromEntries(
+  Object.entries(prices).filter(([, price]) => price > 1)
+);
+// { apple: 1.5, cherry: 3.2 }
+
+// Object → Map → трансформація → Object
+const map = new Map(Object.entries(prices));
+map.set('date', 5.0);
+const back = Object.fromEntries(map);</code></pre></div>
+
+    <h2 id="fromEntries">Object.fromEntries</h2>
+    <div class="code-block"><div class="code-head"><span class="code-lang">JavaScript</span><button class="btn-copy" aria-label="Копіювати"></button></div>
+<pre><code class="language-javascript">// З масиву пар
+const entries = [['x', 1], ['y', 2]];
+const obj = Object.fromEntries(entries); // { x: 1, y: 2 }
+
+// З Map
+const map = new Map([['a', 10], ['b', 20]]);
+Object.fromEntries(map); // { a: 10, b: 20 }
+
+// З URLSearchParams
+const params = new URLSearchParams('color=red&size=lg');
+Object.fromEntries(params); // { color: 'red', size: 'lg' }</code></pre></div>
+
+    <h2 id="caveats">Важливі нюанси</h2>
+    <div class="callout callout-warn"><p>Усі три методи повертають лише <strong>власні перелічувані</strong> властивості. Унаслідувані властивості з прототипу та неперелічувані (descriptor <code>enumerable: false</code>) ігноруються.</p></div>
+    <div class="code-block"><div class="code-head"><span class="code-lang">JavaScript</span><button class="btn-copy" aria-label="Копіювати"></button></div>
+<pre><code class="language-javascript">const obj = Object.create({ inherited: 'yes' });
+obj.own = 'mine';
+
+Object.keys(obj);   // ['own'] — inherited не входить
+
+// Порядок ключів:
+// 1. Цілочисельні ключі (зростаючий порядок)
+// 2. Рядкові (порядок додавання)
+// 3. Символьні (порядок додавання)
+const mixed = { b: 2, 2: 'two', a: 1, 1: 'one' };
+Object.keys(mixed); // ['1', '2', 'b', 'a']
+
+// Symbol-ключі не включаються в keys/values/entries
+const sym = Symbol('id');
+const withSym = { [sym]: 42, name: 'Bob' };
+Object.keys(withSym);          // ['name']
+Object.getOwnPropertySymbols(withSym); // [Symbol(id)]</code></pre></div>
+
+    <h2 id="summary">Підсумок</h2>
+    <ul>
+      <li><code>Object.keys/values/entries</code> — лише власні + перелічувані, символи виключені</li>
+      <li><code>Object.fromEntries</code> — конвертація iterable пар назад в об'єкт</li>
+      <li>Pipeline: <code>entries → map/filter → fromEntries</code> — стандарт трансформації об'єктів</li>
+      <li>Порядок ключів: числові → рядкові → символьні</li>
+    </ul>

@@ -1,0 +1,184 @@
+{
+  "id": "objects/optional-chaining",
+  "locale": "uk",
+  "locales": {
+    "uk": true,
+    "en": false
+  },
+  "availableLocales": [
+    "uk"
+  ],
+  "title": "Опціональний ланцюжок ?.",
+  "description": "Оператор опціонального ланцюжка ?. в JavaScript: синтаксис, ?., ?.[key], ?.(args), комбінація з ??, edge cases.",
+  "track": "objects",
+  "trackTitle": "Об'єкти: основи",
+  "slug": "optional-chaining",
+  "sourcePath": "uk/objects/optional-chaining.html",
+  "sourceIdentity": {
+    "track": "objects",
+    "slug": "optional-chaining"
+  },
+  "canonicalRoute": "/uk/docs/objects/optional-chaining",
+  "canonicalLegacyPath": "/objects/optional-chaining.html",
+  "legacyHtmlPath": "/uk/objects/optional-chaining.html",
+  "legacyAliases": [
+    "/uk/objects/optional-chaining.html",
+    "/uk/objects/optional-chaining",
+    "/objects/optional-chaining.html"
+  ],
+  "sectionOrder": 4,
+  "lessonOrder": 6,
+  "overallOrder": 34,
+  "articleNumber": "4.6",
+  "estimatedMinutes": 9,
+  "headings": [
+    {
+      "level": 2,
+      "id": "problema",
+      "text": "Проблема без ?."
+    },
+    {
+      "level": 2,
+      "id": "syntaksys",
+      "text": "Синтаксис"
+    },
+    {
+      "level": 2,
+      "id": "kombinatsiya",
+      "text": "Комбінація з ??"
+    },
+    {
+      "level": 2,
+      "id": "obmezhennya",
+      "text": "Обмеження і антипатерни"
+    },
+    {
+      "level": 2,
+      "id": "summary",
+      "text": "Підсумок"
+    }
+  ],
+  "badges": [
+    "Початковий",
+    "Об'єкти: основи",
+    "~ 9 хв"
+  ],
+  "donationLinks": [
+    "https://send.monobank.ua/jar/YOUR_JAR_ID",
+    "https://www.buymeacoffee.com/YOUR_HANDLE"
+  ],
+  "breadcrumbTrail": [
+    "Головна",
+    "Об'єкти: основи",
+    "Опціональний ланцюжок ?."
+  ],
+  "relatedSourceTrack": "objects",
+  "contentFiles": {
+    "uk": "content/tracks/objects/optional-chaining/index.uk.html",
+    "en": "content/tracks/objects/optional-chaining/index.en.mdx"
+  },
+  "metadataFile": "content/tracks/objects/optional-chaining/meta.json",
+  "translationStatus": {
+    "sourceLocale": "uk",
+    "availableLocales": [
+      "uk"
+    ],
+    "fallbackLocales": {
+      "en": "uk"
+    },
+    "locales": {
+      "uk": {
+        "status": "published",
+        "filePath": "content/tracks/objects/optional-chaining/index.uk.html",
+        "format": "html",
+        "title": "Опціональний ланцюжок ?.",
+        "description": "Оператор опціонального ланцюжка ?. в JavaScript: синтаксис, ?., ?.[key], ?.(args), комбінація з ??, edge cases.",
+        "completeness": 100,
+        "isFallback": false,
+        "headings": [
+          {
+            "level": 2,
+            "id": "problema",
+            "text": "Проблема без ?."
+          },
+          {
+            "level": 2,
+            "id": "syntaksys",
+            "text": "Синтаксис"
+          },
+          {
+            "level": 2,
+            "id": "kombinatsiya",
+            "text": "Комбінація з ??"
+          },
+          {
+            "level": 2,
+            "id": "obmezhennya",
+            "text": "Обмеження і антипатерни"
+          },
+          {
+            "level": 2,
+            "id": "summary",
+            "text": "Підсумок"
+          }
+        ]
+      },
+      "en": {
+        "status": "draft",
+        "filePath": "content/tracks/objects/optional-chaining/index.en.mdx",
+        "format": "mdx",
+        "title": "TODO: Translate title",
+        "description": "TODO: Translate description",
+        "completeness": 0,
+        "isFallback": true,
+        "headings": [
+          {
+            "level": 2,
+            "id": "source-lesson",
+            "text": "Source lesson"
+          }
+        ],
+        "slug": "optional-chaining",
+        "track": "objects",
+        "locale": "en",
+        "sourceLocale": "uk",
+        "hasBody": true
+      }
+    }
+  },
+  "translationCompleteness": {
+    "uk": 100,
+    "en": 0
+  },
+  "migration": {
+    "migratedFromLegacy": true,
+    "canonicalIdentitySource": "canonical",
+    "override": null,
+    "articleMeta": {
+      "type": "string",
+      "raw": {
+        "secId": "objects",
+        "artId": "optional-chaining"
+      },
+      "resolved": {
+        "track": "objects",
+        "slug": "optional-chaining"
+      }
+    },
+    "mismatches": {
+      "filePathVsCanonical": false,
+      "filePathVsStringMeta": false,
+      "filePathVsNumericMeta": false
+    },
+    "hasLegacyJsonLd": true,
+    "hasLegacyToc": true,
+    "hasLegacyPrevNext": true,
+    "legacyArticleSupport": true
+  },
+  "bodySourcePath": "content/tracks/objects/optional-chaining/index.uk.html",
+  "sourceProvenance": {
+    "sourcePath": "uk/objects/optional-chaining.html",
+    "sourceTrack": "objects",
+    "sourceSlug": "optional-chaining"
+  }
+}

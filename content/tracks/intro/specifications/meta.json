@@ -1,0 +1,214 @@
+{
+  "id": "intro/specifications",
+  "locale": "uk",
+  "locales": {
+    "uk": true,
+    "en": false
+  },
+  "availableLocales": [
+    "uk"
+  ],
+  "title": "Довідники і специфікації",
+  "description": "Де знаходити точні відповіді: специфікація ECMAScript, MDN Web Docs, Can I Use. Як читати специфікацію і чому це важливо для розробника.",
+  "track": "intro",
+  "trackTitle": "Вступ",
+  "slug": "specifications",
+  "sourcePath": "uk/introduction/reference.html",
+  "sourceIdentity": {
+    "track": "introduction",
+    "slug": "reference"
+  },
+  "canonicalRoute": "/uk/docs/intro/specifications",
+  "canonicalLegacyPath": "/intro/specifications.html",
+  "legacyHtmlPath": "/uk/introduction/reference.html",
+  "legacyAliases": [
+    "/uk/introduction/reference.html",
+    "/uk/introduction/reference",
+    "/intro/specifications.html"
+  ],
+  "sectionOrder": 1,
+  "lessonOrder": 2,
+  "overallOrder": 2,
+  "articleNumber": "1.2",
+  "estimatedMinutes": 8,
+  "headings": [
+    {
+      "level": 2,
+      "id": "chomu-vazhlivo",
+      "text": "Чому це важливо"
+    },
+    {
+      "level": 2,
+      "id": "ecmascript-spec",
+      "text": "Специфікація ECMAScript"
+    },
+    {
+      "level": 3,
+      "id": "tc39-proposals",
+      "text": "Пропозиції TC39"
+    },
+    {
+      "level": 2,
+      "id": "mdn",
+      "text": "MDN Web Docs"
+    },
+    {
+      "level": 2,
+      "id": "caniuse",
+      "text": "Can I Use"
+    },
+    {
+      "level": 2,
+      "id": "node-docs",
+      "text": "Документація Node.js"
+    },
+    {
+      "level": 2,
+      "id": "yak-chytaty-spec",
+      "text": "Як читати специфікацію ECMAScript"
+    },
+    {
+      "level": 2,
+      "id": "summary",
+      "text": "Підсумок"
+    }
+  ],
+  "badges": [
+    "Початковий",
+    "Вступ",
+    "~ 8 хв"
+  ],
+  "donationLinks": [
+    "https://send.monobank.ua/jar/YOUR_JAR_ID",
+    "https://www.buymeacoffee.com/YOUR_HANDLE"
+  ],
+  "breadcrumbTrail": [
+    "Головна",
+    "Вступ",
+    "Довідники і специфікації"
+  ],
+  "relatedSourceTrack": "introduction",
+  "contentFiles": {
+    "uk": "content/tracks/intro/specifications/index.uk.html",
+    "en": "content/tracks/intro/specifications/index.en.mdx"
+  },
+  "metadataFile": "content/tracks/intro/specifications/meta.json",
+  "translationStatus": {
+    "sourceLocale": "uk",
+    "availableLocales": [
+      "uk"
+    ],
+    "fallbackLocales": {
+      "en": "uk"
+    },
+    "locales": {
+      "uk": {
+        "status": "published",
+        "filePath": "content/tracks/intro/specifications/index.uk.html",
+        "format": "html",
+        "title": "Довідники і специфікації",
+        "description": "Де знаходити точні відповіді: специфікація ECMAScript, MDN Web Docs, Can I Use. Як читати специфікацію і чому це важливо для розробника.",
+        "completeness": 100,
+        "isFallback": false,
+        "headings": [
+          {
+            "level": 2,
+            "id": "chomu-vazhlivo",
+            "text": "Чому це важливо"
+          },
+          {
+            "level": 2,
+            "id": "ecmascript-spec",
+            "text": "Специфікація ECMAScript"
+          },
+          {
+            "level": 3,
+            "id": "tc39-proposals",
+            "text": "Пропозиції TC39"
+          },
+          {
+            "level": 2,
+            "id": "mdn",
+            "text": "MDN Web Docs"
+          },
+          {
+            "level": 2,
+            "id": "caniuse",
+            "text": "Can I Use"
+          },
+          {
+            "level": 2,
+            "id": "node-docs",
+            "text": "Документація Node.js"
+          },
+          {
+            "level": 2,
+            "id": "yak-chytaty-spec",
+            "text": "Як читати специфікацію ECMAScript"
+          },
+          {
+            "level": 2,
+            "id": "summary",
+            "text": "Підсумок"
+          }
+        ]
+      },
+      "en": {
+        "status": "draft",
+        "filePath": "content/tracks/intro/specifications/index.en.mdx",
+        "format": "mdx",
+        "title": "TODO: Translate title",
+        "description": "TODO: Translate description",
+        "completeness": 0,
+        "isFallback": true,
+        "headings": [
+          {
+            "level": 2,
+            "id": "source-lesson",
+            "text": "Source lesson"
+          }
+        ],
+        "slug": "specifications",
+        "track": "intro",
+        "locale": "en",
+        "sourceLocale": "uk",
+        "hasBody": true
+      }
+    }
+  },
+  "translationCompleteness": {
+    "uk": 100,
+    "en": 0
+  },
+  "migration": {
+    "migratedFromLegacy": true,
+    "canonicalIdentitySource": "canonical",
+    "override": null,
+    "articleMeta": {
+      "type": "string",
+      "raw": {
+        "secId": "intro",
+        "artId": "specifications"
+      },
+      "resolved": {
+        "track": "intro",
+        "slug": "specifications"
+      }
+    },
+    "mismatches": {
+      "filePathVsCanonical": true,
+      "filePathVsStringMeta": true,
+      "filePathVsNumericMeta": false
+    },
+    "hasLegacyJsonLd": true,
+    "hasLegacyToc": true,
+    "hasLegacyPrevNext": true,
+    "legacyArticleSupport": true
+  },
+  "bodySourcePath": "content/tracks/intro/specifications/index.uk.html",
+  "sourceProvenance": {
+    "sourcePath": "uk/introduction/reference.html",
+    "sourceTrack": "introduction",
+    "sourceSlug": "reference"
+  }
+}

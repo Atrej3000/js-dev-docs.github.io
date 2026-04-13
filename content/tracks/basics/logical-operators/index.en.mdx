@@ -1,0 +1,102 @@
+---
+title: "Logical Operators"
+description: "How `||`, `&&`, and `!` work in JavaScript, including short-circuit behavior and practical usage patterns."
+slug: "logical-operators"
+track: "basics"
+locale: "en"
+sourceLocale: "uk"
+translationStatus: "published"
+translationCompleteness: 100
+---
+
+Logical operators are used in conditions, defaults, validation, and control flow. In JavaScript, they do more than return booleans: they also return actual values and stop evaluating early when possible.
+
+## `||` - logical OR
+
+`a || b` returns the first truthy operand, or the last operand if none are truthy.
+
+```javascript
+console.log(true || false); // true
+console.log(false || "fallback"); // "fallback"
+console.log("" || "default"); // "default"
+```
+
+This is why `||` was often used for defaults:
+
+```javascript
+const name = userInput || "Anonymous";
+```
+
+But be careful: valid falsy values such as `0` or `""` also trigger the fallback.
+
+## `&&` - logical AND
+
+`a && b` returns the first falsy operand, or the last operand if all are truthy.
+
+```javascript
+console.log(true && "next"); // "next"
+console.log(false && "next"); // false
+console.log("ready" && 42); // 42
+```
+
+It is often used for guarded execution:
+
+```javascript
+isLoggedIn && console.log("Show dashboard");
+```
+
+## `!` - logical NOT
+
+`!value` converts a value to boolean and flips it.
+
+```javascript
+console.log(!true); // false
+console.log(!0);    // true
+console.log(!"");   // true
+```
+
+Double negation is a common way to convert a value to a boolean:
+
+```javascript
+console.log(!!"hello"); // true
+console.log(!!0);       // false
+```
+
+## Logical operator precedence
+
+`!` has the highest precedence, then `&&`, then `||`.
+
+```javascript
+const result = true || false && false;
+console.log(result); // true
+```
+
+Because precedence is easy to forget, parentheses are often the clearest option.
+
+## Practical patterns
+
+```javascript
+const username = input || "Guest";
+
+const canEdit = isAdmin && isOwner;
+
+if (!isValid) {
+  console.log("Validation failed");
+}
+```
+
+Logical operators are powerful, but readable code matters more than clever one-liners.
+
+## Edge cases
+
+- `||` treats `0`, `""`, and `false` as missing, even when they may be valid values.
+- `&&` and `||` return values, not only booleans.
+- Short-circuit behavior means the right side may never run.
+
+## Summary
+
+- `||` returns the first truthy value.
+- `&&` returns the first falsy value.
+- `!` negates a boolean conversion.
+- JavaScript logical operators short-circuit.
+- Prefer clarity when combining several logical expressions.

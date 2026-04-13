@@ -1,0 +1,184 @@
+{
+  "id": "functions-advanced/settimeout-setinterval",
+  "locale": "uk",
+  "locales": {
+    "uk": true,
+    "en": false
+  },
+  "availableLocales": [
+    "uk"
+  ],
+  "title": "Планування: setTimeout та setInterval",
+  "description": "",
+  "track": "functions-advanced",
+  "trackTitle": "Розширена робота з функціями",
+  "slug": "settimeout-setinterval",
+  "sourcePath": "uk/functions-advanced/settimeout-setinterval.html",
+  "sourceIdentity": {
+    "track": "functions-advanced",
+    "slug": "settimeout-setinterval"
+  },
+  "canonicalRoute": "/uk/docs/functions-advanced/settimeout-setinterval",
+  "canonicalLegacyPath": "/functions-advanced/settimeout-setinterval.html",
+  "legacyHtmlPath": "/uk/functions-advanced/settimeout-setinterval.html",
+  "legacyAliases": [
+    "/uk/functions-advanced/settimeout-setinterval.html",
+    "/uk/functions-advanced/settimeout-setinterval",
+    "/functions-advanced/settimeout-setinterval.html"
+  ],
+  "sectionOrder": 6,
+  "lessonOrder": 8,
+  "overallOrder": 56,
+  "articleNumber": "6.8",
+  "estimatedMinutes": 14,
+  "headings": [
+    {
+      "level": 2,
+      "id": "settimeout",
+      "text": "setTimeout"
+    },
+    {
+      "level": 2,
+      "id": "setinterval",
+      "text": "setInterval"
+    },
+    {
+      "level": 2,
+      "id": "nested-timeout",
+      "text": "Вкладений setTimeout vs setInterval"
+    },
+    {
+      "level": 2,
+      "id": "event-loop",
+      "text": "setTimeout і event loop"
+    },
+    {
+      "level": 2,
+      "id": "summary",
+      "text": "Підсумок"
+    }
+  ],
+  "badges": [
+    "Початковий",
+    "Функції",
+    "~ 14 хв"
+  ],
+  "donationLinks": [
+    "https://send.monobank.ua/jar/YOUR_JAR_ID",
+    "https://www.buymeacoffee.com/YOUR_HANDLE"
+  ],
+  "breadcrumbTrail": [
+    "Головна",
+    "Розширена робота з функціями",
+    "Планування: setTimeout та setInterval"
+  ],
+  "relatedSourceTrack": "functions-advanced",
+  "contentFiles": {
+    "uk": "content/tracks/functions-advanced/settimeout-setinterval/index.uk.html",
+    "en": "content/tracks/functions-advanced/settimeout-setinterval/index.en.mdx"
+  },
+  "metadataFile": "content/tracks/functions-advanced/settimeout-setinterval/meta.json",
+  "translationStatus": {
+    "sourceLocale": "uk",
+    "availableLocales": [
+      "uk"
+    ],
+    "fallbackLocales": {
+      "en": "uk"
+    },
+    "locales": {
+      "uk": {
+        "status": "published",
+        "filePath": "content/tracks/functions-advanced/settimeout-setinterval/index.uk.html",
+        "format": "html",
+        "title": "Планування: setTimeout та setInterval",
+        "description": "",
+        "completeness": 100,
+        "isFallback": false,
+        "headings": [
+          {
+            "level": 2,
+            "id": "settimeout",
+            "text": "setTimeout"
+          },
+          {
+            "level": 2,
+            "id": "setinterval",
+            "text": "setInterval"
+          },
+          {
+            "level": 2,
+            "id": "nested-timeout",
+            "text": "Вкладений setTimeout vs setInterval"
+          },
+          {
+            "level": 2,
+            "id": "event-loop",
+            "text": "setTimeout і event loop"
+          },
+          {
+            "level": 2,
+            "id": "summary",
+            "text": "Підсумок"
+          }
+        ]
+      },
+      "en": {
+        "status": "draft",
+        "filePath": "content/tracks/functions-advanced/settimeout-setinterval/index.en.mdx",
+        "format": "mdx",
+        "title": "TODO: Translate title",
+        "description": "TODO: Translate description",
+        "completeness": 0,
+        "isFallback": true,
+        "headings": [
+          {
+            "level": 2,
+            "id": "source-lesson",
+            "text": "Source lesson"
+          }
+        ],
+        "slug": "settimeout-setinterval",
+        "track": "functions-advanced",
+        "locale": "en",
+        "sourceLocale": "uk",
+        "hasBody": true
+      }
+    }
+  },
+  "translationCompleteness": {
+    "uk": 100,
+    "en": 0
+  },
+  "migration": {
+    "migratedFromLegacy": true,
+    "canonicalIdentitySource": "canonical",
+    "override": null,
+    "articleMeta": {
+      "type": "string",
+      "raw": {
+        "secId": "functions-advanced",
+        "artId": "settimeout-setinterval"
+      },
+      "resolved": {
+        "track": "functions-advanced",
+        "slug": "settimeout-setinterval"
+      }
+    },
+    "mismatches": {
+      "filePathVsCanonical": false,
+      "filePathVsStringMeta": false,
+      "filePathVsNumericMeta": false
+    },
+    "hasLegacyJsonLd": false,
+    "hasLegacyToc": true,
+    "hasLegacyPrevNext": true,
+    "legacyArticleSupport": true
+  },
+  "bodySourcePath": "content/tracks/functions-advanced/settimeout-setinterval/index.uk.html",
+  "sourceProvenance": {
+    "sourcePath": "uk/functions-advanced/settimeout-setinterval.html",
+    "sourceTrack": "functions-advanced",
+    "sourceSlug": "settimeout-setinterval"
+  }
+}

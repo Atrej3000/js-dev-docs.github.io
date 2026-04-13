@@ -1,0 +1,84 @@
+<p>Динамічний <code>import()</code> — функція, що повертає Promise і дозволяє завантажувати модулі в runtime. Це основа code splitting: вантажити код лише тоді, коли він реально потрібен.</p>
+
+    <h2 id="syntax">Синтаксис</h2>
+    <div class="code-block"><div class="code-head"><span class="code-lang">JavaScript</span><button class="btn-copy" aria-label="Копіювати"></button></div>
+<pre><code class="language-javascript">// Статичний import — завжди на верхньому рівні
+import { add } from './math.js';
+
+// Динамічний import() — де завгодно, повертає Promise
+const module = await import('./math.js');
+module.add(1, 2); // 3
+module.default;   // default export
+
+// Деструктуризація
+const { add, PI } = await import('./math.js');
+
+// Без await — через .then
+import('./heavy-module.js')
+  .then(module => module.init())
+  .catch(err => console.error('Не вдалось завантажити:', err));</code></pre></div>
+
+    <h2 id="conditional">Умовне завантаження</h2>
+    <div class="code-block"><div class="code-head"><span class="code-lang">JavaScript</span><button class="btn-copy" aria-label="Копіювати"></button></div>
+<pre><code class="language-javascript">// Завантажувати лише у певних умовах
+async function loadPolyfill() {
+  if (!window.IntersectionObserver) {
+    await import('./polyfills/intersection-observer.js');
+  }
+}
+
+// Завантаження по події
+button.addEventListener('click', async () => {
+  const { openModal } = await import('./modal.js');
+  openModal();
+});
+
+// Завантаження на основі даних (перемикач локалі)
+async function loadLocale(lang) {
+  const { messages } = await import(`./locales/${lang}.js`);
+  return messages;
+}
+const ua = await loadLocale('uk'); // ./locales/uk.js</code></pre></div>
+    <div class="callout callout-info"><p>Шаблонні рядки в <code>import()</code> підтримуються, але bundler'и (Vite, Webpack) вимагають хоча б статичного префікса (<code>./locales/</code>) для правильного аналізу залежностей під час збірки.</p></div>
+
+    <h2 id="code-splitting">Code splitting у React/Vite</h2>
+    <div class="code-block"><div class="code-head"><span class="code-lang">JavaScript</span><button class="btn-copy" aria-label="Копіювати"></button></div>
+<pre><code class="language-javascript">// React.lazy + Suspense — автоматичний code split
+import React, { lazy, Suspense } from 'react';
+
+const HeavyChart  = lazy(() => import('./HeavyChart'));
+const AdminPanel  = lazy(() => import('./AdminPanel'));
+
+function App() {
+  return (
+    <Suspense fallback={<div>Завантаження...</div>}>
+      <HeavyChart />
+    </Suspense>
+  );
+}
+
+// Next.js
+import dynamic from 'next/dynamic';
+const HeavyComponent = dynamic(() => import('./Heavy'), {
+  loading: () => <p>Завантаження...</p>,
+  ssr: false, // вимкнути SSR для цього компонента
+});</code></pre></div>
+
+    <h2 id="vs-static">Динамічний vs статичний import</h2>
+    <table>
+      <thead><tr><th></th><th>Статичний</th><th>Динамічний</th></tr></thead>
+      <tbody>
+        <tr><td>Місце у коді</td><td>Тільки верхній рівень</td><td>Будь-де</td></tr>
+        <tr><td>Час виконання</td><td>До запуску модуля</td><td>Runtime</td></tr>
+        <tr><td>Tree shaking</td><td>✅ повний</td><td>⚠️ частковий</td></tr>
+        <tr><td>Повернення</td><td>—</td><td>Promise</td></tr>
+        <tr><td>Шлях</td><td>Тільки рядок-літерал</td><td>Будь-який вираз</td></tr>
+      </tbody>
+    </table>
+    <h2 id="summary">Підсумок</h2>
+    <ul>
+      <li><code>import(path)</code> → Promise з об'єктом модуля</li>
+      <li>Основне застосування: code splitting, умовне завантаження, lazy routes</li>
+      <li>У React: <code>React.lazy()</code> + <code>Suspense</code></li>
+      <li>Шаблонний шлях підтримується, але потребує статичного префікса для bundler</li>
+    </ul>

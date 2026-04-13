@@ -1,0 +1,178 @@
+{
+  "id": "misc/reference-type",
+  "locale": "uk",
+  "locales": {
+    "uk": true,
+    "en": false
+  },
+  "availableLocales": [
+    "uk"
+  ],
+  "title": "Reference Type",
+  "description": "Reference Type у JavaScript — детальний розбір з прикладами, підводними каменями та best practices.",
+  "track": "misc",
+  "trackTitle": "Різне",
+  "slug": "reference-type",
+  "sourcePath": "uk/misc/reference-type.html",
+  "sourceIdentity": {
+    "track": "misc",
+    "slug": "reference-type"
+  },
+  "canonicalRoute": "/uk/docs/misc/reference-type",
+  "canonicalLegacyPath": "/misc/reference-type.html",
+  "legacyHtmlPath": "/uk/misc/reference-type.html",
+  "legacyAliases": [
+    "/uk/misc/reference-type.html",
+    "/uk/misc/reference-type",
+    "/misc/reference-type.html"
+  ],
+  "sectionOrder": 14,
+  "lessonOrder": 4,
+  "overallOrder": 91,
+  "articleNumber": "14.4",
+  "estimatedMinutes": 8,
+  "headings": [
+    {
+      "level": 2,
+      "id": "the-problem",
+      "text": "Проблема втрати this"
+    },
+    {
+      "level": 2,
+      "id": "ref-type",
+      "text": "Що таке Reference Type"
+    },
+    {
+      "level": 2,
+      "id": "cases",
+      "text": "Кейси поведінки this"
+    },
+    {
+      "level": 2,
+      "id": "summary",
+      "text": "Підсумок"
+    }
+  ],
+  "badges": [
+    "Просунутий",
+    "Різне",
+    "~ 8 хв"
+  ],
+  "donationLinks": [],
+  "breadcrumbTrail": [
+    "Головна",
+    "Різне",
+    "Reference Type"
+  ],
+  "relatedSourceTrack": "misc",
+  "contentFiles": {
+    "uk": "content/tracks/misc/reference-type/index.uk.html",
+    "en": "content/tracks/misc/reference-type/index.en.mdx"
+  },
+  "metadataFile": "content/tracks/misc/reference-type/meta.json",
+  "translationStatus": {
+    "sourceLocale": "uk",
+    "availableLocales": [
+      "uk"
+    ],
+    "fallbackLocales": {
+      "en": "uk"
+    },
+    "locales": {
+      "uk": {
+        "status": "published",
+        "filePath": "content/tracks/misc/reference-type/index.uk.html",
+        "format": "html",
+        "title": "Reference Type",
+        "description": "Reference Type у JavaScript — детальний розбір з прикладами, підводними каменями та best practices.",
+        "completeness": 100,
+        "isFallback": false,
+        "headings": [
+          {
+            "level": 2,
+            "id": "the-problem",
+            "text": "Проблема втрати this"
+          },
+          {
+            "level": 2,
+            "id": "ref-type",
+            "text": "Що таке Reference Type"
+          },
+          {
+            "level": 2,
+            "id": "cases",
+            "text": "Кейси поведінки this"
+          },
+          {
+            "level": 2,
+            "id": "summary",
+            "text": "Підсумок"
+          }
+        ]
+      },
+      "en": {
+        "status": "draft",
+        "filePath": "content/tracks/misc/reference-type/index.en.mdx",
+        "format": "mdx",
+        "title": "TODO: Translate title",
+        "description": "TODO: Translate description",
+        "completeness": 0,
+        "isFallback": true,
+        "headings": [
+          {
+            "level": 2,
+            "id": "source-lesson",
+            "text": "Source lesson"
+          }
+        ],
+        "slug": "reference-type",
+        "track": "misc",
+        "locale": "en",
+        "sourceLocale": "uk",
+        "hasBody": true
+      }
+    }
+  },
+  "translationCompleteness": {
+    "uk": 100,
+    "en": 0
+  },
+  "migration": {
+    "migratedFromLegacy": true,
+    "canonicalIdentitySource": "override",
+    "override": {
+      "sourcePath": "uk/misc/reference-type.html",
+      "forceIdentity": {
+        "track": "misc",
+        "slug": "reference-type"
+      },
+      "reason": "Numeric ARTICLE_META points to misc/currying instead of the reference-type lesson."
+    },
+    "articleMeta": {
+      "type": "numeric",
+      "raw": {
+        "secId": "14",
+        "artId": "3"
+      },
+      "resolved": {
+        "track": "misc",
+        "slug": "currying"
+      }
+    },
+    "mismatches": {
+      "filePathVsCanonical": false,
+      "filePathVsStringMeta": false,
+      "filePathVsNumericMeta": true
+    },
+    "hasLegacyJsonLd": false,
+    "hasLegacyToc": false,
+    "hasLegacyPrevNext": false,
+    "legacyArticleSupport": true
+  },
+  "bodySourcePath": "content/tracks/misc/reference-type/index.uk.html",
+  "sourceProvenance": {
+    "sourcePath": "uk/misc/reference-type.html",
+    "sourceTrack": "misc",
+    "sourceSlug": "reference-type"
+  }
+}

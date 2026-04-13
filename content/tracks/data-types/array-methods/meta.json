@@ -1,0 +1,214 @@
+{
+  "id": "data-types/array-methods",
+  "locale": "uk",
+  "locales": {
+    "uk": true,
+    "en": false
+  },
+  "availableLocales": [
+    "uk"
+  ],
+  "title": "Методи масивів",
+  "description": "Методи масивів JavaScript: map, filter, reduce, find, findIndex, some, every, sort, flat, forEach.",
+  "track": "data-types",
+  "trackTitle": "Типи даних",
+  "slug": "array-methods",
+  "sourcePath": "uk/data-types/array-methods.html",
+  "sourceIdentity": {
+    "track": "data-types",
+    "slug": "array-methods"
+  },
+  "canonicalRoute": "/uk/docs/data-types/array-methods",
+  "canonicalLegacyPath": "/data-types/array-methods.html",
+  "legacyHtmlPath": "/uk/data-types/array-methods.html",
+  "legacyAliases": [
+    "/uk/data-types/array-methods.html",
+    "/uk/data-types/array-methods",
+    "/data-types/array-methods.html"
+  ],
+  "sectionOrder": 5,
+  "lessonOrder": 5,
+  "overallOrder": 41,
+  "articleNumber": "5.5",
+  "estimatedMinutes": 17,
+  "headings": [
+    {
+      "level": 2,
+      "id": "transformatsiya",
+      "text": "Трансформація: map"
+    },
+    {
+      "level": 2,
+      "id": "filtratsia",
+      "text": "Фільтрація: filter"
+    },
+    {
+      "level": 2,
+      "id": "reduktsiya",
+      "text": "Редукція: reduce"
+    },
+    {
+      "level": 2,
+      "id": "poshuk",
+      "text": "Пошук: find, findIndex, some, every"
+    },
+    {
+      "level": 2,
+      "id": "sortuvannya",
+      "text": "Сортування: sort"
+    },
+    {
+      "level": 2,
+      "id": "flat-flatmap",
+      "text": "flat і flatMap"
+    },
+    {
+      "level": 2,
+      "id": "lantsiuhy",
+      "text": "Ланцюги методів"
+    },
+    {
+      "level": 2,
+      "id": "summary",
+      "text": "Підсумок"
+    }
+  ],
+  "badges": [
+    "Початковий",
+    "Типи даних",
+    "~ 17 хв"
+  ],
+  "donationLinks": [
+    "https://send.monobank.ua/jar/YOUR_JAR_ID",
+    "https://www.buymeacoffee.com/YOUR_HANDLE"
+  ],
+  "breadcrumbTrail": [
+    "Головна",
+    "Типи даних",
+    "Методи масивів"
+  ],
+  "relatedSourceTrack": "data-types",
+  "contentFiles": {
+    "uk": "content/tracks/data-types/array-methods/index.uk.html",
+    "en": "content/tracks/data-types/array-methods/index.en.mdx"
+  },
+  "metadataFile": "content/tracks/data-types/array-methods/meta.json",
+  "translationStatus": {
+    "sourceLocale": "uk",
+    "availableLocales": [
+      "uk"
+    ],
+    "fallbackLocales": {
+      "en": "uk"
+    },
+    "locales": {
+      "uk": {
+        "status": "published",
+        "filePath": "content/tracks/data-types/array-methods/index.uk.html",
+        "format": "html",
+        "title": "Методи масивів",
+        "description": "Методи масивів JavaScript: map, filter, reduce, find, findIndex, some, every, sort, flat, forEach.",
+        "completeness": 100,
+        "isFallback": false,
+        "headings": [
+          {
+            "level": 2,
+            "id": "transformatsiya",
+            "text": "Трансформація: map"
+          },
+          {
+            "level": 2,
+            "id": "filtratsia",
+            "text": "Фільтрація: filter"
+          },
+          {
+            "level": 2,
+            "id": "reduktsiya",
+            "text": "Редукція: reduce"
+          },
+          {
+            "level": 2,
+            "id": "poshuk",
+            "text": "Пошук: find, findIndex, some, every"
+          },
+          {
+            "level": 2,
+            "id": "sortuvannya",
+            "text": "Сортування: sort"
+          },
+          {
+            "level": 2,
+            "id": "flat-flatmap",
+            "text": "flat і flatMap"
+          },
+          {
+            "level": 2,
+            "id": "lantsiuhy",
+            "text": "Ланцюги методів"
+          },
+          {
+            "level": 2,
+            "id": "summary",
+            "text": "Підсумок"
+          }
+        ]
+      },
+      "en": {
+        "status": "draft",
+        "filePath": "content/tracks/data-types/array-methods/index.en.mdx",
+        "format": "mdx",
+        "title": "TODO: Translate title",
+        "description": "TODO: Translate description",
+        "completeness": 0,
+        "isFallback": true,
+        "headings": [
+          {
+            "level": 2,
+            "id": "source-lesson",
+            "text": "Source lesson"
+          }
+        ],
+        "slug": "array-methods",
+        "track": "data-types",
+        "locale": "en",
+        "sourceLocale": "uk",
+        "hasBody": true
+      }
+    }
+  },
+  "translationCompleteness": {
+    "uk": 100,
+    "en": 0
+  },
+  "migration": {
+    "migratedFromLegacy": true,
+    "canonicalIdentitySource": "canonical",
+    "override": null,
+    "articleMeta": {
+      "type": "string",
+      "raw": {
+        "secId": "data-types",
+        "artId": "array-methods"
+      },
+      "resolved": {
+        "track": "data-types",
+        "slug": "array-methods"
+      }
+    },
+    "mismatches": {
+      "filePathVsCanonical": false,
+      "filePathVsStringMeta": false,
+      "filePathVsNumericMeta": false
+    },
+    "hasLegacyJsonLd": false,
+    "hasLegacyToc": true,
+    "hasLegacyPrevNext": true,
+    "legacyArticleSupport": true
+  },
+  "bodySourcePath": "content/tracks/data-types/array-methods/index.uk.html",
+  "sourceProvenance": {
+    "sourcePath": "uk/data-types/array-methods.html",
+    "sourceTrack": "data-types",
+    "sourceSlug": "array-methods"
+  }
+}

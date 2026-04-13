@@ -1,0 +1,174 @@
+{
+  "id": "misc/unicode-strings",
+  "locale": "uk",
+  "locales": {
+    "uk": true,
+    "en": false
+  },
+  "availableLocales": [
+    "uk"
+  ],
+  "title": "Юнікод: внутрішня будова рядків",
+  "description": "",
+  "track": "misc",
+  "trackTitle": "Різне",
+  "slug": "unicode-strings",
+  "sourcePath": "uk/misc/unicode.html",
+  "sourceIdentity": {
+    "track": "misc",
+    "slug": "unicode"
+  },
+  "canonicalRoute": "/uk/docs/misc/unicode-strings",
+  "canonicalLegacyPath": "/misc/unicode-strings.html",
+  "legacyHtmlPath": "/uk/misc/unicode.html",
+  "legacyAliases": [
+    "/uk/misc/unicode.html",
+    "/uk/misc/unicode",
+    "/misc/unicode-strings.html"
+  ],
+  "sectionOrder": 14,
+  "lessonOrder": 6,
+  "overallOrder": 93,
+  "articleNumber": "14.6",
+  "estimatedMinutes": 11,
+  "headings": [
+    {
+      "level": 2,
+      "id": "utf16",
+      "text": "UTF-16 і surrogate pairs"
+    },
+    {
+      "level": 2,
+      "id": "iteration",
+      "text": "Ітерація по символах"
+    },
+    {
+      "level": 2,
+      "id": "normalize",
+      "text": "Unicode нормалізація"
+    },
+    {
+      "level": 2,
+      "id": "summary",
+      "text": "Підсумок"
+    }
+  ],
+  "badges": [
+    "Середній",
+    "Різне",
+    "~ 11 хв"
+  ],
+  "donationLinks": [
+    "https://send.monobank.ua/jar/YOUR_JAR_ID",
+    "https://www.buymeacoffee.com/YOUR_HANDLE"
+  ],
+  "breadcrumbTrail": [
+    "Головна",
+    "Різне",
+    "Юнікод: внутрішня будова рядків"
+  ],
+  "relatedSourceTrack": "misc",
+  "contentFiles": {
+    "uk": "content/tracks/misc/unicode-strings/index.uk.html",
+    "en": "content/tracks/misc/unicode-strings/index.en.mdx"
+  },
+  "metadataFile": "content/tracks/misc/unicode-strings/meta.json",
+  "translationStatus": {
+    "sourceLocale": "uk",
+    "availableLocales": [
+      "uk"
+    ],
+    "fallbackLocales": {
+      "en": "uk"
+    },
+    "locales": {
+      "uk": {
+        "status": "published",
+        "filePath": "content/tracks/misc/unicode-strings/index.uk.html",
+        "format": "html",
+        "title": "Юнікод: внутрішня будова рядків",
+        "description": "",
+        "completeness": 100,
+        "isFallback": false,
+        "headings": [
+          {
+            "level": 2,
+            "id": "utf16",
+            "text": "UTF-16 і surrogate pairs"
+          },
+          {
+            "level": 2,
+            "id": "iteration",
+            "text": "Ітерація по символах"
+          },
+          {
+            "level": 2,
+            "id": "normalize",
+            "text": "Unicode нормалізація"
+          },
+          {
+            "level": 2,
+            "id": "summary",
+            "text": "Підсумок"
+          }
+        ]
+      },
+      "en": {
+        "status": "draft",
+        "filePath": "content/tracks/misc/unicode-strings/index.en.mdx",
+        "format": "mdx",
+        "title": "TODO: Translate title",
+        "description": "TODO: Translate description",
+        "completeness": 0,
+        "isFallback": true,
+        "headings": [
+          {
+            "level": 2,
+            "id": "source-lesson",
+            "text": "Source lesson"
+          }
+        ],
+        "slug": "unicode-strings",
+        "track": "misc",
+        "locale": "en",
+        "sourceLocale": "uk",
+        "hasBody": true
+      }
+    }
+  },
+  "translationCompleteness": {
+    "uk": 100,
+    "en": 0
+  },
+  "migration": {
+    "migratedFromLegacy": true,
+    "canonicalIdentitySource": "canonical",
+    "override": null,
+    "articleMeta": {
+      "type": "string",
+      "raw": {
+        "secId": "misc",
+        "artId": "unicode-strings"
+      },
+      "resolved": {
+        "track": "misc",
+        "slug": "unicode-strings"
+      }
+    },
+    "mismatches": {
+      "filePathVsCanonical": true,
+      "filePathVsStringMeta": true,
+      "filePathVsNumericMeta": false
+    },
+    "hasLegacyJsonLd": false,
+    "hasLegacyToc": true,
+    "hasLegacyPrevNext": true,
+    "legacyArticleSupport": true
+  },
+  "bodySourcePath": "content/tracks/misc/unicode-strings/index.uk.html",
+  "sourceProvenance": {
+    "sourcePath": "uk/misc/unicode.html",
+    "sourceTrack": "misc",
+    "sourceSlug": "unicode"
+  }
+}

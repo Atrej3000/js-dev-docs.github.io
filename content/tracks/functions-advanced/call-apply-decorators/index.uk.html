@@ -1,0 +1,96 @@
+<p>Декоратор функції — обгортка що розширює поведінку вихідної функції без зміни її коду. <code>call</code> і <code>apply</code> дозволяють викликати функцію з явним <code>this</code> — ключові інструменти для переадресації і запозичення методів.</p>
+
+    <h2 id="call-apply">call і apply</h2>
+    <div class="code-block"><div class="code-head"><span class="code-lang">JavaScript</span><button class="btn-copy" aria-label="Копіювати"></button></div>
+<pre><code class="language-javascript">function greet(greeting, punctuation) {
+  return `${greeting}, ${this.name}${punctuation}`;
+}
+
+const user = { name: 'Олена' };
+
+// call: явний this + аргументи через кому
+greet.call(user, 'Привіт', '!');    // "Привіт, Олена!"
+
+// apply: явний this + аргументи масивом
+greet.apply(user, ['Доброго дня', '.']); // "Доброго дня, Олена."
+
+// Практичне: spread заміняє apply для Math.max
+const nums = [3, 1, 4, 1, 5, 9];
+Math.max.apply(null, nums); // 9 — старий стиль
+Math.max(...nums);          // 9 — сучасний (рекомендований)
+
+// Запозичення методу: Array-like → масив
+function example() {
+  const args = Array.prototype.slice.call(arguments);
+  // або: const args = [...arguments];
+  return args.map(x => x * 2);
+}
+console.log(example(1, 2, 3)); // [2, 4, 6]</code></pre></div>
+
+    <h2 id="dekoratory">Декоратори функцій</h2>
+    <div class="code-block"><div class="code-head"><span class="code-lang">JavaScript</span><button class="btn-copy" aria-label="Копіювати"></button></div>
+<pre><code class="language-javascript">// Декоратор spy: записує всі виклики
+function spy(fn) {
+  function wrapper(...args) {
+    wrapper.calls.push(args);
+    return fn.apply(this, args); // зберігаємо this і аргументи
+  }
+  wrapper.calls = [];
+  return wrapper;
+}
+
+function work(x) { return x * 2; }
+const spiedWork = spy(work);
+
+spiedWork(1);
+spiedWork(2);
+spiedWork(3);
+console.log(spiedWork.calls); // [[1], [2], [3]]
+
+// Декоратор delay: відкладає виконання
+function delay(fn, ms) {
+  return function(...args) {
+    setTimeout(() => fn.apply(this, args), ms);
+  };
+}
+const delayedLog = delay(console.log, 1000);
+delayedLog('через секунду'); // виведе через 1000ms
+
+// Декоратор debounce: виконує лише після паузи
+function debounce(fn, ms) {
+  let timer;
+  return function(...args) {
+    clearTimeout(timer);
+    timer = setTimeout(() => fn.apply(this, args), ms);
+  };
+}
+const debouncedSearch = debounce(search, 300);
+// search викличеться лише якщо пауза між викликами > 300ms</code></pre></div>
+
+    <h2 id="throttle">Throttle декоратор</h2>
+    <div class="code-block"><div class="code-head"><span class="code-lang">JavaScript</span><button class="btn-copy" aria-label="Копіювати"></button></div>
+<pre><code class="language-javascript">// throttle: не частіше ніж раз на ms мілісекунд
+function throttle(fn, ms) {
+  let lastCall = 0;
+  return function(...args) {
+    const now = Date.now();
+    if (now - lastCall >= ms) {
+      lastCall = now;
+      return fn.apply(this, args);
+    }
+  };
+}
+
+// scroll handler: максимум раз на 200ms
+window.addEventListener('scroll', throttle(() => {
+  console.log('scroll position:', window.scrollY);
+}, 200));</code></pre></div>
+
+    <h2 id="summary">Підсумок</h2>
+    <ul>
+      <li><code>fn.call(ctx, ...args)</code> — виклик з явним <code>this</code>, аргументи через кому.</li>
+      <li><code>fn.apply(ctx, [args])</code> — аргументи масивом. В сучасному коді замінюється spread.</li>
+      <li>Декоратор — обгортка що розширює функцію. <code>fn.apply(this, args)</code> — для «прозорої» передачі контексту і аргументів.</li>
+      <li>Spy — логує виклики. Delay — відкладає. Debounce — чекає паузу. Throttle — обмежує частоту.</li>
+    </ul>
+    <div class="article-support"><p><strong>Матеріал корисний?</strong> Підтримай проект.</p><div class="support-btns-inline"><a href="https://send.monobank.ua/jar/YOUR_JAR_ID" class="btn-mono" target="_blank" rel="noopener" style="font-size:12px;height:36px;padding:0 14px">🟢 Monobank</a><a href="https://www.buymeacoffee.com/YOUR_HANDLE" class="btn-coffee" target="_blank" rel="noopener" style="font-size:12px;height:36px;padding:0 14px">☕ Coffee</a></div></div>

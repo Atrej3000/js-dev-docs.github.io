@@ -1,0 +1,224 @@
+{
+  "id": "objects/garbage-collection",
+  "locale": "uk",
+  "locales": {
+    "uk": true,
+    "en": false
+  },
+  "availableLocales": [
+    "uk"
+  ],
+  "title": "Збирання сміття",
+  "description": "Збирання сміття в JavaScript: алгоритм mark-and-sweep, reachability, WeakRef, memory leaks. Як рушій управляє пам'яттю.",
+  "track": "objects",
+  "trackTitle": "Об'єкти: основи",
+  "slug": "garbage-collection",
+  "sourcePath": "uk/objects/garbage-collection.html",
+  "sourceIdentity": {
+    "track": "objects",
+    "slug": "garbage-collection"
+  },
+  "canonicalRoute": "/uk/docs/objects/garbage-collection",
+  "canonicalLegacyPath": "/objects/garbage-collection.html",
+  "legacyHtmlPath": "/uk/objects/garbage-collection.html",
+  "legacyAliases": [
+    "/uk/objects/garbage-collection.html",
+    "/uk/objects/garbage-collection",
+    "/objects/garbage-collection.html"
+  ],
+  "sectionOrder": 4,
+  "lessonOrder": 3,
+  "overallOrder": 31,
+  "articleNumber": "4.3",
+  "estimatedMinutes": 11,
+  "headings": [
+    {
+      "level": 2,
+      "id": "dosyazhnist",
+      "text": "Досяжність (Reachability)"
+    },
+    {
+      "level": 2,
+      "id": "mark-sweep",
+      "text": "Алгоритм mark-and-sweep"
+    },
+    {
+      "level": 2,
+      "id": "vitoki",
+      "text": "Типові витоки пам'яті"
+    },
+    {
+      "level": 3,
+      "id": "global-leak",
+      "text": "1. Випадкові глобальні змінні"
+    },
+    {
+      "level": 3,
+      "id": "listeners-leak",
+      "text": "2. Незвільнені event listeners"
+    },
+    {
+      "level": 3,
+      "id": "closure-leak",
+      "text": "3. Замикання що утримують більше ніж потрібно"
+    },
+    {
+      "level": 3,
+      "id": "detached-dom",
+      "text": "4. Від'єднані DOM-вузли"
+    },
+    {
+      "level": 2,
+      "id": "weakref",
+      "text": "WeakRef і FinalizationRegistry"
+    },
+    {
+      "level": 2,
+      "id": "summary",
+      "text": "Підсумок"
+    }
+  ],
+  "badges": [
+    "Початковий",
+    "Об'єкти: основи",
+    "~ 11 хв"
+  ],
+  "donationLinks": [
+    "https://send.monobank.ua/jar/YOUR_JAR_ID",
+    "https://www.buymeacoffee.com/YOUR_HANDLE"
+  ],
+  "breadcrumbTrail": [
+    "Головна",
+    "Об'єкти: основи",
+    "Збирання сміття"
+  ],
+  "relatedSourceTrack": "objects",
+  "contentFiles": {
+    "uk": "content/tracks/objects/garbage-collection/index.uk.html",
+    "en": "content/tracks/objects/garbage-collection/index.en.mdx"
+  },
+  "metadataFile": "content/tracks/objects/garbage-collection/meta.json",
+  "translationStatus": {
+    "sourceLocale": "uk",
+    "availableLocales": [
+      "uk"
+    ],
+    "fallbackLocales": {
+      "en": "uk"
+    },
+    "locales": {
+      "uk": {
+        "status": "published",
+        "filePath": "content/tracks/objects/garbage-collection/index.uk.html",
+        "format": "html",
+        "title": "Збирання сміття",
+        "description": "Збирання сміття в JavaScript: алгоритм mark-and-sweep, reachability, WeakRef, memory leaks. Як рушій управляє пам'яттю.",
+        "completeness": 100,
+        "isFallback": false,
+        "headings": [
+          {
+            "level": 2,
+            "id": "dosyazhnist",
+            "text": "Досяжність (Reachability)"
+          },
+          {
+            "level": 2,
+            "id": "mark-sweep",
+            "text": "Алгоритм mark-and-sweep"
+          },
+          {
+            "level": 2,
+            "id": "vitoki",
+            "text": "Типові витоки пам'яті"
+          },
+          {
+            "level": 3,
+            "id": "global-leak",
+            "text": "1. Випадкові глобальні змінні"
+          },
+          {
+            "level": 3,
+            "id": "listeners-leak",
+            "text": "2. Незвільнені event listeners"
+          },
+          {
+            "level": 3,
+            "id": "closure-leak",
+            "text": "3. Замикання що утримують більше ніж потрібно"
+          },
+          {
+            "level": 3,
+            "id": "detached-dom",
+            "text": "4. Від'єднані DOM-вузли"
+          },
+          {
+            "level": 2,
+            "id": "weakref",
+            "text": "WeakRef і FinalizationRegistry"
+          },
+          {
+            "level": 2,
+            "id": "summary",
+            "text": "Підсумок"
+          }
+        ]
+      },
+      "en": {
+        "status": "draft",
+        "filePath": "content/tracks/objects/garbage-collection/index.en.mdx",
+        "format": "mdx",
+        "title": "TODO: Translate title",
+        "description": "TODO: Translate description",
+        "completeness": 0,
+        "isFallback": true,
+        "headings": [
+          {
+            "level": 2,
+            "id": "source-lesson",
+            "text": "Source lesson"
+          }
+        ],
+        "slug": "garbage-collection",
+        "track": "objects",
+        "locale": "en",
+        "sourceLocale": "uk",
+        "hasBody": true
+      }
+    }
+  },
+  "translationCompleteness": {
+    "uk": 100,
+    "en": 0
+  },
+  "migration": {
+    "migratedFromLegacy": true,
+    "canonicalIdentitySource": "canonical",
+    "override": null,
+    "articleMeta": {
+      "type": "string",
+      "raw": {
+        "secId": "objects",
+        "artId": "garbage-collection"
+      },
+      "resolved": {
+        "track": "objects",
+        "slug": "garbage-collection"
+      }
+    },
+    "mismatches": {
+      "filePathVsCanonical": false,
+      "filePathVsStringMeta": false,
+      "filePathVsNumericMeta": false
+    },
+    "hasLegacyJsonLd": true,
+    "hasLegacyToc": true,
+    "hasLegacyPrevNext": true,
+    "legacyArticleSupport": true
+  },
+  "bodySourcePath": "content/tracks/objects/garbage-collection/index.uk.html",
+  "sourceProvenance": {
+    "sourcePath": "uk/objects/garbage-collection.html",
+    "sourceTrack": "objects",
+    "sourceSlug": "garbage-collection"
+  }
+}

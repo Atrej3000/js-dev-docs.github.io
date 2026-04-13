@@ -1,0 +1,93 @@
+<p>Модулі — файли з власним scope: змінні та функції не потрапляють у глобальний простір автоматично. ESM (<em>ECMAScript Modules</em>) — стандарт: <code>import</code> / <code>export</code>. Це вирішує проблеми конфліктів імен, залежностей і організації коду.</p>
+
+    <h2 id="what-is">Що дає модуль</h2>
+    <div class="code-block"><div class="code-head"><span class="code-lang">JavaScript</span><button class="btn-copy" aria-label="Копіювати"></button></div>
+<pre><code class="language-javascript">// without modules — все у глобальному просторі
+var user = 'Alice';    // window.user у браузері
+var user = 'Bob';      // перезаписує! конфлікт
+
+// З модулями (type="module" або .mjs)
+// Кожен файл — окремий scope
+// user у цьому файлі не видний зовні без export</code></pre></div>
+
+    <h2 id="export">export</h2>
+    <div class="code-block"><div class="code-head"><span class="code-lang">JavaScript</span><button class="btn-copy" aria-label="Копіювати"></button></div>
+<pre><code class="language-javascript">// Named exports — кілька з одного файлу
+export const PI = 3.14159;
+export function add(a, b) { return a + b; }
+export class Vector { constructor(x, y) { this.x = x; this.y = y; } }
+
+// Export в кінці файлу
+const secret = 42;
+const helper = x => x * 2;
+export { secret, helper };
+
+// Перейменування при export
+export { secret as token, helper as double };
+
+// Default export — один на файл
+export default class User {
+  constructor(name) { this.name = name; }
+}</code></pre></div>
+
+    <h2 id="import">import</h2>
+    <div class="code-block"><div class="code-head"><span class="code-lang">JavaScript</span><button class="btn-copy" aria-label="Копіювати"></button></div>
+<pre><code class="language-javascript">// Named import
+import { PI, add } from './math.js';
+console.log(PI);      // 3.14159
+console.log(add(1,2)); // 3
+
+// Перейменування при import
+import { add as sum } from './math.js';
+
+// Namespace import — всі named exports як об'єкт
+import * as Math from './math.js';
+Math.add(1, 2);
+
+// Default import — будь-яке ім'я
+import User from './user.js';
+import MyUser from './user.js'; // теж валідно
+
+// Default + named разом
+import User, { PI, add } from './module.js';</code></pre></div>
+
+    <h2 id="browser">Модулі у браузері</h2>
+    <div class="code-block"><div class="code-head"><span class="code-lang">HTML</span><button class="btn-copy" aria-label="Копіювати"></button></div>
+<pre><code class="language-html"><!-- type="module" — обов'язково -->
+<script type="module" src="main.js"></script>
+
+<!-- Або inline -->
+<script type="module">
+  import { greet } from './greet.js';
+  greet('World');
+</script></code></pre></div>
+    <div class="callout callout-info"><p>Модулі у браузері завжди <code>defer</code> — виконуються після повного завантаження HTML. CORS: файл повинен завантажуватись з сервера (не <code>file://</code>) — локальний <code>open index.html</code> не працює без <code>localhost</code>.</p></div>
+
+    <h2 id="features">Особливості ESM</h2>
+    <div class="code-block"><div class="code-head"><span class="code-lang">JavaScript</span><button class="btn-copy" aria-label="Копіювати"></button></div>
+<pre><code class="language-javascript">// 1. Строгий режим автоматично
+// 'use strict'; — не потрібно, вже є
+
+// 2. Код модуля виконується ОДИН раз (при першому import)
+// Повторні import того самого модуля — кешований результат
+import './init.js'; // init.js виконається один раз
+import './init.js'; // повторно — не виконується
+
+// 3. import hoisting — переміщується на початок файлу
+// (але це статичний аналіз, не eval-time)
+console.log('before import');
+import { x } from './x.js'; // все одно виконається першим
+console.log('after import');
+
+// 4. import.meta — мета-інформація поточного модуля
+console.log(import.meta.url);  // URL файлу
+console.log(import.meta.env);  // у Vite/bundler</code></pre></div>
+
+    <h2 id="summary">Підсумок</h2>
+    <ul>
+      <li>Модуль = файл з власним scope + строгий режим автоматично</li>
+      <li><code>export</code>: named (кілька) та default (один)</li>
+      <li><code>import</code>: named, namespace (<code>* as</code>), default</li>
+      <li>У браузері: <code>&lt;script type="module"&gt;</code> + потрібен HTTP-сервер</li>
+      <li>Код модуля виконується один раз — результат кешується</li>
+    </ul>

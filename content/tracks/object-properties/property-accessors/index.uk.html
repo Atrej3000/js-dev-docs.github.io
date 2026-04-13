@@ -1,0 +1,69 @@
+<p>Аксесори (accessor properties) — властивості-функції, що виглядають як звичайні властивості. <code>get</code> викликається при читанні, <code>set</code> — при записі. Дозволяють обчислювані або захищені властивості без зміни публічного інтерфейсу.</p>
+
+    <h2 id="get-set">get і set</h2>
+    <div class="code-block"><div class="code-head"><span class="code-lang">JavaScript</span><button class="btn-copy" aria-label="Копіювати"></button></div>
+<pre><code class="language-javascript">const user = {
+  firstName: 'Олена',
+  lastName:  'Коваль',
+
+  // Обчислювана властивість
+  get fullName() {
+    return `${this.firstName} ${this.lastName}`;
+  },
+
+  set fullName(value) {
+    const parts = value.trim().split(' ');
+    this.firstName = parts[0];
+    this.lastName  = parts[1] ?? '';
+  },
+};
+
+console.log(user.fullName);        // "Олена Коваль" — викликає get
+user.fullName = 'Андрій Серга';    // викликає set
+console.log(user.firstName);       // "Андрій"
+console.log(user.lastName);        // "Серга"</code></pre></div>
+
+    <h2 id="validatsiya">Валідація через set</h2>
+    <div class="code-block"><div class="code-head"><span class="code-lang">JavaScript</span><button class="btn-copy" aria-label="Копіювати"></button></div>
+<pre><code class="language-javascript">class Temperature {
+  #celsius = 0;  // приватне поле
+
+  get celsius() { return this.#celsius; }
+  set celsius(value) {
+    if (typeof value !== 'number') throw new TypeError('Must be a number');
+    if (value < -273.15) throw new RangeError('Below absolute zero');
+    this.#celsius = value;
+  }
+
+  get fahrenheit() { return this.#celsius * 9/5 + 32; }
+  set fahrenheit(value) { this.celsius = (value - 32) * 5/9; }
+}
+
+const t = new Temperature();
+t.celsius = 100;
+console.log(t.fahrenheit);  // 212
+t.fahrenheit = 32;
+console.log(t.celsius);     // 0
+// t.celsius = -300;        // RangeError</code></pre></div>
+
+    <h2 id="define-accessor">Аксесор через defineProperty</h2>
+    <div class="code-block"><div class="code-head"><span class="code-lang">JavaScript</span><button class="btn-copy" aria-label="Копіювати"></button></div>
+<pre><code class="language-javascript">const obj = { _name: 'Alice' };
+
+Object.defineProperty(obj, 'name', {
+  get() { return this._name; },
+  set(value) { this._name = value.trim(); },
+  enumerable:   true,
+  configurable: true,
+});
+
+obj.name = '  Bob  ';
+console.log(obj.name); // "Bob" — trim() у сетері</code></pre></div>
+
+    <h2 id="summary">Підсумок</h2>
+    <ul>
+      <li><code>get prop()</code> — виклик при читанні. <code>set prop(value)</code> — при записі.</li>
+      <li>Аксесор не має <code>value</code> і <code>writable</code> в дескрипторі — лише <code>get</code>, <code>set</code>, <code>enumerable</code>, <code>configurable</code>.</li>
+      <li>Валідація, обчислювані значення, приватний стан без зміни публічного API.</li>
+    </ul>
+    <div class="article-support"><p><strong>Матеріал корисний?</strong> Підтримай проект.</p><div class="support-btns-inline"><a href="https://send.monobank.ua/jar/YOUR_JAR_ID" class="btn-mono" target="_blank" rel="noopener" style="font-size:12px;height:36px;padding:0 14px">🟢 Monobank</a><a href="https://www.buymeacoffee.com/YOUR_HANDLE" class="btn-coffee" target="_blank" rel="noopener" style="font-size:12px;height:36px;padding:0 14px">☕ Coffee</a></div></div>

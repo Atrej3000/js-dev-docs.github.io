@@ -1,0 +1,324 @@
+{
+  "id": "basics/data-types",
+  "locale": "uk",
+  "locales": {
+    "uk": true,
+    "en": true
+  },
+  "availableLocales": [
+    "uk",
+    "en"
+  ],
+  "title": "Типи даних",
+  "description": "Усі 8 типів даних JavaScript: Number, String, Boolean, null, undefined, Symbol, BigInt, Object. typeof, динамічна типізація, edge cases.",
+  "track": "basics",
+  "trackTitle": "Основи JavaScript",
+  "slug": "data-types",
+  "sourcePath": "uk/basics/types.html",
+  "sourceIdentity": {
+    "track": "basics",
+    "slug": "types"
+  },
+  "canonicalRoute": "/uk/docs/basics/data-types",
+  "canonicalLegacyPath": "/basics/data-types.html",
+  "legacyHtmlPath": "/uk/basics/types.html",
+  "legacyAliases": [
+    "/uk/basics/types.html",
+    "/uk/basics/types",
+    "/basics/data-types.html"
+  ],
+  "sectionOrder": 2,
+  "lessonOrder": 5,
+  "overallOrder": 9,
+  "articleNumber": "2.5",
+  "estimatedMinutes": 14,
+  "headings": [
+    {
+      "level": 2,
+      "id": "number",
+      "text": "Number"
+    },
+    {
+      "level": 3,
+      "id": "number-precision",
+      "text": "Точність IEEE 754"
+    },
+    {
+      "level": 2,
+      "id": "string",
+      "text": "String"
+    },
+    {
+      "level": 2,
+      "id": "boolean",
+      "text": "Boolean"
+    },
+    {
+      "level": 2,
+      "id": "null",
+      "text": "null"
+    },
+    {
+      "level": 2,
+      "id": "undefined",
+      "text": "undefined"
+    },
+    {
+      "level": 2,
+      "id": "symbol",
+      "text": "Symbol"
+    },
+    {
+      "level": 2,
+      "id": "bigint",
+      "text": "BigInt"
+    },
+    {
+      "level": 2,
+      "id": "object",
+      "text": "Object"
+    },
+    {
+      "level": 2,
+      "id": "typeof",
+      "text": "Оператор typeof"
+    },
+    {
+      "level": 2,
+      "id": "zvedena-tablitsya",
+      "text": "Зведена таблиця"
+    },
+    {
+      "level": 2,
+      "id": "edge-cases",
+      "text": "Edge cases"
+    },
+    {
+      "level": 2,
+      "id": "summary",
+      "text": "Підсумок"
+    }
+  ],
+  "badges": [
+    "Початковий",
+    "Основи JavaScript",
+    "~ 14 хв"
+  ],
+  "donationLinks": [
+    "https://send.monobank.ua/jar/YOUR_JAR_ID",
+    "https://www.buymeacoffee.com/YOUR_HANDLE"
+  ],
+  "breadcrumbTrail": [
+    "Головна",
+    "Основи JavaScript",
+    "Типи даних"
+  ],
+  "relatedSourceTrack": "basics",
+  "contentFiles": {
+    "uk": "content/tracks/basics/data-types/index.uk.html",
+    "en": "content/tracks/basics/data-types/index.en.mdx"
+  },
+  "metadataFile": "content/tracks/basics/data-types/meta.json",
+  "translationStatus": {
+    "sourceLocale": "uk",
+    "availableLocales": [
+      "uk",
+      "en"
+    ],
+    "fallbackLocales": {},
+    "locales": {
+      "uk": {
+        "status": "published",
+        "filePath": "content/tracks/basics/data-types/index.uk.html",
+        "format": "html",
+        "title": "Типи даних",
+        "description": "Усі 8 типів даних JavaScript: Number, String, Boolean, null, undefined, Symbol, BigInt, Object. typeof, динамічна типізація, edge cases.",
+        "completeness": 100,
+        "isFallback": false,
+        "headings": [
+          {
+            "level": 2,
+            "id": "number",
+            "text": "Number"
+          },
+          {
+            "level": 3,
+            "id": "number-precision",
+            "text": "Точність IEEE 754"
+          },
+          {
+            "level": 2,
+            "id": "string",
+            "text": "String"
+          },
+          {
+            "level": 2,
+            "id": "boolean",
+            "text": "Boolean"
+          },
+          {
+            "level": 2,
+            "id": "null",
+            "text": "null"
+          },
+          {
+            "level": 2,
+            "id": "undefined",
+            "text": "undefined"
+          },
+          {
+            "level": 2,
+            "id": "symbol",
+            "text": "Symbol"
+          },
+          {
+            "level": 2,
+            "id": "bigint",
+            "text": "BigInt"
+          },
+          {
+            "level": 2,
+            "id": "object",
+            "text": "Object"
+          },
+          {
+            "level": 2,
+            "id": "typeof",
+            "text": "Оператор typeof"
+          },
+          {
+            "level": 2,
+            "id": "zvedena-tablitsya",
+            "text": "Зведена таблиця"
+          },
+          {
+            "level": 2,
+            "id": "edge-cases",
+            "text": "Edge cases"
+          },
+          {
+            "level": 2,
+            "id": "summary",
+            "text": "Підсумок"
+          }
+        ]
+      },
+      "en": {
+        "status": "published",
+        "filePath": "content/tracks/basics/data-types/index.en.mdx",
+        "format": "mdx",
+        "title": "Data Types",
+        "description": "The primitive and object data types in JavaScript, how `typeof` behaves, and the edge cases every beginner should know.",
+        "completeness": 100,
+        "isFallback": false,
+        "headings": [
+          {
+            "level": 2,
+            "id": "number",
+            "text": "Number"
+          },
+          {
+            "level": 3,
+            "id": "ieee-754-precision",
+            "text": "IEEE 754 precision"
+          },
+          {
+            "level": 2,
+            "id": "string",
+            "text": "String"
+          },
+          {
+            "level": 2,
+            "id": "boolean",
+            "text": "Boolean"
+          },
+          {
+            "level": 2,
+            "id": "null",
+            "text": "`null`"
+          },
+          {
+            "level": 2,
+            "id": "undefined",
+            "text": "`undefined`"
+          },
+          {
+            "level": 2,
+            "id": "symbol",
+            "text": "Symbol"
+          },
+          {
+            "level": 2,
+            "id": "bigint",
+            "text": "BigInt"
+          },
+          {
+            "level": 2,
+            "id": "object",
+            "text": "Object"
+          },
+          {
+            "level": 2,
+            "id": "the-typeof-operator",
+            "text": "The `typeof` operator"
+          },
+          {
+            "level": 2,
+            "id": "quick-summary-table",
+            "text": "Quick summary table"
+          },
+          {
+            "level": 2,
+            "id": "edge-cases",
+            "text": "Edge cases"
+          },
+          {
+            "level": 2,
+            "id": "summary",
+            "text": "Summary"
+          }
+        ],
+        "slug": "data-types",
+        "track": "basics",
+        "locale": "en",
+        "sourceLocale": "uk",
+        "hasBody": true
+      }
+    }
+  },
+  "translationCompleteness": {
+    "uk": 100,
+    "en": 100
+  },
+  "migration": {
+    "migratedFromLegacy": true,
+    "canonicalIdentitySource": "canonical",
+    "override": null,
+    "articleMeta": {
+      "type": "string",
+      "raw": {
+        "secId": "basics",
+        "artId": "data-types"
+      },
+      "resolved": {
+        "track": "basics",
+        "slug": "data-types"
+      }
+    },
+    "mismatches": {
+      "filePathVsCanonical": true,
+      "filePathVsStringMeta": true,
+      "filePathVsNumericMeta": false
+    },
+    "hasLegacyJsonLd": true,
+    "hasLegacyToc": true,
+    "hasLegacyPrevNext": true,
+    "legacyArticleSupport": true
+  },
+  "bodySourcePath": "content/tracks/basics/data-types/index.uk.html",
+  "sourceProvenance": {
+    "sourcePath": "uk/basics/types.html",
+    "sourceTrack": "basics",
+    "sourceSlug": "types"
+  }
+}

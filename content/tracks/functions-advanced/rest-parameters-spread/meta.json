@@ -1,0 +1,174 @@
+{
+  "id": "functions-advanced/rest-parameters-spread",
+  "locale": "uk",
+  "locales": {
+    "uk": true,
+    "en": false
+  },
+  "availableLocales": [
+    "uk"
+  ],
+  "title": "Залишкові параметри та оператор розширення",
+  "description": "",
+  "track": "functions-advanced",
+  "trackTitle": "Розширена робота з функціями",
+  "slug": "rest-parameters-spread",
+  "sourcePath": "uk/functions-advanced/rest-parameters-spread.html",
+  "sourceIdentity": {
+    "track": "functions-advanced",
+    "slug": "rest-parameters-spread"
+  },
+  "canonicalRoute": "/uk/docs/functions-advanced/rest-parameters-spread",
+  "canonicalLegacyPath": "/functions-advanced/rest-parameters-spread.html",
+  "legacyHtmlPath": "/uk/functions-advanced/rest-parameters-spread.html",
+  "legacyAliases": [
+    "/uk/functions-advanced/rest-parameters-spread.html",
+    "/uk/functions-advanced/rest-parameters-spread",
+    "/functions-advanced/rest-parameters-spread.html"
+  ],
+  "sectionOrder": 6,
+  "lessonOrder": 2,
+  "overallOrder": 50,
+  "articleNumber": "6.2",
+  "estimatedMinutes": 12,
+  "headings": [
+    {
+      "level": 2,
+      "id": "rest",
+      "text": "Rest-параметри"
+    },
+    {
+      "level": 2,
+      "id": "spread-arrays",
+      "text": "Spread у масивах"
+    },
+    {
+      "level": 2,
+      "id": "spread-objects",
+      "text": "Spread в об'єктах"
+    },
+    {
+      "level": 2,
+      "id": "summary",
+      "text": "Підсумок"
+    }
+  ],
+  "badges": [
+    "Середній",
+    "Функції",
+    "~ 12 хв"
+  ],
+  "donationLinks": [
+    "https://send.monobank.ua/jar/YOUR_JAR_ID",
+    "https://www.buymeacoffee.com/YOUR_HANDLE"
+  ],
+  "breadcrumbTrail": [
+    "Головна",
+    "Розширена робота з функціями",
+    "Залишкові параметри та оператор розширення"
+  ],
+  "relatedSourceTrack": "functions-advanced",
+  "contentFiles": {
+    "uk": "content/tracks/functions-advanced/rest-parameters-spread/index.uk.html",
+    "en": "content/tracks/functions-advanced/rest-parameters-spread/index.en.mdx"
+  },
+  "metadataFile": "content/tracks/functions-advanced/rest-parameters-spread/meta.json",
+  "translationStatus": {
+    "sourceLocale": "uk",
+    "availableLocales": [
+      "uk"
+    ],
+    "fallbackLocales": {
+      "en": "uk"
+    },
+    "locales": {
+      "uk": {
+        "status": "published",
+        "filePath": "content/tracks/functions-advanced/rest-parameters-spread/index.uk.html",
+        "format": "html",
+        "title": "Залишкові параметри та оператор розширення",
+        "description": "",
+        "completeness": 100,
+        "isFallback": false,
+        "headings": [
+          {
+            "level": 2,
+            "id": "rest",
+            "text": "Rest-параметри"
+          },
+          {
+            "level": 2,
+            "id": "spread-arrays",
+            "text": "Spread у масивах"
+          },
+          {
+            "level": 2,
+            "id": "spread-objects",
+            "text": "Spread в об'єктах"
+          },
+          {
+            "level": 2,
+            "id": "summary",
+            "text": "Підсумок"
+          }
+        ]
+      },
+      "en": {
+        "status": "draft",
+        "filePath": "content/tracks/functions-advanced/rest-parameters-spread/index.en.mdx",
+        "format": "mdx",
+        "title": "TODO: Translate title",
+        "description": "TODO: Translate description",
+        "completeness": 0,
+        "isFallback": true,
+        "headings": [
+          {
+            "level": 2,
+            "id": "source-lesson",
+            "text": "Source lesson"
+          }
+        ],
+        "slug": "rest-parameters-spread",
+        "track": "functions-advanced",
+        "locale": "en",
+        "sourceLocale": "uk",
+        "hasBody": true
+      }
+    }
+  },
+  "translationCompleteness": {
+    "uk": 100,
+    "en": 0
+  },
+  "migration": {
+    "migratedFromLegacy": true,
+    "canonicalIdentitySource": "canonical",
+    "override": null,
+    "articleMeta": {
+      "type": "string",
+      "raw": {
+        "secId": "functions-advanced",
+        "artId": "rest-parameters-spread"
+      },
+      "resolved": {
+        "track": "functions-advanced",
+        "slug": "rest-parameters-spread"
+      }
+    },
+    "mismatches": {
+      "filePathVsCanonical": false,
+      "filePathVsStringMeta": false,
+      "filePathVsNumericMeta": false
+    },
+    "hasLegacyJsonLd": false,
+    "hasLegacyToc": true,
+    "hasLegacyPrevNext": true,
+    "legacyArticleSupport": true
+  },
+  "bodySourcePath": "content/tracks/functions-advanced/rest-parameters-spread/index.uk.html",
+  "sourceProvenance": {
+    "sourcePath": "uk/functions-advanced/rest-parameters-spread.html",
+    "sourceTrack": "functions-advanced",
+    "sourceSlug": "rest-parameters-spread"
+  }
+}

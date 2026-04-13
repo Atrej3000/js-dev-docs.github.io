@@ -1,0 +1,102 @@
+---
+title: "Arrow Functions, the Basics"
+description: "Arrow-function syntax, lexical `this`, and when arrow functions are a good fit in JavaScript."
+slug: "arrow-functions"
+track: "basics"
+locale: "en"
+sourceLocale: "uk"
+translationStatus: "published"
+translationCompleteness: 100
+---
+
+Arrow functions, introduced in ES6, give you a shorter syntax for function expressions and a different `this` behavior. They are useful, but they are not a universal replacement for regular functions.
+
+## Syntax
+
+```javascript
+const add = (a, b) => {
+  return a + b;
+};
+
+const addShort = (a, b) => a + b;
+const double = n => n * 2;
+const getTimestamp = () => Date.now();
+const makeUser = (name, age) => ({ name, age });
+```
+
+If the body contains only one expression, that value is returned implicitly. If you want to return an object literal, wrap it in parentheses.
+
+## Lexical `this`
+
+Arrow functions do not have their own `this`. They capture `this` from the surrounding lexical scope.
+
+```javascript
+const timer = {
+  seconds: 0,
+  start() {
+    setInterval(() => {
+      this.seconds++;
+      console.log(this.seconds);
+    }, 1000);
+  },
+};
+```
+
+This is one of the main reasons arrow functions are so useful in callbacks.
+
+## Differences from regular functions
+
+Arrow functions:
+
+- do not have their own `this`
+- do not have their own `arguments`
+- cannot be used with `new`
+- do not have a `prototype`
+- are expressions, not declarations
+
+```javascript
+const sum = (...args) => args.reduce((acc, n) => acc + n, 0);
+console.log(sum(1, 2, 3, 4)); // 10
+
+const Arrow = () => {};
+// new Arrow(); // TypeError
+```
+
+`call`, `apply`, and `bind` also cannot replace the lexical `this` captured by an arrow function.
+
+## When to use arrow functions
+
+Good use cases:
+
+- short callbacks in methods
+- array helpers like `.map`, `.filter`, `.reduce`
+- small helper functions
+- callbacks that need lexical `this`
+
+## When not to use them
+
+Avoid arrow functions for:
+
+- object methods that rely on `this`
+- constructors
+- generator functions
+- situations where you need `arguments`
+
+```javascript
+const obj = {
+  value: 42,
+  getValue() {
+    return this.value;
+  },
+};
+```
+
+Object methods are usually better as regular methods or regular functions.
+
+## Summary
+
+- Arrow functions are compact function expressions.
+- They capture `this` lexically from the surrounding scope.
+- They do not have their own `arguments`, `prototype`, or constructor behavior.
+- They are excellent for callbacks and short helper functions.
+- They are a bad fit for methods that depend on their own `this`.

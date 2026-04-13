@@ -1,0 +1,64 @@
+<p>JavaScript рядки — послідовності кодових одиниць UTF-16. Символи поза BMP (Basic Multilingual Plane) кодуються двома кодовими одиницями (surrogate pairs). Це пояснює чому деякі символи мають <code>length === 2</code>.</p>
+
+    <h2 id="utf16">UTF-16 і surrogate pairs</h2>
+    <div class="code-block"><div class="code-head"><span class="code-lang">JavaScript</span><button class="btn-copy" aria-label="Копіювати"></button></div>
+<pre><code class="language-javascript">// BMP символи: одна кодова одиниця
+console.log('A'.length);  // 1
+console.log('А'.length);  // 1 (кирилиця)
+
+// Символи поза BMP: дві кодові одиниці
+// Unicode escape для emoji U+1F600:
+const emoji = '\u{1F600}';  // "😀"
+console.log(emoji.length);  // 2  -- дві code units!
+
+// codePointAt -- правильне отримання code point
+console.log(emoji.codePointAt(0).toString(16)); // "1f600"
+
+// String.fromCodePoint -- правильне створення
+console.log(String.fromCodePoint(0x1f600)); // emoji символ
+
+// charCodeAt: окремі surrogate halves
+console.log(emoji.charCodeAt(0).toString(16)); // "d83d" (high surrogate)
+console.log(emoji.charCodeAt(1).toString(16)); // "de00" (low surrogate)</code></pre></div>
+
+    <h2 id="iteration">Ітерація по символах</h2>
+    <div class="code-block"><div class="code-head"><span class="code-lang">JavaScript</span><button class="btn-copy" aria-label="Копіювати"></button></div>
+<pre><code class="language-javascript">// Рядок: A + emoji(U+1F600) + B
+const str = 'A\u{1F600}B';
+
+// for...of ітерує по code points (правильно)
+const chars = [];
+for (const ch of str) chars.push(ch);
+console.log(chars.length);  // 3 (A, emoji, B)
+
+// Spread теж по code points
+console.log([...str].length);  // 3
+
+// str[index] -- кодові одиниці (може розрізати surrogate pair)
+console.log(str.length);       // 4 (emoji займає 2 позиції)
+console.log([...str].length);  // 3 (правильна кількість символів)</code></pre></div>
+
+    <h2 id="normalize">Unicode нормалізація</h2>
+    <div class="code-block"><div class="code-head"><span class="code-lang">JavaScript</span><button class="btn-copy" aria-label="Копіювати"></button></div>
+<pre><code class="language-javascript">// "é" можна представити двома способами
+const composed   = '\u00e9';   // composed: 1 code point
+const decomposed = 'e\u0301'; // decomposed: e + combining accent (2)
+
+console.log(composed === decomposed);  // false
+console.log(composed.length);          // 1
+console.log(decomposed.length);        // 2
+
+// normalize для коректного порівняння
+const n1 = composed.normalize('NFC');
+const n2 = decomposed.normalize('NFC');
+console.log(n1 === n2); // true</code></pre></div>
+
+    <h2 id="summary">Підсумок</h2>
+    <ul>
+      <li>JS рядки — UTF-16. Символи поза BMP (emoji, рідкісні символи) = 2 кодові одиниці, <code>length === 2</code>.</li>
+      <li><code>codePointAt()</code> / <code>String.fromCodePoint()</code> — правильна робота з code points.</li>
+      <li><code>for...of</code> і spread ітерують по code points.</li>
+      <li><code>normalize('NFC')</code> — уніфіковане представлення перед порівнянням.</li>
+    </ul>
+
+    <div class="article-support"><p><strong>Матеріал корисний?</strong> Підтримай проект.</p><div class="support-btns-inline"><a href="https://send.monobank.ua/jar/YOUR_JAR_ID" class="btn-mono" target="_blank" rel="noopener" style="font-size:12px;height:36px;padding:0 14px">🟢 Monobank</a><a href="https://www.buymeacoffee.com/YOUR_HANDLE" class="btn-coffee" target="_blank" rel="noopener" style="font-size:12px;height:36px;padding:0 14px">☕ Coffee</a></div></div>

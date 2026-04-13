@@ -1,0 +1,98 @@
+<p>Proxy — об'єкт-посередник що перехоплює операції над іншим об'єктом (отримання, запис, виклик тощо). Reflect надає методи для виконання тих самих операцій програмно.</p>
+
+    <h2 id="proxy-basics">Proxy: основи</h2>
+    <div class="code-block"><div class="code-head"><span class="code-lang">JavaScript</span><button class="btn-copy" aria-label="Копіювати"></button></div>
+<pre><code class="language-javascript">const handler = {
+  // get: перехоплює читання властивості
+  get(target, prop, receiver) {
+    console.log(`Читаємо: ${String(prop)}`);
+    return Reflect.get(target, prop, receiver); // стандартна поведінка
+  },
+
+  // set: перехоплює запис
+  set(target, prop, value, receiver) {
+    if (typeof value !== 'number') throw new TypeError('Only numbers!');
+    return Reflect.set(target, prop, value, receiver);
+  },
+
+  // has: перехоплює оператор in
+  has(target, prop) {
+    return prop in target;
+  },
+};
+
+const obj = new Proxy({ x: 1, y: 2 }, handler);
+
+console.log(obj.x);  // "Читаємо: x" → 1
+obj.z = 3;           // OK
+obj.z = 'str';       // TypeError</code></pre></div>
+
+    <h2 id="use-cases">Практичні застосування</h2>
+    <div class="code-block"><div class="code-head"><span class="code-lang">JavaScript</span><button class="btn-copy" aria-label="Копіювати"></button></div>
+<pre><code class="language-javascript">// 1. Валідація об'єкта
+function validated(obj, schema) {
+  return new Proxy(obj, {
+    set(target, prop, value) {
+      if (schema[prop] && !schema[prop](value)) {
+        throw new TypeError(`Invalid value for ${prop}: ${value}`);
+      }
+      return Reflect.set(target, prop, value);
+    }
+  });
+}
+
+const user = validated({}, {
+  age:   v => Number.isInteger(v) && v >= 0 && v <= 150,
+  email: v => /^[^@]+@[^@]+$/.test(v),
+});
+user.age   = 25;   // OK
+user.email = 'bob@example.com'; // OK
+// user.age = -1;  // TypeError
+
+// 2. Значення за замовчуванням
+const withDefault = (target, def) => new Proxy(target, {
+  get: (t, p) => p in t ? t[p] : def,
+});
+
+const config = withDefault({ port: 3000 }, 'N/A');
+console.log(config.port);    // 3000
+console.log(config.host);    // "N/A"
+
+// 3. Відстеження змін (реактивність — основа Vue 3)
+function reactive(obj) {
+  return new Proxy(obj, {
+    set(target, prop, value) {
+      const old = target[prop];
+      Reflect.set(target, prop, value);
+      if (old !== value) notify(prop, old, value);
+      return true;
+    }
+  });
+}</code></pre></div>
+
+    <h2 id="reflect">Reflect</h2>
+    <div class="code-block"><div class="code-head"><span class="code-lang">JavaScript</span><button class="btn-copy" aria-label="Копіювати"></button></div>
+<pre><code class="language-javascript">// Reflect дзеркалює операції мови як функції
+Reflect.get(obj, 'prop');              // obj.prop
+Reflect.set(obj, 'prop', value);       // obj.prop = value
+Reflect.has(obj, 'prop');              // 'prop' in obj
+Reflect.deleteProperty(obj, 'prop');   // delete obj.prop
+Reflect.ownKeys(obj);                  // Object.keys + symbols
+Reflect.apply(fn, ctx, args);          // fn.apply(ctx, args)
+Reflect.construct(F, args);            // new F(...args)
+
+// У Proxy handler: завжди використовуйте Reflect для дефолтної поведінки
+const proxy = new Proxy(target, {
+  get(target, prop, receiver) {
+    // Обробка...
+    return Reflect.get(target, prop, receiver); // коректно для геттерів
+  }
+});</code></pre></div>
+
+    <h2 id="summary">Підсумок</h2>
+    <ul>
+      <li>Proxy перехоплює операції: <code>get</code>, <code>set</code>, <code>has</code>, <code>deleteProperty</code>, <code>apply</code>, <code>construct</code> та інші.</li>
+      <li>Reflect надає стандартні реалізації тих самих операцій — використовуйте в handler для дефолтної поведінки.</li>
+      <li>Застосування: валідація, значення за замовчуванням, реактивність (Vue 3), логування.</li>
+    </ul>
+    <div class="article-support"><p><strong>Матеріал корисний?</strong> Підтримай проект.</p><div class="support-btns-inline"><a href="https://send.monobank.ua/jar/YOUR_JAR_ID" class="btn-mono" target="_blank" rel="noopener" style="font-size:12px;height:36px;padding:0 14px">🟢 Monobank</a><a href="https://www.buymeacoffee.com/YOUR_HANDLE" class="btn-coffee" target="_blank" rel="noopener" style="font-size:12px;height:36px;padding:0 14px">☕ Coffee</a></div></div>

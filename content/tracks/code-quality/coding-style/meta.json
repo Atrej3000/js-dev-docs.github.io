@@ -1,0 +1,224 @@
+{
+  "id": "code-quality/coding-style",
+  "locale": "uk",
+  "locales": {
+    "uk": true,
+    "en": false
+  },
+  "availableLocales": [
+    "uk"
+  ],
+  "title": "Стандарт оформлення коду",
+  "description": "Стандарти оформлення JavaScript-коду: відступи, дужки, довжина рядка, іменування. ESLint, Prettier. Популярні стайлгайди.",
+  "track": "code-quality",
+  "trackTitle": "Якість коду",
+  "slug": "coding-style",
+  "sourcePath": "uk/code-quality/coding-style.html",
+  "sourceIdentity": {
+    "track": "code-quality",
+    "slug": "coding-style"
+  },
+  "canonicalRoute": "/uk/docs/code-quality/coding-style",
+  "canonicalLegacyPath": "/code-quality/coding-style.html",
+  "legacyHtmlPath": "/uk/code-quality/coding-style.html",
+  "legacyAliases": [
+    "/uk/code-quality/coding-style.html",
+    "/uk/code-quality/coding-style",
+    "/code-quality/coding-style.html"
+  ],
+  "sectionOrder": 3,
+  "lessonOrder": 2,
+  "overallOrder": 24,
+  "articleNumber": "3.2",
+  "estimatedMinutes": 13,
+  "headings": [
+    {
+      "level": 2,
+      "id": "chomu-vazhlivo",
+      "text": "Чому це важливо"
+    },
+    {
+      "level": 2,
+      "id": "vidstup",
+      "text": "Відступи"
+    },
+    {
+      "level": 2,
+      "id": "duzky",
+      "text": "Фігурні дужки"
+    },
+    {
+      "level": 2,
+      "id": "dovzhyna",
+      "text": "Довжина рядка і перенос"
+    },
+    {
+      "level": 2,
+      "id": "imenuvanniya",
+      "text": "Іменування"
+    },
+    {
+      "level": 2,
+      "id": "pробіли",
+      "text": "Пробіли навколо операторів"
+    },
+    {
+      "level": 2,
+      "id": "eslint-prettier",
+      "text": "ESLint і Prettier"
+    },
+    {
+      "level": 2,
+      "id": "stylegides",
+      "text": "Популярні стайлгайди"
+    },
+    {
+      "level": 2,
+      "id": "summary",
+      "text": "Підсумок"
+    }
+  ],
+  "badges": [
+    "Початковий",
+    "Якість коду",
+    "~ 13 хв"
+  ],
+  "donationLinks": [
+    "https://send.monobank.ua/jar/YOUR_JAR_ID",
+    "https://www.buymeacoffee.com/YOUR_HANDLE"
+  ],
+  "breadcrumbTrail": [
+    "Головна",
+    "Якість коду",
+    "Стандарт оформлення коду"
+  ],
+  "relatedSourceTrack": "code-quality",
+  "contentFiles": {
+    "uk": "content/tracks/code-quality/coding-style/index.uk.html",
+    "en": "content/tracks/code-quality/coding-style/index.en.mdx"
+  },
+  "metadataFile": "content/tracks/code-quality/coding-style/meta.json",
+  "translationStatus": {
+    "sourceLocale": "uk",
+    "availableLocales": [
+      "uk"
+    ],
+    "fallbackLocales": {
+      "en": "uk"
+    },
+    "locales": {
+      "uk": {
+        "status": "published",
+        "filePath": "content/tracks/code-quality/coding-style/index.uk.html",
+        "format": "html",
+        "title": "Стандарт оформлення коду",
+        "description": "Стандарти оформлення JavaScript-коду: відступи, дужки, довжина рядка, іменування. ESLint, Prettier. Популярні стайлгайди.",
+        "completeness": 100,
+        "isFallback": false,
+        "headings": [
+          {
+            "level": 2,
+            "id": "chomu-vazhlivo",
+            "text": "Чому це важливо"
+          },
+          {
+            "level": 2,
+            "id": "vidstup",
+            "text": "Відступи"
+          },
+          {
+            "level": 2,
+            "id": "duzky",
+            "text": "Фігурні дужки"
+          },
+          {
+            "level": 2,
+            "id": "dovzhyna",
+            "text": "Довжина рядка і перенос"
+          },
+          {
+            "level": 2,
+            "id": "imenuvanniya",
+            "text": "Іменування"
+          },
+          {
+            "level": 2,
+            "id": "pробіли",
+            "text": "Пробіли навколо операторів"
+          },
+          {
+            "level": 2,
+            "id": "eslint-prettier",
+            "text": "ESLint і Prettier"
+          },
+          {
+            "level": 2,
+            "id": "stylegides",
+            "text": "Популярні стайлгайди"
+          },
+          {
+            "level": 2,
+            "id": "summary",
+            "text": "Підсумок"
+          }
+        ]
+      },
+      "en": {
+        "status": "draft",
+        "filePath": "content/tracks/code-quality/coding-style/index.en.mdx",
+        "format": "mdx",
+        "title": "TODO: Translate title",
+        "description": "TODO: Translate description",
+        "completeness": 0,
+        "isFallback": true,
+        "headings": [
+          {
+            "level": 2,
+            "id": "source-lesson",
+            "text": "Source lesson"
+          }
+        ],
+        "slug": "coding-style",
+        "track": "code-quality",
+        "locale": "en",
+        "sourceLocale": "uk",
+        "hasBody": true
+      }
+    }
+  },
+  "translationCompleteness": {
+    "uk": 100,
+    "en": 0
+  },
+  "migration": {
+    "migratedFromLegacy": true,
+    "canonicalIdentitySource": "canonical",
+    "override": null,
+    "articleMeta": {
+      "type": "string",
+      "raw": {
+        "secId": "code-quality",
+        "artId": "coding-style"
+      },
+      "resolved": {
+        "track": "code-quality",
+        "slug": "coding-style"
+      }
+    },
+    "mismatches": {
+      "filePathVsCanonical": false,
+      "filePathVsStringMeta": false,
+      "filePathVsNumericMeta": false
+    },
+    "hasLegacyJsonLd": true,
+    "hasLegacyToc": true,
+    "hasLegacyPrevNext": true,
+    "legacyArticleSupport": true
+  },
+  "bodySourcePath": "content/tracks/code-quality/coding-style/index.uk.html",
+  "sourceProvenance": {
+    "sourcePath": "uk/code-quality/coding-style.html",
+    "sourceTrack": "code-quality",
+    "sourceSlug": "coding-style"
+  }
+}

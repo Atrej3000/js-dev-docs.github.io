@@ -1,0 +1,125 @@
+<p>Стрілкові функції (arrow functions, ES6) — компактний синтаксис для функціональних виразів з лексичним <code>this</code>. Вони не є заміною звичайних функцій у всіх контекстах.</p>
+
+          <h2 id="syntaksys">Синтаксис</h2>
+          <div class="code-block">
+            <div class="code-head"><span class="code-lang">JavaScript</span><button class="btn-copy" aria-label="Копіювати"></button></div>
+<pre><code class="language-javascript">// Повна форма
+const add = (a, b) => {
+  return a + b;
+};
+
+// Скорочена: один вираз — неявний return (без фігурних дужок)
+const add2 = (a, b) => a + b;
+
+// Один параметр — дужки необов'язкові
+const double = n => n * 2;
+
+// Без параметрів — порожні дужки обов'язкові
+const getTimestamp = () => Date.now();
+
+// Повернення літерального об'єкта — дужки обов'язкові (інакше {} = тіло)
+const makeUser = (name, age) => ({ name, age });
+// Без дужок: name => { name } — це тіло функції без return!
+
+console.log(double(5));           // 10
+console.log(getTimestamp());      // число
+console.log(makeUser('Ann', 28)); // { name: 'Ann', age: 28 }</code></pre>
+          </div>
+
+          <h2 id="lexical-this">Лексичний this</h2>
+          <p>Ключова відмінність: стрілкові функції <strong>не мають власного <code>this</code></strong>. Вони беруть <code>this</code> з оточуючого лексичного контексту (звідки були створені).</p>
+
+          <div class="code-block">
+            <div class="code-head"><span class="code-lang">JavaScript</span><button class="btn-copy" aria-label="Копіювати"></button></div>
+<pre><code class="language-javascript">// ПРОБЛЕМА зі звичайною функцією в методі
+const timer = {
+  seconds: 0,
+  start() {
+    setInterval(function() {
+      this.seconds++; // this = globalThis або undefined (strict)!
+      console.log(this.seconds);
+    }, 1000);
+  }
+};
+timer.start(); // NaN або помилка
+
+// РІШЕННЯ: стрілкова функція бере this з методу start()
+const timerFixed = {
+  seconds: 0,
+  start() {
+    setInterval(() => {
+      this.seconds++; // this = timerFixed — правильно
+      console.log(this.seconds);
+    }, 1000);
+  }
+};
+timerFixed.start(); // 1, 2, 3...
+
+// Стрілкова як метод об'єкта — АНТИПАТЕРН
+const obj = {
+  value: 42,
+  getValue: () => this.value, // this = globalThis, не obj!
+};
+console.log(obj.getValue()); // undefined
+
+// Метод об'єкта — завжди звичайна функція
+const objFixed = {
+  value: 42,
+  getValue() { return this.value; },
+};
+console.log(objFixed.getValue()); // 42</code></pre>
+          </div>
+
+          <h2 id="vidminnosti">Відмінності від звичайних функцій</h2>
+          <table>
+            <thead><tr><th>Властивість</th><th>function</th><th>arrow =&gt;</th></tr></thead>
+            <tbody>
+              <tr><td><code>this</code></td><td>Динамічний (залежить від виклику)</td><td>Лексичний (з контексту створення)</td></tr>
+              <tr><td><code>arguments</code></td><td class="t-y">Є</td><td class="t-n">Немає</td></tr>
+              <tr><td><code>new</code></td><td class="t-y">Можна</td><td class="t-n">TypeError</td></tr>
+              <tr><td><code>prototype</code></td><td class="t-y">Є</td><td class="t-n">Немає</td></tr>
+              <tr><td>Hoisting</td><td class="t-y">Так (declaration)</td><td class="t-n">Ні (expression)</td></tr>
+              <tr><td>Як метод</td><td class="t-y">Так</td><td class="t-n">Не рекомендується</td></tr>
+              <tr><td>Генератор</td><td class="t-y">Так</td><td class="t-n">Ні</td></tr>
+            </tbody>
+          </table>
+
+          <div class="code-block">
+            <div class="code-head"><span class="code-lang">JavaScript</span><button class="btn-copy" aria-label="Копіювати"></button></div>
+<pre><code class="language-javascript">// arguments недоступні — використовуйте rest params
+const sum = (...args) => args.reduce((acc, n) => acc + n, 0);
+console.log(sum(1, 2, 3, 4)); // 10
+
+// new — TypeError
+const Arrow = () => {};
+// new Arrow(); // TypeError: Arrow is not a constructor
+
+// bind/call/apply ігнорують зміну this
+const obj = { x: 10 };
+const getX = () => this.x;
+console.log(getX.call(obj)); // undefined — this не змінився</code></pre>
+          </div>
+
+          <h2 id="koly-vykorystovuvaty">Коли використовувати</h2>
+          <ul>
+            <li><strong>Callbacks і короткі функції:</strong> <code>.map</code>, <code>.filter</code>, <code>.reduce</code>, обробники подій в методах класу.</li>
+            <li><strong>Функції що потребують лексичного this:</strong> callback всередині методу.</li>
+          </ul>
+          <p>Не використовуйте стрілкові функції для:</p>
+          <ul>
+            <li>Методів об'єкта і класу (крім class fields).</li>
+            <li>Конструкторів.</li>
+            <li>Функцій з <code>arguments</code>.</li>
+            <li>Генераторів.</li>
+          </ul>
+
+          <h2 id="summary">Підсумок</h2>
+          <ul>
+            <li>Стрілкові функції — компактний синтаксис + лексичний <code>this</code>.</li>
+            <li>Неявний <code>return</code>: вираз без фігурних дужок. Для об'єкта-літерала — в дужках: <code>() =&gt; ({})</code>.</li>
+            <li>Немає власного <code>this</code>, <code>arguments</code>, <code>prototype</code>. Не можна використовувати з <code>new</code>.</li>
+            <li><code>bind</code>/<code>call</code>/<code>apply</code> не змінюють <code>this</code> стрілкової функції.</li>
+            <li>Для методів об'єкта — завжди звичайна функція (shorthand method або function expression).</li>
+          </ul>
+
+          <div class="article-support"><p><strong>Матеріал корисний?</strong> Підтримай проект.</p><div class="support-btns-inline"><a href="https://send.monobank.ua/jar/YOUR_JAR_ID" class="btn-mono" target="_blank" rel="noopener" style="font-size:12px;height:36px;padding:0 14px">🟢 Monobank</a><a href="https://www.buymeacoffee.com/YOUR_HANDLE" class="btn-coffee" target="_blank" rel="noopener" style="font-size:12px;height:36px;padding:0 14px">☕ Coffee</a></div></div>

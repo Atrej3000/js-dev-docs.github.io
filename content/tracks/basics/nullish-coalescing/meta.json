@@ -1,0 +1,219 @@
+{
+  "id": "basics/nullish-coalescing",
+  "locale": "uk",
+  "locales": {
+    "uk": true,
+    "en": true
+  },
+  "availableLocales": [
+    "uk",
+    "en"
+  ],
+  "title": "Оператор об'єднання з null ??",
+  "description": "Оператор nullish coalescing ?? в JavaScript: відмінність від ||, комбінація з ?., ??= логічне присвоєння. ES2020.",
+  "track": "basics",
+  "trackTitle": "Основи JavaScript",
+  "slug": "nullish-coalescing",
+  "sourcePath": "uk/basics/nullish-coalescing.html",
+  "sourceIdentity": {
+    "track": "basics",
+    "slug": "nullish-coalescing"
+  },
+  "canonicalRoute": "/uk/docs/basics/nullish-coalescing",
+  "canonicalLegacyPath": "/basics/nullish-coalescing.html",
+  "legacyHtmlPath": "/uk/basics/nullish-coalescing.html",
+  "legacyAliases": [
+    "/uk/basics/nullish-coalescing.html",
+    "/uk/basics/nullish-coalescing",
+    "/basics/nullish-coalescing.html"
+  ],
+  "sectionOrder": 2,
+  "lessonOrder": 12,
+  "overallOrder": 16,
+  "articleNumber": "2.12",
+  "estimatedMinutes": 8,
+  "headings": [
+    {
+      "level": 2,
+      "id": "syntaksys",
+      "text": "Синтаксис і механіка"
+    },
+    {
+      "level": 2,
+      "id": "vs-or",
+      "text": "?? проти ||"
+    },
+    {
+      "level": 2,
+      "id": "optional-chain",
+      "text": "Комбінація з ?. (optional chaining)"
+    },
+    {
+      "level": 2,
+      "id": "nullish-assign",
+      "text": "??= — nullish присвоєння (ES2021)"
+    },
+    {
+      "level": 2,
+      "id": "obmezhennya",
+      "text": "Обмеження: не можна змішувати з || і &&"
+    },
+    {
+      "level": 2,
+      "id": "summary",
+      "text": "Підсумок"
+    }
+  ],
+  "badges": [
+    "Початковий",
+    "Основи JavaScript",
+    "~ 8 хв"
+  ],
+  "donationLinks": [
+    "https://send.monobank.ua/jar/YOUR_JAR_ID",
+    "https://www.buymeacoffee.com/YOUR_HANDLE"
+  ],
+  "breadcrumbTrail": [
+    "Головна",
+    "Основи JavaScript",
+    "Оператор об'єднання з null ??"
+  ],
+  "relatedSourceTrack": "basics",
+  "contentFiles": {
+    "uk": "content/tracks/basics/nullish-coalescing/index.uk.html",
+    "en": "content/tracks/basics/nullish-coalescing/index.en.mdx"
+  },
+  "metadataFile": "content/tracks/basics/nullish-coalescing/meta.json",
+  "translationStatus": {
+    "sourceLocale": "uk",
+    "availableLocales": [
+      "uk",
+      "en"
+    ],
+    "fallbackLocales": {},
+    "locales": {
+      "uk": {
+        "status": "published",
+        "filePath": "content/tracks/basics/nullish-coalescing/index.uk.html",
+        "format": "html",
+        "title": "Оператор об'єднання з null ??",
+        "description": "Оператор nullish coalescing ?? в JavaScript: відмінність від ||, комбінація з ?., ??= логічне присвоєння. ES2020.",
+        "completeness": 100,
+        "isFallback": false,
+        "headings": [
+          {
+            "level": 2,
+            "id": "syntaksys",
+            "text": "Синтаксис і механіка"
+          },
+          {
+            "level": 2,
+            "id": "vs-or",
+            "text": "?? проти ||"
+          },
+          {
+            "level": 2,
+            "id": "optional-chain",
+            "text": "Комбінація з ?. (optional chaining)"
+          },
+          {
+            "level": 2,
+            "id": "nullish-assign",
+            "text": "??= — nullish присвоєння (ES2021)"
+          },
+          {
+            "level": 2,
+            "id": "obmezhennya",
+            "text": "Обмеження: не можна змішувати з || і &&"
+          },
+          {
+            "level": 2,
+            "id": "summary",
+            "text": "Підсумок"
+          }
+        ]
+      },
+      "en": {
+        "status": "published",
+        "filePath": "content/tracks/basics/nullish-coalescing/index.en.mdx",
+        "format": "mdx",
+        "title": "Nullish Coalescing Operator `??`",
+        "description": "How `??` differs from `||`, how it works with optional chaining, and when to use `??=`.",
+        "completeness": 100,
+        "isFallback": false,
+        "headings": [
+          {
+            "level": 2,
+            "id": "syntax-and-mechanics",
+            "text": "Syntax and mechanics"
+          },
+          {
+            "level": 2,
+            "id": "vs",
+            "text": "`??` vs `||`"
+          },
+          {
+            "level": 2,
+            "id": "combining-with-optional-chaining",
+            "text": "Combining with optional chaining"
+          },
+          {
+            "level": 2,
+            "id": "nullish-assignment",
+            "text": "`??=` - nullish assignment"
+          },
+          {
+            "level": 2,
+            "id": "restriction-do-not-mix-it-directly-with-and",
+            "text": "Restriction: do not mix it directly with `||` and `&&`"
+          },
+          {
+            "level": 2,
+            "id": "summary",
+            "text": "Summary"
+          }
+        ],
+        "slug": "nullish-coalescing",
+        "track": "basics",
+        "locale": "en",
+        "sourceLocale": "uk",
+        "hasBody": true
+      }
+    }
+  },
+  "translationCompleteness": {
+    "uk": 100,
+    "en": 100
+  },
+  "migration": {
+    "migratedFromLegacy": true,
+    "canonicalIdentitySource": "canonical",
+    "override": null,
+    "articleMeta": {
+      "type": "string",
+      "raw": {
+        "secId": "basics",
+        "artId": "nullish-coalescing"
+      },
+      "resolved": {
+        "track": "basics",
+        "slug": "nullish-coalescing"
+      }
+    },
+    "mismatches": {
+      "filePathVsCanonical": false,
+      "filePathVsStringMeta": false,
+      "filePathVsNumericMeta": false
+    },
+    "hasLegacyJsonLd": true,
+    "hasLegacyToc": true,
+    "hasLegacyPrevNext": true,
+    "legacyArticleSupport": true
+  },
+  "bodySourcePath": "content/tracks/basics/nullish-coalescing/index.uk.html",
+  "sourceProvenance": {
+    "sourcePath": "uk/basics/nullish-coalescing.html",
+    "sourceTrack": "basics",
+    "sourceSlug": "nullish-coalescing"
+  }
+}

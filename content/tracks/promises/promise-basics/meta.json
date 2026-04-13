@@ -1,0 +1,181 @@
+{
+  "id": "promises/promise-basics",
+  "locale": "uk",
+  "locales": {
+    "uk": true,
+    "en": false
+  },
+  "availableLocales": [
+    "uk"
+  ],
+  "title": "Проміси",
+  "description": "Проміси у JavaScript — детальний розбір з прикладами, підводними каменями та best practices.",
+  "track": "promises",
+  "trackTitle": "Проміси, async/await",
+  "slug": "promise-basics",
+  "sourcePath": "uk/promises/promise-basics.html",
+  "sourceIdentity": {
+    "track": "promises",
+    "slug": "promise-basics"
+  },
+  "canonicalRoute": "/uk/docs/promises/promise-basics",
+  "canonicalLegacyPath": "/promises/promise-basics.html",
+  "legacyHtmlPath": "/uk/promises/promise-basics.html",
+  "legacyAliases": [
+    "/uk/promises/promise-basics.html",
+    "/uk/promises/promise-basics",
+    "/promises/promise-basics.html"
+  ],
+  "sectionOrder": 11,
+  "lessonOrder": 2,
+  "overallOrder": 76,
+  "articleNumber": "11.2",
+  "estimatedMinutes": 12,
+  "headings": [
+    {
+      "level": 2,
+      "id": "states",
+      "text": "Стани Promise"
+    },
+    {
+      "level": 2,
+      "id": "then-catch",
+      "text": "then / catch / finally"
+    },
+    {
+      "level": 2,
+      "id": "chaining",
+      "text": "Ланцюжок Promise"
+    },
+    {
+      "level": 2,
+      "id": "create",
+      "text": "Утилітарні конструктори"
+    },
+    {
+      "level": 2,
+      "id": "summary",
+      "text": "Підсумок"
+    }
+  ],
+  "badges": [
+    "Середній",
+    "Проміси, async/await",
+    "~ 12 хв"
+  ],
+  "donationLinks": [],
+  "breadcrumbTrail": [
+    "Головна",
+    "Проміси, async/await",
+    "Проміси"
+  ],
+  "relatedSourceTrack": "promises",
+  "contentFiles": {
+    "uk": "content/tracks/promises/promise-basics/index.uk.html",
+    "en": "content/tracks/promises/promise-basics/index.en.mdx"
+  },
+  "metadataFile": "content/tracks/promises/promise-basics/meta.json",
+  "translationStatus": {
+    "sourceLocale": "uk",
+    "availableLocales": [
+      "uk"
+    ],
+    "fallbackLocales": {
+      "en": "uk"
+    },
+    "locales": {
+      "uk": {
+        "status": "published",
+        "filePath": "content/tracks/promises/promise-basics/index.uk.html",
+        "format": "html",
+        "title": "Проміси",
+        "description": "Проміси у JavaScript — детальний розбір з прикладами, підводними каменями та best practices.",
+        "completeness": 100,
+        "isFallback": false,
+        "headings": [
+          {
+            "level": 2,
+            "id": "states",
+            "text": "Стани Promise"
+          },
+          {
+            "level": 2,
+            "id": "then-catch",
+            "text": "then / catch / finally"
+          },
+          {
+            "level": 2,
+            "id": "chaining",
+            "text": "Ланцюжок Promise"
+          },
+          {
+            "level": 2,
+            "id": "create",
+            "text": "Утилітарні конструктори"
+          },
+          {
+            "level": 2,
+            "id": "summary",
+            "text": "Підсумок"
+          }
+        ]
+      },
+      "en": {
+        "status": "draft",
+        "filePath": "content/tracks/promises/promise-basics/index.en.mdx",
+        "format": "mdx",
+        "title": "TODO: Translate title",
+        "description": "TODO: Translate description",
+        "completeness": 0,
+        "isFallback": true,
+        "headings": [
+          {
+            "level": 2,
+            "id": "source-lesson",
+            "text": "Source lesson"
+          }
+        ],
+        "slug": "promise-basics",
+        "track": "promises",
+        "locale": "en",
+        "sourceLocale": "uk",
+        "hasBody": true
+      }
+    }
+  },
+  "translationCompleteness": {
+    "uk": 100,
+    "en": 0
+  },
+  "migration": {
+    "migratedFromLegacy": true,
+    "canonicalIdentitySource": "canonical",
+    "override": null,
+    "articleMeta": {
+      "type": "numeric",
+      "raw": {
+        "secId": "11",
+        "artId": "2"
+      },
+      "resolved": {
+        "track": "promises",
+        "slug": "promise-basics"
+      }
+    },
+    "mismatches": {
+      "filePathVsCanonical": false,
+      "filePathVsStringMeta": false,
+      "filePathVsNumericMeta": false
+    },
+    "hasLegacyJsonLd": false,
+    "hasLegacyToc": false,
+    "hasLegacyPrevNext": false,
+    "legacyArticleSupport": true
+  },
+  "bodySourcePath": "content/tracks/promises/promise-basics/index.uk.html",
+  "sourceProvenance": {
+    "sourcePath": "uk/promises/promise-basics.html",
+    "sourceTrack": "promises",
+    "sourceSlug": "promise-basics"
+  }
+}

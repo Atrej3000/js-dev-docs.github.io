@@ -1,0 +1,89 @@
+<p>Деструктуризація — синтаксис ES6 для розпаковування значень із масивів або властивостей з об'єктів у окремі змінні. Замінює серію присвоєнь і робить код лаконічнішим.</p>
+
+    <h2 id="masyvy">Деструктуризація масивів</h2>
+    <div class="code-block"><div class="code-head"><span class="code-lang">JavaScript</span><button class="btn-copy" aria-label="Копіювати"></button></div>
+<pre><code class="language-javascript">const arr = [1, 2, 3, 4, 5];
+
+// Базова
+const [a, b, c] = arr;      // a=1, b=2, c=3
+
+// Пропуск елементів через кому
+const [first, , third] = arr; // first=1, third=3
+
+// Rest-елемент
+const [head, ...tail] = arr;  // head=1, tail=[2,3,4,5]
+
+// Значення за замовчуванням
+const [x = 10, y = 20] = [1];  // x=1, y=20
+
+// Обмін змінних без тимчасової
+let p = 1, q = 2;
+[p, q] = [q, p];  // p=2, q=1
+
+// З ітерованих
+const [ch1, ch2] = 'hi';   // ch1='h', ch2='i'</code></pre></div>
+
+    <h2 id="obiekty">Деструктуризація об'єктів</h2>
+    <div class="code-block"><div class="code-head"><span class="code-lang">JavaScript</span><button class="btn-copy" aria-label="Копіювати"></button></div>
+<pre><code class="language-javascript">const user = { name: 'Олена', age: 28, role: 'admin', city: 'Київ' };
+
+// Базова: змінна = ключ
+const { name, age } = user;
+
+// Перейменування: ключ: нова_змінна
+const { name: userName, role: userRole } = user;
+console.log(userName); // "Олена"
+
+// Значення за замовчуванням
+const { name: n, level = 1 } = user; // level = 1 (відсутній у user)
+
+// Rest для решти властивостей
+const { name: nm, ...rest } = user;
+console.log(rest); // { age: 28, role: 'admin', city: 'Київ' }</code></pre></div>
+
+    <h2 id="vkladena">Вкладена деструктуризація</h2>
+    <div class="code-block"><div class="code-head"><span class="code-lang">JavaScript</span><button class="btn-copy" aria-label="Копіювати"></button></div>
+<pre><code class="language-javascript">const config = {
+  db: { host: 'localhost', port: 5432 },
+  server: { port: 3000 },
+};
+
+// Вкладений об'єкт
+const { db: { host, port: dbPort }, server: { port: serverPort } } = config;
+console.log(host, dbPort, serverPort); // "localhost" 5432 3000
+
+// Масив в об'єкті
+const { coords: [lat, lng] } = { coords: [50.45, 30.52] };
+console.log(lat, lng); // 50.45 30.52</code></pre></div>
+
+    <h2 id="parametry">Деструктуризація в параметрах функції</h2>
+    <div class="code-block"><div class="code-head"><span class="code-lang">JavaScript</span><button class="btn-copy" aria-label="Копіювати"></button></div>
+<pre><code class="language-javascript">// Замість function createUser(name, age, role)
+function createUser({ name, age, role = 'user' }) {
+  return { name, age, role, createdAt: Date.now() };
+}
+
+createUser({ name: 'Bob', age: 25 });
+// { name: 'Bob', age: 25, role: 'user', createdAt: ... }
+
+// Деструктуризація у for...of
+const users = [{ name: 'Alice', age: 30 }, { name: 'Bob', age: 25 }];
+for (const { name, age } of users) {
+  console.log(name, age);
+}
+
+// З Object.entries
+const scores = { math: 95, english: 87 };
+for (const [subject, score] of Object.entries(scores)) {
+  console.log(`${subject}: ${score}`);
+}</code></pre></div>
+
+    <h2 id="summary">Підсумок</h2>
+    <ul>
+      <li>Масив: <code>const [a, b] = arr</code>. Пропуск через кому. Rest <code>...tail</code>.</li>
+      <li>Об'єкт: <code>const { key } = obj</code>. Перейменування: <code>{ key: var }</code>. Дефолт: <code>{ key = val }</code>.</li>
+      <li>Вкладена: <code>{ outer: { inner } } = obj</code>.</li>
+      <li>Обмін: <code>[a, b] = [b, a]</code> — без тимчасової змінної.</li>
+      <li>Деструктуризація в параметрах функції — кращий підхід ніж багато позиційних параметрів.</li>
+    </ul>
+    <div class="article-support"><p><strong>Матеріал корисний?</strong> Підтримай проект.</p><div class="support-btns-inline"><a href="https://send.monobank.ua/jar/YOUR_JAR_ID" class="btn-mono" target="_blank" rel="noopener" style="font-size:12px;height:36px;padding:0 14px">🟢 Monobank</a><a href="https://www.buymeacoffee.com/YOUR_HANDLE" class="btn-coffee" target="_blank" rel="noopener" style="font-size:12px;height:36px;padding:0 14px">☕ Coffee</a></div></div>

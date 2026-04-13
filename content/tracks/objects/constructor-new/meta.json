@@ -1,0 +1,184 @@
+{
+  "id": "objects/constructor-new",
+  "locale": "uk",
+  "locales": {
+    "uk": true,
+    "en": false
+  },
+  "availableLocales": [
+    "uk"
+  ],
+  "title": "Конструктор, оператор new",
+  "description": "Конструктор і оператор new в JavaScript: функції-конструктори, new.target, порівняння з class. Внутрішня механіка new.",
+  "track": "objects",
+  "trackTitle": "Об'єкти: основи",
+  "slug": "constructor-new",
+  "sourcePath": "uk/objects/constructor-new.html",
+  "sourceIdentity": {
+    "track": "objects",
+    "slug": "constructor-new"
+  },
+  "canonicalRoute": "/uk/docs/objects/constructor-new",
+  "canonicalLegacyPath": "/objects/constructor-new.html",
+  "legacyHtmlPath": "/uk/objects/constructor-new.html",
+  "legacyAliases": [
+    "/uk/objects/constructor-new.html",
+    "/uk/objects/constructor-new",
+    "/objects/constructor-new.html"
+  ],
+  "sectionOrder": 4,
+  "lessonOrder": 5,
+  "overallOrder": 33,
+  "articleNumber": "4.5",
+  "estimatedMinutes": 11,
+  "headings": [
+    {
+      "level": 2,
+      "id": "konstruktor",
+      "text": "Функція-конструктор"
+    },
+    {
+      "level": 2,
+      "id": "mechanika-new",
+      "text": "Механіка оператора new"
+    },
+    {
+      "level": 2,
+      "id": "new-target",
+      "text": "new.target"
+    },
+    {
+      "level": 2,
+      "id": "vs-class",
+      "text": "Конструктор vs class"
+    },
+    {
+      "level": 2,
+      "id": "summary",
+      "text": "Підсумок"
+    }
+  ],
+  "badges": [
+    "Початковий",
+    "Об'єкти: основи",
+    "~ 11 хв"
+  ],
+  "donationLinks": [
+    "https://send.monobank.ua/jar/YOUR_JAR_ID",
+    "https://www.buymeacoffee.com/YOUR_HANDLE"
+  ],
+  "breadcrumbTrail": [
+    "Головна",
+    "Об'єкти: основи",
+    "Конструктор, оператор new"
+  ],
+  "relatedSourceTrack": "objects",
+  "contentFiles": {
+    "uk": "content/tracks/objects/constructor-new/index.uk.html",
+    "en": "content/tracks/objects/constructor-new/index.en.mdx"
+  },
+  "metadataFile": "content/tracks/objects/constructor-new/meta.json",
+  "translationStatus": {
+    "sourceLocale": "uk",
+    "availableLocales": [
+      "uk"
+    ],
+    "fallbackLocales": {
+      "en": "uk"
+    },
+    "locales": {
+      "uk": {
+        "status": "published",
+        "filePath": "content/tracks/objects/constructor-new/index.uk.html",
+        "format": "html",
+        "title": "Конструктор, оператор new",
+        "description": "Конструктор і оператор new в JavaScript: функції-конструктори, new.target, порівняння з class. Внутрішня механіка new.",
+        "completeness": 100,
+        "isFallback": false,
+        "headings": [
+          {
+            "level": 2,
+            "id": "konstruktor",
+            "text": "Функція-конструктор"
+          },
+          {
+            "level": 2,
+            "id": "mechanika-new",
+            "text": "Механіка оператора new"
+          },
+          {
+            "level": 2,
+            "id": "new-target",
+            "text": "new.target"
+          },
+          {
+            "level": 2,
+            "id": "vs-class",
+            "text": "Конструктор vs class"
+          },
+          {
+            "level": 2,
+            "id": "summary",
+            "text": "Підсумок"
+          }
+        ]
+      },
+      "en": {
+        "status": "draft",
+        "filePath": "content/tracks/objects/constructor-new/index.en.mdx",
+        "format": "mdx",
+        "title": "TODO: Translate title",
+        "description": "TODO: Translate description",
+        "completeness": 0,
+        "isFallback": true,
+        "headings": [
+          {
+            "level": 2,
+            "id": "source-lesson",
+            "text": "Source lesson"
+          }
+        ],
+        "slug": "constructor-new",
+        "track": "objects",
+        "locale": "en",
+        "sourceLocale": "uk",
+        "hasBody": true
+      }
+    }
+  },
+  "translationCompleteness": {
+    "uk": 100,
+    "en": 0
+  },
+  "migration": {
+    "migratedFromLegacy": true,
+    "canonicalIdentitySource": "canonical",
+    "override": null,
+    "articleMeta": {
+      "type": "string",
+      "raw": {
+        "secId": "objects",
+        "artId": "constructor-new"
+      },
+      "resolved": {
+        "track": "objects",
+        "slug": "constructor-new"
+      }
+    },
+    "mismatches": {
+      "filePathVsCanonical": false,
+      "filePathVsStringMeta": false,
+      "filePathVsNumericMeta": false
+    },
+    "hasLegacyJsonLd": true,
+    "hasLegacyToc": true,
+    "hasLegacyPrevNext": true,
+    "legacyArticleSupport": true
+  },
+  "bodySourcePath": "content/tracks/objects/constructor-new/index.uk.html",
+  "sourceProvenance": {
+    "sourcePath": "uk/objects/constructor-new.html",
+    "sourceTrack": "objects",
+    "sourceSlug": "constructor-new"
+  }
+}

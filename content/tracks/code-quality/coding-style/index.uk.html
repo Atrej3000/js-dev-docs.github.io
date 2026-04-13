@@ -1,0 +1,184 @@
+<p>Стандарт оформлення (code style) — набір угод про форматування, іменування і структуру коду. Консистентний стиль знижує когнітивне навантаження при читанні і спрощує code review. У сучасних проектах форматування автоматизоване — розробник не думає про пробіли та дужки.</p>
+
+          <h2 id="chomu-vazhlivo">Чому це важливо</h2>
+          <p>Код читають набагато частіше, ніж пишуть. Неоднорідне форматування ускладнює розрізнення структурно важливих змін від косметичних. Автоматизований стиль (Prettier + ESLint) усуває суперечки в команді і звільняє code review для змістовних обговорень.</p>
+
+          <h2 id="vidstup">Відступи</h2>
+          <p>Два варіанти у практиці: 2 пробіли (Google, Airbnb, StandardJS) або 4 пробіли (Microsoft). Табуляція — рідше. Найважливіше — консистентність у межах проекту. Prettier і EditorConfig вирішують це автоматично.</p>
+
+          <div class="code-block">
+            <div class="code-head"><span class="code-lang">JavaScript</span><button class="btn-copy" aria-label="Копіювати"></button></div>
+<pre><code class="language-javascript">// 2 пробіли (найпоширеніший у JS-спільноті)
+function processUser(user) {
+  if (user.isActive) {
+    const profile = buildProfile(user);
+    return profile;
+  }
+  return null;
+}
+
+// Ніколи не змішуйте пробіли і табуляцію в одному файлі</code></pre>
+          </div>
+
+          <h2 id="duzky">Фігурні дужки</h2>
+          <div class="code-block">
+            <div class="code-head"><span class="code-lang">JavaScript</span><button class="btn-copy" aria-label="Копіювати"></button></div>
+<pre><code class="language-javascript">// Стиль K&R (рекомендований для JS): відкриваюча дужка на тому ж рядку
+if (condition) {
+  doSomething();
+} else {
+  doSomethingElse();
+}
+
+// Завжди фігурні дужки — навіть для одного рядка
+// АНТИПАТЕРН:
+if (condition)
+  doSomething(); // небезпечно: легко зламати при додаванні рядка
+
+// ПРАВИЛЬНО:
+if (condition) {
+  doSomething();
+}</code></pre>
+          </div>
+
+          <h2 id="dovzhyna">Довжина рядка і перенос</h2>
+          <div class="code-block">
+            <div class="code-head"><span class="code-lang">JavaScript</span><button class="btn-copy" aria-label="Копіювати"></button></div>
+<pre><code class="language-javascript">// Максимальна довжина: 80–120 символів (Prettier за замовчуванням — 80)
+// Довгі виклики — переносити з відступом
+const result = someObject
+  .methodA(arg1, arg2)
+  .methodB(arg3)
+  .methodC();
+
+// Довгі умови
+if (
+  userIsAuthenticated &&
+  userHasPermission('write') &&
+  resourceExists(resourceId)
+) {
+  performAction();
+}
+
+// Деструктуризація великих об'єктів
+const {
+  firstName,
+  lastName,
+  email,
+  role,
+  createdAt,
+} = user;</code></pre>
+          </div>
+
+          <h2 id="imenuvanniya">Іменування</h2>
+          <table>
+            <thead><tr><th>Що</th><th>Стиль</th><th>Приклад</th></tr></thead>
+            <tbody>
+              <tr><td>Змінні, функції</td><td>camelCase</td><td><code>getUserById</code>, <code>isActive</code></td></tr>
+              <tr><td>Константи (примітиви)</td><td>UPPER_SNAKE_CASE</td><td><code>MAX_RETRIES</code>, <code>API_URL</code></td></tr>
+              <tr><td>Класи, конструктори</td><td>PascalCase</td><td><code>UserService</code>, <code>HttpClient</code></td></tr>
+              <tr><td>Приватні поля</td><td><code>#field</code> або <code>_field</code></td><td><code>#password</code>, <code>_internal</code></td></tr>
+              <tr><td>Файли (модулі)</td><td>kebab-case</td><td><code>user-service.js</code></td></tr>
+              <tr><td>Компоненти (React)</td><td>PascalCase</td><td><code>UserCard.jsx</code></td></tr>
+            </tbody>
+          </table>
+
+          <div class="code-block">
+            <div class="code-head"><span class="code-lang">JavaScript</span><button class="btn-copy" aria-label="Копіювати"></button></div>
+<pre><code class="language-javascript">// Булеві змінні: префікс is/has/can/should
+const isAuthenticated = true;
+const hasWriteAccess  = false;
+const canDeletePost   = user.role === 'admin';
+const shouldRefetch   = staleTime > Date.now();
+
+// Функції: дієслово + іменник
+function getUserById(id) {}
+function calculateTax(amount, rate) {}
+function validateEmail(email) {}
+function createPaymentIntent(amount) {}
+
+// АНТИПАТЕРН: абревіатури та однолітерні імена (крім i, j, x, y)
+const u  = getUser();   // погано
+const pd = u.data;      // погано
+const user        = getUser();   // добре
+const profileData = user.data;   // добре</code></pre>
+          </div>
+
+          <h2 id="pробіли">Пробіли навколо операторів</h2>
+          <div class="code-block">
+            <div class="code-head"><span class="code-lang">JavaScript</span><button class="btn-copy" aria-label="Копіювати"></button></div>
+<pre><code class="language-javascript">// Бінарні оператори: пробіли з обох боків
+const total = price + tax;
+const discount = total > 100 ? 0.1 : 0;
+
+// Немає пробілів між функцією і дужкою
+getValue()      // правильно
+getValue ()     // неправильно
+
+// Пробіл між if/for/while і дужкою (не функція — конструкція мови)
+if (condition) {}
+for (let i = 0; i < n; i++) {}
+
+// Пробіл після коми
+function fn(a, b, c) {}
+const arr = [1, 2, 3];
+
+// Немає пробілу перед крапкою з комою
+const x = 5;    // правильно
+const y = 5 ;   // неправильно</code></pre>
+          </div>
+
+          <h2 id="eslint-prettier">ESLint і Prettier</h2>
+          <p><strong>ESLint</strong> — статичний аналізатор, що виявляє логічні помилки і антипатерни. <strong>Prettier</strong> — автоформатувальник, що переписує код за єдиним стилем.</p>
+
+          <div class="code-block">
+            <div class="code-head"><span class="code-lang">JSON — .eslintrc.json</span><button class="btn-copy" aria-label="Копіювати"></button></div>
+<pre><code class="language-javascript">{
+  "env": { "browser": true, "es2024": true },
+  "extends": ["eslint:recommended"],
+  "rules": {
+    "no-var":        "error",
+    "prefer-const":  "error",
+    "no-unused-vars":"warn",
+    "no-console":    "warn",
+    "eqeqeq":       ["error", "always"],
+    "no-debugger":   "error"
+  }
+}</code></pre>
+          </div>
+
+          <div class="code-block">
+            <div class="code-head"><span class="code-lang">JSON — .prettierrc</span><button class="btn-copy" aria-label="Копіювати"></button></div>
+<pre><code class="language-javascript">{
+  "semi": true,
+  "singleQuote": true,
+  "tabWidth": 2,
+  "trailingComma": "es5",
+  "printWidth": 80,
+  "arrowParens": "avoid"
+}</code></pre>
+          </div>
+
+          <h2 id="stylegides">Популярні стайлгайди</h2>
+          <ul>
+            <li><strong>Airbnb</strong> (<code>eslint-config-airbnb</code>) — найдетальніший, строгий. Стандарт у великих React-проектах.</li>
+            <li><strong>Standard JS</strong> (<code>eslint-config-standard</code>) — без крапки з комою, мінімалістичний.</li>
+            <li><strong>Google</strong> — схожий на Airbnb, менш поширений.</li>
+            <li><strong>XO</strong> — суворий, з вбудованими TypeScript-правилами.</li>
+          </ul>
+
+          <div class="callout c-tip">
+            <div class="callout-title">Практична рекомендація</div>
+            <p>Для нового проекту: <code>eslint:recommended</code> + Prettier + <code>prefer-const</code>, <code>no-var</code>, <code>eqeqeq</code>. Для TypeScript-проекту: <code>@typescript-eslint/recommended</code>. Налаштування «format on save» у VS Code автоматизує форматування.</p>
+          </div>
+
+          <h2 id="summary">Підсумок</h2>
+          <ul>
+            <li>Відступи: 2 пробіли (стандарт JS-спільноти). Консистентність важливіша за конкретний вибір.</li>
+            <li>Фігурні дужки завжди — навіть для однорядкових блоків.</li>
+            <li>Іменування: camelCase для змінних/функцій, PascalCase для класів, UPPER_SNAKE для примітивних констант.</li>
+            <li>Булеві: префікс <code>is</code>/<code>has</code>/<code>can</code>. Функції: дієслово + іменник.</li>
+            <li>ESLint — статичний аналіз, Prettier — форматування. Налаштовуйте обидва в кожному проекті.</li>
+          </ul>
+
+          <div class="article-support"><p><strong>Матеріал корисний?</strong> Підтримай проект.</p><div class="support-btns-inline"><a href="https://send.monobank.ua/jar/YOUR_JAR_ID" class="btn-mono" target="_blank" rel="noopener" style="font-size:12px;height:36px;padding:0 14px">🟢 Monobank</a><a href="https://www.buymeacoffee.com/YOUR_HANDLE" class="btn-coffee" target="_blank" rel="noopener" style="font-size:12px;height:36px;padding:0 14px">☕ Coffee</a></div></div>

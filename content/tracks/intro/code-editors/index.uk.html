@@ -1,0 +1,156 @@
+<p>
+            Редактор коду — основний інструмент розробника. Правильно
+            налаштований редактор скорочує час на рутинні операції,
+            запобігає помилкам і забезпечує навігацію по великих кодових базах.
+          </p>
+
+          <h2 id="chomu-vazhlivo">Чому це важливо</h2>
+
+          <p>
+            Вибір редактора безпосередньо впливає на продуктивність.
+            Функції автодоповнення, інлайн-документація, підсвітка
+            помилок типів і вбудований дебаґер скорочують час між
+            написанням коду і виявленням помилки з хвилин до секунд.
+          </p>
+
+          <h2 id="vscode">Visual Studio Code</h2>
+
+          <p>
+            <strong>VS Code</strong> (<code>code.visualstudio.com</code>) —
+            редактор від Microsoft на основі Electron, побудований
+            на движку Monaco. Безкоштовний, відкритий код (MIT).
+            Де-факто стандарт для JavaScript і TypeScript розробки.
+          </p>
+
+          <p>Ключові можливості:</p>
+          <ul>
+            <li>
+              <strong>IntelliSense</strong> — автодоповнення на основі
+              аналізу типів. Для JS-проектів без TypeScript VS Code
+              використовує JSDoc-анотації та файли <code>.d.ts</code>
+              для інференції типів.
+            </li>
+            <li>
+              <strong>Вбудована підтримка TypeScript</strong> — перевірка
+              типів, навігація по визначеннях (<kbd>F12</kbd>),
+              рефакторинг із перейменуванням (<kbd>F2</kbd>).
+            </li>
+            <li>
+              <strong>Вбудований дебаґер</strong> — точки зупинки,
+              стек викликів, перегляд змінних для Node.js і браузера.
+            </li>
+            <li>
+              <strong>Git-інтеграція</strong> — diff, staging, commit,
+              blame прямо в редакторі.
+            </li>
+            <li>
+              <strong>Live Share</strong> — синхронне редагування кількома
+              розробниками в реальному часі.
+            </li>
+          </ul>
+
+          <h3 id="vscode-extensions">Рекомендовані розширення для JS/TS</h3>
+
+          <table>
+            <thead>
+              <tr><th>Розширення</th><th>Призначення</th></tr>
+            </thead>
+            <tbody>
+              <tr><td><code>ESLint</code></td><td>Статичний аналіз коду, виявлення антипатернів</td></tr>
+              <tr><td><code>Prettier</code></td><td>Автоматичне форматування коду</td></tr>
+              <tr><td><code>Error Lens</code></td><td>Виводить помилки та попередження інлайн</td></tr>
+              <tr><td><code>GitLens</code></td><td>Розширена git-анотація (blame, history)</td></tr>
+              <tr><td><code>Path Intellisense</code></td><td>Автодоповнення шляхів до файлів</td></tr>
+              <tr><td><code>Import Cost</code></td><td>Показує розмір імпортованого пакета</td></tr>
+            </tbody>
+          </table>
+
+          <h2 id="webstorm">WebStorm</h2>
+
+          <p>
+            <strong>WebStorm</strong> (<code>jetbrains.com/webstorm</code>) —
+            повноцінна IDE від JetBrains для JavaScript і TypeScript.
+            Платна (є безкоштовна ліцензія для open-source проектів і студентів).
+          </p>
+
+          <p>
+            WebStorm виконує глибший аналіз коду порівняно з VS Code:
+            рефакторинги складніших конструкцій, більш точне автодоповнення
+            у складних TypeScript-проектах, вбудований профайлер для Node.js.
+          </p>
+
+          <p>
+            Доцільний вибір для великих корпоративних проектів або
+            коли TypeScript-кодова база настільки складна, що VS Code
+            дає хибні позитивні/негативні результати аналізу.
+          </p>
+
+          <h2 id="lightweight">Легкі редактори</h2>
+
+          <p>
+            Для швидкого редагування окремих файлів або роботи в терміналі:
+          </p>
+          <ul>
+            <li>
+              <strong>Neovim</strong> — розширюваний термінальний редактор.
+              З плагінами <code>nvim-lspconfig</code> і TypeScript LSP
+              надає повноцінний IntelliSense. Вимагає налаштування.
+            </li>
+            <li>
+              <strong>Zed</strong> — новий редактор, написаний на Rust.
+              Фокус на продуктивності та низькій затримці.
+              Нативна підтримка TypeScript LSP.
+            </li>
+          </ul>
+
+          <h2 id="kliuchovi-funktsiyi">Ключові функції будь-якого редактора для JS</h2>
+
+          <p>
+            Незалежно від редактора, для продуктивної роботи з JavaScript
+            необхідні:
+          </p>
+          <ul>
+            <li>
+              <strong>Language Server Protocol (LSP)</strong> — протокол,
+              що дозволяє редактору отримувати автодоповнення, навігацію
+              і діагностику від мовного сервера (для JS/TS — <code>tsserver</code>).
+            </li>
+            <li>
+              <strong>Syntax highlighting</strong> — підсвітка синтаксису
+              для JS, TypeScript, JSX/TSX, JSON, Markdown.
+            </li>
+            <li>
+              <strong>Інтеграція з ESLint/Prettier</strong> — автоматичне
+              виправлення і форматування при збереженні файлу.
+            </li>
+            <li>
+              <strong>Вбудований термінал</strong> — запуск скриптів,
+              тестів, dev-сервера без перемикання між вікнами.
+            </li>
+          </ul>
+
+          <div class="callout c-tip">
+            <div class="callout-title">Рекомендація для початку</div>
+            <p>
+              VS Code — оптимальний вибір для початку. Він безкоштовний,
+              має найбільшу екосистему розширень і вбудовану підтримку
+              TypeScript без додаткових налаштувань. Перехід на WebStorm
+              або Neovim має сенс, коли виникнуть конкретні обмеження.
+            </p>
+          </div>
+
+          <h2 id="summary">Підсумок</h2>
+          <ul>
+            <li>VS Code — безкоштовний стандарт для JS/TS розробки. IntelliSense, вбудований дебаґер, Git-інтеграція.</li>
+            <li>WebStorm — платна IDE з глибшим аналізом для складних TypeScript-проектів.</li>
+            <li>Neovim/Zed — для розробників, яким критична швидкість або термінальний workflow.</li>
+            <li>Обов'язкові компоненти: LSP (tsserver), ESLint, Prettier, вбудований термінал.</li>
+          </ul>
+
+          <div class="article-support">
+            <p><strong>Матеріал корисний?</strong> Підтримай проект.</p>
+            <div class="support-btns-inline">
+              <a href="https://send.monobank.ua/jar/YOUR_JAR_ID" class="btn-mono" target="_blank" rel="noopener" style="font-size:12px;height:36px;padding:0 14px">🟢 Monobank</a>
+              <a href="https://www.buymeacoffee.com/YOUR_HANDLE" class="btn-coffee" target="_blank" rel="noopener" style="font-size:12px;height:36px;padding:0 14px">☕ Coffee</a>
+            </div>
+          </div>

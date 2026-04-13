@@ -1,0 +1,103 @@
+<p>JSON (JavaScript Object Notation) — текстовий формат обміну даними. <code>JSON.stringify</code> серіалізує JavaScript-значення у JSON-рядок, <code>JSON.parse</code> — парсить JSON-рядок назад у значення.</p>
+
+    <h2 id="stringify">JSON.stringify</h2>
+    <div class="code-block"><div class="code-head"><span class="code-lang">JavaScript</span><button class="btn-copy" aria-label="Копіювати"></button></div>
+<pre><code class="language-javascript">const data = {
+  name:   'Alice',
+  age:    30,
+  scores: [95, 87, 92],
+  active: true,
+};
+
+// Базова серіалізація
+console.log(JSON.stringify(data));
+// '{"name":"Alice","age":30,"scores":[95,87,92],"active":true}'
+
+// З відступами для читабельності
+console.log(JSON.stringify(data, null, 2));
+// {
+//   "name": "Alice",
+//   ...
+// }
+
+// Що НЕ серіалізується (пропускається або стає null):
+const problematic = {
+  fn:       () => {},      // → пропускається
+  undef:    undefined,     // → пропускається
+  sym:      Symbol('s'),   // → пропускається
+  nan:      NaN,           // → null
+  inf:      Infinity,      // → null
+  date:     new Date(),    // → ISO рядок
+  regex:    /abc/,         // → {}
+};
+console.log(JSON.stringify(problematic));
+// '{"nan":null,"inf":null,"date":"2026-...","regex":{}}'</code></pre></div>
+
+    <h2 id="replacer">Replacer-функція і масив</h2>
+    <div class="code-block"><div class="code-head"><span class="code-lang">JavaScript</span><button class="btn-copy" aria-label="Копіювати"></button></div>
+<pre><code class="language-javascript">const user = { name: 'Alice', password: 'secret', age: 30 };
+
+// Масив ключів — включити тільки вказані
+console.log(JSON.stringify(user, ['name', 'age']));
+// '{"name":"Alice","age":30}' — password прихований
+
+// Функція: (key, value) → що серіалізувати
+const result = JSON.stringify(user, (key, value) => {
+  if (key === 'password') return undefined; // пропустити
+  if (typeof value === 'number') return value * 2; // подвоїти числа
+  return value;
+});
+// '{"name":"Alice","age":60}'</code></pre></div>
+
+    <h2 id="parse">JSON.parse і reviver</h2>
+    <div class="code-block"><div class="code-head"><span class="code-lang">JavaScript</span><button class="btn-copy" aria-label="Копіювати"></button></div>
+<pre><code class="language-javascript">const json = '{"name":"Alice","age":30,"scores":[95,87]}';
+
+const parsed = JSON.parse(json);
+console.log(parsed.name);    // "Alice"
+console.log(parsed.scores);  // [95, 87]
+
+// Помилка при невалідному JSON
+try {
+  JSON.parse('{invalid}');
+} catch (e) {
+  console.log(e instanceof SyntaxError); // true
+}
+
+// Reviver: відновлення типів (наприклад Date)
+const withDate = '{"name":"Bob","birthday":"2000-01-15T00:00:00.000Z"}';
+
+const user = JSON.parse(withDate, (key, value) => {
+  if (key === 'birthday') return new Date(value);
+  return value;
+});
+console.log(user.birthday instanceof Date); // true</code></pre></div>
+
+    <h2 id="tojson">toJSON</h2>
+    <div class="code-block"><div class="code-head"><span class="code-lang">JavaScript</span><button class="btn-copy" aria-label="Копіювати"></button></div>
+<pre><code class="language-javascript">// Якщо об'єкт має метод toJSON — stringify використає його результат
+class Money {
+  constructor(amount, currency) {
+    this.amount   = amount;
+    this.currency = currency;
+  }
+  toJSON() {
+    return `${this.amount} ${this.currency}`;
+  }
+}
+
+const price = new Money(1500, 'UAH');
+console.log(JSON.stringify({ price }));
+// '{"price":"1500 UAH"}'
+
+// Date.prototype.toJSON() повертає ISO рядок — тому Date серіалізується</code></pre></div>
+
+    <h2 id="summary">Підсумок</h2>
+    <ul>
+      <li><code>JSON.stringify(value, replacer, space)</code> → рядок. Функції, <code>undefined</code>, Symbol — пропускаються.</li>
+      <li><code>JSON.parse(str, reviver)</code> → JavaScript значення. Кидає <code>SyntaxError</code> при невалідному JSON.</li>
+      <li>Replacer-масив — білий список ключів. Replacer-функція — гнучке фільтрування/трансформація.</li>
+      <li>Reviver — відновлення типів (Date тощо) при парсингу.</li>
+      <li>Метод <code>toJSON</code> на об'єкті — контролює серіалізацію.</li>
+    </ul>
+    <div class="article-support"><p><strong>Матеріал корисний?</strong> Підтримай проект.</p><div class="support-btns-inline"><a href="https://send.monobank.ua/jar/YOUR_JAR_ID" class="btn-mono" target="_blank" rel="noopener" style="font-size:12px;height:36px;padding:0 14px">🟢 Monobank</a><a href="https://www.buymeacoffee.com/YOUR_HANDLE" class="btn-coffee" target="_blank" rel="noopener" style="font-size:12px;height:36px;padding:0 14px">☕ Coffee</a></div></div>

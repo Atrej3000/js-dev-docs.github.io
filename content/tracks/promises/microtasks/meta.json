@@ -1,0 +1,171 @@
+{
+  "id": "promises/microtasks",
+  "locale": "uk",
+  "locales": {
+    "uk": true,
+    "en": false
+  },
+  "availableLocales": [
+    "uk"
+  ],
+  "title": "Мікрозавдання",
+  "description": "Мікрозавдання у JavaScript — детальний розбір з прикладами, підводними каменями та best practices.",
+  "track": "promises",
+  "trackTitle": "Проміси, async/await",
+  "slug": "microtasks",
+  "sourcePath": "uk/promises/microtasks.html",
+  "sourceIdentity": {
+    "track": "promises",
+    "slug": "microtasks"
+  },
+  "canonicalRoute": "/uk/docs/promises/microtasks",
+  "canonicalLegacyPath": "/promises/microtasks.html",
+  "legacyHtmlPath": "/uk/promises/microtasks.html",
+  "legacyAliases": [
+    "/uk/promises/microtasks.html",
+    "/uk/promises/microtasks",
+    "/promises/microtasks.html"
+  ],
+  "sectionOrder": 11,
+  "lessonOrder": 7,
+  "overallOrder": 81,
+  "articleNumber": "11.7",
+  "estimatedMinutes": 10,
+  "headings": [
+    {
+      "level": 2,
+      "id": "event-loop",
+      "text": "Event loop і черги"
+    },
+    {
+      "level": 2,
+      "id": "queues",
+      "text": "Macrotask vs Microtask"
+    },
+    {
+      "level": 2,
+      "id": "queueMicrotask",
+      "text": "queueMicrotask()"
+    },
+    {
+      "level": 2,
+      "id": "summary",
+      "text": "Підсумок"
+    }
+  ],
+  "badges": [
+    "Просунутий",
+    "Проміси, async/await",
+    "~ 10 хв"
+  ],
+  "donationLinks": [],
+  "breadcrumbTrail": [
+    "Головна",
+    "Проміси, async/await",
+    "Мікрозавдання"
+  ],
+  "relatedSourceTrack": "promises",
+  "contentFiles": {
+    "uk": "content/tracks/promises/microtasks/index.uk.html",
+    "en": "content/tracks/promises/microtasks/index.en.mdx"
+  },
+  "metadataFile": "content/tracks/promises/microtasks/meta.json",
+  "translationStatus": {
+    "sourceLocale": "uk",
+    "availableLocales": [
+      "uk"
+    ],
+    "fallbackLocales": {
+      "en": "uk"
+    },
+    "locales": {
+      "uk": {
+        "status": "published",
+        "filePath": "content/tracks/promises/microtasks/index.uk.html",
+        "format": "html",
+        "title": "Мікрозавдання",
+        "description": "Мікрозавдання у JavaScript — детальний розбір з прикладами, підводними каменями та best practices.",
+        "completeness": 100,
+        "isFallback": false,
+        "headings": [
+          {
+            "level": 2,
+            "id": "event-loop",
+            "text": "Event loop і черги"
+          },
+          {
+            "level": 2,
+            "id": "queues",
+            "text": "Macrotask vs Microtask"
+          },
+          {
+            "level": 2,
+            "id": "queueMicrotask",
+            "text": "queueMicrotask()"
+          },
+          {
+            "level": 2,
+            "id": "summary",
+            "text": "Підсумок"
+          }
+        ]
+      },
+      "en": {
+        "status": "draft",
+        "filePath": "content/tracks/promises/microtasks/index.en.mdx",
+        "format": "mdx",
+        "title": "TODO: Translate title",
+        "description": "TODO: Translate description",
+        "completeness": 0,
+        "isFallback": true,
+        "headings": [
+          {
+            "level": 2,
+            "id": "source-lesson",
+            "text": "Source lesson"
+          }
+        ],
+        "slug": "microtasks",
+        "track": "promises",
+        "locale": "en",
+        "sourceLocale": "uk",
+        "hasBody": true
+      }
+    }
+  },
+  "translationCompleteness": {
+    "uk": 100,
+    "en": 0
+  },
+  "migration": {
+    "migratedFromLegacy": true,
+    "canonicalIdentitySource": "canonical",
+    "override": null,
+    "articleMeta": {
+      "type": "numeric",
+      "raw": {
+        "secId": "11",
+        "artId": "7"
+      },
+      "resolved": {
+        "track": "promises",
+        "slug": "microtasks"
+      }
+    },
+    "mismatches": {
+      "filePathVsCanonical": false,
+      "filePathVsStringMeta": false,
+      "filePathVsNumericMeta": false
+    },
+    "hasLegacyJsonLd": false,
+    "hasLegacyToc": false,
+    "hasLegacyPrevNext": false,
+    "legacyArticleSupport": true
+  },
+  "bodySourcePath": "content/tracks/promises/microtasks/index.uk.html",
+  "sourceProvenance": {
+    "sourcePath": "uk/promises/microtasks.html",
+    "sourceTrack": "promises",
+    "sourceSlug": "microtasks"
+  }
+}

@@ -1,0 +1,194 @@
+{
+  "id": "data-types/number",
+  "locale": "uk",
+  "locales": {
+    "uk": true,
+    "en": false
+  },
+  "availableLocales": [
+    "uk"
+  ],
+  "title": "Числа",
+  "description": "Числа в JavaScript: Number методи, parseInt/parseFloat, IEEE 754 precision, infinity, NaN, Math об'єкт.",
+  "track": "data-types",
+  "trackTitle": "Типи даних",
+  "slug": "number",
+  "sourcePath": "uk/data-types/number.html",
+  "sourceIdentity": {
+    "track": "data-types",
+    "slug": "number"
+  },
+  "canonicalRoute": "/uk/docs/data-types/number",
+  "canonicalLegacyPath": "/data-types/number.html",
+  "legacyHtmlPath": "/uk/data-types/number.html",
+  "legacyAliases": [
+    "/uk/data-types/number.html",
+    "/uk/data-types/number",
+    "/data-types/number.html"
+  ],
+  "sectionOrder": 5,
+  "lessonOrder": 2,
+  "overallOrder": 38,
+  "articleNumber": "5.2",
+  "estimatedMinutes": 16,
+  "headings": [
+    {
+      "level": 2,
+      "id": "spetsialni",
+      "text": "Спеціальні числові значення"
+    },
+    {
+      "level": 2,
+      "id": "metody",
+      "text": "Методи числа"
+    },
+    {
+      "level": 2,
+      "id": "parseint",
+      "text": "parseInt і parseFloat"
+    },
+    {
+      "level": 2,
+      "id": "math",
+      "text": "Об'єкт Math"
+    },
+    {
+      "level": 2,
+      "id": "precision",
+      "text": "Точність IEEE 754"
+    },
+    {
+      "level": 2,
+      "id": "summary",
+      "text": "Підсумок"
+    }
+  ],
+  "badges": [
+    "Початковий",
+    "Типи даних",
+    "~ 16 хв"
+  ],
+  "donationLinks": [
+    "https://send.monobank.ua/jar/YOUR_JAR_ID",
+    "https://www.buymeacoffee.com/YOUR_HANDLE"
+  ],
+  "breadcrumbTrail": [
+    "Головна",
+    "Типи даних",
+    "Числа"
+  ],
+  "relatedSourceTrack": "data-types",
+  "contentFiles": {
+    "uk": "content/tracks/data-types/number/index.uk.html",
+    "en": "content/tracks/data-types/number/index.en.mdx"
+  },
+  "metadataFile": "content/tracks/data-types/number/meta.json",
+  "translationStatus": {
+    "sourceLocale": "uk",
+    "availableLocales": [
+      "uk"
+    ],
+    "fallbackLocales": {
+      "en": "uk"
+    },
+    "locales": {
+      "uk": {
+        "status": "published",
+        "filePath": "content/tracks/data-types/number/index.uk.html",
+        "format": "html",
+        "title": "Числа",
+        "description": "Числа в JavaScript: Number методи, parseInt/parseFloat, IEEE 754 precision, infinity, NaN, Math об'єкт.",
+        "completeness": 100,
+        "isFallback": false,
+        "headings": [
+          {
+            "level": 2,
+            "id": "spetsialni",
+            "text": "Спеціальні числові значення"
+          },
+          {
+            "level": 2,
+            "id": "metody",
+            "text": "Методи числа"
+          },
+          {
+            "level": 2,
+            "id": "parseint",
+            "text": "parseInt і parseFloat"
+          },
+          {
+            "level": 2,
+            "id": "math",
+            "text": "Об'єкт Math"
+          },
+          {
+            "level": 2,
+            "id": "precision",
+            "text": "Точність IEEE 754"
+          },
+          {
+            "level": 2,
+            "id": "summary",
+            "text": "Підсумок"
+          }
+        ]
+      },
+      "en": {
+        "status": "draft",
+        "filePath": "content/tracks/data-types/number/index.en.mdx",
+        "format": "mdx",
+        "title": "TODO: Translate title",
+        "description": "TODO: Translate description",
+        "completeness": 0,
+        "isFallback": true,
+        "headings": [
+          {
+            "level": 2,
+            "id": "source-lesson",
+            "text": "Source lesson"
+          }
+        ],
+        "slug": "number",
+        "track": "data-types",
+        "locale": "en",
+        "sourceLocale": "uk",
+        "hasBody": true
+      }
+    }
+  },
+  "translationCompleteness": {
+    "uk": 100,
+    "en": 0
+  },
+  "migration": {
+    "migratedFromLegacy": true,
+    "canonicalIdentitySource": "canonical",
+    "override": null,
+    "articleMeta": {
+      "type": "string",
+      "raw": {
+        "secId": "data-types",
+        "artId": "number"
+      },
+      "resolved": {
+        "track": "data-types",
+        "slug": "number"
+      }
+    },
+    "mismatches": {
+      "filePathVsCanonical": false,
+      "filePathVsStringMeta": false,
+      "filePathVsNumericMeta": false
+    },
+    "hasLegacyJsonLd": false,
+    "hasLegacyToc": true,
+    "hasLegacyPrevNext": true,
+    "legacyArticleSupport": true
+  },
+  "bodySourcePath": "content/tracks/data-types/number/index.uk.html",
+  "sourceProvenance": {
+    "sourcePath": "uk/data-types/number.html",
+    "sourceTrack": "data-types",
+    "sourceSlug": "number"
+  }
+}

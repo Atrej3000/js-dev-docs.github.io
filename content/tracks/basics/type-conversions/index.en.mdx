@@ -1,0 +1,169 @@
+---
+title: "Type Conversions"
+description: "How JavaScript converts values to strings, numbers, booleans, and primitives, both implicitly and explicitly."
+slug: "type-conversions"
+track: "basics"
+locale: "en"
+sourceLocale: "uk"
+translationStatus: "published"
+translationCompleteness: 100
+---
+
+JavaScript performs automatic type conversion when values of different types are used together. If you understand the conversion rules, the language becomes much more predictable.
+
+## Why this matters
+
+Results such as:
+
+- `"5" - 2 === 3`
+- `"5" + 2 === "52"`
+
+can look strange at first, but they are direct consequences of JavaScript's conversion rules.
+
+## String conversion (`ToString`)
+
+This happens when a value is explicitly passed to `String()` or when string concatenation is triggered.
+
+```javascript
+String(123);        // "123"
+String(true);       // "true"
+String(null);       // "null"
+String(undefined);  // "undefined"
+String([1, 2, 3]);  // "1,2,3"
+String({});         // "[object Object]"
+
+console.log("value: " + 42); // "value: 42"
+console.log(1 + 2 + " items"); // "3 items"
+console.log("items: " + 1 + 2); // "items: 12"
+```
+
+## Number conversion (`ToNumber`)
+
+Number conversion happens in arithmetic operations and when you call `Number()` or use unary `+`.
+
+```javascript
+Number(undefined); // NaN
+Number(null);      // 0
+Number(true);      // 1
+Number(false);     // 0
+Number("");        // 0
+Number("42");      // 42
+Number("12abc");   // NaN
+Number([]);        // 0
+Number([1]);       // 1
+Number([1, 2]);    // NaN
+Number({});        // NaN
+
+console.log("6" / "2"); // 3
+console.log("6" - 2);   // 4
+console.log(true + true); // 2
+console.log(null + 1); // 1
+console.log(undefined + 1); // NaN
+```
+
+Unary `+` is just a short form of numeric conversion:
+
+```javascript
+const input = "42";
+console.log(+input); // 42
+```
+
+## Boolean conversion (`ToBoolean`)
+
+Boolean conversion happens in conditions and in explicit calls to `Boolean()`.
+
+There are exactly eight falsy values:
+
+- `false`
+- `0`
+- `-0`
+- `0n`
+- `""`
+- `null`
+- `undefined`
+- `NaN`
+
+Everything else is truthy.
+
+```javascript
+console.log(Boolean("0")); // true
+console.log(Boolean("false")); // true
+console.log(Boolean([])); // true
+console.log(Boolean({})); // true
+```
+
+That is why this is wrong:
+
+```javascript
+const items = [];
+
+if (items) {
+  console.log("This still runs");
+}
+```
+
+If you need to know whether an array contains elements, check `items.length > 0`.
+
+## Converting objects to primitives
+
+When an object is used where a primitive is expected, JavaScript runs an internal conversion algorithm.
+
+```javascript
+const temperature = {
+  celsius: 22,
+  [Symbol.toPrimitive](hint) {
+    if (hint === "number") return this.celsius;
+    if (hint === "string") return `${this.celsius} degrees C`;
+    return this.celsius;
+  },
+};
+
+console.log(+temperature);      // 22
+console.log(`${temperature}`);  // "22 degrees C"
+```
+
+## Explicit conversion helpers
+
+| Function | Converts to | Notes |
+| --- | --- | --- |
+| `String(value)` | string | safe for all values |
+| `Number(value)` | number | `null -> 0`, `undefined -> NaN` |
+| `Boolean(value)` | boolean | follows the falsy/truthy rules |
+| `parseInt(value, 10)` | integer | stops at the first non-digit |
+| `parseFloat(value)` | floating-point number | parses decimal input |
+
+```javascript
+parseInt("42px", 10); // 42
+parseInt("3.14", 10); // 3
+parseFloat("3.14abc"); // 3.14
+```
+
+Always pass the radix to `parseInt`:
+
+```javascript
+parseInt("010", 10); // 10
+```
+
+## Edge cases
+
+```javascript
+console.log(null + 1); // 1
+console.log(undefined + 1); // NaN
+console.log(null + "1"); // "null1"
+
+console.log(Number([])); // 0
+console.log([] == false); // true
+console.log([] == ![]); // true
+
+console.log(1 + "2"); // "12"
+console.log(1 - "2"); // -1
+console.log("3" ** 2); // 9
+```
+
+## Summary
+
+- JavaScript converts values to strings, numbers, booleans, and primitives as needed.
+- `+` becomes string concatenation if one operand is a string.
+- Most other arithmetic operators trigger numeric conversion.
+- Empty arrays and empty objects are still truthy.
+- Use explicit conversion when clarity matters more than cleverness.

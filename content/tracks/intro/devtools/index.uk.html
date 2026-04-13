@@ -1,0 +1,210 @@
+<p>
+            Браузерні інструменти розробника (DevTools) — вбудований набір
+            утиліт для налагодження, профілювання і аналізу веб-сторінок.
+            Для JavaScript-розробника ключові панелі: Console, Sources і Network.
+          </p>
+
+          <h2 id="chomu-vazhlivo">Чому це важливо</h2>
+
+          <p>
+            DevTools — перше місце, куди розробник звертається при виникненні
+            помилки. Швидкість налагодження напряму залежить від уміння
+            ефективно використовувати консоль, точки зупинки і перегляд
+            стану виконання. Ці навички скорочують час виправлення типових
+            помилок з годин до хвилин.
+          </p>
+
+          <h2 id="vidkrytty">Як відкрити DevTools</h2>
+
+          <table>
+            <thead><tr><th>Платформа</th><th>Скорочення</th></tr></thead>
+            <tbody>
+              <tr><td>Windows / Linux</td><td><kbd>F12</kbd> або <kbd>Ctrl+Shift+I</kbd></td></tr>
+              <tr><td>macOS</td><td><kbd>Cmd+Option+I</kbd></td></tr>
+              <tr><td>Будь-яка ОС</td><td>Правий клік → «Inspect» / «Переглянути код»</td></tr>
+            </tbody>
+          </table>
+
+          <p>
+            Ці інструкції стосуються Chrome і Edge (Chromium-based).
+            Firefox та Safari мають аналогічні DevTools з незначними
+            відмінностями в інтерфейсі.
+          </p>
+
+          <h2 id="console">Панель Console</h2>
+
+          <p>
+            Console — REPL-середовище (Read-Eval-Print Loop) для виконання
+            довільного JS у контексті поточної сторінки. Тут відображаються
+            повідомлення з коду і помилки виконання.
+          </p>
+
+          <h3 id="console-methods">Методи console</h3>
+
+          <div class="code-block">
+            <div class="code-head"><span class="code-lang">JavaScript</span><button class="btn-copy" aria-label="Копіювати"></button></div>
+<pre><code class="language-javascript">// Виведення значень
+console.log('звичайне повідомлення');
+console.info('інформаційне');
+console.warn('попередження');  // жовтий фон
+console.error('помилка');      // червоний фон
+
+// Структуровані дані
+const user = { id: 1, name: 'admin', roles: ['read', 'write'] };
+console.log(user);        // інтерактивне дерево об'єкта
+console.table([user]);    // табличне представлення
+
+// Групування
+console.group('Auth flow');
+console.log('checking token...');
+console.log('token valid');
+console.groupEnd();
+
+// Вимірювання часу
+console.time('fetch');
+await fetch('/api/data');
+console.timeEnd('fetch'); // "fetch: 42ms"
+
+// Умовний вивід
+console.assert(user.id > 0, 'user.id must be positive', user);
+// виводить повідомлення лише якщо перша умова false</code></pre>
+          </div>
+
+          <div class="callout c-warn">
+            <div class="callout-title">console.log у продакшені</div>
+            <p>
+              Видаляйте або умовно відключайте <code>console.log</code>
+              у продакшені. Виведення у консоль має вартість продуктивності
+              і може розкривати чутливі дані. Використовуйте спеціалізовані
+              логери (winston, pino) або прапорці рівнів логування.
+            </p>
+          </div>
+
+          <h2 id="sources">Панель Sources: дебаґер</h2>
+
+          <p>
+            Sources — повноцінний JavaScript-дебаґер. Дозволяє зупиняти
+            виконання коду у будь-якому місці і досліджувати стан програми.
+          </p>
+
+          <h3 id="breakpoints">Точки зупинки (Breakpoints)</h3>
+
+          <p>
+            Клік на номер рядка у вихідному коді встановлює <strong>точку
+            зупинки</strong>. При досягненні цього рядка виконання
+            призупиняється і стають доступні:
+          </p>
+          <ul>
+            <li><strong>Scope</strong> — всі змінні поточного та зовнішніх scope</li>
+            <li><strong>Call Stack</strong> — стек викликів від точки зупинки до верхнього рівня</li>
+            <li><strong>Watch</strong> — довільні вирази, що обчислюються в поточному контексті</li>
+          </ul>
+
+          <h3 id="stepping">Крокове виконання</h3>
+
+          <table>
+            <thead><tr><th>Дія</th><th>Клавіша</th><th>Значення</th></tr></thead>
+            <tbody>
+              <tr><td>Resume</td><td><kbd>F8</kbd></td><td>Продовжити до наступної точки зупинки</td></tr>
+              <tr><td>Step over</td><td><kbd>F10</kbd></td><td>Наступний рядок, не заходячи у функцію</td></tr>
+              <tr><td>Step into</td><td><kbd>F11</kbd></td><td>Зайти всередину функції</td></tr>
+              <tr><td>Step out</td><td><kbd>Shift+F11</kbd></td><td>Вийти з поточної функції</td></tr>
+            </tbody>
+          </table>
+
+          <h3 id="debugger-statement">Оператор debugger</h3>
+
+          <p>
+            Оператор <code>debugger</code> у коді діє як точка зупинки —
+            але лише якщо DevTools відкриті. Якщо DevTools закриті,
+            оператор ігнорується.
+          </p>
+
+          <div class="code-block">
+            <div class="code-head"><span class="code-lang">JavaScript</span><button class="btn-copy" aria-label="Копіювати"></button></div>
+<pre><code class="language-javascript">function processPayment(amount, currency) {
+  debugger; // виконання зупиниться тут (якщо DevTools відкриті)
+
+  if (amount <= 0) throw new RangeError('Amount must be positive');
+  return convert(amount, currency);
+}
+
+// Видаліть debugger перед комітом —
+// він не впливає на продакшен, але є ознакою незавершеної роботи</code></pre>
+          </div>
+
+          <h3 id="conditional-breakpoints">Умовні точки зупинки</h3>
+
+          <p>
+            Правий клік на точку зупинки → «Edit breakpoint» дозволяє
+            задати умову: виконання зупиниться лише якщо вираз
+            повертає <code>true</code>.
+          </p>
+
+          <div class="code-block">
+            <div class="code-head"><span class="code-lang">JavaScript</span><button class="btn-copy" aria-label="Копіювати"></button></div>
+<pre><code class="language-javascript">// Умова для точки зупинки в цьому рядку:
+// user.role === 'admin' && requestCount > 100
+// Зупиниться лише при адміністраторі з великою кількістю запитів
+for (const user of users) {
+  processUser(user); // ← точка зупинки з умовою
+}</code></pre>
+          </div>
+
+          <h2 id="network">Панель Network</h2>
+
+          <p>
+            Network відображає всі мережеві запити сторінки: XHR, Fetch,
+            завантаження скриптів, стилів, зображень.
+          </p>
+
+          <p>Для кожного запиту доступні:</p>
+          <ul>
+            <li>Headers — заголовки запиту і відповіді</li>
+            <li>Payload — тіло запиту (для POST/PUT)</li>
+            <li>Response — відповідь сервера</li>
+            <li>Timing — детальний розбір часу: DNS, TCP, TTFB, завантаження</li>
+          </ul>
+
+          <div class="callout c-tip">
+            <div class="callout-title">Зберігати логи між перезавантаженнями</div>
+            <p>
+              За замовчуванням Network очищається при перезавантаженні сторінки.
+              Увімкніть опцію <strong>Preserve log</strong> (Preserve log ✓),
+              щоб зберігати запити між перезавантаженнями — зручно при
+              налагодженні POST-форм та редиректів.
+            </p>
+          </div>
+
+          <h2 id="elements">Панель Elements</h2>
+
+          <p>
+            Elements дозволяє переглядати і редагувати DOM та CSS у реальному
+            часі. Зміни в Elements не зберігаються після перезавантаження —
+            це середовище для швидких експериментів.
+          </p>
+
+          <p>
+            Корисна функція: правий клік на елемент у Elements → «Break on»
+            дозволяє встановити точку зупинки на зміну DOM-елемента,
+            зміну атрибута або видалення вузла.
+          </p>
+
+          <h2 id="summary">Підсумок</h2>
+
+          <ul>
+            <li>DevTools відкривається через <kbd>F12</kbd> або <kbd>Ctrl+Shift+I</kbd> / <kbd>Cmd+Option+I</kbd>.</li>
+            <li>Console — REPL для виконання JS і виведення діагностики. <code>console.table</code>, <code>console.group</code>, <code>console.time</code> — корисні розширення.</li>
+            <li>Sources — дебаґер з точками зупинки, крокове виконання (<kbd>F10</kbd>/<kbd>F11</kbd>), перегляд Scope і Call Stack.</li>
+            <li>Оператор <code>debugger</code> у коді — програмна точка зупинки. Видаляйте перед комітом.</li>
+            <li>Умовні точки зупинки — для налагодження циклів і рідкісних умов без зупинки на кожній ітерації.</li>
+            <li>Network — аналіз мережевих запитів: статус, заголовки, тіло, таймінги.</li>
+          </ul>
+
+          <div class="article-support">
+            <p><strong>Матеріал корисний?</strong> Підтримай проект.</p>
+            <div class="support-btns-inline">
+              <a href="https://send.monobank.ua/jar/YOUR_JAR_ID" class="btn-mono" target="_blank" rel="noopener" style="font-size:12px;height:36px;padding:0 14px">🟢 Monobank</a>
+              <a href="https://www.buymeacoffee.com/YOUR_HANDLE" class="btn-coffee" target="_blank" rel="noopener" style="font-size:12px;height:36px;padding:0 14px">☕ Coffee</a>
+            </div>
+          </div>

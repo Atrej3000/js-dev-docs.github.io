@@ -1,0 +1,69 @@
+<p>Черга мікрозавдань (microtask queue) — вища пріоритетність, ніж macrotasks. Коли стек викликів порожніє, рушій спочатку виконує всі мікрозавдання, а потім бере наступний macrotask. Promise callback — це мікрозавдання.</p>
+
+    <h2 id="event-loop">Event loop і черги</h2>
+    <div class="code-block"><div class="code-head"><span class="code-lang">JavaScript</span><button class="btn-copy" aria-label="Копіювати"></button></div>
+<pre><code class="language-javascript">// Порядок виконання
+console.log('1 — sync');
+
+setTimeout(() => console.log('2 — macrotask'), 0);
+
+Promise.resolve()
+  .then(() => console.log('3 — microtask'))
+  .then(() => console.log('4 — microtask 2'));
+
+console.log('5 — sync');
+
+// Вивід:
+// 1 — sync
+// 5 — sync
+// 3 — microtask       ← мікрозавдання до macrotask
+// 4 — microtask 2     ← всі мікрозавдання до наступного macrotask
+// 2 — macrotask</code></pre></div>
+
+    <h2 id="queues">Macrotask vs Microtask</h2>
+    <table>
+      <thead><tr><th>Macrotask</th><th>Microtask</th></tr></thead>
+      <tbody>
+        <tr><td><code>setTimeout</code>, <code>setInterval</code></td><td>Promise <code>.then/.catch/.finally</code></td></tr>
+        <tr><td><code>setImmediate</code> (Node.js)</td><td><code>queueMicrotask()</code></td></tr>
+        <tr><td>UI events, I/O callbacks</td><td><code>MutationObserver</code> (браузер)</td></tr>
+        <tr><td>MessageChannel</td><td><code>process.nextTick</code> (Node.js, найвищий пріоритет)</td></tr>
+      </tbody>
+    </table>
+    <div class="code-block"><div class="code-head"><span class="code-lang">JavaScript</span><button class="btn-copy" aria-label="Копіювати"></button></div>
+<pre><code class="language-javascript">// Схема event loop (спрощено):
+// while(true) {
+//   1. Виконати весь поточний стек викликів
+//   2. Виконати ВСІ мікрозавдання (поки черга не порожня)
+//   3. Якщо потрібен рендер — рендерити
+//   4. Взяти одне macrotask → goto 1
+// }
+
+// Нескінченна рекурсія через мікрозавдання ЗАВИСНЕ event loop!
+function badRecursion() {
+  return Promise.resolve().then(badRecursion); // заблокує браузер
+}
+
+// Для довгих операцій — використовуй setTimeout (дає браузеру "дихнути")</code></pre></div>
+
+    <h2 id="queueMicrotask">queueMicrotask()</h2>
+    <div class="code-block"><div class="code-head"><span class="code-lang">JavaScript</span><button class="btn-copy" aria-label="Копіювати"></button></div>
+<pre><code class="language-javascript">// Явне додавання мікрозавдання
+queueMicrotask(() => {
+  console.log('це мікрозавдання');
+});
+
+// Практичний кейс: відкладити виконання до кінця поточного "тіку"
+// але перед наступним macrotask
+function notifyAsync(callback) {
+  queueMicrotask(callback);
+}</code></pre></div>
+    <div class="callout callout-warn"><p>Якщо мікрозавдання генерують нові мікрозавдання нескінченно — event loop зависне, і UI не оновиться. Довгі обчислення поділяй через <code>setTimeout(chunk, 0)</code>, щоб давати браузеру рендерити.</p></div>
+
+    <h2 id="summary">Підсумок</h2>
+    <ul>
+      <li>Після кожного macrotask виконуються ВСІ мікрозавдання (Promise callbacks)</li>
+      <li>Пріоритет: <code>process.nextTick</code> > мікрозавдання > macrotask</li>
+      <li><code>queueMicrotask(fn)</code> — явне додавання мікрозавдання</li>
+      <li>Ніколи не блокуй мікрочергу нескінченною рекурсією</li>
+    </ul>

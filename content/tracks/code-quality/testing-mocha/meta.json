@@ -1,0 +1,224 @@
+{
+  "id": "code-quality/testing-mocha",
+  "locale": "uk",
+  "locales": {
+    "uk": true,
+    "en": false
+  },
+  "availableLocales": [
+    "uk"
+  ],
+  "title": "Автоматичне тестування за допомогою Mocha",
+  "description": "Автоматичне тестування JavaScript: Mocha, Chai, BDD, TDD. describe/it, assertions, beforeEach/afterEach, async тести.",
+  "track": "code-quality",
+  "trackTitle": "Якість коду",
+  "slug": "testing-mocha",
+  "sourcePath": "uk/code-quality/testing.html",
+  "sourceIdentity": {
+    "track": "code-quality",
+    "slug": "testing"
+  },
+  "canonicalRoute": "/uk/docs/code-quality/testing-mocha",
+  "canonicalLegacyPath": "/code-quality/testing-mocha.html",
+  "legacyHtmlPath": "/uk/code-quality/testing.html",
+  "legacyAliases": [
+    "/uk/code-quality/testing.html",
+    "/uk/code-quality/testing",
+    "/code-quality/testing-mocha.html"
+  ],
+  "sectionOrder": 3,
+  "lessonOrder": 5,
+  "overallOrder": 27,
+  "articleNumber": "3.5",
+  "estimatedMinutes": 16,
+  "headings": [
+    {
+      "level": 2,
+      "id": "chomu-vazhlivo",
+      "text": "Чому це важливо"
+    },
+    {
+      "level": 2,
+      "id": "vidy-testiv",
+      "text": "Види тестів"
+    },
+    {
+      "level": 2,
+      "id": "mocha",
+      "text": "Mocha — тестовий фреймворк"
+    },
+    {
+      "level": 2,
+      "id": "bdd-syntax",
+      "text": "BDD синтаксис"
+    },
+    {
+      "level": 2,
+      "id": "chai-assertions",
+      "text": "Chai assertions"
+    },
+    {
+      "level": 2,
+      "id": "hooks",
+      "text": "Hooks: beforeEach і afterEach"
+    },
+    {
+      "level": 2,
+      "id": "async-tests",
+      "text": "Асинхронні тести"
+    },
+    {
+      "level": 2,
+      "id": "tdd",
+      "text": "TDD: Test-Driven Development"
+    },
+    {
+      "level": 2,
+      "id": "summary",
+      "text": "Підсумок"
+    }
+  ],
+  "badges": [
+    "Початковий",
+    "Якість коду",
+    "~ 16 хв"
+  ],
+  "donationLinks": [
+    "https://send.monobank.ua/jar/YOUR_JAR_ID",
+    "https://www.buymeacoffee.com/YOUR_HANDLE"
+  ],
+  "breadcrumbTrail": [
+    "Головна",
+    "Якість коду",
+    "Автоматичне тестування (Mocha)"
+  ],
+  "relatedSourceTrack": "code-quality",
+  "contentFiles": {
+    "uk": "content/tracks/code-quality/testing-mocha/index.uk.html",
+    "en": "content/tracks/code-quality/testing-mocha/index.en.mdx"
+  },
+  "metadataFile": "content/tracks/code-quality/testing-mocha/meta.json",
+  "translationStatus": {
+    "sourceLocale": "uk",
+    "availableLocales": [
+      "uk"
+    ],
+    "fallbackLocales": {
+      "en": "uk"
+    },
+    "locales": {
+      "uk": {
+        "status": "published",
+        "filePath": "content/tracks/code-quality/testing-mocha/index.uk.html",
+        "format": "html",
+        "title": "Автоматичне тестування за допомогою Mocha",
+        "description": "Автоматичне тестування JavaScript: Mocha, Chai, BDD, TDD. describe/it, assertions, beforeEach/afterEach, async тести.",
+        "completeness": 100,
+        "isFallback": false,
+        "headings": [
+          {
+            "level": 2,
+            "id": "chomu-vazhlivo",
+            "text": "Чому це важливо"
+          },
+          {
+            "level": 2,
+            "id": "vidy-testiv",
+            "text": "Види тестів"
+          },
+          {
+            "level": 2,
+            "id": "mocha",
+            "text": "Mocha — тестовий фреймворк"
+          },
+          {
+            "level": 2,
+            "id": "bdd-syntax",
+            "text": "BDD синтаксис"
+          },
+          {
+            "level": 2,
+            "id": "chai-assertions",
+            "text": "Chai assertions"
+          },
+          {
+            "level": 2,
+            "id": "hooks",
+            "text": "Hooks: beforeEach і afterEach"
+          },
+          {
+            "level": 2,
+            "id": "async-tests",
+            "text": "Асинхронні тести"
+          },
+          {
+            "level": 2,
+            "id": "tdd",
+            "text": "TDD: Test-Driven Development"
+          },
+          {
+            "level": 2,
+            "id": "summary",
+            "text": "Підсумок"
+          }
+        ]
+      },
+      "en": {
+        "status": "draft",
+        "filePath": "content/tracks/code-quality/testing-mocha/index.en.mdx",
+        "format": "mdx",
+        "title": "TODO: Translate title",
+        "description": "TODO: Translate description",
+        "completeness": 0,
+        "isFallback": true,
+        "headings": [
+          {
+            "level": 2,
+            "id": "source-lesson",
+            "text": "Source lesson"
+          }
+        ],
+        "slug": "testing-mocha",
+        "track": "code-quality",
+        "locale": "en",
+        "sourceLocale": "uk",
+        "hasBody": true
+      }
+    }
+  },
+  "translationCompleteness": {
+    "uk": 100,
+    "en": 0
+  },
+  "migration": {
+    "migratedFromLegacy": true,
+    "canonicalIdentitySource": "canonical",
+    "override": null,
+    "articleMeta": {
+      "type": "string",
+      "raw": {
+        "secId": "code-quality",
+        "artId": "testing-mocha"
+      },
+      "resolved": {
+        "track": "code-quality",
+        "slug": "testing-mocha"
+      }
+    },
+    "mismatches": {
+      "filePathVsCanonical": true,
+      "filePathVsStringMeta": true,
+      "filePathVsNumericMeta": false
+    },
+    "hasLegacyJsonLd": true,
+    "hasLegacyToc": true,
+    "hasLegacyPrevNext": true,
+    "legacyArticleSupport": true
+  },
+  "bodySourcePath": "content/tracks/code-quality/testing-mocha/index.uk.html",
+  "sourceProvenance": {
+    "sourcePath": "uk/code-quality/testing.html",
+    "sourceTrack": "code-quality",
+    "sourceSlug": "testing"
+  }
+}

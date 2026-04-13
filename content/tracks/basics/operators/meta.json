@@ -1,0 +1,264 @@
+{
+  "id": "basics/operators",
+  "locale": "uk",
+  "locales": {
+    "uk": true,
+    "en": true
+  },
+  "availableLocales": [
+    "uk",
+    "en"
+  ],
+  "title": "Базові оператори, математика",
+  "description": "Арифметичні оператори JavaScript, оператор +, пріоритет операторів, присвоєння, інкремент/декремент, побітові операції.",
+  "track": "basics",
+  "trackTitle": "Основи JavaScript",
+  "slug": "operators",
+  "sourcePath": "uk/basics/operators.html",
+  "sourceIdentity": {
+    "track": "basics",
+    "slug": "operators"
+  },
+  "canonicalRoute": "/uk/docs/basics/operators",
+  "canonicalLegacyPath": "/basics/operators.html",
+  "legacyHtmlPath": "/uk/basics/operators.html",
+  "legacyAliases": [
+    "/uk/basics/operators.html",
+    "/uk/basics/operators",
+    "/basics/operators.html"
+  ],
+  "sectionOrder": 2,
+  "lessonOrder": 8,
+  "overallOrder": 12,
+  "articleNumber": "2.8",
+  "estimatedMinutes": 12,
+  "headings": [
+    {
+      "level": 2,
+      "id": "aryfmetychni",
+      "text": "Арифметичні оператори"
+    },
+    {
+      "level": 2,
+      "id": "operator-plus",
+      "text": "Оператор + з рядками"
+    },
+    {
+      "level": 2,
+      "id": "unarni",
+      "text": "Унарні оператори"
+    },
+    {
+      "level": 2,
+      "id": "inkrement",
+      "text": "Інкремент і декремент"
+    },
+    {
+      "level": 2,
+      "id": "priorytety",
+      "text": "Пріоритет операторів"
+    },
+    {
+      "level": 2,
+      "id": "prysvoiennya",
+      "text": "Оператори присвоєння"
+    },
+    {
+      "level": 2,
+      "id": "bitovi",
+      "text": "Побітові оператори"
+    },
+    {
+      "level": 2,
+      "id": "koma",
+      "text": "Оператор кома"
+    },
+    {
+      "level": 2,
+      "id": "summary",
+      "text": "Підсумок"
+    }
+  ],
+  "badges": [
+    "Початковий",
+    "Основи JavaScript",
+    "~ 12 хв"
+  ],
+  "donationLinks": [
+    "https://send.monobank.ua/jar/YOUR_JAR_ID",
+    "https://www.buymeacoffee.com/YOUR_HANDLE"
+  ],
+  "breadcrumbTrail": [
+    "Головна",
+    "Основи JavaScript",
+    "Базові оператори, математика"
+  ],
+  "relatedSourceTrack": "basics",
+  "contentFiles": {
+    "uk": "content/tracks/basics/operators/index.uk.html",
+    "en": "content/tracks/basics/operators/index.en.mdx"
+  },
+  "metadataFile": "content/tracks/basics/operators/meta.json",
+  "translationStatus": {
+    "sourceLocale": "uk",
+    "availableLocales": [
+      "uk",
+      "en"
+    ],
+    "fallbackLocales": {},
+    "locales": {
+      "uk": {
+        "status": "published",
+        "filePath": "content/tracks/basics/operators/index.uk.html",
+        "format": "html",
+        "title": "Базові оператори, математика",
+        "description": "Арифметичні оператори JavaScript, оператор +, пріоритет операторів, присвоєння, інкремент/декремент, побітові операції.",
+        "completeness": 100,
+        "isFallback": false,
+        "headings": [
+          {
+            "level": 2,
+            "id": "aryfmetychni",
+            "text": "Арифметичні оператори"
+          },
+          {
+            "level": 2,
+            "id": "operator-plus",
+            "text": "Оператор + з рядками"
+          },
+          {
+            "level": 2,
+            "id": "unarni",
+            "text": "Унарні оператори"
+          },
+          {
+            "level": 2,
+            "id": "inkrement",
+            "text": "Інкремент і декремент"
+          },
+          {
+            "level": 2,
+            "id": "priorytety",
+            "text": "Пріоритет операторів"
+          },
+          {
+            "level": 2,
+            "id": "prysvoiennya",
+            "text": "Оператори присвоєння"
+          },
+          {
+            "level": 2,
+            "id": "bitovi",
+            "text": "Побітові оператори"
+          },
+          {
+            "level": 2,
+            "id": "koma",
+            "text": "Оператор кома"
+          },
+          {
+            "level": 2,
+            "id": "summary",
+            "text": "Підсумок"
+          }
+        ]
+      },
+      "en": {
+        "status": "published",
+        "filePath": "content/tracks/basics/operators/index.en.mdx",
+        "format": "mdx",
+        "title": "Basic Operators and Math",
+        "description": "Arithmetic, assignment, operator precedence, and the core JavaScript operators you use every day.",
+        "completeness": 100,
+        "isFallback": false,
+        "headings": [
+          {
+            "level": 2,
+            "id": "arithmetic-operators",
+            "text": "Arithmetic operators"
+          },
+          {
+            "level": 2,
+            "id": "the-operator-with-strings",
+            "text": "The `+` operator with strings"
+          },
+          {
+            "level": 2,
+            "id": "unary-operators",
+            "text": "Unary operators"
+          },
+          {
+            "level": 2,
+            "id": "increment-and-decrement",
+            "text": "Increment and decrement"
+          },
+          {
+            "level": 2,
+            "id": "operator-precedence",
+            "text": "Operator precedence"
+          },
+          {
+            "level": 2,
+            "id": "assignment-operators",
+            "text": "Assignment operators"
+          },
+          {
+            "level": 2,
+            "id": "bitwise-operators",
+            "text": "Bitwise operators"
+          },
+          {
+            "level": 2,
+            "id": "the-comma-operator",
+            "text": "The comma operator"
+          },
+          {
+            "level": 2,
+            "id": "summary",
+            "text": "Summary"
+          }
+        ],
+        "slug": "operators",
+        "track": "basics",
+        "locale": "en",
+        "sourceLocale": "uk",
+        "hasBody": true
+      }
+    }
+  },
+  "translationCompleteness": {
+    "uk": 100,
+    "en": 100
+  },
+  "migration": {
+    "migratedFromLegacy": true,
+    "canonicalIdentitySource": "canonical",
+    "override": null,
+    "articleMeta": {
+      "type": "string",
+      "raw": {
+        "secId": "basics",
+        "artId": "operators"
+      },
+      "resolved": {
+        "track": "basics",
+        "slug": "operators"
+      }
+    },
+    "mismatches": {
+      "filePathVsCanonical": false,
+      "filePathVsStringMeta": false,
+      "filePathVsNumericMeta": false
+    },
+    "hasLegacyJsonLd": true,
+    "hasLegacyToc": true,
+    "hasLegacyPrevNext": true,
+    "legacyArticleSupport": true
+  },
+  "bodySourcePath": "content/tracks/basics/operators/index.uk.html",
+  "sourceProvenance": {
+    "sourcePath": "uk/basics/operators.html",
+    "sourceTrack": "basics",
+    "sourceSlug": "operators"
+  }
+}

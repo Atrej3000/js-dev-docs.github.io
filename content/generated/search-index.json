@@ -1,0 +1,1412 @@
+[
+  {
+    "id": "intro/intro-to-javascript",
+    "locale": "uk",
+    "title": "Вступ до JavaScript",
+    "track": "intro",
+    "trackTitle": "Вступ",
+    "slug": "intro-to-javascript",
+    "canonicalRoute": "/uk/docs/intro/intro-to-javascript",
+    "legacyAliases": [
+      "/uk/introduction/intro.html",
+      "/uk/introduction/intro",
+      "/intro/intro-to-javascript.html"
+    ],
+    "queryText": "вступ до javascript intro вступ intro-to-javascript introduction intro /uk/introduction/intro.html /uk/introduction/intro /intro/intro-to-javascript.html"
+  },
+  {
+    "id": "intro/specifications",
+    "locale": "uk",
+    "title": "Довідники і специфікації",
+    "track": "intro",
+    "trackTitle": "Вступ",
+    "slug": "specifications",
+    "canonicalRoute": "/uk/docs/intro/specifications",
+    "legacyAliases": [
+      "/uk/introduction/reference.html",
+      "/uk/introduction/reference",
+      "/intro/specifications.html"
+    ],
+    "queryText": "довідники і специфікації intro вступ specifications introduction reference /uk/introduction/reference.html /uk/introduction/reference /intro/specifications.html"
+  },
+  {
+    "id": "intro/code-editors",
+    "locale": "uk",
+    "title": "Редактори коду",
+    "track": "intro",
+    "trackTitle": "Вступ",
+    "slug": "code-editors",
+    "canonicalRoute": "/uk/docs/intro/code-editors",
+    "legacyAliases": [
+      "/uk/introduction/editors.html",
+      "/uk/introduction/editors",
+      "/intro/code-editors.html"
+    ],
+    "queryText": "редактори коду intro вступ code-editors introduction editors /uk/introduction/editors.html /uk/introduction/editors /intro/code-editors.html"
+  },
+  {
+    "id": "intro/devtools",
+    "locale": "uk",
+    "title": "Інструменти розробника",
+    "track": "intro",
+    "trackTitle": "Вступ",
+    "slug": "devtools",
+    "canonicalRoute": "/uk/docs/intro/devtools",
+    "legacyAliases": [
+      "/uk/introduction/devtools.html",
+      "/uk/introduction/devtools",
+      "/intro/devtools.html"
+    ],
+    "queryText": "інструменти розробника intro вступ devtools introduction devtools /uk/introduction/devtools.html /uk/introduction/devtools /intro/devtools.html"
+  },
+  {
+    "id": "basics/hello-world",
+    "locale": "uk",
+    "title": "Привіт, світ!",
+    "track": "basics",
+    "trackTitle": "Основи JavaScript",
+    "slug": "hello-world",
+    "canonicalRoute": "/uk/docs/basics/hello-world",
+    "legacyAliases": [
+      "/uk/basics/hello-world.html",
+      "/uk/basics/hello-world",
+      "/basics/hello-world.html"
+    ],
+    "queryText": "привіт, світ! basics основи javascript hello-world basics hello-world /uk/basics/hello-world.html /uk/basics/hello-world /basics/hello-world.html"
+  },
+  {
+    "id": "basics/code-structure",
+    "locale": "uk",
+    "title": "Структура коду",
+    "track": "basics",
+    "trackTitle": "Основи JavaScript",
+    "slug": "code-structure",
+    "canonicalRoute": "/uk/docs/basics/code-structure",
+    "legacyAliases": [
+      "/uk/basics/code-structure.html",
+      "/uk/basics/code-structure",
+      "/basics/code-structure.html"
+    ],
+    "queryText": "структура коду basics основи javascript code-structure basics code-structure /uk/basics/code-structure.html /uk/basics/code-structure /basics/code-structure.html"
+  },
+  {
+    "id": "basics/use-strict",
+    "locale": "uk",
+    "title": "Суворий режим \"use strict\"",
+    "track": "basics",
+    "trackTitle": "Основи JavaScript",
+    "slug": "use-strict",
+    "canonicalRoute": "/uk/docs/basics/use-strict",
+    "legacyAliases": [
+      "/uk/basics/strict-mode.html",
+      "/uk/basics/strict-mode",
+      "/basics/use-strict.html"
+    ],
+    "queryText": "суворий режим \"use strict\" basics основи javascript use-strict basics strict-mode /uk/basics/strict-mode.html /uk/basics/strict-mode /basics/use-strict.html"
+  },
+  {
+    "id": "basics/variables",
+    "locale": "uk",
+    "title": "Змінні",
+    "track": "basics",
+    "trackTitle": "Основи JavaScript",
+    "slug": "variables",
+    "canonicalRoute": "/uk/docs/basics/variables",
+    "legacyAliases": [
+      "/uk/basics/variables.html",
+      "/uk/basics/variables",
+      "/basics/variables.html"
+    ],
+    "queryText": "змінні basics основи javascript variables basics variables /uk/basics/variables.html /uk/basics/variables /basics/variables.html"
+  },
+  {
+    "id": "basics/data-types",
+    "locale": "uk",
+    "title": "Типи даних",
+    "track": "basics",
+    "trackTitle": "Основи JavaScript",
+    "slug": "data-types",
+    "canonicalRoute": "/uk/docs/basics/data-types",
+    "legacyAliases": [
+      "/uk/basics/types.html",
+      "/uk/basics/types",
+      "/basics/data-types.html"
+    ],
+    "queryText": "типи даних basics основи javascript data-types basics types /uk/basics/types.html /uk/basics/types /basics/data-types.html"
+  },
+  {
+    "id": "basics/interaction",
+    "locale": "uk",
+    "title": "Взаємодія: alert, prompt, confirm",
+    "track": "basics",
+    "trackTitle": "Основи JavaScript",
+    "slug": "interaction",
+    "canonicalRoute": "/uk/docs/basics/interaction",
+    "legacyAliases": [
+      "/uk/basics/interaction.html",
+      "/uk/basics/interaction",
+      "/basics/interaction.html"
+    ],
+    "queryText": "взаємодія: alert, prompt, confirm basics основи javascript interaction basics interaction /uk/basics/interaction.html /uk/basics/interaction /basics/interaction.html"
+  },
+  {
+    "id": "basics/type-conversions",
+    "locale": "uk",
+    "title": "Перетворення типів",
+    "track": "basics",
+    "trackTitle": "Основи JavaScript",
+    "slug": "type-conversions",
+    "canonicalRoute": "/uk/docs/basics/type-conversions",
+    "legacyAliases": [
+      "/uk/basics/type-casting.html",
+      "/uk/basics/type-casting",
+      "/basics/type-conversions.html"
+    ],
+    "queryText": "перетворення типів basics основи javascript type-conversions basics type-casting /uk/basics/type-casting.html /uk/basics/type-casting /basics/type-conversions.html"
+  },
+  {
+    "id": "basics/operators",
+    "locale": "uk",
+    "title": "Базові оператори, математика",
+    "track": "basics",
+    "trackTitle": "Основи JavaScript",
+    "slug": "operators",
+    "canonicalRoute": "/uk/docs/basics/operators",
+    "legacyAliases": [
+      "/uk/basics/operators.html",
+      "/uk/basics/operators",
+      "/basics/operators.html"
+    ],
+    "queryText": "базові оператори, математика basics основи javascript operators basics operators /uk/basics/operators.html /uk/basics/operators /basics/operators.html"
+  },
+  {
+    "id": "basics/comparison",
+    "locale": "uk",
+    "title": "Оператори порівняння",
+    "track": "basics",
+    "trackTitle": "Основи JavaScript",
+    "slug": "comparison",
+    "canonicalRoute": "/uk/docs/basics/comparison",
+    "legacyAliases": [
+      "/uk/basics/comparisons.html",
+      "/uk/basics/comparisons",
+      "/basics/comparison.html"
+    ],
+    "queryText": "оператори порівняння basics основи javascript comparison basics comparisons /uk/basics/comparisons.html /uk/basics/comparisons /basics/comparison.html"
+  },
+  {
+    "id": "basics/ifelse",
+    "locale": "uk",
+    "title": "Умовне розгалуження: if, ?",
+    "track": "basics",
+    "trackTitle": "Основи JavaScript",
+    "slug": "ifelse",
+    "canonicalRoute": "/uk/docs/basics/ifelse",
+    "legacyAliases": [
+      "/uk/basics/if-else.html",
+      "/uk/basics/if-else",
+      "/basics/ifelse.html"
+    ],
+    "queryText": "умовне розгалуження: if, ? basics основи javascript ifelse basics if-else /uk/basics/if-else.html /uk/basics/if-else /basics/ifelse.html"
+  },
+  {
+    "id": "basics/logical-operators",
+    "locale": "uk",
+    "title": "Логічні оператори",
+    "track": "basics",
+    "trackTitle": "Основи JavaScript",
+    "slug": "logical-operators",
+    "canonicalRoute": "/uk/docs/basics/logical-operators",
+    "legacyAliases": [
+      "/uk/basics/logical-operators.html",
+      "/uk/basics/logical-operators",
+      "/basics/logical-operators.html"
+    ],
+    "queryText": "логічні оператори basics основи javascript logical-operators basics logical-operators /uk/basics/logical-operators.html /uk/basics/logical-operators /basics/logical-operators.html"
+  },
+  {
+    "id": "basics/nullish-coalescing",
+    "locale": "uk",
+    "title": "Оператор об'єднання з null ??",
+    "track": "basics",
+    "trackTitle": "Основи JavaScript",
+    "slug": "nullish-coalescing",
+    "canonicalRoute": "/uk/docs/basics/nullish-coalescing",
+    "legacyAliases": [
+      "/uk/basics/nullish-coalescing.html",
+      "/uk/basics/nullish-coalescing",
+      "/basics/nullish-coalescing.html"
+    ],
+    "queryText": "оператор об'єднання з null ?? basics основи javascript nullish-coalescing basics nullish-coalescing /uk/basics/nullish-coalescing.html /uk/basics/nullish-coalescing /basics/nullish-coalescing.html"
+  },
+  {
+    "id": "basics/loops",
+    "locale": "uk",
+    "title": "Цикли: while та for",
+    "track": "basics",
+    "trackTitle": "Основи JavaScript",
+    "slug": "loops",
+    "canonicalRoute": "/uk/docs/basics/loops",
+    "legacyAliases": [
+      "/uk/basics/loops.html",
+      "/uk/basics/loops",
+      "/basics/loops.html"
+    ],
+    "queryText": "цикли: while та for basics основи javascript loops basics loops /uk/basics/loops.html /uk/basics/loops /basics/loops.html"
+  },
+  {
+    "id": "basics/switch",
+    "locale": "uk",
+    "title": "Конструкція switch",
+    "track": "basics",
+    "trackTitle": "Основи JavaScript",
+    "slug": "switch",
+    "canonicalRoute": "/uk/docs/basics/switch",
+    "legacyAliases": [
+      "/uk/basics/switch.html",
+      "/uk/basics/switch",
+      "/basics/switch.html"
+    ],
+    "queryText": "конструкція switch basics основи javascript switch basics switch /uk/basics/switch.html /uk/basics/switch /basics/switch.html"
+  },
+  {
+    "id": "basics/function-basics",
+    "locale": "uk",
+    "title": "Функції",
+    "track": "basics",
+    "trackTitle": "Основи JavaScript",
+    "slug": "function-basics",
+    "canonicalRoute": "/uk/docs/basics/function-basics",
+    "legacyAliases": [
+      "/uk/basics/functions.html",
+      "/uk/basics/functions",
+      "/basics/function-basics.html"
+    ],
+    "queryText": "функції basics основи javascript function-basics basics functions /uk/basics/functions.html /uk/basics/functions /basics/function-basics.html"
+  },
+  {
+    "id": "basics/function-expressions",
+    "locale": "uk",
+    "title": "Функціональні вирази",
+    "track": "basics",
+    "trackTitle": "Основи JavaScript",
+    "slug": "function-expressions",
+    "canonicalRoute": "/uk/docs/basics/function-expressions",
+    "legacyAliases": [
+      "/uk/basics/function-expressions.html",
+      "/uk/basics/function-expressions",
+      "/basics/function-expressions.html"
+    ],
+    "queryText": "функціональні вирази basics основи javascript function-expressions basics function-expressions /uk/basics/function-expressions.html /uk/basics/function-expressions /basics/function-expressions.html"
+  },
+  {
+    "id": "basics/arrow-functions",
+    "locale": "uk",
+    "title": "Стрілкові функції, основи",
+    "track": "basics",
+    "trackTitle": "Основи JavaScript",
+    "slug": "arrow-functions",
+    "canonicalRoute": "/uk/docs/basics/arrow-functions",
+    "legacyAliases": [
+      "/uk/basics/arrow-functions.html",
+      "/uk/basics/arrow-functions",
+      "/basics/arrow-functions.html"
+    ],
+    "queryText": "стрілкові функції, основи basics основи javascript arrow-functions basics arrow-functions /uk/basics/arrow-functions.html /uk/basics/arrow-functions /basics/arrow-functions.html"
+  },
+  {
+    "id": "basics/javascript-specials",
+    "locale": "uk",
+    "title": "Особливості JavaScript",
+    "track": "basics",
+    "trackTitle": "Основи JavaScript",
+    "slug": "javascript-specials",
+    "canonicalRoute": "/uk/docs/basics/javascript-specials",
+    "legacyAliases": [
+      "/uk/basics/js-specials.html",
+      "/uk/basics/js-specials",
+      "/basics/javascript-specials.html"
+    ],
+    "queryText": "особливості javascript basics основи javascript javascript-specials basics js-specials /uk/basics/js-specials.html /uk/basics/js-specials /basics/javascript-specials.html"
+  },
+  {
+    "id": "code-quality/debugging",
+    "locale": "uk",
+    "title": "Налагодження в браузері",
+    "track": "code-quality",
+    "trackTitle": "Якість коду",
+    "slug": "debugging",
+    "canonicalRoute": "/uk/docs/code-quality/debugging",
+    "legacyAliases": [
+      "/uk/code-quality/debugging.html",
+      "/uk/code-quality/debugging",
+      "/code-quality/debugging.html"
+    ],
+    "queryText": "налагодження в браузері code-quality якість коду debugging code-quality debugging /uk/code-quality/debugging.html /uk/code-quality/debugging /code-quality/debugging.html"
+  },
+  {
+    "id": "code-quality/coding-style",
+    "locale": "uk",
+    "title": "Стандарт оформлення коду",
+    "track": "code-quality",
+    "trackTitle": "Якість коду",
+    "slug": "coding-style",
+    "canonicalRoute": "/uk/docs/code-quality/coding-style",
+    "legacyAliases": [
+      "/uk/code-quality/coding-style.html",
+      "/uk/code-quality/coding-style",
+      "/code-quality/coding-style.html"
+    ],
+    "queryText": "стандарт оформлення коду code-quality якість коду coding-style code-quality coding-style /uk/code-quality/coding-style.html /uk/code-quality/coding-style /code-quality/coding-style.html"
+  },
+  {
+    "id": "code-quality/comments",
+    "locale": "uk",
+    "title": "Коментарі",
+    "track": "code-quality",
+    "trackTitle": "Якість коду",
+    "slug": "comments",
+    "canonicalRoute": "/uk/docs/code-quality/comments",
+    "legacyAliases": [
+      "/uk/code-quality/comments.html",
+      "/uk/code-quality/comments",
+      "/code-quality/comments.html"
+    ],
+    "queryText": "коментарі code-quality якість коду comments code-quality comments /uk/code-quality/comments.html /uk/code-quality/comments /code-quality/comments.html"
+  },
+  {
+    "id": "code-quality/ninja-code",
+    "locale": "uk",
+    "title": "Гарний код",
+    "track": "code-quality",
+    "trackTitle": "Якість коду",
+    "slug": "ninja-code",
+    "canonicalRoute": "/uk/docs/code-quality/ninja-code",
+    "legacyAliases": [
+      "/uk/code-quality/ninja-code.html",
+      "/uk/code-quality/ninja-code",
+      "/code-quality/ninja-code.html"
+    ],
+    "queryText": "гарний код code-quality якість коду ninja-code code-quality ninja-code /uk/code-quality/ninja-code.html /uk/code-quality/ninja-code /code-quality/ninja-code.html"
+  },
+  {
+    "id": "code-quality/testing-mocha",
+    "locale": "uk",
+    "title": "Автоматичне тестування за допомогою Mocha",
+    "track": "code-quality",
+    "trackTitle": "Якість коду",
+    "slug": "testing-mocha",
+    "canonicalRoute": "/uk/docs/code-quality/testing-mocha",
+    "legacyAliases": [
+      "/uk/code-quality/testing.html",
+      "/uk/code-quality/testing",
+      "/code-quality/testing-mocha.html"
+    ],
+    "queryText": "автоматичне тестування за допомогою mocha code-quality якість коду testing-mocha code-quality testing /uk/code-quality/testing.html /uk/code-quality/testing /code-quality/testing-mocha.html"
+  },
+  {
+    "id": "code-quality/polyfills",
+    "locale": "uk",
+    "title": "Поліфіли та транспілери",
+    "track": "code-quality",
+    "trackTitle": "Якість коду",
+    "slug": "polyfills",
+    "canonicalRoute": "/uk/docs/code-quality/polyfills",
+    "legacyAliases": [
+      "/uk/code-quality/polyfills.html",
+      "/uk/code-quality/polyfills",
+      "/code-quality/polyfills.html"
+    ],
+    "queryText": "поліфіли та транспілери code-quality якість коду polyfills code-quality polyfills /uk/code-quality/polyfills.html /uk/code-quality/polyfills /code-quality/polyfills.html"
+  },
+  {
+    "id": "objects/object-basics",
+    "locale": "uk",
+    "title": "Об'єкти",
+    "track": "objects",
+    "trackTitle": "Об'єкти: основи",
+    "slug": "object-basics",
+    "canonicalRoute": "/uk/docs/objects/object-basics",
+    "legacyAliases": [
+      "/uk/objects/objects.html",
+      "/uk/objects/objects",
+      "/objects/object-basics.html"
+    ],
+    "queryText": "об'єкти objects об'єкти: основи object-basics objects objects /uk/objects/objects.html /uk/objects/objects /objects/object-basics.html"
+  },
+  {
+    "id": "objects/object-copy",
+    "locale": "uk",
+    "title": "Копіювання об'єктів та посилання",
+    "track": "objects",
+    "trackTitle": "Об'єкти: основи",
+    "slug": "object-copy",
+    "canonicalRoute": "/uk/docs/objects/object-copy",
+    "legacyAliases": [
+      "/uk/objects/object-copy.html",
+      "/uk/objects/object-copy",
+      "/objects/object-copy.html"
+    ],
+    "queryText": "копіювання об'єктів та посилання objects об'єкти: основи object-copy objects object-copy /uk/objects/object-copy.html /uk/objects/object-copy /objects/object-copy.html"
+  },
+  {
+    "id": "objects/garbage-collection",
+    "locale": "uk",
+    "title": "Збирання сміття",
+    "track": "objects",
+    "trackTitle": "Об'єкти: основи",
+    "slug": "garbage-collection",
+    "canonicalRoute": "/uk/docs/objects/garbage-collection",
+    "legacyAliases": [
+      "/uk/objects/garbage-collection.html",
+      "/uk/objects/garbage-collection",
+      "/objects/garbage-collection.html"
+    ],
+    "queryText": "збирання сміття objects об'єкти: основи garbage-collection objects garbage-collection /uk/objects/garbage-collection.html /uk/objects/garbage-collection /objects/garbage-collection.html"
+  },
+  {
+    "id": "objects/object-methods",
+    "locale": "uk",
+    "title": "Методи об'єкта, this",
+    "track": "objects",
+    "trackTitle": "Об'єкти: основи",
+    "slug": "object-methods",
+    "canonicalRoute": "/uk/docs/objects/object-methods",
+    "legacyAliases": [
+      "/uk/objects/this.html",
+      "/uk/objects/this",
+      "/objects/object-methods.html"
+    ],
+    "queryText": "методи об'єкта, this objects об'єкти: основи object-methods objects this /uk/objects/this.html /uk/objects/this /objects/object-methods.html"
+  },
+  {
+    "id": "objects/constructor-new",
+    "locale": "uk",
+    "title": "Конструктор, оператор new",
+    "track": "objects",
+    "trackTitle": "Об'єкти: основи",
+    "slug": "constructor-new",
+    "canonicalRoute": "/uk/docs/objects/constructor-new",
+    "legacyAliases": [
+      "/uk/objects/constructor-new.html",
+      "/uk/objects/constructor-new",
+      "/objects/constructor-new.html"
+    ],
+    "queryText": "конструктор, оператор new objects об'єкти: основи constructor-new objects constructor-new /uk/objects/constructor-new.html /uk/objects/constructor-new /objects/constructor-new.html"
+  },
+  {
+    "id": "objects/optional-chaining",
+    "locale": "uk",
+    "title": "Опціональний ланцюжок ?.",
+    "track": "objects",
+    "trackTitle": "Об'єкти: основи",
+    "slug": "optional-chaining",
+    "canonicalRoute": "/uk/docs/objects/optional-chaining",
+    "legacyAliases": [
+      "/uk/objects/optional-chaining.html",
+      "/uk/objects/optional-chaining",
+      "/objects/optional-chaining.html"
+    ],
+    "queryText": "опціональний ланцюжок ?. objects об'єкти: основи optional-chaining objects optional-chaining /uk/objects/optional-chaining.html /uk/objects/optional-chaining /objects/optional-chaining.html"
+  },
+  {
+    "id": "objects/symbol",
+    "locale": "uk",
+    "title": "Тип даних Symbol",
+    "track": "objects",
+    "trackTitle": "Об'єкти: основи",
+    "slug": "symbol",
+    "canonicalRoute": "/uk/docs/objects/symbol",
+    "legacyAliases": [
+      "/uk/objects/symbol.html",
+      "/uk/objects/symbol",
+      "/objects/symbol.html"
+    ],
+    "queryText": "тип даних symbol objects об'єкти: основи symbol objects symbol /uk/objects/symbol.html /uk/objects/symbol /objects/symbol.html"
+  },
+  {
+    "id": "objects/object-toprimitive",
+    "locale": "uk",
+    "title": "Перетворення об'єктів в примітиви",
+    "track": "objects",
+    "trackTitle": "Об'єкти: основи",
+    "slug": "object-toprimitive",
+    "canonicalRoute": "/uk/docs/objects/object-toprimitive",
+    "legacyAliases": [
+      "/uk/objects/object-toprimitive.html",
+      "/uk/objects/object-toprimitive",
+      "/objects/object-toprimitive.html"
+    ],
+    "queryText": "перетворення об'єктів в примітиви objects об'єкти: основи object-toprimitive objects object-toprimitive /uk/objects/object-toprimitive.html /uk/objects/object-toprimitive /objects/object-toprimitive.html"
+  },
+  {
+    "id": "data-types/primitives-methods",
+    "locale": "uk",
+    "title": "Методи примітивів",
+    "track": "data-types",
+    "trackTitle": "Типи даних",
+    "slug": "primitives-methods",
+    "canonicalRoute": "/uk/docs/data-types/primitives-methods",
+    "legacyAliases": [
+      "/uk/data-types/primitives-methods.html",
+      "/uk/data-types/primitives-methods",
+      "/data-types/primitives-methods.html"
+    ],
+    "queryText": "методи примітивів data-types типи даних primitives-methods data-types primitives-methods /uk/data-types/primitives-methods.html /uk/data-types/primitives-methods /data-types/primitives-methods.html"
+  },
+  {
+    "id": "data-types/number",
+    "locale": "uk",
+    "title": "Числа",
+    "track": "data-types",
+    "trackTitle": "Типи даних",
+    "slug": "number",
+    "canonicalRoute": "/uk/docs/data-types/number",
+    "legacyAliases": [
+      "/uk/data-types/number.html",
+      "/uk/data-types/number",
+      "/data-types/number.html"
+    ],
+    "queryText": "числа data-types типи даних number data-types number /uk/data-types/number.html /uk/data-types/number /data-types/number.html"
+  },
+  {
+    "id": "data-types/string",
+    "locale": "uk",
+    "title": "Рядки",
+    "track": "data-types",
+    "trackTitle": "Типи даних",
+    "slug": "string",
+    "canonicalRoute": "/uk/docs/data-types/string",
+    "legacyAliases": [
+      "/uk/data-types/string.html",
+      "/uk/data-types/string",
+      "/data-types/string.html"
+    ],
+    "queryText": "рядки data-types типи даних string data-types string /uk/data-types/string.html /uk/data-types/string /data-types/string.html"
+  },
+  {
+    "id": "data-types/array",
+    "locale": "uk",
+    "title": "Масиви",
+    "track": "data-types",
+    "trackTitle": "Типи даних",
+    "slug": "array",
+    "canonicalRoute": "/uk/docs/data-types/array",
+    "legacyAliases": [
+      "/uk/data-types/array.html",
+      "/uk/data-types/array",
+      "/data-types/array.html"
+    ],
+    "queryText": "масиви data-types типи даних array data-types array /uk/data-types/array.html /uk/data-types/array /data-types/array.html"
+  },
+  {
+    "id": "data-types/array-methods",
+    "locale": "uk",
+    "title": "Методи масивів",
+    "track": "data-types",
+    "trackTitle": "Типи даних",
+    "slug": "array-methods",
+    "canonicalRoute": "/uk/docs/data-types/array-methods",
+    "legacyAliases": [
+      "/uk/data-types/array-methods.html",
+      "/uk/data-types/array-methods",
+      "/data-types/array-methods.html"
+    ],
+    "queryText": "методи масивів data-types типи даних array-methods data-types array-methods /uk/data-types/array-methods.html /uk/data-types/array-methods /data-types/array-methods.html"
+  },
+  {
+    "id": "data-types/iterables",
+    "locale": "uk",
+    "title": "Ітеровані об'єкти",
+    "track": "data-types",
+    "trackTitle": "Типи даних",
+    "slug": "iterables",
+    "canonicalRoute": "/uk/docs/data-types/iterables",
+    "legacyAliases": [
+      "/uk/data-types/iterables.html",
+      "/uk/data-types/iterables",
+      "/data-types/iterables.html"
+    ],
+    "queryText": "ітеровані об'єкти data-types типи даних iterables data-types iterables /uk/data-types/iterables.html /uk/data-types/iterables /data-types/iterables.html"
+  },
+  {
+    "id": "data-types/map-set",
+    "locale": "uk",
+    "title": "Map та Set",
+    "track": "data-types",
+    "trackTitle": "Типи даних",
+    "slug": "map-set",
+    "canonicalRoute": "/uk/docs/data-types/map-set",
+    "legacyAliases": [
+      "/uk/data-types/map-set.html",
+      "/uk/data-types/map-set",
+      "/data-types/map-set.html"
+    ],
+    "queryText": "map та set data-types типи даних map-set data-types map-set /uk/data-types/map-set.html /uk/data-types/map-set /data-types/map-set.html"
+  },
+  {
+    "id": "data-types/weakmap-weakset",
+    "locale": "uk",
+    "title": "WeakMap та WeakSet",
+    "track": "data-types",
+    "trackTitle": "Типи даних",
+    "slug": "weakmap-weakset",
+    "canonicalRoute": "/uk/docs/data-types/weakmap-weakset",
+    "legacyAliases": [
+      "/uk/data-types/weakmap-weakset.html",
+      "/uk/data-types/weakmap-weakset",
+      "/data-types/weakmap-weakset.html"
+    ],
+    "queryText": "weakmap та weakset data-types типи даних weakmap-weakset data-types weakmap-weakset /uk/data-types/weakmap-weakset.html /uk/data-types/weakmap-weakset /data-types/weakmap-weakset.html"
+  },
+  {
+    "id": "data-types/keys-values-entries",
+    "locale": "uk",
+    "title": "Object.keys, values, entries",
+    "track": "data-types",
+    "trackTitle": "Типи даних",
+    "slug": "keys-values-entries",
+    "canonicalRoute": "/uk/docs/data-types/keys-values-entries",
+    "legacyAliases": [
+      "/uk/data-types/keys-values-entries.html",
+      "/uk/data-types/keys-values-entries",
+      "/data-types/keys-values-entries.html"
+    ],
+    "queryText": "object.keys, values, entries data-types типи даних keys-values-entries data-types keys-values-entries /uk/data-types/keys-values-entries.html /uk/data-types/keys-values-entries /data-types/keys-values-entries.html"
+  },
+  {
+    "id": "data-types/destructuring-assignment",
+    "locale": "uk",
+    "title": "Деструктуризоване присвоєння",
+    "track": "data-types",
+    "trackTitle": "Типи даних",
+    "slug": "destructuring-assignment",
+    "canonicalRoute": "/uk/docs/data-types/destructuring-assignment",
+    "legacyAliases": [
+      "/uk/data-types/destructuring-assignment.html",
+      "/uk/data-types/destructuring-assignment",
+      "/data-types/destructuring-assignment.html"
+    ],
+    "queryText": "деструктуризоване присвоєння data-types типи даних destructuring-assignment data-types destructuring-assignment /uk/data-types/destructuring-assignment.html /uk/data-types/destructuring-assignment /data-types/destructuring-assignment.html"
+  },
+  {
+    "id": "data-types/date",
+    "locale": "uk",
+    "title": "Дата і час",
+    "track": "data-types",
+    "trackTitle": "Типи даних",
+    "slug": "date",
+    "canonicalRoute": "/uk/docs/data-types/date",
+    "legacyAliases": [
+      "/uk/data-types/date.html",
+      "/uk/data-types/date",
+      "/data-types/date.html"
+    ],
+    "queryText": "дата і час data-types типи даних date data-types date /uk/data-types/date.html /uk/data-types/date /data-types/date.html"
+  },
+  {
+    "id": "data-types/json",
+    "locale": "uk",
+    "title": "JSON, методи toJSON",
+    "track": "data-types",
+    "trackTitle": "Типи даних",
+    "slug": "json",
+    "canonicalRoute": "/uk/docs/data-types/json",
+    "legacyAliases": [
+      "/uk/data-types/json.html",
+      "/uk/data-types/json",
+      "/data-types/json.html"
+    ],
+    "queryText": "json, методи tojson data-types типи даних json data-types json /uk/data-types/json.html /uk/data-types/json /data-types/json.html"
+  },
+  {
+    "id": "functions-advanced/recursion",
+    "locale": "uk",
+    "title": "Рекурсія та стек",
+    "track": "functions-advanced",
+    "trackTitle": "Розширена робота з функціями",
+    "slug": "recursion",
+    "canonicalRoute": "/uk/docs/functions-advanced/recursion",
+    "legacyAliases": [
+      "/uk/functions-advanced/recursion.html",
+      "/uk/functions-advanced/recursion",
+      "/functions-advanced/recursion.html"
+    ],
+    "queryText": "рекурсія та стек functions-advanced розширена робота з функціями recursion functions-advanced recursion /uk/functions-advanced/recursion.html /uk/functions-advanced/recursion /functions-advanced/recursion.html"
+  },
+  {
+    "id": "functions-advanced/rest-parameters-spread",
+    "locale": "uk",
+    "title": "Залишкові параметри та оператор розширення",
+    "track": "functions-advanced",
+    "trackTitle": "Розширена робота з функціями",
+    "slug": "rest-parameters-spread",
+    "canonicalRoute": "/uk/docs/functions-advanced/rest-parameters-spread",
+    "legacyAliases": [
+      "/uk/functions-advanced/rest-parameters-spread.html",
+      "/uk/functions-advanced/rest-parameters-spread",
+      "/functions-advanced/rest-parameters-spread.html"
+    ],
+    "queryText": "залишкові параметри та оператор розширення functions-advanced розширена робота з функціями rest-parameters-spread functions-advanced rest-parameters-spread /uk/functions-advanced/rest-parameters-spread.html /uk/functions-advanced/rest-parameters-spread /functions-advanced/rest-parameters-spread.html"
+  },
+  {
+    "id": "functions-advanced/closure",
+    "locale": "uk",
+    "title": "Область видимості змінних; замикання",
+    "track": "functions-advanced",
+    "trackTitle": "Розширена робота з функціями",
+    "slug": "closure",
+    "canonicalRoute": "/uk/docs/functions-advanced/closure",
+    "legacyAliases": [
+      "/uk/functions-advanced/closure.html",
+      "/uk/functions-advanced/closure",
+      "/functions-advanced/closure.html"
+    ],
+    "queryText": "область видимості змінних; замикання functions-advanced розширена робота з функціями closure functions-advanced closure /uk/functions-advanced/closure.html /uk/functions-advanced/closure /functions-advanced/closure.html"
+  },
+  {
+    "id": "functions-advanced/var",
+    "locale": "uk",
+    "title": "Застаріле ключове слово var",
+    "track": "functions-advanced",
+    "trackTitle": "Розширена робота з функціями",
+    "slug": "var",
+    "canonicalRoute": "/uk/docs/functions-advanced/var",
+    "legacyAliases": [
+      "/uk/functions-advanced/var.html",
+      "/uk/functions-advanced/var",
+      "/functions-advanced/var.html"
+    ],
+    "queryText": "застаріле ключове слово var functions-advanced розширена робота з функціями var functions-advanced var /uk/functions-advanced/var.html /uk/functions-advanced/var /functions-advanced/var.html"
+  },
+  {
+    "id": "functions-advanced/global-object",
+    "locale": "uk",
+    "title": "Глобальний об'єкт",
+    "track": "functions-advanced",
+    "trackTitle": "Розширена робота з функціями",
+    "slug": "global-object",
+    "canonicalRoute": "/uk/docs/functions-advanced/global-object",
+    "legacyAliases": [
+      "/uk/functions-advanced/global-object.html",
+      "/uk/functions-advanced/global-object",
+      "/functions-advanced/global-object.html"
+    ],
+    "queryText": "глобальний об'єкт functions-advanced розширена робота з функціями global-object functions-advanced global-object /uk/functions-advanced/global-object.html /uk/functions-advanced/global-object /functions-advanced/global-object.html"
+  },
+  {
+    "id": "functions-advanced/function-object",
+    "locale": "uk",
+    "title": "Об'єкт функції, NFE",
+    "track": "functions-advanced",
+    "trackTitle": "Розширена робота з функціями",
+    "slug": "function-object",
+    "canonicalRoute": "/uk/docs/functions-advanced/function-object",
+    "legacyAliases": [
+      "/uk/functions-advanced/function-object.html",
+      "/uk/functions-advanced/function-object",
+      "/functions-advanced/function-object.html"
+    ],
+    "queryText": "об'єкт функції, nfe functions-advanced розширена робота з функціями function-object functions-advanced function-object /uk/functions-advanced/function-object.html /uk/functions-advanced/function-object /functions-advanced/function-object.html"
+  },
+  {
+    "id": "functions-advanced/new-function",
+    "locale": "uk",
+    "title": "Синтаксис new Function",
+    "track": "functions-advanced",
+    "trackTitle": "Розширена робота з функціями",
+    "slug": "new-function",
+    "canonicalRoute": "/uk/docs/functions-advanced/new-function",
+    "legacyAliases": [
+      "/uk/functions-advanced/new-function.html",
+      "/uk/functions-advanced/new-function",
+      "/functions-advanced/new-function.html"
+    ],
+    "queryText": "синтаксис new function functions-advanced розширена робота з функціями new-function functions-advanced new-function /uk/functions-advanced/new-function.html /uk/functions-advanced/new-function /functions-advanced/new-function.html"
+  },
+  {
+    "id": "functions-advanced/settimeout-setinterval",
+    "locale": "uk",
+    "title": "Планування: setTimeout та setInterval",
+    "track": "functions-advanced",
+    "trackTitle": "Розширена робота з функціями",
+    "slug": "settimeout-setinterval",
+    "canonicalRoute": "/uk/docs/functions-advanced/settimeout-setinterval",
+    "legacyAliases": [
+      "/uk/functions-advanced/settimeout-setinterval.html",
+      "/uk/functions-advanced/settimeout-setinterval",
+      "/functions-advanced/settimeout-setinterval.html"
+    ],
+    "queryText": "планування: settimeout та setinterval functions-advanced розширена робота з функціями settimeout-setinterval functions-advanced settimeout-setinterval /uk/functions-advanced/settimeout-setinterval.html /uk/functions-advanced/settimeout-setinterval /functions-advanced/settimeout-setinterval.html"
+  },
+  {
+    "id": "functions-advanced/call-apply-decorators",
+    "locale": "uk",
+    "title": "Декоратори та переадресація виклику, call/apply",
+    "track": "functions-advanced",
+    "trackTitle": "Розширена робота з функціями",
+    "slug": "call-apply-decorators",
+    "canonicalRoute": "/uk/docs/functions-advanced/call-apply-decorators",
+    "legacyAliases": [
+      "/uk/functions-advanced/call-apply-decorators.html",
+      "/uk/functions-advanced/call-apply-decorators",
+      "/functions-advanced/call-apply-decorators.html"
+    ],
+    "queryText": "декоратори та переадресація виклику, call/apply functions-advanced розширена робота з функціями call-apply-decorators functions-advanced call-apply-decorators /uk/functions-advanced/call-apply-decorators.html /uk/functions-advanced/call-apply-decorators /functions-advanced/call-apply-decorators.html"
+  },
+  {
+    "id": "functions-advanced/bind",
+    "locale": "uk",
+    "title": "Прив'язка контексту до функції",
+    "track": "functions-advanced",
+    "trackTitle": "Розширена робота з функціями",
+    "slug": "bind",
+    "canonicalRoute": "/uk/docs/functions-advanced/bind",
+    "legacyAliases": [
+      "/uk/functions-advanced/bind.html",
+      "/uk/functions-advanced/bind",
+      "/functions-advanced/bind.html"
+    ],
+    "queryText": "прив'язка контексту до функції functions-advanced розширена робота з функціями bind functions-advanced bind /uk/functions-advanced/bind.html /uk/functions-advanced/bind /functions-advanced/bind.html"
+  },
+  {
+    "id": "functions-advanced/arrow-functions-revisited",
+    "locale": "uk",
+    "title": "Повторення стрілкових функцій",
+    "track": "functions-advanced",
+    "trackTitle": "Розширена робота з функціями",
+    "slug": "arrow-functions-revisited",
+    "canonicalRoute": "/uk/docs/functions-advanced/arrow-functions-revisited",
+    "legacyAliases": [
+      "/uk/functions-advanced/arrow-functions-revisited.html",
+      "/uk/functions-advanced/arrow-functions-revisited",
+      "/functions-advanced/arrow-functions-revisited.html"
+    ],
+    "queryText": "повторення стрілкових функцій functions-advanced розширена робота з функціями arrow-functions-revisited functions-advanced arrow-functions-revisited /uk/functions-advanced/arrow-functions-revisited.html /uk/functions-advanced/arrow-functions-revisited /functions-advanced/arrow-functions-revisited.html"
+  },
+  {
+    "id": "object-properties/property-descriptors",
+    "locale": "uk",
+    "title": "Прапори та дескриптори властивостей",
+    "track": "object-properties",
+    "trackTitle": "Властивості об'єктів, їх конфігурація",
+    "slug": "property-descriptors",
+    "canonicalRoute": "/uk/docs/object-properties/property-descriptors",
+    "legacyAliases": [
+      "/uk/object-properties/property-descriptors.html",
+      "/uk/object-properties/property-descriptors",
+      "/object-properties/property-descriptors.html"
+    ],
+    "queryText": "прапори та дескриптори властивостей object-properties властивості об'єктів, їх конфігурація property-descriptors object-properties property-descriptors /uk/object-properties/property-descriptors.html /uk/object-properties/property-descriptors /object-properties/property-descriptors.html"
+  },
+  {
+    "id": "object-properties/property-accessors",
+    "locale": "uk",
+    "title": "Гетери і сетери властивостей",
+    "track": "object-properties",
+    "trackTitle": "Властивості об'єктів, їх конфігурація",
+    "slug": "property-accessors",
+    "canonicalRoute": "/uk/docs/object-properties/property-accessors",
+    "legacyAliases": [
+      "/uk/object-properties/property-accessors.html",
+      "/uk/object-properties/property-accessors",
+      "/object-properties/property-accessors.html"
+    ],
+    "queryText": "гетери і сетери властивостей object-properties властивості об'єктів, їх конфігурація property-accessors object-properties property-accessors /uk/object-properties/property-accessors.html /uk/object-properties/property-accessors /object-properties/property-accessors.html"
+  },
+  {
+    "id": "prototypes/prototype-inheritance",
+    "locale": "uk",
+    "title": "Успадкування через прототипи",
+    "track": "prototypes",
+    "trackTitle": "Прототипи, наслідування",
+    "slug": "prototype-inheritance",
+    "canonicalRoute": "/uk/docs/prototypes/prototype-inheritance",
+    "legacyAliases": [
+      "/uk/prototypes/prototype-inheritance.html",
+      "/uk/prototypes/prototype-inheritance",
+      "/prototypes/prototype-inheritance.html"
+    ],
+    "queryText": "успадкування через прототипи prototypes прототипи, наслідування prototype-inheritance prototypes prototype-inheritance /uk/prototypes/prototype-inheritance.html /uk/prototypes/prototype-inheritance /prototypes/prototype-inheritance.html"
+  },
+  {
+    "id": "prototypes/function-prototype",
+    "locale": "uk",
+    "title": "F.prototype",
+    "track": "prototypes",
+    "trackTitle": "Прототипи, наслідування",
+    "slug": "function-prototype",
+    "canonicalRoute": "/uk/docs/prototypes/function-prototype",
+    "legacyAliases": [
+      "/uk/prototypes/function-prototype.html",
+      "/uk/prototypes/function-prototype",
+      "/prototypes/function-prototype.html"
+    ],
+    "queryText": "f.prototype prototypes прототипи, наслідування function-prototype prototypes function-prototype /uk/prototypes/function-prototype.html /uk/prototypes/function-prototype /prototypes/function-prototype.html"
+  },
+  {
+    "id": "prototypes/native-prototypes",
+    "locale": "uk",
+    "title": "Вбудовані прототипи",
+    "track": "prototypes",
+    "trackTitle": "Прототипи, наслідування",
+    "slug": "native-prototypes",
+    "canonicalRoute": "/uk/docs/prototypes/native-prototypes",
+    "legacyAliases": [
+      "/uk/prototypes/native-prototypes.html",
+      "/uk/prototypes/native-prototypes",
+      "/prototypes/native-prototypes.html"
+    ],
+    "queryText": "вбудовані прототипи prototypes прототипи, наслідування native-prototypes prototypes native-prototypes /uk/prototypes/native-prototypes.html /uk/prototypes/native-prototypes /prototypes/native-prototypes.html"
+  },
+  {
+    "id": "prototypes/proto-methods",
+    "locale": "uk",
+    "title": "Методи прототипів",
+    "track": "prototypes",
+    "trackTitle": "Прототипи, наслідування",
+    "slug": "proto-methods",
+    "canonicalRoute": "/uk/docs/prototypes/proto-methods",
+    "legacyAliases": [
+      "/uk/prototypes/prototype-methods.html",
+      "/uk/prototypes/prototype-methods",
+      "/prototypes/proto-methods.html"
+    ],
+    "queryText": "методи прототипів prototypes прототипи, наслідування proto-methods prototypes prototype-methods /uk/prototypes/prototype-methods.html /uk/prototypes/prototype-methods /prototypes/proto-methods.html"
+  },
+  {
+    "id": "classes/class",
+    "locale": "uk",
+    "title": "Базовий синтаксис класу",
+    "track": "classes",
+    "trackTitle": "Класи",
+    "slug": "class",
+    "canonicalRoute": "/uk/docs/classes/class",
+    "legacyAliases": [
+      "/uk/classes/class.html",
+      "/uk/classes/class",
+      "/classes/class.html"
+    ],
+    "queryText": "базовий синтаксис класу classes класи class classes class /uk/classes/class.html /uk/classes/class /classes/class.html"
+  },
+  {
+    "id": "classes/class-inheritance",
+    "locale": "uk",
+    "title": "Наслідування класу",
+    "track": "classes",
+    "trackTitle": "Класи",
+    "slug": "class-inheritance",
+    "canonicalRoute": "/uk/docs/classes/class-inheritance",
+    "legacyAliases": [
+      "/uk/classes/class-inheritance.html",
+      "/uk/classes/class-inheritance",
+      "/classes/class-inheritance.html"
+    ],
+    "queryText": "наслідування класу classes класи class-inheritance classes class-inheritance /uk/classes/class-inheritance.html /uk/classes/class-inheritance /classes/class-inheritance.html"
+  },
+  {
+    "id": "classes/static-properties",
+    "locale": "uk",
+    "title": "Статичні властивості та методи",
+    "track": "classes",
+    "trackTitle": "Класи",
+    "slug": "static-properties",
+    "canonicalRoute": "/uk/docs/classes/static-properties",
+    "legacyAliases": [
+      "/uk/classes/static-properties-methods.html",
+      "/uk/classes/static-properties-methods",
+      "/classes/static-properties.html"
+    ],
+    "queryText": "статичні властивості та методи classes класи static-properties classes static-properties-methods /uk/classes/static-properties-methods.html /uk/classes/static-properties-methods /classes/static-properties.html"
+  },
+  {
+    "id": "classes/private-protected",
+    "locale": "uk",
+    "title": "Приватні та захищені властивості та методи",
+    "track": "classes",
+    "trackTitle": "Класи",
+    "slug": "private-protected",
+    "canonicalRoute": "/uk/docs/classes/private-protected",
+    "legacyAliases": [
+      "/uk/classes/private-protected-properties-methods.html",
+      "/uk/classes/private-protected-properties-methods",
+      "/classes/private-protected.html"
+    ],
+    "queryText": "приватні та захищені властивості та методи classes класи private-protected classes private-protected-properties-methods /uk/classes/private-protected-properties-methods.html /uk/classes/private-protected-properties-methods /classes/private-protected.html"
+  },
+  {
+    "id": "classes/extending-built-in",
+    "locale": "uk",
+    "title": "Розширення вбудованих класів",
+    "track": "classes",
+    "trackTitle": "Класи",
+    "slug": "extending-built-in",
+    "canonicalRoute": "/uk/docs/classes/extending-built-in",
+    "legacyAliases": [
+      "/uk/classes/extending-built-ins.html",
+      "/uk/classes/extending-built-ins",
+      "/classes/extending-built-in.html"
+    ],
+    "queryText": "розширення вбудованих класів classes класи extending-built-in classes extending-built-ins /uk/classes/extending-built-ins.html /uk/classes/extending-built-ins /classes/extending-built-in.html"
+  },
+  {
+    "id": "classes/instanceof",
+    "locale": "uk",
+    "title": "Оператор instanceof",
+    "track": "classes",
+    "trackTitle": "Класи",
+    "slug": "instanceof",
+    "canonicalRoute": "/uk/docs/classes/instanceof",
+    "legacyAliases": [
+      "/uk/classes/instanceof.html",
+      "/uk/classes/instanceof",
+      "/classes/instanceof.html"
+    ],
+    "queryText": "оператор instanceof classes класи instanceof classes instanceof /uk/classes/instanceof.html /uk/classes/instanceof /classes/instanceof.html"
+  },
+  {
+    "id": "classes/mixins",
+    "locale": "uk",
+    "title": "Міксини",
+    "track": "classes",
+    "trackTitle": "Класи",
+    "slug": "mixins",
+    "canonicalRoute": "/uk/docs/classes/mixins",
+    "legacyAliases": [
+      "/uk/classes/mixins.html",
+      "/uk/classes/mixins",
+      "/classes/mixins.html"
+    ],
+    "queryText": "міксини classes класи mixins classes mixins /uk/classes/mixins.html /uk/classes/mixins /classes/mixins.html"
+  },
+  {
+    "id": "error-handling/try-catch",
+    "locale": "uk",
+    "title": "Робота з помилками: try...catch",
+    "track": "error-handling",
+    "trackTitle": "Обробка помилок",
+    "slug": "try-catch",
+    "canonicalRoute": "/uk/docs/error-handling/try-catch",
+    "legacyAliases": [
+      "/uk/error-handling/try-catch.html",
+      "/uk/error-handling/try-catch",
+      "/error-handling/try-catch.html"
+    ],
+    "queryText": "робота з помилками: try...catch error-handling обробка помилок try-catch error-handling try-catch /uk/error-handling/try-catch.html /uk/error-handling/try-catch /error-handling/try-catch.html"
+  },
+  {
+    "id": "error-handling/custom-errors",
+    "locale": "uk",
+    "title": "Кастомні помилки",
+    "track": "error-handling",
+    "trackTitle": "Обробка помилок",
+    "slug": "custom-errors",
+    "canonicalRoute": "/uk/docs/error-handling/custom-errors",
+    "legacyAliases": [
+      "/uk/error-handling/custom-errors.html",
+      "/uk/error-handling/custom-errors",
+      "/error-handling/custom-errors.html"
+    ],
+    "queryText": "кастомні помилки error-handling обробка помилок custom-errors error-handling custom-errors /uk/error-handling/custom-errors.html /uk/error-handling/custom-errors /error-handling/custom-errors.html"
+  },
+  {
+    "id": "promises/callbacks",
+    "locale": "uk",
+    "title": "Вступ: колбеки",
+    "track": "promises",
+    "trackTitle": "Проміси, async/await",
+    "slug": "callbacks",
+    "canonicalRoute": "/uk/docs/promises/callbacks",
+    "legacyAliases": [
+      "/uk/promises/callbacks.html",
+      "/uk/promises/callbacks",
+      "/promises/callbacks.html"
+    ],
+    "queryText": "вступ: колбеки promises проміси, async/await callbacks promises callbacks /uk/promises/callbacks.html /uk/promises/callbacks /promises/callbacks.html"
+  },
+  {
+    "id": "promises/promise-basics",
+    "locale": "uk",
+    "title": "Проміси",
+    "track": "promises",
+    "trackTitle": "Проміси, async/await",
+    "slug": "promise-basics",
+    "canonicalRoute": "/uk/docs/promises/promise-basics",
+    "legacyAliases": [
+      "/uk/promises/promise-basics.html",
+      "/uk/promises/promise-basics",
+      "/promises/promise-basics.html"
+    ],
+    "queryText": "проміси promises проміси, async/await promise-basics promises promise-basics /uk/promises/promise-basics.html /uk/promises/promise-basics /promises/promise-basics.html"
+  },
+  {
+    "id": "promises/promise-chaining",
+    "locale": "uk",
+    "title": "Ланцюжок промісів",
+    "track": "promises",
+    "trackTitle": "Проміси, async/await",
+    "slug": "promise-chaining",
+    "canonicalRoute": "/uk/docs/promises/promise-chaining",
+    "legacyAliases": [
+      "/uk/promises/promise-chaining.html",
+      "/uk/promises/promise-chaining",
+      "/promises/promise-chaining.html"
+    ],
+    "queryText": "ланцюжок промісів promises проміси, async/await promise-chaining promises promise-chaining /uk/promises/promise-chaining.html /uk/promises/promise-chaining /promises/promise-chaining.html"
+  },
+  {
+    "id": "promises/promise-error-handling",
+    "locale": "uk",
+    "title": "Обробка помилок у промісах",
+    "track": "promises",
+    "trackTitle": "Проміси, async/await",
+    "slug": "promise-error-handling",
+    "canonicalRoute": "/uk/docs/promises/promise-error-handling",
+    "legacyAliases": [
+      "/uk/promises/promise-error-handling.html",
+      "/uk/promises/promise-error-handling",
+      "/promises/promise-error-handling.html"
+    ],
+    "queryText": "обробка помилок у промісах promises проміси, async/await promise-error-handling promises promise-error-handling /uk/promises/promise-error-handling.html /uk/promises/promise-error-handling /promises/promise-error-handling.html"
+  },
+  {
+    "id": "promises/promise-api",
+    "locale": "uk",
+    "title": "Promise API",
+    "track": "promises",
+    "trackTitle": "Проміси, async/await",
+    "slug": "promise-api",
+    "canonicalRoute": "/uk/docs/promises/promise-api",
+    "legacyAliases": [
+      "/uk/promises/promise-api.html",
+      "/uk/promises/promise-api",
+      "/promises/promise-api.html"
+    ],
+    "queryText": "promise api promises проміси, async/await promise-api promises promise-api /uk/promises/promise-api.html /uk/promises/promise-api /promises/promise-api.html"
+  },
+  {
+    "id": "promises/promisification",
+    "locale": "uk",
+    "title": "Промісифікація",
+    "track": "promises",
+    "trackTitle": "Проміси, async/await",
+    "slug": "promisification",
+    "canonicalRoute": "/uk/docs/promises/promisification",
+    "legacyAliases": [
+      "/uk/promises/promisify.html",
+      "/uk/promises/promisify",
+      "/promises/promisification.html"
+    ],
+    "queryText": "промісифікація promises проміси, async/await promisification promises promisify /uk/promises/promisify.html /uk/promises/promisify /promises/promisification.html"
+  },
+  {
+    "id": "promises/microtasks",
+    "locale": "uk",
+    "title": "Мікрозавдання",
+    "track": "promises",
+    "trackTitle": "Проміси, async/await",
+    "slug": "microtasks",
+    "canonicalRoute": "/uk/docs/promises/microtasks",
+    "legacyAliases": [
+      "/uk/promises/microtasks.html",
+      "/uk/promises/microtasks",
+      "/promises/microtasks.html"
+    ],
+    "queryText": "мікрозавдання promises проміси, async/await microtasks promises microtasks /uk/promises/microtasks.html /uk/promises/microtasks /promises/microtasks.html"
+  },
+  {
+    "id": "promises/async-await",
+    "locale": "uk",
+    "title": "Async/await",
+    "track": "promises",
+    "trackTitle": "Проміси, async/await",
+    "slug": "async-await",
+    "canonicalRoute": "/uk/docs/promises/async-await",
+    "legacyAliases": [
+      "/uk/promises/async-await.html",
+      "/uk/promises/async-await",
+      "/promises/async-await.html"
+    ],
+    "queryText": "async/await promises проміси, async/await async-await promises async-await /uk/promises/async-await.html /uk/promises/async-await /promises/async-await.html"
+  },
+  {
+    "id": "generators/generators",
+    "locale": "uk",
+    "title": "Генератори",
+    "track": "generators",
+    "trackTitle": "Генератори, розширення ітерації",
+    "slug": "generators",
+    "canonicalRoute": "/uk/docs/generators/generators",
+    "legacyAliases": [
+      "/uk/generators/generators.html",
+      "/uk/generators/generators",
+      "/generators/generators.html"
+    ],
+    "queryText": "генератори generators генератори, розширення ітерації generators generators generators /uk/generators/generators.html /uk/generators/generators /generators/generators.html"
+  },
+  {
+    "id": "generators/async-iterators-generators",
+    "locale": "uk",
+    "title": "Асинхронні ітератори та генератори",
+    "track": "generators",
+    "trackTitle": "Генератори, розширена ітерація",
+    "slug": "async-iterators-generators",
+    "canonicalRoute": "/uk/docs/generators/async-iterators-generators",
+    "legacyAliases": [
+      "/uk/generators/async-iterators-generators.html",
+      "/uk/generators/async-iterators-generators",
+      "/generators/async-iterators-generators.html"
+    ],
+    "queryText": "асинхронні ітератори та генератори generators генератори, розширена ітерація async-iterators-generators generators async-iterators-generators /uk/generators/async-iterators-generators.html /uk/generators/async-iterators-generators /generators/async-iterators-generators.html"
+  },
+  {
+    "id": "modules/modules-intro",
+    "locale": "uk",
+    "title": "Вступ до модулів",
+    "track": "modules",
+    "trackTitle": "Модулі",
+    "slug": "modules-intro",
+    "canonicalRoute": "/uk/docs/modules/modules-intro",
+    "legacyAliases": [
+      "/uk/modules/modules-intro.html",
+      "/uk/modules/modules-intro",
+      "/modules/modules-intro.html"
+    ],
+    "queryText": "вступ до модулів modules модулі modules-intro modules modules-intro /uk/modules/modules-intro.html /uk/modules/modules-intro /modules/modules-intro.html"
+  },
+  {
+    "id": "modules/export-import",
+    "locale": "uk",
+    "title": "Експорт та імпорт",
+    "track": "modules",
+    "trackTitle": "Модулі",
+    "slug": "export-import",
+    "canonicalRoute": "/uk/docs/modules/export-import",
+    "legacyAliases": [
+      "/uk/modules/import-export.html",
+      "/uk/modules/import-export",
+      "/modules/export-import.html"
+    ],
+    "queryText": "експорт та імпорт modules модулі export-import modules import-export /uk/modules/import-export.html /uk/modules/import-export /modules/export-import.html"
+  },
+  {
+    "id": "modules/dynamic-imports",
+    "locale": "uk",
+    "title": "Динамічні імпорти",
+    "track": "modules",
+    "trackTitle": "Модулі",
+    "slug": "dynamic-imports",
+    "canonicalRoute": "/uk/docs/modules/dynamic-imports",
+    "legacyAliases": [
+      "/uk/modules/dynamic-imports.html",
+      "/uk/modules/dynamic-imports",
+      "/modules/dynamic-imports.html"
+    ],
+    "queryText": "динамічні імпорти modules модулі dynamic-imports modules dynamic-imports /uk/modules/dynamic-imports.html /uk/modules/dynamic-imports /modules/dynamic-imports.html"
+  },
+  {
+    "id": "misc/proxy-reflect",
+    "locale": "uk",
+    "title": "Proxy та Reflect",
+    "track": "misc",
+    "trackTitle": "Різне",
+    "slug": "proxy-reflect",
+    "canonicalRoute": "/uk/docs/misc/proxy-reflect",
+    "legacyAliases": [
+      "/uk/misc/proxy.html",
+      "/uk/misc/proxy",
+      "/misc/proxy-reflect.html"
+    ],
+    "queryText": "proxy та reflect misc різне proxy-reflect misc proxy /uk/misc/proxy.html /uk/misc/proxy /misc/proxy-reflect.html"
+  },
+  {
+    "id": "misc/eval",
+    "locale": "uk",
+    "title": "eval",
+    "track": "misc",
+    "trackTitle": "Різне",
+    "slug": "eval",
+    "canonicalRoute": "/uk/docs/misc/eval",
+    "legacyAliases": [
+      "/uk/misc/eval.html",
+      "/uk/misc/eval",
+      "/misc/eval.html"
+    ],
+    "queryText": "eval misc різне eval misc eval /uk/misc/eval.html /uk/misc/eval /misc/eval.html"
+  },
+  {
+    "id": "misc/currying",
+    "locale": "uk",
+    "title": "Каррінг",
+    "track": "misc",
+    "trackTitle": "Різне",
+    "slug": "currying",
+    "canonicalRoute": "/uk/docs/misc/currying",
+    "legacyAliases": [
+      "/uk/misc/currying.html",
+      "/uk/misc/currying",
+      "/misc/currying.html"
+    ],
+    "queryText": "каррінг misc різне currying misc currying /uk/misc/currying.html /uk/misc/currying /misc/currying.html"
+  },
+  {
+    "id": "misc/reference-type",
+    "locale": "uk",
+    "title": "Reference Type",
+    "track": "misc",
+    "trackTitle": "Різне",
+    "slug": "reference-type",
+    "canonicalRoute": "/uk/docs/misc/reference-type",
+    "legacyAliases": [
+      "/uk/misc/reference-type.html",
+      "/uk/misc/reference-type",
+      "/misc/reference-type.html"
+    ],
+    "queryText": "reference type misc різне reference-type misc reference-type /uk/misc/reference-type.html /uk/misc/reference-type /misc/reference-type.html"
+  },
+  {
+    "id": "misc/bigint",
+    "locale": "uk",
+    "title": "BigInt",
+    "track": "misc",
+    "trackTitle": "Різне",
+    "slug": "bigint",
+    "canonicalRoute": "/uk/docs/misc/bigint",
+    "legacyAliases": [
+      "/uk/misc/bigint.html",
+      "/uk/misc/bigint",
+      "/misc/bigint.html"
+    ],
+    "queryText": "bigint misc різне bigint misc bigint /uk/misc/bigint.html /uk/misc/bigint /misc/bigint.html"
+  },
+  {
+    "id": "misc/unicode-strings",
+    "locale": "uk",
+    "title": "Юнікод: внутрішня будова рядків",
+    "track": "misc",
+    "trackTitle": "Різне",
+    "slug": "unicode-strings",
+    "canonicalRoute": "/uk/docs/misc/unicode-strings",
+    "legacyAliases": [
+      "/uk/misc/unicode.html",
+      "/uk/misc/unicode",
+      "/misc/unicode-strings.html"
+    ],
+    "queryText": "юнікод: внутрішня будова рядків misc різне unicode-strings misc unicode /uk/misc/unicode.html /uk/misc/unicode /misc/unicode-strings.html"
+  },
+  {
+    "id": "misc/weakref",
+    "locale": "uk",
+    "title": "WeakRef та FinalizationRegistry",
+    "track": "misc",
+    "trackTitle": "Різне",
+    "slug": "weakref",
+    "canonicalRoute": "/uk/docs/misc/weakref",
+    "legacyAliases": [
+      "/uk/misc/weakref.html",
+      "/uk/misc/weakref",
+      "/misc/weakref.html"
+    ],
+    "queryText": "weakref та finalizationregistry misc різне weakref misc weakref /uk/misc/weakref.html /uk/misc/weakref /misc/weakref.html"
+  }
+]

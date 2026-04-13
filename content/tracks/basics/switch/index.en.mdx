@@ -1,0 +1,98 @@
+---
+title: "The `switch` Statement"
+description: "How to branch on one value with `switch`, understand fall-through, and avoid scope pitfalls."
+slug: "switch"
+track: "basics"
+locale: "en"
+sourceLocale: "uk"
+translationStatus: "published"
+translationCompleteness: 100
+---
+
+`switch` is a control-flow statement that compares one expression against multiple exact cases.
+
+## Syntax
+
+```javascript
+const role = "admin";
+
+switch (role) {
+  case "admin":
+    console.log("Full access");
+    break;
+  case "editor":
+    console.log("Can edit content");
+    break;
+  default:
+    console.log("Read-only access");
+}
+```
+
+Each `case` is checked with strict comparison.
+
+## Fall-through
+
+If you forget `break`, execution continues into the next case. This is called **fall-through**.
+
+```javascript
+const level = 2;
+
+switch (level) {
+  case 1:
+    console.log("Basic");
+  case 2:
+    console.log("Intermediate");
+  case 3:
+    console.log("Advanced");
+    break;
+}
+```
+
+That prints:
+
+- `Intermediate`
+- `Advanced`
+
+Fall-through can be intentional, but if it is not, it becomes a bug quickly.
+
+## Scope inside `switch`
+
+All `case` clauses share the same block scope unless you create explicit blocks.
+
+```javascript
+switch (status) {
+  case "active": {
+    const message = "User is active";
+    console.log(message);
+    break;
+  }
+  case "inactive": {
+    const message = "User is inactive";
+    console.log(message);
+    break;
+  }
+}
+```
+
+Wrapping each case in braces is a clean way to avoid scope collisions.
+
+## Alternative: lookup object
+
+For simple mappings, an object can be clearer than `switch`.
+
+```javascript
+const messages = {
+  admin: "Full access",
+  editor: "Can edit content",
+  guest: "Read-only access",
+};
+
+console.log(messages[role] ?? "Unknown role");
+```
+
+## Summary
+
+- Use `switch` when one value needs to be matched against several exact cases.
+- `break` usually matters, because without it execution falls through.
+- Case clauses share scope unless you add explicit blocks.
+- For simple value-to-message mappings, an object lookup can be a cleaner alternative.

@@ -1,0 +1,66 @@
+---
+title: "Interaction: `alert`, `prompt`, `confirm`"
+description: "The browser's built-in dialog functions and their limitations."
+slug: "interaction"
+track: "basics"
+locale: "en"
+sourceLocale: "uk"
+translationStatus: "published"
+translationCompleteness: 100
+---
+
+Browsers provide a few very simple built-in dialog functions for basic interaction with the user:
+
+- `alert`
+- `prompt`
+- `confirm`
+
+They are useful for learning and for tiny experiments, but modern applications rarely rely on them for real UI.
+
+## `alert`
+
+`alert` shows a message in a modal dialog.
+
+```javascript
+alert("Hello, world!");
+```
+
+Execution pauses until the dialog is closed.
+
+## `prompt`
+
+`prompt` asks the user for a string and returns the entered value.
+
+```javascript
+const name = prompt("What is your name?", "Anonymous");
+console.log(name);
+```
+
+If the user presses **Cancel**, `prompt` returns `null`.
+
+## `confirm`
+
+`confirm` asks a yes/no question and returns a boolean.
+
+```javascript
+const agreed = confirm("Do you agree?");
+console.log(agreed); // true or false
+```
+
+## Limitations of browser dialogs
+
+Built-in dialogs are intentionally basic:
+
+- their appearance depends on the browser
+- they block page interaction while open
+- they cannot be styled like regular application UI
+- browsers may restrict or suppress them in some situations
+
+That is why production applications usually build dialogs with HTML, CSS, and JavaScript instead.
+
+## Summary
+
+- `alert(message)` shows a message.
+- `prompt(message, defaultValue)` asks for text input and returns a string or `null`.
+- `confirm(message)` returns `true` or `false`.
+- These APIs are useful for learning, but they are not flexible enough for most production interfaces.

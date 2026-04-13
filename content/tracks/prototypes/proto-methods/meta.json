@@ -1,0 +1,181 @@
+{
+  "id": "prototypes/proto-methods",
+  "locale": "uk",
+  "locales": {
+    "uk": true,
+    "en": false
+  },
+  "availableLocales": [
+    "uk"
+  ],
+  "title": "Методи прототипів",
+  "description": "Методи прототипів у JavaScript — детальний розбір з прикладами, підводними каменями та best practices.",
+  "track": "prototypes",
+  "trackTitle": "Прототипи, наслідування",
+  "slug": "proto-methods",
+  "sourcePath": "uk/prototypes/prototype-methods.html",
+  "sourceIdentity": {
+    "track": "prototypes",
+    "slug": "prototype-methods"
+  },
+  "canonicalRoute": "/uk/docs/prototypes/proto-methods",
+  "canonicalLegacyPath": "/prototypes/proto-methods.html",
+  "legacyHtmlPath": "/uk/prototypes/prototype-methods.html",
+  "legacyAliases": [
+    "/uk/prototypes/prototype-methods.html",
+    "/uk/prototypes/prototype-methods",
+    "/prototypes/proto-methods.html"
+  ],
+  "sectionOrder": 8,
+  "lessonOrder": 4,
+  "overallOrder": 65,
+  "articleNumber": "8.4",
+  "estimatedMinutes": 10,
+  "headings": [
+    {
+      "level": 2,
+      "id": "object-create",
+      "text": "Object.create()"
+    },
+    {
+      "level": 2,
+      "id": "get-set-proto",
+      "text": "getPrototypeOf / setPrototypeOf"
+    },
+    {
+      "level": 2,
+      "id": "own-properties",
+      "text": "Власні властивості vs успадковані"
+    },
+    {
+      "level": 2,
+      "id": "property-descriptors",
+      "text": "Дескриптори та копіювання"
+    },
+    {
+      "level": 2,
+      "id": "summary",
+      "text": "Підсумок"
+    }
+  ],
+  "badges": [
+    "Середній",
+    "Прототипи, наслідування",
+    "~ 10 хв"
+  ],
+  "donationLinks": [],
+  "breadcrumbTrail": [
+    "Головна",
+    "Прототипи, наслідування",
+    "Методи прототипів"
+  ],
+  "relatedSourceTrack": "prototypes",
+  "contentFiles": {
+    "uk": "content/tracks/prototypes/proto-methods/index.uk.html",
+    "en": "content/tracks/prototypes/proto-methods/index.en.mdx"
+  },
+  "metadataFile": "content/tracks/prototypes/proto-methods/meta.json",
+  "translationStatus": {
+    "sourceLocale": "uk",
+    "availableLocales": [
+      "uk"
+    ],
+    "fallbackLocales": {
+      "en": "uk"
+    },
+    "locales": {
+      "uk": {
+        "status": "published",
+        "filePath": "content/tracks/prototypes/proto-methods/index.uk.html",
+        "format": "html",
+        "title": "Методи прототипів",
+        "description": "Методи прототипів у JavaScript — детальний розбір з прикладами, підводними каменями та best practices.",
+        "completeness": 100,
+        "isFallback": false,
+        "headings": [
+          {
+            "level": 2,
+            "id": "object-create",
+            "text": "Object.create()"
+          },
+          {
+            "level": 2,
+            "id": "get-set-proto",
+            "text": "getPrototypeOf / setPrototypeOf"
+          },
+          {
+            "level": 2,
+            "id": "own-properties",
+            "text": "Власні властивості vs успадковані"
+          },
+          {
+            "level": 2,
+            "id": "property-descriptors",
+            "text": "Дескриптори та копіювання"
+          },
+          {
+            "level": 2,
+            "id": "summary",
+            "text": "Підсумок"
+          }
+        ]
+      },
+      "en": {
+        "status": "draft",
+        "filePath": "content/tracks/prototypes/proto-methods/index.en.mdx",
+        "format": "mdx",
+        "title": "TODO: Translate title",
+        "description": "TODO: Translate description",
+        "completeness": 0,
+        "isFallback": true,
+        "headings": [
+          {
+            "level": 2,
+            "id": "source-lesson",
+            "text": "Source lesson"
+          }
+        ],
+        "slug": "proto-methods",
+        "track": "prototypes",
+        "locale": "en",
+        "sourceLocale": "uk",
+        "hasBody": true
+      }
+    }
+  },
+  "translationCompleteness": {
+    "uk": 100,
+    "en": 0
+  },
+  "migration": {
+    "migratedFromLegacy": true,
+    "canonicalIdentitySource": "canonical",
+    "override": null,
+    "articleMeta": {
+      "type": "numeric",
+      "raw": {
+        "secId": "8",
+        "artId": "4"
+      },
+      "resolved": {
+        "track": "prototypes",
+        "slug": "prototype-methods"
+      }
+    },
+    "mismatches": {
+      "filePathVsCanonical": true,
+      "filePathVsStringMeta": false,
+      "filePathVsNumericMeta": false
+    },
+    "hasLegacyJsonLd": false,
+    "hasLegacyToc": false,
+    "hasLegacyPrevNext": false,
+    "legacyArticleSupport": true
+  },
+  "bodySourcePath": "content/tracks/prototypes/proto-methods/index.uk.html",
+  "sourceProvenance": {
+    "sourcePath": "uk/prototypes/prototype-methods.html",
+    "sourceTrack": "prototypes",
+    "sourceSlug": "prototype-methods"
+  }
+}

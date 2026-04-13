@@ -1,0 +1,181 @@
+{
+  "id": "classes/extending-built-in",
+  "locale": "uk",
+  "locales": {
+    "uk": true,
+    "en": false
+  },
+  "availableLocales": [
+    "uk"
+  ],
+  "title": "Розширення вбудованих класів",
+  "description": "Розширення вбудованих класів у JavaScript — детальний розбір з прикладами, підводними каменями та best practices.",
+  "track": "classes",
+  "trackTitle": "Класи",
+  "slug": "extending-built-in",
+  "sourcePath": "uk/classes/extending-built-ins.html",
+  "sourceIdentity": {
+    "track": "classes",
+    "slug": "extending-built-ins"
+  },
+  "canonicalRoute": "/uk/docs/classes/extending-built-in",
+  "canonicalLegacyPath": "/classes/extending-built-in.html",
+  "legacyHtmlPath": "/uk/classes/extending-built-ins.html",
+  "legacyAliases": [
+    "/uk/classes/extending-built-ins.html",
+    "/uk/classes/extending-built-ins",
+    "/classes/extending-built-in.html"
+  ],
+  "sectionOrder": 9,
+  "lessonOrder": 5,
+  "overallOrder": 70,
+  "articleNumber": "9.5",
+  "estimatedMinutes": 10,
+  "headings": [
+    {
+      "level": 2,
+      "id": "extends-array",
+      "text": "Розширення Array"
+    },
+    {
+      "level": 2,
+      "id": "symbol-species",
+      "text": "Symbol.species"
+    },
+    {
+      "level": 2,
+      "id": "extends-error",
+      "text": "Розширення Error"
+    },
+    {
+      "level": 2,
+      "id": "extends-map",
+      "text": "Розширення Map"
+    },
+    {
+      "level": 2,
+      "id": "summary",
+      "text": "Підсумок"
+    }
+  ],
+  "badges": [
+    "Просунутий",
+    "Класи",
+    "~ 10 хв"
+  ],
+  "donationLinks": [],
+  "breadcrumbTrail": [
+    "Головна",
+    "Класи",
+    "Розширення вбудованих класів"
+  ],
+  "relatedSourceTrack": "classes",
+  "contentFiles": {
+    "uk": "content/tracks/classes/extending-built-in/index.uk.html",
+    "en": "content/tracks/classes/extending-built-in/index.en.mdx"
+  },
+  "metadataFile": "content/tracks/classes/extending-built-in/meta.json",
+  "translationStatus": {
+    "sourceLocale": "uk",
+    "availableLocales": [
+      "uk"
+    ],
+    "fallbackLocales": {
+      "en": "uk"
+    },
+    "locales": {
+      "uk": {
+        "status": "published",
+        "filePath": "content/tracks/classes/extending-built-in/index.uk.html",
+        "format": "html",
+        "title": "Розширення вбудованих класів",
+        "description": "Розширення вбудованих класів у JavaScript — детальний розбір з прикладами, підводними каменями та best practices.",
+        "completeness": 100,
+        "isFallback": false,
+        "headings": [
+          {
+            "level": 2,
+            "id": "extends-array",
+            "text": "Розширення Array"
+          },
+          {
+            "level": 2,
+            "id": "symbol-species",
+            "text": "Symbol.species"
+          },
+          {
+            "level": 2,
+            "id": "extends-error",
+            "text": "Розширення Error"
+          },
+          {
+            "level": 2,
+            "id": "extends-map",
+            "text": "Розширення Map"
+          },
+          {
+            "level": 2,
+            "id": "summary",
+            "text": "Підсумок"
+          }
+        ]
+      },
+      "en": {
+        "status": "draft",
+        "filePath": "content/tracks/classes/extending-built-in/index.en.mdx",
+        "format": "mdx",
+        "title": "TODO: Translate title",
+        "description": "TODO: Translate description",
+        "completeness": 0,
+        "isFallback": true,
+        "headings": [
+          {
+            "level": 2,
+            "id": "source-lesson",
+            "text": "Source lesson"
+          }
+        ],
+        "slug": "extending-built-in",
+        "track": "classes",
+        "locale": "en",
+        "sourceLocale": "uk",
+        "hasBody": true
+      }
+    }
+  },
+  "translationCompleteness": {
+    "uk": 100,
+    "en": 0
+  },
+  "migration": {
+    "migratedFromLegacy": true,
+    "canonicalIdentitySource": "canonical",
+    "override": null,
+    "articleMeta": {
+      "type": "numeric",
+      "raw": {
+        "secId": "9",
+        "artId": "5"
+      },
+      "resolved": {
+        "track": "classes",
+        "slug": "extending-built-ins"
+      }
+    },
+    "mismatches": {
+      "filePathVsCanonical": true,
+      "filePathVsStringMeta": false,
+      "filePathVsNumericMeta": false
+    },
+    "hasLegacyJsonLd": false,
+    "hasLegacyToc": false,
+    "hasLegacyPrevNext": false,
+    "legacyArticleSupport": true
+  },
+  "bodySourcePath": "content/tracks/classes/extending-built-in/index.uk.html",
+  "sourceProvenance": {
+    "sourcePath": "uk/classes/extending-built-ins.html",
+    "sourceTrack": "classes",
+    "sourceSlug": "extending-built-ins"
+  }
+}

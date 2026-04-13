@@ -1,0 +1,174 @@
+{
+  "id": "functions-advanced/call-apply-decorators",
+  "locale": "uk",
+  "locales": {
+    "uk": true,
+    "en": false
+  },
+  "availableLocales": [
+    "uk"
+  ],
+  "title": "Декоратори та переадресація виклику, call/apply",
+  "description": "",
+  "track": "functions-advanced",
+  "trackTitle": "Розширена робота з функціями",
+  "slug": "call-apply-decorators",
+  "sourcePath": "uk/functions-advanced/call-apply-decorators.html",
+  "sourceIdentity": {
+    "track": "functions-advanced",
+    "slug": "call-apply-decorators"
+  },
+  "canonicalRoute": "/uk/docs/functions-advanced/call-apply-decorators",
+  "canonicalLegacyPath": "/functions-advanced/call-apply-decorators.html",
+  "legacyHtmlPath": "/uk/functions-advanced/call-apply-decorators.html",
+  "legacyAliases": [
+    "/uk/functions-advanced/call-apply-decorators.html",
+    "/uk/functions-advanced/call-apply-decorators",
+    "/functions-advanced/call-apply-decorators.html"
+  ],
+  "sectionOrder": 6,
+  "lessonOrder": 9,
+  "overallOrder": 57,
+  "articleNumber": "6.9",
+  "estimatedMinutes": 14,
+  "headings": [
+    {
+      "level": 2,
+      "id": "call-apply",
+      "text": "call і apply"
+    },
+    {
+      "level": 2,
+      "id": "dekoratory",
+      "text": "Декоратори функцій"
+    },
+    {
+      "level": 2,
+      "id": "throttle",
+      "text": "Throttle декоратор"
+    },
+    {
+      "level": 2,
+      "id": "summary",
+      "text": "Підсумок"
+    }
+  ],
+  "badges": [
+    "Середній",
+    "Функції",
+    "~ 14 хв"
+  ],
+  "donationLinks": [
+    "https://send.monobank.ua/jar/YOUR_JAR_ID",
+    "https://www.buymeacoffee.com/YOUR_HANDLE"
+  ],
+  "breadcrumbTrail": [
+    "Головна",
+    "Розширена робота з функціями",
+    "Декоратори та переадресація виклику, call/apply"
+  ],
+  "relatedSourceTrack": "functions-advanced",
+  "contentFiles": {
+    "uk": "content/tracks/functions-advanced/call-apply-decorators/index.uk.html",
+    "en": "content/tracks/functions-advanced/call-apply-decorators/index.en.mdx"
+  },
+  "metadataFile": "content/tracks/functions-advanced/call-apply-decorators/meta.json",
+  "translationStatus": {
+    "sourceLocale": "uk",
+    "availableLocales": [
+      "uk"
+    ],
+    "fallbackLocales": {
+      "en": "uk"
+    },
+    "locales": {
+      "uk": {
+        "status": "published",
+        "filePath": "content/tracks/functions-advanced/call-apply-decorators/index.uk.html",
+        "format": "html",
+        "title": "Декоратори та переадресація виклику, call/apply",
+        "description": "",
+        "completeness": 100,
+        "isFallback": false,
+        "headings": [
+          {
+            "level": 2,
+            "id": "call-apply",
+            "text": "call і apply"
+          },
+          {
+            "level": 2,
+            "id": "dekoratory",
+            "text": "Декоратори функцій"
+          },
+          {
+            "level": 2,
+            "id": "throttle",
+            "text": "Throttle декоратор"
+          },
+          {
+            "level": 2,
+            "id": "summary",
+            "text": "Підсумок"
+          }
+        ]
+      },
+      "en": {
+        "status": "draft",
+        "filePath": "content/tracks/functions-advanced/call-apply-decorators/index.en.mdx",
+        "format": "mdx",
+        "title": "TODO: Translate title",
+        "description": "TODO: Translate description",
+        "completeness": 0,
+        "isFallback": true,
+        "headings": [
+          {
+            "level": 2,
+            "id": "source-lesson",
+            "text": "Source lesson"
+          }
+        ],
+        "slug": "call-apply-decorators",
+        "track": "functions-advanced",
+        "locale": "en",
+        "sourceLocale": "uk",
+        "hasBody": true
+      }
+    }
+  },
+  "translationCompleteness": {
+    "uk": 100,
+    "en": 0
+  },
+  "migration": {
+    "migratedFromLegacy": true,
+    "canonicalIdentitySource": "canonical",
+    "override": null,
+    "articleMeta": {
+      "type": "string",
+      "raw": {
+        "secId": "functions-advanced",
+        "artId": "call-apply-decorators"
+      },
+      "resolved": {
+        "track": "functions-advanced",
+        "slug": "call-apply-decorators"
+      }
+    },
+    "mismatches": {
+      "filePathVsCanonical": false,
+      "filePathVsStringMeta": false,
+      "filePathVsNumericMeta": false
+    },
+    "hasLegacyJsonLd": false,
+    "hasLegacyToc": true,
+    "hasLegacyPrevNext": true,
+    "legacyArticleSupport": true
+  },
+  "bodySourcePath": "content/tracks/functions-advanced/call-apply-decorators/index.uk.html",
+  "sourceProvenance": {
+    "sourcePath": "uk/functions-advanced/call-apply-decorators.html",
+    "sourceTrack": "functions-advanced",
+    "sourceSlug": "call-apply-decorators"
+  }
+}

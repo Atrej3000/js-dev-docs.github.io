@@ -1,0 +1,214 @@
+{
+  "id": "objects/object-copy",
+  "locale": "uk",
+  "locales": {
+    "uk": true,
+    "en": false
+  },
+  "availableLocales": [
+    "uk"
+  ],
+  "title": "Копіювання об'єктів та посилання",
+  "description": "Посилання та копіювання об'єктів JavaScript: передача за посиланням, shallow copy, deep copy, structuredClone, JSON.parse/stringify.",
+  "track": "objects",
+  "trackTitle": "Об'єкти: основи",
+  "slug": "object-copy",
+  "sourcePath": "uk/objects/object-copy.html",
+  "sourceIdentity": {
+    "track": "objects",
+    "slug": "object-copy"
+  },
+  "canonicalRoute": "/uk/docs/objects/object-copy",
+  "canonicalLegacyPath": "/objects/object-copy.html",
+  "legacyHtmlPath": "/uk/objects/object-copy.html",
+  "legacyAliases": [
+    "/uk/objects/object-copy.html",
+    "/uk/objects/object-copy",
+    "/objects/object-copy.html"
+  ],
+  "sectionOrder": 4,
+  "lessonOrder": 2,
+  "overallOrder": 30,
+  "articleNumber": "4.2",
+  "estimatedMinutes": 13,
+  "headings": [
+    {
+      "level": 2,
+      "id": "posilannya",
+      "text": "Передача за посиланням"
+    },
+    {
+      "level": 2,
+      "id": "shallow",
+      "text": "Поверхнева копія (Shallow Copy)"
+    },
+    {
+      "level": 2,
+      "id": "deep",
+      "text": "Глибока копія (Deep Copy)"
+    },
+    {
+      "level": 3,
+      "id": "structured-clone",
+      "text": "structuredClone (ES2022) — рекомендований спосіб"
+    },
+    {
+      "level": 3,
+      "id": "json-copy",
+      "text": "JSON.parse/stringify — з обмеженнями"
+    },
+    {
+      "level": 2,
+      "id": "funktsii",
+      "text": "Передача об'єктів у функції"
+    },
+    {
+      "level": 2,
+      "id": "const-mutability",
+      "text": "const і мутабельність"
+    },
+    {
+      "level": 2,
+      "id": "summary",
+      "text": "Підсумок"
+    }
+  ],
+  "badges": [
+    "Початковий",
+    "Об'єкти: основи",
+    "~ 13 хв"
+  ],
+  "donationLinks": [
+    "https://send.monobank.ua/jar/YOUR_JAR_ID",
+    "https://www.buymeacoffee.com/YOUR_HANDLE"
+  ],
+  "breadcrumbTrail": [
+    "Головна",
+    "Об'єкти: основи",
+    "Копіювання об'єктів та посилання"
+  ],
+  "relatedSourceTrack": "objects",
+  "contentFiles": {
+    "uk": "content/tracks/objects/object-copy/index.uk.html",
+    "en": "content/tracks/objects/object-copy/index.en.mdx"
+  },
+  "metadataFile": "content/tracks/objects/object-copy/meta.json",
+  "translationStatus": {
+    "sourceLocale": "uk",
+    "availableLocales": [
+      "uk"
+    ],
+    "fallbackLocales": {
+      "en": "uk"
+    },
+    "locales": {
+      "uk": {
+        "status": "published",
+        "filePath": "content/tracks/objects/object-copy/index.uk.html",
+        "format": "html",
+        "title": "Копіювання об'єктів та посилання",
+        "description": "Посилання та копіювання об'єктів JavaScript: передача за посиланням, shallow copy, deep copy, structuredClone, JSON.parse/stringify.",
+        "completeness": 100,
+        "isFallback": false,
+        "headings": [
+          {
+            "level": 2,
+            "id": "posilannya",
+            "text": "Передача за посиланням"
+          },
+          {
+            "level": 2,
+            "id": "shallow",
+            "text": "Поверхнева копія (Shallow Copy)"
+          },
+          {
+            "level": 2,
+            "id": "deep",
+            "text": "Глибока копія (Deep Copy)"
+          },
+          {
+            "level": 3,
+            "id": "structured-clone",
+            "text": "structuredClone (ES2022) — рекомендований спосіб"
+          },
+          {
+            "level": 3,
+            "id": "json-copy",
+            "text": "JSON.parse/stringify — з обмеженнями"
+          },
+          {
+            "level": 2,
+            "id": "funktsii",
+            "text": "Передача об'єктів у функції"
+          },
+          {
+            "level": 2,
+            "id": "const-mutability",
+            "text": "const і мутабельність"
+          },
+          {
+            "level": 2,
+            "id": "summary",
+            "text": "Підсумок"
+          }
+        ]
+      },
+      "en": {
+        "status": "draft",
+        "filePath": "content/tracks/objects/object-copy/index.en.mdx",
+        "format": "mdx",
+        "title": "TODO: Translate title",
+        "description": "TODO: Translate description",
+        "completeness": 0,
+        "isFallback": true,
+        "headings": [
+          {
+            "level": 2,
+            "id": "source-lesson",
+            "text": "Source lesson"
+          }
+        ],
+        "slug": "object-copy",
+        "track": "objects",
+        "locale": "en",
+        "sourceLocale": "uk",
+        "hasBody": true
+      }
+    }
+  },
+  "translationCompleteness": {
+    "uk": 100,
+    "en": 0
+  },
+  "migration": {
+    "migratedFromLegacy": true,
+    "canonicalIdentitySource": "canonical",
+    "override": null,
+    "articleMeta": {
+      "type": "string",
+      "raw": {
+        "secId": "objects",
+        "artId": "object-copy"
+      },
+      "resolved": {
+        "track": "objects",
+        "slug": "object-copy"
+      }
+    },
+    "mismatches": {
+      "filePathVsCanonical": false,
+      "filePathVsStringMeta": false,
+      "filePathVsNumericMeta": false
+    },
+    "hasLegacyJsonLd": true,
+    "hasLegacyToc": true,
+    "hasLegacyPrevNext": true,
+    "legacyArticleSupport": true
+  },
+  "bodySourcePath": "content/tracks/objects/object-copy/index.uk.html",
+  "sourceProvenance": {
+    "sourcePath": "uk/objects/object-copy.html",
+    "sourceTrack": "objects",
+    "sourceSlug": "object-copy"
+  }
+}

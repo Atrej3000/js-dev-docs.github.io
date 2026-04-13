@@ -1,0 +1,145 @@
+<p>JavaScript-програма — це текстовий файл або рядок коду, що виконується рушієм. У браузері рушій запускається через тег <code>&lt;script&gt;</code>. Спосіб підключення скрипта безпосередньо впливає на порядок і час його виконання.</p>
+
+          <h2 id="tag-script">Тег &lt;script&gt;</h2>
+          <p>Тег <code>&lt;script&gt;</code> може містити код безпосередньо або посилатися на зовнішній файл через атрибут <code>src</code>.</p>
+
+          <div class="code-block">
+            <div class="code-head"><span class="code-lang">HTML</span><button class="btn-copy" aria-label="Копіювати"></button></div>
+<pre><code class="language-html">&lt;!-- Інлайн-скрипт --&gt;
+&lt;script&gt;
+  console.log('Hello from inline script');
+&lt;/script&gt;
+
+&lt;!-- Зовнішній файл --&gt;
+&lt;script src="app.js"&gt;&lt;/script&gt;
+
+&lt;!-- Якщо вказано src, вміст тега ігнорується --&gt;
+&lt;script src="app.js"&gt;
+  console.log('Цей код НЕ виконається'); // ігнорується
+&lt;/script&gt;</code></pre>
+          </div>
+
+          <div class="callout c-tip">
+            <div class="callout-title">Зовнішні файли — стандарт</div>
+            <p>Зовнішні <code>.js</code> файли кешуються браузером. Після першого завантаження повторні сторінки отримують скрипт з кешу без мережевого запиту. Інлайн-скрипти кешуватися не можуть.</p>
+          </div>
+
+          <h2 id="poryadok">Порядок виконання: класична поведінка</h2>
+          <p>За замовчуванням тег <code>&lt;script&gt;</code> <strong>блокує</strong> парсинг HTML. Браузер зупиняє побудову DOM, завантажує і виконує скрипт, потім продовжує парсинг. Саме тому класично скрипти розміщують перед <code>&lt;/body&gt;</code> — щоб не блокувати відображення вмісту.</p>
+
+          <div class="code-block">
+            <div class="code-head"><span class="code-lang">HTML</span><button class="btn-copy" aria-label="Копіювати"></button></div>
+<pre><code class="language-html">&lt;!DOCTYPE html&gt;
+&lt;html lang="uk"&gt;
+&lt;head&gt;
+  &lt;meta charset="UTF-8"&gt;
+  &lt;title&gt;Моя сторінка&lt;/title&gt;
+  &lt;!-- Скрипт у head блокує рендеринг до завантаження --&gt;
+  &lt;!-- script src="heavy.js"&gt;&lt;/script --&gt;
+&lt;/head&gt;
+&lt;body&gt;
+  &lt;h1&gt;Вміст сторінки&lt;/h1&gt;
+
+  &lt;!-- Класичне розміщення: перед закриваючим body --&gt;
+  &lt;script src="app.js"&gt;&lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+          </div>
+
+          <h2 id="async-defer">Атрибути async і defer</h2>
+          <p>Сучасний підхід — розміщувати скрипти в <code>&lt;head&gt;</code> з атрибутами <code>async</code> або <code>defer</code>. Обидва дозволяють браузеру завантажувати скрипт паралельно з парсингом HTML, але відрізняються моментом виконання.</p>
+
+          <table>
+            <thead><tr><th>Атрибут</th><th>Завантаження</th><th>Виконання</th><th>Порядок</th></tr></thead>
+            <tbody>
+              <tr><td>немає</td><td>Синхронне, блокує парсинг</td><td>Відразу після завантаження</td><td>По порядку в HTML</td></tr>
+              <tr><td><code>defer</code></td><td>Паралельно з парсингом</td><td>Після завершення парсингу DOM</td><td class="t-y">По порядку в HTML</td></tr>
+              <tr><td><code>async</code></td><td>Паралельно з парсингом</td><td>Одразу після завантаження (блокує)</td><td class="t-n">Не гарантований</td></tr>
+            </tbody>
+          </table>
+
+          <div class="code-block">
+            <div class="code-head"><span class="code-lang">HTML</span><button class="btn-copy" aria-label="Копіювати"></button></div>
+<pre><code class="language-html">&lt;head&gt;
+  &lt;!-- defer: виконається після побудови DOM, зберігає порядок --&gt;
+  &lt;script defer src="framework.js"&gt;&lt;/script&gt;
+  &lt;script defer src="app.js"&gt;&lt;/script&gt;
+  &lt;!-- app.js гарантовано виконається після framework.js --&gt;
+
+  &lt;!-- async: для незалежних скриптів (аналітика, реклама) --&gt;
+  &lt;script async src="analytics.js"&gt;&lt;/script&gt;
+&lt;/head&gt;</code></pre>
+          </div>
+
+          <div class="callout c-info">
+            <div class="callout-title">Рекомендація: defer за замовчуванням</div>
+            <p>Використовуйте <code>defer</code> для основних скриптів застосунку — він зберігає порядок залежностей і не блокує рендеринг. <code>async</code> — лише для незалежних скриптів без залежностей від DOM або інших скриптів.</p>
+          </div>
+
+          <h2 id="type-module">type="module"</h2>
+          <p>Атрибут <code>type="module"</code> переводить скрипт у режим ES-модуля. Це змінює кілька важливих речей:</p>
+          <ul>
+            <li>Автоматично застосовується <code>use strict</code></li>
+            <li>Кожен модуль має власну область видимості (змінні не потрапляють у <code>globalThis</code>)</li>
+            <li>Доступні <code>import</code> / <code>export</code></li>
+            <li>Виконується із затримкою як <code>defer</code> за замовчуванням</li>
+            <li>Один і той самий модуль завантажується лише раз, навіть якщо підключений кілька разів</li>
+          </ul>
+
+          <div class="code-block">
+            <div class="code-head"><span class="code-lang">HTML</span><button class="btn-copy" aria-label="Копіювати"></button></div>
+<pre><code class="language-html">&lt;script type="module" src="main.js"&gt;&lt;/script&gt;</code></pre>
+          </div>
+
+          <div class="code-block">
+            <div class="code-head"><span class="code-lang">JavaScript — main.js</span><button class="btn-copy" aria-label="Копіювати"></button></div>
+<pre><code class="language-javascript">import { formatDate } from './utils.js';
+
+const today = formatDate(new Date());
+console.log(today);</code></pre>
+          </div>
+
+          <div class="callout c-warn">
+            <div class="callout-title">Модулі потребують сервера</div>
+            <p>Модулі завантажуються через HTTP(S). Відкриття HTML-файлу напряму (<code>file://</code>) призведе до CORS-помилки. Використовуйте локальний сервер: <code>npx serve .</code> або Live Server у VS Code.</p>
+          </div>
+
+          <h2 id="pershyi-skrypt">Перший скрипт</h2>
+          <div class="code-block">
+            <div class="code-head"><span class="code-lang">HTML</span><button class="btn-copy" aria-label="Копіювати"></button></div>
+<pre><code class="language-html">&lt;!DOCTYPE html&gt;
+&lt;html lang="uk"&gt;
+&lt;head&gt;
+  &lt;meta charset="UTF-8"&gt;
+  &lt;title&gt;Перший скрипт&lt;/title&gt;
+  &lt;script defer src="main.js"&gt;&lt;/script&gt;
+&lt;/head&gt;
+&lt;body&gt;
+  &lt;p id="output"&gt;&lt;/p&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+          </div>
+          <div class="code-block">
+            <div class="code-head"><span class="code-lang">JavaScript — main.js</span><button class="btn-copy" aria-label="Копіювати"></button></div>
+<pre><code class="language-javascript">// defer гарантує, що DOM вже побудований
+const output = document.getElementById('output');
+output.textContent = 'Привіт, світ!';
+console.log('Скрипт виконано');</code></pre>
+          </div>
+
+          <h2 id="summary">Підсумок</h2>
+          <ul>
+            <li>Тег <code>&lt;script&gt;</code> без атрибутів блокує парсинг HTML під час завантаження і виконання.</li>
+            <li><code>defer</code> — завантаження паралельно, виконання після DOM, порядок збережено. Стандарт для основних скриптів.</li>
+            <li><code>async</code> — завантаження паралельно, виконання одразу, порядок не гарантований. Для незалежних скриптів.</li>
+            <li><code>type="module"</code> — ES-модуль зі своєю областю видимості, <code>import</code>/<code>export</code>, автоматичним <code>use strict</code> і поведінкою <code>defer</code>.</li>
+            <li>Якщо задано <code>src</code>, вміст тега ігнорується.</li>
+          </ul>
+
+          <div class="article-support">
+            <p><strong>Матеріал корисний?</strong> Підтримай проект.</p>
+            <div class="support-btns-inline">
+              <a href="https://send.monobank.ua/jar/YOUR_JAR_ID" class="btn-mono" target="_blank" rel="noopener" style="font-size:12px;height:36px;padding:0 14px">🟢 Monobank</a>
+              <a href="https://www.buymeacoffee.com/YOUR_HANDLE" class="btn-coffee" target="_blank" rel="noopener" style="font-size:12px;height:36px;padding:0 14px">☕ Coffee</a>
+            </div>
+          </div>

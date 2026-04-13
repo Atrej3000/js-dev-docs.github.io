@@ -1,0 +1,181 @@
+{
+  "id": "modules/dynamic-imports",
+  "locale": "uk",
+  "locales": {
+    "uk": true,
+    "en": false
+  },
+  "availableLocales": [
+    "uk"
+  ],
+  "title": "Динамічні імпорти",
+  "description": "Динамічні імпорти у JavaScript — детальний розбір з прикладами, підводними каменями та best practices.",
+  "track": "modules",
+  "trackTitle": "Модулі",
+  "slug": "dynamic-imports",
+  "sourcePath": "uk/modules/dynamic-imports.html",
+  "sourceIdentity": {
+    "track": "modules",
+    "slug": "dynamic-imports"
+  },
+  "canonicalRoute": "/uk/docs/modules/dynamic-imports",
+  "canonicalLegacyPath": "/modules/dynamic-imports.html",
+  "legacyHtmlPath": "/uk/modules/dynamic-imports.html",
+  "legacyAliases": [
+    "/uk/modules/dynamic-imports.html",
+    "/uk/modules/dynamic-imports",
+    "/modules/dynamic-imports.html"
+  ],
+  "sectionOrder": 13,
+  "lessonOrder": 3,
+  "overallOrder": 87,
+  "articleNumber": "13.3",
+  "estimatedMinutes": 8,
+  "headings": [
+    {
+      "level": 2,
+      "id": "syntax",
+      "text": "Синтаксис"
+    },
+    {
+      "level": 2,
+      "id": "conditional",
+      "text": "Умовне завантаження"
+    },
+    {
+      "level": 2,
+      "id": "code-splitting",
+      "text": "Code splitting у React/Vite"
+    },
+    {
+      "level": 2,
+      "id": "vs-static",
+      "text": "Динамічний vs статичний import"
+    },
+    {
+      "level": 2,
+      "id": "summary",
+      "text": "Підсумок"
+    }
+  ],
+  "badges": [
+    "Середній",
+    "Модулі",
+    "~ 8 хв"
+  ],
+  "donationLinks": [],
+  "breadcrumbTrail": [
+    "Головна",
+    "Модулі",
+    "Динамічні імпорти"
+  ],
+  "relatedSourceTrack": "modules",
+  "contentFiles": {
+    "uk": "content/tracks/modules/dynamic-imports/index.uk.html",
+    "en": "content/tracks/modules/dynamic-imports/index.en.mdx"
+  },
+  "metadataFile": "content/tracks/modules/dynamic-imports/meta.json",
+  "translationStatus": {
+    "sourceLocale": "uk",
+    "availableLocales": [
+      "uk"
+    ],
+    "fallbackLocales": {
+      "en": "uk"
+    },
+    "locales": {
+      "uk": {
+        "status": "published",
+        "filePath": "content/tracks/modules/dynamic-imports/index.uk.html",
+        "format": "html",
+        "title": "Динамічні імпорти",
+        "description": "Динамічні імпорти у JavaScript — детальний розбір з прикладами, підводними каменями та best practices.",
+        "completeness": 100,
+        "isFallback": false,
+        "headings": [
+          {
+            "level": 2,
+            "id": "syntax",
+            "text": "Синтаксис"
+          },
+          {
+            "level": 2,
+            "id": "conditional",
+            "text": "Умовне завантаження"
+          },
+          {
+            "level": 2,
+            "id": "code-splitting",
+            "text": "Code splitting у React/Vite"
+          },
+          {
+            "level": 2,
+            "id": "vs-static",
+            "text": "Динамічний vs статичний import"
+          },
+          {
+            "level": 2,
+            "id": "summary",
+            "text": "Підсумок"
+          }
+        ]
+      },
+      "en": {
+        "status": "draft",
+        "filePath": "content/tracks/modules/dynamic-imports/index.en.mdx",
+        "format": "mdx",
+        "title": "TODO: Translate title",
+        "description": "TODO: Translate description",
+        "completeness": 0,
+        "isFallback": true,
+        "headings": [
+          {
+            "level": 2,
+            "id": "source-lesson",
+            "text": "Source lesson"
+          }
+        ],
+        "slug": "dynamic-imports",
+        "track": "modules",
+        "locale": "en",
+        "sourceLocale": "uk",
+        "hasBody": true
+      }
+    }
+  },
+  "translationCompleteness": {
+    "uk": 100,
+    "en": 0
+  },
+  "migration": {
+    "migratedFromLegacy": true,
+    "canonicalIdentitySource": "canonical",
+    "override": null,
+    "articleMeta": {
+      "type": "numeric",
+      "raw": {
+        "secId": "13",
+        "artId": "3"
+      },
+      "resolved": {
+        "track": "modules",
+        "slug": "dynamic-imports"
+      }
+    },
+    "mismatches": {
+      "filePathVsCanonical": false,
+      "filePathVsStringMeta": false,
+      "filePathVsNumericMeta": false
+    },
+    "hasLegacyJsonLd": false,
+    "hasLegacyToc": false,
+    "hasLegacyPrevNext": false,
+    "legacyArticleSupport": true
+  },
+  "bodySourcePath": "content/tracks/modules/dynamic-imports/index.uk.html",
+  "sourceProvenance": {
+    "sourcePath": "uk/modules/dynamic-imports.html",
+    "sourceTrack": "modules",
+    "sourceSlug": "dynamic-imports"
+  }
+}

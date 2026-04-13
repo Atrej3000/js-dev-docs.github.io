@@ -1,0 +1,174 @@
+{
+  "id": "prototypes/function-prototype",
+  "locale": "uk",
+  "locales": {
+    "uk": true,
+    "en": false
+  },
+  "availableLocales": [
+    "uk"
+  ],
+  "title": "F.prototype",
+  "description": "",
+  "track": "prototypes",
+  "trackTitle": "Прототипи, наслідування",
+  "slug": "function-prototype",
+  "sourcePath": "uk/prototypes/function-prototype.html",
+  "sourceIdentity": {
+    "track": "prototypes",
+    "slug": "function-prototype"
+  },
+  "canonicalRoute": "/uk/docs/prototypes/function-prototype",
+  "canonicalLegacyPath": "/prototypes/function-prototype.html",
+  "legacyHtmlPath": "/uk/prototypes/function-prototype.html",
+  "legacyAliases": [
+    "/uk/prototypes/function-prototype.html",
+    "/uk/prototypes/function-prototype",
+    "/prototypes/function-prototype.html"
+  ],
+  "sectionOrder": 8,
+  "lessonOrder": 2,
+  "overallOrder": 63,
+  "articleNumber": "8.2",
+  "estimatedMinutes": 10,
+  "headings": [
+    {
+      "level": 2,
+      "id": "f-prototype",
+      "text": "Властивість prototype функції"
+    },
+    {
+      "level": 2,
+      "id": "constructor",
+      "text": "Властивість constructor"
+    },
+    {
+      "level": 2,
+      "id": "vs-class",
+      "text": "F.prototype vs class"
+    },
+    {
+      "level": 2,
+      "id": "summary",
+      "text": "Підсумок"
+    }
+  ],
+  "badges": [
+    "Середній",
+    "Прототипи, наслідування",
+    "~ 10 хв"
+  ],
+  "donationLinks": [
+    "https://send.monobank.ua/jar/YOUR_JAR_ID",
+    "https://www.buymeacoffee.com/YOUR_HANDLE"
+  ],
+  "breadcrumbTrail": [
+    "Головна",
+    "Прототипи, наслідування",
+    "F.prototype"
+  ],
+  "relatedSourceTrack": "prototypes",
+  "contentFiles": {
+    "uk": "content/tracks/prototypes/function-prototype/index.uk.html",
+    "en": "content/tracks/prototypes/function-prototype/index.en.mdx"
+  },
+  "metadataFile": "content/tracks/prototypes/function-prototype/meta.json",
+  "translationStatus": {
+    "sourceLocale": "uk",
+    "availableLocales": [
+      "uk"
+    ],
+    "fallbackLocales": {
+      "en": "uk"
+    },
+    "locales": {
+      "uk": {
+        "status": "published",
+        "filePath": "content/tracks/prototypes/function-prototype/index.uk.html",
+        "format": "html",
+        "title": "F.prototype",
+        "description": "",
+        "completeness": 100,
+        "isFallback": false,
+        "headings": [
+          {
+            "level": 2,
+            "id": "f-prototype",
+            "text": "Властивість prototype функції"
+          },
+          {
+            "level": 2,
+            "id": "constructor",
+            "text": "Властивість constructor"
+          },
+          {
+            "level": 2,
+            "id": "vs-class",
+            "text": "F.prototype vs class"
+          },
+          {
+            "level": 2,
+            "id": "summary",
+            "text": "Підсумок"
+          }
+        ]
+      },
+      "en": {
+        "status": "draft",
+        "filePath": "content/tracks/prototypes/function-prototype/index.en.mdx",
+        "format": "mdx",
+        "title": "TODO: Translate title",
+        "description": "TODO: Translate description",
+        "completeness": 0,
+        "isFallback": true,
+        "headings": [
+          {
+            "level": 2,
+            "id": "source-lesson",
+            "text": "Source lesson"
+          }
+        ],
+        "slug": "function-prototype",
+        "track": "prototypes",
+        "locale": "en",
+        "sourceLocale": "uk",
+        "hasBody": true
+      }
+    }
+  },
+  "translationCompleteness": {
+    "uk": 100,
+    "en": 0
+  },
+  "migration": {
+    "migratedFromLegacy": true,
+    "canonicalIdentitySource": "canonical",
+    "override": null,
+    "articleMeta": {
+      "type": "string",
+      "raw": {
+        "secId": "prototypes",
+        "artId": "function-prototype"
+      },
+      "resolved": {
+        "track": "prototypes",
+        "slug": "function-prototype"
+      }
+    },
+    "mismatches": {
+      "filePathVsCanonical": false,
+      "filePathVsStringMeta": false,
+      "filePathVsNumericMeta": false
+    },
+    "hasLegacyJsonLd": false,
+    "hasLegacyToc": true,
+    "hasLegacyPrevNext": true,
+    "legacyArticleSupport": true
+  },
+  "bodySourcePath": "content/tracks/prototypes/function-prototype/index.uk.html",
+  "sourceProvenance": {
+    "sourcePath": "uk/prototypes/function-prototype.html",
+    "sourceTrack": "prototypes",
+    "sourceSlug": "function-prototype"
+  }
+}

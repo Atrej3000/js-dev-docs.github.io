@@ -1,0 +1,99 @@
+<p>Ця стаття — зведений довідник ключових правил і особливостей JavaScript, розглянутих у розділі «Основи». Використовуйте її для повторення і як швидкий reference.</p>
+
+          <h2 id="struktura">Структура коду</h2>
+          <ul>
+            <li>Інструкції завершуються <code>;</code>. ASI вставляє крапку з комою автоматично, але має небезпечні винятки.</li>
+            <li>Рядки після <code>return</code>, <code>throw</code>, <code>break</code> вставляють <code>;</code> — значення завжди на тому ж рядку що й ключове слово.</li>
+            <li>Рядки що починаються з <code>(</code>, <code>[</code> або шаблонного літерала не отримують автоматичного <code>;</code>.</li>
+          </ul>
+
+          <h2 id="zminni">Змінні</h2>
+          <ul>
+            <li><code>const</code> за замовчуванням, <code>let</code> — коли потрібне переприсвоєння, <code>var</code> — тільки legacy.</li>
+            <li><code>let</code>/<code>const</code>: блокова область видимості, TDZ до рядка оголошення.</li>
+            <li><code>var</code>: функціональна область видимості, підіймається з ініціалізацією <code>undefined</code>.</li>
+            <li><code>for</code> з <code>let</code> — нова прив'язка на кожну ітерацію.</li>
+          </ul>
+
+          <h2 id="typy">Типи даних</h2>
+          <ul>
+            <li>8 типів: Number, String, Boolean, null, undefined, Symbol, BigInt (примітиви) + Object.</li>
+            <li><code>typeof null === "object"</code> — баг. Перевіряйте через <code>=== null</code>.</li>
+            <li><code>typeof []  === "object"</code>. Перевіряйте через <code>Array.isArray()</code>.</li>
+            <li><code>NaN !== NaN</code>. Перевіряйте через <code>Number.isNaN()</code>.</li>
+            <li>Примітиви — за значенням. Object — за посиланням.</li>
+          </ul>
+
+          <h2 id="peretvorennya">Перетворення типів</h2>
+          <div class="code-block">
+            <div class="code-head"><span class="code-lang">JavaScript</span><button class="btn-copy" aria-label="Копіювати"></button></div>
+<pre><code class="language-javascript">// Числове: null→0, undefined→NaN, true→1, false→0, ""→0, "3px"→NaN
+// Рядкове: null→"null", undefined→"undefined", []→"", {}→"[object Object]"
+// Булеве: falsy = false, 0, -0, 0n, "", null, undefined, NaN
+
+// + з рядком → конкатенація; інші арифм. оператори → числове перетворення
+"5" + 2   // "52"
+"5" - 2   // 3
+"5" * "2" // 10</code></pre>
+          </div>
+
+          <h2 id="operatory">Оператори і порівняння</h2>
+          <ul>
+            <li>Використовуйте <code>===</code> і <code>!==</code> завжди. Виняток: <code>value == null</code> для перевірки на null і undefined.</li>
+            <li><code>||</code> — перший truthy або останній. <code>&&</code> — перший falsy або останній.</li>
+            <li><code>??</code> — повертає правий тільки при <code>null</code>/<code>undefined</code> ліворуч.</li>
+            <li><code>**</code> — права асоціативність: <code>2 ** 3 ** 2 = 512</code>.</li>
+          </ul>
+
+          <h2 id="tsykly">Цикли</h2>
+          <ul>
+            <li><code>for...of</code> — для iterable (масиви, рядки, Map, Set).</li>
+            <li><code>for...in</code> — для ключів об'єкта (з <code>hasOwn</code>). Не для масивів.</li>
+            <li><code>break</code> — вихід. <code>continue</code> — наступна ітерація. З міткою — для вкладених циклів.</li>
+          </ul>
+
+          <h2 id="funktsiyi">Функції</h2>
+          <ul>
+            <li>Function declaration піднімається повністю. Function expression — ні.</li>
+            <li>Дефолтні параметри спрацьовують лише для <code>undefined</code>, не для <code>null</code>.</li>
+            <li>Функція без <code>return</code> повертає <code>undefined</code>.</li>
+            <li>Стрілкові функції: лексичний <code>this</code>, немає <code>arguments</code>, не можна як конструктор і метод об'єкта.</li>
+            <li>Для методів об'єкта — завжди звичайна функція або shorthand <code>method() {}</code>.</li>
+          </ul>
+
+          <h2 id="shcho-dalshе">Що далі</h2>
+          <p>Розділ «Основи JavaScript» завершено. Наступний розділ — <strong>Якість коду</strong> — охоплює дебаґінг, стандарти оформлення, JSDoc, автоматичне тестування і поліфіли.</p>
+
+          <div class="code-block">
+            <div class="code-head"><span class="code-lang">JavaScript — Quick reference</span><button class="btn-copy" aria-label="Копіювати"></button></div>
+<pre><code class="language-javascript">// Змінні
+const MAX = 100;          // незмінна прив'язка
+let count = 0;            // мутабельна
+
+// Типи
+typeof null    // "object" (баг)
+typeof []      // "object"
+Array.isArray([]) // true — правильна перевірка
+NaN === NaN   // false
+Number.isNaN(NaN) // true
+
+// Порівняння
+=== // суворе — завжди
+==  // тільки value == null (null + undefined)
+
+// Логічні
+a || b  // перший truthy або b
+a && b  // перший falsy або b
+a ?? b  // b лише якщо a є null/undefined
+
+// Функції
+function f() {}    // declaration — hoisting
+const f = () => {} // arrow — лексичний this, немає arguments
+const f = function named() {} // NFE — ім'я всередині
+
+// Цикли
+for (const v of iterable) {} // масиви, рядки, Map, Set
+for (const k in obj) {}      // ключі об'єкта (+ hasOwn перевірка)</code></pre>
+          </div>
+
+          <div class="article-support"><p><strong>Матеріал корисний?</strong> Підтримай проект.</p><div class="support-btns-inline"><a href="https://send.monobank.ua/jar/YOUR_JAR_ID" class="btn-mono" target="_blank" rel="noopener" style="font-size:12px;height:36px;padding:0 14px">🟢 Monobank</a><a href="https://www.buymeacoffee.com/YOUR_HANDLE" class="btn-coffee" target="_blank" rel="noopener" style="font-size:12px;height:36px;padding:0 14px">☕ Coffee</a></div></div>

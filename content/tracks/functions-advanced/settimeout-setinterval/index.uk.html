@@ -1,0 +1,81 @@
+<p><code>setTimeout</code> і <code>setInterval</code> — функції Web API браузера і Node.js для планування виконання коду в майбутньому. Вони взаємодіють з подієвим циклом (event loop) і не є частиною специфікації ECMAScript.</p>
+
+    <h2 id="settimeout">setTimeout</h2>
+    <div class="code-block"><div class="code-head"><span class="code-lang">JavaScript</span><button class="btn-copy" aria-label="Копіювати"></button></div>
+<pre><code class="language-javascript">// setTimeout(callback, delay, ...args)
+// Виконує callback один раз через delay мілісекунд
+const timerId = setTimeout(() => {
+  console.log('Через 1 секунду');
+}, 1000);
+
+// Скасування до виконання
+clearTimeout(timerId);
+
+// Передача аргументів
+setTimeout((name, greeting) => {
+  console.log(`${greeting}, ${name}!`);
+}, 500, 'Олена', 'Привіт');
+
+// Затримка 0 — не означає "зараз"
+setTimeout(() => console.log('B'), 0);
+console.log('A');
+// Виведе: A, потім B
+// setTimeout 0 → кінець поточної черги задач</code></pre></div>
+
+    <h2 id="setinterval">setInterval</h2>
+    <div class="code-block"><div class="code-head"><span class="code-lang">JavaScript</span><button class="btn-copy" aria-label="Копіювати"></button></div>
+<pre><code class="language-javascript">// Виконує callback кожні delay мілісекунд
+let count = 0;
+const intervalId = setInterval(() => {
+  count++;
+  console.log(`Tick ${count}`);
+  if (count >= 3) clearInterval(intervalId);
+}, 1000);
+// Tick 1 (через 1с)
+// Tick 2 (через 2с)
+// Tick 3 (через 3с, зупиняється)
+
+// ВАЖЛИВО: завжди зберігайте timerId для clearInterval
+// Забутий setInterval — витік пам'яті і CPU</code></pre></div>
+
+    <h2 id="nested-timeout">Вкладений setTimeout vs setInterval</h2>
+    <div class="code-block"><div class="code-head"><span class="code-lang">JavaScript</span><button class="btn-copy" aria-label="Копіювати"></button></div>
+<pre><code class="language-javascript">// setInterval: виконання може нагромаджуватись якщо callback > delay
+// Вкладений setTimeout: гарантує паузу між виконаннями
+
+// setInterval — можлива проблема
+setInterval(heavyTask, 100); // якщо heavyTask займає >100ms — перекриття
+
+// Вкладений setTimeout — безпечніше
+function schedule() {
+  heavyTask();
+  setTimeout(schedule, 100); // наступний виклик ПІСЛЯ завершення поточного
+}
+setTimeout(schedule, 100);</code></pre></div>
+
+    <h2 id="event-loop">setTimeout і event loop</h2>
+    <div class="code-block"><div class="code-head"><span class="code-lang">JavaScript</span><button class="btn-copy" aria-label="Копіювати"></button></div>
+<pre><code class="language-javascript">// Порядок виконання
+console.log('1 - синхронно');
+
+setTimeout(() => console.log('3 - macrotask'), 0);
+
+Promise.resolve().then(() => console.log('2 - microtask'));
+
+console.log('1.5 - теж синхронно');
+
+// Виведе:
+// 1 - синхронно
+// 1.5 - теж синхронно
+// 2 - microtask (мікрозадачі виконуються до макрозадач)
+// 3 - macrotask</code></pre></div>
+
+    <h2 id="summary">Підсумок</h2>
+    <ul>
+      <li><code>setTimeout(fn, delay)</code> — один виклик. <code>clearTimeout(id)</code> — скасування.</li>
+      <li><code>setInterval(fn, delay)</code> — повторний. <code>clearInterval(id)</code> — зупинка. Завжди зберігайте id.</li>
+      <li>Затримка 0 не означає «зараз» — означає «після поточної задачі».</li>
+      <li>Вкладений <code>setTimeout</code> точніший за <code>setInterval</code> при довгих callback-ах.</li>
+      <li>setTimeout/setInterval — макрозадачі. Promise.then — мікрозадачі. Мікрозадачі виконуються першими.</li>
+    </ul>
+    <div class="article-support"><p><strong>Матеріал корисний?</strong> Підтримай проект.</p><div class="support-btns-inline"><a href="https://send.monobank.ua/jar/YOUR_JAR_ID" class="btn-mono" target="_blank" rel="noopener" style="font-size:12px;height:36px;padding:0 14px">🟢 Monobank</a><a href="https://www.buymeacoffee.com/YOUR_HANDLE" class="btn-coffee" target="_blank" rel="noopener" style="font-size:12px;height:36px;padding:0 14px">☕ Coffee</a></div></div>

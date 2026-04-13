@@ -1,0 +1,125 @@
+<p>Коментар — це текст для людей, не для рушія. Хороший коментар пояснює <em>чому</em> прийнято рішення, а не <em>що</em> робить код. Останнє має бути зрозумілим з самого коду.</p>
+
+          <h2 id="anatypaterny">Антипатерни: що не варто коментувати</h2>
+          <div class="code-block">
+            <div class="code-head"><span class="code-lang">JavaScript</span><button class="btn-copy" aria-label="Копіювати"></button></div>
+<pre><code class="language-javascript">// ПОГАНО: коментар переказує код
+// Збільшуємо лічильник на 1
+count++;
+
+// Перевіряємо чи user активний
+if (user.isActive) { /* ... */ }
+
+// ПОГАНО: застарілий коментар (гірше за відсутність)
+// Повертає рядок з ім'ям
+function getUserId(user) {  // насправді повертає number
+  return user.id;
+}
+
+// ПОГАНО: закоментований код — видаляйте, git пам'ятає
+// const oldResult = calculate(x);
+// return oldResult * 2;
+return calculate(x) * 2;</code></pre>
+          </div>
+
+          <h2 id="dobre">Що варто коментувати</h2>
+          <div class="code-block">
+            <div class="code-head"><span class="code-lang">JavaScript</span><button class="btn-copy" aria-label="Копіювати"></button></div>
+<pre><code class="language-javascript">// ДОБРЕ: пояснює неочевидне рішення
+// Зміщення на -1 компенсує 0-базовану індексацію зовнішнього API (spec §4.2)
+const apiIndex = localIndex - 1;
+
+// ДОБРЕ: попереджає про пастку
+// parseInt без основи повертає вісімкову для рядків з провідним 0 у старих браузерах
+const parsed = parseInt(input, 10);
+
+// ДОБРЕ: пояснює бізнес-правило
+// Мінімальний вік відповідно до GDPR Art. 8 для юрисдикцій без відомого порогу
+const MINIMUM_AGE = 16;
+
+// ДОБРЕ: посилання на зовнішній контекст
+// Обхід бага Chrome #1234567: requestAnimationFrame не викликається
+// у прихованих iframe без цього setTimeout
+setTimeout(() => requestAnimationFrame(render), 0);</code></pre>
+          </div>
+
+          <h2 id="jsdoc">JSDoc</h2>
+          <p>JSDoc — стандарт документування публічних API. Редактори (VS Code, WebStorm) використовують JSDoc для IntelliSense — підказок при автодоповненні.</p>
+
+          <div class="code-block">
+            <div class="code-head"><span class="code-lang">JavaScript</span><button class="btn-copy" aria-label="Копіювати"></button></div>
+<pre><code class="language-javascript">/**
+ * Обчислює вартість замовлення з урахуванням знижки.
+ *
+ * @param {number} subtotal - Сума до знижки (гривні)
+ * @param {number} discountRate - Ставка знижки (0–1), наприклад 0.1 = 10%
+ * @param {boolean} [includeTax=true] - Чи включати ПДВ (20%)
+ * @returns {number} Фінальна вартість
+ * @throws {RangeError} Якщо discountRate поза діапазоном [0, 1]
+ *
+ * @example
+ * calculateTotal(100, 0.1)       // 108 (зі знижкою і ПДВ)
+ * calculateTotal(100, 0.1, false) // 90  (зі знижкою, без ПДВ)
+ */
+function calculateTotal(subtotal, discountRate, includeTax = true) {
+  if (discountRate < 0 || discountRate > 1) {
+    throw new RangeError(`discountRate must be 0–1, got ${discountRate}`);
+  }
+  const discounted = subtotal * (1 - discountRate);
+  return includeTax ? discounted * 1.2 : discounted;
+}</code></pre>
+          </div>
+
+          <h2 id="todo-fixme">TODO і FIXME маркери</h2>
+          <div class="code-block">
+            <div class="code-head"><span class="code-lang">JavaScript</span><button class="btn-copy" aria-label="Копіювати"></button></div>
+<pre><code class="language-javascript">// TODO: додати пагінацію коли кількість записів перевищить 1000
+const users = await getAllUsers();
+
+// FIXME: race condition при одночасних запитах — потрібен mutex
+async function updateCounter() {
+  const current = await getCounter();
+  await setCounter(current + 1);
+}
+
+// HACK: тимчасове рішення до виходу Safari 17.4
+// Видалити після: https://webkit.org/b/123456
+element.style.transform = 'translateZ(0)';</code></pre>
+          </div>
+
+          <div class="callout c-info">
+            <div class="callout-title">TODO ≠ технічний борг</div>
+            <p>TODO без прив'язки до завдання або терміну накопичуються роками. Якщо TODO важливий — одразу створіть завдання в трекері і вкажіть посилання в коментарі.</p>
+          </div>
+
+          <h2 id="self-documenting">Самодокументований код</h2>
+          <p>Найкращий коментар — той, що не потрібен. Ясне іменування і правильна структура часто роблять коментар зайвим.</p>
+
+          <div class="code-block">
+            <div class="code-head"><span class="code-lang">JavaScript</span><button class="btn-copy" aria-label="Копіювати"></button></div>
+<pre><code class="language-javascript">// ПОТРЕБУЄ КОМЕНТАРЯ — незрозуміла назва
+const d = new Date();
+const ts = d.getTime() / 1000; // перетворення мс → секунди
+
+// САМОДОКУМЕНТОВАНИЙ — коментар не потрібен
+const now = new Date();
+const unixTimestampSeconds = Math.floor(now.getTime() / 1000);
+
+// ПОТРЕБУЄ КОМЕНТАРЯ — магічне число
+if (status > 2) { return; }
+
+// САМОДОКУМЕНТОВАНИЙ
+const MAX_RETRY_STATUS = 2;
+if (retryCount > MAX_RETRY_STATUS) { return; }</code></pre>
+          </div>
+
+          <h2 id="summary">Підсумок</h2>
+          <ul>
+            <li>Коментар пояснює <em>чому</em>, не <em>що</em>. Код має пояснювати себе сам.</li>
+            <li>Не коментуйте очевидне. Видаляйте закоментований код — git зберігає історію.</li>
+            <li>JSDoc для публічного API: <code>@param</code>, <code>@returns</code>, <code>@throws</code>, <code>@example</code>.</li>
+            <li>TODO/FIXME — з поясненням і посиланням на трекер.</li>
+            <li>Застарілий коментар гірше за відсутність — вводить в оману.</li>
+          </ul>
+
+          <div class="article-support"><p><strong>Матеріал корисний?</strong> Підтримай проект.</p><div class="support-btns-inline"><a href="https://send.monobank.ua/jar/YOUR_JAR_ID" class="btn-mono" target="_blank" rel="noopener" style="font-size:12px;height:36px;padding:0 14px">🟢 Monobank</a><a href="https://www.buymeacoffee.com/YOUR_HANDLE" class="btn-coffee" target="_blank" rel="noopener" style="font-size:12px;height:36px;padding:0 14px">☕ Coffee</a></div></div>

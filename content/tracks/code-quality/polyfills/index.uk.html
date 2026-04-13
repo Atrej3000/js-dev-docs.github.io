@@ -1,0 +1,134 @@
+<p>Сучасний JavaScript (ES2020+) не підтримується в старих браузерах. Два інструменти вирішують цю проблему: <strong>транспілери</strong> — перетворюють синтаксис, <strong>поліфіли</strong> — реалізують відсутні API.</p>
+
+          <h2 id="transpiler">Транспілер: перетворення синтаксису</h2>
+          <p>Транспілер читає вихідний код і перетворює синтаксис ES2020+ на еквівалентний ES5/ES2015. Це <em>синтаксичне</em> перетворення — нові конструкції мови.</p>
+
+          <div class="code-block">
+            <div class="code-head"><span class="code-lang">JavaScript — вхід (ES2022)</span><button class="btn-copy" aria-label="Копіювати"></button></div>
+<pre><code class="language-javascript">// Стрілкові функції, деструктуризація, optional chaining
+const getUserName = (user) => user?.profile?.name ?? 'Guest';
+
+class Counter {
+  #count = 0;           // приватне поле класу
+  increment() { this.#count++; }
+  get value() { return this.#count; }
+}</code></pre>
+          </div>
+
+          <div class="code-block">
+            <div class="code-head"><span class="code-lang">JavaScript — вихід Babel (ES5)</span><button class="btn-copy" aria-label="Копіювати"></button></div>
+<pre><code class="language-javascript">// Babel трансформує у сумісний з ES5 код
+var getUserName = function(user) {
+  var _user, _user$profile;
+  return (_user = user) === null || _user === void 0
+    ? void 0
+    : (_user$profile = _user.profile) === null
+    ? void 0
+    : _user$profile.name !== null && _user$profile.name !== void 0
+    ? _user$profile.name
+    : 'Guest';
+};
+// Приватні поля → WeakMap (спрощено)</code></pre>
+          </div>
+
+          <h2 id="babel">Babel</h2>
+          <p>Найпоширеніший JavaScript-транспілер. Перетворює новий синтаксис і JSX. Конфігурується через <code>.babelrc</code> або <code>babel.config.json</code>.</p>
+
+          <div class="code-block">
+            <div class="code-head"><span class="code-lang">JSON — babel.config.json</span><button class="btn-copy" aria-label="Копіювати"></button></div>
+<pre><code class="language-javascript">{
+  "presets": [
+    ["@babel/preset-env", {
+      "targets": "> 0.5%, last 2 versions, not dead",
+      "useBuiltIns": "usage",
+      "corejs": 3
+    }]
+  ]
+}</code></pre>
+          </div>
+
+          <p><code>@babel/preset-env</code> автоматично визначає які трансформації потрібні для цільових браузерів. <code>useBuiltIns: "usage"</code> вставляє лише необхідні поліфіли.</p>
+
+          <h2 id="polyfill">Поліфіл: реалізація відсутнього API</h2>
+          <p>Поліфіл — код, що реалізує API яке браузер ще не підтримує. На відміну від транспілера — це не перетворення синтаксису, а додавання нових функцій.</p>
+
+          <div class="code-block">
+            <div class="code-head"><span class="code-lang">JavaScript</span><button class="btn-copy" aria-label="Копіювати"></button></div>
+<pre><code class="language-javascript">// Поліфіл для Array.prototype.at (ES2022) — ручна реалізація
+if (!Array.prototype.at) {
+  Array.prototype.at = function(index) {
+    const i = Math.trunc(index) || 0;
+    if (i < 0) return this[this.length + i];
+    return this[i];
+  };
+}
+
+// Поліфіл для Promise (якщо відсутній)
+// Замість ручного написання — використовуйте core-js
+
+// Перевірка підтримки перед використанням нового API
+if (typeof globalThis.structuredClone === 'function') {
+  const copy = structuredClone(data);
+} else {
+  const copy = JSON.parse(JSON.stringify(data)); // fallback
+}</code></pre>
+          </div>
+
+          <h2 id="core-js">core-js</h2>
+          <p><code>core-js</code> — найповніша бібліотека поліфілів для стандартних об'єктів JavaScript (Array, Promise, Map, Set, Symbol тощо). Разом з Babel вона покриває більшість потреб.</p>
+
+          <div class="code-block">
+            <div class="code-head"><span class="code-lang">JavaScript</span><button class="btn-copy" aria-label="Копіювати"></button></div>
+<pre><code class="language-javascript">// Ручне підключення (рідко потрібно з Babel useBuiltIns: "usage")
+import 'core-js/stable';          // всі стабільні поліфіли
+import 'core-js/actual/array/at'; // тільки конкретний
+
+// Або вибірково
+import 'core-js/actual/promise';
+import 'core-js/actual/set';</code></pre>
+          </div>
+
+          <h2 id="browserslist">browserslist</h2>
+          <p>Файл <code>.browserslistrc</code> (або поле <code>browserslist</code> в <code>package.json</code>) визначає цільові браузери. Babel, PostCSS, Autoprefixer читають цей файл для визначення необхідних трансформацій.</p>
+
+          <div class="code-block">
+            <div class="code-head"><span class="code-lang">text — .browserslistrc</span><button class="btn-copy" aria-label="Копіювати"></button></div>
+<pre><code class="language-javascript"># Більше 0.5% частки ринку, останні 2 версії, живі браузери
+> 0.5%
+last 2 versions
+not dead
+not IE 11
+
+# Для сучасних проектів (менше поліфілів)
+# last 1 Chrome version
+# last 1 Firefox version
+# last 2 Safari major versions</code></pre>
+          </div>
+
+          <h2 id="typescript">TypeScript як транспілер</h2>
+          <p>TypeScript через <code>tsc</code> або <code>ts-loader</code>/<code>esbuild</code> також виконує транспіляцію: компілює TypeScript у JavaScript з заданою версією <code>target</code> у <code>tsconfig.json</code>.</p>
+
+          <div class="code-block">
+            <div class="code-head"><span class="code-lang">JSON — tsconfig.json (фрагмент)</span><button class="btn-copy" aria-label="Копіювати"></button></div>
+<pre><code class="language-javascript">{
+  "compilerOptions": {
+    "target": "ES2017",   // генерований JS сумісний з ES2017
+    "lib": ["ES2024", "DOM"],
+    "useDefineForClassFields": true
+  }
+}</code></pre>
+          </div>
+
+          <h2 id="suchasna-alternativa">Сучасна альтернатива</h2>
+          <p>Для проектів що підтримують тільки <em>сучасні</em> браузери (Chrome 90+, Firefox 90+, Safari 14+) поліфіли і транспіляція часто не потрібні — всі необхідні API підтримуються нативно. Перевіряйте <code>caniuse.com</code> для конкретного API.</p>
+
+          <h2 id="summary">Підсумок</h2>
+          <ul>
+            <li><strong>Транспілер</strong> (Babel, tsc) — перетворює новий синтаксис у старіший. Вирішує: <code>?.`, <code>??</code>, стрілкові функції, приватні поля класів.</li>
+            <li><strong>Поліфіл</strong> (core-js) — реалізує відсутні API. Вирішує: <code>Promise</code>, <code>Array.at</code>, <code>Map</code>, <code>structuredClone</code>.</li>
+            <li><code>@babel/preset-env</code> + <code>useBuiltIns: "usage"</code> автоматизують вибір трансформацій і поліфілів.</li>
+            <li><code>browserslist</code> визначає цільові браузери для всіх інструментів.</li>
+            <li>Для сучасних браузерів — поліфіли часто не потрібні.</li>
+          </ul>
+
+          <div class="article-support"><p><strong>Матеріал корисний?</strong> Підтримай проект.</p><div class="support-btns-inline"><a href="https://send.monobank.ua/jar/YOUR_JAR_ID" class="btn-mono" target="_blank" rel="noopener" style="font-size:12px;height:36px;padding:0 14px">🟢 Monobank</a><a href="https://www.buymeacoffee.com/YOUR_HANDLE" class="btn-coffee" target="_blank" rel="noopener" style="font-size:12px;height:36px;padding:0 14px">☕ Coffee</a></div></div>

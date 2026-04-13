@@ -1,0 +1,78 @@
+<p>ES-модулі мають два типи експорту: <strong>named</strong> (іменований) і <strong>default</strong> (за замовчуванням). Кожен файл може мати будь-яку кількість named exports і лише один default export.</p>
+
+    <h2 id="named">Named exports</h2>
+    <div class="code-block"><div class="code-head"><span class="code-lang">JavaScript</span><button class="btn-copy" aria-label="Копіювати"></button></div>
+<pre><code class="language-javascript">// math.js — named exports
+export const PI = 3.14159;
+export function add(a, b) { return a + b; }
+export class Vector2D {
+  constructor(x, y) { this.x = x; this.y = y; }
+}
+
+// Або в кінці файлу
+const E = 2.71828;
+function multiply(a, b) { return a * b; }
+export { E, multiply };
+export { multiply as mul }; // перейменування при експорті
+
+// Імпорт named
+import { PI, add, Vector2D } from './math.js';
+import { mul }               from './math.js'; // перейменований
+import { add as sum }        from './math.js'; // перейменування при імпорті
+import * as math             from './math.js'; // весь модуль як namespace
+
+console.log(math.PI);   // 3.14159
+console.log(math.add(1, 2)); // 3</code></pre></div>
+
+    <h2 id="default">Default export</h2>
+    <div class="code-block"><div class="code-head"><span class="code-lang">JavaScript</span><button class="btn-copy" aria-label="Копіювати"></button></div>
+<pre><code class="language-javascript">// user-service.js
+export default class UserService {
+  async getAll() { /* ... */ }
+  async getById(id) { /* ... */ }
+}
+
+// Або вираз
+export default function formatDate(date) {
+  return date.toISOString().slice(0, 10);
+}
+
+// Імпорт default: ім'я довільне
+import UserService from './user-service.js';
+import formatDate  from './format-date.js';
+import MyService   from './user-service.js'; // інша назва — теж OK
+
+// Комбінований імпорт
+import defaultExport, { namedA, namedB } from './module.js';</code></pre></div>
+
+    <h2 id="re-export">Ре-експорт</h2>
+    <div class="code-block"><div class="code-head"><span class="code-lang">JavaScript</span><button class="btn-copy" aria-label="Копіювати"></button></div>
+<pre><code class="language-javascript">// index.js — агрегуючий файл (barrel)
+export { UserService } from './user-service.js';
+export { ProductService } from './product-service.js';
+export { OrderService } from './order-service.js';
+export { formatDate, formatCurrency } from './utils.js';
+
+// Тепер можна імпортувати з одного місця
+import { UserService, formatDate } from './index.js';</code></pre></div>
+
+    <h2 id="live-bindings">Live bindings</h2>
+    <div class="code-block"><div class="code-head"><span class="code-lang">JavaScript</span><button class="btn-copy" aria-label="Копіювати"></button></div>
+<pre><code class="language-javascript">// counter.js
+export let count = 0;
+export function increment() { count++; }
+
+// main.js
+import { count, increment } from './counter.js';
+console.log(count); // 0
+increment();
+console.log(count); // 1 — live binding, не копія!</code></pre></div>
+
+    <h2 id="summary">Підсумок</h2>
+    <ul>
+      <li>Named export: <code>export const x</code> / <code>export { x, y }</code>. Іменовані, кілька на файл.</li>
+      <li>Default export: <code>export default fn</code>. Один на файл. Ім'я при імпорті — довільне.</li>
+      <li>Ре-експорт: <code>export { x } from './module.js'</code> — barrel файли для зручного API.</li>
+      <li>Live bindings: імпортовані змінні відображають актуальне значення, не копію.</li>
+    </ul>
+    <div class="article-support"><p><strong>Матеріал корисний?</strong> Підтримай проект.</p><div class="support-btns-inline"><a href="https://send.monobank.ua/jar/YOUR_JAR_ID" class="btn-mono" target="_blank" rel="noopener" style="font-size:12px;height:36px;padding:0 14px">🟢 Monobank</a><a href="https://www.buymeacoffee.com/YOUR_HANDLE" class="btn-coffee" target="_blank" rel="noopener" style="font-size:12px;height:36px;padding:0 14px">☕ Coffee</a></div></div>

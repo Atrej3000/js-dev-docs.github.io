@@ -1,0 +1,194 @@
+{
+  "id": "functions-advanced/recursion",
+  "locale": "uk",
+  "locales": {
+    "uk": true,
+    "en": false
+  },
+  "availableLocales": [
+    "uk"
+  ],
+  "title": "Рекурсія та стек",
+  "description": "",
+  "track": "functions-advanced",
+  "trackTitle": "Розширена робота з функціями",
+  "slug": "recursion",
+  "sourcePath": "uk/functions-advanced/recursion.html",
+  "sourceIdentity": {
+    "track": "functions-advanced",
+    "slug": "recursion"
+  },
+  "canonicalRoute": "/uk/docs/functions-advanced/recursion",
+  "canonicalLegacyPath": "/functions-advanced/recursion.html",
+  "legacyHtmlPath": "/uk/functions-advanced/recursion.html",
+  "legacyAliases": [
+    "/uk/functions-advanced/recursion.html",
+    "/uk/functions-advanced/recursion",
+    "/functions-advanced/recursion.html"
+  ],
+  "sectionOrder": 6,
+  "lessonOrder": 1,
+  "overallOrder": 49,
+  "articleNumber": "6.1",
+  "estimatedMinutes": 15,
+  "headings": [
+    {
+      "level": 2,
+      "id": "osnovy",
+      "text": "Базова структура"
+    },
+    {
+      "level": 2,
+      "id": "stek",
+      "text": "Стек викликів"
+    },
+    {
+      "level": 2,
+      "id": "derev",
+      "text": "Обхід вкладених структур"
+    },
+    {
+      "level": 2,
+      "id": "memoization",
+      "text": "Мемоізація рекурсії"
+    },
+    {
+      "level": 2,
+      "id": "vs-loop",
+      "text": "Рекурсія vs цикл"
+    },
+    {
+      "level": 2,
+      "id": "summary",
+      "text": "Підсумок"
+    }
+  ],
+  "badges": [
+    "Середній",
+    "Функції",
+    "~ 15 хв"
+  ],
+  "donationLinks": [
+    "https://send.monobank.ua/jar/YOUR_JAR_ID",
+    "https://www.buymeacoffee.com/YOUR_HANDLE"
+  ],
+  "breadcrumbTrail": [
+    "Головна",
+    "Розширена робота з функціями",
+    "Рекурсія та стек"
+  ],
+  "relatedSourceTrack": "functions-advanced",
+  "contentFiles": {
+    "uk": "content/tracks/functions-advanced/recursion/index.uk.html",
+    "en": "content/tracks/functions-advanced/recursion/index.en.mdx"
+  },
+  "metadataFile": "content/tracks/functions-advanced/recursion/meta.json",
+  "translationStatus": {
+    "sourceLocale": "uk",
+    "availableLocales": [
+      "uk"
+    ],
+    "fallbackLocales": {
+      "en": "uk"
+    },
+    "locales": {
+      "uk": {
+        "status": "published",
+        "filePath": "content/tracks/functions-advanced/recursion/index.uk.html",
+        "format": "html",
+        "title": "Рекурсія та стек",
+        "description": "",
+        "completeness": 100,
+        "isFallback": false,
+        "headings": [
+          {
+            "level": 2,
+            "id": "osnovy",
+            "text": "Базова структура"
+          },
+          {
+            "level": 2,
+            "id": "stek",
+            "text": "Стек викликів"
+          },
+          {
+            "level": 2,
+            "id": "derev",
+            "text": "Обхід вкладених структур"
+          },
+          {
+            "level": 2,
+            "id": "memoization",
+            "text": "Мемоізація рекурсії"
+          },
+          {
+            "level": 2,
+            "id": "vs-loop",
+            "text": "Рекурсія vs цикл"
+          },
+          {
+            "level": 2,
+            "id": "summary",
+            "text": "Підсумок"
+          }
+        ]
+      },
+      "en": {
+        "status": "draft",
+        "filePath": "content/tracks/functions-advanced/recursion/index.en.mdx",
+        "format": "mdx",
+        "title": "TODO: Translate title",
+        "description": "TODO: Translate description",
+        "completeness": 0,
+        "isFallback": true,
+        "headings": [
+          {
+            "level": 2,
+            "id": "source-lesson",
+            "text": "Source lesson"
+          }
+        ],
+        "slug": "recursion",
+        "track": "functions-advanced",
+        "locale": "en",
+        "sourceLocale": "uk",
+        "hasBody": true
+      }
+    }
+  },
+  "translationCompleteness": {
+    "uk": 100,
+    "en": 0
+  },
+  "migration": {
+    "migratedFromLegacy": true,
+    "canonicalIdentitySource": "canonical",
+    "override": null,
+    "articleMeta": {
+      "type": "string",
+      "raw": {
+        "secId": "functions-advanced",
+        "artId": "recursion"
+      },
+      "resolved": {
+        "track": "functions-advanced",
+        "slug": "recursion"
+      }
+    },
+    "mismatches": {
+      "filePathVsCanonical": false,
+      "filePathVsStringMeta": false,
+      "filePathVsNumericMeta": false
+    },
+    "hasLegacyJsonLd": false,
+    "hasLegacyToc": true,
+    "hasLegacyPrevNext": true,
+    "legacyArticleSupport": true
+  },
+  "bodySourcePath": "content/tracks/functions-advanced/recursion/index.uk.html",
+  "sourceProvenance": {
+    "sourcePath": "uk/functions-advanced/recursion.html",
+    "sourceTrack": "functions-advanced",
+    "sourceSlug": "recursion"
+  }
+}
