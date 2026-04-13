@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="uk" data-theme="dark">
+<html lang="uk">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -14,31 +14,31 @@
 </head>
 <body>
 <header class="site-header" role="banner">
-  <button class="btn-icon" id="sidebar-toggle" aria-label="Menu">
+  <button class="btn-icon" id="sidebar-toggle" aria-label="Навігаційне меню">
     <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 5h16M2 10h16M2 15h16"/></svg>
   </button>
-  <a href="/uk/" class="logo"><div class="logo-mark">UA</div><span class="logo-text">dev<em>docs</em></span></a>
+  <a href="/uk/" class="logo"><div class="logo-mark">JS</div><span class="logo-text">dev<em>docs</em></span></a>
   <div class="hdr-search" role="search">
     <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2"><circle cx="9" cy="9" r="6"/><path d="m15 15-3-3"/></svg>
-    <input type="search" id="header-search" placeholder="Search..." aria-label="Search" autocomplete="off">
+    <input type="search" id="header-search" placeholder="Пошук…" aria-label="Пошук" autocomplete="off">
   </div>
   <div class="hdr-actions">
-    <button class="btn-icon" id="theme-btn" aria-label="Toggle theme">
+    <button class="btn-icon" id="theme-btn" aria-label="Змінити тему">
       <svg id="theme-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
     </button>
   </div>
 </header>
-<div id="search-overlay" class="search-overlay" role="dialog" aria-modal="true" aria-label="Search">
+<div id="search-overlay" class="search-overlay" role="dialog" aria-modal="true" aria-label="Пошук">
   <div class="search-panel" id="search-panel">
-    <input type="search" id="search-input" placeholder="Search..." autocomplete="off" style="width:100%;height:52px;background:var(--bg2);border:none;border-bottom:1px solid var(--bd);padding:0 1.25rem;font-size:14px;color:var(--tx);outline:none">
+    <input type="search" id="search-input" placeholder="Пошук…" autocomplete="off" style="width:100%;height:52px;background:var(--bg2);border:none;border-bottom:1px solid var(--bd);padding:0 1.25rem;font-size:14px;color:var(--tx);outline:none">
   </div>
 </div>
 <div class="doc-layout">
-  <aside class="doc-sidebar" id="sidebar" aria-label="Navigation"></aside>
+  <aside class="doc-sidebar" id="sidebar" aria-label="Навігація"></aside>
   <main class="doc-main" id="main-content">
     <div class="article-inner">
       <nav class="breadcrumbs">
-        <a href="/uk/">Home</a><span class="sep">›</span>
+        <a href="/uk/">Головна</a><span class="sep">›</span>
         <span>Основи JavaScript</span><span class="sep">›</span>
         <span aria-current="page">Цикли: while та for</span>
       </nav>
@@ -150,34 +150,37 @@ for (const key in obj) {
           <p>Матеріал корисний? Підтримай проект:</p>
           <div class="support-btns-inline">
             <a href="https://send.monobank.ua/jar/YOUR_JAR_ID" class="btn-mono" target="_blank" rel="noopener">Monobank</a>
-            <a href="https://www.buymeacoffee.com/YOUR_HANDLE" class="btn-coffee" target="_blank" rel="noopener">Buy me a coffee</a>
+            <a href="https://www.buymeacoffee.com/YOUR_HANDLE" class="btn-coffee" target="_blank" rel="noopener">☕ Coffee</a>
           </div>
         </div>
       </article>
-      <nav class="art-nav" aria-label="Between articles">
+      <nav class="art-nav" aria-label="Між статтями">
         <a href="/uk/basics/nullish-coalescing.html" class="art-nav-a">
-          <span class="art-nav-dir">← Previous</span>
+          <span class="art-nav-dir">← Попередня</span>
           <span class="art-nav-title">Оператор об'єднання з null "??"</span>
         </a>
         <a href="/uk/basics/switch.html" class="art-nav-a is-next">
-          <span class="art-nav-dir">Next →</span>
+          <span class="art-nav-dir">Наступна →</span>
           <span class="art-nav-title">Конструкція "switch"</span>
         </a>
       </nav>
     </div>
   </main>
-  <aside class="doc-toc" aria-label="Contents">
-    <p class="toc-label">Contents</p>
+  <aside class="doc-toc" aria-label="Зміст статті">
+    <p class="toc-label">Зміст</p>
     <ul class="toc-list" id="toc-list"></ul>
     <div class="toc-progress">
-      <div class="toc-prog-meta"><span>Progress</span><span id="progress-pct">0%</span></div>
+      <div class="toc-prog-meta"><span>Прогрес</span><span id="progress-pct">0%</span></div>
       <div class="prog-bar"><div class="prog-fill" id="progress-fill"></div></div>
     </div>
   </aside>
 </div>
 <script>const ARTICLE_META = { secId: 'basics', artId: 'loops' };</script>
+<script src="/assets/js/i18n.js"></script>
+<script src="/assets/js/app.js" defer></script>
+
+
 <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" defer></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-javascript.min.js" defer></script>
-<script src="/assets/js/app.js" defer></script>
 </body>
 </html>

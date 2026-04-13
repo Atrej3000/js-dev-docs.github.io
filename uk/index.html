@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="uk" data-theme="dark">
+<html lang="uk">
 <head>
   <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>JS Dev Docs — JavaScript українською</title>
@@ -7,58 +7,113 @@
   <meta name="robots" content="index, follow">
   <link rel="canonical" href="https://YOUR_DOMAIN/uk/">
   <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600;700;800&family=Literata:ital,opsz,wght@0,7..72,400;0,7..72,500;1,7..72,400&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600;700;800&family=Literata:ital,opsz,wght@0,7..72,400;0,7..72,500;1,7..72,400&family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="/assets/css/main.css">
 </head>
-<body>
+<body class="home-page">
 <header class="site-header" role="banner">
   <a href="/uk/" class="logo"><div class="logo-mark" aria-hidden="true">JS</div><span class="logo-text">dev<em>docs</em></span></a>
-  <div class="hdr-search" role="search">
-    <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2"><circle cx="9" cy="9" r="6"/><path d="m15 15-3-3"/></svg>
-    <input type="search" id="header-search" data-i18n-ph="ui.search_placeholder" placeholder="Пошук… (/ або ⌘K)" autocomplete="off">
-  </div>
   <div class="hdr-actions">
+    <button class="btn-search-trigger" id="header-search-trigger" type="button" aria-label="Пошук">
+      <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="9" cy="9" r="6"/><path d="m15 15-3-3"/></svg>
+      <span data-i18n="ui.search_trigger">Пошук</span>
+    </button>
     <button class="btn-icon" id="theme-btn" aria-label="Змінити тему"><svg id="theme-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg></button>
     <a href="#support" class="btn-support"><svg viewBox="0 0 16 16" fill="currentColor"><path d="M8 14.25C8 14.25 1.5 10 1.5 5.5a3.5 3.5 0 0 1 6.5-1.8A3.5 3.5 0 0 1 14.5 5.5C14.5 10 8 14.25 8 14.25z"/></svg><span data-i18n="ui.support_btn">Підтримати</span></a>
   </div>
 </header>
-<div id="search-overlay" class="search-overlay" role="dialog" aria-modal="true"><div class="search-panel" id="search-panel"><input type="search" id="search-input" placeholder="Що шукаємо?" autocomplete="off" style="width:100%;height:52px;background:var(--bg2);border:none;border-bottom:1px solid var(--bd);border-radius:var(--r3) var(--r3) 0 0;padding:0 1.25rem;font-family:var(--mono);font-size:14px;color:var(--tx);outline:none"></div></div>
-<main class="page">
-  <section class="hero">
-    <div class="hero-badge" data-i18n="ui.hero_badge">🇺🇦 Безкоштовно · Українською</div>
-    <h1 class="hero-title"><span data-i18n="ui.hero_title_1">JavaScript</span><br><span data-i18n="ui.hero_title_2">Повний довідник</span></h1>
-    <p class="hero-desc" data-i18n="ui.hero_desc">14 розділів мови JavaScript — від синтаксису до генераторів і модулів. Без реклами, без пейволів.</p>
-    <div class="catalog-search-wrap">
-      <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2"><circle cx="9" cy="9" r="6"/><path d="m15 15-3-3"/></svg>
-      <input class="catalog-search-input" id="catalog-search" type="search" data-i18n-ph="ui.filter_placeholder" placeholder="Фільтрувати: promise, closure, class…" autocomplete="off">
-    </div>
-    <div class="hero-stats">
-      <div class="hero-stat"><strong id="stat-articles">156+</strong><span data-i18n="ui.stat_articles">статей</span></div>
-      <div class="hero-stat"><strong id="stat-sections">14</strong><span data-i18n="ui.stat_sections">розділів</span></div>
-      <div class="hero-stat"><strong>ES2024</strong><span>standard</span></div>
-      <div class="hero-stat"><strong>0₴</strong><span>вартість</span></div>
-    </div>
-  </section>
-  <div class="catalog"><div class="catalog-grid" id="catalog"></div></div>
-  <section class="support-section" id="support">
-    <div class="support-card">
-      <div>
-        <div class="support-eyebrow" data-i18n="ui.support_eyebrow">Підтримати проект</div>
-        <h2 class="support-heading" data-i18n="ui.support_heading">Зроблено з ❤️ для україномовних розробників</h2>
-        <p class="support-desc" data-i18n="ui.support_desc">Некомерційний волонтерський проект. Підтримай кавою або через Монобанк.</p>
-        <div class="support-btns">
-          <a href="https://send.monobank.ua/jar/YOUR_JAR_ID" class="btn-mono" target="_blank" rel="noopener">🟢 Monobank</a>
-          <a href="https://www.buymeacoffee.com/YOUR_HANDLE" class="btn-coffee" target="_blank" rel="noopener">☕ Buy me a coffee</a>
-          <a href="https://github.com/YOUR_REPO" class="btn-ghost" target="_blank" rel="noopener">GitHub</a>
+<div id="search-overlay" class="search-overlay" role="dialog" aria-modal="true" aria-label="Пошук"><div class="search-panel" id="search-panel"><input type="search" id="search-input" placeholder="Що шукаємо?" autocomplete="off" style="width:100%;height:52px;background:var(--bg2);border:none;border-bottom:1px solid var(--bd);border-radius:var(--r3) var(--r3) 0 0;padding:0 1.25rem;font-family:var(--mono);font-size:14px;color:var(--tx);outline:none"></div></div>
+<main class="home-main">
+  <section class="home-hero" aria-labelledby="hero-title">
+    <div class="home-hero-media" aria-hidden="true">
+      <div class="home-hero-grid"></div>
+      <div class="home-hero-orbit home-hero-orbit-a"></div>
+      <div class="home-hero-orbit home-hero-orbit-b"></div>
+      <div class="home-hero-plane">
+        <aside class="home-hero-sidebar">
+          <span class="home-hero-sidebar-label">14 розділів</span>
+          <ul class="home-hero-sidebar-list">
+            <li>Основи JavaScript</li>
+            <li>Якість коду</li>
+            <li>Об’єкти та типи даних</li>
+            <li>Замикання та декоратори</li>
+            <li>Promise та async/await</li>
+            <li>Генератори й модулі</li>
+          </ul>
+        </aside>
+        <div class="home-hero-article">
+          <p class="home-hero-breadcrumb">JS Dev Docs / Promises / async-await</p>
+          <h2>async / await</h2>
+          <p class="home-hero-summary">Асинхронний код, який читається так само чисто, як синхронний.</p>
+          <div class="home-hero-code">
+            <span>async function loadLesson(topic) {</span>
+            <span>  const response = await fetch(`/api/${topic}`);</span>
+            <span>  if (!response.ok) throw new Error('lesson failed');</span>
+            <span>  return response.json();</span>
+            <span>}</span>
+            <span></span>
+            <span>loadLesson('closures').then(renderArticle);</span>
+          </div>
         </div>
       </div>
+    </div>
+    <div class="home-hero-copy">
+      <p class="home-hero-brand" data-i18n="ui.hero_brand">JS Dev Docs</p>
+      <h1 class="home-hero-title" id="hero-title" data-i18n="ui.hero_title">Українська бібліотека для тих, хто вивчає JavaScript серйозно.</h1>
+      <p class="home-hero-desc" data-i18n="ui.hero_desc">156+ статей, 14 розділів і локальний прогрес без акаунта — від першого script до async generators.</p>
+      <div class="home-hero-actions">
+        <a class="btn-hero-primary" id="hero-start-link" href="/uk/introduction/intro.html" data-i18n="ui.hero_cta_primary">Почати читати</a>
+        <a class="btn-hero-secondary" href="#catalog-shell" data-i18n="ui.hero_cta_secondary">Переглянути розділи</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="home-section home-learning reveal-on-scroll" aria-labelledby="learning-title">
+    <div class="home-section-head">
+      <p class="home-section-kicker" data-i18n="ui.learning_eyebrow">Ваш ритм</p>
+      <h2 id="learning-title" data-i18n="ui.learning_heading">Читання, яке пам’ятає, де ви зупинилися.</h2>
+      <p data-i18n="ui.learning_desc">Сайт зберігає локальний прогрес, останні відкриті теми й допомагає повернутися до навчання без акаунта і зайвого шуму.</p>
+    </div>
+    <div class="learning-dashboard" id="learning-dashboard" aria-label="Навчальний прогрес"></div>
+  </section>
+
+  <section class="home-section home-catalog reveal-on-scroll" id="catalog-shell" aria-labelledby="catalog-title">
+    <div class="home-section-head home-section-head-split">
+      <div>
+        <p class="home-section-kicker" data-i18n="ui.catalog_eyebrow">Каталог</p>
+        <h2 id="catalog-title" data-i18n="ui.catalog_heading">Усі розділи перед очима.</h2>
+        <p data-i18n="ui.catalog_desc">Фільтруй теми, переходь у потрібний розділ і читай курс як довідник або як послідовний маршрут.</p>
+      </div>
+      <label class="home-catalog-filter">
+        <span class="visually-hidden">Фільтр каталогу</span>
+        <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="9" cy="9" r="6"/><path d="m15 15-3-3"/></svg>
+        <input class="catalog-search-input" id="catalog-search" type="search" data-i18n-ph="ui.filter_placeholder" placeholder="Фільтрувати: promise, closure, class…" autocomplete="off">
+      </label>
+    </div>
+    <div class="catalog-grid" id="catalog"></div>
+    <section class="empty-state" id="catalog-empty" hidden>
+      <h2 data-i18n="ui.catalog_empty_title">Нічого не знайдено</h2>
+      <p data-i18n="ui.catalog_empty_desc">Спробуйте коротший запит або інший термін. Пошук працює за назвами статей, розділами та ключовими словами.</p>
+    </section>
+  </section>
+
+  <section class="home-section support-section reveal-on-scroll" id="support" aria-labelledby="support-title">
+    <div class="support-copy">
+      <p class="home-section-kicker" data-i18n="ui.support_eyebrow">Підтримати проєкт</p>
+      <h2 class="support-heading" id="support-title" data-i18n="ui.support_heading">Допоможіть JS Dev Docs рости швидше.</h2>
+      <p class="support-desc" data-i18n="ui.support_desc">Це некомерційний волонтерський проєкт. Донат покриває хостинг, редактуру й нові переклади статей для україномовних розробників.</p>
+    </div>
+    <div class="support-btns">
+      <a href="https://send.monobank.ua/jar/YOUR_JAR_ID" class="btn-mono" target="_blank" rel="noopener">Monobank</a>
+      <a href="https://www.buymeacoffee.com/YOUR_HANDLE" class="btn-coffee" target="_blank" rel="noopener">Buy me a coffee</a>
+      <a href="https://github.com/YOUR_REPO" class="btn-ghost" target="_blank" rel="noopener">GitHub</a>
     </div>
   </section>
 </main>
 <footer class="site-footer">
   <div class="footer-logo"><div class="logo-mark" aria-hidden="true">JS</div><span class="logo-text">dev<em>docs</em></span></div>
   <p class="footer-txt"><span data-i18n="ui.footer_credit">Матеріали адаптовані з javascript.info (CC BY-NC-SA 4.0).</span><br><span data-i18n="ui.footer_made">Зроблено в Україні 🇺🇦</span></p>
-  <nav class="footer-links"><a href="/uk/about.html">Про проект</a><a href="/uk/contribute.html">Долучитись</a><a href="https://github.com/YOUR_REPO" target="_blank" rel="noopener">GitHub</a><a href="/sitemap.xml">Sitemap</a></nav>
+  <nav class="footer-links"><a href="/uk/about.html" data-i18n="ui.footer_about">Про проект</a><a href="/uk/contribute.html" data-i18n="ui.footer_contribute">Долучитись</a><a href="https://github.com/YOUR_REPO" target="_blank" rel="noopener">GitHub</a><a href="/sitemap.xml">Sitemap</a></nav>
 </footer>
 <script src="/assets/js/i18n.js"></script>
 <script src="/assets/js/app.js" defer></script>
